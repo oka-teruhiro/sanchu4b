@@ -4,6 +4,8 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/intl.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'output/0utput.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -473,14 +475,14 @@ class _MyHomePageState extends State<MyHomePage> {
                                 seinengappiMojia = _birthD[index];
                                 if (seinengappiMojia == 'yyyy/mm/dd') {
                                 } else {
-                                  //Navigator.push(
-                                  //  context,
-                                  //  MaterialPageRoute(
-                                  //    builder: (context) => Output2(
-                                  //      titleSeinengappi: seinengappiMojia,
-                                  //    ),
-                                  //  ),
-                                  // );
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => Output(
+                                        titleSeinengappi: seinengappiMojia,
+                                      ),
+                                    ),
+                                  );
                                 }
                               },
                             ),
@@ -519,7 +521,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 SizedBox(
                   height: 200,
                   child: CupertinoDatePicker(
-                    backgroundColor: Colors.tealAccent,
+                    backgroundColor: Colors.black54,
                     initialDateTime: date9,
                     minimumYear: 1900,
                     maximumYear: DateTime.now().year + 10,
