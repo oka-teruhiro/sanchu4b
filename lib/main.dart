@@ -31,18 +31,7 @@ class MyApp extends StatelessWidget {
       //　日本語化ここまで
 
       title: 'Flutter Demo',
-      theme: ThemeData.dark(
-          // This is the theme of your application.
-          //
-          // Try running your application with "flutter run". You'll see the
-          // application has a blue toolbar. Then, without quitting the app, try
-          // changing the primarySwatch below to Colors.green and then invoke
-          // "hot reload" (press "r" in the console where you ran "flutter run",
-          // or simply save your changes to "hot reload" in a Flutter IDE).
-          // Notice that the counter didn't reset back to zero; the application
-          // is not restarted.
-          //primarySwatch: Colors.blue,
-          ),
+      theme: ThemeData.dark(),
       home: const MyHomePage(title: '天運三柱推命 ver.4'),
     );
   }
@@ -276,70 +265,6 @@ class _MyHomePageState extends State<MyHomePage> {
             Container(
               height: 4,
             ),
-            /*Padding(
-              padding: const EdgeInsets.all(4.0),
-              child: Container(
-                height: 44,
-                decoration: BoxDecoration(
-                    color: Colors.tealAccent,
-                    borderRadius: BorderRadius.circular(12),
-                    border: Border.all(
-                      color: Colors.blue,
-                      width: 1.0,
-                    )),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    /*StreamBuilder<QuerySnapshot>(
-                        stream: FirebaseFirestore.instance
-                            .collection('quiz')
-                            .snapshots(),
-                        builder: (BuildContext context,
-                            AsyncSnapshot<QuerySnapshot> snapshot) {
-                          String lastQuizNoMoji =
-                              (snapshot.data?.docs.length).toString();
-                          //print(lastQuizNoMoji);
-                          //int bestquizNo = int.parse(bestQuizNoMoji) - 1;
-                          if (!snapshot.hasData) return const Text('易占大学');
-                          return TextButton(
-                            style: ButtonStyle(
-                              foregroundColor: MaterialStateProperty.all<Color>(
-                                  Colors.black),
-                            ),
-                            child: const Text(
-                              '易占クイズに挑戦する',
-                              style: TextStyle(
-                                fontSize: 18,
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            onPressed: () {
-                              //TODO: 易占検定画面へ飛ぶ
-                              /*if (bestQuizNoMoji == '0') {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => QuizPage(
-                                      quizNoMoji: quizNoMoji,
-                                      bestQuizNoMoji: bestQuizNoMoji,
-                                    ),
-                                  ),
-                                );
-                              } else if (bestQuizNoMoji == lastQuizNoMoji) {
-                                _showQuizBestLast(context);
-                              } else {
-                                _showQuizBest(context);
-                              }
-
-                              */
-                            },
-                          );
-                        }),*/
-                  ],
-                ),
-              ),
-            ),*/
             const SizedBox(
               height: 90,
               child: Padding(
@@ -349,7 +274,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   style: TextStyle(
                     fontSize: 14,
                     color: Colors.white70,
-                    //fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
               ),

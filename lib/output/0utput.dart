@@ -1,5 +1,5 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-//import 'package:sanchu4/kaisetu/tentitokugou.dart';
 
 class Output extends StatelessWidget {
   Output({Key? key, required this.titleSeinengappi}) : super(key: key);
@@ -190,12 +190,11 @@ class Output extends StatelessWidget {
     List tenunList = tenun(nenKansiHeirin, getuKansiHeirin, nitiKansiHeirin,
         tentiTokugou, seinengappiMoji);
     //print('tenunList:$tenunList');
-    // 天運リストの要素数を5にするため0を追加する
+    // 天運リストの要素数を7にするため0を追加する
     int tenunLength = tenunList.length;
     for (int i = 0; i < (7 - tenunLength); ++i) {
       tenunList.add(0);
     }
-    //print('tenunList:$tenunList');
     // 天運リストの１番目のテキスト文を作成する
     int tenun0 = tenunList.removeAt(0);
     var tenunNen0 = tenun0 ~/ 1000;
@@ -329,9 +328,9 @@ class Output extends StatelessWidget {
                           height: 36,
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                              primary: Colors.blue,
+                              backgroundColor: Colors.blue,
                               elevation: 4,
-                              shadowColor: Colors.red,
+                              shadowColor: Colors.yellow,
                             ),
                             onPressed: () {
                               //Navigator.pushNamed(context, gamenNikkan);
@@ -396,9 +395,9 @@ class Output extends StatelessWidget {
                           height: 36,
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                              primary: Colors.blue,
+                              backgroundColor: Colors.blue,
                               elevation: 4,
-                              shadowColor: Colors.red,
+                              shadowColor: Colors.yellow,
                             ),
                             onPressed: () {
                               /*Navigator.push(
@@ -414,31 +413,6 @@ class Output extends StatelessWidget {
                           ),
                         ),
                       ),
-                      /*Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: SizedBox(
-                          width: 120,
-                          height: 36,
-                          child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              primary: Colors.blue,
-                              elevation: 4,
-                              shadowColor: Colors.red,
-                            ),
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => KyouUnsei(
-                                    titleSeinengappi: seinengappiMojia,
-                                  ),
-                                ),
-                              );
-                            },
-                            child: Text('今日の運勢'),
-                          ),
-                        ),
-                      ),*/
                     ],
                   ),
                 ),
@@ -480,9 +454,9 @@ class Output extends StatelessWidget {
                     height: 36,
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        primary: Colors.blue,
+                        backgroundColor: Colors.blue,
                         elevation: 4,
-                        shadowColor: Colors.red,
+                        shadowColor: Colors.yellow,
                       ),
                       onPressed: () {
                         Navigator.pop(context);
@@ -498,9 +472,9 @@ class Output extends StatelessWidget {
                     height: 36,
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        primary: Colors.blue,
+                        backgroundColor: Colors.blue,
                         elevation: 4,
-                        shadowColor: Colors.red,
+                        shadowColor: Colors.yellow,
                       ),
                       onPressed: () {
                         Navigator.pop(context);
@@ -515,40 +489,9 @@ class Output extends StatelessWidget {
                   color: Colors.white70,
                   child: const Text(''),
                 ),
-                /*AdmobBanner(
-                    adUnitId: AdMobService().getBannerAdUnitId(),
-                    adSize: AdmobBannerSize(
-                      width: MediaQuery.of(context).size.width.toInt(),
-                      height: AdMobService().getHeight(context).toInt(),
-                      name: 'SMART_BANNER',
-                    )),*/
               ],
             ),
           ),
-          //Container(
-          // height: 8,
-          //),
-
-          //バナー広告追加
-          //if (banner == null)
-
-          //SizedBox(
-          // height: 50,
-          //child: Container(
-          //  color: Colors.black,
-          //),
-          // ), // Ads
-          //else
-          // SizedBox(
-          //   height: 50,
-          //  child: AdWidget(ad: banner),
-          // ),
-
-          //バナー広告ここまで
-
-          //Container(
-          //  height: 30,
-          //),
         ],
       ),
     );
