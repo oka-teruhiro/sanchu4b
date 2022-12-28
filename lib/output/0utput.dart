@@ -344,7 +344,7 @@ class Output extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(4.0),
                   child: Column(
                     children: [
                       const Text(
@@ -390,7 +390,7 @@ class Output extends StatelessWidget {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: const EdgeInsets.all(4.0),
                         child: SizedBox(
                           width: 220,
                           height: 36,
@@ -443,18 +443,38 @@ class Output extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(16.0),
+                  padding: const EdgeInsets.all(4.0),
                   child: Column(
                     children: [
-                      Text('命式は'),
-                      Text('年柱：$nenchu'),
-                      Text('月柱：$gechu'),
-                      Text('日柱：$nichu'),
+                      const Text(
+                        '命式は',
+                        style: TextStyle(
+                          fontSize: 18,
+                        ),
+                      ),
+                      Text(
+                        '年柱：$nenchu',
+                        style: const TextStyle(
+                          fontSize: 18,
+                        ),
+                      ),
+                      Text(
+                        '月柱：$gechu',
+                        style: const TextStyle(
+                          fontSize: 18,
+                        ),
+                      ),
+                      Text(
+                        '日柱：$nichu',
+                        style: const TextStyle(
+                          fontSize: 18,
+                        ),
+                      ),
                     ],
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(16.0),
+                  padding: const EdgeInsets.all(4.0),
                   child: SizedBox(
                     width: 220,
                     height: 36,
@@ -472,7 +492,7 @@ class Output extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(16.0),
+                  padding: const EdgeInsets.all(4.0),
                   child: SizedBox(
                     width: 220,
                     height: 36,
@@ -505,18 +525,19 @@ class Output extends StatelessWidget {
               ],
             ),
           ),
-          Container(
-            height: 8,
-          ),
+          //Container(
+          // height: 8,
+          //),
 
           //バナー広告追加
           //if (banner == null)
-          SizedBox(
-            height: 50,
-            child: Container(
-              color: Colors.black,
-            ),
-          ), // Ads
+
+          //SizedBox(
+          // height: 50,
+          //child: Container(
+          //  color: Colors.black,
+          //),
+          // ), // Ads
           //else
           // SizedBox(
           //   height: 50,
@@ -525,9 +546,9 @@ class Output extends StatelessWidget {
 
           //バナー広告ここまで
 
-          Container(
-            height: 30,
-          ),
+          //Container(
+          //  height: 30,
+          //),
         ],
       ),
     );
