@@ -71,6 +71,13 @@ class Output extends StatelessWidget {
     String tenunText4;
     String tenunText5;
     String tenunText6;
+    String tenunkansi0 = '甲子';
+    String tenunkansi1 = '甲子';
+    String tenunkansi2 = '甲子';
+    String tenunkansi3 = '甲子';
+    String tenunkansi4 = '甲子';
+    String tenunkansi5 = '甲子';
+    String tenunkansi6 = '甲子';
 
     //■■画面生成のための各種データを生成する■■
 
@@ -197,195 +204,330 @@ class Output extends StatelessWidget {
     }
     // 天運リストの１番目のテキスト文を作成する
     int tenun0 = tenunList.removeAt(0);
-    var tenunNen0 = tenun0 ~/ 1000;
-    var tenunNenrei0 = tenun0 % 1000 ~/ 10;
+    var tenunNen0 = tenun0 ~/ 10000;
+    var tenunNenrei0 = tenun0 % 10000 ~/ 10;
     var tenunMei0 = tenun0 % 10;
-    if (tenunMei0 == 4) {
+    if (tenunMei0 == 1) {
+      tenunMeiMoji0 = '干支併臨';
+      tenunkansi0 = nenchu;
+    } else if (tenunMei0 == 2) {
+      tenunMeiMoji0 = '干支併臨';
+      tenunkansi0 = gechu;
+    } else if (tenunMei0 == 3) {
+      tenunMeiMoji0 = '干支併臨';
+      tenunkansi0 = nichu;
+    } else if (tenunMei0 == 4) {
       tenunMeiMoji0 = '天地徳合';
-    } else {}
-    if (tenunNenrei0 < 10) {
-      tenunText0 = '$tenunNen0年（ $tenunNenrei0歳）：$tenunMeiMoji0';
-    } else {
-      tenunText0 = '$tenunNen0年（$tenunNenrei0歳）：$tenunMeiMoji0';
+      tenunkansi0 = tentiTokugouMoji;
     }
+
+    tenunText0 = '$tenunNen0年（ $tenunNenrei0歳）：$tenunMeiMoji0・$tenunkansi0';
+
     // 天運リストの２番目のテキスト文を作成する
     int tenun1 = tenunList.removeAt(0);
-    var tenunNen1 = tenun1 ~/ 1000;
-    var tenunNenrei1 = tenun1 % 1000 ~/ 10;
+    var tenunNen1 = tenun1 ~/ 10000;
+    var tenunNenrei1 = tenun1 % 10000 ~/ 10;
     var tenunMei1 = tenun1 % 10;
-    if (tenunMei1 == 4) {
+    if (tenunMei1 == 1) {
+      tenunMeiMoji1 = '干支併臨';
+      tenunkansi1 = nenchu;
+    } else if (tenunMei1 == 2) {
+      tenunMeiMoji1 = '干支併臨';
+      tenunkansi1 = gechu;
+    } else if (tenunMei1 == 3) {
+      tenunMeiMoji1 = '干支併臨';
+      tenunkansi1 = nichu;
+    } else if (tenunMei1 == 4) {
       tenunMeiMoji1 = '天地徳合';
-    } else {}
-    if (tenunNenrei1 < 10) {
-      tenunText1 = '$tenunNen1年（ $tenunNenrei1歳）：$tenunMeiMoji1';
-    } else {
-      tenunText1 = '$tenunNen1年（$tenunNenrei1歳）：$tenunMeiMoji1';
+      tenunkansi1 = tentiTokugouMoji;
     }
+
+    tenunText1 = '$tenunNen1年（ $tenunNenrei1歳）：$tenunMeiMoji1・$tenunkansi1';
+
     // 天運リストの３番目のテキスト文を作成する
     int tenun2 = tenunList.removeAt(0);
-    var tenunNen2 = tenun2 ~/ 1000;
-    var tenunNenrei2 = tenun2 % 1000 ~/ 10;
+    var tenunNen2 = tenun2 ~/ 10000;
+    var tenunNenrei2 = tenun2 % 10000 ~/ 10;
     var tenunMei2 = tenun2 % 10;
-    if (tenunMei2 == 4) {
+    if (tenunMei2 == 1) {
+      tenunMeiMoji2 = '干支併臨';
+      tenunkansi2 = nenchu;
+    } else if (tenunMei2 == 2) {
+      tenunMeiMoji2 = '干支併臨';
+      tenunkansi2 = gechu;
+    } else if (tenunMei2 == 3) {
+      tenunMeiMoji2 = '干支併臨';
+      tenunkansi2 = nichu;
+    } else if (tenunMei2 == 4) {
       tenunMeiMoji2 = '天地徳合';
-    } else {}
-    tenunText2 = '$tenunNen2年（$tenunNenrei2歳）：$tenunMeiMoji2';
+      tenunkansi2 = tentiTokugouMoji;
+    }
+
+    tenunText2 = '$tenunNen2年（ $tenunNenrei2歳）：$tenunMeiMoji2・$tenunkansi2';
+
     // 天運リストの４番目のテキスト文を作成する
     int tenun3 = tenunList.removeAt(0);
     if (tenun3 == 0) {
       tenunText3 = '';
     } else {
-      var tenunNen3 = tenun3 ~/ 1000;
-      var tenunNenrei3 = tenun3 % 1000 ~/ 10;
+      var tenunNen3 = tenun3 ~/ 10000;
+      var tenunNenrei3 = tenun3 % 10000 ~/ 10;
       var tenunMei3 = tenun3 % 10;
-      if (tenunMei3 == 4) {
+      if (tenunMei3 == 1) {
+        tenunMeiMoji3 = '干支併臨';
+        tenunkansi3 = nenchu;
+      } else if (tenunMei3 == 2) {
+        tenunMeiMoji3 = '干支併臨';
+        tenunkansi3 = gechu;
+      } else if (tenunMei3 == 3) {
+        tenunMeiMoji3 = '干支併臨';
+        tenunkansi3 = nichu;
+      } else if (tenunMei3 == 4) {
         tenunMeiMoji3 = '天地徳合';
-      } else {}
-      tenunText3 = '$tenunNen3年（$tenunNenrei3歳）：$tenunMeiMoji3';
-    }
-    // 天運リストの５番目のテキスト文を作成する
+        tenunkansi3 = tentiTokugouMoji;
+      }
+
+      tenunText3 = '$tenunNen3年（ $tenunNenrei3歳）：$tenunMeiMoji3・$tenunkansi3';
+
+      // 天運リストの５番目のテキスト文を作成する
     int tenun4 = tenunList.removeAt(0);
     if (tenun4 == 0) {
       tenunText4 = '';
     } else {
-      var tenunNen4 = tenun4 ~/ 1000;
-      var tenunNenrei4 = tenun4 % 1000 ~/ 10;
+      var tenunNen4 = tenun4 ~/ 10000;
+      var tenunNenrei4 = tenun4 % 10000 ~/ 10;
       var tenunMei4 = tenun4 % 10;
-      if (tenunMei4 == 4) {
+      if (tenunMei4 == 1) {
+        tenunMeiMoji4 = '干支併臨';
+        tenunkansi4 = nenchu;
+      } else if (tenunMei4 == 2) {
+        tenunMeiMoji4 = '干支併臨';
+        tenunkansi4 = gechu;
+      } else if (tenunMei4 == 3) {
+        tenunMeiMoji4 = '干支併臨';
+        tenunkansi4 = nichu;
+      } else if (tenunMei4 == 4) {
         tenunMeiMoji4 = '天地徳合';
-      } else {}
-      //;
-      tenunText4 = '$tenunNen4年（$tenunNenrei4歳）：$tenunMeiMoji4';
-    }
-    // 天運リストの6番目のテキスト文を作成する
-    int tenun5 = tenunList.removeAt(0);
-    if (tenun5 == 0) {
-      tenunText5 = '';
-    } else {
-      var tenunNen5 = tenun5 ~/ 1000;
-      var tenunNenrei5 = tenun5 % 1000 ~/ 10;
-      var tenunMei5 = tenun5 % 10;
-      if (tenunMei5 == 5) {
-        tenunMeiMoji5 = '天地徳合';
-      } else {}
-      //;
-      tenunText5 = '$tenunNen5年（$tenunNenrei5歳）：$tenunMeiMoji5';
-    }
-    // 天運リストの7番目のテキスト文を作成する
-    int tenun6 = tenunList.removeAt(0);
-    if (tenun6 == 0) {
-      tenunText6 = '';
-    } else {
-      var tenunNen6 = tenun6 ~/ 1000;
-      var tenunNenrei6 = tenun6 % 1000 ~/ 10;
-      var tenunMei6 = tenun6 % 10;
-      if (tenunMei6 == 6) {
-        tenunMeiMoji6 = '天地徳合';
-      } else {}
-      //;
-      tenunText6 = '$tenunNen6年（$tenunNenrei6歳）：$tenunMeiMoji6';
-    }
+        tenunkansi4 = tentiTokugouMoji;
+      }
 
-    //■■　画面を生成する　■■
+      tenunText4 = '$tenunNen4年（ $tenunNenrei4歳）：$tenunMeiMoji4・$tenunkansi4';
 
-    return Scaffold(
-      backgroundColor: Colors.black,
-      appBar: AppBar(
-        title: const Text(
-          'あなたの天運の年は',
-          style: TextStyle(
-            color: Colors.pinkAccent,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-      ),
-      body: Column(
-        children: [
-          Expanded(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
+      // 天運リストの6番目のテキスト文を作成する
+      int tenun5 = tenunList.removeAt(0);
+      if (tenun5 == 0) {
+        tenunText5 = '';
+      } else {
+        var tenunNen5 = tenun5 ~/ 10000;
+        var tenunNenrei5 = tenun5 % 10000 ~/ 10;
+        var tenunMei5 = tenun5 % 10;
+        if (tenunMei5 == 1) {
+          tenunMeiMoji5 = '干支併臨';
+          tenunkansi5 = nenchu;
+        } else if (tenunMei5 == 2) {
+          tenunMeiMoji5 = '干支併臨';
+          tenunkansi5 = gechu;
+        } else if (tenunMei5 == 3) {
+          tenunMeiMoji5 = '干支併臨';
+          tenunkansi5 = nichu;
+        } else if (tenunMei5 == 4) {
+          tenunMeiMoji5 = '天地徳合';
+          tenunkansi5 = tentiTokugouMoji;
+        }
+
+        tenunText5 = '$tenunNen5年（ $tenunNenrei5歳）：$tenunMeiMoji5・$tenunkansi5';
+
+        // 天運リストの7番目のテキスト文を作成する
+        int tenun6 = tenunList.removeAt(0);
+        if (tenun6 == 0) {
+          tenunText6 = '';
+        } else {
+          var tenunNen6 = tenun6 ~/ 10000;
+          var tenunNenrei6 = tenun6 % 10000 ~/ 10;
+          var tenunMei6 = tenun6 % 10;
+          if (tenunMei6 == 1) {
+            tenunMeiMoji6 = '干支併臨';
+            tenunkansi6 = nenchu;
+          } else if (tenunMei6 == 2) {
+            tenunMeiMoji6 = '干支併臨';
+            tenunkansi6 = gechu;
+          } else if (tenunMei6 == 3) {
+            tenunMeiMoji6 = '干支併臨';
+            tenunkansi6 = nichu;
+          } else if (tenunMei6 == 4) {
+            tenunMeiMoji6 = '天地徳合';
+            tenunkansi6 = tentiTokugouMoji;
+          }
+
+          tenunText6 =
+          '$tenunNen6年（ $tenunNenrei6歳）：$tenunMeiMoji6・$tenunkansi6';
+
+
+          //■■　画面を生成する　■■
+
+          return Scaffold(
+            backgroundColor: Colors.black,
+            appBar: AppBar(
+              title: const Text(
+                'あなたの天運の年は',
+                style: TextStyle(
+                  color: Colors.pinkAccent,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            body: Column(
               children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
+                Expanded(
                   child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Text(
-                        '$titleSeinengappi 生まれの',
-                        style: const TextStyle(
-                          fontSize: 18,
-                        ),
-                      ),
-                      Text(
-                        'あなたの日干は、$jukkanNameYomiです。',
-                        style: const TextStyle(
-                          fontSize: 18,
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          children: [
+                            Text(
+                              '$titleSeinengappi 生まれの',
+                              style: const TextStyle(
+                                fontSize: 18,
+                              ),
+                            ),
+                            Text(
+                              'あなたの日干は、$jukkanNameYomiです。',
+                              style: const TextStyle(
+                                fontSize: 18,
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: SizedBox(
+                                width: 220,
+                                height: 36,
+                                child: ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Colors.blue,
+                                    elevation: 4,
+                                    shadowColor: Colors.yellow,
+                                  ),
+                                  onPressed: () {
+                                    //Navigator.pushNamed(context, gamenNikkan);
+                                  },
+                                  child: const Text('日干からみた性格は'),
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: SizedBox(
-                          width: 220,
-                          height: 36,
-                          child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.blue,
-                              elevation: 4,
-                              shadowColor: Colors.yellow,
+                        padding: const EdgeInsets.all(4.0),
+                        child: Column(
+                          children: [
+                            const Text(
+                              '天運の年は、',
+                              style: TextStyle(
+                                fontSize: 18,
+                              ),
                             ),
-                            onPressed: () {
-                              //Navigator.pushNamed(context, gamenNikkan);
-                            },
-                            child: const Text('日干からみた性格は'),
-                          ),
+                            Text(
+                              tenunText0,
+                              style: const TextStyle(
+                                fontSize: 18,
+                              ),
+                            ),
+                            Text(
+                              tenunText1,
+                              style: const TextStyle(
+                                fontSize: 18,
+                              ),
+                            ),
+                            Text(
+                              tenunText2,
+                              style: const TextStyle(
+                                fontSize: 18,
+                              ),
+                            ),
+                            Text(
+                              tenunText3,
+                              style: const TextStyle(
+                                fontSize: 18,
+                              ),
+                            ),
+                            Text(
+                              tenunText4,
+                              style: const TextStyle(
+                                fontSize: 18,
+                              ),
+                            ),
+                            Text(
+                              tenunText5,
+                              style: const TextStyle(
+                                fontSize: 18,
+                              ),
+                            ),
+                            Text(
+                              tenunText6,
+                              style: const TextStyle(
+                                fontSize: 18,
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(4.0),
+                              child: SizedBox(
+                                width: 220,
+                                height: 36,
+                                child: ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Colors.blue,
+                                    elevation: 4,
+                                    shadowColor: Colors.yellow,
+                                  ),
+                                  onPressed: () {
+                                    /*Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const Tentitokugou(
+                                    //titleSeinengappi: seinengappiMoji,
+                                  ),
+                                ),
+                              );*/
+                                  },
+                                  child: const Text('天地徳合/干支併臨とは'),
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(4.0),
-                  child: Column(
-                    children: [
-                      const Text(
-                        '天運の年は、',
-                        style: TextStyle(
-                          fontSize: 18,
-                        ),
-                      ),
-                      Text(
-                        tenunText0,
-                        style: const TextStyle(
-                          fontSize: 18,
-                        ),
-                      ),
-                      Text(
-                        tenunText1,
-                        style: const TextStyle(
-                          fontSize: 18,
-                        ),
-                      ),
-                      Text(
-                        tenunText2,
-                        style: const TextStyle(
-                          fontSize: 18,
-                        ),
-                      ),
-                      Text(
-                        tenunText3,
-                        style: const TextStyle(
-                          fontSize: 18,
-                        ),
-                      ),
-                      Text(
-                        tenunText4,
-                        style: const TextStyle(
-                          fontSize: 18,
-                        ),
-                      ),
-                      Text(
-                        tenunText5,
-                        style: const TextStyle(
-                          fontSize: 18,
+                      Padding(
+                        padding: const EdgeInsets.all(4.0),
+                        child: Column(
+                          children: [
+                            const Text(
+                              '命式は',
+                              style: TextStyle(
+                                fontSize: 18,
+                              ),
+                            ),
+                            Text(
+                              '年柱：$nenchu',
+                              style: const TextStyle(
+                                fontSize: 18,
+                              ),
+                            ),
+                            Text(
+                              '月柱：$gechu',
+                              style: const TextStyle(
+                                fontSize: 18,
+                              ),
+                            ),
+                            Text(
+                              '日柱：$nichu',
+                              style: const TextStyle(
+                                fontSize: 18,
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                       Padding(
@@ -400,105 +542,46 @@ class Output extends StatelessWidget {
                               shadowColor: Colors.yellow,
                             ),
                             onPressed: () {
-                              /*Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => const Tentitokugou(
-                                    //titleSeinengappi: seinengappiMoji,
-                                  ),
-                                ),
-                              );*/
+                              Navigator.pop(context);
                             },
-                            child: const Text('天地徳合/干支併臨とは'),
+                            child: const Text('さらに詳しくみる'),
                           ),
                         ),
                       ),
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(4.0),
-                  child: Column(
-                    children: [
-                      const Text(
-                        '命式は',
-                        style: TextStyle(
-                          fontSize: 18,
+                      Padding(
+                        padding: const EdgeInsets.all(4.0),
+                        child: SizedBox(
+                          width: 220,
+                          height: 36,
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.blue,
+                              elevation: 4,
+                              shadowColor: Colors.yellow,
+                            ),
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            child: const Text('戻る'),
+                          ),
                         ),
                       ),
-                      Text(
-                        '年柱：$nenchu',
-                        style: const TextStyle(
-                          fontSize: 18,
-                        ),
-                      ),
-                      Text(
-                        '月柱：$gechu',
-                        style: const TextStyle(
-                          fontSize: 18,
-                        ),
-                      ),
-                      Text(
-                        '日柱：$nichu',
-                        style: const TextStyle(
-                          fontSize: 18,
-                        ),
+                      Container(
+                        width: double.infinity,
+                        height: 0, //　縦幅の低い端末はこの値を下げる
+                        color: Colors.white70,
+                        child: const Text(''),
                       ),
                     ],
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(4.0),
-                  child: SizedBox(
-                    width: 220,
-                    height: 36,
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.blue,
-                        elevation: 4,
-                        shadowColor: Colors.yellow,
-                      ),
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
-                      child: const Text('さらに詳しくみる'),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(4.0),
-                  child: SizedBox(
-                    width: 220,
-                    height: 36,
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.blue,
-                        elevation: 4,
-                        shadowColor: Colors.yellow,
-                      ),
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
-                      child: const Text('戻る'),
-                    ),
-                  ),
-                ),
-                Container(
-                  width: double.infinity,
-                  height: 0, //　縦幅の低い端末はこの値を下げる
-                  color: Colors.white70,
-                  child: const Text(''),
                 ),
               ],
             ),
-          ),
-        ],
-      ),
-    );
-  }
+          );
+        }
 
-  void setState(Null Function() param0) {}
-}
+        void setState(Null Function() param0) {}
+      }
 
 // 関数定義　文字列リストから検索文字列が先頭から何文字目にあるか返す
 //  c = nanmojime(a,b)
@@ -507,23 +590,23 @@ class Output extends StatelessWidget {
 //  c:　-2：一致が2組以上ある
 //      -1:一致する組がない
 //      0 ～ 59 : 組めに1組だけある
-int nanmojime(String mojilist, String kensaku2moji) {
-  int nanbanme = -1;
-  int ittisuu = 0;
-  for (int i = 0; i < 60; i++) {
-    String nimoji = mojilist.substring(i * 2, i * 2 + 2);
-    if (nimoji == kensaku2moji) {
-      nanbanme = i;
-      ittisuu = ittisuu + 1;
-    } else {}
-  }
-  if (ittisuu > 1) {
-    nanbanme = -2;
-  } else if (ittisuu < 1) {
-    nanbanme = -1;
-  } else {}
-  return nanbanme;
-}
+      int nanmojime(String mojilist, String kensaku2moji) {
+        int nanbanme = -1;
+        int ittisuu = 0;
+        for (int i = 0; i < 60; i++) {
+          String nimoji = mojilist.substring(i * 2, i * 2 + 2);
+          if (nimoji == kensaku2moji) {
+            nanbanme = i;
+            ittisuu = ittisuu + 1;
+          } else {}
+        }
+        if (ittisuu > 1) {
+          nanbanme = -2;
+        } else if (ittisuu < 1) {
+          nanbanme = -1;
+        } else {}
+        return nanbanme;
+      }
 
 // 関数定義　干支から対応する西暦年と年齢を99歳までの間で算出する
 //   c = kannsiHeirin(a,b)
@@ -531,50 +614,54 @@ int nanmojime(String mojilist, String kensaku2moji) {
 //   b: 生年月日を表す文字列　（yyyy-MM-dd）
 //   c: 干支併臨の年を表す 数字の配列（　[0,0,1961,2021,0] )
 //
-List kansiHeirin(int kansiSuu, String seinengappiMojiretu) {
-  List kansiHeirinList = [];
-  // 生年月日（文字列）を　（DateTime型）に変換する
-  DateTime date3 = DateTime.parse(seinengappiMojiretu); // StringからDate
-  int seinen = int.parse(seinengappiMojiretu.substring(0, 4));
-  DateTime date4 = DateTime(seinen, 2, 4);
-  //　1900.1.1 (甲辰）から誕生日までの日数を算出する
-  var nissuu = date3.difference(date4).inDays;
-  if (nissuu < 0) {
-    --seinen;
-  }
-  int nen = 0;
-  for (int i = 0; i < 6; ++i) {
-    nen = 1864 + 60 * i + kansiSuu;
-    if (nen <= seinen) {
-      kansiHeirinList.add(0);
-    } else if (nen > seinen + 100) {
-      kansiHeirinList.add(0);
-    } else {
-      kansiHeirinList.add(nen);
-    }
-  }
-  print('■■■■kansiHeirinList:$kansiHeirinList');
-  return kansiHeirinList;
-}
+      List kansiHeirin(int kansiSuu, String seinengappiMojiretu) {
+        List kansiHeirinList = [];
+        // 生年月日（文字列）を　（DateTime型）に変換する
+        DateTime date3 = DateTime.parse(seinengappiMojiretu); // StringからDate
+        int seinen = int.parse(seinengappiMojiretu.substring(0, 4));
+        DateTime date4 = DateTime(seinen, 2, 4);
+        //　1900.1.1 (甲辰）から誕生日までの日数を算出する
+        var nissuu = date3
+            .difference(date4)
+            .inDays;
+        if (nissuu < 0) {
+          --seinen;
+        }
+        int nen = 0;
+        for (int i = 0; i < 6; ++i) {
+          nen = 1864 + 60 * i + kansiSuu;
+          if (nen <= seinen) {
+            kansiHeirinList.add(0);
+          } else if (nen > seinen + 120) {
+            kansiHeirinList.add(0);
+          } else {
+            kansiHeirinList.add(nen);
+          }
+        }
+        print('■■■■kansiHeirinList:$kansiHeirinList');
+        return kansiHeirinList;
+      }
 
 // 関数定義　生年月日から　年柱の六十干支を算出する
 //  b = nentyuu(a)
 //   a: 生年月日を表す文字列　（yyyy-MM-dd）
 //   b: 年柱の六十干支を表す数字　（0～59）（例　0:　甲子）
 //
-int nentyuu(String a) {
-  // 生年月日（文字列）を　（DateTime型）に変換する
-  DateTime date3 = DateTime.parse(a); // StringからDate
-  int seinen = int.parse(a.substring(0, 4));
-  DateTime date4 = DateTime(seinen, 2, 4);
-  //　1900.1.1 (甲辰）から誕生日までの日数を算出する
-  var nissuu = date3.difference(date4).inDays;
-  if (nissuu < 0) {
-    --seinen;
-  }
-  var kansiSui = (seinen - 1924) % 60;
-  return kansiSui;
-}
+      int nentyuu(String a) {
+        // 生年月日（文字列）を　（DateTime型）に変換する
+        DateTime date3 = DateTime.parse(a); // StringからDate
+        int seinen = int.parse(a.substring(0, 4));
+        DateTime date4 = DateTime(seinen, 2, 4);
+        //　1900.1.1 (甲辰）から誕生日までの日数を算出する
+        var nissuu = date3
+            .difference(date4)
+            .inDays;
+        if (nissuu < 0) {
+          --seinen;
+        }
+        var kansiSui = (seinen - 1924) % 60;
+        return kansiSui;
+      }
 
 // 関数定義　天運到来の西暦とその時を迎える満年齢と種類を西暦昇順に並べる配列を生成する
 //  f = tenun(a,b,c,d,e)
@@ -588,73 +675,81 @@ int nentyuu(String a) {
 //                            2: 干支併臨 (月柱）
 //                            3: 干支併臨 (日柱）
 //                            4: 天地徳合
-//          例　[1962053,1963062,2007504,2017601,2022653,2023662]
+//          例　[19620053,19630062,20070504,20170601,20220653,20230662]
 //
-List tenun(List a, List b, List c, List d, String e) {
-  List<int> tenunNen = [];
-  int nen = 0;
-  // 生年月日（文字列）を　（DateTime型）に変換する
-  DateTime date3 = DateTime.parse(e); // StringからDate
-  int tenunMei;
-  List nenList = [];
-  // 年柱
-  nenList = a;
-  tenunMei = 1;
-  for (int i = 0; i < 6; ++i) {
-    nen = nenList.removeAt(0);
-    if (nen != 0) {
-      DateTime date4 = DateTime(nen, 2, 4);
-      var nissuu = date4.difference(date3).inDays;
-      //print('nissuu:$nissuu');
-      var nenrei = nissuu ~/ 365.2422;
-      var tenunDate = nen * 1000 + nenrei * 10 + tenunMei;
-      tenunNen.add(tenunDate);
-    } else {}
-  }
-  // 月柱
-  nenList = b;
-  tenunMei = 2;
-  for (int i = 0; i < 6; ++i) {
-    nen = nenList.removeAt(0);
-    if (nen != 0) {
-      DateTime date4 = DateTime(nen, 2, 4);
-      var nissuu = date4.difference(date3).inDays;
-      var nenrei = nissuu ~/ 365.2422;
-      var tenunDate = nen * 1000 + nenrei * 10 + tenunMei;
-      tenunNen.add(tenunDate);
-    } else {}
-  }
-  // 日柱
-  nenList = c;
-  tenunMei = 3;
-  for (int i = 0; i < 6; ++i) {
-    nen = nenList.removeAt(0);
-    if (nen != 0) {
-      DateTime date4 = DateTime(nen, 2, 4);
-      var nissuu = date4.difference(date3).inDays;
-      var nenrei = nissuu ~/ 365.2422;
-      var tenunDate = nen * 1000 + nenrei * 10 + tenunMei;
-      tenunNen.add(tenunDate);
-    } else {}
-  }
-  // 天地徳合
-  nenList = d;
-  tenunMei = 4;
-  for (int i = 0; i < 6; ++i) {
-    nen = nenList.removeAt(0);
-    if (nen != 0) {
-      DateTime date4 = DateTime(nen, 2, 4);
-      var nissuu = date4.difference(date3).inDays;
-      var nenrei = nissuu ~/ 365.2422;
-      var tenunDate = nen * 1000 + nenrei * 10 + tenunMei;
-      tenunNen.add(tenunDate);
-    } else {}
-  }
-  // 西暦昇順にソートする
-  tenunNen.sort((num1, num2) => num1 - num2);
-  print('■■■■tenunNen:$tenunNen');
-  return tenunNen;
-}
+      List tenun(List a, List b, List c, List d, String e) {
+        List<int> tenunNen = [];
+        int nen = 0;
+        // 生年月日（文字列）を　（DateTime型）に変換する
+        DateTime date3 = DateTime.parse(e); // StringからDate
+        int tenunMei;
+        List nenList = [];
+        // 年柱
+        nenList = a;
+        tenunMei = 1;
+        for (int i = 0; i < 6; ++i) {
+          nen = nenList.removeAt(0);
+          if (nen != 0) {
+            DateTime date4 = DateTime(nen, 2, 4);
+            var nissuu = date4
+                .difference(date3)
+                .inDays;
+            //print('nissuu:$nissuu');
+            var nenrei = nissuu ~/ 365.2422;
+            var tenunDate = nen * 10000 + nenrei * 10 + tenunMei;
+            tenunNen.add(tenunDate);
+          } else {}
+        }
+        // 月柱
+        nenList = b;
+        tenunMei = 2;
+        for (int i = 0; i < 6; ++i) {
+          nen = nenList.removeAt(0);
+          if (nen != 0) {
+            DateTime date4 = DateTime(nen, 2, 4);
+            var nissuu = date4
+                .difference(date3)
+                .inDays;
+            var nenrei = nissuu ~/ 365.2422;
+            var tenunDate = nen * 10000 + nenrei * 10 + tenunMei;
+            tenunNen.add(tenunDate);
+          } else {}
+        }
+        // 日柱
+        nenList = c;
+        tenunMei = 3;
+        for (int i = 0; i < 6; ++i) {
+          nen = nenList.removeAt(0);
+          if (nen != 0) {
+            DateTime date4 = DateTime(nen, 2, 4);
+            var nissuu = date4
+                .difference(date3)
+                .inDays;
+            var nenrei = nissuu ~/ 365.2422;
+            var tenunDate = nen * 10000 + nenrei * 10 + tenunMei;
+            tenunNen.add(tenunDate);
+          } else {}
+        }
+        // 天地徳合
+        nenList = d;
+        tenunMei = 4;
+        for (int i = 0; i < 6; ++i) {
+          nen = nenList.removeAt(0);
+          if (nen != 0) {
+            DateTime date4 = DateTime(nen, 2, 4);
+            var nissuu = date4
+                .difference(date3)
+                .inDays;
+            var nenrei = nissuu ~/ 365.2422;
+            var tenunDate = nen * 10000 + nenrei * 10 + tenunMei;
+            tenunNen.add(tenunDate);
+          } else {}
+        }
+        // 西暦昇順にソートする
+        tenunNen.sort((num1, num2) => num1 - num2);
+        print('■■■■tenunNen:$tenunNen');
+        return tenunNen;
+      }
 
 // 六十干支リストを生成する　（String rokujukkansi　の文字列をつくるため）
 //String rokujuuKansi = '';
