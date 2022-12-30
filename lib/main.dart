@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
 
       title: 'Flutter Demo',
       theme: ThemeData.dark(),
-      home: const MyHomePage(title: '天運三柱推命 ver.4'),
+      home: const MyHomePage(title: '天運三柱推命 ver.4.0.6'),
     );
   }
 }
