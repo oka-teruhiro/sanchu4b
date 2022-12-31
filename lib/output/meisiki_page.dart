@@ -2,7 +2,22 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class MeisikiPage extends StatelessWidget {
-  const MeisikiPage({Key? key}) : super(key: key);
+  late String titleSeinengappi;
+  late String nenchu;
+  late String gechu;
+  late String nichu;
+  late DateTime setuiribi;
+  late int setuirinitisuu;
+
+  MeisikiPage(
+      {Key? key,
+      required this.titleSeinengappi,
+      required this.nenchu,
+      required this.gechu,
+      required this.nichu,
+      required this.setuiribi,
+      required this.setuirinitisuu})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -550,11 +565,12 @@ class MeisikiPage extends StatelessWidget {
                       height: 90,
                       child: Container(
                         color: Colors.black54,
-                        child: const Padding(
+                        child: Padding(
                           padding: EdgeInsets.all(8.0),
                           child: Text(
-                            '太ワクのところは、タップすると、さらに詳しい説明をみることができます。',
-                            style: TextStyle(
+                            '生年月日：$titleSeinengappi・年柱：$nenchu・月柱：$gechu・日柱：$nichu・節入り日：$setuiribi・節入り日数：$setuirinitisuu',
+                            //'太ワクのところは、タップすると、さらに詳しい説明をみることができます。',
+                            style: const TextStyle(
                               fontSize: 16,
                               color: Colors.white70,
                               fontWeight: FontWeight.bold,

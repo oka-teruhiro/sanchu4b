@@ -99,21 +99,21 @@ class Output extends StatelessWidget {
     //節入り日リストから節入り日・時・分を取得する
     //ToDo 節入り日データ1957年から12ヶ月分の場合
     setuIndex = (setuirinenk - 1957) * 12 + (setuirigatuk - 1);
-    print('■■■■■■■■■setuIndex:$setuIndex');
+    //print('■■■■■■■■■setuIndex:$setuIndex');
     setuiriniti = setubi[setuIndex];
-    print('■■■■■■■■■setuiribi:$setuiriniti');
+    //print('■■■■■■■■■setuiribi:$setuiriniti');
     setuiriji = setuji[setuIndex];
-    print('■■■■■■■■■setuiriji:$setuiriji');
+    //print('■■■■■■■■■setuiriji:$setuiriji');
     setuirihun = setuhun[setuIndex];
-    print('■■■■■■■■■setuirihun:$setuirihun');
+    //print('■■■■■■■■■setuirihun:$setuirihun');
     //取得した節入り日・時・分から仮の節入り日を算出する
     seinengappi = DateTime(seinen, seigatu, seiniti);
-    print('■■■■■■■■■seinengappi:$seinengappi');
+    //print('■■■■■■■■■seinengappi:$seinengappi');
     setuiribi =
         DateTime(setuirinenk, setuirigatuk, setuiriniti, setuiriji, setuirihun);
-    print('■■■■■■■■■setuiribi:$setuiribi');
+    //print('■■■■■■■■■setuiribi:$setuiribi');
     setuirinitisuu = seinengappi.difference(setuiribi).inDays;
-    print('■■■■■■■■■setuirinitisuu:$setuirinitisuu');
+    //print('■■■■■■■■■setuirinitisuu:$setuirinitisuu');
     if (setuirinitisuu < 0) {
       if (seinen < 3) {
         setuirinen = seinen - 1;
@@ -134,22 +134,22 @@ class Output extends StatelessWidget {
     setuiribi =
         DateTime(setuirinen, setuirigatu, setuiriniti, setuiriji, setuirihun);
     setuirinitisuu = seinengappi.difference(setuiribi).inDays;
-    print('■■■■■■■■■生年月日：$seinengappi');
-    print('■■■■■■■■■節入り日：$setuiribi');
-    print('■■■■■■■■■節入り日からの日数:$setuirinitisuu');
+    //print('■■■■■■■■■生年月日：$seinengappi');
+    //print('■■■■■■■■■節入り日：$setuiribi');
+    //print('■■■■■■■■■節入り日からの日数:$setuirinitisuu');
 
     //月柱の六十干支を算出する
     gechuNo =
         ((setuirinen * 12 + setuirigatu) - (1900 * 12 + 1) + gechuHosei) % 60;
-    print('■■■■■■■■■gechuNo:$gechuNo');
+    //print('■■■■■■■■■gechuNo:$gechuNo');
     gechu = rokujukkansi.substring((gechuNo * 2), (gechuNo * 2) + 2);
-    print('■■■■■■■■■月柱：$gechu');
+    //print('■■■■■■■■■月柱：$gechu');
 
     //年柱の六十干支を算出する
     nenchuNo = (setuirinen - 1900 + nenchuHosei) % 60;
-    print('■■■■■■■■■nenchuNo:$nenchuNo');
+    //print('■■■■■■■■■nenchuNo:$nenchuNo');
     nenchu = rokujukkansi.substring((nenchuNo * 2), (nenchuNo * 2) + 2);
-    print('■■■■■■■■■年柱：$nenchu');
+    //print('■■■■■■■■■年柱：$nenchu');
 
     //日柱の六十干支を算出する
     //　1900.1.1 (甲辰）から誕生日までの日数を算出する
@@ -168,14 +168,14 @@ class Output extends StatelessWidget {
     String nikkanMoji = jukkan.substring(nikkan, nikkan + 1);
     String nissiMoji = juunisi.substring(nissi, nissi + 1);
     String nichu = "$nikkanMoji$nissiMoji";
-    print('■■■■■■■■■日柱：$nichu');
+    //print('■■■■■■■■■日柱：$nichu');
     // 六十干支リストから日柱の六十干支を検索して、六十干支番号を算出する
     int nichuNo = nanmojime(rokujukkansi, nichu);
-    print('■■■■■■■■■nichuNo:$nichuNo');
+    //print('■■■■■■■■■nichuNo:$nichuNo');
 
     // 干支併臨(日)を算出する　1924年は「甲子」
-    print('■■■■■■■■■nichuNo:$nichuNo');
-    print('■■■■■■■■■seinengappiMoje:$seinengappiMoji');
+    //print('■■■■■■■■■nichuNo:$nichuNo');
+    //print('■■■■■■■■■seinengappiMoje:$seinengappiMoji');
     var nitiKansiHeirin = kansiHeirin(nichuNo, seinengappiMoji);
     print('■■■■■■■■■nitiKansiHeirin:$nitikansiHeirin');
     // 干支併臨(月)を算出する。節入り日時データがないので現時点では算出出来ない。
@@ -221,14 +221,14 @@ class Output extends StatelessWidget {
         tenunMeiMoji[i] = '天地徳合';
         tenunKansi[i] = tentiTokugouMoji;
       } else {}
-      print('■tenunNen:$tenunNen');
-      print('■■tenunMeiMoji:$tenunMeiMoji');
-      print('■■■teunuKansi:$tenunKansi');
+      //print('■tenunNen:$tenunNen');
+      //print('■■tenunMeiMoji:$tenunMeiMoji');
+      //print('■■■teunuKansi:$tenunKansi');
 
       tenunText[i] =
           '${tenunNen[i]}（${tenunKansi[i]}）年（${tenunNenrei[i]}歳）：${tenunMeiMoji[i]}';
       //    as String; //( + tenunNenrei[i] + tenunMeiMoji[i] + tenunKansi[i];
-      print('■■■■tenunText:$tenunText');
+      //print('■■■■tenunText:$tenunText');
     }
     //tenunText = tenunMei + tenunKansi;
     //■■　画面を生成する　■■
@@ -413,9 +413,14 @@ class Output extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const MeisikiPage(
-                            //titleSeinengappi: seinengappiMojia,
-                            ),
+                        builder: (context) => MeisikiPage(
+                          titleSeinengappi: titleSeinengappi,
+                          nenchu: nenchu,
+                          gechu: gechu,
+                          nichu: nichu,
+                          setuiribi: setuiribi,
+                          setuirinitisuu: setuirinitisuu,
+                        ),
                       ),
                     );
                   },
@@ -503,7 +508,7 @@ List kansiHeirin(int kansiSuu, String seinengappiMojiretu) {
       kansiHeirinList.add(nen);
     }
   }
-  print('■■■■kansiHeirinList:$kansiHeirinList');
+  //print('■■■■kansiHeirinList:$kansiHeirinList');
   return kansiHeirinList;
 }
 
@@ -602,7 +607,7 @@ List tenUn(List a, List b, List c, List d, String e) {
   }
   // 西暦昇順にソートする
   tenunNen.sort((num1, num2) => num1 - num2);
-  print('■■■■tenunNen:$tenunNen');
+  //print('■■■■tenunNen:$tenunNen');
   return tenunNen;
 }
 
