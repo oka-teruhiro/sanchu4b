@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:sanchu4b/output/meisiki_page.dart';
 
 class Output extends StatelessWidget {
   Output({Key? key, required this.titleSeinengappi}) : super(key: key);
@@ -72,28 +73,6 @@ class Output extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String tenunMeiMoji0 = '干支併臨';
-    String tenunMeiMoji1 = '干支併臨';
-    String tenunMeiMoji2 = '干支併臨';
-    String tenunMeiMoji3 = '干支併臨';
-    String tenunMeiMoji4 = '干支併臨';
-    String tenunMeiMoji5 = '干支併臨';
-    String tenunMeiMoji6 = '干支併臨';
-    String tenunText0;
-    String tenunText1;
-    String tenunText2;
-    String tenunText3;
-    String tenunText4;
-    String tenunText5;
-    String tenunText6;
-    String tenunkansi0 = '甲子';
-    String tenunkansi1 = '甲子';
-    String tenunkansi2 = '甲子';
-    String tenunkansi3 = '甲子';
-    String tenunkansi4 = '甲子';
-    String tenunkansi5 = '甲子';
-    String tenunkansi6 = '甲子';
-
     //■■画面生成のための各種データを生成する■■
 
     //　受けっとった　生年月日をタイトル型から文字列に変換する
@@ -265,115 +244,114 @@ class Output extends StatelessWidget {
           ),
         ),
       ),
-      body: Column(
-        children: [
-          Expanded(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    children: [
-                      Text(
-                        //'$titleSeinengappi 生まれの',
-                        '$seinengappiMoji 生まれの',
-                        style: const TextStyle(
-                          fontSize: 18,
-                        ),
-                      ),
-                      Text(
-                        'あなたの日干は、$jukkanNameYomiです。',
-                        style: const TextStyle(
-                          fontSize: 18,
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: SizedBox(
-                          width: 220,
-                          height: 36,
-                          child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.blue,
-                              elevation: 4,
-                              shadowColor: Colors.yellow,
-                            ),
-                            onPressed: () {
-                              //Navigator.pushNamed(context, gamenNikkan);
-                            },
-                            child: const Text('日干からみた性格は'),
-                          ),
-                        ),
-                      ),
-                    ],
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                children: [
+                  Text(
+                    //'$titleSeinengappi 生まれの',
+                    '$seinengappiMoji 生まれの',
+                    style: const TextStyle(
+                      fontSize: 17,
+                    ),
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(4.0),
-                  child: Column(
-                    children: [
-                      const Text(
-                        '天運の年は、',
-                        style: TextStyle(
-                          fontSize: 18,
+                  Text(
+                    'あなたの日干は、$jukkanNameYomiです。',
+                    style: const TextStyle(
+                      fontSize: 16,
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: SizedBox(
+                      width: 220,
+                      height: 36,
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.blue,
+                          elevation: 4,
+                          shadowColor: Colors.yellow,
                         ),
+                        onPressed: () {
+                          //Navigator.pushNamed(context, gamenNikkan);
+                        },
+                        child: const Text('日干からみた性格は'),
                       ),
-                      Text(
-                        tenunText[0],
-                        style: const TextStyle(
-                          fontSize: 18,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(4.0),
+              child: Column(
+                children: [
+                  const Text(
+                    '天運の年は、',
+                    style: TextStyle(
+                      fontSize: 18,
+                    ),
+                  ),
+                  Text(
+                    tenunText[0],
+                    style: const TextStyle(
+                      fontSize: 16,
+                    ),
+                  ),
+                  Text(
+                    tenunText[1],
+                    style: const TextStyle(
+                      fontSize: 16,
+                    ),
+                  ),
+                  Text(
+                    tenunText[2],
+                    style: const TextStyle(
+                      fontSize: 16,
+                    ),
+                  ),
+                  Text(
+                    tenunText[3],
+                    style: const TextStyle(
+                      fontSize: 16,
+                    ),
+                  ),
+                  Text(
+                    tenunText[4],
+                    style: const TextStyle(
+                      fontSize: 16,
+                    ),
+                  ),
+                  Text(
+                    tenunText[5],
+                    style: const TextStyle(
+                      fontSize: 16,
+                    ),
+                  ),
+                  Text(
+                    tenunText[6],
+                    style: const TextStyle(
+                      fontSize: 16,
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(4.0),
+                    child: SizedBox(
+                      width: 220,
+                      height: 36,
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.blue,
+                          elevation: 4,
+                          shadowColor: Colors.yellow,
                         ),
-                      ),
-                      Text(
-                        tenunText[1],
-                        style: const TextStyle(
-                          fontSize: 18,
-                        ),
-                      ),
-                      Text(
-                        tenunText[2],
-                        style: const TextStyle(
-                          fontSize: 18,
-                        ),
-                      ),
-                      Text(
-                        tenunText[3],
-                        style: const TextStyle(
-                          fontSize: 18,
-                        ),
-                      ),
-                      Text(
-                        tenunText[4],
-                        style: const TextStyle(
-                          fontSize: 18,
-                        ),
-                      ),
-                      Text(
-                        tenunText[5],
-                        style: const TextStyle(
-                          fontSize: 18,
-                        ),
-                      ),
-                      Text(
-                        tenunText[6],
-                        style: const TextStyle(
-                          fontSize: 18,
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(4.0),
-                        child: SizedBox(
-                          width: 220,
-                          height: 36,
-                          child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.blue,
-                              elevation: 4,
-                              shadowColor: Colors.yellow,
-                            ),
-                            onPressed: () {
-                              /*Navigator.push(
+                        onPressed: () {
+                          /*Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) => const Tentitokugou(
@@ -381,91 +359,90 @@ class Output extends StatelessWidget {
                                   ),
                                 ),
                               );*/
-                            },
-                            child: const Text('天地徳合/干支併臨とは'),
-                          ),
-                        ),
+                        },
+                        child: const Text('天地徳合/干支併臨とは'),
                       ),
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(4.0),
-                  child: Column(
-                    children: [
-                      const Text(
-                        '命式は',
-                        style: TextStyle(
-                          fontSize: 18,
-                        ),
-                      ),
-                      Text(
-                        '年柱：$nenchu',
-                        style: const TextStyle(
-                          fontSize: 18,
-                        ),
-                      ),
-                      Text(
-                        '月柱：$gechu',
-                        style: const TextStyle(
-                          fontSize: 18,
-                        ),
-                      ),
-                      Text(
-                        '日柱：$nichu',
-                        style: const TextStyle(
-                          fontSize: 18,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(4.0),
-                  child: SizedBox(
-                    width: 220,
-                    height: 36,
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.blue,
-                        elevation: 4,
-                        shadowColor: Colors.yellow,
-                      ),
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
-                      child: const Text('さらに詳しくみる'),
                     ),
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(4.0),
-                  child: SizedBox(
-                    width: 220,
-                    height: 36,
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.blue,
-                        elevation: 4,
-                        shadowColor: Colors.yellow,
-                      ),
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
-                      child: const Text('戻る'),
-                    ),
-                  ),
-                ),
-                Container(
-                  width: double.infinity,
-                  height: 0, //　縦幅の低い端末はこの値を下げる
-                  color: Colors.white70,
-                  child: const Text(''),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-        ],
+            Padding(
+              padding: const EdgeInsets.all(4.0),
+              child: Column(
+                children: [
+                  const Text(
+                    '命式は',
+                    style: TextStyle(
+                      fontSize: 18,
+                    ),
+                  ),
+                  Text(
+                    '年柱：$nenchu',
+                    style: const TextStyle(
+                      fontSize: 16,
+                    ),
+                  ),
+                  Text(
+                    '月柱：$gechu',
+                    style: const TextStyle(
+                      fontSize: 16,
+                    ),
+                  ),
+                  Text(
+                    '日柱：$nichu',
+                    style: const TextStyle(
+                      fontSize: 16,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(4.0),
+              child: SizedBox(
+                width: 220,
+                height: 36,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.blue,
+                    elevation: 4,
+                    shadowColor: Colors.yellow,
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const MeisikiPage(
+                            //titleSeinengappi: seinengappiMojia,
+                            ),
+                      ),
+                    );
+                  },
+                  child: const Text('さらに詳しくみる'),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(4.0),
+              child: SizedBox(
+                width: 220,
+                height: 36,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.blue,
+                    elevation: 4,
+                    shadowColor: Colors.yellow,
+                  ),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  child: const Text('戻る'),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

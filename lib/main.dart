@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
 
       title: 'Flutter Demo',
       theme: ThemeData.dark(),
-      home: const MyHomePage(title: '天運三柱推命 ver.4.0.6'),
+      home: const MyHomePage(title: '天運三柱推命 ver.4'),
     );
   }
 }
@@ -239,7 +239,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
-        title: const Text('天運三柱推命 ver.4',
+        title: const Text('天運三柱推命 ver.4.0.7',
             style: TextStyle(
               color: Colors.pinkAccent,
               fontWeight: FontWeight.bold,
