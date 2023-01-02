@@ -7,6 +7,11 @@ class MeisikiPage extends StatelessWidget {
   late String gechu;
   late String nichu;
   late DateTime setuiribi;
+  late int setuirinen;
+  late int setuirigatu;
+  late int setuiriniti;
+  late int setuiriji;
+  late int setuirihun;
   late int setuirinitisuu;
 
   MeisikiPage(
@@ -16,6 +21,11 @@ class MeisikiPage extends StatelessWidget {
       required this.gechu,
       required this.nichu,
       required this.setuiribi,
+      required this.setuirinen,
+      required this.setuirigatu,
+      required this.setuiriniti,
+      required this.setuiriji,
+      required this.setuirihun,
       required this.setuirinitisuu})
       : super(key: key);
 
@@ -38,11 +48,11 @@ class MeisikiPage extends StatelessWidget {
     seinitiMoji = titleSeinengappi.substring(8, 10);
     //年柱・月柱・日柱から年干・年支・月干・月支・日干・日支を作成する
     nenkan = nenchu.substring(0, 1);
-    nenkan = nenchu.substring(1, 2);
-    nenkan = gechu.substring(0, 1);
-    nenkan = gechu.substring(1, 2);
-    nenkan = nichu.substring(0, 1);
-    nenkan = nichu.substring(1, 2);
+    nensi = nenchu.substring(1, 2);
+    gatukan = gechu.substring(0, 1);
+    gatusi = gechu.substring(1, 2);
+    nitikan = nichu.substring(0, 1);
+    nitisi = nichu.substring(1, 2);
 
     return Scaffold(
       appBar: AppBar(
@@ -211,6 +221,14 @@ class MeisikiPage extends StatelessWidget {
                                     color: Colors.tealAccent,
                                     width: 5,
                                   )),
+                              child: Center(
+                                child: Text(
+                                  nitikan,
+                                  style: const TextStyle(
+                                    fontSize: 32,
+                                  ),
+                                ),
+                              ),
                               //color: Colors.black,
                             ),
                           ),
@@ -223,6 +241,14 @@ class MeisikiPage extends StatelessWidget {
                                     color: Colors.tealAccent,
                                     width: 1,
                                   )),
+                              child: Center(
+                                child: Text(
+                                  gatukan,
+                                  style: const TextStyle(
+                                    fontSize: 32,
+                                  ),
+                                ),
+                              ),
                             ),
                           ),
                           SizedBox(
@@ -234,6 +260,14 @@ class MeisikiPage extends StatelessWidget {
                                     color: Colors.tealAccent,
                                     width: 1,
                                   )),
+                              child: Center(
+                                child: Text(
+                                  nenkan,
+                                  style: const TextStyle(
+                                    fontSize: 32,
+                                  ),
+                                ),
+                              ),
                             ),
                           ),
                           SizedBox(
@@ -274,6 +308,14 @@ class MeisikiPage extends StatelessWidget {
                                     color: Colors.tealAccent,
                                     width: 1,
                                   )),
+                              child: Center(
+                                child: Text(
+                                  nitisi,
+                                  style: const TextStyle(
+                                    fontSize: 32,
+                                  ),
+                                ),
+                              ),
                               //color: Colors.black,
                             ),
                           ),
@@ -286,6 +328,14 @@ class MeisikiPage extends StatelessWidget {
                                     color: Colors.tealAccent,
                                     width: 1,
                                   )),
+                              child: Center(
+                                child: Text(
+                                  gatusi,
+                                  style: const TextStyle(
+                                    fontSize: 32,
+                                  ),
+                                ),
+                              ),
                             ),
                           ),
                           SizedBox(
@@ -297,6 +347,14 @@ class MeisikiPage extends StatelessWidget {
                                     color: Colors.tealAccent,
                                     width: 1,
                                   )),
+                              child: Center(
+                                child: Text(
+                                  nensi,
+                                  style: const TextStyle(
+                                    fontSize: 32,
+                                  ),
+                                ),
+                              ),
                             ),
                           ),
                           SizedBox(
@@ -353,7 +411,7 @@ class MeisikiPage extends StatelessWidget {
                                                 )),
                                           ),
                                         ),
-                                        SizedBox(
+                                        const SizedBox(
                                           width: 30,
                                         ),
                                         SizedBox(
@@ -717,14 +775,26 @@ class MeisikiPage extends StatelessWidget {
                         color: Colors.black54,
                         child: Padding(
                           padding: EdgeInsets.all(8.0),
-                          child: Text(
-                            '生年月日：$titleSeinengappi・年柱：$nenchu・月柱：$gechu・日柱：$nichu・節入り日：$setuiribi・節入り日数：$setuirinitisuu',
-                            //'太ワクのところは、タップすると、さらに詳しい説明をみることができます。',
-                            style: const TextStyle(
-                              fontSize: 16,
-                              color: Colors.white70,
-                              fontWeight: FontWeight.bold,
-                            ),
+                          child: Column(
+                            children: [
+                              Text(
+                                '節入り日：$setuirinen-$setuirigatu-$setuiriniti $setuiriji:$setuirihun・節入り日から$setuirinitisuu日目',
+                                //'太ワクのところは、タップすると、さらに詳しい説明をみることができます。',
+                                style: const TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.white70,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              const Text(
+                                '太ワクのところは、タップすると、さらに詳しい説明をみることができます。',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.white70,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ),
