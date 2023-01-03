@@ -1,6 +1,17 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../nikkan/nikkan_hinoe.dart';
+import '../nikkan/nikkan_hinoto.dart';
+import '../nikkan/nikkan_kanoe.dart';
+import '../nikkan/nikkan_kanoto.dart';
+import '../nikkan/nikkan_kinoe.dart';
+import '../nikkan/nikkan_kinoto.dart';
+import '../nikkan/nikkan_mizunoe.dart';
+import '../nikkan/nikkan_mizzunoto.dart';
+import '../nikkan/nikkan_tutinoe.dart';
+import '../nikkan/nikkan_tutinoto.dart';
+
 class MeisikiPage extends StatelessWidget {
   late String titleSeinengappi;
   late String nenchu;
@@ -228,11 +239,87 @@ class MeisikiPage extends StatelessWidget {
                                     width: 5,
                                   )),
                               child: Center(
-                                child: Text(
-                                  nitikan,
-                                  style: const TextStyle(
-                                    fontSize: 32,
+                                child: TextButton(
+                                  child: Text(
+                                    nitikan,
+                                    style: const TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 32,
+                                    ),
                                   ),
+                                  onPressed: () {
+                                    if (nitikan == '甲') {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                const NikkanKinoe(),
+                                          ));
+                                    } else if (nitikan == '乙') {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                const NikkanKinoto(),
+                                          ));
+                                    } else if (nitikan == '丙') {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                const NikkanHinoe(),
+                                          ));
+                                    } else if (nitikan == '丁') {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                const NikkanHinoto(),
+                                          ));
+                                    } else if (nitikan == '戊') {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                const NikkanTutinoe(),
+                                          ));
+                                    } else if (nitikan == '己') {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                const NikkanTutinoto(),
+                                          ));
+                                    } else if (nitikan == '庚') {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                const NikkanKanoe(),
+                                          ));
+                                    } else if (nitikan == '辛') {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                const NikkanKanoto(),
+                                          ));
+                                    } else if (nitikan == '壬') {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                const NikkanMizunoe(),
+                                          ));
+                                    } else {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                const NikkanMizunoto(),
+                                          ));
+                                    }
+                                  },
                                 ),
                               ),
                               //color: Colors.black,

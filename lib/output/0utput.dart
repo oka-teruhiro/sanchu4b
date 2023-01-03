@@ -1,6 +1,17 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:sanchu4b/nikkan/nikkan_hinoe.dart';
+import 'package:sanchu4b/nikkan/nikkan_hinoto.dart';
+import 'package:sanchu4b/nikkan/nikkan_kanoe.dart';
+import 'package:sanchu4b/nikkan/nikkan_kanoto.dart';
+import 'package:sanchu4b/nikkan/nikkan_kinoe.dart';
+import 'package:sanchu4b/nikkan/nikkan_kinoto.dart';
+import 'package:sanchu4b/nikkan/nikkan_tutinoto.dart';
 import 'package:sanchu4b/output/meisiki_page.dart';
+
+import '../nikkan/nikkan_mizunoe.dart';
+import '../nikkan/nikkan_mizzunoto.dart';
+import '../nikkan/nikkan_tutinoe.dart';
 
 class Output extends StatelessWidget {
   Output({Key? key, required this.titleSeinengappi}) : super(key: key);
@@ -203,7 +214,7 @@ class Output extends StatelessWidget {
     // 天運リストの１番目のテキスト文を作成する
 
     for (int i = 0; i < 7; ++i) {
-      print('■■■■■■■■■tenun:$tenun');
+      //print('■■■■■■■■■tenun:$tenun');
       tenun[i] = tenunList.removeAt(0);
       tenunNen[i] = tenun[i] ~/ 10000;
       tenunNenrei[i] = tenun[i] % 10000 ~/ 10;
@@ -278,7 +289,67 @@ class Output extends StatelessWidget {
                           shadowColor: Colors.yellow,
                         ),
                         onPressed: () {
-                          //Navigator.pushNamed(context, gamenNikkan);
+                          if (nikkan == 0) {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const NikkanKinoe(),
+                                ));
+                          } else if (nikkan == 1) {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const NikkanKinoto(),
+                                ));
+                          } else if (nikkan == 2) {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const NikkanHinoe(),
+                                ));
+                          } else if (nikkan == 3) {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const NikkanHinoto(),
+                                ));
+                          } else if (nikkan == 4) {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const NikkanTutinoe(),
+                                ));
+                          } else if (nikkan == 5) {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const NikkanTutinoto(),
+                                ));
+                          } else if (nikkan == 6) {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const NikkanKanoe(),
+                                ));
+                          } else if (nikkan == 7) {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const NikkanKanoto(),
+                                ));
+                          } else if (nikkan == 8) {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const NikkanMizunoe(),
+                                ));
+                          } else {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const NikkanMizunoto(),
+                                ));
+                          }
                         },
                         child: const Text('日干からみた性格は'),
                       ),
