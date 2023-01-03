@@ -6,7 +6,10 @@ class MeisikiPage extends StatelessWidget {
   late String nenchu;
   late String gechu;
   late String nichu;
-  late DateTime setuiribi;
+  //late DateTime setuiribi;
+  late int seinen;
+  late int seigatu;
+  late int seiniti;
   late int setuirinen;
   late int setuirigatu;
   late int setuiriniti;
@@ -20,7 +23,10 @@ class MeisikiPage extends StatelessWidget {
       required this.nenchu,
       required this.gechu,
       required this.nichu,
-      required this.setuiribi,
+      //required this.setuiribi,
+      required this.seinen,
+      required this.seigatu,
+      required this.seiniti,
       required this.setuirinen,
       required this.setuirigatu,
       required this.setuiriniti,
@@ -67,7 +73,7 @@ class MeisikiPage extends StatelessWidget {
       body: Container(
         color: Colors.black,
         child: SizedBox(
-          height: 660,
+          height: 668,
           child: Padding(
             padding: EdgeInsets.all(4.0),
             child: Container(
@@ -95,7 +101,7 @@ class MeisikiPage extends StatelessWidget {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Text(
-                                      seinitiMoji,
+                                      '$seiniti',
                                       style: const TextStyle(
                                         fontSize: 24,
                                       ),
@@ -125,7 +131,7 @@ class MeisikiPage extends StatelessWidget {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Text(
-                                      seigatuMoji,
+                                      '$seigatu',
                                       style: const TextStyle(
                                         fontSize: 24,
                                       ),
@@ -155,7 +161,7 @@ class MeisikiPage extends StatelessWidget {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Text(
-                                      seinenMoji,
+                                      '$seinen',
                                       style: const TextStyle(
                                         fontSize: 24,
                                       ),
@@ -768,24 +774,38 @@ class MeisikiPage extends StatelessWidget {
                         ],
                       ),
                     ),
+                    SizedBox(
+                      height: 30,
+                      width: 350,
+                      child: Container(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(12),
+                            border: Border.all(
+                              color: Colors.tealAccent,
+                              width: 1,
+                            )),
+                        child: Center(
+                          child: Text(
+                            '節入り日（ $setuirinen-$setuirigatu-$setuiriniti $setuiriji:$setuirihun ）から$setuirinitisuu日目',
+                            //'太ワクのところは、タップすると、さらに詳しい説明をみることができます。',
+                            style: const TextStyle(
+                              fontSize: 16,
+                              color: Colors.white70,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
                     //■■■■■■■■■取説の行■■■■■■■■■
                     SizedBox(
-                      height: 90,
+                      height: 70,
                       child: Container(
                         color: Colors.black54,
                         child: Padding(
                           padding: EdgeInsets.all(8.0),
                           child: Column(
                             children: [
-                              Text(
-                                '節入り日：$setuirinen-$setuirigatu-$setuiriniti $setuiriji:$setuirihun・節入り日から$setuirinitisuu日目',
-                                //'太ワクのところは、タップすると、さらに詳しい説明をみることができます。',
-                                style: const TextStyle(
-                                  fontSize: 16,
-                                  color: Colors.white70,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
                               const Text(
                                 '太ワクのところは、タップすると、さらに詳しい説明をみることができます。',
                                 style: TextStyle(

@@ -177,7 +177,7 @@ class Output extends StatelessWidget {
     //print('■■■■■■■■■nichuNo:$nichuNo');
     //print('■■■■■■■■■seinengappiMoje:$seinengappiMoji');
     var nitiKansiHeirin = kansiHeirin(nichuNo, seinengappiMoji);
-    print('■■■■■■■■■nitiKansiHeirin:$nitikansiHeirin');
+    //print('■■■■■■■■■nitiKansiHeirin:$nitikansiHeirin');
     // 干支併臨(月)を算出する。節入り日時データがないので現時点では算出出来ない。
     var getuKansiHeirin = kansiHeirin(gechuNo, seinengappiMoji);
     // 干支併臨(年)を算出する
@@ -418,7 +418,10 @@ class Output extends StatelessWidget {
                           nenchu: nenchu,
                           gechu: gechu,
                           nichu: nichu,
-                          setuiribi: setuiribi,
+                          //setuiribi: setuiribi,
+                          seinen: seinen,
+                          seigatu: seigatu,
+                          seiniti: seiniti,
                           setuirinen: setuirinen,
                           setuirigatu: setuirigatu,
                           setuiriniti: setuiriniti,
