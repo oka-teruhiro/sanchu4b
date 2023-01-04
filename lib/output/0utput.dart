@@ -1,5 +1,5 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:sanchu4b/kaisetu/tenti_tokugou.dart';
 import 'package:sanchu4b/nikkan/nikkan_hinoe.dart';
 import 'package:sanchu4b/nikkan/nikkan_hinoto.dart';
 import 'package:sanchu4b/nikkan/nikkan_kanoe.dart';
@@ -16,25 +16,25 @@ import '../nikkan/nikkan_tutinoe.dart';
 class Output extends StatelessWidget {
   Output({Key? key, required this.titleSeinengappi}) : super(key: key);
 
-  final String titleSeinengappi;
+  String titleSeinengappi;
 
   //■■　変数初期設定　■■
-  final DateTime date0 = DateTime(1900, 1, 1);
-  final int nikkan = -1;
+  DateTime date0 = DateTime(1900, 1, 1);
+  int nikkan = -1;
   //List<String> nikkanName = ["甲", "乙", "丙", "丁", "戊", "己", "庚", "辛", "壬", "癸"];
-  final String jukkan = "甲乙丙丁戊己庚辛壬癸"; //十干リスト
-  final String jukkanYomi = "甲【きのえ】　乙【きのと】　丙【ひのえ】　丁【ひのと】　戊【つちのえ】"
+  String jukkan = "甲乙丙丁戊己庚辛壬癸"; //十干リスト
+  String jukkanYomi = "甲【きのえ】　乙【きのと】　丙【ひのえ】　丁【ひのと】　戊【つちのえ】"
       "己【つちのと】庚【かのえ】　辛【かのと】　壬【みずのえ】癸【みずのと】"; //十干リスト【よみ】
-  final String juunisi = "子丑寅卯辰巳午未申酉戌亥"; //十二支リスト
-  final String rokujukkansi = "甲子乙丑丙寅丁卯戊辰己巳庚午辛未壬申癸酉"
+  String juunisi = "子丑寅卯辰巳午未申酉戌亥"; //十二支リスト
+  String rokujukkansi = "甲子乙丑丙寅丁卯戊辰己巳庚午辛未壬申癸酉"
       "甲戌乙亥丙子丁丑戊寅己卯庚辰辛巳壬午癸未"
       "甲申乙酉丙戌丁亥戊子己丑庚寅辛卯壬辰癸巳"
       "甲午乙未丙申丁酉戊戌己亥庚子辛丑壬寅癸卯"
       "甲辰乙巳丙午丁未戊申己酉庚戌辛亥壬子癸丑"
       "甲寅乙卯丙辰丁巳戊午己未庚申辛酉壬戌癸亥"; //
-  final void jukkanName = null;
-  final List nitikansiHeirin = [0, 0, 0, 0, 0, 0];
-  final List kansiHeirinList = [0, 0, 0, 0, 0, 0];
+  void jukkanName = null;
+  List nitikansiHeirin = [0, 0, 0, 0, 0, 0];
+  List kansiHeirinList = [0, 0, 0, 0, 0, 0];
 
   //ver.4のための追加(2022.12.21)
   //節入り日のデータ
@@ -173,7 +173,7 @@ class Output extends StatelessWidget {
     //　日支を算出する
     var nissi = (nissuu + 10) % 12;
     //　日干画面遷移用の文字データを生成する
-    var gamenNikkan = '/nikkan$nikkan';
+    //var gamenNikkan = '/nikkan$nikkan';
     // 六十干支から干支併臨を算出する
     //日柱の六十干支を算出する
     String nikkanMoji = jukkan.substring(nikkan, nikkan + 1);
@@ -422,14 +422,12 @@ class Output extends StatelessWidget {
                           shadowColor: Colors.yellow,
                         ),
                         onPressed: () {
-                          /*Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => const Tentitokugou(
-                                    //titleSeinengappi: seinengappiMoji,
-                                  ),
-                                ),
-                              );*/
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const TentiTokugou(),
+                            ),
+                          );
                         },
                         child: const Text('天地徳合/干支併臨とは'),
                       ),
@@ -485,7 +483,7 @@ class Output extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (context) => MeisikiPage(
-                          titleSeinengappi: titleSeinengappi,
+                          //titleSeinengappi: titleSeinengappi,
                           nenchu: nenchu,
                           gechu: gechu,
                           nichu: nichu,

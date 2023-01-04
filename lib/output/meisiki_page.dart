@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../nikkan/nikkan_hinoe.dart';
@@ -13,28 +12,24 @@ import '../nikkan/nikkan_tutinoe.dart';
 import '../nikkan/nikkan_tutinoto.dart';
 
 class MeisikiPage extends StatelessWidget {
-  late String titleSeinengappi;
-  late String nenchu;
-  late String gechu;
-  late String nichu;
-  //late DateTime setuiribi;
-  late int seinen;
-  late int seigatu;
-  late int seiniti;
-  late int setuirinen;
-  late int setuirigatu;
-  late int setuiriniti;
-  late int setuiriji;
-  late int setuirihun;
-  late int setuirinitisuu;
+  String nenchu; //年柱
+  String gechu; //月柱
+  String nichu; //日柱
+  int seinen; //生年
+  int seigatu; //生月
+  int seiniti; //生日
+  int setuirinen; //節入り年
+  int setuirigatu; //節入り月
+  int setuiriniti; //節入り日
+  int setuiriji; //節入り時
+  int setuirihun; //節入り分
+  int setuirinitisuu; //節入り日からの日数（節入り日は第1日目）
 
   MeisikiPage(
       {Key? key,
-      required this.titleSeinengappi,
       required this.nenchu,
       required this.gechu,
       required this.nichu,
-      //required this.setuiribi,
       required this.seinen,
       required this.seigatu,
       required this.seiniti,
@@ -47,9 +42,6 @@ class MeisikiPage extends StatelessWidget {
       : super(key: key);
 
   //このページで使う変数を定義する
-  String seinenMoji = '1900';
-  String seigatuMoji = '01';
-  String seinitiMoji = '01';
   String nenkan = '甲';
   String nensi = '子';
   String gatukan = '甲';
@@ -59,10 +51,6 @@ class MeisikiPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //生年月日から生年・生月・生日を取り出す。
-    seinenMoji = titleSeinengappi.substring(0, 4);
-    seigatuMoji = titleSeinengappi.substring(5, 7);
-    seinitiMoji = titleSeinengappi.substring(8, 10);
     //年柱・月柱・日柱から年干・年支・月干・月支・日干・日支を作成する
     nenkan = nenchu.substring(0, 1);
     nensi = nenchu.substring(1, 2);
@@ -86,8 +74,8 @@ class MeisikiPage extends StatelessWidget {
         child: SizedBox(
           height: 668,
           child: Padding(
-            padding: EdgeInsets.all(4.0),
-            child: Container(
+            padding: const EdgeInsets.all(4.0),
+            child: SizedBox(
               height: 44,
               child: Center(
                 child: Column(
@@ -322,7 +310,6 @@ class MeisikiPage extends StatelessWidget {
                                   },
                                 ),
                               ),
-                              //color: Colors.black,
                             ),
                           ),
                           SizedBox(
@@ -409,7 +396,6 @@ class MeisikiPage extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                              //color: Colors.black,
                             ),
                           ),
                           SizedBox(
@@ -481,78 +467,75 @@ class MeisikiPage extends StatelessWidget {
                         children: [
                           SizedBox(
                             width: 270,
-                            child: Container(
-                              child: Column(
-                                children: [
-                                  SizedBox(
-                                    height: 35,
-                                    child: Row(
-                                      children: [
-                                        SizedBox(
-                                          width: 30,
-                                          child: Container(),
+                            child: Column(
+                              children: [
+                                SizedBox(
+                                  height: 35,
+                                  child: Row(
+                                    children: [
+                                      SizedBox(
+                                        width: 30,
+                                        child: Container(),
+                                      ),
+                                      SizedBox(
+                                        width: 90,
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(12),
+                                              border: Border.all(
+                                                color: Colors.tealAccent,
+                                                width: 1,
+                                              )),
                                         ),
-                                        SizedBox(
-                                          width: 90,
-                                          child: Container(
-                                            decoration: BoxDecoration(
-                                                borderRadius:
-                                                    BorderRadius.circular(12),
-                                                border: Border.all(
-                                                  color: Colors.tealAccent,
-                                                  width: 1,
-                                                )),
-                                          ),
+                                      ),
+                                      const SizedBox(
+                                        width: 30,
+                                      ),
+                                      SizedBox(
+                                        width: 90,
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(12),
+                                              border: Border.all(
+                                                color: Colors.tealAccent,
+                                                width: 1,
+                                              )),
                                         ),
-                                        const SizedBox(
-                                          width: 30,
-                                        ),
-                                        SizedBox(
-                                          width: 90,
-                                          child: Container(
-                                            decoration: BoxDecoration(
-                                                borderRadius:
-                                                    BorderRadius.circular(12),
-                                                border: Border.all(
-                                                  color: Colors.tealAccent,
-                                                  width: 1,
-                                                )),
-                                          ),
-                                        ),
-                                        const SizedBox(
-                                          width: 30,
-                                        ),
-                                      ],
-                                    ),
+                                      ),
+                                      const SizedBox(
+                                        width: 30,
+                                      ),
+                                    ],
                                   ),
-                                  SizedBox(
-                                    height: 35,
-                                    child: Row(
-                                      children: [
-                                        const SizedBox(
-                                          width: 60,
+                                ),
+                                SizedBox(
+                                  height: 35,
+                                  child: Row(
+                                    children: [
+                                      const SizedBox(
+                                        width: 60,
+                                      ),
+                                      SizedBox(
+                                        width: 150,
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(12),
+                                              border: Border.all(
+                                                color: Colors.tealAccent,
+                                                width: 1,
+                                              )),
                                         ),
-                                        SizedBox(
-                                          width: 150,
-                                          child: Container(
-                                            decoration: BoxDecoration(
-                                                borderRadius:
-                                                    BorderRadius.circular(12),
-                                                border: Border.all(
-                                                  color: Colors.tealAccent,
-                                                  width: 1,
-                                                )),
-                                          ),
-                                        ),
-                                        const SizedBox(
-                                          width: 60,
-                                        ),
-                                      ],
-                                    ),
+                                      ),
+                                      const SizedBox(
+                                        width: 60,
+                                      ),
+                                    ],
                                   ),
-                                ],
-                              ),
-                              //color: Colors.black,
+                                ),
+                              ],
                             ),
                           ),
                           SizedBox(
@@ -603,7 +586,6 @@ class MeisikiPage extends StatelessWidget {
                                     color: Colors.tealAccent,
                                     width: 1,
                                   )),
-                              //color: Colors.black,
                             ),
                           ),
                           SizedBox(
@@ -659,104 +641,89 @@ class MeisikiPage extends StatelessWidget {
                         children: [
                           SizedBox(
                             width: 90,
-                            child: Container(
-                              //color: Colors.black,
-                              child: Column(
-                                children: [
-                                  SizedBox(
-                                    height: 70,
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(12),
-                                          border: Border.all(
-                                            color: Colors.tealAccent,
-                                            width: 1,
-                                          )),
-                                    ),
+                            child: Column(
+                              children: [
+                                SizedBox(
+                                  height: 70,
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(12),
+                                        border: Border.all(
+                                          color: Colors.tealAccent,
+                                          width: 1,
+                                        )),
                                   ),
-                                  SizedBox(
-                                    height: 70,
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(12),
-                                          border: Border.all(
-                                            color: Colors.tealAccent,
-                                            width: 1,
-                                          )),
-                                    ),
+                                ),
+                                SizedBox(
+                                  height: 70,
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(12),
+                                        border: Border.all(
+                                          color: Colors.tealAccent,
+                                          width: 1,
+                                        )),
                                   ),
-                                ],
-                              ),
+                                ),
+                              ],
                             ),
                           ),
                           SizedBox(
                             width: 90,
-                            child: Container(
-                              //color: Colors.black,
-                              child: Column(
-                                children: [
-                                  SizedBox(
-                                    height: 70,
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(12),
-                                          border: Border.all(
-                                            color: Colors.tealAccent,
-                                            width: 1,
-                                          )),
-                                    ),
+                            child: Column(
+                              children: [
+                                SizedBox(
+                                  height: 70,
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(12),
+                                        border: Border.all(
+                                          color: Colors.tealAccent,
+                                          width: 1,
+                                        )),
                                   ),
-                                  SizedBox(
-                                    height: 70,
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(12),
-                                          border: Border.all(
-                                            color: Colors.tealAccent,
-                                            width: 1,
-                                          )),
-                                    ),
+                                ),
+                                SizedBox(
+                                  height: 70,
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(12),
+                                        border: Border.all(
+                                          color: Colors.tealAccent,
+                                          width: 1,
+                                        )),
                                   ),
-                                ],
-                              ),
+                                ),
+                              ],
                             ),
                           ),
                           SizedBox(
                             width: 90,
-                            child: Container(
-                              //color: Colors.black,
-                              child: Column(
-                                children: [
-                                  SizedBox(
-                                    height: 70,
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(12),
-                                          border: Border.all(
-                                            color: Colors.tealAccent,
-                                            width: 1,
-                                          )),
-                                    ),
+                            child: Column(
+                              children: [
+                                SizedBox(
+                                  height: 70,
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(12),
+                                        border: Border.all(
+                                          color: Colors.tealAccent,
+                                          width: 1,
+                                        )),
                                   ),
-                                  SizedBox(
-                                    height: 70,
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(12),
-                                          border: Border.all(
-                                            color: Colors.tealAccent,
-                                            width: 1,
-                                          )),
-                                    ),
+                                ),
+                                SizedBox(
+                                  height: 70,
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(12),
+                                        border: Border.all(
+                                          color: Colors.tealAccent,
+                                          width: 1,
+                                        )),
                                   ),
-                                ],
-                              ),
+                                ),
+                              ],
                             ),
                           ),
                           SizedBox(
@@ -813,7 +780,6 @@ class MeisikiPage extends StatelessWidget {
                                     color: Colors.tealAccent,
                                     width: 1,
                                   )),
-                              //color: Colors.black,
                             ),
                           ),
                           SizedBox(
@@ -890,10 +856,10 @@ class MeisikiPage extends StatelessWidget {
                       child: Container(
                         color: Colors.black54,
                         child: Padding(
-                          padding: EdgeInsets.all(8.0),
+                          padding: const EdgeInsets.all(8.0),
                           child: Column(
-                            children: [
-                              const Text(
+                            children: const [
+                              Text(
                                 '太ワクのところは、タップすると、さらに詳しい説明をみることができます。',
                                 style: TextStyle(
                                   fontSize: 16,
