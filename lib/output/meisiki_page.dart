@@ -48,6 +48,10 @@ class MeisikiPage extends StatelessWidget {
   String gatusi = '子';
   String nitikan = '甲';
   String nitisi = '子';
+  //String zouKan = '甲';
+  String zouKanNen = '甲';
+  String zouKanTuki = '甲';
+  String zouKanNiti = '甲';
 
   @override
   Widget build(BuildContext context) {
@@ -58,6 +62,10 @@ class MeisikiPage extends StatelessWidget {
     gatusi = gechu.substring(1, 2);
     nitikan = nichu.substring(0, 1);
     nitisi = nichu.substring(1, 2);
+    //蔵干を算出する
+    zouKanNen = zouKan(nensi, setuirinitisuu);
+    zouKanTuki = zouKan(gatusi, setuirinitisuu);
+    zouKanNiti = zouKan(nitisi, setuirinitisuu);
 
     return Scaffold(
       appBar: AppBar(
@@ -579,6 +587,7 @@ class MeisikiPage extends StatelessWidget {
                         children: [
                           SizedBox(
                             width: 90,
+                            height: 70,
                             child: Container(
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(12),
@@ -586,10 +595,18 @@ class MeisikiPage extends StatelessWidget {
                                     color: Colors.tealAccent,
                                     width: 1,
                                   )),
+                              child: Center(
+                                  child: Text(
+                                zouKanNiti,
+                                style: const TextStyle(
+                                  fontSize: 32,
+                                ),
+                              )),
                             ),
                           ),
                           SizedBox(
                             width: 90,
+                            height: 70,
                             child: Container(
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(12),
@@ -597,10 +614,18 @@ class MeisikiPage extends StatelessWidget {
                                     color: Colors.tealAccent,
                                     width: 1,
                                   )),
+                              child: Center(
+                                  child: Text(
+                                zouKanTuki,
+                                style: const TextStyle(
+                                  fontSize: 32,
+                                ),
+                              )),
                             ),
                           ),
                           SizedBox(
                             width: 90,
+                            height: 70,
                             child: Container(
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(12),
@@ -608,6 +633,13 @@ class MeisikiPage extends StatelessWidget {
                                     color: Colors.tealAccent,
                                     width: 1,
                                   )),
+                              child: Center(
+                                  child: Text(
+                                zouKanNen,
+                                style: const TextStyle(
+                                  fontSize: 32,
+                                ),
+                              )),
                             ),
                           ),
                           SizedBox(
@@ -881,4 +913,66 @@ class MeisikiPage extends StatelessWidget {
       ),
     );
   }
+}
+
+// 関数定義　地支から蔵干を算出する
+//  c = zouKan(a, b)
+//   a: 地支を表す文字列　（'子','丑','寅',・・・,'戌','亥')
+//   b: 節入り日からの日数を表す数字　（1～31）（節入り日は、1　とする）
+//   c: 蔵干を表す文字列　（'甲','乙','甲',・・・'壬','癸')
+zouKan(String a, int b) {
+  //蔵干表
+  String zouKanHyou = //蔵干表
+      '戊戊戊戊戊戊戊丙丙丙丙丙丙丙甲甲甲甲甲甲甲甲甲甲甲甲甲甲甲・・' //寅
+      '甲甲甲甲甲甲甲甲甲甲乙乙乙乙乙乙乙乙乙乙乙乙乙乙乙乙乙乙乙乙乙' //卯
+      '乙乙乙乙乙乙乙乙乙癸癸癸戊戊戊戊戊戊戊戊戊戊戊戊戊戊戊戊戊戊・' //辰
+      '戊戊戊戊戊庚庚庚庚庚庚庚庚庚庚丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙' //巳
+      '丙丙丙丙丙丙丙丙丙丙己己己己己己己己己己丁丁丁丁丁丁丁丁丁丁・' //午
+      '丁丁丁丁丁丁丁丁丁乙乙乙己己己己己己己己己己己己己己己己己己己' //未
+      '己己己己己己己壬壬壬壬壬壬庚庚庚庚庚庚庚庚庚庚庚庚庚庚庚庚庚庚' //申
+      '庚庚庚庚庚庚庚庚庚庚辛辛辛辛辛辛辛辛辛辛辛辛辛辛辛辛辛辛辛辛・' //酉
+      '辛辛辛辛辛辛辛辛辛丁丁丁戊戊戊戊戊戊戊戊戊戊戊戊戊戊戊戊戊戊戊' //戌
+      '戊戊戊戊戊戊戊甲甲甲甲甲壬壬壬壬壬壬壬壬壬壬壬壬壬壬壬壬壬壬・' //亥
+      '壬壬壬壬壬壬壬壬壬壬癸癸癸癸癸癸癸癸癸癸癸癸癸癸癸癸癸癸癸癸癸' //子
+      '癸癸癸癸癸癸癸癸癸辛辛辛丁丁丁丁丁丁丁丁丁丁丁丁丁丁丁丁丁丁丁'; //丑
+  int d = 12;
+  int i = 372;
+  String c = '・';
+  //地支（文字データ）を地支数（数字）に変換する
+  if (a == '子') {
+    d = 10;
+  } else if (a == '丑') {
+    d = 11;
+  } else if (a == '寅') {
+    d = 0;
+  } else if (a == '卯') {
+    d = 1;
+  } else if (a == '辰') {
+    d = 2;
+  } else if (a == '巳') {
+    d = 3;
+  } else if (a == '午') {
+    d = 4;
+  } else if (a == '未') {
+    d = 5;
+  } else if (a == '申') {
+    d = 6;
+  } else if (a == '酉') {
+    d = 7;
+  } else if (a == '戌') {
+    d = 8;
+  } else if (a == '亥') {
+    d = 9;
+  } else {
+    print('■■■■■■■■■蔵干算出でエラーが発生しました。十二支以外の文字を検出しました。');
+  }
+//文字を取り出す場所（index）を算出する
+  i = (d * 31) + b - 1;
+  print('■■■■a:$a');
+  print('■■■■b:$b');
+  print('■■■■d:$d');
+  print('■■■■i:$i');
+  c = zouKanHyou.substring(i, i + 1);
+
+  return c;
 }

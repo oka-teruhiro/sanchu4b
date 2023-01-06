@@ -4,7 +4,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/intl.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'output/0utput.dart';
+import 'output/output.dart';
 
 void main() {
   runApp(const MyApp());
@@ -239,7 +239,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
-        title: const Text('天運三柱推命 ver.4.0.14',
+        title: const Text('天運三柱推命 ver.4.0.15',
             style: TextStyle(
               color: Colors.pinkAccent,
               fontWeight: FontWeight.bold,
