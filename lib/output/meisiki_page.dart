@@ -21,6 +21,7 @@ class MeisikiPage extends StatelessWidget {
   int setuirinen; //節入り年
   int setuirigatu; //節入り月
   int setuiriniti; //節入り日
+  //String setuiriJikokuS;
   int setuiriji; //節入り時
   int setuirihun; //節入り分
   int setuirinitisuu; //節入り日からの日数（節入り日は第1日目）

@@ -43,7 +43,7 @@ class Output extends StatelessWidget {
   List<int> setuji = [18, 5, 23, 4, 21, 1, 11, 21, 0, 1, 6, 19, 12];
   List<int> setuhun = [14, 50, 43, 20, 25, 25, 38, 29, 32, 22, 45, 46];
   //1920年1月から2029年12月までの節入り日データ、2文字
-  String stuiriNitiS = '060506050606070808080807' //1920
+  String setuiriNitiL = '060506050606070808080807' //1920
       '060406050606080808090808' //1921
       '060406050606080808090808' //1922
       '060506060607080809090808' //1923
@@ -155,7 +155,7 @@ class Output extends StatelessWidget {
       '050305040505070707080707' //2029
       '';
   //1920年1月から2029年12月までの節入り時刻データ、5文字
-  String stuiriJikokuS =
+  String setuiriJikokuL =
       '23:4011:2605:5011:1405:1109:5020:1805:5808:2623:2802:0418:30' //1920
       '05:3317:2011:4417:0811:0415:4102:0611:4314:0905:1007:4500:11' //1921
       '11:1623:0617:3322:5716:5221:3007:5717:3620:0611:0913:4506:10' //1922
@@ -267,7 +267,6 @@ class Output extends StatelessWidget {
       '04:5416:3110:2415:0308:1212:1522:3008:2111:2203:0806:2723:24' //2028
       '10:4122:2016:1720:5814:0718:0904:2214:1117:1108:5812:1605:13' //2029
       '';
-
   //節入り日データここまで
   int setuIndex = 0;
   int seinen = 1920;
@@ -281,12 +280,15 @@ class Output extends StatelessWidget {
   int setuiriji = 0;
   int setuirihun = 0;
   int setuirinitisuu = 0;
+  int nenchuNen = 1920;
   DateTime seinengappi = DateTime(1920, 1, 1);
   DateTime setuiribi = DateTime(1920, 1, 2);
   DateTime setuiribi2 = DateTime(1920, 1, 1);
   String nenchu = '甲子';
   String gechu = '甲子';
   String nichu = '甲子';
+  String setuiriNitiS = "01";
+  String setuiriJikokuS = "00:00";
   int nenchuNo = 0;
   int gechuNo = 0;
   int nichuNo = 0;
@@ -324,81 +326,10 @@ class Output extends StatelessWidget {
     seinenMoji = titleSeinengappi.substring(0, 4);
     seigatuMoji = titleSeinengappi.substring(5, 7);
     seinitiMoji = titleSeinengappi.substring(8, 10);
-    seinenMoji = '1957'; //　Todo<<<<<<<<<<<<<<<万年暦データを入れたらで削除する
+    //seinenMoji = '1957'; //　Todo<<<<<<<<<<<<<<<万年暦データを入れたらで削除する
     seinengappiMoji = '$seinenMoji-$seigatuMoji-$seinitiMoji';
     //　生年月日を　文字列から　DateTime型　に変換する
     DateTime datetSeinengappi = DateTime.parse(seinengappiMoji); // StringからDate
-
-    //ver4追加
-    //生年と生月から仮の節入り日・時・分を算出する
-    seinen = int.parse(seinenMoji);
-    seigatu = int.parse(seigatuMoji);
-    seiniti = int.parse(seinitiMoji);
-    //仮の節入り日を算出する
-    setuirinenk = seinen;
-    setuirigatuk = seigatu;
-    //節入り日リストから節入り日・時・分を取得する
-    //ToDo 節入り日データ1957年から12ヶ月分の場合
-    setuIndex = (setuirinenk - 1957) * 12 + (setuirigatuk - 1);
-    print('■■■■■■■■■setuIndex:$setuIndex');
-    setuiriniti = setubi[setuIndex];
-    //print('■■■■■■■■■setuiribi:$setuiriniti');
-    setuiriji = setuji[setuIndex];
-    //print('■■■■■■■■■setuiriji:$setuiriji');
-    setuirihun = setuhun[setuIndex];
-    //print('■■■■■■■■■setuirihun:$setuirihun');
-    //取得した節入り日・時・分から仮の節入り日を算出する
-    seinengappi = DateTime(seinen, seigatu, seiniti);
-    print('■■■■■■■■■seinengappi:$seinengappi');
-    setuiribi =
-        DateTime(setuirinenk, setuirigatuk, setuiriniti, setuiriji, setuirihun);
-    print('■■■■■■■■■setuiribi:$setuiribi');
-    setuirinitisuu = seinengappi.difference(setuiribi).inDays;
-    print('■■■■■■■■■setuirinitisuu:$setuirinitisuu');
-    if (setuirinitisuu < 0) {
-      if (seigatu < 3) {
-        setuirinen = seinen - 1;
-        setuirigatu = (seigatu - 1) % 12;
-      } else {
-        setuirinen = seinen;
-        setuirigatu = (seigatu - 1) % 12;
-      }
-    } else {
-      if (seigatu < 2) {
-        setuirinen = seinen - 1;
-        setuirigatu = seigatu;
-      } else {
-        setuirinen = seinen;
-        setuirigatu = seigatu;
-      }
-    }
-    print('■■■■■■■■■seiNen:$seinen');
-    print('■■■■■■■■■setuiriNen:$setuirinen');
-    print('■■■■■■■■■せついりGatu:$setuirigatu');
-    setuiribi =
-        DateTime(setuirinen, setuirigatu, setuiriniti, setuiriji, setuirihun);
-    setuiribi2 = DateTime(setuirinen, setuirigatu, setuiriniti);
-    setuirinitisuu = seinengappi.difference(setuiribi2).inDays + 1;
-    print('■■■■■■■■■生年月日：$seinengappi');
-    print('■■■■■■■■■節入り日：$setuiribi');
-    print('■■■■■■■■■節入り日からの日数:$setuirinitisuu');
-
-    //月柱の六十干支を算出する
-    gechuNo =
-        ((setuirinen * 12 + setuirigatu) - (1900 * 12 + 1) + gechuHosei) % 60;
-    //print('■■■■■■■■■gechuNo:$gechuNo');
-    gechu = rokujukkansi.substring((gechuNo * 2), (gechuNo * 2) + 2);
-    //print('■■■■■■■■■月柱：$gechu');
-
-    //年柱の六十干支を算出する
-    if (setuirigatu < 2) {
-      nenchuNo = (setuirinen - 1900 + nenchuHosei - 1) % 60;
-    } else {
-      nenchuNo = (setuirinen - 1900 + nenchuHosei) % 60;
-    }
-    //print('■■■■■■■■■nenchuNo:$nenchuNo');
-    nenchu = rokujukkansi.substring((nenchuNo * 2), (nenchuNo * 2) + 2);
-    //print('■■■■■■■■■年柱：$nenchu');
 
     //日柱の六十干支を算出する
     //　1900.1.1 (甲辰）から誕生日までの日数を算出する
@@ -421,6 +352,82 @@ class Output extends StatelessWidget {
     // 六十干支リストから日柱の六十干支を検索して、六十干支番号を算出する
     int nichuNo = nanmojime(rokujukkansi, nichu);
     //print('■■■■■■■■■nichuNo:$nichuNo');
+
+    //ver4追加
+    //生年と生月から仮の節入り日・時・分を算出する
+    seinen = int.parse(seinenMoji);
+    seigatu = int.parse(seigatuMoji);
+    seiniti = int.parse(seinitiMoji);
+    //仮の節入り日を算出する
+    setuirinen = seinen;
+    setuirigatu = seigatu;
+    nenchuNen = seinen;
+    //節入り日リストから節入り日・時刻を取得する
+    //ToDo 節入り日データ1920年から
+    setuIndex = (setuirinen - 1920) * 12 + (setuirigatu - 1);
+    setuiriNitiS = setuiriNitiL.substring(setuIndex * 2, (setuIndex + 1) * 2);
+    setuiriniti = int.parse(setuiriNitiS);
+    setuiriJikokuS =
+        setuiriJikokuL.substring(setuIndex * 5, (setuIndex + 1) * 5);
+    setuiriji = int.parse(setuiriJikokuS.substring(0, 2));
+    setuirihun = int.parse(setuiriJikokuS.substring(3, 5));
+    //取得した節入り日・時・分から仮の節入り日を算出する
+    seinengappi = DateTime(seinen, seigatu, seiniti);
+    setuiribi =
+        DateTime(setuirinen, setuirigatu, setuiriniti, setuiriji, setuirihun);
+    setuirinitisuu = seinengappi.difference(setuiribi).inDays;
+    setuiribi =
+        DateTime(setuirinen, setuirigatu, setuiriniti, setuiriji, setuirihun);
+    setuiribi2 = DateTime(setuirinen, setuirigatu, setuiriniti);
+    setuirinitisuu = seinengappi.difference(setuiribi2).inDays +
+        1; //節入り日からの日数：節入り日と誕生日が等しいと0になる
+
+    if (setuirinitisuu <= 0) {
+      if (seigatu == 1) {
+        setuirinen = setuirinen - 1;
+        nenchuNen = seinen - 1;
+      } else if (seigatu == 2) {
+        nenchuNen = seinen - 1;
+      } else {}
+      setuirigatu = (seigatu - 2) % 12 + 1;
+    } else {
+      if (seigatu == 1) {
+        nenchuNen = seinen - 1;
+      } else {}
+    }
+
+    setuIndex = (setuirinen - 1920) * 12 + (setuirigatu - 1);
+    nenchuNo = (nenchuNen - 1900 + nenchuHosei) % 60; //年柱No.算出
+    print('■■■■■■■■■nenchuNo:$nenchuNo');
+
+    gechuNo = (setuIndex + gechuHosei) % 60;
+    print('■■■■■■■■■setuIndex:$setuIndex');
+    print('■■■■■■■■■gechuNo:$gechuNo');
+
+    setuiriNitiS = setuiriNitiL.substring(setuIndex * 2, (setuIndex + 1) * 2);
+    setuiriniti = int.parse(setuiriNitiS);
+    //print('■■■■■■■■■setuiribi:$setuiriniti');
+    setuiriJikokuS =
+        setuiriJikokuL.substring(setuIndex * 5, (setuIndex + 1) * 5);
+    //print('■■■■■■■■■setuiriJikokuS:$setuiriJikokuS');
+    setuiriji = int.parse(setuiriJikokuS.substring(0, 2));
+    //print('■■■■■■■■■setuiriji:$setuiriji');
+    setuirihun = int.parse(setuiriJikokuS.substring(3, 5));
+    //print('■■■■■■■■■setuirihun:$setuirihun');
+
+    setuiribi =
+        DateTime(setuirinen, setuirigatu, setuiriniti, setuiriji, setuirihun);
+    setuiribi2 = DateTime(setuirinen, setuirigatu, setuiriniti);
+    setuirinitisuu = seinengappi.difference(setuiribi2).inDays + 1;
+    print('■■■■■■■■■生年月日：$seinengappi');
+    print('■■■■■■■■■節入り日：$setuiribi');
+    print('■■■■■■■■■節入り日からの日数:$setuirinitisuu');
+
+    //月柱の六十干支を算出する
+    gechu = rokujukkansi.substring((gechuNo * 2), (gechuNo * 2) + 2);
+    //年柱の六十干支を算出する
+    nenchu = rokujukkansi.substring((nenchuNo * 2), (nenchuNo * 2) + 2);
+    //print('■■■■■■■■■年柱：$nenchu');
 
     // 干支併臨(日)を算出する　1924年は「甲子」
     //print('■■■■■■■■■nichuNo:$nichuNo');
@@ -702,6 +709,18 @@ class Output extends StatelessWidget {
                       fontSize: 16,
                     ),
                   ),
+                  Text(
+                    '節入り日時：$setuiribi',
+                    style: const TextStyle(
+                      fontSize: 16,
+                    ),
+                  ),
+                  Text(
+                    '節入り日からの日数：$setuirinitisuu',
+                    style: const TextStyle(
+                      fontSize: 16,
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -732,6 +751,7 @@ class Output extends StatelessWidget {
                           setuirinen: setuirinen,
                           setuirigatu: setuirigatu,
                           setuiriniti: setuiriniti,
+                          //setuiriJikokuS: setuiriJikokuS,
                           setuiriji: setuiriji,
                           setuirihun: setuirihun,
                           setuirinitisuu: setuirinitisuu,
