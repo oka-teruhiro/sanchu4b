@@ -4,6 +4,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/intl.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'osirase/update.dart';
 import 'output/output.dart';
 
 void main() {
@@ -239,7 +240,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
-        title: const Text('天運三柱推命 ver.4.0.18',
+        title: const Text('天運三柱推命 ver.4.0.19',
             style: TextStyle(
               color: Colors.pinkAccent,
               fontWeight: FontWeight.bold,
@@ -249,11 +250,11 @@ class _MyHomePageState extends State<MyHomePage> {
             icon: const Icon(Icons.navigate_next),
             tooltip: 'Next page',
             onPressed: () {
-              //Navigator.push(
-              //   context,
-              //   MaterialPageRoute(
-              //    builder: (context) => const Update(),
-              //  ));
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const Update(),
+                  ));
             },
           ),
         ],
