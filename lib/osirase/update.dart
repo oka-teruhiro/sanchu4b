@@ -5,6 +5,8 @@ import 'package:sanchu4b/osirase/update2.dart';
 import 'package:sanchu4b/osirase/update2a.dart';
 import 'package:sanchu4b/osirase/update3a.dart';
 
+import '../quiz/quiz_page.dart';
+
 class Update extends StatelessWidget {
   const Update({Key? key}) : super(key: key);
 
@@ -32,11 +34,11 @@ class Update extends StatelessWidget {
                     title: const Text('第4版　Web上でも動作するように変更。（2022/12/13 更新)'),
                     trailing: const Icon(Icons.navigate_next),
                     onTap: () {
-                      //Navigator.push(
-                      //    context,
-                      //    MaterialPageRoute(
-                      //      builder: (context) => QuizPage(),
-                      //    ));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => QuizPage(),
+                          ));
                     },
                   ),
                 ),

@@ -33,7 +33,10 @@ class Profile extends StatelessWidget {
       body: ListView(
         children: <Widget>[
           ListTile(
-            title: Image.asset('images/main/taxi.png'),
+            title: Image.asset(
+                //title: Image.network(
+                //   'https://okatoku331.net/wp-content/uploads/2023/01/Q001-1024x1018.png'
+                'images/main/taxi.png'),
           ),
           const ListTile(
             title: Text('　私は東京のタクシー運転手です。63歳です。'

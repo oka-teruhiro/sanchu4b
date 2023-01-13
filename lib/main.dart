@@ -2,9 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/intl.dart';
+import 'package:sanchu4b/quiz/quiz_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'osirase/update.dart';
+import 'output/kyou_unsei.dart';
 import 'output/output.dart';
 
 void main() {
@@ -240,7 +242,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
-        title: const Text('天運三柱推命 ver.4.0.19',
+        title: const Text('天運三柱推命 ver.4.0.21',
             style: TextStyle(
               color: Colors.pinkAccent,
               fontWeight: FontWeight.bold,
@@ -266,8 +268,44 @@ class _MyHomePageState extends State<MyHomePage> {
             Container(
               height: 4,
             ),
+            Container(
+              height: 44,
+              width: 440,
+              decoration: BoxDecoration(
+                color: Colors.tealAccent,
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(
+                  color: Colors.blue,
+                  width: 1.0,
+                ),
+              ),
+              child: TextButton(
+                style: ButtonStyle(
+                  foregroundColor:
+                      MaterialStateProperty.all<Color>(Colors.black),
+                ),
+                child: const Text(
+                  '易占クイズに挑戦する',
+                  style: TextStyle(
+                    fontSize: 18,
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                onPressed: () {
+                  //TODO: 易占検定画面へ飛ぶ
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => QuizPage(),
+                    ),
+                  );
+                },
+              ),
+            ),
             const SizedBox(
               height: 90,
+              width: 440,
               child: Padding(
                 padding: EdgeInsets.all(8.0),
                 child: Text(
@@ -282,6 +320,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             SizedBox(
               height: 260,
+              width: 440,
               child: ListView.builder(
                 itemCount: 5,
                 itemBuilder: (BuildContext context, int index) {
@@ -366,14 +405,14 @@ class _MyHomePageState extends State<MyHomePage> {
                                 seinengappiMojia = _birthD[index];
                                 if (seinengappiMojia == 'yyyy/mm/dd') {
                                 } else {
-                                  //Navigator.push(
-                                  //  context,
-                                  //  MaterialPageRoute(
-                                  //    builder: (context) => KyouUnsei(
-                                  //      titleSeinengappi: seinengappiMojia,
-                                  //    ),
-                                  //  ),
-                                  //);
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => KyouUnsei(
+                                        titleSeinengappi: seinengappiMojia,
+                                      ),
+                                    ),
+                                  );
                                 }
                               },
                             ),
