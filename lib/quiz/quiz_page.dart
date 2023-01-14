@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:sanchu4b/main.dart';
 
+import 'answer_page.dart';
+
 class QuizPage extends StatelessWidget {
   QuizPage({Key? key}) : super(key: key);
 
   bool quizLast = true;
+  int seikai = 2;
+  String kotae = 'x';
+  String kotaeMoji = 'a';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('質問1'),
+          title: const Text('1. 易とは'),
         ),
         body: Container(
             color: Colors.black,
@@ -27,9 +32,36 @@ class QuizPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    ElevatedButton(onPressed: () {}, child: Text('1')),
-                    ElevatedButton(onPressed: () {}, child: Text('2')),
-                    ElevatedButton(onPressed: () {}, child: Text('3')),
+                    ElevatedButton(
+                        onPressed: () {
+                          if (seikai == 1) {
+                            kotae = 'o';
+                          } else {
+                            kotae = 'x';
+                          }
+                          _showKotae(context);
+                        },
+                        child: const Text('1')),
+                    ElevatedButton(
+                        onPressed: () {
+                          if (seikai == 2) {
+                            kotae = 'o';
+                          } else {
+                            kotae = 'x';
+                          }
+                          _showKotae(context);
+                        },
+                        child: const Text('2')),
+                    ElevatedButton(
+                        onPressed: () {
+                          if (seikai == 3) {
+                            kotae = 'o';
+                          } else {
+                            kotae = 'x';
+                          }
+                          _showKotae(context);
+                        },
+                        child: const Text('3')),
                   ],
                 ),
               ),
@@ -75,5 +107,84 @@ class QuizPage extends StatelessWidget {
                             ),
                           ])))
             ])));
+  }
+
+  _showKotae(BuildContext context) {
+    //var kotae = 'o';
+    //var kotaeMoji = '?';
+    if (kotae == 'o') {
+      kotaeMoji = 'すばらしい！正解です。';
+    } else {
+      kotaeMoji = '残念！不正解です。';
+    }
+
+    showModalBottomSheet(
+        context: context,
+        builder: (BuildContext context) {
+          return Container(
+            color: Colors.blue,
+            height: 120,
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 50,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      TextButton(
+                        child: Text(
+                          kotaeMoji,
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 22,
+                          ),
+                        ),
+                        onPressed: () {
+                          if (kotae == 'o') {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => AnswerPage(
+                                    //quizNoMoji: quizNoMoji,
+                                    //bestQuizNoMoji: bestQuizNoMoji,
+                                    ),
+                              ),
+                            );
+                          } else {
+                            Navigator.of(context).pop();
+                          }
+                        },
+                      ),
+                      TextButton(
+                        child: const Text(
+                          'OK',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 14,
+                          ),
+                        ),
+                        onPressed: () {
+                          if (kotae == 'o') {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => AnswerPage(
+                                    //quizNoMoji: quizNoMoji,
+                                    //bestQuizNoMoji: bestQuizNoMoji,
+                                    ),
+                              ),
+                            );
+                          } else {
+                            Navigator.of(context).pop();
+                          }
+                        },
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          );
+        });
   }
 }

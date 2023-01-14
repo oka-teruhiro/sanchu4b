@@ -965,14 +965,14 @@ zouKan(String a, int b) {
   } else if (a == '亥') {
     d = 9;
   } else {
-    print('■■■■■■■■■蔵干算出でエラーが発生しました。十二支以外の文字を検出しました。');
+    //print('■■■■■■■■■蔵干算出でエラーが発生しました。十二支以外の文字を検出しました。');
   }
 //文字を取り出す場所（index）を算出する
   i = (d * 31) + b - 1;
-  print('■■■■a:$a');
-  print('■■■■b:$b');
-  print('■■■■d:$d');
-  print('■■■■i:$i');
+  //print('■■■■a:$a');
+  //print('■■■■b:$b');
+  //print('■■■■d:$d');
+  //print('■■■■i:$i');
   c = zouKanHyou.substring(i, i + 1);
 
   return c;
