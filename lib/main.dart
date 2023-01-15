@@ -94,7 +94,9 @@ class _MyHomePageState extends State<MyHomePage> {
   //var bestQuizNoMoji;
 
   DateTime newDate = DateTime.now();
-  DateTime date9 = DateTime.now();
+
+  DateTime date9 = DateTime(DateTime.now().year - 30);
+
   int item = 0;
 
   // shareed Preference に保存されているデータを読み込んで、_counterにセットする
@@ -242,7 +244,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
-        title: const Text('天運三柱推命 ver.4.0.24',
+        title: const Text('天運三柱推命 ver.4.0.25',
             style: TextStyle(
               color: Colors.pinkAccent,
               fontWeight: FontWeight.bold,
@@ -355,10 +357,16 @@ class _MyHomePageState extends State<MyHomePage> {
                                   //ToDo　生年月日入力画面に飛ぶ
                                   _birthday = _birthD[index];
                                   if (_birthday == 'yyyy/mm/dd') {
-                                    date9 = DateTime.now();
+                                    date9 = DateTime(
+                                        DateTime.now().year - 30,
+                                        DateTime.now().month,
+                                        DateTime.now().day);
                                     //print('a:date9:$date9');
                                   } else if (_birthday == '') {
-                                    date9 = DateTime.now();
+                                    date9 = DateTime(
+                                        DateTime.now().year - 30,
+                                        DateTime.now().month,
+                                        DateTime.now().day);
                                     //print('b:date9:$date9');
                                   } else {
                                     _birthdaya =
@@ -488,8 +496,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: CupertinoDatePicker(
                     backgroundColor: Colors.black54,
                     initialDateTime: date9,
-                    minimumYear: 1900,
-                    maximumYear: DateTime.now().year + 10,
+                    minimumYear: 1921,
+                    maximumYear: 2029,
                     mode: CupertinoDatePickerMode.date,
                     onDateTimeChanged: (newDate) {
                       _birthday = DateFormat('yyyy/MM/dd').format(newDate);
