@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:sanchu4b/main.dart';
+import 'package:sanchu4b/quiz/quiz_page_002.dart';
 
-import 'answer_page.dart';
+import 'answer_page_001.dart';
 
-class QuizPage extends StatelessWidget {
-  QuizPage({Key? key}) : super(key: key);
+class QuizPage001 extends StatelessWidget {
+  QuizPage001({Key? key}) : super(key: key);
 
-  bool quizLast = true;
+  bool quizLast = false;
   int seikai = 2;
   String kotae = 'x';
   String kotaeMoji = 'a';
@@ -93,15 +94,15 @@ class QuizPage extends StatelessWidget {
                                   //_showQuizLast(context);
                                 } else {
                                   //quizNoMoji = (quizNo + 2).toString();
-                                  //Navigator.push(
-                                  //context,
-                                  //MaterialPageRoute(
-                                  //builder: (context) => QuizPage(
-                                  //quizNoMoji: quizNoMoji,
-                                  //bestQuizNoMoji: bestQuizNoMoji,
-                                  //),
-                                  //),
-                                  //);
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => QuizPage002(
+                                          //quizNoMoji: quizNoMoji,
+                                          //bestQuizNoMoji: bestQuizNoMoji,
+                                          ),
+                                    ),
+                                  );
                                 }
                               },
                             ),
@@ -144,7 +145,7 @@ class QuizPage extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => AnswerPage(
+                                builder: (context) => AnswerPage001(
                                     //quizNoMoji: quizNoMoji,
                                     //bestQuizNoMoji: bestQuizNoMoji,
                                     ),
@@ -168,7 +169,7 @@ class QuizPage extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => AnswerPage(
+                                builder: (context) => AnswerPage001(
                                     //quizNoMoji: quizNoMoji,
                                     //bestQuizNoMoji: bestQuizNoMoji,
                                     ),

@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:sanchu4b/main.dart';
+import 'package:sanchu4b/quiz/quiz_page_002.dart';
 
-class AnswerPage extends StatelessWidget {
-  AnswerPage({Key? key}) : super(key: key);
+class AnswerPage001 extends StatelessWidget {
+  AnswerPage001({Key? key}) : super(key: key);
 
-  bool quizLast = true;
+  bool quizLast = false;
 
   @override
   Widget build(BuildContext context) {
@@ -24,18 +25,6 @@ class AnswerPage extends StatelessWidget {
                 ),
                 ListTile(
                   title: Image.asset('images/quiz/Q001/A0012.png'),
-                ),
-                SizedBox(
-                  height: 60,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: const [
-                      //ElevatedButton(onPressed: () {}, child: Text('1')),
-                      //ElevatedButton(onPressed: () {}, child: Text('2')),
-                      //ElevatedButton(onPressed: () {}, child: Text('3')),
-                    ],
-                  ),
                 ),
                 SizedBox(
                     height: 60,
@@ -65,15 +54,15 @@ class AnswerPage extends StatelessWidget {
                                     //_showQuizLast(context);
                                   } else {
                                     //quizNoMoji = (quizNo + 2).toString();
-                                    //Navigator.push(
-                                    //context,
-                                    //MaterialPageRoute(
-                                    //builder: (context) => QuizPage(
-                                    //quizNoMoji: quizNoMoji,
-                                    //bestQuizNoMoji: bestQuizNoMoji,
-                                    //),
-                                    //),
-                                    //);
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => QuizPage002(
+                                            //quizNoMoji: quizNoMoji,
+                                            //bestQuizNoMoji: bestQuizNoMoji,
+                                            ),
+                                      ),
+                                    );
                                   }
                                 },
                               ),

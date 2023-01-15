@@ -5,7 +5,7 @@ import 'package:sanchu4b/osirase/update2.dart';
 import 'package:sanchu4b/osirase/update2a.dart';
 import 'package:sanchu4b/osirase/update3a.dart';
 
-import '../quiz/quiz_page.dart';
+import '../quiz/quiz_page_001.dart';
 
 class Update extends StatelessWidget {
   const Update({Key? key}) : super(key: key);
@@ -37,7 +37,7 @@ class Update extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => QuizPage(),
+                            builder: (context) => QuizPage001(),
                           ));
                     },
                   ),

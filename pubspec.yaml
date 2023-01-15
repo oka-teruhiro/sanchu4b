@@ -1,10 +1,10 @@
 name: sanchu4b
-description: 天運三柱推命ver.4.0.23
+description: 天運三柱推命ver.4.0.24
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
 
-version: 4.0.23+23
+version: 4.0.24+2
 
 environment:
   sdk: ">=2.17.3 <3.0.0"
@@ -21,7 +21,7 @@ dependencies:
 
   cupertino_icons: ^1.0.5
   provider: ^6.0.5
-  shared_preferences: ^2.0.15
+  shared_preferences: ^2.0.16
   flutter_lints: ^2.0.1
 
 
@@ -292,5 +292,25 @@ flutter:
     - images/quiz/Q001/A0011.png
     - images/quiz/Q001/A0012.png
     - images/quiz/Q001/Q001.png
+    - images/quiz/Q002/Q002.png
+    - images/quiz/Q002/A0020.png
+    - images/quiz/Q003/Q003.png
+    - images/quiz/Q003/A0030.png
+    - images/quiz/Q003/A0031.png
+    - images/quiz/Q004/Q004.png
+    - images/quiz/Q004/A0040.png
+    - images/quiz/Q004/A0041.png
+    - images/quiz/Q005/Q005.png
+    - images/quiz/Q005/A0050.png
+    - images/quiz/Q005/A0051.png
+    - images/quiz/Q005/A0052.png
+    - images/quiz/Q006/Q006.png
+    - images/quiz/Q006/A0060.png
+    - images/quiz/Q006/A0061.png
+    - images/quiz/Q006/A0062.png
+    - images/quiz/Q007/Q007.png
+    - images/quiz/Q007/A0070.png
+    - images/quiz/Q007/A0071.png
+    - images/quiz/Q007/A0072.png
 
 

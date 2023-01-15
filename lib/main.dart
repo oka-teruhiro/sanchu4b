@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/intl.dart';
-import 'package:sanchu4b/quiz/quiz_page.dart';
+import 'package:sanchu4b/quiz/quiz_page_001.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'osirase/update.dart';
@@ -242,7 +242,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
-        title: const Text('天運三柱推命 ver.4.0.23',
+        title: const Text('天運三柱推命 ver.4.0.24',
             style: TextStyle(
               color: Colors.pinkAccent,
               fontWeight: FontWeight.bold,
@@ -297,7 +297,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => QuizPage(),
+                      builder: (context) => QuizPage001(),
                     ),
                   );
                 },
