@@ -80,6 +80,20 @@ class MeisikiPage extends StatelessWidget {
   String tuuhenbosiGetuSi = '比肩';
   String tuuhenbosiNitiKan = '比肩';
   String tuuhenbosiNitiSi = '比肩';
+  String juuniUn = //12運
+      '沐冠建帝衰病死墓絶胎養長' //甲
+      '病衰帝建冠沐長養胎絶墓死' //乙
+      '胎養長沐冠建帝衰病死墓絶' //丙
+      '絶墓死病衰帝建冠沐長養胎' //丁
+      '胎養長沐冠建帝衰病死墓絶' //戊
+      '絶墓死病衰帝建冠沐長養胎' //己
+      '死墓絶胎養長沐冠建帝衰病' //庚
+      '長養胎絶墓死病衰帝建冠沐' //辛
+      '帝衰病死墓絶胎養長沐冠建' //壬
+      '建冠沐長養胎絶墓死病衰帝'; //癸
+  String juuniUnNiti = '胎';
+  String juuniUnGetu = '胎';
+  String juuniUnNen = '胎';
 
   @override
   Widget build(BuildContext context) {
@@ -122,6 +136,21 @@ class MeisikiPage extends StatelessWidget {
     print('■■■■■■■$tuuhenbosiNitiSi');
     print('■■■■■■■$tuuhenbosiGetuSi');
     print('■■■■■■■$tuuhenbosiNenSi');
+    //十二運を算出する
+    nitiSiNo = juuniSiNo(nitisi);
+    gatuSiNo = juuniSiNo(gatusi);
+    nenSiNo = juuniSiNo(nensi);
+    juuniUnNiti = juuniUn.substring(
+        nitiKanNo * 12 + nitiSiNo, nitiKanNo * 12 + nitiSiNo + 1);
+    juuniUnGetu = juuniUn.substring(
+        nitiKanNo * 12 + gatuSiNo, nitiKanNo * 12 + gatuSiNo + 1);
+    juuniUnNen = juuniUn.substring(
+        nitiKanNo * 12 + nenSiNo, nitiKanNo * 12 + nenSiNo + 1);
+    print('■■■■■■■■■$nitiKanNo');
+    print('■■■■■■$juuniUnNiti$nitiSiNo');
+    print('■■■■■■$juuniUnGetu$gatuSiNo');
+    print('■■■■■■$juuniUnNen$nenSiNo');
+
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -295,7 +324,7 @@ class MeisikiPage extends StatelessWidget {
                                     nitikan,
                                     style: const TextStyle(
                                       color: Colors.white,
-                                      fontSize: 32,
+                                      fontSize: 26,
                                     ),
                                   ),
                                   onPressed: () {
@@ -388,7 +417,7 @@ class MeisikiPage extends StatelessWidget {
                                 child: Text(
                                   gatukan,
                                   style: const TextStyle(
-                                    fontSize: 32,
+                                    fontSize: 26,
                                   ),
                                 ),
                               ),
@@ -407,7 +436,7 @@ class MeisikiPage extends StatelessWidget {
                                 child: Text(
                                   nenkan,
                                   style: const TextStyle(
-                                    fontSize: 32,
+                                    fontSize: 26,
                                   ),
                                 ),
                               ),
@@ -455,7 +484,7 @@ class MeisikiPage extends StatelessWidget {
                                 child: Text(
                                   nitisi,
                                   style: const TextStyle(
-                                    fontSize: 32,
+                                    fontSize: 26,
                                   ),
                                 ),
                               ),
@@ -474,7 +503,7 @@ class MeisikiPage extends StatelessWidget {
                                 child: Text(
                                   gatusi,
                                   style: const TextStyle(
-                                    fontSize: 32,
+                                    fontSize: 26,
                                   ),
                                 ),
                               ),
@@ -493,7 +522,7 @@ class MeisikiPage extends StatelessWidget {
                                 child: Text(
                                   nensi,
                                   style: const TextStyle(
-                                    fontSize: 32,
+                                    fontSize: 26,
                                   ),
                                 ),
                               ),
@@ -654,7 +683,7 @@ class MeisikiPage extends StatelessWidget {
                                   child: Text(
                                 zouKanNiti,
                                 style: const TextStyle(
-                                  fontSize: 32,
+                                  fontSize: 26,
                                 ),
                               )),
                             ),
@@ -673,7 +702,7 @@ class MeisikiPage extends StatelessWidget {
                                   child: Text(
                                 zouKanTuki,
                                 style: const TextStyle(
-                                  fontSize: 32,
+                                  fontSize: 26,
                                 ),
                               )),
                             ),
@@ -692,7 +721,7 @@ class MeisikiPage extends StatelessWidget {
                                   child: Text(
                                 zouKanNen,
                                 style: const TextStyle(
-                                  fontSize: 32,
+                                  fontSize: 26,
                                 ),
                               )),
                             ),
@@ -743,7 +772,7 @@ class MeisikiPage extends StatelessWidget {
                                         child: Text(
                                       '', //日天
                                       style: TextStyle(
-                                        fontSize: 26,
+                                        fontSize: 24,
                                       ),
                                     )),
                                   ),
@@ -761,7 +790,7 @@ class MeisikiPage extends StatelessWidget {
                                         child: Text(
                                       tuuhenbosiNitiSi, //日地
                                       style: const TextStyle(
-                                        fontSize: 26,
+                                        fontSize: 24,
                                       ),
                                     )),
                                   ),
@@ -786,7 +815,7 @@ class MeisikiPage extends StatelessWidget {
                                         child: Text(
                                       tuuhenbosiGetuKan, //月天
                                       style: const TextStyle(
-                                        fontSize: 26,
+                                        fontSize: 24,
                                       ),
                                     )),
                                   ),
@@ -804,7 +833,7 @@ class MeisikiPage extends StatelessWidget {
                                         child: Text(
                                       tuuhenbosiGetuSi, //月地
                                       style: const TextStyle(
-                                        fontSize: 26,
+                                        fontSize: 24,
                                       ),
                                     )),
                                   ),
@@ -829,7 +858,7 @@ class MeisikiPage extends StatelessWidget {
                                         child: Text(
                                       tuuhenbosiNenKan, //年天
                                       style: const TextStyle(
-                                        fontSize: 26,
+                                        fontSize: 24,
                                       ),
                                     )),
                                   ),
@@ -847,7 +876,7 @@ class MeisikiPage extends StatelessWidget {
                                         child: Text(
                                       tuuhenbosiNenSi, //年地
                                       style: const TextStyle(
-                                        fontSize: 26,
+                                        fontSize: 24,
                                       ),
                                     )),
                                   ),
@@ -909,6 +938,13 @@ class MeisikiPage extends StatelessWidget {
                                     color: Colors.tealAccent,
                                     width: 1,
                                   )),
+                              child: Center(
+                                  child: Text(
+                                juuniUnNiti, //12運日
+                                style: const TextStyle(
+                                  fontSize: 26,
+                                ),
+                              )),
                             ),
                           ),
                           SizedBox(
@@ -920,6 +956,13 @@ class MeisikiPage extends StatelessWidget {
                                     color: Colors.tealAccent,
                                     width: 1,
                                   )),
+                              child: Center(
+                                  child: Text(
+                                juuniUnGetu, //12運月
+                                style: const TextStyle(
+                                  fontSize: 26,
+                                ),
+                              )),
                             ),
                           ),
                           SizedBox(
@@ -931,6 +974,13 @@ class MeisikiPage extends StatelessWidget {
                                     color: Colors.tealAccent,
                                     width: 1,
                                   )),
+                              child: Center(
+                                  child: Text(
+                                juuniUnNen, //12運年
+                                style: const TextStyle(
+                                  fontSize: 26,
+                                ),
+                              )),
                             ),
                           ),
                           SizedBox(
@@ -1101,6 +1151,40 @@ juKanNo(String a) {
     b = 8;
   } else if (a == '癸') {
     b = 9;
+  } else {}
+  return b;
+}
+
+// 関数定義　十二支から十二支数を算出する
+//  b = juuniSiNo( a )
+//   a: 十二支を表す文字（'子','丑',・・・,'亥'）
+//   b: 十二支を表す数字（'0','1',・・・,'11' ）
+juuniSiNo(String a) {
+  int b = 11;
+  if (a == '子') {
+    b = 0;
+  } else if (a == '丑') {
+    b = 1;
+  } else if (a == '寅') {
+    b = 2;
+  } else if (a == '卯') {
+    b = 3;
+  } else if (a == '辰') {
+    b = 4;
+  } else if (a == '巳') {
+    b = 5;
+  } else if (a == '午') {
+    b = 6;
+  } else if (a == '未') {
+    b = 7;
+  } else if (a == '申') {
+    b = 8;
+  } else if (a == '酉') {
+    b = 9;
+  } else if (a == '戌') {
+    b = 10;
+  } else if (a == '亥') {
+    b = 11;
   } else {}
   return b;
 }
