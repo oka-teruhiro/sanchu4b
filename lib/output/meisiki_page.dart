@@ -25,6 +25,8 @@ class MeisikiPage extends StatelessWidget {
   int setuiriji; //節入り時
   int setuirihun; //節入り分
   int setuirinitisuu; //節入り日からの日数（節入り日は第1日目）
+  //int nenKanNo = 0;
+  //int  = 0;
 
   MeisikiPage(
       {Key? key,
@@ -49,10 +51,35 @@ class MeisikiPage extends StatelessWidget {
   String gatusi = '子';
   String nitikan = '甲';
   String nitisi = '子';
-  //String zouKan = '甲';
+  int nenKanNo = 0;
+  int nenSiNo = 0;
+  int gatuKanNo = 0;
+  int gatuSiNo = 0;
+  int nitiKanNo = 0;
+  int nitiSiNo = 0;
   String zouKanNen = '甲';
   String zouKanTuki = '甲';
   String zouKanNiti = '甲';
+  int zouKanNenNo = 0;
+  int zouKanGatuNo = 0;
+  int zouKanNitiNo = 0;
+  String tuuhenbosi = //通変星
+      "比肩劫敗食神傷官偏財正財偏官正官倒食印綬" //甲
+      "劫敗比肩傷官食神正財偏財正官偏官印綬倒食" //乙
+      "倒食印綬比肩劫敗食神傷官偏財正財偏官正官" //丙
+      "印綬倒食劫敗比肩傷官食神正財偏財正官偏官" //丁
+      "偏官正官倒食印綬比肩劫敗食神傷官偏財正財" //戊
+      "正官偏官印綬倒食劫敗比肩傷官食神正財偏財" //己
+      "偏財正財偏官正官倒食印綬比肩劫敗食神傷官" //庚
+      "正財偏財正官偏官印綬倒食劫敗比肩傷官食神" //辛
+      "食神傷官偏財正財偏官正官倒食印綬比肩劫敗" //壬
+      "傷官食神正財偏財正官偏官印綬倒食劫敗比肩"; //癸
+  String tuuhenbosiNenKan = '比肩';
+  String tuuhenbosiNenSi = '比肩';
+  String tuuhenbosiGetuKan = '比肩';
+  String tuuhenbosiGetuSi = '比肩';
+  String tuuhenbosiNitiKan = '比肩';
+  String tuuhenbosiNitiSi = '比肩';
 
   @override
   Widget build(BuildContext context) {
@@ -67,7 +94,34 @@ class MeisikiPage extends StatelessWidget {
     zouKanNen = zouKan(nensi, setuirinitisuu);
     zouKanTuki = zouKan(gatusi, setuirinitisuu);
     zouKanNiti = zouKan(nitisi, setuirinitisuu);
-
+    //通変星を算出する
+    nitiKanNo = juKanNo(nitikan);
+    gatuKanNo = juKanNo(gatukan);
+    nenKanNo = juKanNo(nenkan);
+    zouKanNitiNo = juKanNo(zouKanNiti);
+    zouKanGatuNo = juKanNo(zouKanTuki);
+    zouKanNenNo = juKanNo(zouKanNen);
+    print('■■■■■■■■■$nitikan$nitiKanNo');
+    print('■■■■■■■■■$gatukan$gatuKanNo');
+    print('■■■■■■■■■$nenkan$nenKanNo');
+    print('■■■■■■■■■$zouKanNiti$zouKanNitiNo');
+    print('■■■■■■■■■$zouKanTuki$zouKanGatuNo');
+    print('■■■■■■■■■$zouKanNen$zouKanNenNo');
+    tuuhenbosiGetuKan = tuuhenbosi.substring(
+        nitiKanNo * 20 + gatuKanNo * 2, nitiKanNo * 20 + gatuKanNo * 2 + 2);
+    tuuhenbosiNenKan = tuuhenbosi.substring(
+        nitiKanNo * 20 + nenKanNo * 2, nitiKanNo * 20 + nenKanNo * 2 + 2);
+    tuuhenbosiNitiSi = tuuhenbosi.substring(nitiKanNo * 20 + zouKanNitiNo * 2,
+        nitiKanNo * 20 + zouKanNitiNo * 2 + 2);
+    tuuhenbosiGetuSi = tuuhenbosi.substring(nitiKanNo * 20 + zouKanGatuNo * 2,
+        nitiKanNo * 20 + zouKanGatuNo * 2 + 2);
+    tuuhenbosiNenSi = tuuhenbosi.substring(
+        nitiKanNo * 20 + zouKanNenNo * 2, nitiKanNo * 20 + zouKanNenNo * 2 + 2);
+    print('■■■■■■■$tuuhenbosiGetuKan');
+    print('■■■■■■■$tuuhenbosiNenKan');
+    print('■■■■■■■$tuuhenbosiNitiSi');
+    print('■■■■■■■$tuuhenbosiGetuSi');
+    print('■■■■■■■$tuuhenbosiNenSi');
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -685,6 +739,13 @@ class MeisikiPage extends StatelessWidget {
                                           color: Colors.tealAccent,
                                           width: 1,
                                         )),
+                                    child: const Center(
+                                        child: Text(
+                                      '', //日天
+                                      style: TextStyle(
+                                        fontSize: 26,
+                                      ),
+                                    )),
                                   ),
                                 ),
                                 SizedBox(
@@ -696,35 +757,13 @@ class MeisikiPage extends StatelessWidget {
                                           color: Colors.tealAccent,
                                           width: 1,
                                         )),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          SizedBox(
-                            width: 90,
-                            child: Column(
-                              children: [
-                                SizedBox(
-                                  height: 70,
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(12),
-                                        border: Border.all(
-                                          color: Colors.tealAccent,
-                                          width: 1,
-                                        )),
-                                  ),
-                                ),
-                                SizedBox(
-                                  height: 70,
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(12),
-                                        border: Border.all(
-                                          color: Colors.tealAccent,
-                                          width: 1,
-                                        )),
+                                    child: Center(
+                                        child: Text(
+                                      tuuhenbosiNitiSi, //日地
+                                      style: const TextStyle(
+                                        fontSize: 26,
+                                      ),
+                                    )),
                                   ),
                                 ),
                               ],
@@ -743,6 +782,13 @@ class MeisikiPage extends StatelessWidget {
                                           color: Colors.tealAccent,
                                           width: 1,
                                         )),
+                                    child: Center(
+                                        child: Text(
+                                      tuuhenbosiGetuKan, //月天
+                                      style: const TextStyle(
+                                        fontSize: 26,
+                                      ),
+                                    )),
                                   ),
                                 ),
                                 SizedBox(
@@ -754,6 +800,56 @@ class MeisikiPage extends StatelessWidget {
                                           color: Colors.tealAccent,
                                           width: 1,
                                         )),
+                                    child: Center(
+                                        child: Text(
+                                      tuuhenbosiGetuSi, //月地
+                                      style: const TextStyle(
+                                        fontSize: 26,
+                                      ),
+                                    )),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          SizedBox(
+                            width: 90,
+                            child: Column(
+                              children: [
+                                SizedBox(
+                                  height: 70,
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(12),
+                                        border: Border.all(
+                                          color: Colors.tealAccent,
+                                          width: 1,
+                                        )),
+                                    child: Center(
+                                        child: Text(
+                                      tuuhenbosiNenKan, //年天
+                                      style: const TextStyle(
+                                        fontSize: 26,
+                                      ),
+                                    )),
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 70,
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(12),
+                                        border: Border.all(
+                                          color: Colors.tealAccent,
+                                          width: 1,
+                                        )),
+                                    child: Center(
+                                        child: Text(
+                                      tuuhenbosiNenSi, //年地
+                                      style: const TextStyle(
+                                        fontSize: 26,
+                                      ),
+                                    )),
                                   ),
                                 ),
                               ],
@@ -936,6 +1032,7 @@ zouKan(String a, int b) {
       '戊戊戊戊戊戊戊甲甲甲甲甲壬壬壬壬壬壬壬壬壬壬壬壬壬壬壬壬壬壬壬' //亥
       '壬壬壬壬壬壬壬壬壬壬癸癸癸癸癸癸癸癸癸癸癸癸癸癸癸癸癸癸癸癸癸' //子
       '癸癸癸癸癸癸癸癸癸辛辛辛丁丁丁丁丁丁丁丁丁丁丁丁丁丁丁丁丁丁丁'; //丑
+
   int d = 12;
   int i = 372;
   String c = '・';
@@ -976,4 +1073,34 @@ zouKan(String a, int b) {
   c = zouKanHyou.substring(i, i + 1);
 
   return c;
+}
+
+// 関数定義　十干から十干数を算出する
+//  b = juKanNo( a )
+//   a: 十干を表す文字（'甲','乙',・・・,'癸'）
+//   b: 十干を表す数字（'0','1',・・・,'9' ）
+juKanNo(String a) {
+  int b = 9;
+  if (a == '甲') {
+    b = 0;
+  } else if (a == '乙') {
+    b = 1;
+  } else if (a == '丙') {
+    b = 2;
+  } else if (a == '丁') {
+    b = 3;
+  } else if (a == '戊') {
+    b = 4;
+  } else if (a == '己') {
+    b = 5;
+  } else if (a == '庚') {
+    b = 6;
+  } else if (a == '辛') {
+    b = 7;
+  } else if (a == '壬') {
+    b = 8;
+  } else if (a == '癸') {
+    b = 9;
+  } else {}
+  return b;
 }
