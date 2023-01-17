@@ -657,32 +657,20 @@ class Output extends StatelessWidget {
               padding: const EdgeInsets.all(4.0),
               child: Column(
                 children: [
-                  const Text(
-                    '命式は',
-                    style: TextStyle(
-                      fontSize: 18,
-                    ),
-                  ),
+                  //const Text(
+                  //  '命式は',
+                  //  style: TextStyle(
+                  //    fontSize: 18,
+                  //  ),
+                  //),
                   Text(
-                    '年柱：$nenchu',
+                    '日柱：$nichu　月柱：$gechu　年柱：$nenchu',
                     style: const TextStyle(
                       fontSize: 16,
                     ),
                   ),
                   Text(
-                    '月柱：$gechu',
-                    style: const TextStyle(
-                      fontSize: 16,
-                    ),
-                  ),
-                  Text(
-                    '日柱：$nichu',
-                    style: const TextStyle(
-                      fontSize: 16,
-                    ),
-                  ),
-                  Text(
-                    '節入り日時：$setuiribi',
+                    '節入り日時：$setuirinen-$setuirigatu-$setuiriniti  $setuiriji:$setuirihun',
                     style: const TextStyle(
                       fontSize: 16,
                     ),

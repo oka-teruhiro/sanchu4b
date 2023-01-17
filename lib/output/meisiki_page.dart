@@ -94,6 +94,8 @@ class MeisikiPage extends StatelessWidget {
   String juuniUnNiti = '胎';
   String juuniUnGetu = '胎';
   String juuniUnNen = '胎';
+  double fs = 22; //フォントサイズ
+  double hi = 56.0;
 
   @override
   Widget build(BuildContext context) {
@@ -305,9 +307,10 @@ class MeisikiPage extends StatelessWidget {
 
                     //■■■■■■■■■天干の行■■■■■■■■■
                     SizedBox(
-                      height: 70,
+                      height: hi,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           SizedBox(
                             width: 90,
@@ -322,9 +325,9 @@ class MeisikiPage extends StatelessWidget {
                                 child: TextButton(
                                   child: Text(
                                     nitikan,
-                                    style: const TextStyle(
+                                    style: TextStyle(
                                       color: Colors.white,
-                                      fontSize: 26,
+                                      fontSize: fs,
                                     ),
                                   ),
                                   onPressed: () {
@@ -416,8 +419,8 @@ class MeisikiPage extends StatelessWidget {
                               child: Center(
                                 child: Text(
                                   gatukan,
-                                  style: const TextStyle(
-                                    fontSize: 26,
+                                  style: TextStyle(
+                                    fontSize: fs,
                                   ),
                                 ),
                               ),
@@ -435,8 +438,8 @@ class MeisikiPage extends StatelessWidget {
                               child: Center(
                                 child: Text(
                                   nenkan,
-                                  style: const TextStyle(
-                                    fontSize: 26,
+                                  style: TextStyle(
+                                    fontSize: fs,
                                   ),
                                 ),
                               ),
@@ -467,7 +470,7 @@ class MeisikiPage extends StatelessWidget {
                     ),
                     //■■■■■■■■■地支の行■■■■■■■■■
                     SizedBox(
-                      height: 70,
+                      height: hi,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -483,8 +486,8 @@ class MeisikiPage extends StatelessWidget {
                               child: Center(
                                 child: Text(
                                   nitisi,
-                                  style: const TextStyle(
-                                    fontSize: 26,
+                                  style: TextStyle(
+                                    fontSize: fs,
                                   ),
                                 ),
                               ),
@@ -502,8 +505,8 @@ class MeisikiPage extends StatelessWidget {
                               child: Center(
                                 child: Text(
                                   gatusi,
-                                  style: const TextStyle(
-                                    fontSize: 26,
+                                  style: TextStyle(
+                                    fontSize: fs,
                                   ),
                                 ),
                               ),
@@ -521,8 +524,8 @@ class MeisikiPage extends StatelessWidget {
                               child: Center(
                                 child: Text(
                                   nensi,
-                                  style: const TextStyle(
-                                    fontSize: 26,
+                                  style: TextStyle(
+                                    fontSize: fs,
                                   ),
                                 ),
                               ),
@@ -665,13 +668,13 @@ class MeisikiPage extends StatelessWidget {
                     ),
                     //■■■■■■■■■蔵干の行■■■■■■■■■
                     SizedBox(
-                      height: 70,
+                      height: hi,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           SizedBox(
                             width: 90,
-                            height: 70,
+                            //height: 70,
                             child: Container(
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(12),
@@ -682,15 +685,15 @@ class MeisikiPage extends StatelessWidget {
                               child: Center(
                                   child: Text(
                                 zouKanNiti,
-                                style: const TextStyle(
-                                  fontSize: 26,
+                                style: TextStyle(
+                                  fontSize: fs,
                                 ),
                               )),
                             ),
                           ),
                           SizedBox(
                             width: 90,
-                            height: 70,
+                            //height: 70,
                             child: Container(
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(12),
@@ -701,15 +704,15 @@ class MeisikiPage extends StatelessWidget {
                               child: Center(
                                   child: Text(
                                 zouKanTuki,
-                                style: const TextStyle(
-                                  fontSize: 26,
+                                style: TextStyle(
+                                  fontSize: fs,
                                 ),
                               )),
                             ),
                           ),
                           SizedBox(
                             width: 90,
-                            height: 70,
+                            //height: 70,
                             child: Container(
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(12),
@@ -720,8 +723,8 @@ class MeisikiPage extends StatelessWidget {
                               child: Center(
                                   child: Text(
                                 zouKanNen,
-                                style: const TextStyle(
-                                  fontSize: 26,
+                                style: TextStyle(
+                                  fontSize: fs,
                                 ),
                               )),
                             ),
@@ -751,7 +754,7 @@ class MeisikiPage extends StatelessWidget {
                     ),
                     //■■■■■■■■■通変星の行■■■■■■■■■
                     SizedBox(
-                      height: 140,
+                      height: hi * 2,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -760,7 +763,7 @@ class MeisikiPage extends StatelessWidget {
                             child: Column(
                               children: [
                                 SizedBox(
-                                  height: 70,
+                                  height: hi,
                                   child: Container(
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(12),
@@ -768,17 +771,17 @@ class MeisikiPage extends StatelessWidget {
                                           color: Colors.tealAccent,
                                           width: 1,
                                         )),
-                                    child: const Center(
+                                    child: Center(
                                         child: Text(
                                       '', //日天
                                       style: TextStyle(
-                                        fontSize: 24,
+                                        fontSize: fs - 2,
                                       ),
                                     )),
                                   ),
                                 ),
                                 SizedBox(
-                                  height: 70,
+                                  height: hi,
                                   child: Container(
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(12),
@@ -789,8 +792,8 @@ class MeisikiPage extends StatelessWidget {
                                     child: Center(
                                         child: Text(
                                       tuuhenbosiNitiSi, //日地
-                                      style: const TextStyle(
-                                        fontSize: 24,
+                                      style: TextStyle(
+                                        fontSize: fs - 2,
                                       ),
                                     )),
                                   ),
@@ -803,7 +806,7 @@ class MeisikiPage extends StatelessWidget {
                             child: Column(
                               children: [
                                 SizedBox(
-                                  height: 70,
+                                  height: hi,
                                   child: Container(
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(12),
@@ -814,14 +817,14 @@ class MeisikiPage extends StatelessWidget {
                                     child: Center(
                                         child: Text(
                                       tuuhenbosiGetuKan, //月天
-                                      style: const TextStyle(
-                                        fontSize: 24,
+                                      style: TextStyle(
+                                        fontSize: fs - 2,
                                       ),
                                     )),
                                   ),
                                 ),
                                 SizedBox(
-                                  height: 70,
+                                  height: hi,
                                   child: Container(
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(12),
@@ -832,8 +835,8 @@ class MeisikiPage extends StatelessWidget {
                                     child: Center(
                                         child: Text(
                                       tuuhenbosiGetuSi, //月地
-                                      style: const TextStyle(
-                                        fontSize: 24,
+                                      style: TextStyle(
+                                        fontSize: fs - 2,
                                       ),
                                     )),
                                   ),
@@ -846,7 +849,7 @@ class MeisikiPage extends StatelessWidget {
                             child: Column(
                               children: [
                                 SizedBox(
-                                  height: 70,
+                                  height: hi,
                                   child: Container(
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(12),
@@ -857,14 +860,14 @@ class MeisikiPage extends StatelessWidget {
                                     child: Center(
                                         child: Text(
                                       tuuhenbosiNenKan, //年天
-                                      style: const TextStyle(
-                                        fontSize: 24,
+                                      style: TextStyle(
+                                        fontSize: fs - 2,
                                       ),
                                     )),
                                   ),
                                 ),
                                 SizedBox(
-                                  height: 70,
+                                  height: hi,
                                   child: Container(
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(12),
@@ -875,8 +878,8 @@ class MeisikiPage extends StatelessWidget {
                                     child: Center(
                                         child: Text(
                                       tuuhenbosiNenSi, //年地
-                                      style: const TextStyle(
-                                        fontSize: 24,
+                                      style: TextStyle(
+                                        fontSize: fs - 2,
                                       ),
                                     )),
                                   ),
@@ -925,7 +928,7 @@ class MeisikiPage extends StatelessWidget {
                     ),
                     //■■■■■■■■■12運の行■■■■■■■■■
                     SizedBox(
-                      height: 70,
+                      height: hi,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -941,8 +944,8 @@ class MeisikiPage extends StatelessWidget {
                               child: Center(
                                   child: Text(
                                 juuniUnNiti, //12運日
-                                style: const TextStyle(
-                                  fontSize: 26,
+                                style: TextStyle(
+                                  fontSize: fs,
                                 ),
                               )),
                             ),
@@ -959,8 +962,8 @@ class MeisikiPage extends StatelessWidget {
                               child: Center(
                                   child: Text(
                                 juuniUnGetu, //12運月
-                                style: const TextStyle(
-                                  fontSize: 26,
+                                style: TextStyle(
+                                  fontSize: fs,
                                 ),
                               )),
                             ),
@@ -977,15 +980,15 @@ class MeisikiPage extends StatelessWidget {
                               child: Center(
                                   child: Text(
                                 juuniUnNen, //12運年
-                                style: const TextStyle(
-                                  fontSize: 26,
+                                style: TextStyle(
+                                  fontSize: fs,
                                 ),
                               )),
                             ),
                           ),
                           SizedBox(
                             width: 80,
-                            height: 70,
+                            //height: 70,
                             child: Container(
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(12),
