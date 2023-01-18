@@ -94,8 +94,9 @@ class MeisikiPage extends StatelessWidget {
   String juuniUnNiti = '胎';
   String juuniUnGetu = '胎';
   String juuniUnNen = '胎';
-  double fs = 22; //フォントサイズ
-  double hi = 56.0;
+  double fs = 20; //フォントサイズ
+  double hi = 45.0;
+  String color1 = 'pinkAccent';
 
   @override
   Widget build(BuildContext context) {
@@ -176,7 +177,7 @@ class MeisikiPage extends StatelessWidget {
                   children: [
                     //■■■■■■■■■生年月日の行■■■■■■■■■
                     SizedBox(
-                      height: 70,
+                      height: 60,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -195,14 +196,16 @@ class MeisikiPage extends StatelessWidget {
                                   children: [
                                     Text(
                                       '$seiniti',
-                                      style: const TextStyle(
-                                        fontSize: 24,
+                                      style: TextStyle(
+                                        fontSize: fs,
+                                        color: Colors.pinkAccent,
                                       ),
                                     ),
-                                    const Text(
+                                    Text(
                                       '日',
                                       style: TextStyle(
-                                        fontSize: 20,
+                                        fontSize: fs - 2,
+                                        color: Colors.pinkAccent,
                                       ),
                                     ),
                                   ],
@@ -225,14 +228,16 @@ class MeisikiPage extends StatelessWidget {
                                   children: [
                                     Text(
                                       '$seigatu',
-                                      style: const TextStyle(
-                                        fontSize: 24,
+                                      style: TextStyle(
+                                        fontSize: fs,
+                                        color: Colors.pinkAccent,
                                       ),
                                     ),
-                                    const Text(
+                                    Text(
                                       '月',
                                       style: TextStyle(
-                                        fontSize: 20,
+                                        fontSize: fs - 2,
+                                        color: Colors.pinkAccent,
                                       ),
                                     ),
                                   ],
@@ -255,14 +260,16 @@ class MeisikiPage extends StatelessWidget {
                                   children: [
                                     Text(
                                       '$seinen',
-                                      style: const TextStyle(
-                                        fontSize: 24,
+                                      style: TextStyle(
+                                        fontSize: fs,
+                                        color: Colors.pinkAccent,
                                       ),
                                     ),
-                                    const Text(
+                                    Text(
                                       '年',
                                       style: TextStyle(
-                                        fontSize: 20,
+                                        fontSize: fs - 2,
+                                        color: Colors.pinkAccent,
                                       ),
                                     ),
                                   ],
@@ -283,17 +290,19 @@ class MeisikiPage extends StatelessWidget {
                               child: Center(
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
-                                  children: const [
+                                  children: [
                                     Text(
                                       '生年',
                                       style: TextStyle(
-                                        fontSize: 20,
+                                        fontSize: fs - 6,
+                                        color: Colors.pinkAccent,
                                       ),
                                     ),
                                     Text(
                                       '月日',
                                       style: TextStyle(
-                                        fontSize: 20,
+                                        fontSize: fs - 6,
+                                        color: Colors.pinkAccent,
                                       ),
                                     ),
                                   ],
@@ -318,8 +327,8 @@ class MeisikiPage extends StatelessWidget {
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(12),
                                   border: Border.all(
-                                    color: Colors.tealAccent,
-                                    width: 5,
+                                    color: Colors.pinkAccent,
+                                    width: 2,
                                   )),
                               child: Center(
                                 child: TextButton(
@@ -447,7 +456,7 @@ class MeisikiPage extends StatelessWidget {
                           ),
                           SizedBox(
                             width: 80,
-                            height: 70,
+                            //height: 70,
                             child: Container(
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(12),
@@ -455,11 +464,12 @@ class MeisikiPage extends StatelessWidget {
                                     color: Colors.tealAccent,
                                     width: 1,
                                   )),
-                              child: const Center(
+                              child: Center(
                                 child: Text(
                                   '干',
                                   style: TextStyle(
-                                    fontSize: 20,
+                                    fontSize: fs - 2,
+                                    color: Colors.pinkAccent,
                                   ),
                                 ),
                               ),
@@ -541,11 +551,12 @@ class MeisikiPage extends StatelessWidget {
                                     color: Colors.tealAccent,
                                     width: 1,
                                   )),
-                              child: const Center(
+                              child: Center(
                                 child: Text(
                                   '支',
                                   style: TextStyle(
-                                    fontSize: 20,
+                                    fontSize: fs - 2,
+                                    color: Colors.pinkAccent,
                                   ),
                                 ),
                               ),
@@ -556,7 +567,7 @@ class MeisikiPage extends StatelessWidget {
                     ),
                     //■■■■■■■■■支合支冲の行■■■■■■■■■
                     SizedBox(
-                      height: 70,
+                      height: 60,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -565,7 +576,7 @@ class MeisikiPage extends StatelessWidget {
                             child: Column(
                               children: [
                                 SizedBox(
-                                  height: 35,
+                                  height: 30,
                                   child: Row(
                                     children: [
                                       SizedBox(
@@ -606,7 +617,7 @@ class MeisikiPage extends StatelessWidget {
                                   ),
                                 ),
                                 SizedBox(
-                                  height: 35,
+                                  height: 30,
                                   child: Row(
                                     children: [
                                       const SizedBox(
@@ -645,17 +656,19 @@ class MeisikiPage extends StatelessWidget {
                               child: Center(
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
-                                  children: const [
+                                  children: [
                                     Text(
                                       '支合',
                                       style: TextStyle(
-                                        fontSize: 20,
+                                        fontSize: fs - 4,
+                                        color: Colors.pinkAccent,
                                       ),
                                     ),
                                     Text(
                                       '支冲',
                                       style: TextStyle(
-                                        fontSize: 20,
+                                        fontSize: fs - 4,
+                                        color: Colors.pinkAccent,
                                       ),
                                     ),
                                   ],
@@ -739,11 +752,12 @@ class MeisikiPage extends StatelessWidget {
                                     color: Colors.tealAccent,
                                     width: 1,
                                   )),
-                              child: const Center(
+                              child: Center(
                                 child: Text(
                                   '蔵干',
                                   style: TextStyle(
-                                    fontSize: 20,
+                                    fontSize: fs - 2,
+                                    color: Colors.pinkAccent,
                                   ),
                                 ),
                               ),
@@ -899,23 +913,26 @@ class MeisikiPage extends StatelessWidget {
                               child: Center(
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
-                                  children: const [
+                                  children: [
                                     Text(
                                       '通',
                                       style: TextStyle(
-                                        fontSize: 20,
+                                        fontSize: fs - 2,
+                                        color: Colors.pinkAccent,
                                       ),
                                     ),
                                     Text(
                                       '変',
                                       style: TextStyle(
-                                        fontSize: 20,
+                                        fontSize: fs - 2,
+                                        color: Colors.pinkAccent,
                                       ),
                                     ),
                                     Text(
                                       '星',
                                       style: TextStyle(
-                                        fontSize: 20,
+                                        fontSize: fs - 2,
+                                        color: Colors.pinkAccent,
                                       ),
                                     ),
                                   ],
@@ -996,11 +1013,12 @@ class MeisikiPage extends StatelessWidget {
                                     color: Colors.tealAccent,
                                     width: 1,
                                   )),
-                              child: const Center(
+                              child: Center(
                                 child: Text(
                                   '十二運',
                                   style: TextStyle(
-                                    fontSize: 18,
+                                    fontSize: fs - 4,
+                                    color: Colors.pinkAccent,
                                   ),
                                 ),
                               ),
@@ -1023,8 +1041,8 @@ class MeisikiPage extends StatelessWidget {
                           child: Text(
                             '節入り日（ $setuirinen-$setuirigatu-$setuiriniti $setuiriji:$setuirihun ）から$setuirinitisuu日目',
                             //'太ワクのところは、タップすると、さらに詳しい説明をみることができます。',
-                            style: const TextStyle(
-                              fontSize: 16,
+                            style: TextStyle(
+                              fontSize: fs - 6,
                               color: Colors.white70,
                               fontWeight: FontWeight.bold,
                             ),
@@ -1034,17 +1052,17 @@ class MeisikiPage extends StatelessWidget {
                     ),
                     //■■■■■■■■■取説の行■■■■■■■■■
                     SizedBox(
-                      height: 70,
+                      height: 60,
                       child: Container(
                         color: Colors.black54,
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Column(
-                            children: const [
+                            children: [
                               Text(
-                                '太ワクのところは、タップすると、さらに詳しい説明をみることができます。',
+                                '赤ワクのところを、タップすると、さらに詳しい説明をみることができます。',
                                 style: TextStyle(
-                                  fontSize: 16,
+                                  fontSize: fs - 6,
                                   color: Colors.white70,
                                   fontWeight: FontWeight.bold,
                                 ),
