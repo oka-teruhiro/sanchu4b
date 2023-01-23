@@ -1,5 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:sanchu4b/juuniun/1_yuu.dart';
+import 'package:sanchu4b/juuniun/2_%20tyousei.dart';
+import 'package:sanchu4b/juuniun/3_mokuyoku.dart';
+import 'package:sanchu4b/juuniun/4_kantai.dart';
+import 'package:sanchu4b/juuniun/5_kenroku.dart';
+import 'package:sanchu4b/juuniun/6_%20teiou.dart';
+import 'package:sanchu4b/juuniun/7_sui.dart';
+import 'package:sanchu4b/juuniun/8_byou.dart';
+import 'package:sanchu4b/juuniun/9_si.dart';
+import 'package:sanchu4b/juuniun/a_bo.dart';
+import 'package:sanchu4b/juuniun/b_zetu.dart';
 
+import '../juuniun/0_tai.dart';
 import '../nikkan/nikkan_hinoe.dart';
 import '../nikkan/nikkan_hinoto.dart';
 import '../nikkan/nikkan_kanoe.dart';
@@ -955,16 +967,99 @@ class MeisikiPage extends StatelessWidget {
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(12),
                                   border: Border.all(
-                                    color: Colors.tealAccent,
-                                    width: 1,
+                                    color: Colors.pinkAccent,
+                                    width: 2,
                                   )),
                               child: Center(
+                                child: TextButton(
                                   child: Text(
-                                juuniUnNiti, //12運日
-                                style: TextStyle(
-                                  fontSize: fs,
+                                    juuniUnNiti, //12運日
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: fs,
+                                    ),
+                                  ),
+                                  onPressed: () {
+                                    if (juuniUnNiti == '胎') {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => const Tai(),
+                                          ));
+                                    } else if (juuniUnNiti == '養') {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => const You(),
+                                          ));
+                                    } else if (juuniUnNiti == '長') {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                const Tyousei(),
+                                          ));
+                                    } else if (juuniUnNiti == '沐') {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                const Mokuyoku(),
+                                          ));
+                                    } else if (juuniUnNiti == '冠') {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                const Kantai(),
+                                          ));
+                                    } else if (juuniUnNiti == '建') {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                const Kenroku(),
+                                          ));
+                                    } else if (juuniUnNiti == '帝') {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => const Teiou(),
+                                          ));
+                                    } else if (juuniUnNiti == '衰') {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => const Sui(),
+                                          ));
+                                    } else if (juuniUnNiti == '病') {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => const Byou(),
+                                          ));
+                                    } else if (juuniUnNiti == '死') {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => const Si(),
+                                          ));
+                                    } else if (juuniUnNiti == '墓') {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => const Bo(),
+                                          ));
+                                    } else {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => const Zetu(),
+                                          ));
+                                    }
+                                  },
                                 ),
-                              )),
+                              ),
                             ),
                           ),
                           SizedBox(
@@ -973,16 +1068,99 @@ class MeisikiPage extends StatelessWidget {
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(12),
                                   border: Border.all(
-                                    color: Colors.tealAccent,
-                                    width: 1,
+                                    color: Colors.pinkAccent,
+                                    width: 2,
                                   )),
                               child: Center(
+                                child: TextButton(
                                   child: Text(
-                                juuniUnGetu, //12運月
-                                style: TextStyle(
-                                  fontSize: fs,
+                                    juuniUnGetu, //12運月
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: fs,
+                                    ),
+                                  ),
+                                  onPressed: () {
+                                    if (juuniUnGetu == '胎') {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => const Tai(),
+                                          ));
+                                    } else if (juuniUnGetu == '養') {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => const You(),
+                                          ));
+                                    } else if (juuniUnGetu == '長') {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                const Tyousei(),
+                                          ));
+                                    } else if (juuniUnGetu == '沐') {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                const Mokuyoku(),
+                                          ));
+                                    } else if (juuniUnGetu == '冠') {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                const Kantai(),
+                                          ));
+                                    } else if (juuniUnGetu == '建') {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                const Kenroku(),
+                                          ));
+                                    } else if (juuniUnGetu == '帝') {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => const Teiou(),
+                                          ));
+                                    } else if (juuniUnGetu == '衰') {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => const Sui(),
+                                          ));
+                                    } else if (juuniUnGetu == '病') {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => const Byou(),
+                                          ));
+                                    } else if (juuniUnGetu == '死') {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => const Si(),
+                                          ));
+                                    } else if (juuniUnGetu == '墓') {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => const Bo(),
+                                          ));
+                                    } else {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => const Zetu(),
+                                          ));
+                                    }
+                                  },
                                 ),
-                              )),
+                              ),
                             ),
                           ),
                           SizedBox(
@@ -991,16 +1169,99 @@ class MeisikiPage extends StatelessWidget {
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(12),
                                   border: Border.all(
-                                    color: Colors.tealAccent,
-                                    width: 1,
+                                    color: Colors.pinkAccent,
+                                    width: 2,
                                   )),
                               child: Center(
+                                child: TextButton(
                                   child: Text(
-                                juuniUnNen, //12運年
-                                style: TextStyle(
-                                  fontSize: fs,
+                                    juuniUnNen, //12運年
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: fs,
+                                    ),
+                                  ),
+                                  onPressed: () {
+                                    if (juuniUnNen == '胎') {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => const Tai(),
+                                          ));
+                                    } else if (juuniUnNen == '養') {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => const You(),
+                                          ));
+                                    } else if (juuniUnNen == '長') {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                const Tyousei(),
+                                          ));
+                                    } else if (juuniUnNen == '沐') {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                const Mokuyoku(),
+                                          ));
+                                    } else if (juuniUnNen == '冠') {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                const Kantai(),
+                                          ));
+                                    } else if (juuniUnNen == '建') {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                const Kenroku(),
+                                          ));
+                                    } else if (juuniUnNen == '帝') {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => const Teiou(),
+                                          ));
+                                    } else if (juuniUnNen == '衰') {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => const Sui(),
+                                          ));
+                                    } else if (juuniUnNen == '病') {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => const Byou(),
+                                          ));
+                                    } else if (juuniUnNen == '死') {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => const Si(),
+                                          ));
+                                    } else if (juuniUnNen == '墓') {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => const Bo(),
+                                          ));
+                                    } else {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => const Zetu(),
+                                          ));
+                                    }
+                                  },
                                 ),
-                              )),
+                              ),
                             ),
                           ),
                           SizedBox(
