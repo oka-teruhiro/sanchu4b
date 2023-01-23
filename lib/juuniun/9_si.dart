@@ -22,34 +22,40 @@ class Si extends StatelessWidget {
         child: ListView(
           children: <Widget>[
             const ListTile(
-              title: Text(''),
+              title: Text(
+                  '　「死」という漢字を見て短命なのではないかと心配される方がおられますがそうではありません。「病」が体の病に関するならば、「死」は、お寺の住職のように、心の病に関して対応する職業に向いています。'),
             ),
             //ListTile(
             //  title: Image.asset('images/nikkan/丙_太陽.jpg'),
             //),
             const ListTile(
-              title: Text(''),
+              title: Text('　死を持った人の特徴は、'),
             ),
             const ListTile(
-              title: Text(''),
+              title: Text('① 十二運の中で取り越し苦労が最も多い星。（死の直前が人々の中で最も怖いから）'),
             ),
             //ListTile(
             // title: Image.asset('images/nikkan/丙_朝日.jpg'),
             //),
             const ListTile(
-              title: Text(''),
+              title: Text('② 先の先を読む星。計算に強い星。'),
             ),
             const ListTile(
-              title: Text(''),
+              title: Text('③ 病院関係者やドクターに良い星。'),
             ),
             const ListTile(
-              title: Text(''),
+              title: Text('　また、能力面では、'),
             ),
             const ListTile(
-              title: Text(''),
+              title: Text(
+                  '　どんな組織や環境にあったとしても、とにかく地道でコツコツやるタイプです。忍耐強く同じことを何度でも根気よくやります。'),
             ),
             const ListTile(
-              title: Text(''),
+              title: Text(
+                  '　したがって派手さはありませんが、安定した仕事であれば、着実にこなす能力があります。ある決まったルーチン的なやり方の職場であれば、堅実にこなすので最適ですが、新しい発想やアイディアを要求される分野では、才能が発揮されません。'),
+            ),
+            const ListTile(
+              title: Text('　一方で頑固で融通がきかず、片寄ったものの見方をしやすく、要領が悪い傾向があります。'),
             ),
             ElevatedButton(
               child: const Text('戻る'),
