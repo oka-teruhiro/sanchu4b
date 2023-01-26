@@ -1,10 +1,10 @@
 name: sanchu4b
-description: 天運三柱推命ver.4.0.32
+description: 天運三柱推命ver.4.0.33
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
 
-version: 4.0.32+32
+version: 4.0.33+33
 
 environment:
   sdk: ">=2.17.3 <3.0.0"
@@ -312,5 +312,10 @@ flutter:
     - images/quiz/Q007/A0070.png
     - images/quiz/Q007/A0071.png
     - images/quiz/Q007/A0072.png
+    - images/juuniun/上流下流.jpg
+    - images/juuniun/エレベータ階段.jpg
+    - images/juuniun/大きい石小さい石.jpg
+    - images/juuniun/自分の荷をあげる.jpg
+    - images/juuniun/十二運の強弱.jpg
 
 
