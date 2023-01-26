@@ -35,7 +35,8 @@ class Byou extends StatelessWidget {
               title: Text('① 取り越し苦労の星。（まだ元気になる可能性は持つ）'),
             ),
             //ListTile(
-            // title: Image.asset('images/nikkan/丙_朝日.jpg'),
+            //  title: Image.network(
+            //     'https://okatoku331.net/wp-content/uploads/2022/04/icon_uranai_x512-150x150.png'),
             //),
             const ListTile(
               title: Text('② 先の先を読む星。計算に強い星。'),
