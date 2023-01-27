@@ -39,9 +39,9 @@ class Sihei extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
-        title: const Text(
-          '十二運：四平（しへい）',
-          style: TextStyle(
+        title: Text(
+          '十二運：$juuniUn・四平（しへい）',
+          style: const TextStyle(
             color: Colors.pinkAccent,
             fontWeight: FontWeight.bold,
           ),
@@ -58,13 +58,24 @@ class Sihei extends StatelessWidget {
             //ListTile(
             //  title: Image.asset('images/nikkan/丙_太陽.jpg'),
             //),
-            const ListTile(
-              title: Text('　四平（しへい）です。'),
+            ListTile(
+              title: Text('　十二運は、$juuniUn で、四平（しへい）です。'),
             ),
             const ListTile(
               title: Text(
-                  '　四旺（しおう）のような運勢の力持ちでもなく、四衰（しすい）のような運勢の力なしでもなく、中間の運勢を持っています。十二運のうち、胎・養・沐・墓が四平に属します。基本はこの四つですが、ここに衰・絶も加えてもいいくらいです。'),
+                  '　四平とは、四旺（しおう）のような運勢の力持ちでもなく、四衰（しすい）のような運勢の力なしでもなく、中間の運勢を持っています。'),
             ),
+            ListTile(
+              title: Image.asset('images/juuniun/大きい石小さい石.jpg'),
+            ),
+            const ListTile(
+              title: Text(
+                  '　十二運のうち、胎・養・沐・墓　が四平に属します。基本はこの四つですが、ここに衰・絶も加えてもいいくらいです。'),
+            ),
+            ListTile(
+              title: Image.asset('images/juuniun/十二運の強弱.jpg'),
+            ),
+
             //ListTile(
             // title: Image.asset('images/nikkan/丙_朝日.jpg'),
             //),

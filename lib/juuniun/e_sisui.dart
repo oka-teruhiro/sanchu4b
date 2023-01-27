@@ -39,9 +39,9 @@ class Sisui extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
-        title: const Text(
-          '十二運：四衰（しすい）',
-          style: TextStyle(
+        title: Text(
+          '十二運：$juuniUn・四衰（しすい）',
+          style: const TextStyle(
             color: Colors.pinkAccent,
             fontWeight: FontWeight.bold,
           ),
@@ -55,8 +55,8 @@ class Sisui extends StatelessWidget {
             ListTile(
               title: Text(hasiraBun),
             ),
-            const ListTile(
-              title: Text('　四旺（しすい）です。'),
+            ListTile(
+              title: Text('　十二運は、$juuniUn で、四旺（しすい）です。'),
             ),
             const ListTile(
               title: Text('　四衰とは、運勢の力なし,少しの荷物を持つのがやっといった運勢を持っています。'),

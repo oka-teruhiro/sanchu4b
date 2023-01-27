@@ -39,9 +39,9 @@ class Siou extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
-        title: const Text(
-          '十二運：四旺（しおう）',
-          style: TextStyle(
+        title: Text(
+          '十二運：$juuniUn・四旺（しおう）',
+          style: const TextStyle(
             color: Colors.pinkAccent,
             fontWeight: FontWeight.bold,
           ),
@@ -58,16 +58,22 @@ class Siou extends StatelessWidget {
             //ListTile(
             //  title: Image.asset('images/nikkan/丙_太陽.jpg'),
             //),
-            const ListTile(
-              title: Text('　四旺（しおう）です。'),
+            ListTile(
+              title: Text('　十二運は、$juuniUn で、四旺（しおう）です。'),
             ),
             const ListTile(
-              title: Text(
-                  '　四旺とは、運勢の力持ち、重いものをもって進んでいくような運勢を持っています。十二運のうち、長・冠・建・帝が四旺に属します。'),
+              title: Text('　四旺とは、運勢の力持ち、重いものをもって進んでいくような運勢を持っています。'),
             ),
-            //ListTile(
-            // title: Image.asset('images/nikkan/丙_朝日.jpg'),
-            //),
+
+            ListTile(
+              title: Image.asset('images/juuniun/大きい石小さい石.jpg'),
+            ),
+            const ListTile(
+              title: Text('　十二運のうち、長・冠・建・帝が四旺に属します。'),
+            ),
+            ListTile(
+              title: Image.asset('images/juuniun/十二運の強弱.jpg'),
+            ),
             const ListTile(
               title: Text(
                   '　活発で、勇気があり、エネルギッシュ、行動力あり、負けず嫌い、過去のことをくよくよしなく、諦めも早い、といった特徴があります。'),
@@ -91,9 +97,22 @@ class Siou extends StatelessWidget {
               title: Text(
                   '　川を下流から上流にのぼっていくような勢いを持っています。流れに逆行することもいといません。人のできないようなことをしていきます。'),
             ),
+            ListTile(
+              title: Image.asset('images/juuniun/上流下流.jpg'),
+            ),
             const ListTile(
               title: Text(
                   '　また、荷物をもってエレベータの前に立っている場合、エレベータが来るのを待つぐらいなら、階段で行ってしまいます。'),
+            ),
+            ListTile(
+              title: Image.asset('images/juuniun/エレベータ階段.jpg'),
+            ),
+            const ListTile(
+              title: Text(
+                  '　四旺の人がついしてしまう過ちがあります。自分の追うべき荷物を、四衰の人に負わせる時、自分ができるからといって人もできるわけではありません。相手にとっては、大きな重荷になることがあります。言動や行動に気をつけましょう。'),
+            ),
+            ListTile(
+              title: Image.asset('images/juuniun/自分の荷をあげる.jpg'),
             ),
             const ListTile(
               title: Text(
