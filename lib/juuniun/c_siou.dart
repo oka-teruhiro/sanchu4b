@@ -55,16 +55,12 @@ class Siou extends StatelessWidget {
             ListTile(
               title: Text(hasiraBun),
             ),
-            //ListTile(
-            //  title: Image.asset('images/nikkan/丙_太陽.jpg'),
-            //),
             ListTile(
               title: Text('　十二運は、$juuniUn で、四旺（しおう）です。'),
             ),
             const ListTile(
               title: Text('　四旺とは、運勢の力持ち、重いものをもって進んでいくような運勢を持っています。'),
             ),
-
             ListTile(
               title: Image.asset('images/juuniun/大きい石小さい石.jpg'),
             ),
@@ -153,7 +149,6 @@ class Siou extends StatelessWidget {
                 }
               },
             ),
-
             ElevatedButton(
               child: const Text('戻る'),
               onPressed: () {

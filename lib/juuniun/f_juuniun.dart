@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Tai extends StatelessWidget {
-  const Tai({Key? key}) : super(key: key);
+class JuuniUn extends StatelessWidget {
+  const JuuniUn({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -9,7 +9,7 @@ class Tai extends StatelessWidget {
       backgroundColor: Colors.black,
       appBar: AppBar(
         title: const Text(
-          '十二運：胎（たい）',
+          '十二運とは',
           style: TextStyle(
             color: Colors.pinkAccent,
             fontWeight: FontWeight.bold,
@@ -24,17 +24,32 @@ class Tai extends StatelessWidget {
             const ListTile(
               title: Text('　受胎を意味します。新しい生命の出発。'),
             ),
+            ListTile(
+              title: Image.asset('images/juuniun/十二運の出し方.jpg'),
+            ),
             const ListTile(
               title: Text('　胎を持つ人の特徴は、'),
+            ),
+            ListTile(
+              title: Image.asset('images/juuniun/十二運の読み.jpg'),
             ),
             const ListTile(
               title: Text('① 生まれたばかりで明日があり、前向きでやや強い。'),
             ),
+            ListTile(
+              title: Image.asset('images/juuniun/十二運と人の一生.jpg'),
+            ),
             const ListTile(
               title: Text('② 新しいことを好む、新しいことをよく知っている。'),
             ),
+            ListTile(
+              title: Image.asset('images/juuniun/十二運の強弱.jpg'),
+            ),
             const ListTile(
               title: Text('③ 改革のエネルギーを持つ。（ただし、伝統を軽んじると人から嫌われる。）'),
+            ),
+            ListTile(
+              title: Image.asset('images/juuniun/四旺.jpg'),
             ),
             const ListTile(
               title: Text('④ 変化を求める。（同じことをしているのが嫌いなタイプ。）'),
@@ -42,9 +57,15 @@ class Tai extends StatelessWidget {
             const ListTile(
               title: Text('　また、能力面は、'),
             ),
+            ListTile(
+              title: Image.asset('images/juuniun/四衰.jpg'),
+            ),
             const ListTile(
               title: Text(
                   '　常に希望と夢をもって何事も発展的に考えます。礼儀正しく、用意周到ですが、気持ちが高ぶるほど行動がついていかない傾向があります。'),
+            ),
+            ListTile(
+              title: Image.asset('images/juuniun/四旺と四衰.jpg'),
             ),
             const ListTile(
               title: Text(

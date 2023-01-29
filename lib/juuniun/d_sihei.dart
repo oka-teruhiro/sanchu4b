@@ -55,9 +55,6 @@ class Sihei extends StatelessWidget {
             ListTile(
               title: Text(hasiraBun),
             ),
-            //ListTile(
-            //  title: Image.asset('images/nikkan/丙_太陽.jpg'),
-            //),
             ListTile(
               title: Text('　十二運は、$juuniUn で、四平（しへい）です。'),
             ),
@@ -75,10 +72,6 @@ class Sihei extends StatelessWidget {
             ListTile(
               title: Image.asset('images/juuniun/十二運の強弱.jpg'),
             ),
-
-            //ListTile(
-            // title: Image.asset('images/nikkan/丙_朝日.jpg'),
-            //),
             ListTile(
               title: Text('　十二運は、$juuniUn　です'),
             ),
@@ -114,7 +107,6 @@ class Sihei extends StatelessWidget {
                 }
               },
             ),
-
             ElevatedButton(
               child: const Text('戻る'),
               onPressed: () {

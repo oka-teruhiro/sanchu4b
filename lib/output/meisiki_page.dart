@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sanchu4b/juuniun/c_siou.dart';
 import 'package:sanchu4b/juuniun/d_sihei.dart';
 import 'package:sanchu4b/juuniun/e_sisui.dart';
+import 'package:sanchu4b/juuniun/f_juuniun.dart';
 
 import '../nikkan/nikkan_hinoe.dart';
 import '../nikkan/nikkan_hinoto.dart';
@@ -1430,16 +1431,25 @@ class MeisikiPage extends StatelessWidget {
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(12),
                                   border: Border.all(
-                                    color: Colors.tealAccent,
-                                    width: 1,
+                                    color: Colors.pinkAccent,
+                                    width: 2,
                                   )),
                               child: Center(
-                                child: Text(
-                                  '十二運',
-                                  style: TextStyle(
-                                    fontSize: fs - 4,
-                                    color: Colors.pinkAccent,
+                                child: TextButton(
+                                  child: Text(
+                                    '十二運', //12運年
+                                    style: TextStyle(
+                                      color: Colors.pinkAccent,
+                                      fontSize: fs - 4,
+                                    ),
                                   ),
+                                  onPressed: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) => const JuuniUn(),
+                                        ));
+                                  },
                                 ),
                               ),
                             ),

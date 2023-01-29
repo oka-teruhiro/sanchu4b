@@ -22,21 +22,18 @@ class Tyousei extends StatelessWidget {
         child: ListView(
           children: <Widget>[
             const ListTile(
-              title: Text('お腹の中で、胎児が成長しけっこう大きくなった様子を意味します。'
+              title: Text('　お腹の中で、胎児が成長しけっこう大きくなった様子を意味します。'
                   '　胎児はお母さんを蹴飛ばしても、お母さんはそれを喜びます。'),
             ),
             //ListTile(
             //  title: Image.asset('images/nikkan/丙_太陽.jpg'),
             //),
             const ListTile(
-              title: Text('長生を持つ人の特徴は、'),
+              title: Text('　長生を持つ人の特徴は、'),
             ),
             const ListTile(
               title: Text('① 母胎で寝たい時に寝、起きたい時に起き、何の苦しみも、寒さ・暑さも関係ない星'),
             ),
-            //ListTile(
-            // title: Image.asset('images/nikkan/丙_朝日.jpg'),
-            //),
             const ListTile(
               title: Text('② 母胎で自動的に栄養をもらう、徳の多い星'),
             ),
@@ -50,7 +47,7 @@ class Tyousei extends StatelessWidget {
               title: Text('　また、能力面は、'),
             ),
             const ListTile(
-              title: Text('社会の中や組織の中での世渡りがうまく、人あたりが良く、そのため人から好かれます。'),
+              title: Text('　社会の中や組織の中での世渡りがうまく、人あたりが良く、そのため人から好かれます。'),
             ),
             const ListTile(
               title: Text('　考え方が新鮮で、どんどんと新しいものに取り組んでいく能力があります。'),

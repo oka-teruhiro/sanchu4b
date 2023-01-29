@@ -59,9 +59,8 @@ class Sisui extends StatelessWidget {
               title: Text('　十二運は、$juuniUn で、四旺（しすい）です。'),
             ),
             const ListTile(
-              title: Text('　四衰とは、運勢の力なし,少しの荷物を持つのがやっといった運勢を持っています。'),
+              title: Text('　四衰とは、運勢の力なし,少しの荷物を持つのがやっと、といった運勢を持っています。'),
             ),
-
             ListTile(
               title: Image.asset('images/juuniun/大きい石小さい石.jpg'),
             ),
@@ -72,10 +71,6 @@ class Sisui extends StatelessWidget {
             ListTile(
               title: Image.asset('images/juuniun/十二運の強弱.jpg'),
             ),
-
-            //ListTile(
-            // title: Image.asset('images/nikkan/丙_朝日.jpg'),
-            //),
             const ListTile(
               title: Text(
                   '　力なしといっても必ずしも悪いわけではありません。緻密で、先の先を考え、計算強く、よく悔い改め、二度と同じ失敗は起こさないように心がけます。石橋をたたいて渡るように何事に対しても慎重です。'),
@@ -97,7 +92,6 @@ class Sisui extends StatelessWidget {
             ListTile(
               title: Image.asset('images/juuniun/上流下流.jpg'),
             ),
-
             const ListTile(
               title: Text(
                   '　また、荷物をもってエレベータの前に立っている場合、階段を使うことはありません。エレベータが来るまで待ちます。'),
@@ -105,12 +99,10 @@ class Sisui extends StatelessWidget {
             ListTile(
               title: Image.asset('images/juuniun/エレベータ階段.jpg'),
             ),
-
             const ListTile(
               title: Text(
                   '　運勢が弱い分、関西の泣き婆さんのようになりやすいです。なので発想の転換が必要です。運勢が弱いといって嘆くことはありません。運勢が強い人にはできない才能があります。それは、人の痛みを理解し、親身になって寄り添ってあげられることです。より辛い立場や環境にいる人の為に、寄り添うことが開運方法です。ちなみに易者には、このタイプが向いています。'),
             ),
-
             ListTile(
               title: Text('　十二運は、$juuniUn　です'),
             ),
@@ -146,7 +138,6 @@ class Sisui extends StatelessWidget {
                 }
               },
             ),
-
             ElevatedButton(
               child: const Text('戻る'),
               onPressed: () {
