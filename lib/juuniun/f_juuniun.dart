@@ -44,7 +44,7 @@ class JuuniUn extends StatelessWidget {
               title: Text('　同様に月の柱の十二運は、日干が　丁　で、月の柱が　丑　なので、　墓　を得ます。'),
             ),
             const ListTile(
-              title: Text('　同様に年の柱の十二運は、日干が　丁　で、月の柱が　戌　なので、　養　を得ます。'),
+              title: Text('　同様に年の柱の十二運は、日干が　丁　で、年の柱が　戌　なので、　養　を得ます。'),
             ),
             const ListTile(
               title: Text(
@@ -73,7 +73,7 @@ class JuuniUn extends StatelessWidget {
               title: Text('　人生というのは、まずお母さんのお腹の中で、受胎します。図では一番下に「胎」がきます。'),
             ),
             const ListTile(
-              title: Text('　次にお母さんのあなかの中で養分をもらって大きくなっていきます。その状態を「養」と言います。'),
+              title: Text('　次にお母さんのお腹の中で養分をもらって大きくなっていきます。その状態を「養」と言います。'),
             ),
             const ListTile(
               title: Text('　さらにお母さんのお腹の中で一番大きく成長した状態。これを「長生」と言います。'),

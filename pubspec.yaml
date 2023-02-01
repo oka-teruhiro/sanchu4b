@@ -4,7 +4,7 @@ description: 天運三柱推命ver.4.0.36
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
 
-version: 4.0.36+36
+version: 4.0.37+10
 
 environment:
   sdk: ">=2.17.3 <3.0.0"
@@ -32,19 +32,26 @@ dev_dependencies:
     sdk: flutter
 
 #アプリアイコンを作成するためのコード・ここから（2022.12.25)
-  flutter_launcher_icons: ^0.11.0
+  #flutter_launcher_icons: ^0.11.0
+  flutter_native_splash: ^2.2.17
 
 flutter_icons:
-  android: true
+  android: "launcher_icon"
   ios: true
-  image_path: 'images/main/icon_uranai4b.png'
+  image_path: 'images/main/icon_uranai.png'
+  web:
+    generate: true
+    image_path: "path/to/image.png"
+    background_color: "#hexcode"
+    theme_color: "#hexcode"
+
 #アプリアイコンを作成するためのコード・ここまで
 
 #スプラッシュ画面を作成する時下記のコードを使う(2022.12.26)
-  flutter_native_splash: ^2.2.16
+
 
 flutter_native_splash:
-  image: images/main/icon_uranai4b.png
+  image: images/main/icon_uranai_x512.png
   color: "000000"
   android: true
   ios: true

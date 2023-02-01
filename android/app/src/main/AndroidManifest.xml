@@ -2,9 +2,9 @@
     package="com.chan.sanchu4b">
 
    <application
-        android:label="sanchu4b"
+        android:label="三柱推命"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/launcher_icon">
         <activity
             android:name=".MainActivity"
             android:exported="true"
