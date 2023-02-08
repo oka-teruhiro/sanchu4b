@@ -103,7 +103,7 @@ class Sihei extends StatelessWidget {
                         builder: (context) => const Tai(),
                       ));
                 } else {
-                  print('■■■■■■■■■エラーだよ');
+                  //print('■■■■■■■■■エラーだよ');
                 }
               },
             ),

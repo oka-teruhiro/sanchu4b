@@ -15,28 +15,12 @@ class Profile extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
-        actions: const <Widget>[
-          /*TextButton(
-            onPressed: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => BookListPageB(),
-                  ));
-            },
-            child: Text(''),
-          ),*/
-          //icon: const Icon(Icons.navigate_next),
-          //tooltip: 'Next page',
-        ],
+        actions: const <Widget>[],
       ),
       body: ListView(
         children: <Widget>[
           ListTile(
-            title: Image.asset(
-                //title: Image.network(
-                //   'https://okatoku331.net/wp-content/uploads/2023/01/Q001-1024x1018.png'
-                'images/main/taxi.png'),
+            title: Image.asset('images/main/taxi.png'),
           ),
           const ListTile(
             title: Text('　私は東京のタクシー運転手です。63歳です。'
@@ -87,19 +71,6 @@ class Profile extends StatelessWidget {
           ),
           const ListTile(
             title: Text('　　(2021.2.22)'),
-          ),
-          const ListTile(
-            title: Text(''),
-          ),
-          /*AdmobBanner(
-              adUnitId: AdMobService().getBannerAdUnitId(),
-              adSize: AdmobBannerSize(
-                width: MediaQuery.of(context).size.width.toInt(),
-                height: AdMobService().getHeight(context).toInt(),
-                name: 'SMART_BANNER',
-              )),*/
-          const ListTile(
-            title: Text(''),
           ),
           ElevatedButton(
             child: const Text('戻る'),

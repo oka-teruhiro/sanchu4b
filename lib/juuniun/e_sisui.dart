@@ -134,7 +134,7 @@ class Sisui extends StatelessWidget {
                         builder: (context) => const Zetu(),
                       ));
                 } else {
-                  print('■■■■■■■■■エラーだよ');
+                  //print('■■■■■■■■■エラーだよ');
                 }
               },
             ),

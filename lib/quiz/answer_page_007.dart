@@ -79,7 +79,7 @@ class AnswerPage007 extends StatelessWidget {
             height: 250,
             child: Column(
               children: [
-                Container(
+                SizedBox(
                   height: 230,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,

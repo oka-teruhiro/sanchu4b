@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:sanchu4b/juuniun/2_%20tyousei.dart';
 import 'package:sanchu4b/juuniun/4_kantai.dart';
@@ -145,7 +146,9 @@ class Siou extends StatelessWidget {
                         builder: (context) => const Teiou(),
                       ));
                 } else {
-                  print('■■■■■■■■■エラーだよ');
+                  if (kDebugMode) {
+                    print('■■■■■■■■■エラーだよ');
+                  }
                 }
               },
             ),

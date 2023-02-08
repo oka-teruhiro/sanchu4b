@@ -170,12 +170,6 @@ class _Update2State extends State<Update2> {
           const ListTile(
             title: Text('⑦　データベースへのアクセス方法（プログラミングのスキルアップのため）'),
           ),
-          const ListTile(
-            title: Text('⑧　インタースティシャル広告配置（プログラミングのスキルアップのため）'),
-          ),
-          const ListTile(
-            title: Text(''),
-          ),
           ElevatedButton(
             child: const Text('戻る'),
             onPressed: () {

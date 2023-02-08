@@ -122,12 +122,12 @@ class MeisikiPage extends StatelessWidget {
     zouKanNitiNo = juKanNo(zouKanNiti);
     zouKanGatuNo = juKanNo(zouKanTuki);
     zouKanNenNo = juKanNo(zouKanNen);
-    print('■■■■■■■■■$nitikan$nitiKanNo');
-    print('■■■■■■■■■$gatukan$gatuKanNo');
-    print('■■■■■■■■■$nenkan$nenKanNo');
-    print('■■■■■■■■■$zouKanNiti$zouKanNitiNo');
-    print('■■■■■■■■■$zouKanTuki$zouKanGatuNo');
-    print('■■■■■■■■■$zouKanNen$zouKanNenNo');
+    //print('■■■■■■■■■$nitikan$nitiKanNo');
+    //print('■■■■■■■■■$gatukan$gatuKanNo');
+    //print('■■■■■■■■■$nenkan$nenKanNo');
+    //print('■■■■■■■■■$zouKanNiti$zouKanNitiNo');
+    //print('■■■■■■■■■$zouKanTuki$zouKanGatuNo');
+    //print('■■■■■■■■■$zouKanNen$zouKanNenNo');
     tuuhenbosiGetuKan = tuuhenbosi.substring(
         nitiKanNo * 20 + gatuKanNo * 2, nitiKanNo * 20 + gatuKanNo * 2 + 2);
     tuuhenbosiNenKan = tuuhenbosi.substring(
@@ -138,11 +138,11 @@ class MeisikiPage extends StatelessWidget {
         nitiKanNo * 20 + zouKanGatuNo * 2 + 2);
     tuuhenbosiNenSi = tuuhenbosi.substring(
         nitiKanNo * 20 + zouKanNenNo * 2, nitiKanNo * 20 + zouKanNenNo * 2 + 2);
-    print('■■■■■■■$tuuhenbosiGetuKan');
-    print('■■■■■■■$tuuhenbosiNenKan');
-    print('■■■■■■■$tuuhenbosiNitiSi');
-    print('■■■■■■■$tuuhenbosiGetuSi');
-    print('■■■■■■■$tuuhenbosiNenSi');
+    //print('■■■■■■■$tuuhenbosiGetuKan');
+    //print('■■■■■■■$tuuhenbosiNenKan');
+    //print('■■■■■■■$tuuhenbosiNitiSi');
+    //print('■■■■■■■$tuuhenbosiGetuSi');
+    //print('■■■■■■■$tuuhenbosiNenSi');
     //十二運を算出する
     nitiSiNo = juuniSiNo(nitisi);
     gatuSiNo = juuniSiNo(gatusi);
@@ -153,10 +153,10 @@ class MeisikiPage extends StatelessWidget {
         nitiKanNo * 12 + gatuSiNo, nitiKanNo * 12 + gatuSiNo + 1);
     juuniUnNen = juuniUn.substring(
         nitiKanNo * 12 + nenSiNo, nitiKanNo * 12 + nenSiNo + 1);
-    print('■■■■■■■■■$nitiKanNo');
-    print('■■■■■■$juuniUnNiti$nitiSiNo');
-    print('■■■■■■$juuniUnGetu$gatuSiNo');
-    print('■■■■■■$juuniUnNen$nenSiNo');
+    //print('■■■■■■■■■$nitiKanNo');
+    //print('■■■■■■$juuniUnNiti$nitiSiNo');
+    //print('■■■■■■$juuniUnGetu$gatuSiNo');
+    //print('■■■■■■$juuniUnNen$nenSiNo');
 
     return Scaffold(
       appBar: AppBar(

@@ -136,13 +136,61 @@ class JuuniUn extends StatelessWidget {
               title: Image.asset('images/juuniun/四旺.jpg'),
             ),
             const ListTile(
-              title: Text(''),
+              title: Text('　大きく分けると、建禄・帝旺と、冠帯・長生と二つに別れます。'),
+            ),
+            const ListTile(
+              title: Text('　冠帯・長生は「ほどよい山」に登るのに対し、建禄・帝旺は「エベレスト」に登るのに例えることができます。'
+                  ''),
+            ),
+            const ListTile(
+              title: Text(
+                  '　ほどよい山ということは、谷も浅い、遭難することはあまりなく、セーフという感じです。一方エベレストということは、谷も深く、人生における遭難もありえるということになります。'),
+            ),
+            const ListTile(
+              title: Text(
+                  '　同じエベレストでも、建禄は、エベレストを8割9割ほど登ったぐらい、後ろを見ない、もうここまできたら登るっきゃない、という勢いがあります。40代50代油ぎっていて、人を跳ね除けてでも上を目指して進んでいく状態を表します。'),
+            ),
+            const ListTile(
+              title: Text(
+                  '　一方、帝旺は、上り詰めて社長も経験しちゃったという感じ。社員ともうまくやって、年金ももらわないといけないし、対立しても仕方がない、建禄はとがっていいるのに対し、帝旺は、角がとれて丸みを帯ています。同じエベレストでも建禄と帝旺は全く違います。'),
+            ),
+            const ListTile(
+              title: Text('　同じように、冠帯と長生は同じ　ほどよい山　でも全く違います。'),
+            ),
+            const ListTile(
+              title: Text(
+                  '　長生は、お母さんのお腹の中、まだ地上に生まれていません。一方冠帯は、20代、まだまだ、人生の甘いも辛いも経験不足ではあるものの、成人式を迎え、大人の仲間入りをした立場。新入社員で、わからないことがあっても、先輩から良きアドバイスをもらったり、失敗しても先輩がかばってくれたりと、なにかとラッキーな星です。'),
+            ),
+            const ListTile(
+              title: Text(
+                  '　一方、長生は、お母さんのお腹の中、守られた環境のなか、大きく成長した段階、時々お母さんを蹴飛ばしますが、蹴飛ばされたにもかかわらず、お母さんは、「あっ、今蹴った！」と喜んでしまうように、多少乱暴な言動をしたとしても、周りからは許されてしまう、やはりラッキーな星です。'),
+            ),
+            ListTile(
+              title: Image.asset('images/juuniun/四衰.jpg'),
             ),
             const ListTile(
               title: Text('　'),
             ),
-            ListTile(
-              title: Image.asset('images/juuniun/四衰.jpg'),
+            const ListTile(
+              title: Text('　'),
+            ),
+            const ListTile(
+              title: Text('　'),
+            ),
+            const ListTile(
+              title: Text('　'),
+            ),
+            const ListTile(
+              title: Text('　'),
+            ),
+            const ListTile(
+              title: Text('　'),
+            ),
+            const ListTile(
+              title: Text('　'),
+            ),
+            const ListTile(
+              title: Text('　'),
             ),
             const ListTile(
               title: Text('　'),
