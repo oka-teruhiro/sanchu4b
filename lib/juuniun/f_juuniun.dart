@@ -169,34 +169,40 @@ class JuuniUn extends StatelessWidget {
               title: Image.asset('images/juuniun/四衰.jpg'),
             ),
             const ListTile(
-              title: Text('　'),
+              title: Text(
+                  '　「衰」は、分類上「四衰」になりますが、実践鑑定すると10人に3人は、強い人がいます。それは、人生の頂点である「帝旺」を越えたばかりで、余力が残っている状態、強からすぐには弱にならないからです。確かに「衰」のような人もいますが「帝旺」のような人もいるので、よくさしこんで鑑定する必要があります。'),
             ),
             const ListTile(
-              title: Text('　'),
+              title: Text(
+                  '　「絶」も「四衰」と言い難いところがあります。「四衰」というと暗いというイメージがありますが、「絶」はとにかく明るいです。死んで墓に入って全て無くなったという状態です。でも次はどこで生まれようかとそれを考えると楽しい、「今回はあの夫だったけど、次は誰が夫かしら」楽天的で、次の人生を考えるとワクワクするというイメージを持っています。'),
             ),
             const ListTile(
-              title: Text('　'),
+              title: Text(
+                  '　「病」と「死」は、正真正銘の「四衰」です・やっぱり病気になってしまうと、いろいろ人生考えさせられることが多くなります。なにかと体が自由に動けないし、その分考えることが多くなるし、考えすぎて取り越し苦労しやすくなります。次のことが気になり、なかなか決定できないところがあります。'),
             ),
             const ListTile(
-              title: Text('　'),
+              title: Text(
+                  '　しかし、いいところもあります。ドクターとか、研究するとか、チェックするとか、易者とかには向いています。よくカルテや検査結果を分析し、適切なアドバイスをすることにたけています。'),
             ),
             const ListTile(
-              title: Text('　'),
-            ),
-            const ListTile(
-              title: Text('　'),
-            ),
-            const ListTile(
-              title: Text('　'),
-            ),
-            const ListTile(
-              title: Text('　'),
-            ),
-            const ListTile(
-              title: Text('　'),
+              title: Text(
+                  '　「墓」は、弱いように見えますが、「墓」は「四衰」には入りません。「墓」は忍耐・我慢・根気の星です。すごく強いです。死んだあとは、「絶」と同じで、怖いものがありません。開き直っていますから。死んじゃってますから。「何でもこい、俺は死んでんだ、何されてもいいんだ」という感じです。'),
             ),
             ListTile(
               title: Image.asset('images/juuniun/四旺と四衰.jpg'),
+            ),
+            const ListTile(
+              title: Text(''
+                  ''),
+            ),
+            const ListTile(
+              title: Text('　'),
+            ),
+            const ListTile(
+              title: Text('　'),
+            ),
+            const ListTile(
+              title: Text('　'),
             ),
             const ListTile(
               title: Text('　'),

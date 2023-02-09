@@ -244,7 +244,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
-        title: const Text('天運三柱推命 ver.4.0.38',
+        title: const Text('天運三柱推命 ver.4.0.39',
             style: TextStyle(
               color: Colors.pinkAccent,
               fontWeight: FontWeight.bold,
