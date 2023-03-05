@@ -28,10 +28,10 @@ class JuuniUn extends StatelessWidget {
               title: Image.asset('images/juuniun/十二運の出し方.jpg'),
             ),
             const ListTile(
-              title: Text('　宇多田ヒカルさんを例にとると、命式は次のようになります。'),
+              title: Text('　例えば1983年1月19日生まれの人の命式は次のようになります。'),
             ),
             ListTile(
-              title: Image.asset('images/juuniun/宇多田ヒカル.jpg'),
+              title: Image.asset('images/juuniun/宇多田ヒカル命式.jpg'),
             ),
             const ListTile(
               title: Text(
@@ -188,12 +188,57 @@ class JuuniUn extends StatelessWidget {
               title: Text(
                   '　「墓」は、弱いように見えますが、「墓」は「四衰」には入りません。「墓」は忍耐・我慢・根気の星です。すごく強いです。死んだあとは、「絶」と同じで、怖いものがありません。開き直っていますから。死んじゃってますから。「何でもこい、俺は死んでんだ、何されてもいいんだ」という感じです。'),
             ),
+            const ListTile(
+              title: Text(''),
+            ),
             ListTile(
               title: Image.asset('images/juuniun/四旺と四衰.jpg'),
             ),
             const ListTile(
-              title: Text(''
+              title: Text(
+                  '　四旺と四衰の違いです。例えば仕事をさせるとその違いが顕著にでます。四旺を持つ人は、とにかく仕事が早いのに対して、四衰の人はなかなか仕事が終わらない、後ろばかり気になるからです。'
+                  'いい仕事をするのは、四衰。ゴミが落ちていないか、振り向きながらチェックしているからです、でも、遅い。'
                   ''),
+            ),
+            const ListTile(
+              title: Text(
+                  '　町内会の役員選出でも、四旺は大体すぐ引き受けます。おだてに弱いです。四衰は、簡単には引き受けません。必ず交換条件を取ろうとします。「会長を引き受けてもらえませんか。」「ちょっと待ってください。1週間に１回だけなら引き受けますが、それ以上だったらお断りします」といったぐあいです。'
+                  ''),
+            ),
+            ListTile(
+              title: Image.asset('images/juuniun/上流下流.jpg'),
+            ),
+            const ListTile(
+              title: Text(
+                  '　四旺は、本当にすごいです。下流から上流へ上っていくような、力強さがあります。普通は、上流から下流へと流れに身を任せればいいのに、流れに逆らっていくんですから。だから、身も心もボロボロになりながらそれでも向かっていく、そんな人いませんか。そんな人は、この四旺を持っている人が多いです。'),
+            ),
+            const ListTile(
+              title: Text(
+                  '　四衰は、運勢の力がないので、流れるままにいくしかないので。四旺は、人ができないようなことにチャレンジしていきます。エベレストは、普通の人は登りません。それをやっちゃうんだから。'),
+            ),
+            ListTile(
+              title: Image.asset('images/juuniun/エレベータ階段.jpg'),
+            ),
+            const ListTile(
+              title: Text(
+                  '　また、重い荷物をもって、エレベータの前に立っている場面では、待てばいいじゃないですか、待てないんです、四旺の人は。待つぐらいなら、階段で登って行ってしまいます。一方、四衰の人は、運勢の力なしなので、持てずに荷物をおろし待つしかない。'),
+            ),
+            ListTile(
+              title: Image.asset('images/juuniun/大きい石小さい石.jpg'),
+            ),
+            const ListTile(
+              title: Text('　ここで重要なことは、人それぞれに、人間の力量に差があるということを認識することです。'
+                  '四衰は、運勢の力なし、四旺は、運勢の力持ち。例えると、四衰が1kgの石を持つのもやっとという力量に対し、四旺は10kgの石を平気でもてる力量、四平はその中間の力量になります。'),
+            ),
+            const ListTile(
+              title: Text(
+                  '　ここで、四旺の人が、10kgのうち、2kg手伝ってほしいと四衰の人に背負わせると、大変なことが起こります。四旺の人にとっては、ほんの一部でも、四衰の人にとっては、過剰な荷物を負わされ、つぶれてしまいます。'),
+            ),
+            ListTile(
+              title: Image.asset('images/juuniun/自分の荷をあげる.jpg'),
+            ),
+            const ListTile(
+              title: Text('　こういうことが、日常よく起こっています。相手の運勢の器、力量をよくみて接する必要があります。'),
             ),
             const ListTile(
               title: Text('　'),

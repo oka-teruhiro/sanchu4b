@@ -1,10 +1,10 @@
 name: sanchu4b
-description: 天運三柱推命ver.4.0.39
+description: 天運三柱推命ver.4.0.40
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
 
-version: 4.0.39+10
+version: 4.0.40+11
 
 environment:
   sdk: ">=2.17.3 <3.0.0"
@@ -332,6 +332,7 @@ flutter:
     - images/juuniun/四衰.jpg
     - images/juuniun/四旺と四衰.jpg
     - images/juuniun/宇多田ヒカル.jpg
+    - images/juuniun/宇多田ヒカル命式.jpg
     - images/juuniun/宇多田ヒカル十二運.jpg
     - images/juuniun/四旺四衰特徴.jpg
 
