@@ -240,17 +240,135 @@ class JuuniUn extends StatelessWidget {
             const ListTile(
               title: Text('　こういうことが、日常よく起こっています。相手の運勢の器、力量をよくみて接する必要があります。'),
             ),
+            ListTile(
+              title: Image.asset('images/juuniun/12運_四旺四衰バランス.jpg'),
+            ),
             const ListTile(
-              title: Text('　'),
+              title: Text(
+                  '　できれば強いのと弱いのが両方入っている方がいいです。強いのばかりでは、とめどなく走って行ってしまうし、弱いのばかりでは、悩んでばかりいて前へ進まないという状況になります。もしも、偏っているならば、努力して立命する必要が出てきます。'),
+            ),
+            const ListTile(
+              title: Text(
+                  '　強い運勢を自分のために使えば凶になり、運勢の弱い人のために使えば吉となります。弱い運勢の人は、自分だけで悩めば凶になり、他の困っている人のために寄り添ってあげれば吉になります。'),
+            ),
+            const ListTile(
+              title: Text('　自分のカルテをよく知って、そして好きになって、バランスを取るように努力することが大切になります。'),
+            ),
+            const ListTile(
+              title: Text(
+                  '　子供の教育も同じことがいえます。子供のカルテも一人一人違います。強い運勢を持っている子もいれば、弱い運勢を持っている子もいます。「お兄ちゃんのようにどうしてできないの」などと言って、弟は家を出たり引きこもったりといったようなことが起こります。十二運をとおして、それぞれの器が見えて来るので、それぞれに合った対応をしてあげる必要があります。'),
+            ),
+            const ListTile(
+              title: Text('　ここまでは総論、概要になりますが、続いて各論にはいります。'),
+            ),
+            ListTile(
+              title: Image.asset('images/juuniun/12運_各論.jpg'),
+            ),
+            const ListTile(
+              title: Text(
+                  '　十二運というのは、日の柱が一番重要です。日干は、己（おの）が心。日支は、己が体。その己が心と己が体の関係から、十二運である、己が運勢を知ることができます。'),
+            ),
+            const ListTile(
+              title:
+                  Text('　したがって、日の柱の十二運をまずみる必要があります。下の図の例では、冠帯　の運勢を持っているとみます。'),
+            ),
+            ListTile(
+              title: Image.asset('images/juuniun/12運_月柱の影響.jpg'),
+            ),
+            const ListTile(
+              title: Text(
+                  '　そして次にみるのは、月の柱の十二運、上の図の例では、墓　です。この影響が出てきます。そして次に年の柱、上の図では、養　です。多少その運勢が出てきます。'),
+            ),
+            ListTile(
+              title: Image.asset('images/juuniun/12運_胎.jpg'),
+            ),
+            const ListTile(
+              title: Text(
+                  '　受胎ですから、いわゆる無から有を生じた訳だから、絶して無くなったところから新たに生じて出発した。だから前を向いている訳です。前向きで強いです。ある意味生意気っぽい人が多いです。'
+                  ''),
+            ),
+            const ListTile(
+              title: Text(
+                  '　無から有を生じた訳ですから、非常に新しい物好きです。また新しいことをよく知っています。政治家ならば、保守派ではなく改革派、野党だったら、この胎を持っていたらいいと言われます。規制をぶち壊すのが好きです。なので気をつけないといけないことは、伝統を重んじるタイプの人から嫌われてしまうことが度々起こります。よく根回ししていかないとまわりから嫌われて孤立してしまうことがあります。'),
+            ),
+            const ListTile(
+              title: Text(
+                  '　例えば、お父さんと一緒に事業をしてきて、お父さんが退き社長になり、そのとたん改革する。でも、周りには叩き上げの人たち、お父さんと一緒に頑張ってきた古い人たちから反発される。こんなことがよく起こります。だから、一人一人、よく根回しする必要があります。'
+                  ''),
+            ),
+            const ListTile(
+              title: Text('　そして、変化を求める。同じことをしているのが大嫌い。'),
+            ),
+            const ListTile(
+              title: Text(
+                  '　なので、日の柱に　胎　がはいっている人を見たら、この人改革派だな、でも根回しちゃんとしているかな、人から嫌われていないかな、よく確認して、そうならば、アドバイスしてあげる必要があります。'),
+            ),
+            ListTile(
+              title: Image.asset('images/juuniun/12運_養.jpg'),
+            ),
+            const ListTile(
+              title: Text(
+                  '　お母さんとへその緒で繋がり、そこから養分をいっぱいいただく。日の柱に　養　がはいったら、大体、養子が多いです。養子、養女の運勢を持っています。別の家へ行ってそこから養分をいただく。月の柱や年の柱にはいっても同じです。だから、自分の子供に養が出たら、養子に出るのかということが考えられます。で、養子に出ると、成功します。人からスカウトされます。'),
+            ),
+            const ListTile(
+              title: Text('　スカウトされ、そこから養分をもらえる星です。'),
+            ),
+            ListTile(
+              title: Image.asset('images/juuniun/12運_長.jpg'),
             ),
             const ListTile(
               title: Text('　'),
             ),
-            const ListTile(
-              title: Text('　'),
+            ListTile(
+              title: Image.asset('images/juuniun/12運_沐.jpg'),
             ),
             const ListTile(
               title: Text('　'),
+            ),
+            ListTile(
+              title: Image.asset('images/juuniun/12運_冠.jpg'),
+            ),
+            const ListTile(
+              title: Text('　'),
+            ),
+            ListTile(
+              title: Image.asset('images/juuniun/12運_建.jpg'),
+            ),
+            const ListTile(
+              title: Text('　'),
+            ),
+            ListTile(
+              title: Image.asset('images/juuniun/12運_帝.jpg'),
+            ),
+            const ListTile(
+              title: Text('　'),
+            ),
+            ListTile(
+              title: Image.asset('images/juuniun/12運_衰.jpg'),
+            ),
+            const ListTile(
+              title: Text('　'),
+            ),
+            ListTile(
+              title: Image.asset('images/juuniun/12運_病.jpg'),
+            ),
+            const ListTile(
+              title: Text('　'),
+            ),
+            ListTile(
+              title: Image.asset('images/juuniun/12運_死.jpg'),
+            ),
+            const ListTile(
+              title: Text('　'),
+            ),
+            ListTile(
+              title: Image.asset('images/juuniun/12運_墓.jpg'),
+            ),
+            const ListTile(
+              title: Text('　'),
+            ),
+            ListTile(
+              title: Image.asset('images/juuniun/12運_絶.jpg'),
             ),
             const ListTile(
               title: Text('　'),

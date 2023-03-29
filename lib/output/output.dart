@@ -669,7 +669,7 @@ class Output extends StatelessWidget {
                       fontSize: 16,
                     ),
                   ),
-                  Text(
+                  /*Text(
                     '節入り日時：$setuirinen-$setuirigatu-$setuiriniti  $setuiriji:$setuirihun',
                     style: const TextStyle(
                       fontSize: 16,
@@ -680,7 +680,7 @@ class Output extends StatelessWidget {
                     style: const TextStyle(
                       fontSize: 16,
                     ),
-                  ),
+                  ),*/
                 ],
               ),
             ),
