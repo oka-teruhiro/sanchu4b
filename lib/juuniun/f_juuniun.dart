@@ -313,14 +313,43 @@ class JuuniUn extends StatelessWidget {
             const ListTile(
               title: Text('　スカウトされ、そこから養分をもらえる星です。'),
             ),
+            const ListTile(
+              title: Text(
+                  '　そして　養　を持つと女性的です。女性はお嫁に行く、養子と同じです。養子に行っていっぱい養分をいただく。養　を持つととてもありがたい、夫の家からいただくという感じです。'),
+            ),
+            const ListTile(
+              title: Text('　そして優しい、平和的な星です。争いが嫌い。保守的で温厚。'),
+            ),
             ListTile(
               title: Image.asset('images/juuniun/12運_長.jpg'),
             ),
             const ListTile(
-              title: Text('　'),
+              title: Text(
+                  '　長生も平和主義者です。ありがたい星、これが命式に入っていたら、お墓参りにでも行って、先祖に感謝してください。とってもいい星、寝たい時に寝、起きたい時に起き、何の苦しみも、暑さ寒さも関係のないというんですから、最高じゃないですか、だってお母さんのお腹の中にいるわけですから。で、時には気に入らなくて蹴飛ばす、お母さんを蹴飛ばして、お母さんは痛い思いしているのに、周りからは、「あーけった！」と祝福されてしまうわけですから。'),
+            ),
+            const ListTile(
+              title: Text('　そして、母胎から栄養をもらう。戦争に行っても、無事に戻ってきたというひとも多いですね。'),
+            ),
+            const ListTile(
+              title: Text('　トラブルの時に争うのが嫌いです。だから、こういう人が入ると和解方向へ動いていきます。'),
             ),
             ListTile(
               title: Image.asset('images/juuniun/12運_沐.jpg'),
+            ),
+            const ListTile(
+              title: Text(
+                  '　四平なんですが、四衰に入れたいくらいです。産まれました、とういことは祝福を受けます。しかし、産まれるということは必ずやがて死ぬことを意味します。したがって、喜びと悲しみが表裏一体の星。なんせ複雑なんです。楽しいんだけれど悲しい。'),
+            ),
+            const ListTile(
+              title: Text(
+                  '　二面性があるので、契約してもキャンセルする。流れやすい。迷いやすい。決断ができない。決めるのに時間がかかる。ある意味では、産まれたばかりですから、仕方がない。経験もないので。'),
+            ),
+            const ListTile(
+              title: Text(
+                  '　テストしても、読みが深いです。先の先を読んで二案三案と出る、でも最後になると、あれ、これ違うんじゃやないかなと言って、書き直して失敗してしまう。'),
+            ),
+            const ListTile(
+              title: Text('　そして、色恋の星。異性を惹き付ける匂いを放つところがあります。'),
             ),
             const ListTile(
               title: Text('　'),
@@ -331,8 +360,26 @@ class JuuniUn extends StatelessWidget {
             const ListTile(
               title: Text('　'),
             ),
+            const ListTile(
+              title: Text('　'),
+            ),
+            const ListTile(
+              title: Text('　'),
+            ),
+            const ListTile(
+              title: Text('　'),
+            ),
             ListTile(
               title: Image.asset('images/juuniun/12運_建.jpg'),
+            ),
+            const ListTile(
+              title: Text('　'),
+            ),
+            const ListTile(
+              title: Text('　'),
+            ),
+            const ListTile(
+              title: Text('　'),
             ),
             const ListTile(
               title: Text('　'),
@@ -343,8 +390,26 @@ class JuuniUn extends StatelessWidget {
             const ListTile(
               title: Text('　'),
             ),
+            const ListTile(
+              title: Text('　'),
+            ),
+            const ListTile(
+              title: Text('　'),
+            ),
+            const ListTile(
+              title: Text('　'),
+            ),
             ListTile(
               title: Image.asset('images/juuniun/12運_衰.jpg'),
+            ),
+            const ListTile(
+              title: Text('　'),
+            ),
+            const ListTile(
+              title: Text('　'),
+            ),
+            const ListTile(
+              title: Text('　'),
             ),
             const ListTile(
               title: Text('　'),
@@ -355,8 +420,26 @@ class JuuniUn extends StatelessWidget {
             const ListTile(
               title: Text('　'),
             ),
+            const ListTile(
+              title: Text('　'),
+            ),
+            const ListTile(
+              title: Text('　'),
+            ),
+            const ListTile(
+              title: Text('　'),
+            ),
             ListTile(
               title: Image.asset('images/juuniun/12運_死.jpg'),
+            ),
+            const ListTile(
+              title: Text('　'),
+            ),
+            const ListTile(
+              title: Text('　'),
+            ),
+            const ListTile(
+              title: Text('　'),
             ),
             const ListTile(
               title: Text('　'),
@@ -367,8 +450,26 @@ class JuuniUn extends StatelessWidget {
             const ListTile(
               title: Text('　'),
             ),
+            const ListTile(
+              title: Text('　'),
+            ),
+            const ListTile(
+              title: Text('　'),
+            ),
+            const ListTile(
+              title: Text('　'),
+            ),
             ListTile(
               title: Image.asset('images/juuniun/12運_絶.jpg'),
+            ),
+            const ListTile(
+              title: Text('　'),
+            ),
+            const ListTile(
+              title: Text('　'),
+            ),
+            const ListTile(
+              title: Text('　'),
             ),
             const ListTile(
               title: Text('　'),
