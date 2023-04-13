@@ -22,6 +22,11 @@ class JuuniUn extends StatelessWidget {
         child: ListView(
           children: <Widget>[
             const ListTile(
+              textColor: Colors.pink,
+              title: Text(
+                  '　本内容は、自分でも鑑定してみたいという人向けの内容です。理解を深めていただくために、表現が、少し上から目線なところがあります。また、今の時代に合っていないところがあります。ご了承ください。'),
+            ),
+            const ListTile(
               title: Text('　十二運のの出し方は、十二運表を用います。'),
             ),
             ListTile(
@@ -388,37 +393,36 @@ class JuuniUn extends StatelessWidget {
             ),
             const ListTile(
               title: Text(
-                  '　責任感が強い。9時と言ったら、10分前にきてチェックして、部下が遅くきたら許さないです。遅れそうだったら、タクシーに乗ってでもくる。体を張って生きているといった感じです。'),
+                  '　責任感が強い。9時と言ったら、10分前にきてチェックして、部下が遅くきたら許さないです。遅れそうだったら、タクシーに乗ってでもくる。体を張って生きているといった感じです。だから実績も出します。敵にしたら大変です。黙っては倒れない。'),
             ),
             ListTile(
               title: Image.asset('images/juuniun/12運_帝.jpg'),
             ),
             const ListTile(
-              title: Text('　'),
+              title: Text(
+                  '　満月、人生のピークにきたという感じです。建禄は社長タイプ、現場に責任をもっていますが、帝旺は会長タイプということで、丸みを帯ます。社長も経験してきていて、器もあります。建禄はぶつかっていきますが、帝旺はぶつかりません、うまくまとめていきます。'),
             ),
             const ListTile(
-              title: Text('　'),
+              title: Text('　現役とは違う、昼出勤、相談役みたいな感じです。'),
             ),
             const ListTile(
-              title: Text('　'),
-            ),
-            const ListTile(
-              title: Text('　'),
+              title: Text(
+                  '　年金生活に入る一歩手前ということで、常に年金のこと考えています。今後の老後どうしようかななんて、社員とバトルと年金減っちゃうかなとか、人間関係も気をつけないといけないなとか、体もだんだん弱くなってきそうだしとか、できるだけ人とはバトラないで年金だけは確保できるようにしようとか、こんな感じです。'),
             ),
             ListTile(
               title: Image.asset('images/juuniun/12運_衰.jpg'),
             ),
             const ListTile(
-              title: Text('　'),
+              title: Text(
+                  '　四衰ですが、帝旺の余力が入っていますから、時折強い人がいます、10人に1人ぐらい。気をつけて読む必要があります。'),
             ),
             const ListTile(
-              title: Text('　'),
+              title: Text(
+                  '　女性的な星、非常に平和主義です。長生とか養とかと同じように、争いは嫌いです、できるだけ平和がいいというタイプです。結局、養とか長生は、養分をもらって生きるので喧嘩できない、衰も同じように人生のピークを終えてしまった、部下からの年金という養分をもらって生きるわけですから。'),
             ),
             const ListTile(
-              title: Text('　'),
-            ),
-            const ListTile(
-              title: Text('　'),
+              title: Text(
+                  '　したがって、闘わない。協調性を好むということになります。こういう人は調停役に向いています。もめ事など、一見弱そうに見え大丈夫かなと思われますが、やらしてみるとうまく調停していい仕事をしてくるのが、このタイプです。逆に四旺の人を派遣すると、相手をボコボコにして、かえって大変になってしまいます。'),
             ),
             ListTile(
               title: Image.asset('images/juuniun/12運_病.jpg'),

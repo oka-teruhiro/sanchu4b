@@ -244,7 +244,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
-        title: const Text('天運三柱推命 ver.4.0.43',
+        title: const Text('天運三柱推命 ver.4.0.44',
             style: TextStyle(
               color: Colors.pinkAccent,
               fontWeight: FontWeight.bold,
@@ -734,3 +734,6 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
+//todo 生年月日が節入り日の時の処理
+//todo 今日の運勢表示が乱れる問題
