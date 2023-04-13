@@ -351,38 +351,44 @@ class JuuniUn extends StatelessWidget {
             const ListTile(
               title: Text('　そして、色恋の星。異性を惹き付ける匂いを放つところがあります。'),
             ),
-            const ListTile(
-              title: Text('　'),
-            ),
             ListTile(
               title: Image.asset('images/juuniun/12運_冠.jpg'),
             ),
             const ListTile(
-              title: Text('　'),
+              title: Text(
+                  '　これもまた、ありがたい星です。冠帯は長生と似ていて、低い山、谷底も深くない。男性が持っても女性が持っても非常にラッキーな星です。持っていいたら、何よりもまず先祖供養をしていただきたいです。先祖に徳を積んだ方がいます。戦争に行っても無事に帰ってくる人が多い。'),
             ),
             const ListTile(
-              title: Text('　'),
+              title: Text(
+                  '　なにしろ世話好き、おせっかいというか。具合が悪い人がいると、病院に連れて行くだけにとどまらず、診察が終わるまで一緒に付き添ってあげちゃうような感じです。人の世話ばかりして忙しくしているタイプです。'),
             ),
             const ListTile(
-              title: Text('　'),
+              title: Text(
+                  '　だから、徳が高いんでしょうね。本人が困った時には、援助者が現れます。スポンサーが現れ、社会の上流階級からひきたてられるところがあります。'),
             ),
             const ListTile(
-              title: Text('　'),
+              title: Text('　しかし、安心して、先祖の穀潰しにならないように気をつけてください。'),
             ),
             ListTile(
               title: Image.asset('images/juuniun/12運_建.jpg'),
             ),
             const ListTile(
-              title: Text('　'),
+              title: Text(
+                  '　建禄はもうすごいんです。尖っている感じ。胎　と同じように、無から有を生じる勢いがあります。なにしろ、下流から上流へ登って行くんですから。待ってられない重い荷物を持って階段を上がって行く、スピーディーです。'),
             ),
             const ListTile(
-              title: Text('　'),
+              title: Text(
+                  '　非常に開拓的な人です。物を立ち上げる運勢の人。お父さんから、事業を引き継いでも業種業態を変えてしまう人が多いです。'),
             ),
             const ListTile(
-              title: Text('　'),
+              title: Text('　エベレスト8割登っている状態、休憩なんかしてられない。スピーディーです。'),
             ),
             const ListTile(
-              title: Text('　'),
+              title: Text('　立ちなおりが早い。深い反省ができない。'),
+            ),
+            const ListTile(
+              title: Text(
+                  '　責任感が強い。9時と言ったら、10分前にきてチェックして、部下が遅くきたら許さないです。遅れそうだったら、タクシーに乗ってでもくる。体を張って生きているといった感じです。'),
             ),
             ListTile(
               title: Image.asset('images/juuniun/12運_帝.jpg'),
