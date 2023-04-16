@@ -22,44 +22,77 @@ class NikkanKanoto extends StatelessWidget {
         child: ListView(
           children: <Widget>[
             const ListTile(
-              title: Text('　日干が辛の人は、宝石にたとえられる性質を持っています。'),
+              title: Text(
+                '　日干が辛の人は、宝石にたとえられる性質を持っています。',
+                style: TextStyle(
+                  height: 1.5,
+                ),
+              ),
             ),
             ListTile(
               title: Image.asset('images/nikkan/辛_宝石.jpg'),
             ),
             const ListTile(
-              title: Text('　宝石は、美しく繊細で光を反射させるように、とても繊細で敏感な感受性の'
-                  '持ち主です。宝石は希少価値があるように、他のひとには見られない独'
-                  '特な考え方を持っています。宝石が美しいだけでなく、とても硬いように'
-                  '、表向きはソフトに見えますが、芯はしっかりしています。'),
+              title: Text(
+                '　宝石は、美しく繊細で光を反射させるように、とても繊細で敏感な感受性の'
+                '持ち主です。宝石は希少価値があるように、他のひとには見られない独'
+                '特な考え方を持っています。宝石が美しいだけでなく、とても硬いように'
+                '、表向きはソフトに見えますが、芯はしっかりしています。',
+                style: TextStyle(
+                  height: 1.5,
+                ),
+              ),
             ),
             const ListTile(
-              title: Text('　宝石がキラリと輝くように、キラリと勘が働きます。頭の回転が速く、いろい'
-                  'ろなことに注意が働きます。何事に対しても要領がよく柔軟です。'),
+              title: Text(
+                '　宝石がキラリと輝くように、キラリと勘が働きます。頭の回転が速く、いろい'
+                'ろなことに注意が働きます。何事に対しても要領がよく柔軟です。',
+                style: TextStyle(
+                  height: 1.5,
+                ),
+              ),
             ),
             const ListTile(
-              title: Text('　宝石のように気品があり、魅力的で特に異性に人気があります。宝石はいろ'
-                  'んな方向から見ても輝くように、八方美人の人もいますが、とかく、好き'
-                  '嫌いはハッキリしているようです。'),
+              title: Text(
+                '　宝石のように気品があり、魅力的で特に異性に人気があります。宝石はいろ'
+                'んな方向から見ても輝くように、八方美人の人もいますが、とかく、好き'
+                '嫌いはハッキリしているようです。',
+                style: TextStyle(
+                  height: 1.5,
+                ),
+              ),
             ),
             ListTile(
               title: Image.asset('images/nikkan/辛_王冠.jpg'),
             ),
             const ListTile(
-              title: Text('　宝石なので、プライドが高く、世間体を重んじます。国王が宝石を身につける'
-                  'ように、権力を愛するところもあります。'),
+              title: Text(
+                '　宝石なので、プライドが高く、世間体を重んじます。国王が宝石を身につける'
+                'ように、権力を愛するところもあります。',
+                style: TextStyle(
+                  height: 1.5,
+                ),
+              ),
             ),
             const ListTile(
-              title: Text('　新しいものが好きで、見栄っ張りなので、いろいろなものを買います。一方で'
-                  '、飽きっぽい面もあります。わがままなところがあり、妥協をせず、自分の'
-                  '主張は譲りません。'),
+              title: Text(
+                '　新しいものが好きで、見栄っ張りなので、いろいろなものを買います。一方で'
+                '、飽きっぽい面もあります。わがままなところがあり、妥協をせず、自分の'
+                '主張は譲りません。',
+                style: TextStyle(
+                  height: 1.5,
+                ),
+              ),
             ),
             const ListTile(
-              title: Text('　義理には厚く、人からの頼み事を断りきれません。親切に人の面倒を見ます。'),
+              title: Text(
+                '　義理には厚く、人からの頼み事を断りきれません。親切に人の面倒を見ます。',
+                style: TextStyle(
+                  height: 1.5,
+                ),
+              ),
             ),
-            const ListTile(
-              title: Text(''),
-            ),
+
             /*AdmobBanner(
                 adUnitId: AdMobService().getBannerAdUnitId(),
                 adSize: AdmobBannerSize(
@@ -75,6 +108,9 @@ class NikkanKanoto extends StatelessWidget {
               onPressed: () {
                 Navigator.pop(context);
               },
+            ),
+            const ListTile(
+              title: Text(''),
             ),
           ],
         ),

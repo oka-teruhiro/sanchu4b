@@ -22,34 +22,59 @@ class Update1 extends StatelessWidget {
             title: Text('■概要'),
           ),
           const ListTile(
-            title: Text('　生年月日を入力して日干からおおよその性格を表示する'),
+            title: Text(
+              '　生年月日を入力して日干からおおよその性格を表示する',
+              style: TextStyle(
+                height: 1.5,
+              ),
+            ),
           ),
           const ListTile(
             title: Text('■四柱推命の観点から'),
           ),
           const ListTile(
-            title: Text('①　三柱推命'),
+            title: Text(
+              '①　三柱推命',
+              style: TextStyle(
+                height: 1.5,
+              ),
+            ),
           ),
           const ListTile(
-            title: Text('　一般の四柱推命では、生年月日時　（年柱・月柱・日柱・時柱）から鑑定します。'
-                'しかし、一般生活で生まれた時刻を使うことはないため、多くの人は忘れてしまいます。'
-                '本アプリは、時柱を使わず、年・月・日を入力して、鑑定します。'),
+            title: Text(
+              '　一般の四柱推命では、生年月日時　（年柱・月柱・日柱・時柱）から鑑定します。'
+              'しかし、一般生活で生まれた時刻を使うことはないため、多くの人は忘れてしまいます。'
+              '本アプリは、時柱を使わず、年・月・日を入力して、鑑定します。',
+              style: TextStyle(
+                height: 1.5,
+              ),
+            ),
           ),
           const ListTile(
             title: Text('②　日干の算出'),
           ),
           const ListTile(
-            title: Text('　1900.1.1の日干は、「甲」です。'
-                '甲・乙・丙・丁・戊・己・庚・辛・壬・癸の10干において、10日で一巡します。'
-                '甲：0、乙：1、・・・壬：8、癸：9　と当てはめると、'
-                '1900.1.1から生年月日までの日数を、10で割った余りの数字が、'
-                '10干を表す数字になります。'),
+            title: Text(
+              '　1900.1.1の日干は、「甲」です。'
+              '甲・乙・丙・丁・戊・己・庚・辛・壬・癸の10干において、10日で一巡します。'
+              '甲：0、乙：1、・・・壬：8、癸：9　と当てはめると、'
+              '1900.1.1から生年月日までの日数を、10で割った余りの数字が、'
+              '10干を表す数字になります。',
+              style: TextStyle(
+                height: 1.5,
+              ),
+            ),
           ),
           const ListTile(
             title: Text('■プログラムの観点から'),
           ),
           const ListTile(
-            title: Text('　今回のバージョンで、習得した内容は下記のとおりです。'),
+            title: Text(
+              '　今回のバージョンで、習得した内容は下記のとおりです。',
+              style: TextStyle(
+                height: 1.5,
+              ),
+            ),
           ),
           const ListTile(
             title: Text('①　Flutter開発環境構築'),
@@ -75,11 +100,17 @@ class Update1 extends StatelessWidget {
           const ListTile(
             title: Text('⑧  GooglePlayにリリースする方法'),
           ),
+          const ListTile(
+            title: Text(''),
+          ),
           ElevatedButton(
             child: const Text('戻る'),
             onPressed: () {
               Navigator.pop(context);
             },
+          ),
+          const ListTile(
+            title: Text(''),
           ),
         ],
       ),

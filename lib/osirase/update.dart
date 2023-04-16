@@ -3,6 +3,7 @@ import 'package:sanchu4b/osirase/profile.dart';
 import 'package:sanchu4b/osirase/update1.dart';
 import 'package:sanchu4b/osirase/update2.dart';
 import 'package:sanchu4b/osirase/update2a.dart';
+import 'package:sanchu4b/osirase/update3.dart';
 import 'package:sanchu4b/osirase/update3a.dart';
 
 class Update extends StatelessWidget {
@@ -67,11 +68,11 @@ class Update extends StatelessWidget {
                         '第3版　今日の運勢がわかるようになりました。「易占検定」を追加しました。（2021/8/8 更新)'),
                     trailing: const Icon(Icons.navigate_next),
                     onTap: () {
-                      //Navigator.push(
-                      //    context,
-                      //    MaterialPageRoute(
-                      //      builder: (context) => const Update3(),
-                      //    ));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const Update3(),
+                          ));
                     },
                   ),
                 ),
@@ -149,6 +150,9 @@ class Update extends StatelessWidget {
                   onPressed: () {
                     Navigator.pop(context);
                   },
+                ),
+                const ListTile(
+                  title: Text(''),
                 ),
               ],
             ),

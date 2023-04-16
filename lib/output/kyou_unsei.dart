@@ -1125,11 +1125,12 @@ class KyouUnsei extends StatelessWidget {
                           child: Text(
                             moji[index],
                             style: TextStyle(
-                              height: 1.0,
+                              height: 1.1,
                               fontSize: 16,
                               color: Color(iroMoji[index]),
                               fontWeight: FontWeight.normal,
                             ),
+                            textScaleFactor: 1.0,
                           ),
                         ),
                       ),

@@ -461,215 +461,219 @@ class Output extends StatelessWidget {
 
     //■■　画面を生成する　■■
 
-    return Scaffold(
-      backgroundColor: Colors.black,
-      appBar: AppBar(
-        title: const Text(
-          'あなたの天運の年は',
-          style: TextStyle(
-            color: Colors.pinkAccent,
-            fontWeight: FontWeight.bold,
+    return MediaQuery(
+      data: MediaQuery.of(context).copyWith(textScaleFactor: 1.1),
+      child: Scaffold(
+        backgroundColor: Colors.black,
+        appBar: AppBar(
+          title: const Text(
+            'あなたの天運の年は',
+            style: TextStyle(
+              color: Colors.pinkAccent,
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Column(
-                children: [
-                  Text(
-                    //'$titleSeinengappi 生まれの',
-                    '$seinengappiMoji 生まれの',
-                    style: const TextStyle(
-                      fontSize: 17,
-                    ),
-                  ),
-                  Text(
-                    'あなたの日干は、$jukkanNameYomiです。',
-                    style: const TextStyle(
-                      fontSize: 16,
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: SizedBox(
-                      width: 220,
-                      height: 36,
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.blue,
-                          elevation: 4,
-                          shadowColor: Colors.yellow,
-                        ),
-                        onPressed: () {
-                          if (nikkan == 0) {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => const NikkanKinoe(),
-                                ));
-                          } else if (nikkan == 1) {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => const NikkanKinoto(),
-                                ));
-                          } else if (nikkan == 2) {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => const NikkanHinoe(),
-                                ));
-                          } else if (nikkan == 3) {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => const NikkanHinoto(),
-                                ));
-                          } else if (nikkan == 4) {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => const NikkanTutinoe(),
-                                ));
-                          } else if (nikkan == 5) {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => const NikkanTutinoto(),
-                                ));
-                          } else if (nikkan == 6) {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => const NikkanKanoe(),
-                                ));
-                          } else if (nikkan == 7) {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => const NikkanKanoto(),
-                                ));
-                          } else if (nikkan == 8) {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => const NikkanMizunoe(),
-                                ));
-                          } else {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => const NikkanMizunoto(),
-                                ));
-                          }
-                        },
-                        child: const Text('日干からみた性格は'),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  children: [
+                    Text(
+                      //'$titleSeinengappi 生まれの',
+                      '$seinengappiMoji 生まれの',
+                      style: const TextStyle(
+                        fontSize: 17,
                       ),
                     ),
-                  ),
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(4.0),
-              child: Column(
-                children: [
-                  const Text(
-                    '天運の年は、',
-                    style: TextStyle(
-                      fontSize: 18,
-                    ),
-                  ),
-                  Text(
-                    tenunText[0],
-                    style: const TextStyle(
-                      fontSize: 16,
-                    ),
-                  ),
-                  Text(
-                    tenunText[1],
-                    style: const TextStyle(
-                      fontSize: 16,
-                    ),
-                  ),
-                  Text(
-                    tenunText[2],
-                    style: const TextStyle(
-                      fontSize: 16,
-                    ),
-                  ),
-                  Text(
-                    tenunText[3],
-                    style: const TextStyle(
-                      fontSize: 16,
-                    ),
-                  ),
-                  Text(
-                    tenunText[4],
-                    style: const TextStyle(
-                      fontSize: 16,
-                    ),
-                  ),
-                  Text(
-                    tenunText[5],
-                    style: const TextStyle(
-                      fontSize: 16,
-                    ),
-                  ),
-                  Text(
-                    tenunText[6],
-                    style: const TextStyle(
-                      fontSize: 16,
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(4.0),
-                    child: SizedBox(
-                      width: 220,
-                      height: 36,
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.blue,
-                          elevation: 4,
-                          shadowColor: Colors.yellow,
-                        ),
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const TentiTokugou(),
-                            ),
-                          );
-                        },
-                        child: const Text('天地徳合/干支併臨とは'),
+                    Text(
+                      'あなたの日干は、$jukkanNameYomiです。',
+                      style: const TextStyle(
+                        fontSize: 16,
                       ),
                     ),
-                  ),
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(4.0),
-              child: Column(
-                children: [
-                  //const Text(
-                  //  '命式は',
-                  //  style: TextStyle(
-                  //    fontSize: 18,
-                  //  ),
-                  //),
-                  Text(
-                    '日柱：$nichu　月柱：$gechu　年柱：$nenchu',
-                    style: const TextStyle(
-                      fontSize: 16,
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: SizedBox(
+                        width: 220,
+                        height: 36,
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.blue,
+                            elevation: 4,
+                            shadowColor: Colors.yellow,
+                          ),
+                          onPressed: () {
+                            if (nikkan == 0) {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const NikkanKinoe(),
+                                  ));
+                            } else if (nikkan == 1) {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const NikkanKinoto(),
+                                  ));
+                            } else if (nikkan == 2) {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const NikkanHinoe(),
+                                  ));
+                            } else if (nikkan == 3) {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const NikkanHinoto(),
+                                  ));
+                            } else if (nikkan == 4) {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const NikkanTutinoe(),
+                                  ));
+                            } else if (nikkan == 5) {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        const NikkanTutinoto(),
+                                  ));
+                            } else if (nikkan == 6) {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const NikkanKanoe(),
+                                  ));
+                            } else if (nikkan == 7) {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const NikkanKanoto(),
+                                  ));
+                            } else if (nikkan == 8) {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const NikkanMizunoe(),
+                                  ));
+                            } else {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        const NikkanMizunoto(),
+                                  ));
+                            }
+                          },
+                          child: const Text('日干からみた性格は'),
+                        ),
+                      ),
                     ),
-                  ),
-                  /*Text(
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(4.0),
+                child: Column(
+                  children: [
+                    const Text(
+                      '天運の年は、',
+                      style: TextStyle(
+                        fontSize: 18,
+                      ),
+                    ),
+                    Text(
+                      tenunText[0],
+                      style: const TextStyle(
+                        fontSize: 16,
+                      ),
+                    ),
+                    Text(
+                      tenunText[1],
+                      style: const TextStyle(
+                        fontSize: 16,
+                      ),
+                    ),
+                    Text(
+                      tenunText[2],
+                      style: const TextStyle(
+                        fontSize: 16,
+                      ),
+                    ),
+                    Text(
+                      tenunText[3],
+                      style: const TextStyle(
+                        fontSize: 16,
+                      ),
+                    ),
+                    Text(
+                      tenunText[4],
+                      style: const TextStyle(
+                        fontSize: 16,
+                      ),
+                    ),
+                    Text(
+                      tenunText[5],
+                      style: const TextStyle(
+                        fontSize: 16,
+                      ),
+                    ),
+                    Text(
+                      tenunText[6],
+                      style: const TextStyle(
+                        fontSize: 16,
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(4.0),
+                      child: SizedBox(
+                        width: 220,
+                        height: 36,
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.blue,
+                            elevation: 4,
+                            shadowColor: Colors.yellow,
+                          ),
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const TentiTokugou(),
+                              ),
+                            );
+                          },
+                          child: const Text('天地徳合/干支併臨とは'),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(4.0),
+                child: Column(
+                  children: [
+                    //const Text(
+                    //  '命式は',
+                    //  style: TextStyle(
+                    //    fontSize: 18,
+                    //  ),
+                    //),
+                    Text(
+                      '日柱：$nichu　月柱：$gechu　年柱：$nenchu',
+                      style: const TextStyle(
+                        fontSize: 16,
+                      ),
+                    ),
+                    /*Text(
                     '節入り日時：$setuirinen-$setuirigatu-$setuiriniti  $setuiriji:$setuirihun',
                     style: const TextStyle(
                       fontSize: 16,
@@ -681,67 +685,68 @@ class Output extends StatelessWidget {
                       fontSize: 16,
                     ),
                   ),*/
-                ],
+                  ],
+                ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(4.0),
-              child: SizedBox(
-                width: 220,
-                height: 36,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue,
-                    elevation: 4,
-                    shadowColor: Colors.yellow,
-                  ),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => MeisikiPage(
-                          //titleSeinengappi: titleSeinengappi,
-                          nenchu: nenchu,
-                          gechu: gechu,
-                          nichu: nichu,
-                          //setuiribi: setuiribi,
-                          seinen: seinen,
-                          seigatu: seigatu,
-                          seiniti: seiniti,
-                          setuirinen: setuirinen,
-                          setuirigatu: setuirigatu,
-                          setuiriniti: setuiriniti,
-                          //setuiriJikokuS: setuiriJikokuS,
-                          setuiriji: setuiriji,
-                          setuirihun: setuirihun,
-                          setuirinitisuu: setuirinitisuu,
+              Padding(
+                padding: const EdgeInsets.all(4.0),
+                child: SizedBox(
+                  width: 220,
+                  height: 36,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.blue,
+                      elevation: 4,
+                      shadowColor: Colors.yellow,
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => MeisikiPage(
+                            //titleSeinengappi: titleSeinengappi,
+                            nenchu: nenchu,
+                            gechu: gechu,
+                            nichu: nichu,
+                            //setuiribi: setuiribi,
+                            seinen: seinen,
+                            seigatu: seigatu,
+                            seiniti: seiniti,
+                            setuirinen: setuirinen,
+                            setuirigatu: setuirigatu,
+                            setuiriniti: setuiriniti,
+                            //setuiriJikokuS: setuiriJikokuS,
+                            setuiriji: setuiriji,
+                            setuirihun: setuirihun,
+                            setuirinitisuu: setuirinitisuu,
+                          ),
                         ),
-                      ),
-                    );
-                  },
-                  child: const Text('さらに詳しくみる'),
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(4.0),
-              child: SizedBox(
-                width: 220,
-                height: 36,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue,
-                    elevation: 4,
-                    shadowColor: Colors.yellow,
+                      );
+                    },
+                    child: const Text('さらに詳しくみる'),
                   ),
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  child: const Text('戻る'),
                 ),
               ),
-            ),
-          ],
+              Padding(
+                padding: const EdgeInsets.all(4.0),
+                child: SizedBox(
+                  width: 220,
+                  height: 36,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.blue,
+                      elevation: 4,
+                      shadowColor: Colors.yellow,
+                    ),
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    child: const Text('戻る'),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

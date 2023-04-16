@@ -23,44 +23,76 @@ class NikkanMizunoto extends StatelessWidget {
         child: ListView(
           children: <Widget>[
             const ListTile(
-              title: Text('　日干が癸に人は、雨水や雲にたとえられる性質をもっています。'),
+              title: Text(
+                '　日干が癸に人は、雨水や雲にたとえられる性質をもっています。',
+                style: TextStyle(
+                  height: 1.5,
+                ),
+              ),
             ),
             ListTile(
               title: Image.asset('images/nikkan/癸_雲雨.jpg'),
             ),
             const ListTile(
-              title: Text('　雨水はしとしとと大地に降り、土壌に静かに浸透していきます。ですから、穏や'
-                  'かで物静か、繊細で柔らかな人です。生活の潤いを重んじ、夢のある暮らし'
-                  'や、繊細な気持ちを大切にします。'),
+              title: Text(
+                '　雨水はしとしとと大地に降り、土壌に静かに浸透していきます。ですから、穏や'
+                'かで物静か、繊細で柔らかな人です。生活の潤いを重んじ、夢のある暮らし'
+                'や、繊細な気持ちを大切にします。',
+                style: TextStyle(
+                  height: 1.5,
+                ),
+              ),
             ),
             const ListTile(
-              title: Text('　雨が降って清められるように、潔癖で正直者です。雨水が上から下へと落ちて'
-                  'くるように、原則を重んじるタイプで、規則や道徳を守ります。小さな水の'
-                  '粒が絶え間なく降り注ぎ次第に水たまりになるように、勤勉でまじめです。'
-                  'コツコツと堅実な努力を重ね、忍耐力を備えています。'),
+              title: Text(
+                '　雨が降って清められるように、潔癖で正直者です。雨水が上から下へと落ちて'
+                'くるように、原則を重んじるタイプで、規則や道徳を守ります。小さな水の'
+                '粒が絶え間なく降り注ぎ次第に水たまりになるように、勤勉でまじめです。'
+                'コツコツと堅実な努力を重ね、忍耐力を備えています。',
+                style: TextStyle(
+                  height: 1.5,
+                ),
+              ),
             ),
             ListTile(
               title: Image.asset('images/nikkan/癸_潤う.jpg'),
             ),
             const ListTile(
-              title: Text('　雨水が天（空）から降りてくるように、想像力に富み、純粋で神経質なところが'
-                  'あり、空想や妄想にふけるような面を持っています。'),
+              title: Text(
+                '　雨水が天（空）から降りてくるように、想像力に富み、純粋で神経質なところが'
+                'あり、空想や妄想にふけるような面を持っています。',
+                style: TextStyle(
+                  height: 1.5,
+                ),
+              ),
             ),
             const ListTile(
-              title: Text('　雲がかかるように、内向的で気が小さいほうで、つまらないことをいつまでも'
-                  '気にしたり、雲が風に流れていくように、周りの状況に振り回されたりしや'
-                  'すいでしょう。'),
+              title: Text(
+                '　雲がかかるように、内向的で気が小さいほうで、つまらないことをいつまでも'
+                '気にしたり、雲が風に流れていくように、周りの状況に振り回されたりしや'
+                'すいでしょう。',
+                style: TextStyle(
+                  height: 1.5,
+                ),
+              ),
             ),
             const ListTile(
-              title: Text('　小さな水の粒は涙に通じ、情にもろく、暖かく、親切な人柄です。'),
+              title: Text(
+                '　小さな水の粒は涙に通じ、情にもろく、暖かく、親切な人柄です。',
+                style: TextStyle(
+                  height: 1.5,
+                ),
+              ),
             ),
             const ListTile(
-              title: Text('　あれこれと物事にこだわるほうなので、考えは悲観的になりやすく、物事を悪'
-                  'いほうへ解釈しやすい面もあります。しかし、苦しいことに耐える力があり'
-                  'ます。'),
-            ),
-            const ListTile(
-              title: Text(''),
+              title: Text(
+                '　あれこれと物事にこだわるほうなので、考えは悲観的になりやすく、物事を悪'
+                'いほうへ解釈しやすい面もあります。しかし、苦しいことに耐える力があり'
+                'ます。',
+                style: TextStyle(
+                  height: 1.5,
+                ),
+              ),
             ),
             /*AdmobBanner(
                 adUnitId: AdMobService().getBannerAdUnitId(),
@@ -77,6 +109,9 @@ class NikkanMizunoto extends StatelessWidget {
               onPressed: () {
                 Navigator.pop(context);
               },
+            ),
+            const ListTile(
+              title: Text(''),
             ),
           ],
         ),

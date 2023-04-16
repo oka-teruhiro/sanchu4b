@@ -22,45 +22,77 @@ class NikkanHinoto extends StatelessWidget {
         child: ListView(
           children: <Widget>[
             const ListTile(
-              title: Text('　日干が丁の人は、ロウソクの火にたとえられる性質を持っています。'),
+              title: Text(
+                '　日干が丁の人は、ロウソクの火にたとえられる性質を持っています。',
+                style: TextStyle(
+                  height: 1.5,
+                ),
+              ),
             ),
             ListTile(
               title: Image.asset('images/nikkan/丁_キャンドル.jpg'),
             ),
             const ListTile(
-              title: Text('　ロウソクの火は静かに燃えて部屋の小さな空間を照らします。ですから、身近'
-                  'な人に温かい愛情を持つ人です。'),
+              title: Text(
+                '　ロウソクの火は静かに燃えて部屋の小さな空間を照らします。ですから、身近'
+                'な人に温かい愛情を持つ人です。',
+                style: TextStyle(
+                  height: 1.5,
+                ),
+              ),
             ),
             const ListTile(
-              title: Text('　陰性の火なので、普段は静かで穏やか'
-                  'です。しかし、薪から家や森林などに一度火がつくと止まりません。しかも、'
-                  '長期間にわたって情熱の火を燃やし続けます。'),
+              title: Text(
+                '　陰性の火なので、普段は静かで穏やか'
+                'です。しかし、薪から家や森林などに一度火がつくと止まりません。しかも、'
+                '長期間にわたって情熱の火を燃やし続けます。',
+                style: TextStyle(
+                  height: 1.5,
+                ),
+              ),
             ),
             const ListTile(
-              title: Text('　また、不満がたまっていても、はた目からはわかりません。ある日突然、爆発し'
-                  'たように一気に激しく炎上し、周囲を巻き込んで大惨事となります。'),
+              title: Text(
+                '　また、不満がたまっていても、はた目からはわかりません。ある日突然、爆発し'
+                'たように一気に激しく炎上し、周囲を巻き込んで大惨事となります。',
+                style: TextStyle(
+                  height: 1.5,
+                ),
+              ),
             ),
             ListTile(
               title: Image.asset('images/nikkan/丁_燃える炎.jpg'),
             ),
             const ListTile(
-              title: Text('　普段は、神経質でインテリで、礼儀正しく、人に対して細やかな心配りができ'
-                  'る人です。一見、静かな人のように見えますが、大変な情熱家です。改革'
-                  '心はありますが、何事も用意周到に段取りをして時期を待つ人です。考え'
-                  '方は緻密で思慮深いでしょう。'),
+              title: Text(
+                '　普段は、神経質でインテリで、礼儀正しく、人に対して細やかな心配りができ'
+                'る人です。一見、静かな人のように見えますが、大変な情熱家です。改革'
+                '心はありますが、何事も用意周到に段取りをして時期を待つ人です。考え'
+                '方は緻密で思慮深いでしょう。',
+                style: TextStyle(
+                  height: 1.5,
+                ),
+              ),
             ),
             const ListTile(
-              title: Text('　自分に縁のある人には親身になって相談に応じ、援助しようとします。光が'
-                  '届く範囲にいる人から見ると、とても面倒見が良くて温かい人と見えま'
-                  'すが、光の届かない範囲にいる人からは、冷たくとっつきにくい人に見'
-                  'られがちです。'),
+              title: Text(
+                '　自分に縁のある人には親身になって相談に応じ、援助しようとします。光が'
+                '届く範囲にいる人から見ると、とても面倒見が良くて温かい人と見えま'
+                'すが、光の届かない範囲にいる人からは、冷たくとっつきにくい人に見'
+                'られがちです。',
+                style: TextStyle(
+                  height: 1.5,
+                ),
+              ),
             ),
             const ListTile(
-              title: Text('　疑り深い割には、気分によって一喜一憂する点や、自分を省みるところが'
-                  '少ないのが欠点でしょう。'),
-            ),
-            const ListTile(
-              title: Text(''),
+              title: Text(
+                '　疑り深い割には、気分によって一喜一憂する点や、自分を省みるところが'
+                '少ないのが欠点でしょう。',
+                style: TextStyle(
+                  height: 1.5,
+                ),
+              ),
             ),
             /*AdmobBanner(
                 adUnitId: AdMobService().getBannerAdUnitId(),
@@ -77,6 +109,9 @@ class NikkanHinoto extends StatelessWidget {
               onPressed: () {
                 Navigator.pop(context);
               },
+            ),
+            const ListTile(
+              title: Text(''),
             ),
           ],
         ),

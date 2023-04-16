@@ -20,6 +20,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      // 端末の文字の大きさ設定を変えても、アプリで文字の大きさが変わらないようにする
+      /*builder: (context, child) {
+        return MediaQuery(
+          data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
+          child: child!,
+        );
+      },*/
+      // 端末の文字の大きさ設定を変えても、アプリで文字の大きさが変わらないようにする ここまで
       // DatePickerを日本語化する
       localizationsDelegates: const [
         GlobalMaterialLocalizations.delegate,
@@ -241,240 +249,243 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.black,
-      appBar: AppBar(
-        title: const Text('天運三柱推命 ver.4.0.45',
-            style: TextStyle(
-              color: Colors.pinkAccent,
-              fontWeight: FontWeight.bold,
-            )),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.navigate_next),
-            tooltip: 'Next page',
-            onPressed: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const Update(),
-                  ));
-            },
-          ),
-        ],
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Container(
-              height: 4,
-            ),
-            Container(
-              height: 44,
-              width: 440,
-              decoration: BoxDecoration(
-                color: Colors.tealAccent,
-                borderRadius: BorderRadius.circular(12),
-                border: Border.all(
-                  color: Colors.blue,
-                  width: 1.0,
-                ),
-              ),
-              child: TextButton(
-                style: ButtonStyle(
-                  foregroundColor:
-                      MaterialStateProperty.all<Color>(Colors.black),
-                ),
-                child: const Text(
-                  '易占クイズに挑戦する',
-                  style: TextStyle(
-                    fontSize: 18,
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                onPressed: () {
-                  //TODO: 易占検定画面へ飛ぶ
-                  Navigator.push(
+    return MediaQuery(
+      data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
+      child: Scaffold(
+        backgroundColor: Colors.black,
+        appBar: AppBar(
+          title: const Text('天運三柱推命 ver.4.0.46',
+              style: TextStyle(
+                color: Colors.pinkAccent,
+                fontWeight: FontWeight.bold,
+              )),
+          actions: [
+            IconButton(
+              icon: const Icon(Icons.navigate_next),
+              tooltip: 'Next page',
+              onPressed: () {
+                Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => QuizPage001(),
-                    ),
-                  );
-                },
-              ),
+                      builder: (context) => const Update(),
+                    ));
+              },
             ),
-            const SizedBox(
-              height: 90,
-              width: 440,
-              child: Padding(
-                padding: EdgeInsets.all(8.0),
-                child: Text(
-                  '天運の年を算出するには、yyyy/mm/dd ? をタップして、生年月日を入力後、＞ボタンをタップして下さい。',
-                  style: TextStyle(
-                    fontSize: 14,
-                    color: Colors.white70,
-                    fontWeight: FontWeight.bold,
+          ],
+        ),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Container(
+                height: 4,
+              ),
+              Container(
+                height: 44,
+                width: 440,
+                decoration: BoxDecoration(
+                  color: Colors.tealAccent,
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(
+                    color: Colors.blue,
+                    width: 1.0,
+                  ),
+                ),
+                child: TextButton(
+                  style: ButtonStyle(
+                    foregroundColor:
+                        MaterialStateProperty.all<Color>(Colors.black),
+                  ),
+                  child: const Text(
+                    '易占クイズに挑戦する',
+                    style: TextStyle(
+                      fontSize: 18,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  onPressed: () {
+                    //TODO: 易占検定画面へ飛ぶ
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => QuizPage001(),
+                      ),
+                    );
+                  },
+                ),
+              ),
+              const SizedBox(
+                height: 90,
+                width: 440,
+                child: Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Text(
+                    '天運の年を算出するには、yyyy/mm/dd ? をタップして、生年月日を入力後、＞ボタンをタップして下さい。',
+                    style: TextStyle(
+                      fontSize: 14,
+                      color: Colors.white70,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ),
-            ),
-            SizedBox(
-              height: 260,
-              width: 440,
-              child: ListView.builder(
-                itemCount: 5,
-                itemBuilder: (BuildContext context, int index) {
-                  return Padding(
-                    padding: const EdgeInsets.all(4.0),
-                    child: Container(
-                      height: 44,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(12),
-                        border: Border.all(
-                          color: Colors.tealAccent,
-                          width: 1,
+              SizedBox(
+                height: 260,
+                width: 440,
+                child: ListView.builder(
+                  itemCount: 5,
+                  itemBuilder: (BuildContext context, int index) {
+                    return Padding(
+                      padding: const EdgeInsets.all(4.0),
+                      child: Container(
+                        height: 44,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(12),
+                          border: Border.all(
+                            color: Colors.tealAccent,
+                            width: 1,
+                          ),
                         ),
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          // 生年月日表示欄
-                          SizedBox(
-                              height: 44,
-                              width: 174,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            // 生年月日表示欄
+                            SizedBox(
+                                height: 44,
+                                width: 174,
+                                child: TextButton(
+                                  child: Text(
+                                    _birthH[index],
+                                    style: const TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 16,
+                                    ),
+                                  ),
+                                  onPressed: () {
+                                    //ToDo　生年月日入力画面に飛ぶ
+                                    _birthday = _birthD[index];
+                                    if (_birthday == 'yyyy/mm/dd') {
+                                      date9 = DateTime(
+                                          DateTime.now().year - 30,
+                                          DateTime.now().month,
+                                          DateTime.now().day);
+                                      //print('a:date9:$date9');
+                                    } else if (_birthday == '') {
+                                      date9 = DateTime(
+                                          DateTime.now().year - 30,
+                                          DateTime.now().month,
+                                          DateTime.now().day);
+                                      //print('b:date9:$date9');
+                                    } else {
+                                      _birthdaya =
+                                          '${_birthday.substring(0, 4)}-${_birthday.substring(5, 7)}-${_birthday.substring(8, 10)}';
+                                      date9 = DateTime.parse(_birthdaya);
+                                      //print('c:date9:$date9');
+                                    }
+                                    _showCupertinoDatePicker(context, index);
+                                    setState(() {});
+                                  },
+                                )),
+
+                            // メモ　欄　の表示
+                            SizedBox(
+                              width: 70,
                               child: TextButton(
                                 child: Text(
-                                  _birthH[index],
+                                  _memoH[index],
                                   style: const TextStyle(
                                     color: Colors.white,
-                                    fontSize: 16,
+                                    fontSize: 12,
                                   ),
                                 ),
                                 onPressed: () {
-                                  //ToDo　生年月日入力画面に飛ぶ
-                                  _birthday = _birthD[index];
-                                  if (_birthday == 'yyyy/mm/dd') {
-                                    date9 = DateTime(
-                                        DateTime.now().year - 30,
-                                        DateTime.now().month,
-                                        DateTime.now().day);
-                                    //print('a:date9:$date9');
-                                  } else if (_birthday == '') {
-                                    date9 = DateTime(
-                                        DateTime.now().year - 30,
-                                        DateTime.now().month,
-                                        DateTime.now().day);
-                                    //print('b:date9:$date9');
-                                  } else {
-                                    _birthdaya =
-                                        '${_birthday.substring(0, 4)}-${_birthday.substring(5, 7)}-${_birthday.substring(8, 10)}';
-                                    date9 = DateTime.parse(_birthdaya);
-                                    //print('c:date9:$date9');
-                                  }
-                                  _showCupertinoDatePicker(context, index);
-                                  setState(() {});
+                                  //ToDo　メモ入力画面に飛ぶ
+                                  _showInputDialog(context, index);
                                 },
-                              )),
+                              ),
+                            ),
 
-                          // メモ　欄　の表示
-                          SizedBox(
-                            width: 70,
-                            child: TextButton(
-                              child: Text(
-                                _memoH[index],
-                                style: const TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 12,
+                            // 今日の運勢　ボタン
+                            SizedBox(
+                              height: 24,
+                              width: 40,
+                              child: ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.blue,
+                                  elevation: 0,
+                                  shadowColor: Colors.red,
                                 ),
-                              ),
-                              onPressed: () {
-                                //ToDo　メモ入力画面に飛ぶ
-                                _showInputDialog(context, index);
-                              },
-                            ),
-                          ),
-
-                          // 今日の運勢　ボタン
-                          SizedBox(
-                            height: 24,
-                            width: 40,
-                            child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: Colors.blue,
-                                elevation: 0,
-                                shadowColor: Colors.red,
-                              ),
-                              child: const Icon(Icons.bar_chart, size: 16),
-                              onPressed: () {
-                                //ToDo　今日の運勢画面に飛ぶ
-                                seinengappiMojia = _birthD[index];
-                                if (seinengappiMojia == 'yyyy/mm/dd') {
-                                } else {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => KyouUnsei(
-                                        titleSeinengappi: seinengappiMojia,
+                                child: const Icon(Icons.bar_chart, size: 16),
+                                onPressed: () {
+                                  //ToDo　今日の運勢画面に飛ぶ
+                                  seinengappiMojia = _birthD[index];
+                                  if (seinengappiMojia == 'yyyy/mm/dd') {
+                                  } else {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => KyouUnsei(
+                                          titleSeinengappi: seinengappiMojia,
+                                        ),
                                       ),
-                                    ),
-                                  );
-                                }
-                              },
+                                    );
+                                  }
+                                },
+                              ),
                             ),
-                          ),
-                          const SizedBox(
-                            width: 8,
-                          ),
+                            const SizedBox(
+                              width: 8,
+                            ),
 
-                          // 性格・天地徳合　ボタン
-                          SizedBox(
-                            height: 24,
-                            width: 40,
-                            child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: Colors.blue,
-                                elevation: 8,
-                                shadowColor: Colors.red,
-                              ),
-                              child: const Icon(
-                                Icons.arrow_forward_ios,
-                                size: 16,
-                              ),
-                              onPressed: () {
-                                //ToDo　出力画面に飛ぶ
-                                seinengappiMojia = _birthD[index];
-                                if (seinengappiMojia == 'yyyy/mm/dd') {
-                                } else {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => Output(
-                                        titleSeinengappi: seinengappiMojia,
+                            // 性格・天地徳合　ボタン
+                            SizedBox(
+                              height: 24,
+                              width: 40,
+                              child: ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.blue,
+                                  elevation: 8,
+                                  shadowColor: Colors.red,
+                                ),
+                                child: const Icon(
+                                  Icons.arrow_forward_ios,
+                                  size: 16,
+                                ),
+                                onPressed: () {
+                                  //ToDo　出力画面に飛ぶ
+                                  seinengappiMojia = _birthD[index];
+                                  if (seinengappiMojia == 'yyyy/mm/dd') {
+                                  } else {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => Output(
+                                          titleSeinengappi: seinengappiMojia,
+                                        ),
                                       ),
-                                    ),
-                                  );
-                                }
-                              },
+                                    );
+                                  }
+                                },
+                              ),
                             ),
-                          ),
-                          const SizedBox(
-                            width: 0,
-                          ),
-                        ],
+                            const SizedBox(
+                              width: 0,
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                  );
-                },
+                    );
+                  },
+                ),
               ),
-            ),
-            Expanded(flex: 2, child: Image.asset('images/main/gogyou1.png')),
-          ],
+              Expanded(flex: 2, child: Image.asset('images/main/gogyou1.png')),
+            ],
+          ),
         ),
+        // This trailing comma makes auto-formatting nicer for build methods.
       ),
-      // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 

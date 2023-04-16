@@ -22,7 +22,12 @@ class Update2a extends StatelessWidget {
             title: Text('■概要'),
           ),
           const ListTile(
-            title: Text('天地徳合/干支併臨 画面でnullが表示されるのを修正'),
+            title: Text(
+              '天地徳合/干支併臨 画面でnullが表示されるのを修正',
+              style: TextStyle(
+                height: 1.5,
+              ),
+            ),
           ),
           const ListTile(
             title: Text('挿絵のサイズを調整'),
