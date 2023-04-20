@@ -1141,7 +1141,7 @@ class KyouUnsei extends StatelessWidget {
                       child: ListTile(
                         //tileColor: Colors.indigo,
                         title: Padding(
-                          padding: const EdgeInsets.fromLTRB(0, 0, 0, 8),
+                          padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
                           child: Image.asset(zu[index]),
                         ),
                         tileColor: Colors.black,

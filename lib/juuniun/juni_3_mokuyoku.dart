@@ -10,6 +10,7 @@ class Mokuyoku extends StatelessWidget {
       appBar: AppBar(
         title: const Text(
           '十二運：沐浴（もくよく）',
+          textScaleFactor: 1.0,
           style: TextStyle(
             color: Colors.pinkAccent,
             fontWeight: FontWeight.bold,

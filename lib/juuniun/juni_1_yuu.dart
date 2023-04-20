@@ -10,6 +10,7 @@ class You extends StatelessWidget {
       appBar: AppBar(
         title: const Text(
           '十二運：養（よう）',
+          textScaleFactor: 1.0,
           style: TextStyle(
             color: Colors.pinkAccent,
             fontWeight: FontWeight.bold,

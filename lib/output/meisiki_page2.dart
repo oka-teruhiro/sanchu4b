@@ -3,7 +3,6 @@ import 'package:sanchu4b/juuniun/juni_c_siou.dart';
 import 'package:sanchu4b/juuniun/juni_d_sihei.dart';
 import 'package:sanchu4b/juuniun/juni_e_sisui.dart';
 import 'package:sanchu4b/juuniun/juni_f_juuniun.dart';
-import 'package:sanchu4b/output/meisiki_page2.dart';
 
 import '../nikkan/nikkan_hinoe.dart';
 import '../nikkan/nikkan_hinoto.dart';
@@ -16,7 +15,7 @@ import '../nikkan/nikkan_mizzunoto.dart';
 import '../nikkan/nikkan_tutinoe.dart';
 import '../nikkan/nikkan_tutinoto.dart';
 
-class MeisikiPage extends StatelessWidget {
+class MeisikiPage2 extends StatelessWidget {
   String nenchu; //年柱
   String gechu; //月柱
   String nichu; //日柱
@@ -33,7 +32,7 @@ class MeisikiPage extends StatelessWidget {
   //int nenKanNo = 0;
   //int  = 0;
 
-  MeisikiPage(
+  MeisikiPage2(
       {Key? key,
       required this.nenchu,
       required this.gechu,
@@ -56,6 +55,10 @@ class MeisikiPage extends StatelessWidget {
   String gatusi = '子';
   String nitikan = '甲';
   String nitisi = '子';
+  String nenkanM = '癸'; //節入り前の年干
+  String nensiM = '亥'; //節入り前の年支
+  String gatukanM = '癸'; //節入り前の月干
+  String gatusiM = '亥'; //節入り前の月支
   int nenKanNo = 0;
   int nenSiNo = 0;
   int gatuKanNo = 0;
@@ -102,19 +105,115 @@ class MeisikiPage extends StatelessWidget {
   double fs = 20; //フォントサイズ
   double hi = 45.0;
   String color1 = 'pinkAccent';
-  double setuiriButtonWidth = 0;
 
   @override
   Widget build(BuildContext context) {
-    //節入り日の時節入り時刻前ボタンを表示する
-    if (setuirinitisuu == 1) {
-      setuiriButtonWidth = 80;
-    } else {}
+    //誕生日が節入り日になっていて、節入り時刻前に生まれた場合の命式修正をする。
     //年柱・月柱・日柱から年干・年支・月干・月支・日干・日支を作成する
     nenkan = nenchu.substring(0, 1);
     nensi = nenchu.substring(1, 2);
+    nenkanM = nenkan;
+    nensiM = nensi;
+    if (seigatu == 2) {
+      if (nenkanM == '甲') {
+        nenkan = '癸';
+      } else if (nenkanM == '乙') {
+        nenkan = '甲';
+      } else if (nenkanM == '丙') {
+        nenkan = '乙';
+      } else if (nenkanM == '丁') {
+        nenkan = '丙';
+      } else if (nenkanM == '戊') {
+        nenkan = '丁';
+      } else if (nenkanM == '己') {
+        nenkan = '戊';
+      } else if (nenkanM == '庚') {
+        nenkan = '己';
+      } else if (nenkanM == '辛') {
+        nenkan = '庚';
+      } else if (nenkanM == '壬') {
+        nenkan = '辛';
+      } else if (nenkanM == '癸') {
+        nenkan = '壬';
+      } else {}
+      if (nensiM == '子') {
+        nensi = '亥';
+      } else if (nensiM == '丑') {
+        nensi = '子';
+      } else if (nensiM == '寅') {
+        nensi = '丑';
+      } else if (nensiM == '卯') {
+        nensi = '寅';
+      } else if (nensiM == '辰') {
+        nensi = '卯';
+      } else if (nensiM == '巳') {
+        nensi = '辰';
+      } else if (nensiM == '午') {
+        nensi = '巳';
+      } else if (nensiM == '未') {
+        nensi = '午';
+      } else if (nensiM == '申') {
+        nensi = '未';
+      } else if (nensiM == '酉') {
+        nensi = '申';
+      } else if (nensiM == '戌') {
+        nensi = '酉';
+      } else if (nensiM == '亥') {
+        nensi = '戌';
+      } else {}
+    } else {}
+
     gatukan = gechu.substring(0, 1);
     gatusi = gechu.substring(1, 2);
+    gatukanM = gatukan;
+    gatusiM = gatusi;
+    if (gatukanM == '甲') {
+      gatukan = '癸';
+    } else if (gatukanM == '乙') {
+      gatukan = '甲';
+    } else if (gatukanM == '丙') {
+      gatukan = '乙';
+    } else if (gatukanM == '丁') {
+      gatukan = '丙';
+    } else if (gatukanM == '戊') {
+      gatukan = '丁';
+    } else if (gatukanM == '己') {
+      gatukan = '戊';
+    } else if (gatukanM == '庚') {
+      gatukan = '己';
+    } else if (gatukanM == '辛') {
+      gatukan = '庚';
+    } else if (gatukanM == '壬') {
+      gatukan = '辛';
+    } else if (gatukanM == '癸') {
+      gatukan = '壬';
+    } else {}
+    if (gatusiM == '子') {
+      gatusi = '亥';
+    } else if (gatusiM == '丑') {
+      gatusi = '子';
+    } else if (gatusiM == '寅') {
+      gatusi = '丑';
+    } else if (gatusiM == '卯') {
+      gatusi = '寅';
+    } else if (gatusiM == '辰') {
+      gatusi = '卯';
+    } else if (gatusiM == '巳') {
+      gatusi = '辰';
+    } else if (gatusiM == '午') {
+      gatusi = '巳';
+    } else if (gatusiM == '未') {
+      gatusi = '午';
+    } else if (gatusiM == '申') {
+      gatusi = '未';
+    } else if (gatusiM == '酉') {
+      gatusi = '申';
+    } else if (gatusiM == '戌') {
+      gatusi = '酉';
+    } else if (gatusiM == '亥') {
+      gatusi = '戌';
+    } else {}
+
     nitikan = nichu.substring(0, 1);
     nitisi = nichu.substring(1, 2);
     //蔵干を算出する
@@ -169,7 +268,7 @@ class MeisikiPage extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           title: const Text(
-            'あなたの命式は',
+            '節入り時刻前の命式は',
             style: TextStyle(
               color: Colors.pinkAccent,
               fontWeight: FontWeight.bold,
@@ -179,35 +278,18 @@ class MeisikiPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: SizedBox(
-                width: setuiriButtonWidth,
+                height: 100,
+                width: 80,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue,
+                    backgroundColor: Colors.indigo,
                     elevation: 0,
                     shadowColor: Colors.red,
                   ),
                   onPressed: () {
-                    //if (setuirinitisuu == 1) {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => MeisikiPage2(
-                              nenchu: nenchu,
-                              gechu: gechu,
-                              nichu: nichu,
-                              seinen: seinen,
-                              seigatu: seigatu,
-                              seiniti: seiniti,
-                              setuirinen: setuirinen,
-                              setuirigatu: setuirigatu,
-                              setuiriniti: setuiriniti,
-                              setuiriji: setuiriji,
-                              setuirihun: setuirihun,
-                              setuirinitisuu: setuirinitisuu),
-                        ));
-                    // } else {}
+                    Navigator.pop(context);
                   },
-                  child: Text('節入り時刻前'),
+                  child: Text('節入り時刻後'),
                 ),
               ),
             )

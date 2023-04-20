@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:sanchu4b/juuniun/0_tai.dart';
-import 'package:sanchu4b/juuniun/1_yuu.dart';
-import 'package:sanchu4b/juuniun/3_mokuyoku.dart';
-import 'package:sanchu4b/juuniun/a_bo.dart';
+import 'package:sanchu4b/juuniun/juni_0_tai.dart';
+import 'package:sanchu4b/juuniun/juni_1_yuu.dart';
+import 'package:sanchu4b/juuniun/juni_3_mokuyoku.dart';
+import 'package:sanchu4b/juuniun/juni_a_bo.dart';
 
 class Sihei extends StatelessWidget {
   String hasira;
@@ -41,6 +41,7 @@ class Sihei extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           '十二運：$juuniUn・四平（しへい）',
+          textScaleFactor: 1.0,
           style: const TextStyle(
             color: Colors.pinkAccent,
             fontWeight: FontWeight.bold,

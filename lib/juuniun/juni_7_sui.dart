@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Teiou extends StatelessWidget {
-  const Teiou({Key? key}) : super(key: key);
+class Sui extends StatelessWidget {
+  const Sui({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -9,7 +9,8 @@ class Teiou extends StatelessWidget {
       backgroundColor: Colors.black,
       appBar: AppBar(
         title: const Text(
-          '十二運：帝旺（ていおう）',
+          '十二運：衰（すい）',
+          textScaleFactor: 1.0,
           style: TextStyle(
             color: Colors.pinkAccent,
             fontWeight: FontWeight.bold,
@@ -22,41 +23,39 @@ class Teiou extends StatelessWidget {
         child: ListView(
           children: <Widget>[
             const ListTile(
-              title: Text('　登り切って山の頂上にいる状態を意味します。　下を見るので、人間的に丸みを帯びます。'),
+              title: Text('　衰退し始める状態を意味します。降り始めるが、それでもまだまだ強い。'),
             ),
             //ListTile(
             //  title: Image.asset('images/nikkan/丙_太陽.jpg'),
             //),
             const ListTile(
-              title: Text('　帝旺をもつ人の特徴は、'),
+              title: Text('衰を持つ人の特徴は、'),
             ),
             const ListTile(
-              title: Text('① 社長を経験した会長としての丸みがある。'),
+              title: Text('① 帝旺の余力あり。ときたま強い人がいる。'),
             ),
             //ListTile(
             // title: Image.asset('images/nikkan/丙_朝日.jpg'),
             //),
             const ListTile(
-              title: Text('② 人生のピークであり、満月である。'),
+              title: Text('② 平和主義者の星。'),
             ),
             const ListTile(
-              title: Text('③ 年金生活に入る一歩手前。'),
+              title: Text('③ 協調性を好む星。'),
             ),
             const ListTile(
               title: Text('　また、能力面は、'),
             ),
             const ListTile(
               title: Text(
-                  '　とにかく、パワーと迫力と相手を圧倒させる力強さを秘めており、社会においても、どんな組織や環境にあっても活動的でどんどん新しい分野に取り組み、時に大きな勢いで発展し成功する可能性を秘めています。'),
+                  '　とにかく冷静で落ち着いており、組織のトップからの突然の命令などにも慌てることがなく、客観的な判断ができる能力があります。'),
             ),
             const ListTile(
-              title: Text('　すなわち一か八かの勝負事に強く投機的で冒険的です。'),
+              title: Text(
+                  '　ビジネスにおいても社会生活においても、新しいアイデアや発想で人が考えつかないようなことをやるタイプではありません。冒険もせず、計画的に何事もやるので大きな失敗はまずありません。財務会計、予算管理といった事務職を担当すればしっかりと金銭管理を行います。'),
             ),
             const ListTile(
-              title: Text('　予算も派手に使います。新しい事業を立ち上げたり、起業の草創期には大変能力を発揮します。'),
-            ),
-            const ListTile(
-              title: Text('　一方で、見境なく突進しますので、他人から嫌がられたり、大失敗をすることもあります。'),
+              title: Text('　一方で、何事に関しても関心が薄く、迫力不足でやる気がないように見える傾向もあります。'),
             ),
             ElevatedButton(
               child: const Text('戻る'),

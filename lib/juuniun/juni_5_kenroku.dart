@@ -10,6 +10,7 @@ class Kenroku extends StatelessWidget {
       appBar: AppBar(
         title: const Text(
           '十二運：建禄（けんろく）',
+          textScaleFactor: 1.0,
           style: TextStyle(
             color: Colors.pinkAccent,
             fontWeight: FontWeight.bold,
