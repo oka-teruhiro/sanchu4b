@@ -108,6 +108,7 @@ class MeisikiPage2 extends StatelessWidget {
   double setuiriButtonWidth = 80;
   int iroPink = 0xFFEC407A;
   int iroWhite = 0xFFFFFFFF;
+  int iroTeal = 0xFF80CBC4;
   int iroSetuiri = -1;
 
   @override
@@ -116,7 +117,10 @@ class MeisikiPage2 extends StatelessWidget {
     if (setuirinitisuu == 1) {
       setuiriButtonWidth = 80;
       iroSetuiri = iroPink;
-    } else {}
+    } else {
+      setuiriButtonWidth = 0;
+      iroSetuiri = iroTeal;
+    }
     //年柱・月柱・日柱から年干・年支・月干・月支・日干・日支を作成する
     nenkan = nenchu.substring(0, 1);
     nensi = nenchu.substring(1, 2);
@@ -1597,24 +1601,36 @@ class MeisikiPage2 extends StatelessWidget {
                         ),
                       ),
                       SizedBox(
-                        height: 30,
+                        height: 36,
                         width: 350,
                         child: Container(
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(12),
                               border: Border.all(
-                                color: Colors.tealAccent,
-                                width: 1,
+                                color: Color(iroSetuiri),
+                                width: 2,
                               )),
                           child: Center(
-                            child: Text(
-                              '節入り日（ $setuirinen-$setuirigatu-$setuiriniti $setuiriji:$setuirihun ）から$setuirinitisuu日目',
-                              //'太ワクのところは、タップすると、さらに詳しい説明をみることができます。',
-                              style: TextStyle(
-                                fontSize: fs - 6,
-                                color: Color(iroSetuiri),
-                                fontWeight: FontWeight.bold,
+                            child: TextButton(
+                              child: Text(
+                                '節入り日（ $setuirinen-$setuirigatu-$setuiriniti $setuiriji:$setuirihun ）から$setuirinitisuu日目',
+                                //'太ワクのところは、タップすると、さらに詳しい説明をみることができます。',
+                                style: TextStyle(
+                                  fontSize: fs - 6,
+                                  color: Color(iroWhite),
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
+                              onPressed: () {
+                                if (setuirinitisuu == 1) {
+                                  _showSetuiri(context);
+                                } else {}
+                                /*Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => const Setuiribi(),
+                                    ));*/
+                              },
                             ),
                           ),
                         ),
@@ -1650,6 +1666,57 @@ class MeisikiPage2 extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  _showSetuiri(BuildContext context) {
+    showModalBottomSheet(
+        context: context,
+        builder: (BuildContext context) {
+          return Container(
+            color: Colors.blue,
+            height: 300,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                children: [
+                  const Text(
+                    '①　節入り時刻よりも前に誕生した方は、右上の「節入り時刻前」ボタンを押してください。',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                    ),
+                  ),
+                  const Text(
+                    '②　節入り時刻よりも後に誕生した方は、このままの命式表になります。',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                    ),
+                  ),
+                  const Text(
+                    '③　誕生時刻がわからない方は、「節入り時刻前」ボタンも押して2種類の命式表で鑑定し比べ、自分にしっくりくる命式表で鑑定してください。',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                    ),
+                  ),
+                  TextButton(
+                    child: const Text(
+                      'OK',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18,
+                      ),
+                    ),
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                  ),
+                ],
+              ),
+            ),
+          );
+        });
   }
 }
 
