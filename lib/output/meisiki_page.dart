@@ -103,12 +103,16 @@ class MeisikiPage extends StatelessWidget {
   double hi = 45.0;
   String color1 = 'pinkAccent';
   double setuiriButtonWidth = 0;
+  int iroPink = 0xFFEC407A;
+  int iroWhite = 0xFFFFFFFF;
+  int iroSetuiri = -1;
 
   @override
   Widget build(BuildContext context) {
     //節入り日の時節入り時刻前ボタンを表示する
     if (setuirinitisuu == 1) {
       setuiriButtonWidth = 80;
+      iroSetuiri = iroPink;
     } else {}
     //年柱・月柱・日柱から年干・年支・月干・月支・日干・日支を作成する
     nenkan = nenchu.substring(0, 1);
@@ -128,12 +132,6 @@ class MeisikiPage extends StatelessWidget {
     zouKanNitiNo = juKanNo(zouKanNiti);
     zouKanGatuNo = juKanNo(zouKanTuki);
     zouKanNenNo = juKanNo(zouKanNen);
-    //print('■■■■■■■■■$nitikan$nitiKanNo');
-    //print('■■■■■■■■■$gatukan$gatuKanNo');
-    //print('■■■■■■■■■$nenkan$nenKanNo');
-    //print('■■■■■■■■■$zouKanNiti$zouKanNitiNo');
-    //print('■■■■■■■■■$zouKanTuki$zouKanGatuNo');
-    //print('■■■■■■■■■$zouKanNen$zouKanNenNo');
     tuuhenbosiGetuKan = tuuhenbosi.substring(
         nitiKanNo * 20 + gatuKanNo * 2, nitiKanNo * 20 + gatuKanNo * 2 + 2);
     tuuhenbosiNenKan = tuuhenbosi.substring(
@@ -144,11 +142,6 @@ class MeisikiPage extends StatelessWidget {
         nitiKanNo * 20 + zouKanGatuNo * 2 + 2);
     tuuhenbosiNenSi = tuuhenbosi.substring(
         nitiKanNo * 20 + zouKanNenNo * 2, nitiKanNo * 20 + zouKanNenNo * 2 + 2);
-    //print('■■■■■■■$tuuhenbosiGetuKan');
-    //print('■■■■■■■$tuuhenbosiNenKan');
-    //print('■■■■■■■$tuuhenbosiNitiSi');
-    //print('■■■■■■■$tuuhenbosiGetuSi');
-    //print('■■■■■■■$tuuhenbosiNenSi');
     //十二運を算出する
     nitiSiNo = juuniSiNo(nitisi);
     gatuSiNo = juuniSiNo(gatusi);
@@ -159,10 +152,6 @@ class MeisikiPage extends StatelessWidget {
         nitiKanNo * 12 + gatuSiNo, nitiKanNo * 12 + gatuSiNo + 1);
     juuniUnNen = juuniUn.substring(
         nitiKanNo * 12 + nenSiNo, nitiKanNo * 12 + nenSiNo + 1);
-    //print('■■■■■■■■■$nitiKanNo');
-    //print('■■■■■■$juuniUnNiti$nitiSiNo');
-    //print('■■■■■■$juuniUnGetu$gatuSiNo');
-    //print('■■■■■■$juuniUnNen$nenSiNo');
 
     return MediaQuery(
       data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
@@ -233,7 +222,9 @@ class MeisikiPage extends StatelessWidget {
                             SizedBox(
                               width: 90,
                               child: Container(
+                                //color: Colors.black45,
                                 decoration: BoxDecoration(
+                                    color: Colors.white24,
                                     borderRadius: BorderRadius.circular(12),
                                     border: Border.all(
                                       color: Colors.tealAccent,
@@ -247,14 +238,14 @@ class MeisikiPage extends StatelessWidget {
                                         '$seiniti',
                                         style: TextStyle(
                                           fontSize: fs,
-                                          color: Colors.pinkAccent,
+                                          color: Colors.cyanAccent,
                                         ),
                                       ),
                                       Text(
                                         '日',
                                         style: TextStyle(
                                           fontSize: fs - 2,
-                                          color: Colors.pinkAccent,
+                                          color: Colors.cyanAccent,
                                         ),
                                       ),
                                     ],
@@ -266,6 +257,7 @@ class MeisikiPage extends StatelessWidget {
                               width: 90,
                               child: Container(
                                 decoration: BoxDecoration(
+                                    color: Colors.white24,
                                     borderRadius: BorderRadius.circular(12),
                                     border: Border.all(
                                       color: Colors.tealAccent,
@@ -279,14 +271,14 @@ class MeisikiPage extends StatelessWidget {
                                         '$seigatu',
                                         style: TextStyle(
                                           fontSize: fs,
-                                          color: Colors.pinkAccent,
+                                          color: Colors.cyanAccent,
                                         ),
                                       ),
                                       Text(
                                         '月',
                                         style: TextStyle(
                                           fontSize: fs - 2,
-                                          color: Colors.pinkAccent,
+                                          color: Colors.cyanAccent,
                                         ),
                                       ),
                                     ],
@@ -298,6 +290,7 @@ class MeisikiPage extends StatelessWidget {
                               width: 90,
                               child: Container(
                                 decoration: BoxDecoration(
+                                    color: Colors.white24,
                                     borderRadius: BorderRadius.circular(12),
                                     border: Border.all(
                                       color: Colors.tealAccent,
@@ -311,14 +304,14 @@ class MeisikiPage extends StatelessWidget {
                                         '$seinen',
                                         style: TextStyle(
                                           fontSize: fs,
-                                          color: Colors.pinkAccent,
+                                          color: Colors.cyanAccent,
                                         ),
                                       ),
                                       Text(
                                         '年',
                                         style: TextStyle(
                                           fontSize: fs - 2,
-                                          color: Colors.pinkAccent,
+                                          color: Colors.cyanAccent,
                                         ),
                                       ),
                                     ],
@@ -331,6 +324,7 @@ class MeisikiPage extends StatelessWidget {
                               height: 70,
                               child: Container(
                                 decoration: BoxDecoration(
+                                    color: Colors.white24,
                                     borderRadius: BorderRadius.circular(12),
                                     border: Border.all(
                                       color: Colors.tealAccent,
@@ -344,14 +338,14 @@ class MeisikiPage extends StatelessWidget {
                                         '生年',
                                         style: TextStyle(
                                           fontSize: fs - 6,
-                                          color: Colors.pinkAccent,
+                                          color: Colors.cyanAccent,
                                         ),
                                       ),
                                       Text(
                                         '月日',
                                         style: TextStyle(
                                           fontSize: fs - 6,
-                                          color: Colors.pinkAccent,
+                                          color: Colors.cyanAccent,
                                         ),
                                       ),
                                     ],
@@ -508,6 +502,7 @@ class MeisikiPage extends StatelessWidget {
                               //height: 70,
                               child: Container(
                                 decoration: BoxDecoration(
+                                    color: Colors.white24,
                                     borderRadius: BorderRadius.circular(12),
                                     border: Border.all(
                                       color: Colors.tealAccent,
@@ -518,7 +513,7 @@ class MeisikiPage extends StatelessWidget {
                                     '干',
                                     style: TextStyle(
                                       fontSize: fs - 2,
-                                      color: Colors.pinkAccent,
+                                      color: Colors.cyanAccent,
                                     ),
                                   ),
                                 ),
@@ -595,6 +590,7 @@ class MeisikiPage extends StatelessWidget {
                               height: 70,
                               child: Container(
                                 decoration: BoxDecoration(
+                                    color: Colors.white24,
                                     borderRadius: BorderRadius.circular(12),
                                     border: Border.all(
                                       color: Colors.tealAccent,
@@ -605,7 +601,7 @@ class MeisikiPage extends StatelessWidget {
                                     '支',
                                     style: TextStyle(
                                       fontSize: fs - 2,
-                                      color: Colors.pinkAccent,
+                                      color: Colors.cyanAccent,
                                     ),
                                   ),
                                 ),
@@ -697,6 +693,7 @@ class MeisikiPage extends StatelessWidget {
                               width: 80,
                               child: Container(
                                 decoration: BoxDecoration(
+                                    color: Colors.white24,
                                     borderRadius: BorderRadius.circular(12),
                                     border: Border.all(
                                       color: Colors.tealAccent,
@@ -710,14 +707,14 @@ class MeisikiPage extends StatelessWidget {
                                         '支合',
                                         style: TextStyle(
                                           fontSize: fs - 4,
-                                          color: Colors.pinkAccent,
+                                          color: Colors.cyanAccent,
                                         ),
                                       ),
                                       Text(
                                         '支冲',
                                         style: TextStyle(
                                           fontSize: fs - 4,
-                                          color: Colors.pinkAccent,
+                                          color: Colors.cyanAccent,
                                         ),
                                       ),
                                     ],
@@ -796,6 +793,7 @@ class MeisikiPage extends StatelessWidget {
                               height: 70,
                               child: Container(
                                 decoration: BoxDecoration(
+                                    color: Colors.white24,
                                     borderRadius: BorderRadius.circular(12),
                                     border: Border.all(
                                       color: Colors.tealAccent,
@@ -806,7 +804,7 @@ class MeisikiPage extends StatelessWidget {
                                     '蔵干',
                                     style: TextStyle(
                                       fontSize: fs - 2,
-                                      color: Colors.pinkAccent,
+                                      color: Colors.cyanAccent,
                                     ),
                                   ),
                                 ),
@@ -960,6 +958,7 @@ class MeisikiPage extends StatelessWidget {
                               width: 80,
                               child: Container(
                                 decoration: BoxDecoration(
+                                    color: Colors.white24,
                                     borderRadius: BorderRadius.circular(12),
                                     border: Border.all(
                                       color: Colors.tealAccent,
@@ -973,21 +972,21 @@ class MeisikiPage extends StatelessWidget {
                                         '通',
                                         style: TextStyle(
                                           fontSize: fs - 2,
-                                          color: Colors.pinkAccent,
+                                          color: Colors.cyanAccent,
                                         ),
                                       ),
                                       Text(
                                         '変',
                                         style: TextStyle(
                                           fontSize: fs - 2,
-                                          color: Colors.pinkAccent,
+                                          color: Colors.cyanAccent,
                                         ),
                                       ),
                                       Text(
                                         '星',
                                         style: TextStyle(
                                           fontSize: fs - 2,
-                                          color: Colors.pinkAccent,
+                                          color: Colors.cyanAccent,
                                         ),
                                       ),
                                     ],
@@ -1480,6 +1479,7 @@ class MeisikiPage extends StatelessWidget {
                               //height: 70,
                               child: Container(
                                 decoration: BoxDecoration(
+                                    color: Colors.white24,
                                     borderRadius: BorderRadius.circular(12),
                                     border: Border.all(
                                       color: Colors.pinkAccent,
@@ -1490,7 +1490,7 @@ class MeisikiPage extends StatelessWidget {
                                     child: Text(
                                       '十二運', //12運年
                                       style: TextStyle(
-                                        color: Colors.pinkAccent,
+                                        color: Colors.cyanAccent,
                                         fontSize: fs - 4,
                                       ),
                                     ),
@@ -1525,7 +1525,7 @@ class MeisikiPage extends StatelessWidget {
                               //'太ワクのところは、タップすると、さらに詳しい説明をみることができます。',
                               style: TextStyle(
                                 fontSize: fs - 6,
-                                color: Colors.white70,
+                                color: Color(iroSetuiri),
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
