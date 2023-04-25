@@ -659,37 +659,6 @@ class Output extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.all(4.0),
-                child: Column(
-                  children: [
-                    //const Text(
-                    //  '命式は',
-                    //  style: TextStyle(
-                    //    fontSize: 18,
-                    //  ),
-                    //),
-                    Text(
-                      '日柱：$nichu　月柱：$gechu　年柱：$nenchu',
-                      style: const TextStyle(
-                        fontSize: 16,
-                      ),
-                    ),
-                    /*Text(
-                    '節入り日時：$setuirinen-$setuirigatu-$setuiriniti  $setuiriji:$setuirihun',
-                    style: const TextStyle(
-                      fontSize: 16,
-                    ),
-                  ),
-                  Text(
-                    '節入り日からの日数：$setuirinitisuu',
-                    style: const TextStyle(
-                      fontSize: 16,
-                    ),
-                  ),*/
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(4.0),
                 child: SizedBox(
                   width: 220,
                   height: 36,
@@ -723,12 +692,12 @@ class Output extends StatelessWidget {
                         ),
                       );
                     },
-                    child: const Text('さらに詳しくみる'),
+                    child: const Text('命式を表示する'),
                   ),
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(4.0),
+                padding: const EdgeInsets.all(8.0),
                 child: SizedBox(
                   width: 220,
                   height: 36,

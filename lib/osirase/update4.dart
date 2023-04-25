@@ -5,8 +5,49 @@ class Update4 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<String> zu = [
+      'images/0.jpg',
+      'images/main/取説4a.jpg',
+      'images/main/取説4b.jpg',
+      'images/0.jpg',
+      'images/0.jpg',
+      'images/0.jpg',
+      'images/0.jpg',
+      'images/0.jpg',
+      'images/0.jpg',
+      'images/0.jpg',
+      'images/0.jpg',
+      'images/0.jpg',
+      'images/0.jpg',
+      'images/0.jpg',
+      'images/0.jpg',
+      'images/0.jpg',
+      'images/0.jpg',
+      'images/0.jpg',
+    ];
+    List<double> takasaZu = [
+      0,
+      340,
+      370,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+    ];
     List<String> moji = [
       '■概要',
+      '',
       '① 万年暦（1920年〜2029年）の節入り日時データをアプリ内に搭載しました。',
       '② 1項に伴って、月の柱、年の柱の天干地支を算出でき、命式を算出できるようになりました。',
       '③ カルテ（蔵干・通変星・十二運）を表示できるようになりました。',
@@ -26,6 +67,7 @@ class Update4 extends StatelessWidget {
     ];
     List<int> iroMoji = [
       -1407770,
+      -1,
       -1,
       -1,
       -1,
@@ -60,10 +102,21 @@ class Update4 extends StatelessWidget {
           Expanded(
             //height: 400,
             child: ListView.builder(
-              itemCount: 17,
+              itemCount: 18,
               itemBuilder: (BuildContext context, int index) {
                 return Column(
                   children: [
+                    SizedBox(
+                      height: takasaZu[index],
+                      child: ListTile(
+                        //tileColor: Colors.indigo,
+                        title: Padding(
+                          padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+                          child: Image.asset(zu[index]),
+                        ),
+                        tileColor: Colors.black,
+                      ),
+                    ),
                     ListTile(
                       tileColor: Colors.black,
                       title: Padding(
@@ -96,19 +149,6 @@ class Update4 extends StatelessWidget {
                 },
               ),
             ),
-          ),
-
-          Container(
-            height: 0,
-          ),
-          SizedBox(
-            height: 0,
-            child: Container(
-              color: Colors.black,
-            ),
-          ), // Ads
-          Container(
-            height: 0,
           ),
         ],
       ),
