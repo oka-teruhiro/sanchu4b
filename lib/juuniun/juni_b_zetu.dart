@@ -22,6 +22,9 @@ class Zetu extends StatelessWidget {
         //color: Colors.white70,
         child: ListView(
           children: <Widget>[
+            ListTile(
+              title: Image.asset('images/juuniun/12絶.jpg'),
+            ),
             const ListTile(
               title: Text(
                   '　すべてなくなった様子を意味します。始まりの期待感があり、立ち上がりが早い反面、こりないといった性質があります。'),

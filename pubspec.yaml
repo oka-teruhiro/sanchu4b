@@ -1,10 +1,10 @@
 name: sanchu4b
-description: 天運三柱推命ver.4.1.0
+description: 天運三柱推命ver.4.1.1
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
 
-version: 4.1.0+11
+version: 4.1.1+12
 
 environment:
   sdk: ">=2.17.3 <3.0.0"
@@ -21,7 +21,7 @@ dependencies:
 
   cupertino_icons: ^1.0.5
   provider: ^6.0.5
-  shared_preferences: ^2.0.18
+  shared_preferences: ^2.1.0
   flutter_lints: ^2.0.1
 
 
@@ -354,5 +354,17 @@ flutter:
     - images/juuniun/12運_四旺四衰バランス.jpg
     - images/0.jpg
     - images/1.jpg
+    - images/juuniun/12胎.jpg
+    - images/juuniun/12養.jpg
+    - images/juuniun/12長.jpg
+    - images/juuniun/12沐.jpg
+    - images/juuniun/12冠.jpg
+    - images/juuniun/12建.jpg
+    - images/juuniun/12帝.jpg
+    - images/juuniun/12衰.jpg
+    - images/juuniun/12病.jpg
+    - images/juuniun/12死.jpg
+    - images/juuniun/12墓.jpg
+    - images/juuniun/12絶.jpg
 
 

@@ -22,6 +22,9 @@ class Si extends StatelessWidget {
         //color: Colors.white70,
         child: ListView(
           children: <Widget>[
+            ListTile(
+              title: Image.asset('images/juuniun/12死.jpg'),
+            ),
             const ListTile(
               title: Text(
                   '　「死」という漢字を見て短命なのではないかと心配される方がおられますがそうではありません。「病」が体の病に関するならば、「死」は、お寺の住職のように、心の病に関して対応する職業に向いています。'),

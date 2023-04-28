@@ -22,6 +22,9 @@ class Kenroku extends StatelessWidget {
         //color: Colors.white70,
         child: ListView(
           children: <Widget>[
+            ListTile(
+              title: Image.asset('images/juuniun/12建.jpg'),
+            ),
             const ListTile(
               title: Text(
                   '　山登りで例えると八合目、九合目を登っている状態を意味します。ここまで来たら登るっきゃないと強力に頂上を目指す思考があります。'),

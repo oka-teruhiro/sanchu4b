@@ -22,6 +22,9 @@ class Tyousei extends StatelessWidget {
         //color: Colors.white70,
         child: ListView(
           children: <Widget>[
+            ListTile(
+              title: Image.asset('images/juuniun/12長.jpg'),
+            ),
             const ListTile(
               title: Text('　お腹の中で、胎児が成長しけっこう大きくなった様子を意味します。'
                   '　胎児はお母さんを蹴飛ばしても、お母さんはそれを喜びます。'),

@@ -22,6 +22,9 @@ class Mokuyoku extends StatelessWidget {
         //color: Colors.white70,
         child: ListView(
           children: <Widget>[
+            ListTile(
+              title: Image.asset('images/juuniun/12沐.jpg'),
+            ),
             const ListTile(
               title: Text('　地上に誕生し、産湯につかることを意味します。'),
             ),

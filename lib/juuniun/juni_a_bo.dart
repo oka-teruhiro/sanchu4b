@@ -22,6 +22,9 @@ class Bo extends StatelessWidget {
         //color: Colors.white70,
         child: ListView(
           children: <Widget>[
+            ListTile(
+              title: Image.asset('images/juuniun/12墓.jpg'),
+            ),
             const ListTile(
               title: Text('　墓に入った様子を意味します。墓に入って身動きが取れないので、いなおる強さを持っています。'),
             ),

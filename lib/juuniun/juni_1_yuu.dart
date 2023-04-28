@@ -22,6 +22,9 @@ class You extends StatelessWidget {
         //color: Colors.white70,
         child: ListView(
           children: <Widget>[
+            ListTile(
+              title: Image.asset('images/juuniun/12養.jpg'),
+            ),
             const ListTile(
               title: Text('　栄養を吸収し、成長している様子を意味します。'),
             ),

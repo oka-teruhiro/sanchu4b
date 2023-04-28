@@ -22,6 +22,9 @@ class Byou extends StatelessWidget {
         //color: Colors.white70,
         child: ListView(
           children: <Widget>[
+            ListTile(
+              title: Image.asset('images/juuniun/12病.jpg'),
+            ),
             const ListTile(
               title: Text(
                   '　「病」という漢字を見て、病気になるのではないかと心配する人がいますが、そうではありません。病気になった時のような感性を持っています。'),
