@@ -3,9 +3,9 @@ import 'package:sanchu4b/main.dart';
 import 'package:sanchu4b/quiz/quiz_page_002.dart';
 
 class AnswerPage001 extends StatelessWidget {
-  AnswerPage001({Key? key}) : super(key: key);
+  const AnswerPage001({Key? key}) : super(key: key);
 
-  bool quizLast = false;
+  final bool quizLast = false;
 
   @override
   Widget build(BuildContext context) {

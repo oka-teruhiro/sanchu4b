@@ -287,7 +287,7 @@ class MeisikiPage2 extends StatelessWidget {
                   onPressed: () {
                     Navigator.pop(context);
                   },
-                  child: Text('節入り時刻後'),
+                  child: const Text('節入り時刻後'),
                 ),
               ),
             )

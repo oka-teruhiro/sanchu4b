@@ -3,6 +3,7 @@ import 'package:sanchu4b/juuniun/juni_c_siou.dart';
 import 'package:sanchu4b/juuniun/juni_d_sihei.dart';
 import 'package:sanchu4b/juuniun/juni_e_sisui.dart';
 import 'package:sanchu4b/juuniun/juni_f_juuniun.dart';
+import 'package:sanchu4b/juuniun/juni_g_juuniun.dart';
 import 'package:sanchu4b/output/meisiki_page2.dart';
 
 import '../nikkan/nikkan_hinoe.dart';
@@ -200,7 +201,7 @@ class MeisikiPage extends StatelessWidget {
                         ));
                     // } else {}
                   },
-                  child: Text('節入り時刻前'),
+                  child: const Text('節入り時刻前'),
                 ),
               ),
             )
@@ -1504,6 +1505,14 @@ class MeisikiPage extends StatelessWidget {
                                           MaterialPageRoute(
                                             builder: (context) =>
                                                 const JuuniUn(),
+                                          ));
+                                    },
+                                    onLongPress: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                const JuniJuuniun(),
                                           ));
                                     },
                                   ),

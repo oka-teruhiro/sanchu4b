@@ -3,10 +3,11 @@ import 'package:sanchu4b/main.dart';
 import 'package:sanchu4b/quiz/quiz_page_007.dart';
 
 class AnswerPage007 extends StatelessWidget {
-  AnswerPage007({Key? key}) : super(key: key);
+  const AnswerPage007({Key? key}) : super(key: key);
 
-  bool quizLast = true;
-  String kotaeMoji = '全問終了しました。次のアップデートでさらに問題を追加しますので、またチャレンジしてください。お疲れ様でした。';
+  final bool quizLast = true;
+  final String kotaeMoji =
+      '全問終了しました。次のアップデートでさらに問題を追加しますので、またチャレンジしてください。お疲れ様でした。';
 
   @override
   Widget build(BuildContext context) {
