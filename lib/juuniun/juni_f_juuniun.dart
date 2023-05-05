@@ -466,7 +466,7 @@ class JuuniUn extends StatelessWidget {
               title: Image.asset('images/juuniun/12運_冠.jpg'),
             ),
             ListTile(
-              title: Image.asset(''),
+              title: Image.asset('images/juuniun/12冠.jpg'),
             ),
             const ListTile(
               title: Text('　これもまた、ありがたい星です。冠帯は長生と似ていて、低い山、谷底も深く'

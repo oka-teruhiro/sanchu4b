@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sanchu4b/juuniun/juni_c_siou.dart';
 import 'package:sanchu4b/juuniun/juni_d_sihei.dart';
 import 'package:sanchu4b/juuniun/juni_e_sisui.dart';
-import 'package:sanchu4b/juuniun/juni_f_juuniun.dart';
+//import 'package:sanchu4b/juuniun/juni_f_juuniun.dart';
 import 'package:sanchu4b/juuniun/juni_g_juuniun.dart';
 import 'package:sanchu4b/output/meisiki_page2.dart';
 
@@ -1504,17 +1504,17 @@ class MeisikiPage extends StatelessWidget {
                                           context,
                                           MaterialPageRoute(
                                             builder: (context) =>
-                                                const JuuniUn(),
+                                                const JuniJuuniun(),
                                           ));
                                     },
-                                    onLongPress: () {
+                                    /*onLongPress: () {
                                       Navigator.push(
                                           context,
                                           MaterialPageRoute(
                                             builder: (context) =>
                                                 const JuniJuuniun(),
                                           ));
-                                    },
+                                    },*/
                                   ),
                                 ),
                               ),
