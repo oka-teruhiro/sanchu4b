@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:sanchu4b/juuniun/juni_c_siou.dart';
-import 'package:sanchu4b/juuniun/juni_d_sihei.dart';
-import 'package:sanchu4b/juuniun/juni_e_sisui.dart';
-//import 'package:sanchu4b/juuniun/juni_f_juuniun.dart';
-import 'package:sanchu4b/juuniun/juni_g_juuniun.dart';
-import 'package:sanchu4b/output/meisiki_page2.dart';
 
+import '../juuniun/juni_c_siou.dart';
+import '../juuniun/juni_d_sihei.dart';
+import '../juuniun/juni_e_sisui.dart';
+import '../juuniun/juni_g_juuniun.dart';
 import '../nikkan/nikkan_hinoe.dart';
 import '../nikkan/nikkan_hinoto.dart';
 import '../nikkan/nikkan_kanoe.dart';
@@ -17,7 +15,24 @@ import '../nikkan/nikkan_mizzunoto.dart';
 import '../nikkan/nikkan_tutinoe.dart';
 import '../nikkan/nikkan_tutinoto.dart';
 
-class MeisikiPage extends StatelessWidget {
+class MeisikiPage3 extends StatefulWidget {
+  MeisikiPage3({
+    Key? key,
+    required this.nenchu,
+    required this.gechu,
+    required this.nichu,
+    required this.seinen,
+    required this.seigatu,
+    required this.seiniti,
+    required this.setuirinen,
+    required this.setuirigatu,
+    required this.setuiriniti,
+    required this.setuiriji,
+    required this.setuirihun,
+    required this.setuirinitisuu,
+  }) : super(key: key);
+
+  //
   String nenchu; //年柱
   String gechu; //月柱
   String nichu; //日柱
@@ -27,34 +42,35 @@ class MeisikiPage extends StatelessWidget {
   int setuirinen; //節入り年
   int setuirigatu; //節入り月
   int setuiriniti; //節入り日
-  //String setuiriJikokuS;
   int setuiriji; //節入り時
   int setuirihun; //節入り分
   int setuirinitisuu; //節入り日からの日数（節入り日は第1日目）
-  //int nenKanNo = 0;
-  //int  = 0;
+  //
 
-  MeisikiPage(
-      {Key? key,
-      required this.nenchu,
-      required this.gechu,
-      required this.nichu,
-      required this.seinen,
-      required this.seigatu,
-      required this.seiniti,
-      required this.setuirinen,
-      required this.setuirigatu,
-      required this.setuiriniti,
-      required this.setuiriji,
-      required this.setuirihun,
-      required this.setuirinitisuu})
-      : super(key: key);
+  @override
+  State<MeisikiPage3> createState() => _MeisikiPage3State();
+}
 
-  //このページで使う変数を定義する
+class _MeisikiPage3State extends State<MeisikiPage3> {
+  //
+  int _counter = 0;
+  String nenchu = '甲子'; //widget内で使う年柱
+  String gechu = '甲子'; //widget内で使う月柱
+  String nichu = '甲子'; //widget内で使う日柱
+  String nenchuH = '甲子'; //画面表示で使う年柱
+  String gechuH = '甲子'; //画面表示で使う月柱
+  String nichuH = '甲子'; //画面表示で使う日柱
+  //int nenchuNo = 0;
+  //int gechuNo = 0;
+  //int nichuNo = 0;
   String nenkan = '甲';
   String nensi = '子';
   String gatukan = '甲';
   String gatusi = '子';
+  String nenkanM = '癸'; //節入り前の年干
+  String nensiM = '亥'; //節入り前の年支
+  String gatukanM = '癸'; //節入り前の月干
+  String gatusiM = '亥'; //節入り前の月支
   String nitikan = '甲';
   String nitisi = '子';
   int nenKanNo = 0;
@@ -69,6 +85,13 @@ class MeisikiPage extends StatelessWidget {
   int zouKanNenNo = 0;
   int zouKanGatuNo = 0;
   int zouKanNitiNo = 0;
+  String rokujukkansi = //60干支
+      "甲子乙丑丙寅丁卯戊辰己巳庚午辛未壬申癸酉"
+      "甲戌乙亥丙子丁丑戊寅己卯庚辰辛巳壬午癸未"
+      "甲申乙酉丙戌丁亥戊子己丑庚寅辛卯壬辰癸巳"
+      "甲午乙未丙申丁酉戊戌己亥庚子辛丑壬寅癸卯"
+      "甲辰乙巳丙午丁未戊申己酉庚戌辛亥壬子癸丑"
+      "甲寅乙卯丙辰丁巳戊午己未庚申辛酉壬戌癸亥"; //
   String tuuhenbosi = //通変星
       "比肩劫敗食神傷官偏財正財偏官正官倒食印綬" //甲
       "劫敗比肩傷官食神正財偏財正官偏官印綬倒食" //乙
@@ -108,11 +131,87 @@ class MeisikiPage extends StatelessWidget {
   int iroWhite = 0xFFFFFFFF;
   int iroTeal = 0xFF80CBC4;
   int iroSetuiri = -1;
+  int seinenInt = 1900;
+  int seigatuInt = 1;
+  int seinitiInt = 1;
+  int setuirinenInt = 1900;
+  int setuirigatuInt = 1;
+  int setuirinitiInt = 1;
+  int setuirijiInt = 1;
+  int setuirihunInt = 1;
+  int setuirinitisuuInt = 2;
+  int zenGo = 2; //0:節入り時刻後　1:節入り時刻前 2:節入り日以外
+  List<int> iroBotan = [-14575885, -12627531, -14575885];
+  List<int> iroTitle = [-1294214, -5767189, -1294214];
+  List<String> botanMoji = ['節入り時刻前', '節入り時刻後', '節入り時刻前'];
+  List<String> meisikiTitle = ['節入り時刻後の命式', '節入り時刻前の命式', 'あなたの命式は'];
+  List<int> nenchuNo = [1, 0, 1];
+  List<int> gechuNo = [1, 0, 1];
+  List<int> nichuNo = [1, 0, 1];
+
+  void _incrementCounter() {
+    setState(() {
+      _counter++;
+      zenGo = _counter % 2;
+
+      //nenkan = nenchu.substring(0, 1);
+      //nensi = nenchu.substring(1, 2);
+      nenkanM = nenkan;
+      nensiM = nensi;
+
+      if (widget.seigatu == 2) {
+        //立春なので年柱も変わる
+      } else {}
+
+      // This call to setState tells the Flutter framework that something has
+    });
+  }
+  //
 
   @override
+
+  //gechuH = nenchu;
+
   Widget build(BuildContext context) {
+    //生年月日をwidgetで使えるようにする
+    seinenInt = widget.seinen;
+    seigatuInt = widget.seigatu;
+    seinitiInt = widget.seiniti;
+    setuirinenInt = widget.setuirinen;
+    setuirigatuInt = widget.setuirigatu;
+    setuirinitiInt = widget.setuiriniti;
+    setuirinitisuuInt = widget.setuirinitisuu;
+
+    nenchu = widget.nenchu;
+    gechu = widget.gechu;
+    nichu = widget.nichu;
+
+    nenchuNo[0] = nanmojime(rokujukkansi, nenchu);
+    if (seigatuInt == 2) {
+      nenchuNo[1] = (nenchuNo[0] - 1) % 60;
+    } else {
+      nenchuNo[1] = nenchuNo[0];
+    }
+
+    nenchuNo[2] = nenchuNo[0];
+
+    gechuNo[0] = nanmojime(rokujukkansi, gechu);
+    gechuNo[1] = (gechuNo[0] - 1) % 60;
+    gechuNo[2] = gechuNo[0];
+
+    nichuNo[0] = nanmojime(rokujukkansi, nichu);
+    nichuNo[1] = nichuNo[0];
+    nichuNo[2] = nichuNo[0];
+
+    nenchuH =
+        rokujukkansi.substring(nenchuNo[zenGo] * 2, (nenchuNo[zenGo]) * 2 + 2);
+    gechuH =
+        rokujukkansi.substring(gechuNo[zenGo] * 2, (gechuNo[zenGo]) * 2 + 2);
+    nichuH =
+        rokujukkansi.substring(nichuNo[zenGo] * 2, (nichuNo[zenGo]) * 2 + 2);
+
     //節入り日の時節入り時刻前ボタンを表示する
-    if (setuirinitisuu == 1) {
+    if (setuirinitisuuInt == 1) {
       setuiriButtonWidth = 80;
       iroSetuiri = iroPink;
     } else {
@@ -120,16 +219,16 @@ class MeisikiPage extends StatelessWidget {
       iroSetuiri = iroTeal;
     }
     //年柱・月柱・日柱から年干・年支・月干・月支・日干・日支を作成する
-    nenkan = nenchu.substring(0, 1);
-    nensi = nenchu.substring(1, 2);
-    gatukan = gechu.substring(0, 1);
-    gatusi = gechu.substring(1, 2);
-    nitikan = nichu.substring(0, 1);
-    nitisi = nichu.substring(1, 2);
+    nenkan = nenchuH.substring(0, 1);
+    nensi = nenchuH.substring(1, 2);
+    gatukan = gechuH.substring(0, 1);
+    gatusi = gechuH.substring(1, 2);
+    nitikan = nichuH.substring(0, 1);
+    nitisi = nichuH.substring(1, 2);
     //蔵干を算出する
-    zouKanNen = zouKan(nensi, setuirinitisuu);
-    zouKanTuki = zouKan(gatusi, setuirinitisuu);
-    zouKanNiti = zouKan(nitisi, setuirinitisuu);
+    zouKanNen = zouKan(nensi, setuirinitisuuInt);
+    zouKanTuki = zouKan(gatusi, setuirinitisuuInt);
+    zouKanNiti = zouKan(nitisi, setuirinitisuuInt);
     //通変星を算出する
     nitiKanNo = juKanNo(nitikan);
     gatuKanNo = juKanNo(gatukan);
@@ -162,10 +261,10 @@ class MeisikiPage extends StatelessWidget {
       data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
       child: Scaffold(
         appBar: AppBar(
-          title: const Text(
-            'あなたの命式は',
+          title: Text(
+            meisikiTitle[zenGo],
             style: TextStyle(
-              color: Colors.pinkAccent,
+              color: Color(iroTitle[zenGo]),
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -176,32 +275,14 @@ class MeisikiPage extends StatelessWidget {
                 width: setuiriButtonWidth,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue,
+                    backgroundColor: Color(iroBotan[zenGo]),
                     elevation: 0,
                     shadowColor: Colors.red,
                   ),
                   onPressed: () {
-                    //if (setuirinitisuu == 1) {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => MeisikiPage2(
-                              nenchu: nenchu,
-                              gechu: gechu,
-                              nichu: nichu,
-                              seinen: seinen,
-                              seigatu: seigatu,
-                              seiniti: seiniti,
-                              setuirinen: setuirinen,
-                              setuirigatu: setuirigatu,
-                              setuiriniti: setuiriniti,
-                              setuiriji: setuiriji,
-                              setuirihun: setuirihun,
-                              setuirinitisuu: setuirinitisuu),
-                        ));
-                    // } else {}
+                    _incrementCounter();
                   },
-                  child: const Text('節入り時刻前'),
+                  child: Text(botanMoji[zenGo]),
                 ),
               ),
             )
@@ -240,7 +321,7 @@ class MeisikiPage extends StatelessWidget {
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Text(
-                                        '$seiniti',
+                                        '$seinitiInt',
                                         style: TextStyle(
                                           fontSize: fs,
                                           color: Colors.cyanAccent,
@@ -273,7 +354,7 @@ class MeisikiPage extends StatelessWidget {
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Text(
-                                        '$seigatu',
+                                        '$seigatuInt',
                                         style: TextStyle(
                                           fontSize: fs,
                                           color: Colors.cyanAccent,
@@ -306,7 +387,7 @@ class MeisikiPage extends StatelessWidget {
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Text(
-                                        '$seinen',
+                                        '$seinenInt',
                                         style: TextStyle(
                                           fontSize: fs,
                                           color: Colors.cyanAccent,
@@ -1535,7 +1616,7 @@ class MeisikiPage extends StatelessWidget {
                           child: Center(
                             child: TextButton(
                               child: Text(
-                                '節入り日（ $setuirinen-$setuirigatu-$setuiriniti $setuiriji:$setuirihun ）から$setuirinitisuu日目',
+                                '節入り日（ $setuirinenInt-$setuirigatuInt-$setuirinitiInt $setuirijiInt:$setuirihunInt ）から$setuirinitisuuInt日目',
                                 style: TextStyle(
                                   fontSize: fs - 6,
                                   color: Color(iroWhite),
@@ -1543,7 +1624,7 @@ class MeisikiPage extends StatelessWidget {
                                 ),
                               ),
                               onPressed: () {
-                                if (setuirinitisuu == 1) {
+                                if (widget.setuirinitisuu == 1) {
                                   _showSetuiri(context);
                                 } else {}
                                 /*Navigator.push(
@@ -1558,7 +1639,7 @@ class MeisikiPage extends StatelessWidget {
                       ),
                       //■■■■■■■■■取説の行■■■■■■■■■
                       SizedBox(
-                        height: 60,
+                        height: 200,
                         child: Container(
                           color: Colors.black54,
                           child: Padding(
@@ -1573,6 +1654,13 @@ class MeisikiPage extends StatelessWidget {
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
+                                Text('$_counter'),
+                                Text('$zenGo'),
+                                //Text('年柱：$nenchuNo'),
+                                //Text('月柱：$gechuNo'),
+                                Text('$nitiSiNo:$nitisi'),
+                                Text('$gatuSiNo:$gatusi'),
+                                Text('$nenSiNo:$nensi'),
                               ],
                             ),
                           ),
@@ -1638,7 +1726,7 @@ class MeisikiPage extends StatelessWidget {
 }
 
 // 関数定義　地支から蔵干を算出する
-//  c = zouKan(a, b)
+
 //   a: 地支を表す文字列　（'子','丑','寅',・・・,'戌','亥')
 //   b: 節入り日からの日数を表す数字　（1～31）（節入り日は、1　とする）
 //   c: 蔵干を表す文字列　（'甲','乙','甲',・・・'壬','癸')
@@ -1701,6 +1789,7 @@ zouKan(String a, int b) {
 }
 
 // 関数定義　十干から十干数を算出する
+//  c = zouKan(a, b)
 //  b = juKanNo( a )
 //   a: 十干を表す文字（'甲','乙',・・・,'癸'）
 //   b: 十干を表す数字（'0','1',・・・,'9' ）
@@ -1761,5 +1850,31 @@ juuniSiNo(String a) {
   } else if (a == '亥') {
     b = 11;
   } else {}
+  //b = 11;
   return b;
+}
+
+// 関数定義　文字列リストから検索文字列が先頭から何文字目にあるか返す
+//  c = nanmojime(a,b)
+//  a:　120文字（2文字×60組）の文字列リスト
+//  b:　2文字の検索文字
+//  c:　-2：一致が2組以上ある
+//      -1:一致する組がない
+//      0 ～ 59 : 組めに1組だけある
+int nanmojime(String mojilist, String kensaku2moji) {
+  int nanbanme = -1;
+  int ittisuu = 0;
+  for (int i = 0; i < 60; i++) {
+    String nimoji = mojilist.substring(i * 2, i * 2 + 2);
+    if (nimoji == kensaku2moji) {
+      nanbanme = i;
+      ittisuu = ittisuu + 1;
+    } else {}
+  }
+  if (ittisuu > 1) {
+    nanbanme = -2;
+  } else if (ittisuu < 1) {
+    nanbanme = -1;
+  } else {}
+  return nanbanme;
 }

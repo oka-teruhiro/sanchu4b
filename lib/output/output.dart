@@ -8,6 +8,9 @@ import 'package:sanchu4b/nikkan/nikkan_kinoe.dart';
 import 'package:sanchu4b/nikkan/nikkan_kinoto.dart';
 import 'package:sanchu4b/nikkan/nikkan_tutinoto.dart';
 import 'package:sanchu4b/output/meisiki_page.dart';
+import 'package:sanchu4b/output/meisiki_page3.dart';
+
+//import 'package:sanchu4b/output/meisiki_page4.dart';
 
 import '../nikkan/nikkan_mizunoe.dart';
 import '../nikkan/nikkan_mizzunoto.dart';
@@ -693,6 +696,46 @@ class Output extends StatelessWidget {
                       );
                     },
                     child: const Text('命式を表示する'),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(4.0),
+                child: SizedBox(
+                  width: 220,
+                  height: 36,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.blue,
+                      elevation: 4,
+                      shadowColor: Colors.yellow,
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => MeisikiPage3(
+                            //titleSeinengappi: titleSeinengappi,
+                            nenchu: nenchu,
+                            gechu: gechu,
+                            nichu: nichu,
+                            //setuiribi: setuiribi,
+                            seinen: seinen,
+                            seigatu: seigatu,
+                            seiniti: seiniti,
+                            setuirinen: setuirinen,
+                            setuirigatu: setuirigatu,
+                            setuiriniti: setuiriniti,
+                            //setuiriJikokuS: setuiriJikokuS,
+                            setuiriji: setuiriji,
+                            setuirihun: setuirihun,
+                            setuirinitisuu: setuirinitisuu,
+                            //title: '甲',
+                          ),
+                        ),
+                      );
+                    },
+                    child: const Text('命式を表示する(工事中）'),
                   ),
                 ),
               ),
