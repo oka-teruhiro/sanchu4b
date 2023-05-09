@@ -192,7 +192,6 @@ class _MeisikiPage3State extends State<MeisikiPage3> {
     } else {
       nenchuNo[1] = nenchuNo[0];
     }
-
     nenchuNo[2] = nenchuNo[0];
 
     gechuNo[0] = nanmojime(rokujukkansi, gechu);
