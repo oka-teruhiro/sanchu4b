@@ -16,6 +16,18 @@ import '../nikkan/nikkan_tutinoe.dart';
 import '../nikkan/nikkan_tutinoto.dart';
 
 class MeisikiPage3 extends StatefulWidget {
+  String nenchu; //年柱
+  String gechu; //月柱
+  String nichu; //日柱
+  int seinen; //生年
+  int seigatu; //生月
+  int seiniti; //生日
+  int setuirinen; //節入り年
+  int setuirigatu; //節入り月
+  int setuiriniti; //節入り日
+  int setuiriji; //節入り時
+  int setuirihun; //節入り分
+  int setuirinitisuu; //節入り日からの日数（節入り日は第1日目）
   MeisikiPage3({
     Key? key,
     required this.nenchu,
@@ -31,21 +43,6 @@ class MeisikiPage3 extends StatefulWidget {
     required this.setuirihun,
     required this.setuirinitisuu,
   }) : super(key: key);
-
-  //
-  String nenchu; //年柱
-  String gechu; //月柱
-  String nichu; //日柱
-  int seinen; //生年
-  int seigatu; //生月
-  int seiniti; //生日
-  int setuirinen; //節入り年
-  int setuirigatu; //節入り月
-  int setuiriniti; //節入り日
-  int setuiriji; //節入り時
-  int setuirihun; //節入り分
-  int setuirinitisuu; //節入り日からの日数（節入り日は第1日目）
-  //
 
   @override
   State<MeisikiPage3> createState() => _MeisikiPage3State();
@@ -153,25 +150,11 @@ class _MeisikiPage3State extends State<MeisikiPage3> {
     setState(() {
       _counter++;
       zenGo = _counter % 2;
-
-      //nenkan = nenchu.substring(0, 1);
-      //nensi = nenchu.substring(1, 2);
-      nenkanM = nenkan;
-      nensiM = nensi;
-
-      if (widget.seigatu == 2) {
-        //立春なので年柱も変わる
-      } else {}
-
-      // This call to setState tells the Flutter framework that something has
     });
   }
   //
 
   @override
-
-  //gechuH = nenchu;
-
   Widget build(BuildContext context) {
     //生年月日をwidgetで使えるようにする
     seinenInt = widget.seinen;
@@ -1653,6 +1636,7 @@ class _MeisikiPage3State extends State<MeisikiPage3> {
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
+                                /*
                                 Text('$_counter'),
                                 Text('$zenGo'),
                                 //Text('年柱：$nenchuNo'),
@@ -1660,6 +1644,7 @@ class _MeisikiPage3State extends State<MeisikiPage3> {
                                 Text('$nitiSiNo:$nitisi'),
                                 Text('$gatuSiNo:$gatusi'),
                                 Text('$nenSiNo:$nensi'),
+                                */
                               ],
                             ),
                           ),

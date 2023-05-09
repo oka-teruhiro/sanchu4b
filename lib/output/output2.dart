@@ -11,7 +11,6 @@ import '../nikkan/nikkan_mizunoe.dart';
 import '../nikkan/nikkan_mizzunoto.dart';
 import '../nikkan/nikkan_tutinoe.dart';
 import '../nikkan/nikkan_tutinoto.dart';
-import 'meisiki_page.dart';
 import 'meisiki_page3.dart';
 
 class Output2 extends StatefulWidget {
@@ -299,8 +298,8 @@ class _Output2State extends State<Output2> {
   String nichu = '甲子';
   String setuiriNitiS = "01";
   String setuiriJikokuS = "00:00";
-  int nenchuNo = 0;
-  int gechuNo = 0;
+  //int nenchuNo = 0;
+  //int gechuNo = 0;
   int nichuNo = 0;
   int nenchuHosei = 36;
   int gechuHosei = 13;
@@ -330,9 +329,31 @@ class _Output2State extends State<Output2> {
   String tokugouTenMoji = '甲';
   String tokugouTiMoji = '子';
   String tentiTokugouMoji = '甲子';
-
   int nissuu = 1;
   int nissi = -1;
+
+  // statefullWidget に変更するため追加
+  int _counter = 0;
+  double setuiriButtonWidth = 0;
+  int zenGo = 2; //0:節入り時刻後　1:節入り時刻前 2:節入り日以外
+  List<int> iroBotan = [-14575885, -12627531, -14575885];
+  List<int> iroTitle = [-1294214, -5767189, -1294214];
+  List<String> botanMoji = ['節入り時刻前', '節入り時刻後', '節入り時刻前'];
+  List<String> meisikiTitle = ['節入り時刻後の天運の年', '節入り時刻前の天運の年', 'あなたの天運の年は'];
+  List<int> nenchuNo = [1, 0, 1];
+  List<int> gechuNo = [1, 0, 1];
+  int nenchuNoH = 0;
+  int gechuNoH = 0;
+  String nenchuS = '甲子';
+  String gechuS = '甲子';
+
+  void _incrementCounter() {
+    setState(() {
+      _counter++;
+      zenGo = _counter % 2;
+    });
+  }
+  // statefullWidget に追加するために追加　ここまで
 
   @override
   Widget build(BuildContext context) {
@@ -407,8 +428,8 @@ class _Output2State extends State<Output2> {
     }
     //節入りIndexから年柱・月柱を算出する
     setuIndex = (setuirinen - 1920) * 12 + (setuirigatu - 1);
-    nenchuNo = (nenchuNen - 1900 + nenchuHosei) % 60; //年柱No.算出
-    gechuNo = (setuIndex + gechuHosei) % 60;
+    nenchuNoH = (nenchuNen - 1900 + nenchuHosei) % 60; //年柱No.算出
+    gechuNoH = (setuIndex + gechuHosei) % 60;
     //節入りIndexから正しい節入り日・時刻・節入り日からの日数を算出する
     setuiriNitiS = setuiriNitiL.substring(setuIndex * 2, (setuIndex + 1) * 2);
     setuiriniti = int.parse(setuiriNitiS);
@@ -420,16 +441,43 @@ class _Output2State extends State<Output2> {
         DateTime(setuirinen, setuirigatu, setuiriniti, setuiriji, setuirihun);
     setuiribi2 = DateTime(setuirinen, setuirigatu, setuiriniti);
     setuirinitisuu = seinengappi.difference(setuiribi2).inDays + 1;
+
+    // statefullWidget に変更するために　追加
+    // 節入り日の時節入り時刻前ボタンを表示する
+    if (setuirinitisuu == 1) {
+      setuiriButtonWidth = 80;
+    } else {
+      setuiriButtonWidth = 0;
+    }
+
+    nenchuNo[0] = nenchuNoH;
+    if (seigatu == 2) {
+      nenchuNo[1] = (nenchuNo[0] - 1) % 60;
+    } else {
+      nenchuNo[1] = nenchuNo[0];
+    }
+    nenchuNo[2] = nenchuNo[0];
+
+    gechuNo[0] = gechuNoH;
+    gechuNo[1] = (gechuNo[0] - 1) % 60;
+    gechuNo[2] = gechuNo[0];
+
     //月柱の六十干支を算出する
-    gechu = rokujukkansi.substring((gechuNo * 2), (gechuNo * 2) + 2);
+    gechu =
+        rokujukkansi.substring((gechuNo[zenGo] * 2), (gechuNo[zenGo] * 2) + 2);
+    gechuS = rokujukkansi.substring((gechuNo[2] * 2), (gechuNo[2] * 2) + 2);
     //年柱の六十干支を算出する
-    nenchu = rokujukkansi.substring((nenchuNo * 2), (nenchuNo * 2) + 2);
+    nenchu = rokujukkansi.substring(
+        (nenchuNo[zenGo] * 2), (nenchuNo[zenGo] * 2) + 2);
+    nenchuS = rokujukkansi.substring((nenchuNo[2] * 2), (nenchuNo[2] * 2) + 2);
     // 干支併臨(日)を算出する
     var nitiKansiHeirin = kansiHeirin(nichuNo, seinengappiMoji);
     // 干支併臨(月)を算出する。
-    var getuKansiHeirin = kansiHeirin(gechuNo, seinengappiMoji);
+    var getuKansiHeirin = kansiHeirin(gechuNo[zenGo], seinengappiMoji);
     // 干支併臨(年)を算出する
-    var nenKansiHeirin = kansiHeirin(nenchuNo, seinengappiMoji);
+    var nenKansiHeirin = kansiHeirin(nenchuNo[zenGo], seinengappiMoji);
+    // statefullWidget に変更するために追加　ここまで
+
     // 天地徳合を算出する
     var tokugouTen = (nikkan + 5) % 10;
     var tokugouTi = (13 - nissi) % 12;
@@ -478,13 +526,38 @@ class _Output2State extends State<Output2> {
       child: Scaffold(
         backgroundColor: Colors.black,
         appBar: AppBar(
-          title: const Text(
-            'あなたの天運の年は',
+          title: Text(
+            meisikiTitle[zenGo],
             style: TextStyle(
-              color: Colors.pinkAccent,
+              color: Color(iroTitle[zenGo]),
               fontWeight: FontWeight.bold,
+              fontSize: 16,
             ),
           ),
+          actions: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: SizedBox(
+                width: setuiriButtonWidth,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Color(iroBotan[zenGo]),
+                    elevation: 0,
+                    shadowColor: Colors.red,
+                  ),
+                  onPressed: () {
+                    _incrementCounter();
+                  },
+                  child: Text(
+                    botanMoji[zenGo],
+                    style: const TextStyle(
+                      fontSize: 13,
+                    ),
+                  ),
+                ),
+              ),
+            )
+          ],
         ),
         body: Center(
           child: Column(
@@ -684,19 +757,16 @@ class _Output2State extends State<Output2> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => MeisikiPage(
-                            //titleSeinengappi: titleSeinengappi,
-                            nenchu: nenchu,
-                            gechu: gechu,
+                          builder: (context) => MeisikiPage3(
+                            nenchu: nenchuS,
+                            gechu: gechuS,
                             nichu: nichu,
-                            //setuiribi: setuiribi,
                             seinen: seinen,
                             seigatu: seigatu,
                             seiniti: seiniti,
                             setuirinen: setuirinen,
                             setuirigatu: setuirigatu,
                             setuiriniti: setuiriniti,
-                            //setuiriJikokuS: setuiriJikokuS,
                             setuiriji: setuiriji,
                             setuirihun: setuirihun,
                             setuirinitisuu: setuirinitisuu,
@@ -705,46 +775,6 @@ class _Output2State extends State<Output2> {
                       );
                     },
                     child: const Text('命式を表示する'),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(4.0),
-                child: SizedBox(
-                  width: 220,
-                  height: 36,
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.blue,
-                      elevation: 4,
-                      shadowColor: Colors.yellow,
-                    ),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => MeisikiPage3(
-                            //titleSeinengappi: titleSeinengappi,
-                            nenchu: nenchu,
-                            gechu: gechu,
-                            nichu: nichu,
-                            //setuiribi: setuiribi,
-                            seinen: seinen,
-                            seigatu: seigatu,
-                            seiniti: seiniti,
-                            setuirinen: setuirinen,
-                            setuirigatu: setuirigatu,
-                            setuiriniti: setuiriniti,
-                            //setuiriJikokuS: setuiriJikokuS,
-                            setuiriji: setuiriji,
-                            setuirihun: setuirihun,
-                            setuirinitisuu: setuirinitisuu,
-                            //title: '甲',
-                          ),
-                        ),
-                      );
-                    },
-                    child: const Text('命式を表示する(工事中）'),
                   ),
                 ),
               ),
