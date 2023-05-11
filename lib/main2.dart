@@ -9,7 +9,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'osirase/update.dart';
 
-void main() {
+void main2() {
   runApp(const MyApp());
 }
 
@@ -86,17 +86,17 @@ class _MyHomePageState extends State<MyHomePage> {
   ];
   final List<String> _memoH = ['メモ', 'メモ', 'メモ', 'メモ', 'メモ'];
 
-  String _birthday0 = '';
-  String _birthday1 = '';
-  String _birthday2 = '';
-  String _birthday3 = '';
-  String _birthday4 = '';
+  //String _birthday0 = '';
+  //String _birthday1 = '';
+  //String _birthday2 = '';
+  //String _birthday3 = '';
+  //String _birthday4 = '';
 
-  String _memo0 = 'メモ';
-  String _memo1 = 'メモ';
-  String _memo2 = 'メモ';
-  String _memo3 = 'メモ';
-  String _memo4 = 'メモ';
+  //String _memo0 = 'メモ';
+  //String _memo1 = 'メモ';
+  //String _memo2 = 'メモ';
+  //String _memo3 = 'メモ';
+  //String _memo4 = 'メモ';
   String seinengappiMojia = '';
 
   //var bestQuizNoMoji;
@@ -107,12 +107,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   int item = 0;
 
-  void initState() {
-    super.initState();
-    _getPrefItems();
-    return;
-  }
-
+  /*
   // shareed Preference に保存されているデータを読み込んで、_counterにセットする
   _getPrefItems() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -166,6 +161,7 @@ class _MyHomePageState extends State<MyHomePage> {
     }
     setState(() {});
   }
+  */
 
   //データを書き込む
   _setPrefMemo(int item) async {
@@ -260,7 +256,7 @@ class _MyHomePageState extends State<MyHomePage> {
       child: Scaffold(
         backgroundColor: Colors.black,
         appBar: AppBar(
-          title: const Text('天運三柱推命 ver.4.1.12',
+          title: const Text('天運三柱推命 ver.4.1.11',
               style: TextStyle(
                 color: Colors.pinkAccent,
                 fontWeight: FontWeight.bold,
@@ -695,12 +691,8 @@ class _MyHomePageState extends State<MyHomePage> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          //contentPadding: const EdgeInsets.symmetric(
-          //  vertical: 10,
-          //),
           //title: Text('タイトル'),
           content: TextField(
-            maxLines: 1,
             decoration: InputDecoration(
               hintText: memo,
             ),

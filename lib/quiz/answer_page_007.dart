@@ -22,10 +22,10 @@ class AnswerPage007 extends StatelessWidget {
                 title: Image.asset('images/quiz/Q007/A0070.png'),
               ),
               ListTile(
-                title: Image.asset('images/quiz/Q006/A0061.png'),
+                title: Image.asset('images/quiz/Q007/A0071.png'),
               ),
               ListTile(
-                title: Image.asset('images/quiz/Q006/A0062.png'),
+                title: Image.asset('images/quiz/Q007/A0072.png'),
               ),
               SizedBox(
                   height: 60,

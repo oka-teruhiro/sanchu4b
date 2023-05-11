@@ -16,19 +16,19 @@ import '../nikkan/nikkan_tutinoe.dart';
 import '../nikkan/nikkan_tutinoto.dart';
 
 class MeisikiPage3 extends StatefulWidget {
-  String nenchu; //年柱
-  String gechu; //月柱
-  String nichu; //日柱
-  int seinen; //生年
-  int seigatu; //生月
-  int seiniti; //生日
-  int setuirinen; //節入り年
-  int setuirigatu; //節入り月
-  int setuiriniti; //節入り日
-  int setuiriji; //節入り時
-  int setuirihun; //節入り分
-  int setuirinitisuu; //節入り日からの日数（節入り日は第1日目）
-  MeisikiPage3({
+  final String nenchu; //年柱
+  final String gechu; //月柱
+  final String nichu; //日柱
+  final int seinen; //生年
+  final int seigatu; //生月
+  final int seiniti; //生日
+  final int setuirinen; //節入り年
+  final int setuirigatu; //節入り月
+  final int setuiriniti; //節入り日
+  final int setuiriji; //節入り時
+  final int setuirihun; //節入り分
+  final int setuirinitisuu; //節入り日からの日数（節入り日は第1日目）
+  const MeisikiPage3({
     Key? key,
     required this.nenchu,
     required this.gechu,

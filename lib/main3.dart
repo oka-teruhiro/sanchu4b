@@ -1,4 +1,7 @@
+import 'dart:ffi';
+
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/intl.dart';
@@ -9,7 +12,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'osirase/update.dart';
 
-void main() {
+void main3() {
   runApp(const MyApp());
 }
 
@@ -86,17 +89,17 @@ class _MyHomePageState extends State<MyHomePage> {
   ];
   final List<String> _memoH = ['メモ', 'メモ', 'メモ', 'メモ', 'メモ'];
 
-  String _birthday0 = '';
-  String _birthday1 = '';
-  String _birthday2 = '';
-  String _birthday3 = '';
-  String _birthday4 = '';
+  //String _birthday0 = '';
+  //String _birthday1 = '';
+  //String _birthday2 = '';
+  //String _birthday3 = '';
+  //String _birthday4 = '';
 
-  String _memo0 = 'メモ';
-  String _memo1 = 'メモ';
-  String _memo2 = 'メモ';
-  String _memo3 = 'メモ';
-  String _memo4 = 'メモ';
+  //String _memo0 = 'メモ';
+  //String _memo1 = 'メモ';
+  //String _memo2 = 'メモ';
+  //String _memo3 = 'メモ';
+  //String _memo4 = 'メモ';
   String seinengappiMojia = '';
 
   //var bestQuizNoMoji;
@@ -107,12 +110,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   int item = 0;
 
-  void initState() {
-    super.initState();
-    _getPrefItems();
-    return;
-  }
-
+  /*
   // shareed Preference に保存されているデータを読み込んで、_counterにセットする
   _getPrefItems() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -166,10 +164,31 @@ class _MyHomePageState extends State<MyHomePage> {
     }
     setState(() {});
   }
+  */
+
+  Void? initState() {
+    super.initState();
+    _loadMemo();
+    _loadItems();
+
+    return null;
+  }
+
+  // memo 端末から読みこむ
+  Future<void> _loadMemo() async {
+    final prefs = await SharedPreferences.getInstance();
+    setState(() {
+      _memoH[0] = (prefs.getString('memo0') ?? '');
+      _memoH[1] = (prefs.getString('memo1') ?? '');
+      _memoH[2] = (prefs.getString('memo2') ?? '');
+      _memoH[3] = (prefs.getString('memo3') ?? '');
+      _memoH[4] = (prefs.getString('memo4') ?? '');
+    });
+  }
 
   //データを書き込む
-  _setPrefMemo(int item) async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
+  Future<void> _setPrefMemo(int item) async {
+    final prefs = await SharedPreferences.getInstance();
     setState(() {
       if (item == 0) {
         prefs.setString('memo0', _memoH[item]);
@@ -185,9 +204,35 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  // 生年月日データを端末機から取り込む
+  Future<void> _loadItems() async {
+    final prefs = await SharedPreferences.getInstance();
+    setState(() {
+      _birthD[0] = (prefs.getString('birthday0') ?? '');
+      _birthD[1] = (prefs.getString('birthday1') ?? '');
+      _birthD[2] = (prefs.getString('birthday2') ?? '');
+      _birthD[3] = (prefs.getString('birthday3') ?? '');
+      _birthD[4] = (prefs.getString('birthday4') ?? '');
+      print('birthD:$_birthD');
+      for (int i = 0; i < 5; i++) {
+        if (_birthD[i] == '') {
+          _birthD[i] = 'yyyy/mm/dd';
+        } else if (_birthD[i] == 'yyyy/mm/dd') {
+          _birthD[i] = 'yyyy/mm/dd';
+        } else {}
+      }
+      for (int i = 0; i < 5; i++) {
+        int j = i + 1;
+        _birthH[i] = '$j:　${_birthD[i]}　生';
+      }
+
+      print('birthH:$_birthH');
+    });
+  }
+
   //データを書き込む
-  _setPrefItems(int item) async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
+  Future<void> _setPrefItems(int item) async {
+    final prefs = await SharedPreferences.getInstance();
     int j = item + 1;
     _birthD.removeAt(item);
     _birthD.insert(item, _birthday);
@@ -195,6 +240,7 @@ class _MyHomePageState extends State<MyHomePage> {
     _birthO.insert(item, _birthday);
     _birthH.removeAt(item);
     _birthH.insert(item, '$j : $_birthday 生');
+
     if (item == 0) {
       //_birthday0 = _birthday;
       prefs.setString('birthday0', _birthD[item]);
@@ -207,12 +253,15 @@ class _MyHomePageState extends State<MyHomePage> {
     } else if (item == 4) {
       prefs.setString('birthday4', _birthD[item]);
     } else {}
+    if (kDebugMode) {
+      print('$_birthH[0]');
+    }
 
     setState(() {});
   }
 
   //データを削除する
-  _removePrefItems(int item) async {
+  /*_removePrefItems(int item) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
 
     seinengappiMojia = '';
@@ -251,7 +300,7 @@ class _MyHomePageState extends State<MyHomePage> {
         prefs.remove('memo4');
       });
     } else {}
-  }
+  }*/
 
   @override
   Widget build(BuildContext context) {
@@ -260,7 +309,7 @@ class _MyHomePageState extends State<MyHomePage> {
       child: Scaffold(
         backgroundColor: Colors.black,
         appBar: AppBar(
-          title: const Text('天運三柱推命 ver.4.1.12',
+          title: const Text('天運三柱推命 ver.4.1.11',
               style: TextStyle(
                 color: Colors.pinkAccent,
                 fontWeight: FontWeight.bold,
@@ -374,21 +423,23 @@ class _MyHomePageState extends State<MyHomePage> {
                                     _birthday = _birthD[index];
                                     if (_birthday == 'yyyy/mm/dd') {
                                       date9 = DateTime(
-                                          DateTime.now().year - 30,
+                                          // DataPicker　最初に表示する年月日
+                                          DateTime.now().year - 40,
                                           DateTime.now().month,
                                           DateTime.now().day);
-                                      //print('a:date9:$date9');
+                                      print('a:date9:$date9');
                                     } else if (_birthday == '') {
                                       date9 = DateTime(
-                                          DateTime.now().year - 30,
+                                          // DatePicke　最初に表示する年月日
+                                          DateTime.now().year - 40,
                                           DateTime.now().month,
                                           DateTime.now().day);
-                                      //print('b:date9:$date9');
+                                      print('b:date9:$date9');
                                     } else {
                                       _birthdaya =
                                           '${_birthday.substring(0, 4)}-${_birthday.substring(5, 7)}-${_birthday.substring(8, 10)}';
                                       date9 = DateTime.parse(_birthdaya);
-                                      //print('c:date9:$date9');
+                                      print('c:date9:$date9');
                                     }
                                     _showCupertinoDatePicker(context, index);
                                     setState(() {});
@@ -507,6 +558,10 @@ class _MyHomePageState extends State<MyHomePage> {
             height: 260,
             child: Column(
               children: [
+                //SizedBox(
+                //  height: 50,
+                //  child: Text('$newDate'),
+                //),
                 // iOS タイプのDatePickerを表示
                 SizedBox(
                   height: 200,
@@ -518,8 +573,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     mode: CupertinoDatePickerMode.date,
                     onDateTimeChanged: (newDate) {
                       _birthday = DateFormat('yyyy/MM/dd').format(newDate);
-                      birthdayHyouji = '($j : $_birthday 生';
-                      //print('newDate:$newDate');
+                      birthdayHyouji = '($j:　$_birthday　生';
+                      print('newDate:$newDate');
                       setState(() {});
                     },
                   ),
@@ -546,7 +601,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           if (_birthday == 'yyyy/mm/dd') {
                             birthdayHyouji = '$j : yyyy/mm/dd ?';
                           } else {
-                            birthdayHyouji = '$j : $_birthday 生';
+                            birthdayHyouji = '$j　$_birthday　生';
                           }
                           setState(() {});
                           Navigator.of(context).pop();
@@ -598,10 +653,15 @@ class _MyHomePageState extends State<MyHomePage> {
                                             ),
                                           ),
                                           onPressed: () {
-                                            //birthdayHyouji =
-                                            //   '$j : yyyy/mm/dd 生';
-                                            //TODO: 削除処理検討する必要あり
-                                            _removePrefItems(i);
+                                            birthdayHyouji =
+                                                '$j :　yyyy/mm/dd　生';
+
+                                            birthdayOld = _birthday;
+                                            seinengappiMojia = _birthday;
+
+                                            _birthD[item] = 'yyyy/mm/dd';
+                                            //TODO:セットを検討する必要あり
+                                            _setPrefItems(i);
                                             Navigator.of(context).pop();
                                             Navigator.of(context).pop();
                                             setState(() {});
@@ -663,9 +723,11 @@ class _MyHomePageState extends State<MyHomePage> {
                                         ),
                                         onPressed: () {
                                           //TODO: sakujo?
-                                          birthdayHyouji = ' : $_birthday 生';
+                                          birthdayHyouji = ' :　$_birthday　生';
                                           birthdayOld = _birthday;
                                           seinengappiMojia = _birthday;
+
+                                          _birthD[item] = _birthday;
                                           //TODO:セットを検討する必要あり
                                           _setPrefItems(i);
                                           setState(() {});
@@ -695,12 +757,8 @@ class _MyHomePageState extends State<MyHomePage> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          //contentPadding: const EdgeInsets.symmetric(
-          //  vertical: 10,
-          //),
           //title: Text('タイトル'),
           content: TextField(
-            maxLines: 1,
             decoration: InputDecoration(
               hintText: memo,
             ),
@@ -729,9 +787,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
                 onPressed: () {
-                  memo = 'メモ';
-                  _memoH.removeAt(i);
-                  _memoH.insert(i, memo);
+                  //memo = 'メモ';
+                  //_memoH.removeAt(i);
+                  //_memoH.insert(i, memo);
+                  _memoH[i] = 'メモ';
                   _setPrefMemo(i);
                   Navigator.of(context).pop();
                 }),
@@ -744,8 +803,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
                 onPressed: () {
-                  _memoH.removeAt(i);
-                  _memoH.insert(i, memo);
+                  //_memoH.removeAt(i);
+                  _memoH[i] = memo;
                   _setPrefMemo(i);
                   Navigator.of(context).pop();
                 }),

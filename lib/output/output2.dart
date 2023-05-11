@@ -14,12 +14,12 @@ import '../nikkan/nikkan_tutinoto.dart';
 import 'meisiki_page3.dart';
 
 class Output2 extends StatefulWidget {
-  Output2({
+  const Output2({
     Key? key,
     required this.titleSeinengappi,
   }) : super(key: key);
 
-  String titleSeinengappi;
+  final String titleSeinengappi;
 
   @override
   State<Output2> createState() => _Output2State();
