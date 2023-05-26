@@ -7,6 +7,7 @@ import 'package:sanchu4b/osirase/update3.dart';
 import 'package:sanchu4b/osirase/update3a.dart';
 import 'package:sanchu4b/osirase/update4.dart';
 import 'package:sanchu4b/osirase/update4a.dart';
+import 'package:sanchu4b/osirase/update4b.dart';
 
 class Update extends StatelessWidget {
   const Update({Key? key}) : super(key: key);
@@ -29,6 +30,23 @@ class Update extends StatelessWidget {
           Expanded(
             child: ListView(
               children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ListTile(
+                    title: const Text('第4.2版　命式チャートページにを追加しました。（工事中)'),
+                    trailing: const Icon(Icons.navigate_next),
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const Update4b(),
+                          ));
+                    },
+                  ),
+                ),
+                const Divider(
+                  color: Colors.blue,
+                ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: ListTile(
