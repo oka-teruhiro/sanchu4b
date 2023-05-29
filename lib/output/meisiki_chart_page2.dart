@@ -4,9 +4,25 @@ import 'package:flutter/material.dart';
 
 class MeisikiChartPage2 extends StatefulWidget {
   final String nichu;
+  final String gechu;
+  final String nenchu;
+  final String tuuhenbosiNenKan;
+  final String tuuhenbosiNenSi;
+  final String tuuhenbosiGetuKan;
+  final String tuuhenbosiGetuSi;
+  final String tuuhenbosiNitiKan;
+  final String tuuhenbosiNitiSi;
   const MeisikiChartPage2({
     Key? key,
     required this.nichu,
+    required this.gechu,
+    required this.nenchu,
+    required this.tuuhenbosiNenKan,
+    required this.tuuhenbosiNenSi,
+    required this.tuuhenbosiGetuKan,
+    required this.tuuhenbosiGetuSi,
+    required this.tuuhenbosiNitiKan,
+    required this.tuuhenbosiNitiSi,
   }) : super(key: key);
 
   @override
@@ -17,6 +33,14 @@ class _MeisikiChartPage2State extends State<MeisikiChartPage2> {
   int counter = 0;
   int j = 0; // 受け渡したい変数を定義
   String nichuS = '甲子';
+  String gechuS = '甲子';
+  String nenchuS = '甲子';
+  String tuuhenbosiNenKanS = '比肩';
+  String tuuhenbosiNenSiS = '比肩';
+  String tuuhenbosiGetuKanS = '比肩';
+  String tuuhenbosiGetuSiS = '比肩';
+  String tuuhenbosiNitiKanS = '比肩';
+  String tuuhenbosiNitiSiS = '比肩';
 
   void ggCount() {
     setState(() {
@@ -28,7 +52,18 @@ class _MeisikiChartPage2State extends State<MeisikiChartPage2> {
 
   @override
   Widget build(BuildContext context) {
+    // 命式ページから受け取った変数でこのウィジェットで使える変数
     nichuS = widget.nichu;
+    gechuS = widget.gechu;
+    nenchuS = widget.nenchu;
+    tuuhenbosiNenKanS = widget.tuuhenbosiNenKan;
+    tuuhenbosiNenSiS = widget.tuuhenbosiNenSi;
+    tuuhenbosiGetuKanS = widget.tuuhenbosiGetuKan;
+    tuuhenbosiGetuSiS = widget.tuuhenbosiGetuSi;
+    tuuhenbosiNitiKanS = widget.tuuhenbosiNitiKan;
+    tuuhenbosiNitiSiS = widget.tuuhenbosiNitiSi;
+
+    //以下画像生成のための変数
     // const double w1 = 40;
     const double h1 = 25;
     // const double h2 = 90;
