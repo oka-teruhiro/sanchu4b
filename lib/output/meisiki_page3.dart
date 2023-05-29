@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sanchu4b/output/meisiki_chart_page2.dart';
 
 import '../juuniun/juni_c_siou.dart';
 import '../juuniun/juni_d_sihei.dart';
@@ -1585,39 +1586,84 @@ class _MeisikiPage3State extends State<MeisikiPage3> {
                           ],
                         ),
                       ),
-                      SizedBox(
-                        height: 36,
-                        width: 350,
-                        child: Container(
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(12),
-                              border: Border.all(
-                                color: Color(iroSetuiri),
-                                width: 2,
-                              )),
-                          child: Center(
-                            child: TextButton(
-                              child: Text(
-                                '節入り日（ $setuirinenInt-$setuirigatuInt-$setuirinitiInt $setuirijiInt:$setuirihunInt ）から$setuirinitisuuInt日目',
-                                style: TextStyle(
-                                  fontSize: fs - 6,
-                                  color: Color(iroWhite),
-                                  fontWeight: FontWeight.bold,
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          SizedBox(
+                            height: 36,
+                            width: 270,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(12),
+                                  border: Border.all(
+                                    color: Color(iroSetuiri),
+                                    width: 2,
+                                  )),
+                              child: Center(
+                                child: TextButton(
+                                  child: Text(
+                                    '節入り日（ $setuirinenInt-$setuirigatuInt-$setuirinitiInt $setuirijiInt:$setuirihunInt ）から$setuirinitisuuInt日目',
+                                    style: TextStyle(
+                                      fontSize: fs - 7,
+                                      color: Color(iroWhite),
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  onPressed: () {
+                                    if (widget.setuirinitisuu == 1) {
+                                      _showSetuiri(context);
+                                    } else {}
+                                    /*Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) => const Setuiribi(),
+                                        ));*/
+                                  },
                                 ),
                               ),
-                              onPressed: () {
-                                if (widget.setuirinitisuu == 1) {
-                                  _showSetuiri(context);
-                                } else {}
-                                /*Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => const Setuiribi(),
-                                    ));*/
-                              },
                             ),
                           ),
-                        ),
+                          SizedBox(
+                            height: 36,
+                            width: 80,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  color: Colors.white24,
+                                  borderRadius: BorderRadius.circular(12),
+                                  border: Border.all(
+                                    color: Colors.pinkAccent,
+                                    width: 2,
+                                  )),
+                              child: Center(
+                                child: TextButton(
+                                  child: Text(
+                                    'チャート', //12運年
+                                    style: TextStyle(
+                                      color: Colors.cyanAccent,
+                                      fontSize: fs - 6,
+                                    ),
+                                  ),
+                                  onPressed: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) =>
+                                              const MeisikiChartPage2(),
+                                        ));
+                                  },
+                                  /*onLongPress: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => MeisikiPage3(
+                                                title: "oka", nenchu: '壬寅'),
+                                          ));
+                                    },*/
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                       //■■■■■■■■■取説の行■■■■■■■■■
                       SizedBox(
