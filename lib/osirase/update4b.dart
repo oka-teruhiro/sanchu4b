@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sanchu4b/output/meisiki_chart_page.dart';
+
+import '../output/meisiki_chart_page2.dart';
 
 class Update4b extends StatelessWidget {
   const Update4b({Key? key}) : super(key: key);
@@ -96,7 +97,7 @@ class Update4b extends StatelessWidget {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const MeisikiChartPage(),
+                        builder: (context) => const MeisikiChartPage2(),
                       ));
                 },
               ),
