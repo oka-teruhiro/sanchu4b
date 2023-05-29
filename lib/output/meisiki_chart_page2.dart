@@ -3,7 +3,11 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 class MeisikiChartPage2 extends StatefulWidget {
-  const MeisikiChartPage2({Key? key}) : super(key: key);
+  final String nichu;
+  const MeisikiChartPage2({
+    Key? key,
+    required this.nichu,
+  }) : super(key: key);
 
   @override
   State<MeisikiChartPage2> createState() => _MeisikiChartPage2State();
@@ -11,7 +15,8 @@ class MeisikiChartPage2 extends StatefulWidget {
 
 class _MeisikiChartPage2State extends State<MeisikiChartPage2> {
   int counter = 0;
-  int j = 0;
+  int j = 0; // 受け渡したい変数を定義
+  String nichuS = '甲子';
 
   void ggCount() {
     setState(() {
@@ -23,6 +28,7 @@ class _MeisikiChartPage2State extends State<MeisikiChartPage2> {
 
   @override
   Widget build(BuildContext context) {
+    nichuS = widget.nichu;
     // const double w1 = 40;
     const double h1 = 25;
     // const double h2 = 90;
@@ -104,7 +110,7 @@ class _MeisikiChartPage2State extends State<MeisikiChartPage2> {
       data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
       child: Scaffold(
         appBar: AppBar(
-          title: Text('命式チャート（工事中）　j:$j'),
+          title: Text('命式チャート（工事中）$nichuS'),
         ),
         body: Container(
           color: Colors.black,
@@ -1546,7 +1552,6 @@ class _MeisikiChartPage2State extends State<MeisikiChartPage2> {
         ),
       ),
     );
-    // );
   }
 }
 
@@ -1618,11 +1623,8 @@ class ShapePainter1 extends CustomPainter {
 }
 
 class ShapePainter2 extends CustomPainter {
-  // 受け取る値を代入する変数を定義
-  int gogyou = 1; // 五行　0:木 1:火 2:土 3:金 4:水
-  // 受け取る値を上記変数に代入
-  ShapePainter2({required this.gogyou});
-
+  int gogyou = 1; // 五行　0:木 1:火 2:土 3:金 4:水  // ■■■■■■受け取る値を代入する変数を定義
+  ShapePainter2({required this.gogyou}); // ■■■■■■■■■受け取る値を上記変数に代入
   @override
   void paint(Canvas canvas, Size size) {
     var center1 = const Offset(0, 220 - 30 - 14 - 509); // 表面の中心座標

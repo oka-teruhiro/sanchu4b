@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../output/meisiki_chart_page2.dart';
-
 class Update4b extends StatelessWidget {
   const Update4b({Key? key}) : super(key: key);
 
@@ -94,11 +92,11 @@ class Update4b extends StatelessWidget {
               child: ElevatedButton(
                 child: const Text('命式チャートページ（工事中）'),
                 onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const MeisikiChartPage2(),
-                      ));
+                  // Navigator.push(
+                  //     context,
+                  //     MaterialPageRoute(
+                  //       builder: (context) => const MeisikiChartPage2(),
+                  //     ));
                 },
               ),
             ),

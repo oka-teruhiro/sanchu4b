@@ -1648,7 +1648,9 @@ class _MeisikiPage3State extends State<MeisikiPage3> {
                                         context,
                                         MaterialPageRoute(
                                           builder: (context) =>
-                                              const MeisikiChartPage2(),
+                                              MeisikiChartPage2(
+                                            nichu: nichu,
+                                          ),
                                         ));
                                   },
                                   /*onLongPress: () {
