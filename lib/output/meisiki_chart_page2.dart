@@ -2,6 +2,8 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
+import 'meisiki_page3.dart';
+
 class MeisikiChartPage2 extends StatefulWidget {
   final String nichu;
   final String gechu;
@@ -35,12 +37,12 @@ class _MeisikiChartPage2State extends State<MeisikiChartPage2> {
   String nichuS = '甲子';
   String gechuS = '甲子';
   String nenchuS = '甲子';
-  String tuuhenbosiNenKanS = '比肩';
-  String tuuhenbosiNenSiS = '比肩';
-  String tuuhenbosiGetuKanS = '比肩';
-  String tuuhenbosiGetuSiS = '比肩';
-  String tuuhenbosiNitiKanS = '比肩';
-  String tuuhenbosiNitiSiS = '比肩';
+  String tuNenKanS = '比肩';
+  String tuNenSiS = '比肩';
+  String tuGeKanS = '比肩';
+  String tuGeSiS = '比肩';
+  String tuNitiKanS = '比肩';
+  String tuNitiSiS = '比肩';
 
   void ggCount() {
     setState(() {
@@ -53,15 +55,47 @@ class _MeisikiChartPage2State extends State<MeisikiChartPage2> {
   @override
   Widget build(BuildContext context) {
     // 命式ページから受け取った変数でこのウィジェットで使える変数
-    nichuS = widget.nichu;
-    gechuS = widget.gechu;
-    nenchuS = widget.nenchu;
-    tuuhenbosiNenKanS = widget.tuuhenbosiNenKan;
-    tuuhenbosiNenSiS = widget.tuuhenbosiNenSi;
-    tuuhenbosiGetuKanS = widget.tuuhenbosiGetuKan;
-    tuuhenbosiGetuSiS = widget.tuuhenbosiGetuSi;
-    tuuhenbosiNitiKanS = widget.tuuhenbosiNitiKan;
-    tuuhenbosiNitiSiS = widget.tuuhenbosiNitiSi;
+    nichuS = widget.nichu; // 日柱
+    gechuS = widget.gechu; // 月柱
+    nenchuS = widget.nenchu; // 年柱
+    tuNenKanS = widget.tuuhenbosiNenKan; // 通変星年天
+    tuNenSiS = widget.tuuhenbosiNenSi; // 通変星年地
+    tuGeKanS = widget.tuuhenbosiGetuKan; // 通変星月天
+    tuGeSiS = widget.tuuhenbosiGetuSi; // 通変星月地
+    tuNitiKanS = widget.tuuhenbosiNitiKan; // 通変星日天
+    tuNitiSiS = widget.tuuhenbosiNitiSi; // 通変星日地
+
+    // このウィジェットで使う変数
+    String niKan = '甲'; // 日干
+    String niSi = '子'; // 日支
+    String geKan = '甲'; // 月干
+    String geSi = '子'; // 月支
+    String nenKan = '甲'; // 年干
+    String nenSi = '子'; // 年支
+    int niKanNo = 0; // 日干No.
+    String tuG = '比食財官印比食財官印比食財官';
+    String tu = '比肩劫敗食神傷官偏財正財偏官正官倒食印綬比肩劫敗食神傷官偏財正財偏官正官倒食印綬比肩劫敗食神傷官偏財正財偏官正官倒食印綬';
+    int tuSS0 = 1; // 比肩の数
+    int tuSS1 = 0; // 劫敗の数
+    int tuSS2 = 0; // 食神の数
+    int tuSS3 = 0; // 傷官の数
+    int tuSS4 = 0; // 偏財の数
+    int tuSS5 = 0; // 正財の数
+    int tuSS6 = 0; // 偏官の数
+    int tuSS7 = 0; // 正官の数
+    int tuSS8 = 0; // 倒食の数
+    int tuSS9 = 0; // 印綬の数
+    String tuSSM0 = '1'; // 比肩の数を文字化
+    String tuSSM1 = '0'; // 劫敗の数を文字化
+    String tuSSM2 = '0'; // 食神の数を文字化
+    String tuSSM3 = '0'; // 傷官の数を文字化
+    String tuSSM4 = '0'; // 偏財の数を文字化
+    String tuSSM5 = '0'; // 正財の数を文字化
+    String tuSSM6 = '0'; // 偏官の数を文字化
+    String tuSSM7 = '0'; // 正官の数を文字化
+    String tuSSM8 = '0'; // 倒食の数を文字化
+    String tuSSM9 = '0'; // 印綬の数を文字化
+    String tuSSM = '012345678901234567890';
 
     //以下画像生成のための変数
     // const double w1 = 40;
@@ -79,33 +113,33 @@ class _MeisikiChartPage2State extends State<MeisikiChartPage2> {
     const int godU3 = 3; // 金地下１階
     const int godU4 = 4; // 水地下１階
     // 通変5運の表示
-    const String tuG0 = '比'; // 木３階
-    const String tuG1 = '食'; // 火３階
-    const String tuG2 = '財'; // 土３階
-    const String tuG3 = '官'; // 金３階
-    const String tuG4 = '印'; // 水３階
+    // const String tuG0 = '比'; // 木３階
+    // const String tuG1 = '食'; // 火３階
+    // const String tuG2 = '財'; // 土３階
+    // const String tuG3 = '官'; // 金３階
+    // const String tuG4 = '印'; // 水３階
     // 通変星の表示内容
-    const String tu0 = '比肩'; // 木２階
-    const String tu1 = '劫敗'; // 木１階
-    const String tu2 = '食神'; // 火２階
-    const String tu3 = '傷官'; // 火１階
-    const String tu4 = '偏財'; // 土２階
-    const String tu5 = '正財'; // 土１階
-    const String tu6 = '偏官'; // 金２階
-    const String tu7 = '正官'; // 金１階
-    const String tu8 = '倒食'; // 水２階
-    const String tu9 = '印綬'; // 水１階
+    // const String tu0 = '比肩'; // 木２階
+    // const String tu1 = '劫敗'; // 木１階
+    // const String tu2 = '食神'; // 火２階
+    // const String tu3 = '傷官'; // 火１階
+    // const String tu4 = '偏財'; // 土２階
+    // const String tu5 = '正財'; // 土１階
+    // const String tu6 = '偏官'; // 金２階
+    // const String tu7 = '正官'; // 金１階
+    // const String tu8 = '倒食'; // 水２階
+    // const String tu9 = '印綬'; // 水１階
     // 通変星の数の表示内容
-    const int tuS0 = 0; // 木２階数
-    const int tuS1 = 1; // 木１階数
-    const int tuS2 = 2; // 火２階数
-    const int tuS3 = 3; // 火１階数
-    const int tuS4 = 4; // 土２階数
-    const int tuS5 = 5; // 土１階数
-    const int tuS6 = 6; // 金２階数
-    const int tuS7 = 7; // 金１階数
-    const int tuS8 = 8; // 水２階数
-    const int tuS9 = 9; // 水１階数
+    int tuS0 = 0; // 木２階数
+    int tuS1 = 0; // 木１階数
+    int tuS2 = 0; // 火２階数
+    int tuS3 = 0; // 火１階数
+    int tuS4 = 0; // 土２階数
+    int tuS5 = 0; // 土１階数
+    int tuS6 = 0; // 金２階数
+    int tuS7 = 0; // 金１階数
+    int tuS8 = 0; // 水２階数
+    int tuS9 = 0; // 水１階数
     // 天が与える運勢の数の表示色
     const int godUColor0 = c2; // 木地下１階色
     const int godUColor1 = c2; // 火地下1階色
@@ -119,33 +153,245 @@ class _MeisikiChartPage2State extends State<MeisikiChartPage2> {
     const int tuGColor3 = c2; // 金3階色
     const int tuGColor4 = c2; // 水3階色
     // 通変星の数の表示色
-    const int tuColor0 = c2; // 木２階色
-    const int tuColor1 = c2; // 木１階色
-    const int tuColor2 = c2; // 火２階色
-    const int tuColor3 = c2; // 火１階色
-    const int tuColor4 = c2; // 土２階色
-    const int tuColor5 = c2; // 土１階色
-    const int tuColor6 = c2; // 金２階色
-    const int tuColor7 = c2; // 金１階色
-    const int tuColor8 = c2; // 水２階色
-    const int tuColor9 = c2; // 水１階色
+    int tuColor0 = c2; // 木２階色
+    int tuColor1 = c2; // 木１階色
+    int tuColor2 = c2; // 火２階色
+    int tuColor3 = c2; // 火１階色
+    int tuColor4 = c2; // 土２階色
+    int tuColor5 = c2; // 土１階色
+    int tuColor6 = c2; // 金２階色
+    int tuColor7 = c2; // 金１階色
+    int tuColor8 = c2; // 水２階色
+    int tuColor9 = c2; // 水１階色
     // 通変星の数の表示色
-    const int tuSColor0 = c2; // 木２階数色
-    const int tuSColor1 = c2; // 木１階数色
-    const int tuSColor2 = c2; // 火２階数色
-    const int tuSColor3 = c2; // 火１階数色
-    const int tuSColor4 = c2; // 土２階数色
-    const int tuSColor5 = c2; // 土１階数色
-    const int tuSColor6 = c2; // 金２階数色
-    const int tuSColor7 = c2; // 金１階数色
-    const int tuSColor8 = c2; // 水２階数色
-    const int tuSColor9 = c2; // 水１階数色
+    int tuSColor0 = c2; // 木２階数色
+    int tuSColor1 = c2; // 木１階数色
+    int tuSColor2 = c2; // 火２階数色
+    int tuSColor3 = c2; // 火１階数色
+    int tuSColor4 = c2; // 土２階数色
+    int tuSColor5 = c2; // 土１階数色
+    int tuSColor6 = c2; // 金２階数色
+    int tuSColor7 = c2; // 金１階数色
+    int tuSColor8 = c2; // 水２階数色
+    int tuSColor9 = c2; // 水１階数色
+
+    // 日干を算出する
+    niKan = nichuS.substring(0, 1);
+    niKanNo = juKanNo(niKan);
+    j = niKanNo ~/ 2;
+    // 表面３階を算出する
+    String tuG0 = tuG.substring(5 - j, 6 - j);
+    String tuG1 = tuG.substring(6 - j, 7 - j);
+    String tuG2 = tuG.substring(7 - j, 8 - j);
+    String tuG3 = tuG.substring(8 - j, 9 - j);
+    String tuG4 = tuG.substring(9 - j, 10 - j);
+    // 表面２階１階を算出する
+    String tu0 = tu.substring(20 - j * 4, 22 - j * 4);
+    String tu1 = tu.substring(22 - j * 4, 24 - j * 4);
+    String tu2 = tu.substring(24 - j * 4, 26 - j * 4);
+    String tu3 = tu.substring(26 - j * 4, 28 - j * 4);
+    String tu4 = tu.substring(28 - j * 4, 30 - j * 4);
+    String tu5 = tu.substring(30 - j * 4, 32 - j * 4);
+    String tu6 = tu.substring(32 - j * 4, 34 - j * 4);
+    String tu7 = tu.substring(34 - j * 4, 36 - j * 4);
+    String tu8 = tu.substring(36 - j * 4, 38 - j * 4);
+    String tu9 = tu.substring(38 - j * 4, 40 - j * 4);
+    // 通変星の数を数える
+    if (tuNitiSiS == '比肩') {
+      tuSS0++;
+    } else if (tuNitiSiS == '劫敗') {
+      tuSS1++;
+    } else if (tuNitiSiS == '食神') {
+      tuSS2++;
+    } else if (tuNitiSiS == '傷官') {
+      tuSS3++;
+    } else if (tuNitiSiS == '偏財') {
+      tuSS4++;
+    } else if (tuNitiSiS == '正財') {
+      tuSS5++;
+    } else if (tuNitiSiS == '偏官') {
+      tuSS6++;
+    } else if (tuNitiSiS == '正官') {
+      tuSS7++;
+    } else if (tuNitiSiS == '倒食') {
+      tuSS8++;
+    } else if (tuNitiSiS == '印綬') {
+      tuSS9++;
+    } else {}
+    if (tuGeKanS == '比肩') {
+      tuSS0++;
+    } else if (tuGeKanS == '劫敗') {
+      tuSS1++;
+    } else if (tuGeKanS == '食神') {
+      tuSS2++;
+    } else if (tuGeKanS == '傷官') {
+      tuSS3++;
+    } else if (tuGeKanS == '偏財') {
+      tuSS4++;
+    } else if (tuGeKanS == '正財') {
+      tuSS5++;
+    } else if (tuGeKanS == '偏官') {
+      tuSS6++;
+    } else if (tuGeKanS == '正官') {
+      tuSS7++;
+    } else if (tuGeKanS == '倒食') {
+      tuSS8++;
+    } else if (tuGeKanS == '印綬') {
+      tuSS9++;
+    } else {}
+    if (tuGeSiS == '比肩') {
+      tuSS0++;
+    } else if (tuGeSiS == '劫敗') {
+      tuSS1++;
+    } else if (tuGeSiS == '食神') {
+      tuSS2++;
+    } else if (tuGeSiS == '傷官') {
+      tuSS3++;
+    } else if (tuGeSiS == '偏財') {
+      tuSS4++;
+    } else if (tuGeSiS == '正財') {
+      tuSS5++;
+    } else if (tuGeSiS == '偏官') {
+      tuSS6++;
+    } else if (tuGeSiS == '正官') {
+      tuSS7++;
+    } else if (tuGeSiS == '倒食') {
+      tuSS8++;
+    } else if (tuGeSiS == '印綬') {
+      tuSS9++;
+    } else {}
+    if (tuNenKanS == '比肩') {
+      tuSS0++;
+    } else if (tuNenKanS == '劫敗') {
+      tuSS1++;
+    } else if (tuNenKanS == '食神') {
+      tuSS2++;
+    } else if (tuNenKanS == '傷官') {
+      tuSS3++;
+    } else if (tuNenKanS == '偏財') {
+      tuSS4++;
+    } else if (tuNenKanS == '正財') {
+      tuSS5++;
+    } else if (tuNenKanS == '偏官') {
+      tuSS6++;
+    } else if (tuNenKanS == '正官') {
+      tuSS7++;
+    } else if (tuNenKanS == '倒食') {
+      tuSS8++;
+    } else if (tuNenKanS == '印綬') {
+      tuSS9++;
+    } else {}
+    if (tuNenSiS == '比肩') {
+      tuSS0++;
+    } else if (tuNenSiS == '劫敗') {
+      tuSS1++;
+    } else if (tuNenSiS == '食神') {
+      tuSS2++;
+    } else if (tuNenSiS == '傷官') {
+      tuSS3++;
+    } else if (tuNenSiS == '偏財') {
+      tuSS4++;
+    } else if (tuNenSiS == '正財') {
+      tuSS5++;
+    } else if (tuNenSiS == '偏官') {
+      tuSS6++;
+    } else if (tuNenSiS == '正官') {
+      tuSS7++;
+    } else if (tuNenSiS == '倒食') {
+      tuSS8++;
+    } else if (tuNenSiS == '印綬') {
+      tuSS9++;
+    } else {}
+    // 通変星の数をそれぞれの位置に配置する
+    tuSSM0 = tuSS0.toString();
+    tuSSM1 = tuSS1.toString();
+    tuSSM2 = tuSS2.toString();
+    tuSSM3 = tuSS3.toString();
+    tuSSM4 = tuSS4.toString();
+    tuSSM5 = tuSS5.toString();
+    tuSSM6 = tuSS6.toString();
+    tuSSM7 = tuSS7.toString();
+    tuSSM8 = tuSS8.toString();
+    tuSSM9 = tuSS9.toString();
+    tuSSM = tuSSM0 +
+        tuSSM1 +
+        tuSSM2 +
+        tuSSM3 +
+        tuSSM4 +
+        tuSSM5 +
+        tuSSM6 +
+        tuSSM7 +
+        tuSSM8 +
+        tuSSM9 +
+        tuSSM0 +
+        tuSSM1 +
+        tuSSM2 +
+        tuSSM3 +
+        tuSSM4 +
+        tuSSM5 +
+        tuSSM6 +
+        tuSSM7 +
+        tuSSM8 +
+        tuSSM9;
+    print(tuSSM);
+
+    tuS0 = int.parse(tuSSM.substring(10 - j * 2, 11 - j * 2));
+    tuS1 = int.parse(tuSSM.substring(11 - j * 2, 12 - j * 2));
+    tuS2 = int.parse(tuSSM.substring(12 - j * 2, 13 - j * 2));
+    tuS3 = int.parse(tuSSM.substring(13 - j * 2, 14 - j * 2));
+    tuS4 = int.parse(tuSSM.substring(14 - j * 2, 15 - j * 2));
+    tuS5 = int.parse(tuSSM.substring(15 - j * 2, 16 - j * 2));
+    tuS6 = int.parse(tuSSM.substring(16 - j * 2, 17 - j * 2));
+    tuS7 = int.parse(tuSSM.substring(17 - j * 2, 18 - j * 2));
+    tuS8 = int.parse(tuSSM.substring(18 - j * 2, 19 - j * 2));
+    tuS9 = int.parse(tuSSM.substring(19 - j * 2, 20 - j * 2));
+    // 通変星の数が0のところの色を暗くする
+    if (tuS0 == 0) {
+      tuColor0 = c1;
+      tuSColor0 = c1;
+    } else {}
+    if (tuS1 == 0) {
+      tuColor1 = c1;
+      tuSColor1 = c1;
+    } else {}
+    if (tuS2 == 0) {
+      tuColor2 = c1;
+      tuSColor2 = c1;
+    } else {}
+    if (tuS3 == 0) {
+      tuColor3 = c1;
+      tuSColor3 = c1;
+    } else {}
+    if (tuS4 == 0) {
+      tuColor4 = c1;
+      tuSColor4 = c1;
+    } else {}
+    if (tuS5 == 0) {
+      tuColor5 = c1;
+      tuSColor5 = c1;
+    } else {}
+    if (tuS6 == 0) {
+      tuColor6 = c1;
+      tuSColor6 = c1;
+    } else {}
+    if (tuS7 == 0) {
+      tuColor7 = c1;
+      tuSColor7 = c1;
+    } else {}
+    if (tuS8 == 0) {
+      tuColor8 = c1;
+      tuSColor8 = c1;
+    } else {}
+    if (tuS9 == 0) {
+      tuColor9 = c1;
+      tuSColor9 = c1;
+    } else {}
 
     return MediaQuery(
       data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
       child: Scaffold(
         appBar: AppBar(
-          title: Text('命式チャート（工事中）$nichuS'),
+          title: Text('（工事中）$niKanNo・$j'),
         ),
         body: Container(
           color: Colors.black,
@@ -171,8 +417,8 @@ class _MeisikiChartPage2State extends State<MeisikiChartPage2> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
-                    SizedBox(
+                  children: [
+                    const SizedBox(
                       width: 130,
                       height: 25,
                       child: Center(
@@ -186,7 +432,7 @@ class _MeisikiChartPage2State extends State<MeisikiChartPage2> {
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 20,
                       // height: h1,
                     ),
@@ -196,7 +442,7 @@ class _MeisikiChartPage2State extends State<MeisikiChartPage2> {
                       child: Center(
                         child: Text(
                           tuG0, // ■■■■■■■■■ 木3階 ■■■■■■■■■
-                          style: TextStyle(
+                          style: const TextStyle(
                             color: Color(tuGColor0),
                             fontWeight: FontWeight.bold,
                             fontSize: f1,
@@ -227,7 +473,7 @@ class _MeisikiChartPage2State extends State<MeisikiChartPage2> {
                 // ■■■■■■■■■ 4行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
+                  children: [
                     SizedBox(
                       width: 40,
                       height: 25,
@@ -247,7 +493,7 @@ class _MeisikiChartPage2State extends State<MeisikiChartPage2> {
                 // ■■■■■■■■■ 5行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
+                  children: [
                     SizedBox(
                       width: 10,
                       height: 25,
@@ -277,7 +523,7 @@ class _MeisikiChartPage2State extends State<MeisikiChartPage2> {
                 // ■■■■■■■■■ 7行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
+                  children: [
                     SizedBox(
                       width: 40,
                       height: 25,
@@ -309,7 +555,7 @@ class _MeisikiChartPage2State extends State<MeisikiChartPage2> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.start,
-                          children: const [
+                          children: [
                             // ■■■■■■■■■ 1行目 スペース調整 ■■■■■■■■■■■■■■■■■■
                             SizedBox(
                               height: 0,
@@ -336,7 +582,7 @@ class _MeisikiChartPage2State extends State<MeisikiChartPage2> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.center,
-                          children: const [
+                          children: [
                             // ■■■■■■■■■ 1行目 スペース調整 ■■■■■■■■■■■■■■■■■■■■
                             SizedBox(
                               height: 0,
@@ -379,7 +625,7 @@ class _MeisikiChartPage2State extends State<MeisikiChartPage2> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.center,
-                          children: const [
+                          children: [
                             // ■■■■■■■■■ 1行目 スペース調整 ■■■■■■■■■■■■■■■■■■■■
                             SizedBox(
                               height: 16,
@@ -422,7 +668,7 @@ class _MeisikiChartPage2State extends State<MeisikiChartPage2> {
                         child: Column(
                           children: [
                             // ■■■■■■■■■ 1行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-                            const SizedBox(
+                            SizedBox(
                               width: 18,
                               height: 25,
                               child: Center(
@@ -553,7 +799,7 @@ class _MeisikiChartPage2State extends State<MeisikiChartPage2> {
                         width: 52,
                         height: 84,
                         child: Column(
-                          children: const [
+                          children: [
                             // ■■■■■■■■■ 1行目 スペース調整 ■■■■■■■■■■■■■■■■■■■■
                             SizedBox(
                               height: 16,
@@ -594,7 +840,7 @@ class _MeisikiChartPage2State extends State<MeisikiChartPage2> {
                         width: 52,
                         height: 84,
                         child: Column(
-                          children: const [
+                          children: [
                             // ■■■■■■■■■ 1行目 スペース調整 ■■■■■■■■■■■■■■■■■■■■
                             SizedBox(
                               height: 0,
@@ -638,7 +884,7 @@ class _MeisikiChartPage2State extends State<MeisikiChartPage2> {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.end,
-                            children: const [
+                            children: [
                               // ■■■■■■■■■ 1行目 スペース調整 ■■■■■■■■■■■■■■■■■■
                               SizedBox(
                                 height: 0,
@@ -666,7 +912,7 @@ class _MeisikiChartPage2State extends State<MeisikiChartPage2> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
+                  children: [
                     SizedBox(
                       width: 40,
                       height: 25,
@@ -704,7 +950,7 @@ class _MeisikiChartPage2State extends State<MeisikiChartPage2> {
                 // ■■■■■■■■■ 10行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
+                  children: [
                     SizedBox(
                       width: 40,
                       height: 19,
@@ -743,7 +989,7 @@ class _MeisikiChartPage2State extends State<MeisikiChartPage2> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
+                  children: [
                     SizedBox(
                       width: 40,
                       height: 24,
@@ -781,7 +1027,7 @@ class _MeisikiChartPage2State extends State<MeisikiChartPage2> {
                 // ■■■■■■■■■ 12行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
+                  children: [
                     SizedBox(
                       width: 40,
                       height: 20,
@@ -819,7 +1065,7 @@ class _MeisikiChartPage2State extends State<MeisikiChartPage2> {
                 // ■■■■■■■■■ 13行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
+                  children: [
                     SizedBox(
                       width: 40,
                       height: 25,
