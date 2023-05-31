@@ -1649,6 +1649,9 @@ class _MeisikiPage3State extends State<MeisikiPage3> {
                                         MaterialPageRoute(
                                           builder: (context) =>
                                               MeisikiChartPage2(
+                                                seinitiInt: seinitiInt,
+                                            seigatuInt: seigatuInt,
+                                            seinenInt: seinenInt,
                                             nichu: nichu,
                                             gechu: gechu,
                                             nenchu: nenchu,

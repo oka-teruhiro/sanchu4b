@@ -5,6 +5,9 @@ import 'package:flutter/material.dart';
 import 'meisiki_page3.dart';
 
 class MeisikiChartPage2 extends StatefulWidget {
+  final int seinenInt;
+  final int seigatuInt;
+  final int seinitiInt;
   final String nichu;
   final String gechu;
   final String nenchu;
@@ -16,6 +19,9 @@ class MeisikiChartPage2 extends StatefulWidget {
   final String tuuhenbosiNitiSi;
   const MeisikiChartPage2({
     Key? key,
+    required this.seinenInt,
+    required this.seigatuInt,
+    required this.seinitiInt,
     required this.nichu,
     required this.gechu,
     required this.nenchu,
@@ -34,6 +40,9 @@ class MeisikiChartPage2 extends StatefulWidget {
 class _MeisikiChartPage2State extends State<MeisikiChartPage2> {
   int counter = 0;
   int j = 0; // 受け渡したい変数を定義
+  int seinenIntS = 1990;
+  int seigeIntS = 1;
+  int seinitiIntS = 1;
   String nichuS = '甲子';
   String gechuS = '甲子';
   String nenchuS = '甲子';
@@ -55,6 +64,9 @@ class _MeisikiChartPage2State extends State<MeisikiChartPage2> {
   @override
   Widget build(BuildContext context) {
     // 命式ページから受け取った変数でこのウィジェットで使える変数
+    seinenIntS = widget.seinenInt; // 生年
+    seigeIntS = widget.seigatuInt; // 生月
+    seinitiIntS = widget.seinitiInt; // 生日
     nichuS = widget.nichu; // 日柱
     gechuS = widget.gechu; // 月柱
     nenchuS = widget.nenchu; // 年柱
@@ -73,8 +85,24 @@ class _MeisikiChartPage2State extends State<MeisikiChartPage2> {
     String nenKan = '甲'; // 年干
     String nenSi = '子'; // 年支
     int niKanNo = 0; // 日干No.
+    int niSiNo = 0; // 日支No.
+    int geKanNo = 0; // 月干No.
+    int geSiNo = 0; // 月支No.
+    int neKanNo = 0; // 年干No.
+    int neSiNo = 0; // 年子No.
+    String niKG = '木'; // 日干の五行
+    String niSG = '木'; // 日支の五行
+    String geKG = '木'; // 月干の五行
+    String geSG = '木'; // 月支の五行
+    String neKG = '木'; // 年干の五行
+    String neSG = '木'; // 年支の五行
     String tuG = '比食財官印比食財官印比食財官';
-    String tu = '比肩劫敗食神傷官偏財正財偏官正官倒食印綬比肩劫敗食神傷官偏財正財偏官正官倒食印綬比肩劫敗食神傷官偏財正財偏官正官倒食印綬';
+    String tu = '比肩劫敗食神傷官偏財正財偏官正官倒食印綬比肩劫敗食神傷官偏財正財'
+        '偏官正官倒食印綬比肩劫敗食神傷官偏財正財偏官正官倒食印綬';
+    String kan = '甲乙丙丁戊己庚辛壬癸';
+    String kag = '木木火火土土金金水水';
+    String shi = '子丑寅卯辰巳午未申酉戌亥';
+    String sig = '水土木木土火火土金金土水';
     int tuSS0 = 1; // 比肩の数
     int tuSS1 = 0; // 劫敗の数
     int tuSS2 = 0; // 食神の数
@@ -112,23 +140,6 @@ class _MeisikiChartPage2State extends State<MeisikiChartPage2> {
     const int godU2 = 2; // 土地下１階
     const int godU3 = 3; // 金地下１階
     const int godU4 = 4; // 水地下１階
-    // 通変5運の表示
-    // const String tuG0 = '比'; // 木３階
-    // const String tuG1 = '食'; // 火３階
-    // const String tuG2 = '財'; // 土３階
-    // const String tuG3 = '官'; // 金３階
-    // const String tuG4 = '印'; // 水３階
-    // 通変星の表示内容
-    // const String tu0 = '比肩'; // 木２階
-    // const String tu1 = '劫敗'; // 木１階
-    // const String tu2 = '食神'; // 火２階
-    // const String tu3 = '傷官'; // 火１階
-    // const String tu4 = '偏財'; // 土２階
-    // const String tu5 = '正財'; // 土１階
-    // const String tu6 = '偏官'; // 金２階
-    // const String tu7 = '正官'; // 金１階
-    // const String tu8 = '倒食'; // 水２階
-    // const String tu9 = '印綬'; // 水１階
     // 通変星の数の表示内容
     int tuS0 = 0; // 木２階数
     int tuS1 = 0; // 木１階数
@@ -178,7 +189,32 @@ class _MeisikiChartPage2State extends State<MeisikiChartPage2> {
     // 日干を算出する
     niKan = nichuS.substring(0, 1);
     niKanNo = juKanNo(niKan);
-    j = niKanNo ~/ 2;
+    j = niKanNo ~/ 2; // 比肩方向
+
+    // 五行を算出
+    niKG = kag.substring(niKanNo, niKanNo + 1); // 日干の五行を算出
+    geKan = gechuS.substring(0, 1); // 月柱から月干を取り出す
+    geKanNo = juKanNo(geKan); // 月干No.を算出する
+    geKG = kag.substring(geKanNo, geKanNo + 1); // 月干の五行を算出
+    nenKan = nenchuS.substring(0, 1); // 月柱から月干を取り出す
+    neKanNo = juKanNo(nenKan); // 月干No.を算出する
+    neKG = kag.substring(neKanNo, neKanNo + 1); // 月干の五行を算出
+    niSi = nichuS.substring(1, 2); // 日柱から日支を取り出す
+    niSiNo = juuniSiNo(niSi); // 日支No.を算出する
+    niSG = sig.substring(niSiNo, niSiNo + 1); // 日支の五行を算出
+    geSi = gechuS.substring(1, 2); // 月柱から月支を取り出す
+    geSiNo = juuniSiNo(geSi); // 月支No.を算出する
+    geSG = sig.substring(geSiNo, geSiNo + 1); // 月支の五行を算出
+    nenSi = nenchuS.substring(1, 2); // 年柱から年支を取り出す
+    neSiNo = juuniSiNo(nenSi); // 年支No.を算出する
+    neSG = sig.substring(neSiNo, neSiNo + 1); // 年支の五行を算出
+
+    print(
+      niKG + geKG + neKG + niSG + geSG + neSG,
+    );
+
+    //
+
     // 表面３階を算出する
     String tuG0 = tuG.substring(5 - j, 6 - j);
     String tuG1 = tuG.substring(6 - j, 7 - j);
@@ -333,7 +369,6 @@ class _MeisikiChartPage2State extends State<MeisikiChartPage2> {
         tuSSM7 +
         tuSSM8 +
         tuSSM9;
-    print(tuSSM);
 
     tuS0 = int.parse(tuSSM.substring(10 - j * 2, 11 - j * 2));
     tuS1 = int.parse(tuSSM.substring(11 - j * 2, 12 - j * 2));
@@ -386,12 +421,13 @@ class _MeisikiChartPage2State extends State<MeisikiChartPage2> {
       tuColor9 = c1;
       tuSColor9 = c1;
     } else {}
+    // 本質の計算
 
     return MediaQuery(
       data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
       child: Scaffold(
         appBar: AppBar(
-          title: Text('（工事中）$niKanNo・$j'),
+          title: Text('（工事中）' + niKG + geKG + neKG + niSG + geSG + neSG),
         ),
         body: Container(
           color: Colors.black,
@@ -1453,7 +1489,7 @@ class _MeisikiChartPage2State extends State<MeisikiChartPage2> {
                         mainAxisAlignment: MainAxisAlignment.end,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          const SizedBox(
+                          SizedBox(
                             height: 18,
                             child: Text(
                               '　　　　　　生年月日',
@@ -1464,10 +1500,10 @@ class _MeisikiChartPage2State extends State<MeisikiChartPage2> {
                               ),
                             ),
                           ),
-                          const SizedBox(
+                          SizedBox(
                             height: 21,
                             child: Text(
-                              '1957.03.31　',
+                              '$seinenIntS.$seigeIntS.$seinitiIntS',
                               style: TextStyle(
                                 color: Color(c2),
                                 fontWeight: FontWeight.bold,
