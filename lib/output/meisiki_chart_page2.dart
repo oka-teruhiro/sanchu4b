@@ -151,6 +151,19 @@ class _MeisikiChartPage2State extends State<MeisikiChartPage2> {
     int tuS7 = 0; // 金１階数
     int tuS8 = 0; // 水２階数
     int tuS9 = 0; // 水１階数
+    // 本体五行の数
+    int hoG0 = 0; // 本体木数
+    int hoG1 = 0; // 本体火数
+    int hoG2 = 0; // 本体土数
+    int hoG3 = 0; // 本体金数
+    int hoG4 = 0; // 本体水数
+    // 本体五行の数の色
+    int hoGColor0 = c2; // 本体木数の色
+    int hoGColor1 = c2; // 本体火数の色
+    int hoGColor2 = c2; // 本体土数の色
+    int hoGColor3 = c2; // 本体金数の色
+    int hoGColor4 = c2; // 本体水数の色
+
     // 天が与える運勢の数の表示色
     const int godUColor0 = c2; // 木地下１階色
     const int godUColor1 = c2; // 火地下1階色
@@ -213,7 +226,100 @@ class _MeisikiChartPage2State extends State<MeisikiChartPage2> {
       niKG + geKG + neKG + niSG + geSG + neSG,
     );
 
-    //
+    // 五行の数を数える
+    if (niKG == '木') {
+      hoG0++;
+    } else if (niKG == '火') {
+      hoG1++;
+    } else if (niKG == '土') {
+      hoG2++;
+    } else if (niKG == '金') {
+      hoG3++;
+    } else if (niKG == '水') {
+      hoG4++;
+    } else {}
+    if (niSG == '木') {
+      hoG0++;
+    } else if (niSG == '火') {
+      hoG1++;
+    } else if (niSG == '土') {
+      hoG2++;
+    } else if (niSG == '金') {
+      hoG3++;
+    } else if (niSG == '水') {
+      hoG4++;
+    } else {}
+    if (geKG == '木') {
+      hoG0++;
+    } else if (geKG == '火') {
+      hoG1++;
+    } else if (geKG == '土') {
+      hoG2++;
+    } else if (geKG == '金') {
+      hoG3++;
+    } else if (geKG == '水') {
+      hoG4++;
+    } else {}
+    if (geSG == '木') {
+      hoG0++;
+    } else if (geSG == '火') {
+      hoG1++;
+    } else if (geSG == '土') {
+      hoG2++;
+    } else if (geSG == '金') {
+      hoG3++;
+    } else if (geSG == '水') {
+      hoG4++;
+    } else {}
+    if (neKG == '木') {
+      hoG0++;
+    } else if (neKG == '火') {
+      hoG1++;
+    } else if (neKG == '土') {
+      hoG2++;
+    } else if (neKG == '金') {
+      hoG3++;
+    } else if (neKG == '水') {
+      hoG4++;
+    } else {}
+    if (neSG == '木') {
+      hoG0++;
+    } else if (neSG == '火') {
+      hoG1++;
+    } else if (neSG == '土') {
+      hoG2++;
+    } else if (neSG == '金') {
+      hoG3++;
+    } else if (neSG == '水') {
+      hoG4++;
+    } else {}
+
+    // 本体五行の数が０のとき、色を薄くする
+    if (hoG0 == 0) {
+      hoGColor0 = c1;
+    } else {
+      hoGColor0 = c2;
+    }
+    if (hoG1 == 0) {
+      hoGColor1 = c1;
+    } else {
+      hoGColor1 = c2;
+    }
+    if (hoG2 == 0) {
+      hoGColor2 = c1;
+    } else {
+      hoGColor2 = c2;
+    }
+    if (hoG3 == 0) {
+      hoGColor3 = c1;
+    } else {
+      hoGColor3 = c2;
+    }
+    if (hoG4 == 0) {
+      hoGColor4 = c1;
+    } else {
+      hoGColor4 = c2;
+    }
 
     // 表面３階を算出する
     String tuG0 = tuG.substring(5 - j, 6 - j);
@@ -427,7 +533,7 @@ class _MeisikiChartPage2State extends State<MeisikiChartPage2> {
       data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
       child: Scaffold(
         appBar: AppBar(
-          title: Text('（工事中）' + niKG + geKG + neKG + niSG + geSG + neSG),
+          title: Text('（工事中）$hoG0$hoG1$hoG2$hoG3$hoG4'),
         ),
         body: Container(
           color: Colors.black,
@@ -1194,10 +1300,10 @@ class _MeisikiChartPage2State extends State<MeisikiChartPage2> {
                             height: 8,
                           ),
                           // ■■■■■■■■■ 17行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-                          const Text(
-                            '0',
+                          Text(
+                            '$hoG0',
                             style: TextStyle(
-                              color: Color(c2),
+                              color: Color(hoGColor0),
                               fontWeight: FontWeight.bold,
                               fontSize: f1,
                             ),
@@ -1233,15 +1339,15 @@ class _MeisikiChartPage2State extends State<MeisikiChartPage2> {
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: const [
+                                  children: [
                                     SizedBox(
                                       height: 8,
                                     ),
                                     Center(
                                       child: Text(
-                                        '2',
+                                        '$hoG4',
                                         style: TextStyle(
-                                          color: Color(c2),
+                                          color: Color(hoGColor4),
                                           fontWeight: FontWeight.bold,
                                           fontSize: f1,
                                         ),
@@ -1325,15 +1431,15 @@ class _MeisikiChartPage2State extends State<MeisikiChartPage2> {
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: const [
+                                  children: [
                                     SizedBox(
                                       height: 8,
                                     ),
                                     Center(
                                       child: Text(
-                                        '6',
+                                        '$hoG1',
                                         style: TextStyle(
-                                          color: Color(c2),
+                                          color: Color(hoGColor1),
                                           fontWeight: FontWeight.bold,
                                           fontSize: f1,
                                         ),
@@ -1404,14 +1510,14 @@ class _MeisikiChartPage2State extends State<MeisikiChartPage2> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.start,
-                            children: const [
+                            children: [
                               SizedBox(
                                 width: 12,
                                 height: 20,
                                 child: Text(
-                                  '0',
+                                  '$hoG3',
                                   style: TextStyle(
-                                    color: Color(c2),
+                                    color: Color(hoGColor3),
                                     fontWeight: FontWeight.bold,
                                     fontSize: f1,
                                   ),
@@ -1425,9 +1531,9 @@ class _MeisikiChartPage2State extends State<MeisikiChartPage2> {
                                 width: 12,
                                 height: 20,
                                 child: Text(
-                                  '1',
+                                  '$hoG2',
                                   style: TextStyle(
-                                    color: Color(c2),
+                                    color: Color(hoGColor2),
                                     fontWeight: FontWeight.bold,
                                     fontSize: f1,
                                   ),
