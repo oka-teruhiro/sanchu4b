@@ -15,6 +15,7 @@ import '../nikkan/nikkan_mizunoe.dart';
 import '../nikkan/nikkan_mizzunoto.dart';
 import '../nikkan/nikkan_tutinoe.dart';
 import '../nikkan/nikkan_tutinoto.dart';
+import 'kansuu.dart';
 
 class MeisikiPage3 extends StatefulWidget {
   final String nenchu; //年柱
@@ -1649,7 +1650,7 @@ class _MeisikiPage3State extends State<MeisikiPage3> {
                                         MaterialPageRoute(
                                           builder: (context) =>
                                               MeisikiChartPage2(
-                                                seinitiInt: seinitiInt,
+                                            seinitiInt: seinitiInt,
                                             seigatuInt: seigatuInt,
                                             seinenInt: seinenInt,
                                             nichu: nichu,
@@ -1768,158 +1769,4 @@ class _MeisikiPage3State extends State<MeisikiPage3> {
           );
         });
   }
-}
-
-// 関数定義　地支から蔵干を算出する
-
-//   a: 地支を表す文字列　（'子','丑','寅',・・・,'戌','亥')
-//   b: 節入り日からの日数を表す数字　（1～31）（節入り日は、1　とする）
-//   c: 蔵干を表す文字列　（'甲','乙','甲',・・・'壬','癸')
-zouKan(String a, int b) {
-  //蔵干表
-  String zouKanHyou = //蔵干表
-      '戊戊戊戊戊戊戊丙丙丙丙丙丙丙甲甲甲甲甲甲甲甲甲甲甲甲甲甲甲甲甲' //寅
-      '甲甲甲甲甲甲甲甲甲甲乙乙乙乙乙乙乙乙乙乙乙乙乙乙乙乙乙乙乙乙乙' //卯
-      '乙乙乙乙乙乙乙乙乙癸癸癸戊戊戊戊戊戊戊戊戊戊戊戊戊戊戊戊戊戊戊' //辰
-      '戊戊戊戊戊庚庚庚庚庚庚庚庚庚庚丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙丙' //巳
-      '丙丙丙丙丙丙丙丙丙丙己己己己己己己己己己丁丁丁丁丁丁丁丁丁丁丁' //午
-      '丁丁丁丁丁丁丁丁丁乙乙乙己己己己己己己己己己己己己己己己己己己' //未
-      '己己己己己己己壬壬壬壬壬壬庚庚庚庚庚庚庚庚庚庚庚庚庚庚庚庚庚庚' //申
-      '庚庚庚庚庚庚庚庚庚庚辛辛辛辛辛辛辛辛辛辛辛辛辛辛辛辛辛辛辛辛辛' //酉
-      '辛辛辛辛辛辛辛辛辛丁丁丁戊戊戊戊戊戊戊戊戊戊戊戊戊戊戊戊戊戊戊' //戌
-      '戊戊戊戊戊戊戊甲甲甲甲甲壬壬壬壬壬壬壬壬壬壬壬壬壬壬壬壬壬壬壬' //亥
-      '壬壬壬壬壬壬壬壬壬壬癸癸癸癸癸癸癸癸癸癸癸癸癸癸癸癸癸癸癸癸癸' //子
-      '癸癸癸癸癸癸癸癸癸辛辛辛丁丁丁丁丁丁丁丁丁丁丁丁丁丁丁丁丁丁丁'; //丑
-
-  int d = 12;
-  int i = 372;
-  String c = '・';
-  //地支（文字データ）を地支数（数字）に変換する
-  if (a == '子') {
-    d = 10;
-  } else if (a == '丑') {
-    d = 11;
-  } else if (a == '寅') {
-    d = 0;
-  } else if (a == '卯') {
-    d = 1;
-  } else if (a == '辰') {
-    d = 2;
-  } else if (a == '巳') {
-    d = 3;
-  } else if (a == '午') {
-    d = 4;
-  } else if (a == '未') {
-    d = 5;
-  } else if (a == '申') {
-    d = 6;
-  } else if (a == '酉') {
-    d = 7;
-  } else if (a == '戌') {
-    d = 8;
-  } else if (a == '亥') {
-    d = 9;
-  } else {
-    //print('■■■■■■■■■蔵干算出でエラーが発生しました。十二支以外の文字を検出しました。');
-  }
-//文字を取り出す場所（index）を算出する
-  i = (d * 31) + b - 1;
-  //print('■■■■a:$a');
-  //print('■■■■b:$b');
-  //print('■■■■d:$d');
-  //print('■■■■i:$i');
-  c = zouKanHyou.substring(i, i + 1);
-
-  return c;
-}
-
-// 関数定義　十干から十干数を算出する
-//  c = zouKan(a, b)
-//  b = juKanNo( a )
-//   a: 十干を表す文字（'甲','乙',・・・,'癸'）
-//   b: 十干を表す数字（'0','1',・・・,'9' ）
-juKanNo(String a) {
-  int b = 9;
-  if (a == '甲') {
-    b = 0;
-  } else if (a == '乙') {
-    b = 1;
-  } else if (a == '丙') {
-    b = 2;
-  } else if (a == '丁') {
-    b = 3;
-  } else if (a == '戊') {
-    b = 4;
-  } else if (a == '己') {
-    b = 5;
-  } else if (a == '庚') {
-    b = 6;
-  } else if (a == '辛') {
-    b = 7;
-  } else if (a == '壬') {
-    b = 8;
-  } else if (a == '癸') {
-    b = 9;
-  } else {}
-  return b;
-}
-
-// 関数定義　十二支から十二支数を算出する
-//  b = juuniSiNo( a )
-//   a: 十二支を表す文字（'子','丑',・・・,'亥'）
-//   b: 十二支を表す数字（'0','1',・・・,'11' ）
-juuniSiNo(String a) {
-  int b = 11;
-  if (a == '子') {
-    b = 0;
-  } else if (a == '丑') {
-    b = 1;
-  } else if (a == '寅') {
-    b = 2;
-  } else if (a == '卯') {
-    b = 3;
-  } else if (a == '辰') {
-    b = 4;
-  } else if (a == '巳') {
-    b = 5;
-  } else if (a == '午') {
-    b = 6;
-  } else if (a == '未') {
-    b = 7;
-  } else if (a == '申') {
-    b = 8;
-  } else if (a == '酉') {
-    b = 9;
-  } else if (a == '戌') {
-    b = 10;
-  } else if (a == '亥') {
-    b = 11;
-  } else {}
-  //b = 11;
-  return b;
-}
-
-// 関数定義　文字列リストから検索文字列が先頭から何文字目にあるか返す
-//  c = nanmojime(a,b)
-//  a:　120文字（2文字×60組）の文字列リスト
-//  b:　2文字の検索文字
-//  c:　-2：一致が2組以上ある
-//      -1:一致する組がない
-//      0 ～ 59 : 組めに1組だけある
-int nanmojime(String mojilist, String kensaku2moji) {
-  int nanbanme = -1;
-  int ittisuu = 0;
-  for (int i = 0; i < 60; i++) {
-    String nimoji = mojilist.substring(i * 2, i * 2 + 2);
-    if (nimoji == kensaku2moji) {
-      nanbanme = i;
-      ittisuu = ittisuu + 1;
-    } else {}
-  }
-  if (ittisuu > 1) {
-    nanbanme = -2;
-  } else if (ittisuu < 1) {
-    nanbanme = -1;
-  } else {}
-  return nanbanme;
 }

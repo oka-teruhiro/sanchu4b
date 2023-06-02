@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-import 'meisiki_page3.dart';
+import 'kansuu.dart';
 
 class MeisikiChartPage2 extends StatefulWidget {
   final int seinenInt;
@@ -2116,13 +2116,3 @@ class ShapePainter2 extends CustomPainter {
     return false;
   }
 }
-
-// 関数定義
-//  d = meisiki(a,b,c)
-// a: 西暦年（1920年〜2029年）数字
-// b: 月の数字
-// c: 日の習字
-// d: 命式（年柱/月柱/日柱）（例：甲子乙丑丙寅）の6文字
-// String meisiki(int a,int b,int c){
-//
-// }
