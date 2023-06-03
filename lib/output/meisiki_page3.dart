@@ -171,7 +171,7 @@ class _MeisikiPage3State extends State<MeisikiPage3> {
     gechu = widget.gechu;
     nichu = widget.nichu;
 
-    nenchuNo[0] = nanmojime(rokujukkansi, nenchu);
+    nenchuNo[0] = rokujuKansiNo(rokujukkansi, nenchu);
     if (seigatuInt == 2) {
       nenchuNo[1] = (nenchuNo[0] - 1) % 60;
     } else {
@@ -179,11 +179,11 @@ class _MeisikiPage3State extends State<MeisikiPage3> {
     }
     nenchuNo[2] = nenchuNo[0];
 
-    gechuNo[0] = nanmojime(rokujukkansi, gechu);
+    gechuNo[0] = rokujuKansiNo(rokujukkansi, gechu);
     gechuNo[1] = (gechuNo[0] - 1) % 60;
     gechuNo[2] = gechuNo[0];
 
-    nichuNo[0] = nanmojime(rokujukkansi, nichu);
+    nichuNo[0] = rokujuKansiNo(rokujukkansi, nichu);
     nichuNo[1] = nichuNo[0];
     nichuNo[2] = nichuNo[0];
 

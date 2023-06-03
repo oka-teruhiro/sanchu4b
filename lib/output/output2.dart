@@ -386,7 +386,7 @@ class _Output2State extends State<Output2> {
     nissiMoji = juunisi.substring(nissi, nissi + 1);
     nichu = "$nikkanMoji$nissiMoji";
     // 六十干支リストから日柱の六十干支を検索して、六十干支番号を算出する
-    nichuNo = nanmojime(rokujukkansi, nichu);
+    nichuNo = rokujuKansiNo(rokujukkansi, nichu);
     //生年と生月から仮の節入り日・時・分を算出する
     seinen = int.parse(seinenMoji);
     seigatu = int.parse(seigatuMoji);
@@ -485,7 +485,7 @@ class _Output2State extends State<Output2> {
     tokugouTenMoji = jukkan.substring(tokugouTen, tokugouTen + 1);
     tokugouTiMoji = juunisi.substring(tokugouTi, tokugouTi + 1);
     tentiTokugouMoji = '$tokugouTenMoji$tokugouTiMoji';
-    int tentiTokugouSuu = nanmojime(rokujukkansi, tentiTokugouMoji);
+    int tentiTokugouSuu = rokujuKansiNo(rokujukkansi, tentiTokugouMoji);
     var tentiTokugou = kansiHeirin(tentiTokugouSuu, seinengappiMoji);
     // 干支併臨リスト・天地徳合リストから年と年齢を生成する
     List tenunList = tenUn(nenKansiHeirin, getuKansiHeirin, nitiKansiHeirin,

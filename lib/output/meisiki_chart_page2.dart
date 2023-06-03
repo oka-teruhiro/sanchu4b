@@ -299,6 +299,9 @@ class _MeisikiChartPage2State extends State<MeisikiChartPage2> {
       hoG4++;
     } else {}
 
+    // 本体の天の運勢の五行の数を算出する
+    print(meisiki(2023, 6, 6));
+
     // 本体五行の数が０のとき、色を薄くする
     if (hoG0 == 0) {
       hoGColor0 = c1;
