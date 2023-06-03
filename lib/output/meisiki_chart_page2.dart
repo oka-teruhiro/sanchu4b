@@ -140,11 +140,11 @@ class _MeisikiChartPage2State extends State<MeisikiChartPage2> {
     const int c4 = -1294214; // ピンク
     const int c3 = -1407770; // ピンク
     // 天が与える運勢
-    const int godU0 = 0; // 木地下１階
-    const int godU1 = 0; // 火地下１階
-    const int godU2 = 0; // 土地下１階
-    const int godU3 = 0; // 金地下１階
-    const int godU4 = 0; // 水地下１階
+    int godU0 = 0; // 木地下１階
+    int godU1 = 0; // 火地下１階
+    int godU2 = 0; // 土地下１階
+    int godU3 = 0; // 金地下１階
+    int godU4 = 0; // 水地下１階
     // 通変星の数の表示内容
     int tuS0 = 0; // 木２階数
     int tuS1 = 0; // 木１階数
@@ -227,9 +227,9 @@ class _MeisikiChartPage2State extends State<MeisikiChartPage2> {
     neSiNo = juuniSiNo(nenSi); // 年支No.を算出する
     neSG = sig.substring(neSiNo, neSiNo + 1); // 年支の五行を算出
 
-    print(
-      niKG + geKG + neKG + niSG + geSG + neSG,
-    );
+    // print(
+    //   niKG + geKG + neKG + niSG + geSG + neSG,
+    // );
 
     // 五行の数を数える
     if (niKG == '木') {
@@ -300,7 +300,50 @@ class _MeisikiChartPage2State extends State<MeisikiChartPage2> {
     } else {}
 
     // 本体の天の運勢の五行の数を算出する
-    print(meisiki(2023, 6, 6));
+    // 今日の命式を算出する
+    String nowMeisiki = meisiki(nowY, nowM, nowD);
+    String nowMY = nowMeisiki.substring(0, 1);
+    String godNen = kag.substring(juKanNo(nowMY), juKanNo(nowMY) + 1);
+    String nowMM = nowMeisiki.substring(2, 3);
+    String godGe = kag.substring(juKanNo(nowMM), juKanNo(nowMM) + 1);
+    String nowMD = nowMeisiki.substring(4, 5);
+    String godNi = kag.substring(juKanNo(nowMD), juKanNo(nowMD) + 1);
+    if (godNen == '木') {
+      godU0++;
+    } else if (godNen == '火') {
+      godU1++;
+    } else if (godNen == '土') {
+      godU2++;
+    } else if (godNen == '金') {
+      godU3++;
+    } else if (godNen == '水') {
+      godU4++;
+    } else {}
+    if (godGe == '木') {
+      godU0++;
+    } else if (godGe == '火') {
+      godU1++;
+    } else if (godGe == '土') {
+      godU2++;
+    } else if (godGe == '金') {
+      godU3++;
+    } else if (godGe == '水') {
+      godU4++;
+    } else {}
+    if (godNi == '木') {
+      godU0++;
+    } else if (godNi == '火') {
+      godU1++;
+    } else if (godNi == '土') {
+      godU2++;
+    } else if (godNi == '金') {
+      godU3++;
+    } else if (godNi == '水') {
+      godU4++;
+    } else {}
+
+    // print(nowMY + godNen + nowMM + godGe + nowMD + godNi);
+    // print(meisiki(2023, 6, 6));
 
     // 本体五行の数が０のとき、色を薄くする
     if (hoG0 == 0) {
@@ -332,27 +375,27 @@ class _MeisikiChartPage2State extends State<MeisikiChartPage2> {
     if (godU0 == 0) {
       godUColor0 = c1;
     } else {
-      godUColor0 = c2;
+      godUColor0 = c3;
     }
     if (godU1 == 0) {
       godUColor1 = c1;
     } else {
-      godUColor1 = c2;
+      godUColor1 = c3;
     }
     if (godU2 == 0) {
       godUColor2 = c1;
     } else {
-      godUColor2 = c2;
+      godUColor2 = c3;
     }
     if (godU3 == 0) {
       godUColor3 = c1;
     } else {
-      godUColor3 = c2;
+      godUColor3 = c3;
     }
     if (godU4 == 0) {
       godUColor4 = c1;
     } else {
-      godUColor4 = c2;
+      godUColor4 = c3;
     }
 
     // 表面３階を算出する
