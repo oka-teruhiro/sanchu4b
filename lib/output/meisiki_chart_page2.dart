@@ -39,6 +39,10 @@ class MeisikiChartPage2 extends StatefulWidget {
 
 class _MeisikiChartPage2State extends State<MeisikiChartPage2> {
   int counter = 0;
+  int counterY = 0;
+  int counterM = 0;
+  int counterD = 0;
+
   int j = 0; // 受け渡したい変数を定義
   int seinenIntS = 1990;
   int seigeIntS = 1;
@@ -53,11 +57,39 @@ class _MeisikiChartPage2State extends State<MeisikiChartPage2> {
   String tuNitiKanS = '比肩';
   String tuNitiSiS = '比肩';
 
-  void ggCount() {
+  void dateUp() {
     setState(() {
-      counter++;
-      j = counter % 5;
-      // print('i=$j');
+      counterD++;
+    });
+  }
+
+  void dateDown() {
+    setState(() {
+      counterD--;
+    });
+  }
+
+  void monthUp() {
+    setState(() {
+      counterM++;
+    });
+  }
+
+  void monthDown() {
+    setState(() {
+      counterM--;
+    });
+  }
+
+  void yearUp() {
+    setState(() {
+      counterY++;
+    });
+  }
+
+  void yearDown() {
+    setState(() {
+      counterY--;
     });
   }
 
@@ -227,10 +259,6 @@ class _MeisikiChartPage2State extends State<MeisikiChartPage2> {
     neSiNo = juuniSiNo(nenSi); // 年支No.を算出する
     neSG = sig.substring(neSiNo, neSiNo + 1); // 年支の五行を算出
 
-    // print(
-    //   niKG + geKG + neKG + niSG + geSG + neSG,
-    // );
-
     // 五行の数を数える
     if (niKG == '木') {
       hoG0++;
@@ -301,7 +329,25 @@ class _MeisikiChartPage2State extends State<MeisikiChartPage2> {
 
     // 本体の天の運勢の五行の数を算出する
     // 今日の命式を算出する
-    String nowMeisiki = meisiki(nowY, nowM, nowD);
+    int nowYH = nowY + counterY;
+    int nowMH = nowM + counterM;
+    int nowDH = nowD + counterD;
+    DateTime nowH = DateTime(nowYH, nowMH, nowDH);
+    int nowYH1 = nowH.year;
+    int nowMH1 = nowH.month;
+    int nowDH1 = nowH.day;
+    if (nowYH1 > 2029) {
+      nowYH1 = 2029;
+      nowMH1 = 12;
+      nowDH1 = 31;
+      counterY--;
+    } else if (nowYH1 < 1920) {
+      nowYH1 = 1920;
+      nowMH1 = 2;
+      nowDH1 = 5;
+      counterY++;
+    } else {}
+    String nowMeisiki = meisiki(nowYH1, nowMH1, nowDH1);
     String nowMY = nowMeisiki.substring(0, 1);
     String godNen = kag.substring(juKanNo(nowMY), juKanNo(nowMY) + 1);
     String nowMM = nowMeisiki.substring(2, 3);
@@ -341,9 +387,6 @@ class _MeisikiChartPage2State extends State<MeisikiChartPage2> {
     } else if (godNi == '水') {
       godU4++;
     } else {}
-
-    // print(nowMY + godNen + nowMM + godGe + nowMD + godNi);
-    // print(meisiki(2023, 6, 6));
 
     // 本体五行の数が０のとき、色を薄くする
     if (hoG0 == 0) {
@@ -610,7 +653,7 @@ class _MeisikiChartPage2State extends State<MeisikiChartPage2> {
       data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
       child: Scaffold(
         appBar: AppBar(
-          title: Text('（工事中）$hoG0$hoG1$hoG2$hoG3$hoG4$nowY$nowM$nowD'),
+          title: Text('（工事中）$nowMeisiki'),
         ),
         body: Container(
           color: Colors.black,
@@ -1708,7 +1751,7 @@ class _MeisikiChartPage2State extends State<MeisikiChartPage2> {
                           SizedBox(
                             height: 25,
                             child: Text(
-                              '$nowY.$nowM.$nowD',
+                              '$nowYH1.$nowMH1.$nowDH1',
                               style: const TextStyle(
                                 color: Color(c2),
                                 fontWeight: FontWeight.bold,
@@ -1719,7 +1762,7 @@ class _MeisikiChartPage2State extends State<MeisikiChartPage2> {
                           const SizedBox(
                             height: 15,
                             child: Text(
-                              '年　　月　　日',
+                              '年　　  月  　　日',
                               style: TextStyle(
                                 color: Color(c3),
                                 fontWeight: FontWeight.normal,
@@ -1729,305 +1772,166 @@ class _MeisikiChartPage2State extends State<MeisikiChartPage2> {
                           ),
                           SizedBox(
                             width: 140,
-                            height: 92,
+                            height: 80,
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
                                 SizedBox(
-                                  width: 20,
+                                  width: 33,
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.end,
                                     children: [
                                       const SizedBox(
-                                        height: 18,
-                                        child: Text(
-                                          '−',
-                                          style: TextStyle(
-                                            color: Color(c2),
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: f1,
-                                          ),
-                                        ),
-                                      ),
-                                      const SizedBox(
                                         height: 8,
                                       ),
                                       SizedBox(
-                                        height: 20,
-                                        width: 20,
+                                        height: 32,
                                         child: ElevatedButton(
                                           style: ElevatedButton.styleFrom(
                                             backgroundColor: Colors.blue,
-                                            elevation: 0,
-                                            // shadowColor: Colors.red,
-                                          ),
-                                          onPressed: () {},
-                                          child: const Text(' '),
-                                        ),
-                                      ),
-                                      const SizedBox(
-                                        height: 8,
-                                      ),
-                                      SizedBox(
-                                        height: 20,
-                                        child: ElevatedButton(
-                                          style: ElevatedButton.styleFrom(
-                                            backgroundColor: Colors.blue,
-                                            elevation: 16,
-                                            // shadowColor: Colors.red,
-                                          ),
-                                          onPressed: () {},
-                                          child: const Text(''),
-                                        ),
-                                      ),
-                                      const SizedBox(
-                                        height: 18,
-                                        child: Text(
-                                          '+',
-                                          style: TextStyle(
-                                            color: Color(c2),
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: f1,
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                SizedBox(
-                                  width: 20,
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.end,
-                                    children: [
-                                      const SizedBox(
-                                        height: 18,
-                                        child: Text(
-                                          '−',
-                                          style: TextStyle(
-                                            color: Color(c2),
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: f1,
-                                          ),
-                                        ),
-                                      ),
-                                      const SizedBox(
-                                        height: 8,
-                                      ),
-                                      SizedBox(
-                                        height: 20,
-                                        width: 20,
-                                        child: ElevatedButton(
-                                          style: ElevatedButton.styleFrom(
-                                            backgroundColor: Colors.blue,
-                                            elevation: 0,
-                                            // shadowColor: Colors.red,
-                                          ),
-                                          onPressed: () {},
-                                          child: const Text(' '),
-                                        ),
-                                      ),
-                                      const SizedBox(
-                                        height: 8,
-                                      ),
-                                      SizedBox(
-                                        height: 20,
-                                        child: ElevatedButton(
-                                          style: ElevatedButton.styleFrom(
-                                            backgroundColor: Colors.blue,
-                                            elevation: 16,
-                                            // shadowColor: Colors.red,
-                                          ),
-                                          onPressed: () {},
-                                          child: const Text(''),
-                                        ),
-                                      ),
-                                      const SizedBox(
-                                        height: 18,
-                                        child: Text(
-                                          '+',
-                                          style: TextStyle(
-                                            color: Color(c2),
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: f1,
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                SizedBox(
-                                  width: 20,
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.end,
-                                    children: [
-                                      const SizedBox(
-                                        height: 18,
-                                        child: Text(
-                                          '−',
-                                          style: TextStyle(
-                                            color: Color(c2),
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: f1,
-                                          ),
-                                        ),
-                                      ),
-                                      const SizedBox(
-                                        height: 8,
-                                      ),
-                                      SizedBox(
-                                        height: 20,
-                                        width: 20,
-                                        child: ElevatedButton(
-                                          style: ElevatedButton.styleFrom(
-                                            backgroundColor: Colors.blue,
-                                            elevation: 0,
-                                          ),
-                                          onPressed: () {},
-                                          child: const Text(' '),
-                                        ),
-                                      ),
-                                      const SizedBox(
-                                        height: 8,
-                                      ),
-                                      SizedBox(
-                                        height: 20,
-                                        child: ElevatedButton(
-                                          style: ElevatedButton.styleFrom(
-                                            backgroundColor: Colors.blue,
-                                            elevation: 16,
-                                          ),
-                                          onPressed: () {},
-                                          child: const Text(''),
-                                        ),
-                                      ),
-                                      const SizedBox(
-                                        height: 18,
-                                        child: Text(
-                                          '+',
-                                          style: TextStyle(
-                                            color: Color(c2),
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: f1,
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                SizedBox(
-                                  width: 20,
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.end,
-                                    children: [
-                                      const SizedBox(
-                                        height: 18,
-                                        child: Text(
-                                          '−',
-                                          style: TextStyle(
-                                            color: Color(c2),
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: f1,
-                                          ),
-                                        ),
-                                      ),
-                                      const SizedBox(
-                                        height: 8,
-                                      ),
-                                      SizedBox(
-                                        height: 20,
-                                        width: 20,
-                                        child: ElevatedButton(
-                                          style: ElevatedButton.styleFrom(
-                                            backgroundColor: Colors.blue,
-                                            elevation: 0,
-                                          ),
-                                          onPressed: () {},
-                                          child: const Text(' '),
-                                        ),
-                                      ),
-                                      const SizedBox(
-                                        height: 8,
-                                      ),
-                                      SizedBox(
-                                        height: 20,
-                                        child: ElevatedButton(
-                                          style: ElevatedButton.styleFrom(
-                                            backgroundColor: Colors.blue,
-                                            elevation: 16,
-                                          ),
-                                          onPressed: () {},
-                                          child: const Text(''),
-                                        ),
-                                      ),
-                                      const SizedBox(
-                                        height: 18,
-                                        child: Text(
-                                          '+',
-                                          style: TextStyle(
-                                            color: Color(c2),
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: f1,
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                SizedBox(
-                                  width: 20,
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.end,
-                                    children: [
-                                      const SizedBox(
-                                        height: 18,
-                                        child: Text(
-                                          '−',
-                                          style: TextStyle(
-                                            color: Color(c2),
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: f1,
-                                          ),
-                                        ),
-                                      ),
-                                      const SizedBox(
-                                        height: 8,
-                                      ),
-                                      SizedBox(
-                                        height: 20,
-                                        width: 20,
-                                        child: ElevatedButton(
-                                          style: ElevatedButton.styleFrom(
-                                            backgroundColor: Colors.blue,
-                                            elevation: 0,
-                                          ),
-                                          onPressed: () {},
-                                          child: const Text(' '),
-                                        ),
-                                      ),
-                                      const SizedBox(
-                                        height: 8,
-                                      ),
-                                      SizedBox(
-                                        height: 20,
-                                        child: ElevatedButton(
-                                          style: ElevatedButton.styleFrom(
-                                            backgroundColor: Colors.yellow,
                                             elevation: 0,
                                           ),
                                           onPressed: () {
-                                            ggCount();
+                                            yearDown();
                                           },
-                                          child: const Text(''),
+                                          child: const Text(
+                                            'ー',
+                                            style: TextStyle(
+                                              color: Color(c2),
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 14,
+                                            ),
+                                          ),
                                         ),
                                       ),
                                       const SizedBox(
-                                        height: 18,
-                                        child: Text(
-                                          '+',
-                                          style: TextStyle(
-                                            color: Color(c2),
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: f1,
+                                        height: 8,
+                                      ),
+                                      SizedBox(
+                                        height: 32,
+                                        child: ElevatedButton(
+                                          style: ElevatedButton.styleFrom(
+                                            backgroundColor: Colors.blue,
+                                            elevation: 16,
+                                          ),
+                                          onPressed: () {
+                                            yearUp();
+                                          },
+                                          child: const Text(
+                                            '＋',
+                                            style: TextStyle(
+                                              color: Color(c2),
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 14,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 33,
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: [
+                                      const SizedBox(
+                                        height: 8,
+                                      ),
+                                      SizedBox(
+                                        height: 32,
+                                        child: ElevatedButton(
+                                          style: ElevatedButton.styleFrom(
+                                            backgroundColor: Colors.blue,
+                                            elevation: 0,
+                                          ),
+                                          onPressed: () {
+                                            monthDown();
+                                          },
+                                          child: const Text(
+                                            'ー',
+                                            style: TextStyle(
+                                              color: Color(c2),
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 14,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      const SizedBox(
+                                        height: 8,
+                                      ),
+                                      SizedBox(
+                                        height: 32,
+                                        child: ElevatedButton(
+                                          style: ElevatedButton.styleFrom(
+                                            backgroundColor: Colors.blue,
+                                            elevation: 16,
+                                          ),
+                                          onPressed: () {
+                                            monthUp();
+                                          },
+                                          child: const Text(
+                                            '＋',
+                                            style: TextStyle(
+                                              color: Color(c2),
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 14,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 33,
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: [
+                                      const SizedBox(
+                                        height: 8,
+                                      ),
+                                      SizedBox(
+                                        height: 32,
+                                        child: ElevatedButton(
+                                          style: ElevatedButton.styleFrom(
+                                            backgroundColor: Colors.blue,
+                                            elevation: 0,
+                                          ),
+                                          onPressed: () {
+                                            dateDown();
+                                          },
+                                          child: const Text(
+                                            'ー',
+                                            style: TextStyle(
+                                              color: Color(c2),
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 14,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      const SizedBox(
+                                        height: 8,
+                                      ),
+                                      SizedBox(
+                                        height: 32,
+                                        child: ElevatedButton(
+                                          style: ElevatedButton.styleFrom(
+                                            backgroundColor: Colors.blue,
+                                            elevation: 0,
+                                          ),
+                                          onPressed: () {
+                                            dateUp();
+                                          },
+                                          child: const Text(
+                                            '＋',
+                                            style: TextStyle(
+                                              color: Color(c2),
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 14,
+                                            ),
                                           ),
                                         ),
                                       ),
