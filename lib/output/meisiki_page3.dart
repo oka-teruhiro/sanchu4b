@@ -136,8 +136,8 @@ class _MeisikiPage3State extends State<MeisikiPage3> {
   int setuirinenInt = 1900;
   int setuirigatuInt = 1;
   int setuirinitiInt = 1;
-  int setuirijiInt = 1;
-  int setuirihunInt = 1;
+  int setuirijiInt = 0;
+  int setuirihunInt = 0;
   int setuirinitisuuInt = 2;
   int zenGo = 2; //0:節入り時刻後　1:節入り時刻前 2:節入り日以外
   List<int> iroBotan = [-14575885, -12627531, -14575885];
@@ -165,6 +165,8 @@ class _MeisikiPage3State extends State<MeisikiPage3> {
     setuirinenInt = widget.setuirinen;
     setuirigatuInt = widget.setuirigatu;
     setuirinitiInt = widget.setuiriniti;
+    setuirijiInt = widget.setuiriji;
+    setuirihunInt = widget.setuirihun;
     setuirinitisuuInt = widget.setuirinitisuu;
 
     nenchu = widget.nenchu;
