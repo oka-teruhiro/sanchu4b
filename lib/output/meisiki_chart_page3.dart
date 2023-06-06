@@ -653,7 +653,7 @@ class _MeisikiChartPage3State extends State<MeisikiChartPage3> {
       data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
       child: Scaffold(
         appBar: AppBar(
-          title: Text('（工事中）$nowMeisiki'),
+          title: Text('命式チャート'),
         ),
         body: Container(
           color: Colors.black,
@@ -1741,7 +1741,7 @@ class _MeisikiChartPage3State extends State<MeisikiChartPage3> {
                           ),
                         ),
                         SizedBox(
-                          width: 140,
+                          width: 206,
                           height: 194,
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.end,
@@ -1750,7 +1750,7 @@ class _MeisikiChartPage3State extends State<MeisikiChartPage3> {
                               const SizedBox(
                                 height: 18,
                                 child: Text(
-                                  '　　　　　　生年月日',
+                                  '生年月日　　　　　　　　　',
                                   style: TextStyle(
                                     color: Color(c3),
                                     fontWeight: FontWeight.normal,
@@ -1759,20 +1759,20 @@ class _MeisikiChartPage3State extends State<MeisikiChartPage3> {
                                 ),
                               ),
                               SizedBox(
-                                height: 21,
+                                height: 26,
                                 child: Text(
-                                  '$seinenIntS.$seigeIntS.$seinitiIntS',
+                                  '$seinenIntS.$seigeIntS.$seinitiIntS：$nenchuS$gechuS$nichuS',
                                   style: const TextStyle(
                                     color: Color(c2),
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 18,
+                                    fontWeight: FontWeight.normal,
+                                    fontSize: 17,
                                   ),
                                 ),
                               ),
                               const SizedBox(
                                 height: 18,
                                 child: Text(
-                                  '　　　　　　　鑑定日',
+                                  '鑑定日　　　　　　　　　　',
                                   style: TextStyle(
                                     color: Color(c3),
                                     fontWeight: FontWeight.normal,
@@ -1781,20 +1781,20 @@ class _MeisikiChartPage3State extends State<MeisikiChartPage3> {
                                 ),
                               ),
                               SizedBox(
-                                height: 25,
+                                height: 27,
                                 child: Text(
-                                  '$nowYH1.$nowMH1.$nowDH1',
+                                  '$nowYH1.$nowMH1.$nowDH1：$nowMeisiki',
                                   style: const TextStyle(
                                     color: Color(c2),
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 18,
+                                    fontWeight: FontWeight.normal,
+                                    fontSize: 17,
                                   ),
                                 ),
                               ),
                               const SizedBox(
                                 height: 15,
                                 child: Text(
-                                  '年　　  月  　　日',
+                                  '年　　　　  月  　　　　日',
                                   style: TextStyle(
                                     color: Color(c3),
                                     fontWeight: FontWeight.normal,
@@ -1803,14 +1803,14 @@ class _MeisikiChartPage3State extends State<MeisikiChartPage3> {
                                 ),
                               ),
                               SizedBox(
-                                width: 140,
+                                width: 206,
                                 height: 80,
                                 child: Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceEvenly,
                                   children: [
                                     SizedBox(
-                                      width: 33,
+                                      width: 53,
                                       child: Column(
                                         mainAxisAlignment:
                                             MainAxisAlignment.end,
@@ -1865,7 +1865,7 @@ class _MeisikiChartPage3State extends State<MeisikiChartPage3> {
                                       ),
                                     ),
                                     SizedBox(
-                                      width: 33,
+                                      width: 53,
                                       child: Column(
                                         mainAxisAlignment:
                                             MainAxisAlignment.end,
@@ -1920,7 +1920,7 @@ class _MeisikiChartPage3State extends State<MeisikiChartPage3> {
                                       ),
                                     ),
                                     SizedBox(
-                                      width: 33,
+                                      width: 53,
                                       child: Column(
                                         mainAxisAlignment:
                                             MainAxisAlignment.end,
@@ -2001,7 +2001,7 @@ class ShapePainter1 extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     var center1 = const Offset(193, 220 - 30 - 14); // 表面の中心座標
-    var center2 = const Offset(-70 + 193, 500 - 60 - 14 - 0); // 本質の中心座標
+    var center2 = const Offset(-70 + 193 - 33, 500 - 60 - 14 - 0); // 本質の中心座標
 
     final penWhite = Paint()
       ..color = Colors.white
@@ -2070,7 +2070,7 @@ class ShapePainter2 extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     var center1 = const Offset(193, 220 - 30 - 14 - 0); // 表面の中心座標
-    var center2 = const Offset(193 - 70, 500 - 60 - 14 - 0 - 0); // 本質の中心座標
+    var center2 = const Offset(193 - 70 - 33, 500 - 60 - 14 - 0 - 0); // 本質の中心座標
     const lineLength1 = 170.0;
     const lineLength2 = 84.0;
 
