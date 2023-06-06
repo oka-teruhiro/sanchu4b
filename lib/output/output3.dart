@@ -29,9 +29,7 @@ class Output3 extends StatefulWidget {
 class _Output3State extends State<Output3> {
   //■■　変数初期設定　■■
   String titleSeinengappi = '';
-  DateTime date0 = DateTime(1900, 1, 1);
   int nikkan = -1;
-  //List<String> nikkanName = ["甲", "乙", "丙", "丁", "戊", "己", "庚", "辛", "壬", "癸"];
   String jukkan = "甲乙丙丁戊己庚辛壬癸"; //十干リスト
   String jukkanYomi = "甲【きのえ】　乙【きのと】　丙【ひのえ】　丁【ひのと】　戊【つちのえ】"
       "己【つちのと】庚【かのえ】　辛【かのと】　壬【みずのえ】癸【みずのと】"; //十干リスト【よみ】
@@ -42,43 +40,19 @@ class _Output3State extends State<Output3> {
       "甲午乙未丙申丁酉戊戌己亥庚子辛丑壬寅癸卯"
       "甲辰乙巳丙午丁未戊申己酉庚戌辛亥壬子癸丑"
       "甲寅乙卯丙辰丁巳戊午己未庚申辛酉壬戌癸亥"; //
-  //void jukkanName = null;
-  List nitikansiHeirin = [0, 0, 0, 0, 0, 0];
-  List kansiHeirinList = [0, 0, 0, 0, 0, 0];
-
-  //ver.4のための追加(2022.12.21)
-  //節入り日のデータ
-  //1957年
-  List<int> setubi = [5, 4, 5, 5, 5, 6, 7, 7, 8, 8, 7, 7];
-  List<int> setuji = [18, 5, 23, 4, 21, 1, 11, 21, 0, 1, 6, 19, 12];
-  List<int> setuhun = [14, 50, 43, 20, 25, 25, 38, 29, 32, 22, 45, 46];
-  int setuIndex = 0;
   int seinen = 1920;
   int seigatu = 1;
   int seiniti = 1;
   int setuirinen = 1920;
-  int setuirinenk = 1920;
   int setuirigatu = 1;
-  int setuirigatuk = 1;
   int setuiriniti = 1;
   int setuiriji = 0;
   int setuirihun = 0;
   int setuirinitisuu = 0;
-  int nenchuNen = 1920;
-  DateTime seinengappi = DateTime(1920, 1, 1);
-  DateTime setuiribi = DateTime(1920, 1, 2);
-  DateTime setuiribi2 = DateTime(1920, 1, 1);
   String nenchu = '甲子';
   String gechu = '甲子';
   String nichu = '甲子';
-  String setuiriNitiS = "01";
-  String setuiriJikokuS = "00:00";
-  //int nenchuNo = 0;
-  //int gechuNo = 0;
   int nichuNo = 0;
-  int nenchuHosei = 36;
-  int gechuHosei = 13;
-  int nichuHosei = 0;
   List<int> tenun = [0, 0, 0, 0, 0, 0, 0];
   List<int> tenunNen = [1900, 1901, 1902, 1903, 1904, 1905, 1906];
   List<int> tenunNenrei = [0, 0, 0, 0, 0, 0, 0];
@@ -104,7 +78,6 @@ class _Output3State extends State<Output3> {
   String tokugouTenMoji = '甲';
   String tokugouTiMoji = '子';
   String tentiTokugouMoji = '甲子';
-  int nissuu = 1;
   int nissi = -1;
 
   // statefullWidget に変更するため追加
@@ -121,7 +94,6 @@ class _Output3State extends State<Output3> {
   int gechuNoH = 0;
   String nenchuS = '甲子';
   String gechuS = '甲子';
-  // String meisikiA = '甲子甲子甲子1900010101:0101'; //命式・節入り年月日時分・節入り日からの日数
 
   void _incrementCounter() {
     setState(() {
@@ -553,6 +525,4 @@ class _Output3State extends State<Output3> {
       ),
     );
   }
-
-//void setState(Null Function() param0) {}
 }

@@ -59,17 +59,10 @@ class _MeisikiPage3State extends State<MeisikiPage3> {
   String nenchuH = '甲子'; //画面表示で使う年柱
   String gechuH = '甲子'; //画面表示で使う月柱
   String nichuH = '甲子'; //画面表示で使う日柱
-  //int nenchuNo = 0;
-  //int gechuNo = 0;
-  //int nichuNo = 0;
   String nenkan = '甲';
   String nensi = '子';
   String gatukan = '甲';
   String gatusi = '子';
-  String nenkanM = '癸'; //節入り前の年干
-  String nensiM = '亥'; //節入り前の年支
-  String gatukanM = '癸'; //節入り前の月干
-  String gatusiM = '亥'; //節入り前の月支
   String nitikan = '甲';
   String nitisi = '子';
   int nenKanNo = 0;
