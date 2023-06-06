@@ -657,1172 +657,368 @@ class _MeisikiChartPage3State extends State<MeisikiChartPage3> {
         ),
         body: Container(
           color: Colors.black,
-          child: Center(
-            child: Column(
-              children: [
-                CustomPaint(
+          child: Stack(
+            children: [
+              SizedBox(
+                width: 386,
+                height: 509,
+                child: CustomPaint(
                   painter: ShapePainter1(), // 渡したい変数を引数に指定する
                   // size: const Size(400, 400), // この行を入れると図形と文字を重ねることができない
                 ),
-                // ■■■■■■■■■ 1行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
-                    SizedBox(
-                      width: 20,
-                      height: 4,
-                    ),
-                  ],
+              ),
+              SizedBox(
+                width: 386,
+                height: 509,
+                child: CustomPaint(
+                  painter: ShapePainter2(gogyou: j), // 渡したい変数を引数に指定する
+                  // size: const Size(400, 400), // この行を入れると図形と文字を重ねることができない
                 ),
+              ),
+              SizedBox(
+                width: 386,
+                height: 509,
+                child: Column(
+                  children: [
+                    /*CustomPaint(
+                      painter: ShapePainter1(), // 渡したい変数を引数に指定する
+                      // size: const Size(400, 400), // この行を入れると図形と文字を重ねることができない
+                    ),*/
+                    // ■■■■■■■■■ 1行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const [
+                        SizedBox(
+                          width: 20,
+                          height: 4,
+                        ),
+                      ],
+                    ),
 
-                // ■■■■■■■■■ 2行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const SizedBox(
-                      width: 130,
-                      height: 25,
-                      child: Center(
-                        child: Text(
-                          '表面　　　　　',
-                          style: TextStyle(
-                            color: Color(c3),
-                            fontWeight: FontWeight.normal,
-                            fontSize: 16,
-                          ),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(
-                      width: 20,
-                      // height: h1,
-                    ),
-                    SizedBox(
-                      width: 40,
-                      height: 25,
-                      child: Center(
-                        child: Text(
-                          tuG0, // ■■■■■■■■■ 木3階 ■■■■■■■■■
-                          style: const TextStyle(
-                            color: Color(tuGColor0),
-                            fontWeight: FontWeight.bold,
-                            fontSize: f1,
-                          ),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(
-                      width: 30,
-                      height: 25,
-                    ),
-                    const SizedBox(
-                      width: 130,
-                      height: 25,
-                    ),
-                  ],
-                ),
-                // ■■■■■■■■■ 3行目 ■■■■■■■■■ スペース調整 ■■■■■■■■■■■■■■■■■■■■■■■■
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
-                    SizedBox(
-                      width: 20,
-                      height: 10,
-                    ),
-                  ],
-                ),
-                // ■■■■■■■■■ 4行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SizedBox(
-                      width: 40,
-                      height: 25,
-                      child: Center(
-                        child: Text(
-                          tu0, // ■■■■■■■■■ 木2階 ■■■■■■■■■
-                          style: TextStyle(
-                            color: Color(tuColor0),
-                            fontWeight: FontWeight.bold,
-                            fontSize: f1,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                // ■■■■■■■■■ 5行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SizedBox(
-                      width: 10,
-                      height: 25,
-                      child: Center(
-                        child: Text(
-                          '$tuS0', // ■■■■■■■■■ 木2階数 ■■■■■■■■■
-                          style: TextStyle(
-                            color: Color(tuSColor0),
-                            fontWeight: FontWeight.bold,
-                            fontSize: f1,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                // ■■■■■■■■■ 6行目 ■■■■■■■■■ スペース調整 ■■■■■■■■■■■■■■■■■■■■■■■■
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
-                    SizedBox(
-                      width: 20,
-                      height: 4,
-                    ),
-                  ],
-                ),
-                // ■■■■■■■■■ 7行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SizedBox(
-                      width: 40,
-                      height: 25,
-                      child: Center(
-                        child: Text(
-                          tu1, //■■■■■■■■■ 木１階 ■■■■■■■■■
-                          style: TextStyle(
-                            color: Color(tuColor1),
-                            fontWeight: FontWeight.bold,
-                            fontSize: f1,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                // ■■■■■■■■■ 8段目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-                SizedBox(
-                  width: 386,
-                  height: 84,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      // ■■■■■■■■■ 左3列目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-                      SizedBox(
-                        width: 25,
-                        height: 84,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            // ■■■■■■■■■ 1行目 スペース調整 ■■■■■■■■■■■■■■■■■■
-                            const SizedBox(
-                              height: 0,
-                            ),
-                            // ■■■■■■■■■ 2行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-                            SizedBox(
-                              height: 24,
-                              child: Text(
-                                tuG4,
-                                style: const TextStyle(
-                                  color: Color(tuGColor4),
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: f1,
-                                ),
+                    // ■■■■■■■■■ 2行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const SizedBox(
+                          width: 130,
+                          height: 25,
+                          child: Center(
+                            child: Text(
+                              '表面　　　　　',
+                              style: TextStyle(
+                                color: Color(c3),
+                                fontWeight: FontWeight.normal,
+                                fontSize: 16,
                               ),
                             ),
-                          ],
-                        ),
-                      ),
-                      // ■■■■■■■■■ 左2列目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-                      SizedBox(
-                        width: 52,
-                        height: 84,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            // ■■■■■■■■■ 1行目 スペース調整 ■■■■■■■■■■■■■■■■■■■■
-                            const SizedBox(
-                              height: 0,
-                            ),
-                            // ■■■■■■■■■ 2行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-                            SizedBox(
-                              height: h1,
-                              child: Center(
-                                child: Text(
-                                  tu8, // ■■■■■■■■■ 水2階 ■■■■■■■■■
-                                  style: TextStyle(
-                                    color: Color(tuColor8),
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: f1,
-                                  ),
-                                ),
-                              ),
-                            ),
-                            // ■■■■■■■■■ 3行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-                            SizedBox(
-                              height: h1,
-                              child: Center(
-                                child: Text(
-                                  '$tuS8', // ■■■■■■■■■ 水2階数 ■■■■■■■■■
-                                  style: TextStyle(
-                                    color: Color(tuSColor8),
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: f1,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      // ■■■■■■■■■ 左1列目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-                      SizedBox(
-                        width: 52,
-                        height: 84,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            // ■■■■■■■■■ 1行目 スペース調整 ■■■■■■■■■■■■■■■■■■■■
-                            const SizedBox(
-                              height: 16,
-                            ),
-                            // ■■■■■■■■■ 2行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-                            SizedBox(
-                              height: h1,
-                              child: Center(
-                                child: Text(
-                                  tu9, // ■■■■■■■■■ 水1階 ■■■■■■■■■
-                                  style: TextStyle(
-                                    color: Color(tuColor9),
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: f1,
-                                  ),
-                                ),
-                              ),
-                            ),
-                            // ■■■■■■■■■ 3行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-                            SizedBox(
-                              height: h1,
-                              child: Center(
-                                child: Text(
-                                  '$tuS9', // ■■■■■■■■■ 水1階数 ■■■■■■■■■
-                                  style: TextStyle(
-                                    color: Color(tuSColor9),
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: f1,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      // ■■■■■■■■■ 8段目中央 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-                      SizedBox(
-                        width: 62, //94 初期値
-                        height: 84,
-                        child: Column(
-                          children: [
-                            // ■■■■■■■■■ 1行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-                            SizedBox(
-                              width: 18,
-                              height: 25,
-                              child: Center(
-                                child: Text(
-                                  '$tuS1', // ■■■■■■■■■ 木１階数 ■■■■■■■■■
-                                  style: TextStyle(
-                                    color: Color(tuSColor1),
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: f1,
-                                  ),
-                                ),
-                              ),
-                            ),
-                            // ■■■■■■■■■ 2行目 スペース調整 ■■■■■■■■■■■■■■■■■■■■
-                            const SizedBox(
-                              width: 20,
-                              height: 0,
-                            ),
-                            // ■■■■■■■■■ 3行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-                            SizedBox(
-                              width: 12,
-                              height: 19,
-                              child: Center(
-                                child: Text(
-                                  '$godU0', // ■■■■■■■■■ 木地下１階数 ■■■■■■■■■
-                                  style: TextStyle(
-                                    color: Color(godUColor0),
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: f1,
-                                  ),
-                                ),
-                              ),
-                            ),
-                            // ■■■■■■■■■ 4行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-                            SizedBox(
-                              width: 62,
-                              height: 19,
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  SizedBox(
-                                    width: 12,
-                                    child: Center(
-                                      child: Text(
-                                        '$godU4',
-                                        style: TextStyle(
-                                          color: Color(godUColor4),
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: f1,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: 34,
-                                    child: Container(
-                                        // color: Colors.cyanAccent,
-                                        ),
-                                  ),
-                                  SizedBox(
-                                    width: 12,
-                                    child: Center(
-                                      child: Text(
-                                        '$godU1',
-                                        style: TextStyle(
-                                          color: Color(godUColor1),
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: f1,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            // ■■■■■■■■■ 5行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-                            const SizedBox(
-                              width: 62,
-                              height: 0,
-                            ),
-                            // ■■■■■■■■■ 6行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-                            SizedBox(
-                              width: 62,
-                              height: 19,
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  SizedBox(
-                                    width: 12,
-                                    child: Center(
-                                      child: Text(
-                                        '$godU3',
-                                        style: TextStyle(
-                                          color: Color(godUColor3),
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: f1,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: 14,
-                                    child: Container(
-                                        // color: Colors.cyanAccent,
-                                        ),
-                                  ),
-                                  SizedBox(
-                                    width: 12,
-                                    child: Center(
-                                      child: Text(
-                                        '$godU2',
-                                        style: TextStyle(
-                                          color: Color(godUColor2),
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: f1,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      // ■■■■■■■■■ 右1列目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-                      SizedBox(
-                        width: 52,
-                        height: 84,
-                        child: Column(
-                          children: [
-                            // ■■■■■■■■■ 1行目 スペース調整 ■■■■■■■■■■■■■■■■■■■■
-                            const SizedBox(
-                              height: 16,
-                            ),
-                            // ■■■■■■■■■ 2行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-                            SizedBox(
-                              height: h1,
-                              child: Center(
-                                child: Text(
-                                  tu3, // ■■■■■■■■■ 火1階 ■■■■■■■■■
-                                  style: TextStyle(
-                                    color: Color(tuColor3),
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: f1,
-                                  ),
-                                ),
-                              ),
-                            ),
-                            // ■■■■■■■■■ 3行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-                            SizedBox(
-                              height: h1,
-                              child: Center(
-                                child: Text(
-                                  '$tuS3', // ■■■■■■■■■ 火1階数 ■■■■■■■■■
-                                  style: TextStyle(
-                                    color: Color(tuSColor3),
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: f1,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      // ■■■■■■■■■ 右2列目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-                      SizedBox(
-                        width: 52,
-                        height: 84,
-                        child: Column(
-                          children: [
-                            // ■■■■■■■■■ 1行目 スペース調整 ■■■■■■■■■■■■■■■■■■■■
-                            const SizedBox(
-                              height: 0,
-                            ),
-                            // ■■■■■■■■■ 2行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-                            SizedBox(
-                              height: h1,
-                              child: Center(
-                                child: Text(
-                                  tu2, // ■■■■■■■■■ 火2階 ■■■■■■■■■
-                                  style: TextStyle(
-                                    color: Color(tuColor2),
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: f1,
-                                  ),
-                                ),
-                              ),
-                            ),
-                            // ■■■■■■■■■ 3行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-                            SizedBox(
-                              height: h1,
-                              child: Center(
-                                child: Text(
-                                  '$tuS2', // ■■■■■■■■■ 火2階数 ■■■■■■■■■
-                                  style: TextStyle(
-                                    color: Color(tuSColor2),
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: f1,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      // ■■■■■■■■■ 右3列目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-                      SizedBox(
-                        width: 25,
-                        height: 84,
-                        child: Center(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: [
-                              // ■■■■■■■■■ 1行目 スペース調整 ■■■■■■■■■■■■■■■■■■
-                              const SizedBox(
-                                height: 0,
-                              ),
-                              // ■■■■■■■■■ 2行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-                              SizedBox(
-                                height: 25,
-                                child: Text(
-                                  tuG1, // ■■■■■■■■■ 火3階 ■■■■■■■■■
-                                  style: const TextStyle(
-                                    color: Color(tuGColor1),
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: f1,
-                                  ),
-                                ),
-                              )
-                            ],
                           ),
                         ),
-                      ),
-                    ],
-                  ),
-                ),
-                // ■■■■■■■■■ 9行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SizedBox(
-                      width: 40,
-                      height: 25,
-                      child: Center(
-                        child: Text(
-                          tu7, // ■■■■■■■■■ 金1階 ■■■■■■■■■
-                          style: TextStyle(
-                            color: Color(tuColor7),
-                            fontWeight: FontWeight.bold,
-                            fontSize: f1,
+                        const SizedBox(
+                          width: 20,
+                          // height: h1,
+                        ),
+                        SizedBox(
+                          width: 40,
+                          height: 25,
+                          child: Center(
+                            child: Text(
+                              tuG0, // ■■■■■■■■■ 木3階 ■■■■■■■■■
+                              style: const TextStyle(
+                                color: Color(tuGColor0),
+                                fontWeight: FontWeight.bold,
+                                fontSize: f1,
+                              ),
+                            ),
                           ),
                         ),
-                      ),
+                        const SizedBox(
+                          width: 30,
+                          height: 25,
+                        ),
+                        const SizedBox(
+                          width: 130,
+                          height: 25,
+                        ),
+                      ],
                     ),
-                    const SizedBox(
-                      width: 30,
-                      height: 25,
+                    // ■■■■■■■■■ 3行目 ■■■■■■■■■ スペース調整 ■■■■■■■■■■■■■■■■■■■■■■■■
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const [
+                        SizedBox(
+                          width: 20,
+                          height: 10,
+                        ),
+                      ],
                     ),
-                    SizedBox(
-                      width: 40,
-                      height: 25,
-                      child: Center(
-                        child: Text(
-                          tu5, // ■■■■■■■■■ 土1階 ■■■■■■■■■
-                          style: TextStyle(
-                            color: Color(tuColor5),
-                            fontWeight: FontWeight.bold,
-                            fontSize: f1,
+                    // ■■■■■■■■■ 4行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SizedBox(
+                          width: 40,
+                          height: 25,
+                          child: Center(
+                            child: Text(
+                              tu0, // ■■■■■■■■■ 木2階 ■■■■■■■■■
+                              style: TextStyle(
+                                color: Color(tuColor0),
+                                fontWeight: FontWeight.bold,
+                                fontSize: f1,
+                              ),
+                            ),
                           ),
                         ),
-                      ),
+                      ],
                     ),
-                  ],
-                ),
-                // ■■■■■■■■■ 10行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SizedBox(
-                      width: 40,
-                      height: 19,
-                      child: Center(
-                        child: Text(
-                          '$tuS7', // ■■■■■■■■■ 金1階数 ■■■■■■■■■
-                          style: TextStyle(
-                            color: Color(tuSColor7),
-                            fontWeight: FontWeight.bold,
-                            fontSize: f1,
+                    // ■■■■■■■■■ 5行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SizedBox(
+                          width: 10,
+                          height: 25,
+                          child: Center(
+                            child: Text(
+                              '$tuS0', // ■■■■■■■■■ 木2階数 ■■■■■■■■■
+                              style: TextStyle(
+                                color: Color(tuSColor0),
+                                fontWeight: FontWeight.bold,
+                                fontSize: f1,
+                              ),
+                            ),
                           ),
                         ),
-                      ),
+                      ],
                     ),
-                    const SizedBox(
-                      width: 30,
-                      height: 19,
+                    // ■■■■■■■■■ 6行目 ■■■■■■■■■ スペース調整 ■■■■■■■■■■■■■■■■■■■■■■■■
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const [
+                        SizedBox(
+                          width: 20,
+                          height: 4,
+                        ),
+                      ],
                     ),
-                    SizedBox(
-                      width: 40,
-                      height: 19,
-                      child: Center(
-                        child: Text(
-                          '$tuS5', // ■■■■■■■■■ 土1階数 ■■■■■■■■■
-                          style: TextStyle(
-                            color: Color(tuSColor5),
-                            fontWeight: FontWeight.bold,
-                            fontSize: f1,
+                    // ■■■■■■■■■ 7行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SizedBox(
+                          width: 40,
+                          height: 25,
+                          child: Center(
+                            child: Text(
+                              tu1, //■■■■■■■■■ 木１階 ■■■■■■■■■
+                              style: TextStyle(
+                                color: Color(tuColor1),
+                                fontWeight: FontWeight.bold,
+                                fontSize: f1,
+                              ),
+                            ),
                           ),
                         ),
-                      ),
+                      ],
                     ),
-                  ],
-                ),
-                // ■■■■■■■■■ 11行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
+                    // ■■■■■■■■■ 8段目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
                     SizedBox(
-                      width: 40,
-                      height: 24,
-                      child: Center(
-                        child: Text(
-                          tu6, // ■■■■■■■■■ 金２階 ■■■■■■■■■
-                          style: TextStyle(
-                            color: Color(tuColor6),
-                            fontWeight: FontWeight.bold,
-                            fontSize: f1,
-                          ),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(
-                      width: 90,
-                      height: 19,
-                    ),
-                    SizedBox(
-                      width: 40,
-                      height: 24,
-                      child: Center(
-                        child: Text(
-                          tu4, // ■■■■■■■■■ 土２階 ■■■■■■■■■
-                          style: TextStyle(
-                            color: Color(tuColor4),
-                            fontWeight: FontWeight.bold,
-                            fontSize: f1,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                // ■■■■■■■■■ 12行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SizedBox(
-                      width: 40,
-                      height: 20,
-                      child: Center(
-                        child: Text(
-                          '$tuS6', // ■■■■■■■■■ 金２階数 ■■■■■■■■■
-                          style: TextStyle(
-                            color: Color(tuSColor6),
-                            fontWeight: FontWeight.bold,
-                            fontSize: f1,
-                          ),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(
-                      width: 94,
-                      height: 20,
-                    ),
-                    SizedBox(
-                      width: 40,
-                      height: 20,
-                      child: Center(
-                        child: Text(
-                          '$tuS4', // ■■■■■■■■■ 土２階数 ■■■■■■■■■
-                          style: TextStyle(
-                            color: Color(tuSColor4),
-                            fontWeight: FontWeight.bold,
-                            fontSize: f1,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                // ■■■■■■■■■ 13行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SizedBox(
-                      width: 40,
-                      height: 25,
-                      child: Center(
-                        child: Text(
-                          tuG3, // ■■■■■■■■■ 金３階 ■■■■■■■■■
-                          style: const TextStyle(
-                            color: Color(tuGColor3),
-                            fontWeight: FontWeight.bold,
-                            fontSize: f1,
-                          ),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(
-                      width: 140,
-                      height: 25,
-                    ),
-                    SizedBox(
-                      width: 40,
-                      height: 25,
-                      child: Center(
-                        child: Text(
-                          tuG2, // ■■■■■■■■■ 土３階 ■■■■■■■■■
-                          style: const TextStyle(
-                            color: Color(tuGColor2),
-                            fontWeight: FontWeight.bold,
-                            fontSize: f1,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                // ■■■■■■■■■ 15行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SizedBox(
-                      width: 180,
-                      height: 194,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.center,
+                      width: 320,
+                      height: 84,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const SizedBox(
-                            height: 19,
-                          ),
-                          // ■■■■■■■■■ 15行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: const [
-                              SizedBox(
-                                width: 40,
-                                height: 25,
-                                child: Text(
-                                  '本質',
-                                  style: TextStyle(
-                                    color: Color(c3),
-                                    fontWeight: FontWeight.normal,
-                                    fontSize: 16,
+                          // ■■■■■■■■■ 左3列目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+                          SizedBox(
+                            width: 25,
+                            height: 84,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                // ■■■■■■■■■ 1行目 スペース調整 ■■■■■■■■■■■■■■■■■■
+                                const SizedBox(
+                                  height: 0,
+                                ),
+                                // ■■■■■■■■■ 2行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+                                SizedBox(
+                                  height: 24,
+                                  child: Text(
+                                    tuG4,
+                                    style: const TextStyle(
+                                      color: Color(tuGColor4),
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: f1,
+                                    ),
                                   ),
                                 ),
-                              ),
-                              SizedBox(
-                                width: 40,
-                                height: 25,
-                              ),
-                              SizedBox(
-                                width: 20,
-                                height: 25,
-                                child: Text(
-                                  '木',
-                                  style: TextStyle(
-                                    color: Colors.teal,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: f1,
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                width: 80,
-                                height: 25,
-                              ),
-                            ],
-                          ),
-                          // ■■■■■■■■■ 16行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-                          const SizedBox(
-                            height: 8,
-                          ),
-                          // ■■■■■■■■■ 17行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-                          Text(
-                            '$hoG0',
-                            style: TextStyle(
-                              color: Color(hoGColor0),
-                              fontWeight: FontWeight.bold,
-                              fontSize: f1,
+                              ],
                             ),
                           ),
-                          // ■■■■■■■■■ 18行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              // ■■■■■■■■■ -3列 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-                              SizedBox(
-                                width: 20,
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: const [
-                                    Center(
-                                      child: Text(
-                                        '水',
-                                        style: TextStyle(
-                                          color: Colors.white38,
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: f1,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
+                          // ■■■■■■■■■ 左2列目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+                          SizedBox(
+                            width: 52,
+                            height: 84,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                // ■■■■■■■■■ 1行目 スペース調整 ■■■■■■■■■■■■■■■■■■■■
+                                const SizedBox(
+                                  height: 0,
                                 ),
-                              ),
-                              // ■■■■■■■■■ -2列 ■■■■■■■■■■■■■■■■■■■■■■■■■■■
-                              SizedBox(
-                                width: 28,
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    const SizedBox(
-                                      height: 8,
-                                    ),
-                                    Center(
-                                      child: Text(
-                                        '$hoG4',
-                                        style: TextStyle(
-                                          color: Color(hoGColor4),
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: f1,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              // ■■■■■■■■■ -1列 ■■■■■■■■■■■■■■■■■■■■■■■■■■■
-                              SizedBox(
-                                width: 20,
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    const SizedBox(
-                                      height: 14,
-                                    ),
-                                    Center(
-                                      child: Text(
-                                        '$godU4',
-                                        style: TextStyle(
-                                          color: Color(godUColor4),
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: f1,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              // ■■■■■■■■■ 0列 ■■■■■■■■■■■■■■■■■■■■■■■■■■■
-                              SizedBox(
-                                width: 20,
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    const SizedBox(
-                                      height: 4,
-                                    ),
-                                    Center(
-                                      child: Text(
-                                        '$godU0',
-                                        style: TextStyle(
-                                          color: Color(godUColor0),
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: f1,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              // ■■■■■■■■■ +1列 ■■■■■■■■■■■■■■■■■■■■■■■■■■■
-                              SizedBox(
-                                width: 20,
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    const SizedBox(
-                                      height: 14,
-                                    ),
-                                    Center(
-                                      child: Text(
-                                        '$godU1',
-                                        style: TextStyle(
-                                          color: Color(godUColor1),
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: f1,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              // ■■■■■■■■■ +2列 ■■■■■■■■■■■■■■■■■■■■■■■■■■■
-                              SizedBox(
-                                width: 28,
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    const SizedBox(
-                                      height: 8,
-                                    ),
-                                    Center(
-                                      child: Text(
-                                        '$hoG1',
-                                        style: TextStyle(
-                                          color: Color(hoGColor1),
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: f1,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              // ■■■■■■■■■ +3列 ■■■■■■■■■■■■■■■■■■■■■■■■■■■
-                              const SizedBox(
-                                width: 20,
-                                child: Center(
-                                  child: Text('火',
+                                // ■■■■■■■■■ 2行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+                                SizedBox(
+                                  height: h1,
+                                  child: Center(
+                                    child: Text(
+                                      tu8, // ■■■■■■■■■ 水2階 ■■■■■■■■■
                                       style: TextStyle(
-                                        color: Colors.red,
+                                        color: Color(tuColor8),
                                         fontWeight: FontWeight.bold,
                                         fontSize: f1,
-                                      )),
-                                ),
-                              ),
-                            ],
-                          ),
-                          const SizedBox(
-                            width: 8,
-                            height: 1,
-                          ),
-                          // ■■■■■■■■■ 19行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              SizedBox(
-                                width: 14,
-                                height: 20,
-                                child: Text(
-                                  '$godU3',
-                                  style: TextStyle(
-                                    color: Color(godUColor3),
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: f1,
-                                  ),
-                                ),
-                              ),
-                              const SizedBox(
-                                width: 8,
-                                height: 20,
-                              ),
-                              SizedBox(
-                                width: 14,
-                                height: 20,
-                                child: Text(
-                                  '$godU2',
-                                  style: TextStyle(
-                                    color: Color(godUColor2),
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: f1,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                          // ■■■■■■■■■ 21行 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-                          const SizedBox(
-                            width: 25,
-                            height: 1,
-                          ),
-                          // ■■■■■■■■■ 22行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              SizedBox(
-                                width: 12,
-                                height: 20,
-                                child: Text(
-                                  '$hoG3',
-                                  style: TextStyle(
-                                    color: Color(hoGColor3),
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: f1,
-                                  ),
-                                ),
-                              ),
-                              const SizedBox(
-                                width: 40,
-                                height: 20,
-                              ),
-                              SizedBox(
-                                width: 12,
-                                height: 20,
-                                child: Text(
-                                  '$hoG2',
-                                  style: TextStyle(
-                                    color: Color(hoGColor2),
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: f1,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                          // ■■■■■■■■■ 23行 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-                          const SizedBox(
-                            width: 25,
-                            height: 1,
-                          ),
-                          // ■■■■■■■■■ 24行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: const [
-                              SizedBox(
-                                width: 20,
-                                height: 25,
-                                child: Center(
-                                  child: Text(
-                                    '金',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: f1,
+                                      ),
                                     ),
                                   ),
                                 ),
-                              ),
-                              SizedBox(
-                                width: 70,
-                                height: 25,
-                              ),
-                              SizedBox(
-                                width: 20,
-                                height: 25,
-                                child: Center(
-                                  child: Text(
-                                    '土',
-                                    style: TextStyle(
-                                      color: Colors.yellowAccent,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: f1,
+                                // ■■■■■■■■■ 3行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+                                SizedBox(
+                                  height: h1,
+                                  child: Center(
+                                    child: Text(
+                                      '$tuS8', // ■■■■■■■■■ 水2階数 ■■■■■■■■■
+                                      style: TextStyle(
+                                        color: Color(tuSColor8),
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: f1,
+                                      ),
                                     ),
                                   ),
                                 ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                    SizedBox(
-                      width: 140,
-                      height: 194,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          const SizedBox(
-                            height: 18,
-                            child: Text(
-                              '　　　　　　生年月日',
-                              style: TextStyle(
-                                color: Color(c3),
-                                fontWeight: FontWeight.normal,
-                                fontSize: 12,
-                              ),
+                              ],
                             ),
                           ),
+                          // ■■■■■■■■■ 左1列目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
                           SizedBox(
-                            height: 21,
-                            child: Text(
-                              '$seinenIntS.$seigeIntS.$seinitiIntS',
-                              style: const TextStyle(
-                                color: Color(c2),
-                                fontWeight: FontWeight.bold,
-                                fontSize: 18,
-                              ),
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 18,
-                            child: Text(
-                              '　　　　　　　鑑定日',
-                              style: TextStyle(
-                                color: Color(c3),
-                                fontWeight: FontWeight.normal,
-                                fontSize: 12,
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            height: 25,
-                            child: Text(
-                              '$nowYH1.$nowMH1.$nowDH1',
-                              style: const TextStyle(
-                                color: Color(c2),
-                                fontWeight: FontWeight.bold,
-                                fontSize: 18,
-                              ),
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 15,
-                            child: Text(
-                              '年　　  月  　　日',
-                              style: TextStyle(
-                                color: Color(c3),
-                                fontWeight: FontWeight.normal,
-                                fontSize: 12,
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            width: 140,
-                            height: 80,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            width: 52,
+                            height: 84,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
+                                // ■■■■■■■■■ 1行目 スペース調整 ■■■■■■■■■■■■■■■■■■■■
+                                const SizedBox(
+                                  height: 16,
+                                ),
+                                // ■■■■■■■■■ 2行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
                                 SizedBox(
-                                  width: 33,
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.end,
-                                    children: [
-                                      const SizedBox(
-                                        height: 8,
+                                  height: h1,
+                                  child: Center(
+                                    child: Text(
+                                      tu9, // ■■■■■■■■■ 水1階 ■■■■■■■■■
+                                      style: TextStyle(
+                                        color: Color(tuColor9),
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: f1,
                                       ),
+                                    ),
+                                  ),
+                                ),
+                                // ■■■■■■■■■ 3行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+                                SizedBox(
+                                  height: h1,
+                                  child: Center(
+                                    child: Text(
+                                      '$tuS9', // ■■■■■■■■■ 水1階数 ■■■■■■■■■
+                                      style: TextStyle(
+                                        color: Color(tuSColor9),
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: f1,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          // ■■■■■■■■■ 8段目中央 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+                          SizedBox(
+                            width: 62, //94 初期値
+                            height: 84,
+                            child: Column(
+                              children: [
+                                // ■■■■■■■■■ 1行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+                                SizedBox(
+                                  width: 18,
+                                  height: 25,
+                                  child: Center(
+                                    child: Text(
+                                      '$tuS1', // ■■■■■■■■■ 木１階数 ■■■■■■■■■
+                                      style: TextStyle(
+                                        color: Color(tuSColor1),
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: f1,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                // ■■■■■■■■■ 2行目 スペース調整 ■■■■■■■■■■■■■■■■■■■■
+                                const SizedBox(
+                                  width: 20,
+                                  height: 0,
+                                ),
+                                // ■■■■■■■■■ 3行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+                                SizedBox(
+                                  width: 12,
+                                  height: 19,
+                                  child: Center(
+                                    child: Text(
+                                      '$godU0', // ■■■■■■■■■ 木地下１階数 ■■■■■■■■■
+                                      style: TextStyle(
+                                        color: Color(godUColor0),
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: f1,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                // ■■■■■■■■■ 4行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+                                SizedBox(
+                                  width: 62,
+                                  height: 19,
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
                                       SizedBox(
-                                        height: 32,
-                                        child: ElevatedButton(
-                                          style: ElevatedButton.styleFrom(
-                                            backgroundColor: Colors.blue,
-                                            elevation: 0,
-                                          ),
-                                          onPressed: () {
-                                            yearDown();
-                                          },
-                                          child: const Text(
-                                            'ー',
+                                        width: 12,
+                                        child: Center(
+                                          child: Text(
+                                            '$godU4',
                                             style: TextStyle(
-                                              color: Color(c2),
+                                              color: Color(godUColor4),
                                               fontWeight: FontWeight.bold,
-                                              fontSize: 14,
+                                              fontSize: f1,
                                             ),
                                           ),
                                         ),
                                       ),
-                                      const SizedBox(
-                                        height: 8,
+                                      SizedBox(
+                                        width: 34,
+                                        child: Container(
+                                            // color: Colors.cyanAccent,
+                                            ),
                                       ),
                                       SizedBox(
-                                        height: 32,
-                                        child: ElevatedButton(
-                                          style: ElevatedButton.styleFrom(
-                                            backgroundColor: Colors.blue,
-                                            elevation: 16,
-                                          ),
-                                          onPressed: () {
-                                            yearUp();
-                                          },
-                                          child: const Text(
-                                            '＋',
+                                        width: 12,
+                                        child: Center(
+                                          child: Text(
+                                            '$godU1',
                                             style: TextStyle(
-                                              color: Color(c2),
+                                              color: Color(godUColor1),
                                               fontWeight: FontWeight.bold,
-                                              fontSize: 14,
+                                              fontSize: f1,
                                             ),
                                           ),
                                         ),
@@ -1830,107 +1026,46 @@ class _MeisikiChartPage3State extends State<MeisikiChartPage3> {
                                     ],
                                   ),
                                 ),
-                                SizedBox(
-                                  width: 33,
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.end,
-                                    children: [
-                                      const SizedBox(
-                                        height: 8,
-                                      ),
-                                      SizedBox(
-                                        height: 32,
-                                        child: ElevatedButton(
-                                          style: ElevatedButton.styleFrom(
-                                            backgroundColor: Colors.blue,
-                                            elevation: 0,
-                                          ),
-                                          onPressed: () {
-                                            monthDown();
-                                          },
-                                          child: const Text(
-                                            'ー',
-                                            style: TextStyle(
-                                              color: Color(c2),
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 14,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      const SizedBox(
-                                        height: 8,
-                                      ),
-                                      SizedBox(
-                                        height: 32,
-                                        child: ElevatedButton(
-                                          style: ElevatedButton.styleFrom(
-                                            backgroundColor: Colors.blue,
-                                            elevation: 16,
-                                          ),
-                                          onPressed: () {
-                                            monthUp();
-                                          },
-                                          child: const Text(
-                                            '＋',
-                                            style: TextStyle(
-                                              color: Color(c2),
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 14,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
+                                // ■■■■■■■■■ 5行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+                                const SizedBox(
+                                  width: 62,
+                                  height: 0,
                                 ),
+                                // ■■■■■■■■■ 6行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
                                 SizedBox(
-                                  width: 33,
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.end,
+                                  width: 62,
+                                  height: 19,
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
-                                      const SizedBox(
-                                        height: 8,
-                                      ),
                                       SizedBox(
-                                        height: 32,
-                                        child: ElevatedButton(
-                                          style: ElevatedButton.styleFrom(
-                                            backgroundColor: Colors.blue,
-                                            elevation: 0,
-                                          ),
-                                          onPressed: () {
-                                            dateDown();
-                                          },
-                                          child: const Text(
-                                            'ー',
+                                        width: 12,
+                                        child: Center(
+                                          child: Text(
+                                            '$godU3',
                                             style: TextStyle(
-                                              color: Color(c2),
+                                              color: Color(godUColor3),
                                               fontWeight: FontWeight.bold,
-                                              fontSize: 14,
+                                              fontSize: f1,
                                             ),
                                           ),
                                         ),
                                       ),
-                                      const SizedBox(
-                                        height: 8,
+                                      SizedBox(
+                                        width: 14,
+                                        child: Container(
+                                            // color: Colors.cyanAccent,
+                                            ),
                                       ),
                                       SizedBox(
-                                        height: 32,
-                                        child: ElevatedButton(
-                                          style: ElevatedButton.styleFrom(
-                                            backgroundColor: Colors.blue,
-                                            elevation: 0,
-                                          ),
-                                          onPressed: () {
-                                            dateUp();
-                                          },
-                                          child: const Text(
-                                            '＋',
+                                        width: 12,
+                                        child: Center(
+                                          child: Text(
+                                            '$godU2',
                                             style: TextStyle(
-                                              color: Color(c2),
+                                              color: Color(godUColor2),
                                               fontWeight: FontWeight.bold,
-                                              fontSize: 14,
+                                              fontSize: f1,
                                             ),
                                           ),
                                         ),
@@ -1941,17 +1076,920 @@ class _MeisikiChartPage3State extends State<MeisikiChartPage3> {
                               ],
                             ),
                           ),
+                          // ■■■■■■■■■ 右1列目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+                          SizedBox(
+                            width: 52,
+                            height: 84,
+                            child: Column(
+                              children: [
+                                // ■■■■■■■■■ 1行目 スペース調整 ■■■■■■■■■■■■■■■■■■■■
+                                const SizedBox(
+                                  height: 16,
+                                ),
+                                // ■■■■■■■■■ 2行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+                                SizedBox(
+                                  height: h1,
+                                  child: Center(
+                                    child: Text(
+                                      tu3, // ■■■■■■■■■ 火1階 ■■■■■■■■■
+                                      style: TextStyle(
+                                        color: Color(tuColor3),
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: f1,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                // ■■■■■■■■■ 3行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+                                SizedBox(
+                                  height: h1,
+                                  child: Center(
+                                    child: Text(
+                                      '$tuS3', // ■■■■■■■■■ 火1階数 ■■■■■■■■■
+                                      style: TextStyle(
+                                        color: Color(tuSColor3),
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: f1,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          // ■■■■■■■■■ 右2列目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+                          SizedBox(
+                            width: 52,
+                            height: 84,
+                            child: Column(
+                              children: [
+                                // ■■■■■■■■■ 1行目 スペース調整 ■■■■■■■■■■■■■■■■■■■■
+                                const SizedBox(
+                                  height: 0,
+                                ),
+                                // ■■■■■■■■■ 2行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+                                SizedBox(
+                                  height: h1,
+                                  child: Center(
+                                    child: Text(
+                                      tu2, // ■■■■■■■■■ 火2階 ■■■■■■■■■
+                                      style: TextStyle(
+                                        color: Color(tuColor2),
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: f1,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                // ■■■■■■■■■ 3行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+                                SizedBox(
+                                  height: h1,
+                                  child: Center(
+                                    child: Text(
+                                      '$tuS2', // ■■■■■■■■■ 火2階数 ■■■■■■■■■
+                                      style: TextStyle(
+                                        color: Color(tuSColor2),
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: f1,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          // ■■■■■■■■■ 右3列目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+                          SizedBox(
+                            width: 25,
+                            height: 84,
+                            child: Center(
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.end,
+                                children: [
+                                  // ■■■■■■■■■ 1行目 スペース調整 ■■■■■■■■■■■■■■■■■■
+                                  const SizedBox(
+                                    height: 0,
+                                  ),
+                                  // ■■■■■■■■■ 2行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+                                  SizedBox(
+                                    height: 25,
+                                    child: Text(
+                                      tuG1, // ■■■■■■■■■ 火3階 ■■■■■■■■■
+                                      style: const TextStyle(
+                                        color: Color(tuGColor1),
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: f1,
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
                         ],
                       ),
                     ),
+                    // ■■■■■■■■■ 9行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                          width: 40,
+                          height: 25,
+                          child: Center(
+                            child: Text(
+                              tu7, // ■■■■■■■■■ 金1階 ■■■■■■■■■
+                              style: TextStyle(
+                                color: Color(tuColor7),
+                                fontWeight: FontWeight.bold,
+                                fontSize: f1,
+                              ),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 30,
+                          height: 25,
+                        ),
+                        SizedBox(
+                          width: 40,
+                          height: 25,
+                          child: Center(
+                            child: Text(
+                              tu5, // ■■■■■■■■■ 土1階 ■■■■■■■■■
+                              style: TextStyle(
+                                color: Color(tuColor5),
+                                fontWeight: FontWeight.bold,
+                                fontSize: f1,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    // ■■■■■■■■■ 10行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SizedBox(
+                          width: 40,
+                          height: 19,
+                          child: Center(
+                            child: Text(
+                              '$tuS7', // ■■■■■■■■■ 金1階数 ■■■■■■■■■
+                              style: TextStyle(
+                                color: Color(tuSColor7),
+                                fontWeight: FontWeight.bold,
+                                fontSize: f1,
+                              ),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 30,
+                          height: 19,
+                        ),
+                        SizedBox(
+                          width: 40,
+                          height: 19,
+                          child: Center(
+                            child: Text(
+                              '$tuS5', // ■■■■■■■■■ 土1階数 ■■■■■■■■■
+                              style: TextStyle(
+                                color: Color(tuSColor5),
+                                fontWeight: FontWeight.bold,
+                                fontSize: f1,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    // ■■■■■■■■■ 11行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                          width: 40,
+                          height: 24,
+                          child: Center(
+                            child: Text(
+                              tu6, // ■■■■■■■■■ 金２階 ■■■■■■■■■
+                              style: TextStyle(
+                                color: Color(tuColor6),
+                                fontWeight: FontWeight.bold,
+                                fontSize: f1,
+                              ),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 90,
+                          height: 19,
+                        ),
+                        SizedBox(
+                          width: 40,
+                          height: 24,
+                          child: Center(
+                            child: Text(
+                              tu4, // ■■■■■■■■■ 土２階 ■■■■■■■■■
+                              style: TextStyle(
+                                color: Color(tuColor4),
+                                fontWeight: FontWeight.bold,
+                                fontSize: f1,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    // ■■■■■■■■■ 12行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SizedBox(
+                          width: 40,
+                          height: 20,
+                          child: Center(
+                            child: Text(
+                              '$tuS6', // ■■■■■■■■■ 金２階数 ■■■■■■■■■
+                              style: TextStyle(
+                                color: Color(tuSColor6),
+                                fontWeight: FontWeight.bold,
+                                fontSize: f1,
+                              ),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 94,
+                          height: 20,
+                        ),
+                        SizedBox(
+                          width: 40,
+                          height: 20,
+                          child: Center(
+                            child: Text(
+                              '$tuS4', // ■■■■■■■■■ 土２階数 ■■■■■■■■■
+                              style: TextStyle(
+                                color: Color(tuSColor4),
+                                fontWeight: FontWeight.bold,
+                                fontSize: f1,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    // ■■■■■■■■■ 13行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SizedBox(
+                          width: 40,
+                          height: 25,
+                          child: Center(
+                            child: Text(
+                              tuG3, // ■■■■■■■■■ 金３階 ■■■■■■■■■
+                              style: const TextStyle(
+                                color: Color(tuGColor3),
+                                fontWeight: FontWeight.bold,
+                                fontSize: f1,
+                              ),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 140,
+                          height: 25,
+                        ),
+                        SizedBox(
+                          width: 40,
+                          height: 25,
+                          child: Center(
+                            child: Text(
+                              tuG2, // ■■■■■■■■■ 土３階 ■■■■■■■■■
+                              style: const TextStyle(
+                                color: Color(tuGColor2),
+                                fontWeight: FontWeight.bold,
+                                fontSize: f1,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    // ■■■■■■■■■ 15行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                          width: 180,
+                          height: 194,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              const SizedBox(
+                                height: 19,
+                              ),
+                              // ■■■■■■■■■ 15行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: const [
+                                  SizedBox(
+                                    width: 40,
+                                    height: 25,
+                                    child: Text(
+                                      '本質',
+                                      style: TextStyle(
+                                        color: Color(c3),
+                                        fontWeight: FontWeight.normal,
+                                        fontSize: 16,
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 40,
+                                    height: 25,
+                                  ),
+                                  SizedBox(
+                                    width: 20,
+                                    height: 25,
+                                    child: Text(
+                                      '木',
+                                      style: TextStyle(
+                                        color: Colors.teal,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: f1,
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 80,
+                                    height: 25,
+                                  ),
+                                ],
+                              ),
+                              // ■■■■■■■■■ 16行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+                              const SizedBox(
+                                height: 8,
+                              ),
+                              // ■■■■■■■■■ 17行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+                              Text(
+                                '$hoG0',
+                                style: TextStyle(
+                                  color: Color(hoGColor0),
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: f1,
+                                ),
+                              ),
+                              // ■■■■■■■■■ 18行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  // ■■■■■■■■■ -3列 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+                                  SizedBox(
+                                    width: 20,
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: const [
+                                        Center(
+                                          child: Text(
+                                            '水',
+                                            style: TextStyle(
+                                              color: Colors.white38,
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: f1,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  // ■■■■■■■■■ -2列 ■■■■■■■■■■■■■■■■■■■■■■■■■■■
+                                  SizedBox(
+                                    width: 28,
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        const SizedBox(
+                                          height: 8,
+                                        ),
+                                        Center(
+                                          child: Text(
+                                            '$hoG4',
+                                            style: TextStyle(
+                                              color: Color(hoGColor4),
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: f1,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  // ■■■■■■■■■ -1列 ■■■■■■■■■■■■■■■■■■■■■■■■■■■
+                                  SizedBox(
+                                    width: 20,
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        const SizedBox(
+                                          height: 14,
+                                        ),
+                                        Center(
+                                          child: Text(
+                                            '$godU4',
+                                            style: TextStyle(
+                                              color: Color(godUColor4),
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: f1,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  // ■■■■■■■■■ 0列 ■■■■■■■■■■■■■■■■■■■■■■■■■■■
+                                  SizedBox(
+                                    width: 20,
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        const SizedBox(
+                                          height: 4,
+                                        ),
+                                        Center(
+                                          child: Text(
+                                            '$godU0',
+                                            style: TextStyle(
+                                              color: Color(godUColor0),
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: f1,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  // ■■■■■■■■■ +1列 ■■■■■■■■■■■■■■■■■■■■■■■■■■■
+                                  SizedBox(
+                                    width: 20,
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        const SizedBox(
+                                          height: 14,
+                                        ),
+                                        Center(
+                                          child: Text(
+                                            '$godU1',
+                                            style: TextStyle(
+                                              color: Color(godUColor1),
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: f1,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  // ■■■■■■■■■ +2列 ■■■■■■■■■■■■■■■■■■■■■■■■■■■
+                                  SizedBox(
+                                    width: 28,
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        const SizedBox(
+                                          height: 8,
+                                        ),
+                                        Center(
+                                          child: Text(
+                                            '$hoG1',
+                                            style: TextStyle(
+                                              color: Color(hoGColor1),
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: f1,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  // ■■■■■■■■■ +3列 ■■■■■■■■■■■■■■■■■■■■■■■■■■■
+                                  const SizedBox(
+                                    width: 20,
+                                    child: Center(
+                                      child: Text('火',
+                                          style: TextStyle(
+                                            color: Colors.red,
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: f1,
+                                          )),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(
+                                width: 8,
+                                height: 1,
+                              ),
+                              // ■■■■■■■■■ 19行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  SizedBox(
+                                    width: 14,
+                                    height: 20,
+                                    child: Text(
+                                      '$godU3',
+                                      style: TextStyle(
+                                        color: Color(godUColor3),
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: f1,
+                                      ),
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    width: 8,
+                                    height: 20,
+                                  ),
+                                  SizedBox(
+                                    width: 14,
+                                    height: 20,
+                                    child: Text(
+                                      '$godU2',
+                                      style: TextStyle(
+                                        color: Color(godUColor2),
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: f1,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              // ■■■■■■■■■ 21行 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+                              const SizedBox(
+                                width: 25,
+                                height: 1,
+                              ),
+                              // ■■■■■■■■■ 22行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  SizedBox(
+                                    width: 12,
+                                    height: 20,
+                                    child: Text(
+                                      '$hoG3',
+                                      style: TextStyle(
+                                        color: Color(hoGColor3),
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: f1,
+                                      ),
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    width: 40,
+                                    height: 20,
+                                  ),
+                                  SizedBox(
+                                    width: 12,
+                                    height: 20,
+                                    child: Text(
+                                      '$hoG2',
+                                      style: TextStyle(
+                                        color: Color(hoGColor2),
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: f1,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              // ■■■■■■■■■ 23行 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+                              const SizedBox(
+                                width: 25,
+                                height: 1,
+                              ),
+                              // ■■■■■■■■■ 24行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: const [
+                                  SizedBox(
+                                    width: 20,
+                                    height: 25,
+                                    child: Center(
+                                      child: Text(
+                                        '金',
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: f1,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 70,
+                                    height: 25,
+                                  ),
+                                  SizedBox(
+                                    width: 20,
+                                    height: 25,
+                                    child: Center(
+                                      child: Text(
+                                        '土',
+                                        style: TextStyle(
+                                          color: Colors.yellowAccent,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: f1,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(
+                          width: 140,
+                          height: 194,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              const SizedBox(
+                                height: 18,
+                                child: Text(
+                                  '　　　　　　生年月日',
+                                  style: TextStyle(
+                                    color: Color(c3),
+                                    fontWeight: FontWeight.normal,
+                                    fontSize: 12,
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                height: 21,
+                                child: Text(
+                                  '$seinenIntS.$seigeIntS.$seinitiIntS',
+                                  style: const TextStyle(
+                                    color: Color(c2),
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 18,
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 18,
+                                child: Text(
+                                  '　　　　　　　鑑定日',
+                                  style: TextStyle(
+                                    color: Color(c3),
+                                    fontWeight: FontWeight.normal,
+                                    fontSize: 12,
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                height: 25,
+                                child: Text(
+                                  '$nowYH1.$nowMH1.$nowDH1',
+                                  style: const TextStyle(
+                                    color: Color(c2),
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 18,
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 15,
+                                child: Text(
+                                  '年　　  月  　　日',
+                                  style: TextStyle(
+                                    color: Color(c3),
+                                    fontWeight: FontWeight.normal,
+                                    fontSize: 12,
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 140,
+                                height: 80,
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    SizedBox(
+                                      width: 33,
+                                      child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.end,
+                                        children: [
+                                          const SizedBox(
+                                            height: 8,
+                                          ),
+                                          SizedBox(
+                                            height: 32,
+                                            child: ElevatedButton(
+                                              style: ElevatedButton.styleFrom(
+                                                backgroundColor: Colors.blue,
+                                                elevation: 0,
+                                              ),
+                                              onPressed: () {
+                                                yearDown();
+                                              },
+                                              child: const Text(
+                                                'ー',
+                                                style: TextStyle(
+                                                  color: Color(c2),
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 14,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                          const SizedBox(
+                                            height: 8,
+                                          ),
+                                          SizedBox(
+                                            height: 32,
+                                            child: ElevatedButton(
+                                              style: ElevatedButton.styleFrom(
+                                                backgroundColor: Colors.blue,
+                                                elevation: 16,
+                                              ),
+                                              onPressed: () {
+                                                yearUp();
+                                              },
+                                              child: const Text(
+                                                '＋',
+                                                style: TextStyle(
+                                                  color: Color(c2),
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 14,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      width: 33,
+                                      child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.end,
+                                        children: [
+                                          const SizedBox(
+                                            height: 8,
+                                          ),
+                                          SizedBox(
+                                            height: 32,
+                                            child: ElevatedButton(
+                                              style: ElevatedButton.styleFrom(
+                                                backgroundColor: Colors.blue,
+                                                elevation: 0,
+                                              ),
+                                              onPressed: () {
+                                                monthDown();
+                                              },
+                                              child: const Text(
+                                                'ー',
+                                                style: TextStyle(
+                                                  color: Color(c2),
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 14,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                          const SizedBox(
+                                            height: 8,
+                                          ),
+                                          SizedBox(
+                                            height: 32,
+                                            child: ElevatedButton(
+                                              style: ElevatedButton.styleFrom(
+                                                backgroundColor: Colors.blue,
+                                                elevation: 16,
+                                              ),
+                                              onPressed: () {
+                                                monthUp();
+                                              },
+                                              child: const Text(
+                                                '＋',
+                                                style: TextStyle(
+                                                  color: Color(c2),
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 14,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      width: 33,
+                                      child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.end,
+                                        children: [
+                                          const SizedBox(
+                                            height: 8,
+                                          ),
+                                          SizedBox(
+                                            height: 32,
+                                            child: ElevatedButton(
+                                              style: ElevatedButton.styleFrom(
+                                                backgroundColor: Colors.blue,
+                                                elevation: 0,
+                                              ),
+                                              onPressed: () {
+                                                dateDown();
+                                              },
+                                              child: const Text(
+                                                'ー',
+                                                style: TextStyle(
+                                                  color: Color(c2),
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 14,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                          const SizedBox(
+                                            height: 8,
+                                          ),
+                                          SizedBox(
+                                            height: 32,
+                                            child: ElevatedButton(
+                                              style: ElevatedButton.styleFrom(
+                                                backgroundColor: Colors.blue,
+                                                elevation: 0,
+                                              ),
+                                              onPressed: () {
+                                                dateUp();
+                                              },
+                                              child: const Text(
+                                                '＋',
+                                                style: TextStyle(
+                                                  color: Color(c2),
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 14,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                    /*CustomPaint(
+                      painter: ShapePainter2(gogyou: j), // 渡したい変数を引数に指定する
+                      // size: const Size(400, 500), // この行を入れると図形と文字を重ねることができない
+                    ),*/
                   ],
                 ),
-                CustomPaint(
-                  painter: ShapePainter2(gogyou: j), // 渡したい変数を引数に指定する
-                  // size: const Size(400, 500), // この行を入れると図形と文字を重ねることができない
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),
@@ -1962,8 +2000,8 @@ class _MeisikiChartPage3State extends State<MeisikiChartPage3> {
 class ShapePainter1 extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
-    var center1 = const Offset(0, 220 - 30 - 14); // 表面の中心座標
-    var center2 = const Offset(-70, 500 - 60 - 14 - 0); // 本質の中心座標
+    var center1 = const Offset(193, 220 - 30 - 14); // 表面の中心座標
+    var center2 = const Offset(-70 + 193, 500 - 60 - 14 - 0); // 本質の中心座標
 
     final penWhite = Paint()
       ..color = Colors.white
@@ -2031,8 +2069,8 @@ class ShapePainter2 extends CustomPainter {
   ShapePainter2({required this.gogyou}); // ■■■■■■■■■受け取る値を上記変数に代入
   @override
   void paint(Canvas canvas, Size size) {
-    var center1 = const Offset(0, 220 - 30 - 14 - 509); // 表面の中心座標
-    var center2 = const Offset(-70, 500 - 60 - 14 - 0 - 509); // 本質の中心座標
+    var center1 = const Offset(193, 220 - 30 - 14 - 0); // 表面の中心座標
+    var center2 = const Offset(193 - 70, 500 - 60 - 14 - 0 - 0); // 本質の中心座標
     const lineLength1 = 170.0;
     const lineLength2 = 84.0;
 
