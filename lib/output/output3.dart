@@ -149,9 +149,9 @@ class _Output3State extends State<Output3> {
     // print('setuiriniti:$setuiriniti');
     // print('setuiriji:$setuiriji');
     // print('setuirihun:$setuirihun');
-    nenchuNoH = rokujuKansiNo(rokujukkansi, nenchu); // 年柱No.
-    gechuNoH = rokujuKansiNo(rokujukkansi, gechu); // 月柱No.
-    nichuNo = rokujuKansiNo(rokujukkansi, nichu); // 月柱No.
+    nenchuNoH = rokujuKansiNoA(nenchu); // 年柱No.
+    gechuNoH = rokujuKansiNoA(gechu); // 月柱No.
+    nichuNo = rokujuKansiNoA(nichu); // 月柱No.
     // print('nenchuNoH:$nenchuNoH');
     // print('gechuNoH:$gechuNoH');
 
@@ -207,7 +207,7 @@ class _Output3State extends State<Output3> {
     tokugouTenMoji = jukkan.substring(tokugouTen, tokugouTen + 1);
     tokugouTiMoji = juunisi.substring(tokugouTi, tokugouTi + 1);
     tentiTokugouMoji = '$tokugouTenMoji$tokugouTiMoji';
-    int tentiTokugouSuu = rokujuKansiNo(rokujukkansi, tentiTokugouMoji);
+    int tentiTokugouSuu = rokujuKansiNoA(tentiTokugouMoji);
     var tentiTokugou = kansiHeirin(tentiTokugouSuu, seinengappiMoji);
     // 干支併臨リスト・天地徳合リストから年と年齢を生成する
     List tenunList = tenUn(nenKansiHeirin, getuKansiHeirin, nitiKansiHeirin,

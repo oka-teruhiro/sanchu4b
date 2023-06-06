@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sanchu4b/output/meisiki_chart_page2.dart';
+import 'package:sanchu4b/output/meisiki_chart_page3.dart';
 
 import '../juuniun/juni_c_siou.dart';
 import '../juuniun/juni_d_sihei.dart';
@@ -166,7 +166,7 @@ class _MeisikiPage3State extends State<MeisikiPage3> {
     gechu = widget.gechu;
     nichu = widget.nichu;
 
-    nenchuNo[0] = rokujuKansiNo(rokujukkansi, nenchu);
+    nenchuNo[0] = rokujuKansiNoA(nenchu);
     if (seigatuInt == 2) {
       nenchuNo[1] = (nenchuNo[0] - 1) % 60;
     } else {
@@ -174,11 +174,11 @@ class _MeisikiPage3State extends State<MeisikiPage3> {
     }
     nenchuNo[2] = nenchuNo[0];
 
-    gechuNo[0] = rokujuKansiNo(rokujukkansi, gechu);
+    gechuNo[0] = rokujuKansiNoA(gechu);
     gechuNo[1] = (gechuNo[0] - 1) % 60;
     gechuNo[2] = gechuNo[0];
 
-    nichuNo[0] = rokujuKansiNo(rokujukkansi, nichu);
+    nichuNo[0] = rokujuKansiNoA(nichu);
     nichuNo[1] = nichuNo[0];
     nichuNo[2] = nichuNo[0];
 
@@ -1644,7 +1644,7 @@ class _MeisikiPage3State extends State<MeisikiPage3> {
                                         context,
                                         MaterialPageRoute(
                                           builder: (context) =>
-                                              MeisikiChartPage2(
+                                              MeisikiChartPage3(
                                             seinitiInt: seinitiInt,
                                             seigatuInt: seigatuInt,
                                             seinenInt: seinenInt,

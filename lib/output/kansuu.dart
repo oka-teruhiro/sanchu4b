@@ -72,12 +72,12 @@ juuniSiNo(String a) {
 //  c:　-2：一致が2組以上ある
 //      -1:一致する組がない
 //      0 ～ 59 : 組めに1組だけある
-int rokujuKansiNo(String mojilist, String kensaku2moji) {
+int rokujuKansiNo(String a, String b) {
   int nanbanme = -1;
   int ittisuu = 0;
   for (int i = 0; i < 60; i++) {
-    String nimoji = mojilist.substring(i * 2, i * 2 + 2);
-    if (nimoji == kensaku2moji) {
+    String nimoji = a.substring(i * 2, i * 2 + 2);
+    if (nimoji == b) {
       nanbanme = i;
       ittisuu = ittisuu + 1;
     } else {}
@@ -88,6 +88,37 @@ int rokujuKansiNo(String mojilist, String kensaku2moji) {
     nanbanme = -1;
   } else {}
   return nanbanme;
+}
+
+// 関数定義　文字列リストから検索文字列が先頭から何文字目にあるか返す
+//  c = rokujuKansiNoA(b)
+//  b:　60干支（例：壬寅）
+//  c:　-2：一致が2組以上ある
+//      -1:一致する組がない
+//      0 ～ 59 : 60干支No.
+int rokujuKansiNoA(String kensaku2moji) {
+  String rokujukkansi = "甲子乙丑丙寅丁卯戊辰己巳庚午辛未壬申癸酉"
+      "甲戌乙亥丙子丁丑戊寅己卯庚辰辛巳壬午癸未"
+      "甲申乙酉丙戌丁亥戊子己丑庚寅辛卯壬辰癸巳"
+      "甲午乙未丙申丁酉戊戌己亥庚子辛丑壬寅癸卯"
+      "甲辰乙巳丙午丁未戊申己酉庚戌辛亥壬子癸丑"
+      "甲寅乙卯丙辰丁巳戊午己未庚申辛酉壬戌癸亥";
+  int a = rokujuKansiNo(rokujukkansi, kensaku2moji);
+  // int nanbanme = -1;
+  // int ittisuu = 0;
+  // for (int i = 0; i < 60; i++) {
+  //   String nimoji = rokujukkansi.substring(i * 2, i * 2 + 2);
+  //   if (nimoji == kensaku2moji) {
+  //     nanbanme = i;
+  //     ittisuu = ittisuu + 1;
+  //   } else {}
+  // }
+  // if (ittisuu > 1) {
+  //   nanbanme = -2;
+  // } else if (ittisuu < 1) {
+  //   nanbanme = -1;
+  // } else {}
+  return a;
 }
 
 // 関数定義　干支から対応する西暦年と年齢を119歳までの間で算出する
