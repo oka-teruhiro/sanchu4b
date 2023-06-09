@@ -672,7 +672,6 @@ class _MeisikiChartPage3State extends State<MeisikiChartPage3> {
                 height: 509,
                 child: CustomPaint(
                   painter: ShapePainter2(gogyou: j), // 渡したい変数を引数に指定する
-                  // size: const Size(400, 400), // この行を入れると図形と文字を重ねることができない
                 ),
               ),
               SizedBox(
@@ -680,10 +679,6 @@ class _MeisikiChartPage3State extends State<MeisikiChartPage3> {
                 height: 509,
                 child: Column(
                   children: [
-                    /*CustomPaint(
-                      painter: ShapePainter1(), // 渡したい変数を引数に指定する
-                      // size: const Size(400, 400), // この行を入れると図形と文字を重ねることができない
-                    ),*/
                     // ■■■■■■■■■ 1行目 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,

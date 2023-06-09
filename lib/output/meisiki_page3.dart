@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sanchu4b/output/meisiki_chart_page3.dart';
+import 'package:sanchu4b/output/meisiki_chart_page4.dart';
 
 import '../juuniun/juni_c_siou.dart';
 import '../juuniun/juni_d_sihei.dart';
@@ -1633,7 +1633,7 @@ class _MeisikiPage3State extends State<MeisikiPage3> {
                               child: Center(
                                 child: TextButton(
                                   child: Text(
-                                    'チャート', //12運年
+                                    'チャート', //チャート
                                     style: TextStyle(
                                       color: Colors.cyanAccent,
                                       fontSize: fs - 6,
@@ -1644,7 +1644,7 @@ class _MeisikiPage3State extends State<MeisikiPage3> {
                                         context,
                                         MaterialPageRoute(
                                           builder: (context) =>
-                                              MeisikiChartPage3(
+                                              MeisikiChartPage4(
                                             seinitiInt: seinitiInt,
                                             seigatuInt: seigatuInt,
                                             seinenInt: seinenInt,
