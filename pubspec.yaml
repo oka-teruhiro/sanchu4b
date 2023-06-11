@@ -1,10 +1,10 @@
 name: sanchu4b
-description: 天運三柱推命ver.4.1.40
+description: 天運三柱推命ver.4.1.42
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
 
-version: 4.1.40+13
+version: 4.1.42+13
 
 environment:
   sdk: ">=2.17.3 <3.0.0"
@@ -14,14 +14,15 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-    # 日本語化するために0.18.0 を　0.17.0 にする必要あり(2022.12.17)
-  intl: ^0.17.0
+
+    # 日本語化するために0.18.1 を　0.18.0 にする必要あり(2023.6.11)
+  intl: ^0.18.0
 
 
 
   cupertino_icons: ^1.0.5
   provider: ^6.0.5
-  shared_preferences: ^2.1.1
+  shared_preferences: ^2.1.2
   flutter_lints: ^2.0.1
 
 
@@ -33,7 +34,7 @@ dev_dependencies:
 
 #アプリアイコンを作成するためのコード・ここから（2022.12.25)
   #flutter_launcher_icons: ^0.11.0
-  flutter_native_splash: ^2.2.19
+  flutter_native_splash: ^2.3.1
 
 flutter_icons:
   android: "launcher_icon"

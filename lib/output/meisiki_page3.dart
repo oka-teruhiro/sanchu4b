@@ -270,1447 +270,1651 @@ class _MeisikiPage3State extends State<MeisikiPage3> {
         body: Container(
           color: Colors.black,
           child: SizedBox(
-            height: 668,
-            child: Padding(
-              padding: const EdgeInsets.all(4.0),
-              child: SizedBox(
-                height: 44,
-                child: Center(
-                  child: Column(
-                    children: [
-                      //■■■■■■■■■生年月日の行■■■■■■■■■
-                      SizedBox(
-                        height: 60,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            SizedBox(
-                              width: 90,
-                              child: Container(
-                                //color: Colors.black45,
-                                decoration: BoxDecoration(
-                                    color: Colors.white24,
-                                    borderRadius: BorderRadius.circular(12),
-                                    border: Border.all(
-                                      color: Colors.tealAccent,
-                                      width: 1,
-                                    )),
-                                child: Center(
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Text(
-                                        '$seinitiInt',
-                                        style: TextStyle(
-                                          fontSize: fs,
-                                          color: Colors.cyanAccent,
-                                        ),
-                                      ),
-                                      Text(
-                                        '日',
-                                        style: TextStyle(
-                                          fontSize: fs - 2,
-                                          color: Colors.cyanAccent,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ),
-                            SizedBox(
-                              width: 90,
-                              child: Container(
-                                decoration: BoxDecoration(
-                                    color: Colors.white24,
-                                    borderRadius: BorderRadius.circular(12),
-                                    border: Border.all(
-                                      color: Colors.tealAccent,
-                                      width: 1,
-                                    )),
-                                child: Center(
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Text(
-                                        '$seigatuInt',
-                                        style: TextStyle(
-                                          fontSize: fs,
-                                          color: Colors.cyanAccent,
-                                        ),
-                                      ),
-                                      Text(
-                                        '月',
-                                        style: TextStyle(
-                                          fontSize: fs - 2,
-                                          color: Colors.cyanAccent,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ),
-                            SizedBox(
-                              width: 90,
-                              child: Container(
-                                decoration: BoxDecoration(
-                                    color: Colors.white24,
-                                    borderRadius: BorderRadius.circular(12),
-                                    border: Border.all(
-                                      color: Colors.tealAccent,
-                                      width: 1,
-                                    )),
-                                child: Center(
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Text(
-                                        '$seinenInt',
-                                        style: TextStyle(
-                                          fontSize: fs,
-                                          color: Colors.cyanAccent,
-                                        ),
-                                      ),
-                                      Text(
-                                        '年',
-                                        style: TextStyle(
-                                          fontSize: fs - 2,
-                                          color: Colors.cyanAccent,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ),
-                            SizedBox(
-                              width: 80,
-                              height: 70,
-                              child: Container(
-                                decoration: BoxDecoration(
-                                    color: Colors.white24,
-                                    borderRadius: BorderRadius.circular(12),
-                                    border: Border.all(
-                                      color: Colors.tealAccent,
-                                      width: 1,
-                                    )),
-                                child: Center(
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Text(
-                                        '生年',
-                                        style: TextStyle(
-                                          fontSize: fs - 6,
-                                          color: Colors.cyanAccent,
-                                        ),
-                                      ),
-                                      Text(
-                                        '月日',
-                                        style: TextStyle(
-                                          fontSize: fs - 6,
-                                          color: Colors.cyanAccent,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-
-                      //■■■■■■■■■天干の行■■■■■■■■■
-                      SizedBox(
-                        height: hi,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            SizedBox(
-                              width: 90,
-                              child: Container(
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(12),
-                                    border: Border.all(
-                                      color: Colors.pinkAccent,
-                                      width: 2,
-                                    )),
-                                child: Center(
-                                  child: TextButton(
-                                    child: Text(
-                                      nitikan,
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: fs,
-                                      ),
-                                    ),
-                                    onPressed: () {
-                                      if (nitikan == '甲') {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) =>
-                                                  const NikkanKinoe(),
-                                            ));
-                                      } else if (nitikan == '乙') {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) =>
-                                                  const NikkanKinoto(),
-                                            ));
-                                      } else if (nitikan == '丙') {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) =>
-                                                  const NikkanHinoe(),
-                                            ));
-                                      } else if (nitikan == '丁') {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) =>
-                                                  const NikkanHinoto(),
-                                            ));
-                                      } else if (nitikan == '戊') {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) =>
-                                                  const NikkanTutinoe(),
-                                            ));
-                                      } else if (nitikan == '己') {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) =>
-                                                  const NikkanTutinoto(),
-                                            ));
-                                      } else if (nitikan == '庚') {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) =>
-                                                  const NikkanKanoe(),
-                                            ));
-                                      } else if (nitikan == '辛') {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) =>
-                                                  const NikkanKanoto(),
-                                            ));
-                                      } else if (nitikan == '壬') {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) =>
-                                                  const NikkanMizunoe(),
-                                            ));
-                                      } else {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) =>
-                                                  const NikkanMizunoto(),
-                                            ));
-                                      }
-                                    },
-                                  ),
-                                ),
-                              ),
-                            ),
-                            SizedBox(
-                              width: 90,
-                              child: Container(
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(12),
-                                    border: Border.all(
-                                      color: Colors.tealAccent,
-                                      width: 1,
-                                    )),
-                                child: Center(
-                                  child: Text(
-                                    gatukan,
-                                    style: TextStyle(
-                                      fontSize: fs,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            SizedBox(
-                              width: 90,
-                              child: Container(
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(12),
-                                    border: Border.all(
-                                      color: Colors.tealAccent,
-                                      width: 1,
-                                    )),
-                                child: Center(
-                                  child: Text(
-                                    nenkan,
-                                    style: TextStyle(
-                                      fontSize: fs,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            SizedBox(
-                              width: 80,
-                              //height: 70,
-                              child: Container(
-                                decoration: BoxDecoration(
-                                    color: Colors.white24,
-                                    borderRadius: BorderRadius.circular(12),
-                                    border: Border.all(
-                                      color: Colors.tealAccent,
-                                      width: 1,
-                                    )),
-                                child: Center(
-                                  child: Text(
-                                    '干',
-                                    style: TextStyle(
-                                      fontSize: fs - 2,
-                                      color: Colors.cyanAccent,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      //■■■■■■■■■地支の行■■■■■■■■■
-                      SizedBox(
-                        height: hi,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            SizedBox(
-                              width: 90,
-                              child: Container(
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(12),
-                                    border: Border.all(
-                                      color: Colors.tealAccent,
-                                      width: 1,
-                                    )),
-                                child: Center(
-                                  child: Text(
-                                    nitisi,
-                                    style: TextStyle(
-                                      fontSize: fs,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            SizedBox(
-                              width: 90,
-                              child: Container(
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(12),
-                                    border: Border.all(
-                                      color: Colors.tealAccent,
-                                      width: 1,
-                                    )),
-                                child: Center(
-                                  child: Text(
-                                    gatusi,
-                                    style: TextStyle(
-                                      fontSize: fs,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            SizedBox(
-                              width: 90,
-                              child: Container(
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(12),
-                                    border: Border.all(
-                                      color: Colors.tealAccent,
-                                      width: 1,
-                                    )),
-                                child: Center(
-                                  child: Text(
-                                    nensi,
-                                    style: TextStyle(
-                                      fontSize: fs,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            SizedBox(
-                              width: 80,
-                              height: 70,
-                              child: Container(
-                                decoration: BoxDecoration(
-                                    color: Colors.white24,
-                                    borderRadius: BorderRadius.circular(12),
-                                    border: Border.all(
-                                      color: Colors.tealAccent,
-                                      width: 1,
-                                    )),
-                                child: Center(
-                                  child: Text(
-                                    '支',
-                                    style: TextStyle(
-                                      fontSize: fs - 2,
-                                      color: Colors.cyanAccent,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      //■■■■■■■■■支合支冲の行■■■■■■■■■
-                      SizedBox(
-                        height: 60,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            SizedBox(
-                              width: 270,
-                              child: Column(
-                                children: [
-                                  SizedBox(
-                                    height: 30,
-                                    child: Row(
-                                      children: [
-                                        SizedBox(
-                                          width: 30,
-                                          child: Container(),
-                                        ),
-                                        SizedBox(
-                                          width: 90,
-                                          child: Container(
-                                            decoration: BoxDecoration(
-                                                borderRadius:
-                                                    BorderRadius.circular(12),
-                                                border: Border.all(
-                                                  color: Colors.tealAccent,
-                                                  width: 1,
-                                                )),
-                                          ),
-                                        ),
-                                        const SizedBox(
-                                          width: 30,
-                                        ),
-                                        SizedBox(
-                                          width: 90,
-                                          child: Container(
-                                            decoration: BoxDecoration(
-                                                borderRadius:
-                                                    BorderRadius.circular(12),
-                                                border: Border.all(
-                                                  color: Colors.tealAccent,
-                                                  width: 1,
-                                                )),
-                                          ),
-                                        ),
-                                        const SizedBox(
-                                          width: 30,
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 30,
-                                    child: Row(
-                                      children: [
-                                        const SizedBox(
-                                          width: 60,
-                                        ),
-                                        SizedBox(
-                                          width: 150,
-                                          child: Container(
-                                            decoration: BoxDecoration(
-                                                borderRadius:
-                                                    BorderRadius.circular(12),
-                                                border: Border.all(
-                                                  color: Colors.tealAccent,
-                                                  width: 1,
-                                                )),
-                                          ),
-                                        ),
-                                        const SizedBox(
-                                          width: 60,
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            SizedBox(
-                              width: 80,
-                              child: Container(
-                                decoration: BoxDecoration(
-                                    color: Colors.white24,
-                                    borderRadius: BorderRadius.circular(12),
-                                    border: Border.all(
-                                      color: Colors.tealAccent,
-                                      width: 1,
-                                    )),
-                                child: Center(
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Text(
-                                        '支合',
-                                        style: TextStyle(
-                                          fontSize: fs - 4,
-                                          color: Colors.cyanAccent,
-                                        ),
-                                      ),
-                                      Text(
-                                        '支冲',
-                                        style: TextStyle(
-                                          fontSize: fs - 4,
-                                          color: Colors.cyanAccent,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      //■■■■■■■■■蔵干の行■■■■■■■■■
-                      SizedBox(
-                        height: hi,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            SizedBox(
-                              width: 90,
-                              //height: 70,
-                              child: Container(
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(12),
-                                    border: Border.all(
-                                      color: Colors.tealAccent,
-                                      width: 1,
-                                    )),
-                                child: Center(
-                                    child: Text(
-                                  zouKanNiti,
-                                  style: TextStyle(
-                                    fontSize: fs,
-                                  ),
-                                )),
-                              ),
-                            ),
-                            SizedBox(
-                              width: 90,
-                              //height: 70,
-                              child: Container(
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(12),
-                                    border: Border.all(
-                                      color: Colors.tealAccent,
-                                      width: 1,
-                                    )),
-                                child: Center(
-                                    child: Text(
-                                  zouKanTuki,
-                                  style: TextStyle(
-                                    fontSize: fs,
-                                  ),
-                                )),
-                              ),
-                            ),
-                            SizedBox(
-                              width: 90,
-                              //height: 70,
-                              child: Container(
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(12),
-                                    border: Border.all(
-                                      color: Colors.tealAccent,
-                                      width: 1,
-                                    )),
-                                child: Center(
-                                    child: Text(
-                                  zouKanNen,
-                                  style: TextStyle(
-                                    fontSize: fs,
-                                  ),
-                                )),
-                              ),
-                            ),
-                            SizedBox(
-                              width: 80,
-                              height: 70,
-                              child: Container(
-                                decoration: BoxDecoration(
-                                    color: Colors.white24,
-                                    borderRadius: BorderRadius.circular(12),
-                                    border: Border.all(
-                                      color: Colors.tealAccent,
-                                      width: 1,
-                                    )),
-                                child: Center(
-                                  child: Text(
-                                    '蔵干',
-                                    style: TextStyle(
-                                      fontSize: fs - 2,
-                                      color: Colors.cyanAccent,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      //■■■■■■■■■通変星の行■■■■■■■■■
-                      SizedBox(
-                        height: hi * 2,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            SizedBox(
-                              width: 90,
-                              child: Column(
-                                children: [
-                                  SizedBox(
-                                    height: hi,
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(12),
-                                          border: Border.all(
-                                            color: Colors.tealAccent,
-                                            width: 1,
-                                          )),
-                                      child: Center(
-                                          child: Text(
-                                        '', //日天
-                                        style: TextStyle(
-                                          fontSize: fs - 2,
-                                        ),
-                                      )),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: hi,
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(12),
-                                          border: Border.all(
-                                            color: Colors.tealAccent,
-                                            width: 1,
-                                          )),
-                                      child: Center(
-                                          child: Text(
-                                        tuuhenbosiNitiSi, //日地
-                                        style: TextStyle(
-                                          fontSize: fs - 2,
-                                        ),
-                                      )),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            SizedBox(
-                              width: 90,
-                              child: Column(
-                                children: [
-                                  SizedBox(
-                                    height: hi,
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(12),
-                                          border: Border.all(
-                                            color: Colors.tealAccent,
-                                            width: 1,
-                                          )),
-                                      child: Center(
-                                          child: Text(
-                                        tuuhenbosiGetuKan, //月天
-                                        style: TextStyle(
-                                          fontSize: fs - 2,
-                                        ),
-                                      )),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: hi,
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(12),
-                                          border: Border.all(
-                                            color: Colors.tealAccent,
-                                            width: 1,
-                                          )),
-                                      child: Center(
-                                          child: Text(
-                                        tuuhenbosiGetuSi, //月地
-                                        style: TextStyle(
-                                          fontSize: fs - 2,
-                                        ),
-                                      )),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            SizedBox(
-                              width: 90,
-                              child: Column(
-                                children: [
-                                  SizedBox(
-                                    height: hi,
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(12),
-                                          border: Border.all(
-                                            color: Colors.tealAccent,
-                                            width: 1,
-                                          )),
-                                      child: Center(
-                                          child: Text(
-                                        tuuhenbosiNenKan, //年天
-                                        style: TextStyle(
-                                          fontSize: fs - 2,
-                                        ),
-                                      )),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: hi,
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(12),
-                                          border: Border.all(
-                                            color: Colors.tealAccent,
-                                            width: 1,
-                                          )),
-                                      child: Center(
-                                          child: Text(
-                                        tuuhenbosiNenSi, //年地
-                                        style: TextStyle(
-                                          fontSize: fs - 2,
-                                        ),
-                                      )),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            SizedBox(
-                              width: 80,
-                              child: Container(
-                                decoration: BoxDecoration(
-                                    color: Colors.white24,
-                                    borderRadius: BorderRadius.circular(12),
-                                    border: Border.all(
-                                      color: Colors.tealAccent,
-                                      width: 1,
-                                    )),
-                                child: Center(
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Text(
-                                        '通',
-                                        style: TextStyle(
-                                          fontSize: fs - 2,
-                                          color: Colors.cyanAccent,
-                                        ),
-                                      ),
-                                      Text(
-                                        '変',
-                                        style: TextStyle(
-                                          fontSize: fs - 2,
-                                          color: Colors.cyanAccent,
-                                        ),
-                                      ),
-                                      Text(
-                                        '星',
-                                        style: TextStyle(
-                                          fontSize: fs - 2,
-                                          color: Colors.cyanAccent,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      //■■■■■■■■■12運の行■■■■■■■■■
-                      SizedBox(
-                        height: hi,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            SizedBox(
-                              width: 90,
-                              child: Container(
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(12),
-                                    border: Border.all(
-                                      color: Colors.pinkAccent,
-                                      width: 2,
-                                    )),
-                                child: Center(
-                                  child: TextButton(
-                                    child: Text(
-                                      juuniUnNiti, //12運日
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: fs,
-                                      ),
-                                    ),
-                                    onPressed: () {
-                                      if (juuniUnNiti == '胎') {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) => Sihei(
-                                                hasira: '日',
-                                                juuniUnNiti: juuniUnNiti,
-                                                juuniUnGatu: juuniUnGetu,
-                                                juuniUnNen: juuniUnNen,
-                                              ),
-                                            ));
-                                      } else if (juuniUnNiti == '養') {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) => Sihei(
-                                                hasira: '日',
-                                                juuniUnNiti: juuniUnNiti,
-                                                juuniUnGatu: juuniUnGetu,
-                                                juuniUnNen: juuniUnNen,
-                                              ),
-                                            ));
-                                      } else if (juuniUnNiti == '長') {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) => Siou(
-                                                hasira: '日',
-                                                juuniUnNiti: juuniUnNiti,
-                                                juuniUnGatu: juuniUnGetu,
-                                                juuniUnNen: juuniUnNen,
-                                              ),
-                                            ));
-                                      } else if (juuniUnNiti == '沐') {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) => Sihei(
-                                                hasira: '日',
-                                                juuniUnNiti: juuniUnNiti,
-                                                juuniUnGatu: juuniUnGetu,
-                                                juuniUnNen: juuniUnNen,
-                                              ),
-                                            ));
-                                      } else if (juuniUnNiti == '冠') {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) => Siou(
-                                                hasira: '日',
-                                                juuniUnNiti: juuniUnNiti,
-                                                juuniUnGatu: juuniUnGetu,
-                                                juuniUnNen: juuniUnNen,
-                                              ),
-                                            ));
-                                      } else if (juuniUnNiti == '建') {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) => Siou(
-                                                hasira: '日',
-                                                juuniUnNiti: juuniUnNiti,
-                                                juuniUnGatu: juuniUnGetu,
-                                                juuniUnNen: juuniUnNen,
-                                              ),
-                                            ));
-                                      } else if (juuniUnNiti == '帝') {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) => Siou(
-                                                hasira: '日',
-                                                juuniUnNiti: juuniUnNiti,
-                                                juuniUnGatu: juuniUnGetu,
-                                                juuniUnNen: juuniUnNen,
-                                              ),
-                                            ));
-                                      } else if (juuniUnNiti == '衰') {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) => Sisui(
-                                                hasira: '日',
-                                                juuniUnNiti: juuniUnNiti,
-                                                juuniUnGatu: juuniUnGetu,
-                                                juuniUnNen: juuniUnNen,
-                                              ),
-                                            ));
-                                      } else if (juuniUnNiti == '病') {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) => Sisui(
-                                                hasira: '日',
-                                                juuniUnNiti: juuniUnNiti,
-                                                juuniUnGatu: juuniUnGetu,
-                                                juuniUnNen: juuniUnNen,
-                                              ),
-                                            ));
-                                      } else if (juuniUnNiti == '死') {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) => Sisui(
-                                                hasira: '日',
-                                                juuniUnNiti: juuniUnNiti,
-                                                juuniUnGatu: juuniUnGetu,
-                                                juuniUnNen: juuniUnNen,
-                                              ),
-                                            ));
-                                      } else if (juuniUnNiti == '墓') {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) => Sihei(
-                                                hasira: '日',
-                                                juuniUnNiti: juuniUnNiti,
-                                                juuniUnGatu: juuniUnGetu,
-                                                juuniUnNen: juuniUnNen,
-                                              ),
-                                            ));
-                                      } else {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) => Sisui(
-                                                hasira: '日',
-                                                juuniUnNiti: juuniUnNiti,
-                                                juuniUnGatu: juuniUnGetu,
-                                                juuniUnNen: juuniUnNen,
-                                              ),
-                                            ));
-                                      }
-                                    },
-                                  ),
-                                ),
-                              ),
-                            ),
-                            SizedBox(
-                              width: 90,
-                              child: Container(
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(12),
-                                    border: Border.all(
-                                      color: Colors.pinkAccent,
-                                      width: 2,
-                                    )),
-                                child: Center(
-                                  child: TextButton(
-                                    child: Text(
-                                      juuniUnGetu, //12運月
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: fs,
-                                      ),
-                                    ),
-                                    onPressed: () {
-                                      if (juuniUnGetu == '胎') {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) => Sihei(
-                                                hasira: '月',
-                                                juuniUnNiti: juuniUnNiti,
-                                                juuniUnGatu: juuniUnGetu,
-                                                juuniUnNen: juuniUnNen,
-                                              ),
-                                            ));
-                                      } else if (juuniUnGetu == '養') {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) => Sihei(
-                                                hasira: '月',
-                                                juuniUnNiti: juuniUnNiti,
-                                                juuniUnGatu: juuniUnGetu,
-                                                juuniUnNen: juuniUnNen,
-                                              ),
-                                            ));
-                                      } else if (juuniUnGetu == '長') {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) => Siou(
-                                                hasira: '月',
-                                                juuniUnNiti: juuniUnNiti,
-                                                juuniUnGatu: juuniUnGetu,
-                                                juuniUnNen: juuniUnNen,
-                                              ),
-                                            ));
-                                      } else if (juuniUnGetu == '沐') {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) => Sihei(
-                                                hasira: '月',
-                                                juuniUnNiti: juuniUnNiti,
-                                                juuniUnGatu: juuniUnGetu,
-                                                juuniUnNen: juuniUnNen,
-                                              ),
-                                            ));
-                                      } else if (juuniUnGetu == '冠') {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) => Siou(
-                                                hasira: '月',
-                                                juuniUnNiti: juuniUnNiti,
-                                                juuniUnGatu: juuniUnGetu,
-                                                juuniUnNen: juuniUnNen,
-                                              ),
-                                            ));
-                                      } else if (juuniUnGetu == '建') {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) => Siou(
-                                                hasira: '月',
-                                                juuniUnNiti: juuniUnNiti,
-                                                juuniUnGatu: juuniUnGetu,
-                                                juuniUnNen: juuniUnNen,
-                                              ),
-                                            ));
-                                      } else if (juuniUnGetu == '帝') {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) => Siou(
-                                                hasira: '月',
-                                                juuniUnNiti: juuniUnNiti,
-                                                juuniUnGatu: juuniUnGetu,
-                                                juuniUnNen: juuniUnNen,
-                                              ),
-                                            ));
-                                      } else if (juuniUnGetu == '衰') {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) => Sisui(
-                                                hasira: '月',
-                                                juuniUnNiti: juuniUnNiti,
-                                                juuniUnGatu: juuniUnGetu,
-                                                juuniUnNen: juuniUnNen,
-                                              ),
-                                            ));
-                                      } else if (juuniUnGetu == '病') {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) => Sisui(
-                                                hasira: '月',
-                                                juuniUnNiti: juuniUnNiti,
-                                                juuniUnGatu: juuniUnGetu,
-                                                juuniUnNen: juuniUnNen,
-                                              ),
-                                            ));
-                                      } else if (juuniUnGetu == '死') {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) => Sisui(
-                                                hasira: '月',
-                                                juuniUnNiti: juuniUnNiti,
-                                                juuniUnGatu: juuniUnGetu,
-                                                juuniUnNen: juuniUnNen,
-                                              ),
-                                            ));
-                                      } else if (juuniUnGetu == '墓') {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) => Sihei(
-                                                hasira: '月',
-                                                juuniUnNiti: juuniUnNiti,
-                                                juuniUnGatu: juuniUnGetu,
-                                                juuniUnNen: juuniUnNen,
-                                              ),
-                                            ));
-                                      } else {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) => Sisui(
-                                                hasira: '月',
-                                                juuniUnNiti: juuniUnNiti,
-                                                juuniUnGatu: juuniUnGetu,
-                                                juuniUnNen: juuniUnNen,
-                                              ),
-                                            ));
-                                      }
-                                    },
-                                  ),
-                                ),
-                              ),
-                            ),
-                            SizedBox(
-                              width: 90,
-                              child: Container(
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(12),
-                                    border: Border.all(
-                                      color: Colors.pinkAccent,
-                                      width: 2,
-                                    )),
-                                child: Center(
-                                  child: TextButton(
-                                    child: Text(
-                                      juuniUnNen, //12運年
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: fs,
-                                      ),
-                                    ),
-                                    onPressed: () {
-                                      if (juuniUnNen == '胎') {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) => Sihei(
-                                                hasira: '年',
-                                                juuniUnNiti: juuniUnNiti,
-                                                juuniUnGatu: juuniUnGetu,
-                                                juuniUnNen: juuniUnNen,
-                                              ),
-                                            ));
-                                      } else if (juuniUnNen == '養') {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) => Sihei(
-                                                hasira: '年',
-                                                juuniUnNiti: juuniUnNiti,
-                                                juuniUnGatu: juuniUnGetu,
-                                                juuniUnNen: juuniUnNen,
-                                              ),
-                                            ));
-                                      } else if (juuniUnNen == '長') {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) => Siou(
-                                                hasira: '年',
-                                                juuniUnNiti: juuniUnNiti,
-                                                juuniUnGatu: juuniUnGetu,
-                                                juuniUnNen: juuniUnNen,
-                                              ),
-                                            ));
-                                      } else if (juuniUnNen == '沐') {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) => Sihei(
-                                                hasira: '年',
-                                                juuniUnNiti: juuniUnNiti,
-                                                juuniUnGatu: juuniUnGetu,
-                                                juuniUnNen: juuniUnNen,
-                                              ),
-                                            ));
-                                      } else if (juuniUnNen == '冠') {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) => Siou(
-                                                hasira: '年',
-                                                juuniUnNiti: juuniUnNiti,
-                                                juuniUnGatu: juuniUnGetu,
-                                                juuniUnNen: juuniUnNen,
-                                              ),
-                                            ));
-                                      } else if (juuniUnNen == '建') {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) => Siou(
-                                                hasira: '年',
-                                                juuniUnNiti: juuniUnNiti,
-                                                juuniUnGatu: juuniUnGetu,
-                                                juuniUnNen: juuniUnNen,
-                                              ),
-                                            ));
-                                      } else if (juuniUnNen == '帝') {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) => Siou(
-                                                hasira: '年',
-                                                juuniUnNiti: juuniUnNiti,
-                                                juuniUnGatu: juuniUnGetu,
-                                                juuniUnNen: juuniUnNen,
-                                              ),
-                                            ));
-                                      } else if (juuniUnNen == '衰') {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) => Sisui(
-                                                hasira: '年',
-                                                juuniUnNiti: juuniUnNiti,
-                                                juuniUnGatu: juuniUnGetu,
-                                                juuniUnNen: juuniUnNen,
-                                              ),
-                                            ));
-                                      } else if (juuniUnNen == '病') {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) => Sisui(
-                                                hasira: '年',
-                                                juuniUnNiti: juuniUnNiti,
-                                                juuniUnGatu: juuniUnGetu,
-                                                juuniUnNen: juuniUnNen,
-                                              ),
-                                            ));
-                                      } else if (juuniUnNen == '死') {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) => Sisui(
-                                                hasira: '年',
-                                                juuniUnNiti: juuniUnNiti,
-                                                juuniUnGatu: juuniUnGetu,
-                                                juuniUnNen: juuniUnNen,
-                                              ),
-                                            ));
-                                      } else if (juuniUnNen == '墓') {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) => Sihei(
-                                                hasira: '年',
-                                                juuniUnNiti: juuniUnNiti,
-                                                juuniUnGatu: juuniUnGetu,
-                                                juuniUnNen: juuniUnNen,
-                                              ),
-                                            ));
-                                      } else {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) => Sisui(
-                                                hasira: '年',
-                                                juuniUnNiti: juuniUnNiti,
-                                                juuniUnGatu: juuniUnGetu,
-                                                juuniUnNen: juuniUnNen,
-                                              ),
-                                            ));
-                                      }
-                                    },
-                                  ),
-                                ),
-                              ),
-                            ),
-                            SizedBox(
-                              width: 80,
-                              //height: 70,
-                              child: Container(
-                                decoration: BoxDecoration(
-                                    color: Colors.white24,
-                                    borderRadius: BorderRadius.circular(12),
-                                    border: Border.all(
-                                      color: Colors.pinkAccent,
-                                      width: 2,
-                                    )),
-                                child: Center(
-                                  child: TextButton(
-                                    child: Text(
-                                      '十二運', //12運年
-                                      style: TextStyle(
-                                        color: Colors.cyanAccent,
-                                        fontSize: fs - 4,
-                                      ),
-                                    ),
-                                    onPressed: () {
-                                      Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                            builder: (context) =>
-                                                const JuniJuuniun(),
-                                          ));
-                                    },
-                                    /*onLongPress: () {
-                                      Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                            builder: (context) => MeisikiPage3(
-                                                title: "oka", nenchu: '壬寅'),
-                                          ));
-                                    },*/
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          SizedBox(
-                            height: 36,
-                            width: 270,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(12),
-                                  border: Border.all(
-                                    color: Color(iroSetuiri),
-                                    width: 2,
-                                  )),
-                              child: Center(
-                                child: TextButton(
-                                  child: Text(
-                                    '節入り日（ $setuirinenInt-$setuirigatuInt-$setuirinitiInt $setuirijiInt:$setuirihunInt ）から$setuirinitisuuInt日目',
-                                    style: TextStyle(
-                                      fontSize: fs - 7,
-                                      color: Color(iroWhite),
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                  onPressed: () {
-                                    if (widget.setuirinitisuu == 1) {
-                                      _showSetuiri(context);
-                                    } else {}
-                                    /*Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                          builder: (context) => const Setuiribi(),
-                                        ));*/
-                                  },
-                                ),
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            height: 36,
-                            width: 80,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                  color: Colors.white24,
-                                  borderRadius: BorderRadius.circular(12),
-                                  border: Border.all(
-                                    color: Colors.pinkAccent,
-                                    width: 2,
-                                  )),
-                              child: Center(
-                                child: TextButton(
-                                  child: Text(
-                                    'チャート', //チャート
-                                    style: TextStyle(
-                                      color: Colors.cyanAccent,
-                                      fontSize: fs - 6,
-                                    ),
-                                  ),
-                                  onPressed: () {
-                                    Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                          builder: (context) =>
-                                              MeisikiChartPage4(
-                                            seinitiInt: seinitiInt,
-                                            seigatuInt: seigatuInt,
-                                            seinenInt: seinenInt,
-                                            nichu: nichu,
-                                            gechu: gechu,
-                                            nenchu: nenchu,
-                                            tuuhenbosiNenKan: tuuhenbosiNenKan,
-                                            tuuhenbosiNenSi: tuuhenbosiNenSi,
-                                            tuuhenbosiGetuKan:
-                                                tuuhenbosiGetuKan,
-                                            tuuhenbosiGetuSi: tuuhenbosiGetuSi,
-                                            tuuhenbosiNitiKan:
-                                                tuuhenbosiNitiKan,
-                                            tuuhenbosiNitiSi: tuuhenbosiNitiSi,
-                                          ),
-                                        ));
-                                  },
-                                  /*onLongPress: () {
-                                      Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                            builder: (context) => MeisikiPage3(
-                                                title: "oka", nenchu: '壬寅'),
-                                          ));
-                                    },*/
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                      //■■■■■■■■■取説の行■■■■■■■■■
-                      SizedBox(
-                        height: 200,
-                        child: Container(
-                          color: Colors.black54,
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
+            width: double.infinity,
+            height: double.infinity,
+            child: ListView(
+              children: [
+                ListTile(
+                  title: Container(
+                    color: Colors.black,
+                    child: SizedBox(
+                      height: 668,
+                      child: Padding(
+                        padding: const EdgeInsets.all(4.0),
+                        child: SizedBox(
+                          height: 44,
+                          child: Center(
                             child: Column(
                               children: [
-                                Text(
-                                  '赤ワクのところを、タップすると、さらに詳しい説明をみることができます。',
-                                  style: TextStyle(
-                                    fontSize: fs - 6,
-                                    color: Colors.white70,
-                                    fontWeight: FontWeight.bold,
+                                //■■■■■■■■■生年月日の行■■■■■■■■■
+                                SizedBox(
+                                  height: 60,
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      SizedBox(
+                                        width: 86,
+                                        child: Container(
+                                          //color: Colors.black45,
+                                          decoration: BoxDecoration(
+                                              color: Colors.white24,
+                                              borderRadius:
+                                                  BorderRadius.circular(12),
+                                              border: Border.all(
+                                                color: Colors.tealAccent,
+                                                width: 1,
+                                              )),
+                                          child: Center(
+                                            child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                Text(
+                                                  '$seinitiInt',
+                                                  style: TextStyle(
+                                                    fontSize: fs,
+                                                    color: Colors.cyanAccent,
+                                                  ),
+                                                ),
+                                                Text(
+                                                  '日',
+                                                  style: TextStyle(
+                                                    fontSize: fs - 2,
+                                                    color: Colors.cyanAccent,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 86,
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                              color: Colors.white24,
+                                              borderRadius:
+                                                  BorderRadius.circular(12),
+                                              border: Border.all(
+                                                color: Colors.tealAccent,
+                                                width: 1,
+                                              )),
+                                          child: Center(
+                                            child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                Text(
+                                                  '$seigatuInt',
+                                                  style: TextStyle(
+                                                    fontSize: fs,
+                                                    color: Colors.cyanAccent,
+                                                  ),
+                                                ),
+                                                Text(
+                                                  '月',
+                                                  style: TextStyle(
+                                                    fontSize: fs - 2,
+                                                    color: Colors.cyanAccent,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 86,
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                              color: Colors.white24,
+                                              borderRadius:
+                                                  BorderRadius.circular(12),
+                                              border: Border.all(
+                                                color: Colors.tealAccent,
+                                                width: 1,
+                                              )),
+                                          child: Center(
+                                            child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                Text(
+                                                  '$seinenInt',
+                                                  style: TextStyle(
+                                                    fontSize: fs,
+                                                    color: Colors.cyanAccent,
+                                                  ),
+                                                ),
+                                                Text(
+                                                  '年',
+                                                  style: TextStyle(
+                                                    fontSize: fs - 2,
+                                                    color: Colors.cyanAccent,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 60,
+                                        height: 70,
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                              color: Colors.white24,
+                                              borderRadius:
+                                                  BorderRadius.circular(12),
+                                              border: Border.all(
+                                                color: Colors.tealAccent,
+                                                width: 1,
+                                              )),
+                                          child: Center(
+                                            child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                Text(
+                                                  '生年',
+                                                  style: TextStyle(
+                                                    fontSize: fs - 6,
+                                                    color: Colors.cyanAccent,
+                                                  ),
+                                                ),
+                                                Text(
+                                                  '月日',
+                                                  style: TextStyle(
+                                                    fontSize: fs - 6,
+                                                    color: Colors.cyanAccent,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                 ),
-                                /*
-                                Text('$_counter'),
-                                Text('$zenGo'),
-                                //Text('年柱：$nenchuNo'),
-                                //Text('月柱：$gechuNo'),
-                                Text('$nitiSiNo:$nitisi'),
-                                Text('$gatuSiNo:$gatusi'),
-                                Text('$nenSiNo:$nensi'),
-                                */
+
+                                //■■■■■■■■■天干の行■■■■■■■■■
+                                SizedBox(
+                                  height: hi,
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      SizedBox(
+                                        width: 86,
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(12),
+                                              border: Border.all(
+                                                color: Colors.pinkAccent,
+                                                width: 2,
+                                              )),
+                                          child: Center(
+                                            child: TextButton(
+                                              child: Text(
+                                                nitikan,
+                                                style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: fs,
+                                                ),
+                                              ),
+                                              onPressed: () {
+                                                if (nitikan == '甲') {
+                                                  Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            const NikkanKinoe(),
+                                                      ));
+                                                } else if (nitikan == '乙') {
+                                                  Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            const NikkanKinoto(),
+                                                      ));
+                                                } else if (nitikan == '丙') {
+                                                  Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            const NikkanHinoe(),
+                                                      ));
+                                                } else if (nitikan == '丁') {
+                                                  Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            const NikkanHinoto(),
+                                                      ));
+                                                } else if (nitikan == '戊') {
+                                                  Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            const NikkanTutinoe(),
+                                                      ));
+                                                } else if (nitikan == '己') {
+                                                  Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            const NikkanTutinoto(),
+                                                      ));
+                                                } else if (nitikan == '庚') {
+                                                  Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            const NikkanKanoe(),
+                                                      ));
+                                                } else if (nitikan == '辛') {
+                                                  Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            const NikkanKanoto(),
+                                                      ));
+                                                } else if (nitikan == '壬') {
+                                                  Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            const NikkanMizunoe(),
+                                                      ));
+                                                } else {
+                                                  Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            const NikkanMizunoto(),
+                                                      ));
+                                                }
+                                              },
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 86,
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(12),
+                                              border: Border.all(
+                                                color: Colors.tealAccent,
+                                                width: 1,
+                                              )),
+                                          child: Center(
+                                            child: Text(
+                                              gatukan,
+                                              style: TextStyle(
+                                                fontSize: fs,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 86,
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(12),
+                                              border: Border.all(
+                                                color: Colors.tealAccent,
+                                                width: 1,
+                                              )),
+                                          child: Center(
+                                            child: Text(
+                                              nenkan,
+                                              style: TextStyle(
+                                                fontSize: fs,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 60,
+                                        //height: 70,
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                              color: Colors.white24,
+                                              borderRadius:
+                                                  BorderRadius.circular(12),
+                                              border: Border.all(
+                                                color: Colors.tealAccent,
+                                                width: 1,
+                                              )),
+                                          child: Center(
+                                            child: Text(
+                                              '干',
+                                              style: TextStyle(
+                                                fontSize: fs - 2,
+                                                color: Colors.cyanAccent,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                //■■■■■■■■■地支の行■■■■■■■■■
+                                SizedBox(
+                                  height: hi,
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      SizedBox(
+                                        width: 86,
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(12),
+                                              border: Border.all(
+                                                color: Colors.tealAccent,
+                                                width: 1,
+                                              )),
+                                          child: Center(
+                                            child: Text(
+                                              nitisi,
+                                              style: TextStyle(
+                                                fontSize: fs,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 86,
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(12),
+                                              border: Border.all(
+                                                color: Colors.tealAccent,
+                                                width: 1,
+                                              )),
+                                          child: Center(
+                                            child: Text(
+                                              gatusi,
+                                              style: TextStyle(
+                                                fontSize: fs,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 86,
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(12),
+                                              border: Border.all(
+                                                color: Colors.tealAccent,
+                                                width: 1,
+                                              )),
+                                          child: Center(
+                                            child: Text(
+                                              nensi,
+                                              style: TextStyle(
+                                                fontSize: fs,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 60,
+                                        height: 70,
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                              color: Colors.white24,
+                                              borderRadius:
+                                                  BorderRadius.circular(12),
+                                              border: Border.all(
+                                                color: Colors.tealAccent,
+                                                width: 1,
+                                              )),
+                                          child: Center(
+                                            child: Text(
+                                              '支',
+                                              style: TextStyle(
+                                                fontSize: fs - 2,
+                                                color: Colors.cyanAccent,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                //■■■■■■■■■支合支冲の行■■■■■■■■■
+                                SizedBox(
+                                  height: 60,
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      SizedBox(
+                                        width: 258,
+                                        child: Column(
+                                          children: [
+                                            SizedBox(
+                                              height: 30,
+                                              child: Row(
+                                                children: [
+                                                  SizedBox(
+                                                    width: 30,
+                                                    child: Container(),
+                                                  ),
+                                                  SizedBox(
+                                                    width: 84,
+                                                    child: Container(
+                                                      decoration: BoxDecoration(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(12),
+                                                          border: Border.all(
+                                                            color: Colors
+                                                                .tealAccent,
+                                                            width: 1,
+                                                          )),
+                                                    ),
+                                                  ),
+                                                  const SizedBox(
+                                                    width: 30,
+                                                  ),
+                                                  SizedBox(
+                                                    width: 84,
+                                                    child: Container(
+                                                      decoration: BoxDecoration(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(12),
+                                                          border: Border.all(
+                                                            color: Colors
+                                                                .tealAccent,
+                                                            width: 1,
+                                                          )),
+                                                    ),
+                                                  ),
+                                                  const SizedBox(
+                                                    width: 30,
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              height: 30,
+                                              child: Row(
+                                                children: [
+                                                  const SizedBox(
+                                                    width: 60,
+                                                  ),
+                                                  SizedBox(
+                                                    width: 138,
+                                                    child: Container(
+                                                      decoration: BoxDecoration(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(12),
+                                                          border: Border.all(
+                                                            color: Colors
+                                                                .tealAccent,
+                                                            width: 1,
+                                                          )),
+                                                    ),
+                                                  ),
+                                                  const SizedBox(
+                                                    width: 60,
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 60,
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                              color: Colors.white24,
+                                              borderRadius:
+                                                  BorderRadius.circular(12),
+                                              border: Border.all(
+                                                color: Colors.tealAccent,
+                                                width: 1,
+                                              )),
+                                          child: Center(
+                                            child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                Text(
+                                                  '支合',
+                                                  style: TextStyle(
+                                                    fontSize: fs - 4,
+                                                    color: Colors.cyanAccent,
+                                                  ),
+                                                ),
+                                                Text(
+                                                  '支冲',
+                                                  style: TextStyle(
+                                                    fontSize: fs - 4,
+                                                    color: Colors.cyanAccent,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                //■■■■■■■■■蔵干の行■■■■■■■■■
+                                SizedBox(
+                                  height: hi,
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      SizedBox(
+                                        width: 90,
+                                        //height: 70,
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(12),
+                                              border: Border.all(
+                                                color: Colors.tealAccent,
+                                                width: 1,
+                                              )),
+                                          child: Center(
+                                              child: Text(
+                                            zouKanNiti,
+                                            style: TextStyle(
+                                              fontSize: fs,
+                                            ),
+                                          )),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 86,
+                                        //height: 70,
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(12),
+                                              border: Border.all(
+                                                color: Colors.tealAccent,
+                                                width: 1,
+                                              )),
+                                          child: Center(
+                                              child: Text(
+                                            zouKanTuki,
+                                            style: TextStyle(
+                                              fontSize: fs,
+                                            ),
+                                          )),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 86,
+                                        //height: 70,
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(12),
+                                              border: Border.all(
+                                                color: Colors.tealAccent,
+                                                width: 1,
+                                              )),
+                                          child: Center(
+                                              child: Text(
+                                            zouKanNen,
+                                            style: TextStyle(
+                                              fontSize: fs,
+                                            ),
+                                          )),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 60,
+                                        height: 70,
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                              color: Colors.white24,
+                                              borderRadius:
+                                                  BorderRadius.circular(12),
+                                              border: Border.all(
+                                                color: Colors.tealAccent,
+                                                width: 1,
+                                              )),
+                                          child: Center(
+                                            child: Text(
+                                              '蔵干',
+                                              style: TextStyle(
+                                                fontSize: fs - 2,
+                                                color: Colors.cyanAccent,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                //■■■■■■■■■通変星の行■■■■■■■■■
+                                SizedBox(
+                                  height: hi * 2,
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      SizedBox(
+                                        width: 86,
+                                        child: Column(
+                                          children: [
+                                            SizedBox(
+                                              height: hi,
+                                              child: Container(
+                                                decoration: BoxDecoration(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            12),
+                                                    border: Border.all(
+                                                      color: Colors.tealAccent,
+                                                      width: 1,
+                                                    )),
+                                                child: Center(
+                                                    child: Text(
+                                                  '', //日天
+                                                  style: TextStyle(
+                                                    fontSize: fs - 2,
+                                                  ),
+                                                )),
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              height: hi,
+                                              child: Container(
+                                                decoration: BoxDecoration(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            12),
+                                                    border: Border.all(
+                                                      color: Colors.tealAccent,
+                                                      width: 1,
+                                                    )),
+                                                child: Center(
+                                                    child: Text(
+                                                  tuuhenbosiNitiSi, //日地
+                                                  style: TextStyle(
+                                                    fontSize: fs - 2,
+                                                  ),
+                                                )),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 86,
+                                        child: Column(
+                                          children: [
+                                            SizedBox(
+                                              height: hi,
+                                              child: Container(
+                                                decoration: BoxDecoration(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            12),
+                                                    border: Border.all(
+                                                      color: Colors.tealAccent,
+                                                      width: 1,
+                                                    )),
+                                                child: Center(
+                                                    child: Text(
+                                                  tuuhenbosiGetuKan, //月天
+                                                  style: TextStyle(
+                                                    fontSize: fs - 2,
+                                                  ),
+                                                )),
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              height: hi,
+                                              child: Container(
+                                                decoration: BoxDecoration(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            12),
+                                                    border: Border.all(
+                                                      color: Colors.tealAccent,
+                                                      width: 1,
+                                                    )),
+                                                child: Center(
+                                                    child: Text(
+                                                  tuuhenbosiGetuSi, //月地
+                                                  style: TextStyle(
+                                                    fontSize: fs - 2,
+                                                  ),
+                                                )),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 86,
+                                        child: Column(
+                                          children: [
+                                            SizedBox(
+                                              height: hi,
+                                              child: Container(
+                                                decoration: BoxDecoration(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            12),
+                                                    border: Border.all(
+                                                      color: Colors.tealAccent,
+                                                      width: 1,
+                                                    )),
+                                                child: Center(
+                                                    child: Text(
+                                                  tuuhenbosiNenKan, //年天
+                                                  style: TextStyle(
+                                                    fontSize: fs - 2,
+                                                  ),
+                                                )),
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              height: hi,
+                                              child: Container(
+                                                decoration: BoxDecoration(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            12),
+                                                    border: Border.all(
+                                                      color: Colors.tealAccent,
+                                                      width: 1,
+                                                    )),
+                                                child: Center(
+                                                    child: Text(
+                                                  tuuhenbosiNenSi, //年地
+                                                  style: TextStyle(
+                                                    fontSize: fs - 2,
+                                                  ),
+                                                )),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 60,
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                              color: Colors.white24,
+                                              borderRadius:
+                                                  BorderRadius.circular(12),
+                                              border: Border.all(
+                                                color: Colors.tealAccent,
+                                                width: 1,
+                                              )),
+                                          child: Center(
+                                            child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                Text(
+                                                  '通',
+                                                  style: TextStyle(
+                                                    fontSize: fs - 2,
+                                                    color: Colors.cyanAccent,
+                                                  ),
+                                                ),
+                                                Text(
+                                                  '変',
+                                                  style: TextStyle(
+                                                    fontSize: fs - 2,
+                                                    color: Colors.cyanAccent,
+                                                  ),
+                                                ),
+                                                Text(
+                                                  '星',
+                                                  style: TextStyle(
+                                                    fontSize: fs - 2,
+                                                    color: Colors.cyanAccent,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                //■■■■■■■■■12運の行■■■■■■■■■
+                                SizedBox(
+                                  height: hi,
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      SizedBox(
+                                        width: 86,
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(12),
+                                              border: Border.all(
+                                                color: Colors.pinkAccent,
+                                                width: 2,
+                                              )),
+                                          child: Center(
+                                            child: TextButton(
+                                              child: Text(
+                                                juuniUnNiti, //12運日
+                                                style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: fs,
+                                                ),
+                                              ),
+                                              onPressed: () {
+                                                if (juuniUnNiti == '胎') {
+                                                  Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            Sihei(
+                                                          hasira: '日',
+                                                          juuniUnNiti:
+                                                              juuniUnNiti,
+                                                          juuniUnGatu:
+                                                              juuniUnGetu,
+                                                          juuniUnNen:
+                                                              juuniUnNen,
+                                                        ),
+                                                      ));
+                                                } else if (juuniUnNiti == '養') {
+                                                  Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            Sihei(
+                                                          hasira: '日',
+                                                          juuniUnNiti:
+                                                              juuniUnNiti,
+                                                          juuniUnGatu:
+                                                              juuniUnGetu,
+                                                          juuniUnNen:
+                                                              juuniUnNen,
+                                                        ),
+                                                      ));
+                                                } else if (juuniUnNiti == '長') {
+                                                  Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            Siou(
+                                                          hasira: '日',
+                                                          juuniUnNiti:
+                                                              juuniUnNiti,
+                                                          juuniUnGatu:
+                                                              juuniUnGetu,
+                                                          juuniUnNen:
+                                                              juuniUnNen,
+                                                        ),
+                                                      ));
+                                                } else if (juuniUnNiti == '沐') {
+                                                  Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            Sihei(
+                                                          hasira: '日',
+                                                          juuniUnNiti:
+                                                              juuniUnNiti,
+                                                          juuniUnGatu:
+                                                              juuniUnGetu,
+                                                          juuniUnNen:
+                                                              juuniUnNen,
+                                                        ),
+                                                      ));
+                                                } else if (juuniUnNiti == '冠') {
+                                                  Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            Siou(
+                                                          hasira: '日',
+                                                          juuniUnNiti:
+                                                              juuniUnNiti,
+                                                          juuniUnGatu:
+                                                              juuniUnGetu,
+                                                          juuniUnNen:
+                                                              juuniUnNen,
+                                                        ),
+                                                      ));
+                                                } else if (juuniUnNiti == '建') {
+                                                  Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            Siou(
+                                                          hasira: '日',
+                                                          juuniUnNiti:
+                                                              juuniUnNiti,
+                                                          juuniUnGatu:
+                                                              juuniUnGetu,
+                                                          juuniUnNen:
+                                                              juuniUnNen,
+                                                        ),
+                                                      ));
+                                                } else if (juuniUnNiti == '帝') {
+                                                  Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            Siou(
+                                                          hasira: '日',
+                                                          juuniUnNiti:
+                                                              juuniUnNiti,
+                                                          juuniUnGatu:
+                                                              juuniUnGetu,
+                                                          juuniUnNen:
+                                                              juuniUnNen,
+                                                        ),
+                                                      ));
+                                                } else if (juuniUnNiti == '衰') {
+                                                  Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            Sisui(
+                                                          hasira: '日',
+                                                          juuniUnNiti:
+                                                              juuniUnNiti,
+                                                          juuniUnGatu:
+                                                              juuniUnGetu,
+                                                          juuniUnNen:
+                                                              juuniUnNen,
+                                                        ),
+                                                      ));
+                                                } else if (juuniUnNiti == '病') {
+                                                  Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            Sisui(
+                                                          hasira: '日',
+                                                          juuniUnNiti:
+                                                              juuniUnNiti,
+                                                          juuniUnGatu:
+                                                              juuniUnGetu,
+                                                          juuniUnNen:
+                                                              juuniUnNen,
+                                                        ),
+                                                      ));
+                                                } else if (juuniUnNiti == '死') {
+                                                  Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            Sisui(
+                                                          hasira: '日',
+                                                          juuniUnNiti:
+                                                              juuniUnNiti,
+                                                          juuniUnGatu:
+                                                              juuniUnGetu,
+                                                          juuniUnNen:
+                                                              juuniUnNen,
+                                                        ),
+                                                      ));
+                                                } else if (juuniUnNiti == '墓') {
+                                                  Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            Sihei(
+                                                          hasira: '日',
+                                                          juuniUnNiti:
+                                                              juuniUnNiti,
+                                                          juuniUnGatu:
+                                                              juuniUnGetu,
+                                                          juuniUnNen:
+                                                              juuniUnNen,
+                                                        ),
+                                                      ));
+                                                } else {
+                                                  Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            Sisui(
+                                                          hasira: '日',
+                                                          juuniUnNiti:
+                                                              juuniUnNiti,
+                                                          juuniUnGatu:
+                                                              juuniUnGetu,
+                                                          juuniUnNen:
+                                                              juuniUnNen,
+                                                        ),
+                                                      ));
+                                                }
+                                              },
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 86,
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(12),
+                                              border: Border.all(
+                                                color: Colors.pinkAccent,
+                                                width: 2,
+                                              )),
+                                          child: Center(
+                                            child: TextButton(
+                                              child: Text(
+                                                juuniUnGetu, //12運月
+                                                style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: fs,
+                                                ),
+                                              ),
+                                              onPressed: () {
+                                                if (juuniUnGetu == '胎') {
+                                                  Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            Sihei(
+                                                          hasira: '月',
+                                                          juuniUnNiti:
+                                                              juuniUnNiti,
+                                                          juuniUnGatu:
+                                                              juuniUnGetu,
+                                                          juuniUnNen:
+                                                              juuniUnNen,
+                                                        ),
+                                                      ));
+                                                } else if (juuniUnGetu == '養') {
+                                                  Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            Sihei(
+                                                          hasira: '月',
+                                                          juuniUnNiti:
+                                                              juuniUnNiti,
+                                                          juuniUnGatu:
+                                                              juuniUnGetu,
+                                                          juuniUnNen:
+                                                              juuniUnNen,
+                                                        ),
+                                                      ));
+                                                } else if (juuniUnGetu == '長') {
+                                                  Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            Siou(
+                                                          hasira: '月',
+                                                          juuniUnNiti:
+                                                              juuniUnNiti,
+                                                          juuniUnGatu:
+                                                              juuniUnGetu,
+                                                          juuniUnNen:
+                                                              juuniUnNen,
+                                                        ),
+                                                      ));
+                                                } else if (juuniUnGetu == '沐') {
+                                                  Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            Sihei(
+                                                          hasira: '月',
+                                                          juuniUnNiti:
+                                                              juuniUnNiti,
+                                                          juuniUnGatu:
+                                                              juuniUnGetu,
+                                                          juuniUnNen:
+                                                              juuniUnNen,
+                                                        ),
+                                                      ));
+                                                } else if (juuniUnGetu == '冠') {
+                                                  Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            Siou(
+                                                          hasira: '月',
+                                                          juuniUnNiti:
+                                                              juuniUnNiti,
+                                                          juuniUnGatu:
+                                                              juuniUnGetu,
+                                                          juuniUnNen:
+                                                              juuniUnNen,
+                                                        ),
+                                                      ));
+                                                } else if (juuniUnGetu == '建') {
+                                                  Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            Siou(
+                                                          hasira: '月',
+                                                          juuniUnNiti:
+                                                              juuniUnNiti,
+                                                          juuniUnGatu:
+                                                              juuniUnGetu,
+                                                          juuniUnNen:
+                                                              juuniUnNen,
+                                                        ),
+                                                      ));
+                                                } else if (juuniUnGetu == '帝') {
+                                                  Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            Siou(
+                                                          hasira: '月',
+                                                          juuniUnNiti:
+                                                              juuniUnNiti,
+                                                          juuniUnGatu:
+                                                              juuniUnGetu,
+                                                          juuniUnNen:
+                                                              juuniUnNen,
+                                                        ),
+                                                      ));
+                                                } else if (juuniUnGetu == '衰') {
+                                                  Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            Sisui(
+                                                          hasira: '月',
+                                                          juuniUnNiti:
+                                                              juuniUnNiti,
+                                                          juuniUnGatu:
+                                                              juuniUnGetu,
+                                                          juuniUnNen:
+                                                              juuniUnNen,
+                                                        ),
+                                                      ));
+                                                } else if (juuniUnGetu == '病') {
+                                                  Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            Sisui(
+                                                          hasira: '月',
+                                                          juuniUnNiti:
+                                                              juuniUnNiti,
+                                                          juuniUnGatu:
+                                                              juuniUnGetu,
+                                                          juuniUnNen:
+                                                              juuniUnNen,
+                                                        ),
+                                                      ));
+                                                } else if (juuniUnGetu == '死') {
+                                                  Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            Sisui(
+                                                          hasira: '月',
+                                                          juuniUnNiti:
+                                                              juuniUnNiti,
+                                                          juuniUnGatu:
+                                                              juuniUnGetu,
+                                                          juuniUnNen:
+                                                              juuniUnNen,
+                                                        ),
+                                                      ));
+                                                } else if (juuniUnGetu == '墓') {
+                                                  Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            Sihei(
+                                                          hasira: '月',
+                                                          juuniUnNiti:
+                                                              juuniUnNiti,
+                                                          juuniUnGatu:
+                                                              juuniUnGetu,
+                                                          juuniUnNen:
+                                                              juuniUnNen,
+                                                        ),
+                                                      ));
+                                                } else {
+                                                  Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            Sisui(
+                                                          hasira: '月',
+                                                          juuniUnNiti:
+                                                              juuniUnNiti,
+                                                          juuniUnGatu:
+                                                              juuniUnGetu,
+                                                          juuniUnNen:
+                                                              juuniUnNen,
+                                                        ),
+                                                      ));
+                                                }
+                                              },
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 86,
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(12),
+                                              border: Border.all(
+                                                color: Colors.pinkAccent,
+                                                width: 2,
+                                              )),
+                                          child: Center(
+                                            child: TextButton(
+                                              child: Text(
+                                                juuniUnNen, //12運年
+                                                style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: fs,
+                                                ),
+                                              ),
+                                              onPressed: () {
+                                                if (juuniUnNen == '胎') {
+                                                  Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            Sihei(
+                                                          hasira: '年',
+                                                          juuniUnNiti:
+                                                              juuniUnNiti,
+                                                          juuniUnGatu:
+                                                              juuniUnGetu,
+                                                          juuniUnNen:
+                                                              juuniUnNen,
+                                                        ),
+                                                      ));
+                                                } else if (juuniUnNen == '養') {
+                                                  Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            Sihei(
+                                                          hasira: '年',
+                                                          juuniUnNiti:
+                                                              juuniUnNiti,
+                                                          juuniUnGatu:
+                                                              juuniUnGetu,
+                                                          juuniUnNen:
+                                                              juuniUnNen,
+                                                        ),
+                                                      ));
+                                                } else if (juuniUnNen == '長') {
+                                                  Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            Siou(
+                                                          hasira: '年',
+                                                          juuniUnNiti:
+                                                              juuniUnNiti,
+                                                          juuniUnGatu:
+                                                              juuniUnGetu,
+                                                          juuniUnNen:
+                                                              juuniUnNen,
+                                                        ),
+                                                      ));
+                                                } else if (juuniUnNen == '沐') {
+                                                  Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            Sihei(
+                                                          hasira: '年',
+                                                          juuniUnNiti:
+                                                              juuniUnNiti,
+                                                          juuniUnGatu:
+                                                              juuniUnGetu,
+                                                          juuniUnNen:
+                                                              juuniUnNen,
+                                                        ),
+                                                      ));
+                                                } else if (juuniUnNen == '冠') {
+                                                  Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            Siou(
+                                                          hasira: '年',
+                                                          juuniUnNiti:
+                                                              juuniUnNiti,
+                                                          juuniUnGatu:
+                                                              juuniUnGetu,
+                                                          juuniUnNen:
+                                                              juuniUnNen,
+                                                        ),
+                                                      ));
+                                                } else if (juuniUnNen == '建') {
+                                                  Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            Siou(
+                                                          hasira: '年',
+                                                          juuniUnNiti:
+                                                              juuniUnNiti,
+                                                          juuniUnGatu:
+                                                              juuniUnGetu,
+                                                          juuniUnNen:
+                                                              juuniUnNen,
+                                                        ),
+                                                      ));
+                                                } else if (juuniUnNen == '帝') {
+                                                  Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            Siou(
+                                                          hasira: '年',
+                                                          juuniUnNiti:
+                                                              juuniUnNiti,
+                                                          juuniUnGatu:
+                                                              juuniUnGetu,
+                                                          juuniUnNen:
+                                                              juuniUnNen,
+                                                        ),
+                                                      ));
+                                                } else if (juuniUnNen == '衰') {
+                                                  Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            Sisui(
+                                                          hasira: '年',
+                                                          juuniUnNiti:
+                                                              juuniUnNiti,
+                                                          juuniUnGatu:
+                                                              juuniUnGetu,
+                                                          juuniUnNen:
+                                                              juuniUnNen,
+                                                        ),
+                                                      ));
+                                                } else if (juuniUnNen == '病') {
+                                                  Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            Sisui(
+                                                          hasira: '年',
+                                                          juuniUnNiti:
+                                                              juuniUnNiti,
+                                                          juuniUnGatu:
+                                                              juuniUnGetu,
+                                                          juuniUnNen:
+                                                              juuniUnNen,
+                                                        ),
+                                                      ));
+                                                } else if (juuniUnNen == '死') {
+                                                  Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            Sisui(
+                                                          hasira: '年',
+                                                          juuniUnNiti:
+                                                              juuniUnNiti,
+                                                          juuniUnGatu:
+                                                              juuniUnGetu,
+                                                          juuniUnNen:
+                                                              juuniUnNen,
+                                                        ),
+                                                      ));
+                                                } else if (juuniUnNen == '墓') {
+                                                  Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            Sihei(
+                                                          hasira: '年',
+                                                          juuniUnNiti:
+                                                              juuniUnNiti,
+                                                          juuniUnGatu:
+                                                              juuniUnGetu,
+                                                          juuniUnNen:
+                                                              juuniUnNen,
+                                                        ),
+                                                      ));
+                                                } else {
+                                                  Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            Sisui(
+                                                          hasira: '年',
+                                                          juuniUnNiti:
+                                                              juuniUnNiti,
+                                                          juuniUnGatu:
+                                                              juuniUnGetu,
+                                                          juuniUnNen:
+                                                              juuniUnNen,
+                                                        ),
+                                                      ));
+                                                }
+                                              },
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 60,
+                                        //height: 70,
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                              color: Colors.white24,
+                                              borderRadius:
+                                                  BorderRadius.circular(12),
+                                              border: Border.all(
+                                                color: Colors.pinkAccent,
+                                                width: 2,
+                                              )),
+                                          child: Center(
+                                            child: TextButton(
+                                              child: Text(
+                                                '十二運', //12運年
+                                                style: TextStyle(
+                                                  color: Colors.cyanAccent,
+                                                  fontSize: fs - 7,
+                                                ),
+                                              ),
+                                              onPressed: () {
+                                                Navigator.push(
+                                                    context,
+                                                    MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          const JuniJuuniun(),
+                                                    ));
+                                              },
+                                              /*onLongPress: () {
+                                                Navigator.push(
+                                                    context,
+                                                    MaterialPageRoute(
+                                                      builder: (context) => MeisikiPage3(
+                                                          title: "oka", nenchu: '壬寅'),
+                                                    ));
+                                              },*/
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    SizedBox(
+                                      height: 36,
+                                      width: 258,
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(12),
+                                            border: Border.all(
+                                              color: Color(iroSetuiri),
+                                              width: 2,
+                                            )),
+                                        child: Center(
+                                          child: TextButton(
+                                            child: Text(
+                                              '節入り日（ $setuirinenInt-$setuirigatuInt-$setuirinitiInt $setuirijiInt:$setuirihunInt ）から$setuirinitisuuInt日目',
+                                              style: TextStyle(
+                                                fontSize: fs - 8,
+                                                color: Color(iroWhite),
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            ),
+                                            onPressed: () {
+                                              if (widget.setuirinitisuu == 1) {
+                                                _showSetuiri(context);
+                                              } else {}
+                                              /*Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                    builder: (context) => const Setuiribi(),
+                                                  ));*/
+                                            },
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 36,
+                                      width: 60,
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                            color: Colors.white24,
+                                            borderRadius:
+                                                BorderRadius.circular(12),
+                                            border: Border.all(
+                                              color: Colors.pinkAccent,
+                                              width: 2,
+                                            )),
+                                        child: Center(
+                                          child: TextButton(
+                                            child: Text(
+                                              'チャート', //チャート
+                                              style: TextStyle(
+                                                color: Colors.cyanAccent,
+                                                fontSize: fs - 10,
+                                              ),
+                                            ),
+                                            onPressed: () {
+                                              Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        MeisikiChartPage4(
+                                                      seinitiInt: seinitiInt,
+                                                      seigatuInt: seigatuInt,
+                                                      seinenInt: seinenInt,
+                                                      nichu: nichu,
+                                                      gechu: gechu,
+                                                      nenchu: nenchu,
+                                                      tuuhenbosiNenKan:
+                                                          tuuhenbosiNenKan,
+                                                      tuuhenbosiNenSi:
+                                                          tuuhenbosiNenSi,
+                                                      tuuhenbosiGetuKan:
+                                                          tuuhenbosiGetuKan,
+                                                      tuuhenbosiGetuSi:
+                                                          tuuhenbosiGetuSi,
+                                                      tuuhenbosiNitiKan:
+                                                          tuuhenbosiNitiKan,
+                                                      tuuhenbosiNitiSi:
+                                                          tuuhenbosiNitiSi,
+                                                    ),
+                                                  ));
+                                            },
+                                            /*onLongPress: () {
+                                                Navigator.push(
+                                                    context,
+                                                    MaterialPageRoute(
+                                                      builder: (context) => MeisikiPage3(
+                                                          title: "oka", nenchu: '壬寅'),
+                                                    ));
+                                              },*/
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                //■■■■■■■■■取説の行■■■■■■■■■
+                                SizedBox(
+                                  height: 200,
+                                  child: Container(
+                                    color: Colors.black54,
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Column(
+                                        children: [
+                                          Text(
+                                            '赤ワクのところを、タップすると、さらに詳しい説明をみることができます。',
+                                            style: TextStyle(
+                                              fontSize: fs - 6,
+                                              color: Colors.white70,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                          /*
+                                          Text('$_counter'),
+                                          Text('$zenGo'),
+                                          //Text('年柱：$nenchuNo'),
+                                          //Text('月柱：$gechuNo'),
+                                          Text('$nitiSiNo:$nitisi'),
+                                          Text('$gatuSiNo:$gatusi'),
+                                          Text('$nenSiNo:$nensi'),
+                                          */
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ),
                               ],
                             ),
                           ),
                         ),
                       ),
-                    ],
+                    ),
                   ),
                 ),
-              ),
+              ],
             ),
           ),
         ),
