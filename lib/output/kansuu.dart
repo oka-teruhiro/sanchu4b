@@ -328,7 +328,7 @@ zouKan(String a, int b) {
   return c;
 }
 
-// 関数定義
+/*// 関数定義
 //  d = meisiki(a,b,c)
 // a: 西暦年（1920年〜2029年）数字
 // b: 月の数字
@@ -502,7 +502,7 @@ String meisiki(int a, int b, int c) {
   // String setuiriNitiS = // 仮の節入り日の文字
   String d = nenchu + gechu + nichu;
   return d;
-}
+}*/
 
 // 関数定義
 //  d = meisiki(a,b,c)

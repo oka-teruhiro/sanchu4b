@@ -107,6 +107,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   int item = 0;
 
+  @override
   void initState() {
     super.initState();
     _getPrefItems();
@@ -260,7 +261,7 @@ class _MyHomePageState extends State<MyHomePage> {
       child: Scaffold(
         backgroundColor: Colors.black,
         appBar: AppBar(
-          title: const Text('天運三柱推命 ver.4.1.44',
+          title: const Text('天運三柱推命 ver.4.1.45',
               style: TextStyle(
                 color: Colors.pinkAccent,
                 fontWeight: FontWeight.bold,
