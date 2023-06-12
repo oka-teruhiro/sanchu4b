@@ -1843,21 +1843,21 @@ class _MeisikiPage3State extends State<MeisikiPage3> {
                                                       seinitiInt: seinitiInt,
                                                       seigatuInt: seigatuInt,
                                                       seinenInt: seinenInt,
-                                                      nichu: nichu,
-                                                      gechu: gechu,
-                                                      nenchu: nenchu,
-                                                      tuuhenbosiNenKan:
-                                                          tuuhenbosiNenKan,
-                                                      tuuhenbosiNenSi:
-                                                          tuuhenbosiNenSi,
-                                                      tuuhenbosiGetuKan:
-                                                          tuuhenbosiGetuKan,
-                                                      tuuhenbosiGetuSi:
-                                                          tuuhenbosiGetuSi,
-                                                      tuuhenbosiNitiKan:
-                                                          tuuhenbosiNitiKan,
-                                                      tuuhenbosiNitiSi:
-                                                          tuuhenbosiNitiSi,
+                                                      // nichu: nichu,
+                                                      // gechu: gechu,
+                                                      // nenchu: nenchu,
+                                                      // tuuhenbosiNenKan:
+                                                      //     tuuhenbosiNenKan,
+                                                      // tuuhenbosiNenSi:
+                                                      //     tuuhenbosiNenSi,
+                                                      // tuuhenbosiGetuKan:
+                                                      //     tuuhenbosiGetuKan,
+                                                      // tuuhenbosiGetuSi:
+                                                      //     tuuhenbosiGetuSi,
+                                                      // tuuhenbosiNitiKan:
+                                                      //     tuuhenbosiNitiKan,
+                                                      // tuuhenbosiNitiSi:
+                                                      //     tuuhenbosiNitiSi,
                                                     ),
                                                   ));
                                             },

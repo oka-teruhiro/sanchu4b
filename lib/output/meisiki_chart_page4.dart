@@ -8,29 +8,29 @@ class MeisikiChartPage4 extends StatefulWidget {
   final int seinenInt;
   final int seigatuInt;
   final int seinitiInt;
-  final String nichu;
-  final String gechu;
-  final String nenchu;
-  final String tuuhenbosiNenKan;
-  final String tuuhenbosiNenSi;
-  final String tuuhenbosiGetuKan;
-  final String tuuhenbosiGetuSi;
-  final String tuuhenbosiNitiKan;
-  final String tuuhenbosiNitiSi;
+  // final String nichu;
+  // final String gechu;
+  // final String nenchu;
+  // final String tuuhenbosiNenKan;
+  // final String tuuhenbosiNenSi;
+  // final String tuuhenbosiGetuKan;
+  // final String tuuhenbosiGetuSi;
+  // final String tuuhenbosiNitiKan;
+  // final String tuuhenbosiNitiSi;
   const MeisikiChartPage4({
     Key? key,
     required this.seinenInt,
     required this.seigatuInt,
     required this.seinitiInt,
-    required this.nichu,
-    required this.gechu,
-    required this.nenchu,
-    required this.tuuhenbosiNenKan,
-    required this.tuuhenbosiNenSi,
-    required this.tuuhenbosiGetuKan,
-    required this.tuuhenbosiGetuSi,
-    required this.tuuhenbosiNitiKan,
-    required this.tuuhenbosiNitiSi,
+    // required this.nichu,
+    // required this.gechu,
+    // required this.nenchu,
+    // required this.tuuhenbosiNenKan,
+    // required this.tuuhenbosiNenSi,
+    // required this.tuuhenbosiGetuKan,
+    // required this.tuuhenbosiGetuSi,
+    // required this.tuuhenbosiNitiKan,
+    // required this.tuuhenbosiNitiSi,
   }) : super(key: key);
 
   @override
@@ -56,6 +56,29 @@ class _MeisikiChartPage4State extends State<MeisikiChartPage4> {
   String tuGeSiS = '比肩';
   String tuNitiKanS = '比肩';
   String tuNitiSiS = '比肩';
+
+  // statefullWidget に変更するため追加
+  int _counter = 0;
+  double setuiriButtonWidth = 0;
+  int zenGo = 2; //0:節入り時刻後　1:節入り時刻前 2:節入り日以外
+  List<int> iroBotan = [-14575885, -12627531, -14575885];
+  List<int> iroTitle = [-1294214, -5767189, -1294214];
+  List<String> botanMoji = ['節入り時刻前', '節入り時刻後', '節入り時刻前'];
+  List<String> meisikiTitle = ['節入り時刻後のチャート', '節入り時刻前のチャート', '命式チャート'];
+  List<int> nenchuNo = [1, 0, 1];
+  List<int> gechuNo = [1, 0, 1];
+  int nenchuNoH = 0;
+  int gechuNoH = 0;
+  //String nenchuS = '甲子';
+  //String gechuS = '甲子';
+
+  void _incrementCounter() {
+    setState(() {
+      _counter++;
+      zenGo = _counter % 2;
+    });
+  }
+  // statefullWidget に追加するために追加　ここまで
 
   void dateUp() {
     setState(() {
@@ -99,15 +122,15 @@ class _MeisikiChartPage4State extends State<MeisikiChartPage4> {
     seinenIntS = widget.seinenInt; // 生年
     seigeIntS = widget.seigatuInt; // 生月
     seinitiIntS = widget.seinitiInt; // 生日
-    nichuS = widget.nichu; // 日柱
-    gechuS = widget.gechu; // 月柱
-    nenchuS = widget.nenchu; // 年柱
-    tuNenKanS = widget.tuuhenbosiNenKan; // 通変星年天
-    tuNenSiS = widget.tuuhenbosiNenSi; // 通変星年地
-    tuGeKanS = widget.tuuhenbosiGetuKan; // 通変星月天
-    tuGeSiS = widget.tuuhenbosiGetuSi; // 通変星月地
-    tuNitiKanS = widget.tuuhenbosiNitiKan; // 通変星日天
-    tuNitiSiS = widget.tuuhenbosiNitiSi; // 通変星日地
+    // nichuS = widget.nichu; // 日柱
+    // gechuS = widget.gechu; // 月柱
+    // nenchuS = widget.nenchu; // 年柱
+    // tuNenKanS = widget.tuuhenbosiNenKan; // 通変星年天
+    // tuNenSiS = widget.tuuhenbosiNenSi; // 通変星年地
+    // tuGeKanS = widget.tuuhenbosiGetuKan; // 通変星月天
+    // tuGeSiS = widget.tuuhenbosiGetuSi; // 通変星月地
+    // tuNitiKanS = widget.tuuhenbosiNitiKan; // 通変星日天
+    // tuNitiSiS = widget.tuuhenbosiNitiSi; // 通変星日地
 
     // このウィジェットで使う変数
     DateTime nowDate = DateTime.now();
@@ -161,6 +184,55 @@ class _MeisikiChartPage4State extends State<MeisikiChartPage4> {
     String tuSSM8 = '0'; // 倒食の数を文字化
     String tuSSM9 = '0'; // 印綬の数を文字化
     String tuSSM = '012345678901234567890';
+    int setuirinen = 1920;
+    int setuirigatu = 1;
+    int setuiriniti = 1;
+    int setuiriji = 0;
+    int setuirihun = 0;
+    int setuirinitisuu = 0;
+
+    String nenkan = '甲';
+    String nensi = '子';
+    String gatukan = '甲';
+    String gatusi = '子';
+    String nitikan = '甲';
+    String nitisi = '子';
+    int nenKanNo = 0;
+    int nenSiNo = 0;
+    int gatuKanNo = 0;
+    int gatuSiNo = 0;
+    int nitiKanNo = 0;
+    int nitiSiNo = 0;
+    String zouKanNen = '甲';
+    String zouKanTuki = '甲';
+    String zouKanNiti = '甲';
+    int zouKanNenNo = 0;
+    int zouKanGatuNo = 0;
+    int zouKanNitiNo = 0;
+    String rokujukkansi = //60干支
+        "甲子乙丑丙寅丁卯戊辰己巳庚午辛未壬申癸酉"
+        "甲戌乙亥丙子丁丑戊寅己卯庚辰辛巳壬午癸未"
+        "甲申乙酉丙戌丁亥戊子己丑庚寅辛卯壬辰癸巳"
+        "甲午乙未丙申丁酉戊戌己亥庚子辛丑壬寅癸卯"
+        "甲辰乙巳丙午丁未戊申己酉庚戌辛亥壬子癸丑"
+        "甲寅乙卯丙辰丁巳戊午己未庚申辛酉壬戌癸亥"; //
+    String tuuhenbosi = //通変星
+        "比肩劫敗食神傷官偏財正財偏官正官倒食印綬" //甲
+        "劫敗比肩傷官食神正財偏財正官偏官印綬倒食" //乙
+        "倒食印綬比肩劫敗食神傷官偏財正財偏官正官" //丙
+        "印綬倒食劫敗比肩傷官食神正財偏財正官偏官" //丁
+        "偏官正官倒食印綬比肩劫敗食神傷官偏財正財" //戊
+        "正官偏官印綬倒食劫敗比肩傷官食神正財偏財" //己
+        "偏財正財偏官正官倒食印綬比肩劫敗食神傷官" //庚
+        "正財偏財正官偏官印綬倒食劫敗比肩傷官食神" //辛
+        "食神傷官偏財正財偏官正官倒食印綬比肩劫敗" //壬
+        "傷官食神正財偏財正官偏官印綬倒食劫敗比肩"; //癸
+    String tuuhenbosiNenKan = '比肩';
+    String tuuhenbosiNenSi = '比肩';
+    String tuuhenbosiGetuKan = '比肩';
+    String tuuhenbosiGetuSi = '比肩';
+    String tuuhenbosiNitiKan = '比肩';
+    String tuuhenbosiNitiSi = '比肩';
 
     //以下画像生成のための変数
     // const double w1 = 40;
@@ -238,10 +310,60 @@ class _MeisikiChartPage4State extends State<MeisikiChartPage4> {
     int tuSColor8 = c2; // 水２階数色
     int tuSColor9 = c2; // 水１階数色
 
+    // 関数meisikiAで、命式・節入り年月日時分・節入り日からの日数を算出する
+    String x = meisikiA(seinenIntS, seigeIntS, seinitiIntS);
+    print(x);
+    // 節入り日からの日数を算出する
+    setuirinitisuu = int.parse(x.substring(19, 21)); // 節入り日からの日数
+
     // 日干を算出する
-    niKan = nichuS.substring(0, 1);
-    niKanNo = juKanNo(niKan);
+    niKan = x.substring(4, 5); // 日干の文字
+    niKanNo = juKanNo(niKan); // 日干No.
     j = niKanNo ~/ 2; // 比肩方向
+
+    nichuS = x.substring(4, 6);
+
+    if (setuirinitisuu == 1) {
+      setuiriButtonWidth = 80;
+    } else {
+      setuiriButtonWidth = 0;
+    }
+    if (zenGo == 1) {
+      nenchuS = x.substring(21, 23);
+      gechuS = x.substring(23, 25);
+    } else {
+      nenchuS = x.substring(0, 2);
+      gechuS = x.substring(2, 4);
+    }
+
+    //年柱・月柱・日柱から年干・年支・月干・月支・日干・日支を作成する
+    nenkan = nenchuS.substring(0, 1);
+    nensi = nenchuS.substring(1, 2);
+    gatukan = gechuS.substring(0, 1);
+    gatusi = gechuS.substring(1, 2);
+    nitikan = nichuS.substring(0, 1);
+    nitisi = nichuS.substring(1, 2);
+    //蔵干を算出する
+    zouKanNen = zouKan(nensi, setuirinitisuu);
+    zouKanTuki = zouKan(gatusi, setuirinitisuu);
+    zouKanNiti = zouKan(nitisi, setuirinitisuu);
+    //通変星を算出する
+    nitiKanNo = juKanNo(nitikan);
+    gatuKanNo = juKanNo(gatukan);
+    nenKanNo = juKanNo(nenkan);
+    zouKanNitiNo = juKanNo(zouKanNiti);
+    zouKanGatuNo = juKanNo(zouKanTuki);
+    zouKanNenNo = juKanNo(zouKanNen);
+    tuGeKanS = tuuhenbosi.substring(
+        nitiKanNo * 20 + gatuKanNo * 2, nitiKanNo * 20 + gatuKanNo * 2 + 2);
+    tuNenKanS = tuuhenbosi.substring(
+        nitiKanNo * 20 + nenKanNo * 2, nitiKanNo * 20 + nenKanNo * 2 + 2);
+    tuNitiSiS = tuuhenbosi.substring(nitiKanNo * 20 + zouKanNitiNo * 2,
+        nitiKanNo * 20 + zouKanNitiNo * 2 + 2);
+    tuGeSiS = tuuhenbosi.substring(nitiKanNo * 20 + zouKanGatuNo * 2,
+        nitiKanNo * 20 + zouKanGatuNo * 2 + 2);
+    tuNenSiS = tuuhenbosi.substring(
+        nitiKanNo * 20 + zouKanNenNo * 2, nitiKanNo * 20 + zouKanNenNo * 2 + 2);
 
     // 五行を算出
     niKG = kag.substring(niKanNo, niKanNo + 1); // 日干の五行を算出
@@ -654,8 +776,40 @@ class _MeisikiChartPage4State extends State<MeisikiChartPage4> {
     return MediaQuery(
       data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
       child: Scaffold(
+        backgroundColor: Colors.black,
         appBar: AppBar(
-          title: const Text('命式チャート（工事中）'),
+          title: Text(
+            meisikiTitle[zenGo],
+            style: TextStyle(
+              color: Color(iroTitle[zenGo]),
+              fontWeight: FontWeight.bold,
+              fontSize: 16,
+            ),
+          ),
+          actions: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: SizedBox(
+                width: setuiriButtonWidth,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Color(iroBotan[zenGo]),
+                    elevation: 0,
+                    shadowColor: Colors.red,
+                  ),
+                  onPressed: () {
+                    _incrementCounter();
+                  },
+                  child: Text(
+                    botanMoji[zenGo],
+                    style: const TextStyle(
+                      fontSize: 13,
+                    ),
+                  ),
+                ),
+              ),
+            )
+          ],
         ),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.center,

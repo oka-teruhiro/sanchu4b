@@ -512,7 +512,9 @@ String meisiki(int a, int b, int c) {
 // d: 命式（年柱/月柱/日柱）（例：甲子乙丑丙寅）の6文字
 // e: 節入り日（西暦年月日）（例：19570306）4文字2文字2文字
 // f: 節入り時刻 (例：07:39)5文字
-// g: 節入り日からの日数（例：3)数字 節入り日に等しい場合は1と表示する
+// g: 節入り日からの日数（例：3)文字 節入り日に等しい場合は1と表示する
+// l: 年月日が節入り日に等しい時の節入り時刻前の年柱
+// m: 年月日が節入り日に等しい時の節入り時刻前の月柱
 String meisikiA(int a, int b, int c) {
   // 定数定義
   int nenchuNen = a;
@@ -804,7 +806,18 @@ String meisikiA(int a, int b, int c) {
   setuiribi2 = DateTime(setuiriNen, setuiriGe, setuiriNiti); // 最終節入り日
   setuirinitisuu = nenGaPi.difference(setuiribi2).inDays + 1; // 節入り日からの日数
   String g = setuirinitisuu.toString().padLeft(2, ' ');
-  String h = d + e + f + g;
+  // 節入り日数が1の時の月柱と年柱を算出する
+  String l = nenchu; // 節入り日が1の時の年柱
+  String m = gechu; // 節入り日が1の時の月柱
+  if (g == ' 1') {
+    int mNo = (rokujuKansiNoA(m) - 1) % 60;
+    m = rokujukkansi.substring(mNo * 2, (mNo + 1) * 2); // 月柱
+    if (b == 2) {
+      int lNo = (rokujuKansiNoA(l) - 1) % 60;
+      l = rokujukkansi.substring(lNo * 2, (lNo + 1) * 2); // 月柱
+    } else {}
+  } else {}
+  String h = d + e + f + g + l + m;
   print(h);
   return h; //d:命式 e:節入り日 f:節入り時刻 g:節入り日からの日数
 }
