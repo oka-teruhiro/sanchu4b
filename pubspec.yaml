@@ -1,10 +1,10 @@
 name: sanchu4b
-description: 天運三柱推命ver.4.1.45
+description: 天運三柱推命ver.4.1.46
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
 
-version: 4.1.45+13
+version: 4.1.46+13
 
 environment:
   sdk: ">=2.17.3 <3.0.0"
@@ -69,6 +69,8 @@ flutter:
     - images/main/taxi.png
     - images/main/取説4a.jpg
     - images/main/取説4b.jpg
+    - images/main/取説4c.jpg
+    - images/main/取説4d.jpg
     - images/nikkan/甲_大樹.jpg
     - images/nikkan/甲_木陰.jpg
     - images/nikkan/丁_キャンドル.jpg

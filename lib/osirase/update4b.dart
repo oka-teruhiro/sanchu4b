@@ -7,28 +7,32 @@ class Update4b extends StatelessWidget {
   Widget build(BuildContext context) {
     List<String> zu = [
       'images/0.jpg',
-      'images/0.jpg',
+      'images/main/取説4c.jpg',
+      'images/main/取説4d.jpg',
       'images/0.jpg',
       'images/0.jpg',
     ];
     List<double> takasaZu = [
       0,
-      0,
+      340,
+      370,
       0,
       0,
     ];
     List<String> moji = [
-      '1.　命式チャートページを作成中です。このページを作ることによって、結婚運・子女運・財運'
-          '・名誉運などを簡単に検定することができるようになります。現在作成中ですが、途中の段'
-          '階でも見てみたい方は、下記のボタンをタップすると作成中のページを見ることができます'
-          '。',
-      '2.　',
-      '3.　',
-      '4.　',
+      '概要',
+      '',
+      '詳細',
+      '1.　多くの方から結婚運や子供運について相談を受けます。これらは、通変星を図で表示すること'
+          'によって、簡単に判断することができます。今回の「命式チャート」ページを追加しました'
+          '。「命式」ページ右下にある「チャート」ボタンをタップすると、そのページに入ることが'
+          'できます。',
+      '2.　「命式」ページにおいて、節入り時刻が正しく表示されない不具合を修正しました。'
     ];
     List<int> iroMoji = [
+      -1407770,
       -1,
-      -1,
+      -1407770,
       -1,
       -1,
     ];
@@ -37,7 +41,7 @@ class Update4b extends StatelessWidget {
       backgroundColor: Colors.black,
       appBar: AppBar(
         title: const Text(
-          '第4.2版（ver.4.1.13)',
+          '第4.2版（ver.4.2.0)',
           style: TextStyle(
             color: Colors.pinkAccent,
             fontWeight: FontWeight.bold,
@@ -49,7 +53,7 @@ class Update4b extends StatelessWidget {
           Expanded(
             //height: 400,
             child: ListView.builder(
-              itemCount: 4,
+              itemCount: 5,
               itemBuilder: (BuildContext context, int index) {
                 return Column(
                   children: [
@@ -84,23 +88,23 @@ class Update4b extends StatelessWidget {
               },
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: SizedBox(
-              width: 300,
-              height: 36,
-              child: ElevatedButton(
-                child: const Text('命式チャートページ（工事中）'),
-                onPressed: () {
-                  // Navigator.push(
-                  //     context,
-                  //     MaterialPageRoute(
-                  //       builder: (context) => const MeisikiChartPage2(),
-                  //     ));
-                },
-              ),
-            ),
-          ),
+          // Padding(
+          //   padding: const EdgeInsets.all(16.0),
+          //   child: SizedBox(
+          //     width: 300,
+          //     height: 36,
+          //     child: ElevatedButton(
+          //       child: const Text('命式チャートページ（工事中）'),
+          //       onPressed: () {
+          //         // Navigator.push(
+          //         //     context,
+          //         //     MaterialPageRoute(
+          //         //       builder: (context) => const MeisikiChartPage2(),
+          //         //     ));
+          //       },
+          //     ),
+          //   ),
+          // ),
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: SizedBox(
