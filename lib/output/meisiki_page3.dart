@@ -830,7 +830,7 @@ class _MeisikiPage3State extends State<MeisikiPage3> {
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       SizedBox(
-                                        width: 90,
+                                        width: 86,
                                         //height: 70,
                                         child: Container(
                                           decoration: BoxDecoration(

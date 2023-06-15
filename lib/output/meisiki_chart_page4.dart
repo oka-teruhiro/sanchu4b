@@ -2209,13 +2209,115 @@ class _MeisikiChartPage4State extends State<MeisikiChartPage4> {
                       ),
                       const ListTile(
                         title: SizedBox(
-                          height: 200,
-                          child: Text('（工事中）',
-                              style: TextStyle(
-                                color: Color(c2),
-                                fontWeight: FontWeight.normal,
-                                fontSize: 14,
-                              )),
+                          height: 1200,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text('■ 結婚運 ■',
+                                  style: TextStyle(
+                                    color: Color(c3),
+                                    fontWeight: FontWeight.normal,
+                                    fontSize: 14,
+                                  )),
+                              Text(
+                                  '　上の大きな白の円において、「＜」で区切られた部'
+                                  '分は、日干を表し通変星で比肩・劫敗を表てします。ここから円の'
+                                  '中心を向いて、右斜め奥方向に「官星」、左斜め奥方向に「財星」'
+                                  'が位置しています。',
+                                  style: TextStyle(
+                                    color: Color(c2),
+                                    fontWeight: FontWeight.normal,
+                                    fontSize: 14,
+                                  )),
+                              Text(
+                                  '　女性の場合は、官星方向にある白い数字を足した数が、'
+                                  '「1」あるいは「2」の時は結婚運があるとみます。'
+                                  '「0」あるいは「3以上」の時は結婚運がないとみます。',
+                                  style: TextStyle(
+                                    color: Color(c2),
+                                    fontWeight: FontWeight.normal,
+                                    fontSize: 14,
+                                  )),
+                              Text('　男性の場合は、財星方向にある白い数字をみます。',
+                                  style: TextStyle(
+                                    color: Color(c2),
+                                    fontWeight: FontWeight.normal,
+                                    fontSize: 14,
+                                  )),
+                              Text(
+                                  '　結婚運がないとなると、心配になりますが、さらに小さ'
+                                  'い白い円（本質）をみます。上の大きな円と同じ方向の白い'
+                                  '数字をみます。表面側が「0」でも本質側に数字があれば、'
+                                  '先祖が準備した運があるとみます。ぜひ先祖供養をして、先'
+                                  '祖が準備した運を取り込みましょう。',
+                                  style: TextStyle(
+                                    color: Color(c2),
+                                    fontWeight: FontWeight.normal,
+                                    fontSize: 14,
+                                  )),
+                              Text(
+                                  '　本質にも数字がない時は、天が与える運をみます。天は、'
+                                  '万民に平等に運勢を与えるため、昨日は癸の人、今日は甲の'
+                                  '人、明日は乙の人という具合に順番に運勢を与えていきます。'
+                                  '同様に月ごとに、また年ごとに運勢を与えていきます。その'
+                                  '様子を、一番内側の青い円の中のピンク色の数字で表てしま'
+                                  'す。',
+                                  style: TextStyle(
+                                    color: Color(c2),
+                                    fontWeight: FontWeight.normal,
+                                    fontSize: 14,
+                                  )),
+                              Text(
+                                  '　いつ天の運勢がめぐってくるかを調べるには、右下の6つ'
+                                  'の青いボタンをタップすると鑑定日が変化します。結婚運の'
+                                  '方向にピンク色の数字が現れる年がチャンスの時です。その'
+                                  '時に向けて準備をしましょう。',
+                                  style: TextStyle(
+                                    color: Color(c2),
+                                    fontWeight: FontWeight.normal,
+                                    fontSize: 14,
+                                  )),
+                              Text(
+                                  '　準備とは、結婚運は、夫婦愛の問題になりますが、夫婦'
+                                  '愛は、兄弟姉妹愛の土台の上に築くことができると言われて'
+                                  'います。兄弟姉妹の愛は、狭い意味では、家族の兄弟姉妹で'
+                                  'すが、広い意味では、地域や人類に対する愛になります。愛'
+                                  'されたら、愛するのは、当たり前の行動ですが、兄弟姉妹の'
+                                  '愛の本質は、その人から愛されたわけではないのに愛してい'
+                                  'く愛を意味します。多くの人を兄弟姉妹のように愛していく'
+                                  '努力をしましょう。',
+                                  style: TextStyle(
+                                    color: Color(c2),
+                                    fontWeight: FontWeight.normal,
+                                    fontSize: 14,
+                                  )),
+                              Text(
+                                  '　結婚運がない場合で、星の数が「3以上」の場合は、多く'
+                                  'の人に結婚相手として、気持ちが向いていたり、結婚してい'
+                                  'ても、配偶者意外のひとに気持ちがいったり、言い寄られたり、'
+                                  'また、逆に全く結婚する気持ちがなかったり、縁がなかった'
+                                  'りという現象として現れます。結婚運が「1」や「2」でも、'
+                                  '天の与える運によって、「3以上」になる場合は、やはりこ'
+                                  'の現象が現れやすいので、配偶者をより愛し、誘惑に心を奪'
+                                  'われないように厳しく自らを律する必要があります。',
+                                  style: TextStyle(
+                                    color: Color(c2),
+                                    fontWeight: FontWeight.normal,
+                                    fontSize: 14,
+                                  )),
+                              Text(
+                                  '　表面が、結婚運があっても、本質に星がない場合も、注'
+                                  '意が必要です。結婚運があるようでもはがれ落ちやすい結婚'
+                                  '運です。結婚前なら、前述したように自分の愛のレベルを高'
+                                  'める努力をし、結婚後なら配偶者に対しての愛もさらに高め'
+                                  'る努力をしましょう。',
+                                  style: TextStyle(
+                                    color: Color(c2),
+                                    fontWeight: FontWeight.normal,
+                                    fontSize: 14,
+                                  )),
+                            ],
+                          ),
                         ),
                       ),
                     ],
