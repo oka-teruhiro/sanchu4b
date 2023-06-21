@@ -8,6 +8,7 @@ import 'package:sanchu4b/osirase/update3a.dart';
 import 'package:sanchu4b/osirase/update4.dart';
 import 'package:sanchu4b/osirase/update4a.dart';
 import 'package:sanchu4b/osirase/update4b.dart';
+import 'package:sanchu4b/osirase/update4c.dart';
 
 class Update extends StatelessWidget {
   const Update({Key? key}) : super(key: key);
@@ -30,6 +31,24 @@ class Update extends StatelessWidget {
           Expanded(
             child: ListView(
               children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ListTile(
+                    title: const Text(
+                        '第4.3版　1901.1.1〜2199.12.31に対応できるようにしました。（2023/6/22 更新)'),
+                    trailing: const Icon(Icons.navigate_next),
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const Update4c(),
+                          ));
+                    },
+                  ),
+                ),
+                const Divider(
+                  color: Colors.blue,
+                ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: ListTile(

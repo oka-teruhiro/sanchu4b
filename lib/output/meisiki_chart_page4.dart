@@ -8,29 +8,11 @@ class MeisikiChartPage4 extends StatefulWidget {
   final int seinenInt;
   final int seigatuInt;
   final int seinitiInt;
-  // final String nichu;
-  // final String gechu;
-  // final String nenchu;
-  // final String tuuhenbosiNenKan;
-  // final String tuuhenbosiNenSi;
-  // final String tuuhenbosiGetuKan;
-  // final String tuuhenbosiGetuSi;
-  // final String tuuhenbosiNitiKan;
-  // final String tuuhenbosiNitiSi;
   const MeisikiChartPage4({
     Key? key,
     required this.seinenInt,
     required this.seigatuInt,
     required this.seinitiInt,
-    // required this.nichu,
-    // required this.gechu,
-    // required this.nenchu,
-    // required this.tuuhenbosiNenKan,
-    // required this.tuuhenbosiNenSi,
-    // required this.tuuhenbosiGetuKan,
-    // required this.tuuhenbosiGetuSi,
-    // required this.tuuhenbosiNitiKan,
-    // required this.tuuhenbosiNitiSi,
   }) : super(key: key);
 
   @override
@@ -161,15 +143,6 @@ class _MeisikiChartPage4State extends State<MeisikiChartPage4> {
     seinenIntS = widget.seinenInt; // 生年
     seigeIntS = widget.seigatuInt; // 生月
     seinitiIntS = widget.seinitiInt; // 生日
-    // nichuS = widget.nichu; // 日柱
-    // gechuS = widget.gechu; // 月柱
-    // nenchuS = widget.nenchu; // 年柱
-    // tuNenKanS = widget.tuuhenbosiNenKan; // 通変星年天
-    // tuNenSiS = widget.tuuhenbosiNenSi; // 通変星年地
-    // tuGeKanS = widget.tuuhenbosiGetuKan; // 通変星月天
-    // tuGeSiS = widget.tuuhenbosiGetuSi; // 通変星月地
-    // tuNitiKanS = widget.tuuhenbosiNitiKan; // 通変星日天
-    // tuNitiSiS = widget.tuuhenbosiNitiSi; // 通変星日地
 
     // このウィジェットで使う変数
     DateTime nowDate = DateTime.now();
@@ -198,9 +171,9 @@ class _MeisikiChartPage4State extends State<MeisikiChartPage4> {
     String tuG = '比食財官印比食財官印比食財官';
     String tu = '比肩劫敗食神傷官偏財正財偏官正官倒食印綬比肩劫敗食神傷官偏財正財'
         '偏官正官倒食印綬比肩劫敗食神傷官偏財正財偏官正官倒食印綬';
-    String kan = '甲乙丙丁戊己庚辛壬癸';
+    //           '甲乙丙丁戊己庚辛壬癸'
     String kag = '木木火火土土金金水水';
-    String shi = '子丑寅卯辰巳午未申酉戌亥';
+    //           '子丑寅卯辰巳午未申酉戌亥'
     String sig = '水土木木土火火土金金土水';
     int tuSS0 = 1; // 比肩の数
     int tuSS1 = 0; // 劫敗の数
@@ -223,11 +196,11 @@ class _MeisikiChartPage4State extends State<MeisikiChartPage4> {
     String tuSSM8 = '0'; // 倒食の数を文字化
     String tuSSM9 = '0'; // 印綬の数を文字化
     String tuSSM = '012345678901234567890';
-    int setuirinen = 1920;
-    int setuirigatu = 1;
-    int setuiriniti = 1;
-    int setuiriji = 0;
-    int setuirihun = 0;
+    //int setuirinen = 1920;
+    //int setuirigatu = 1;
+    //int setuiriniti = 1;
+    //int setuiriji = 0;
+    //int setuirihun = 0;
     int setuirinitisuu = 0;
 
     String nenkan = '甲';
@@ -237,19 +210,19 @@ class _MeisikiChartPage4State extends State<MeisikiChartPage4> {
     String nitikan = '甲';
     String nitisi = '子';
     int nenKanNo = 0;
-    int nenSiNo = 0;
+    //int nenSiNo = 0;
     int gatuKanNo = 0;
-    int gatuSiNo = 0;
+    //int gatuSiNo = 0;
     int nitiKanNo = 0;
-    int nitiSiNo = 0;
+    //int nitiSiNo = 0;
     String zouKanNen = '甲';
     String zouKanTuki = '甲';
     String zouKanNiti = '甲';
     int zouKanNenNo = 0;
     int zouKanGatuNo = 0;
     int zouKanNitiNo = 0;
-    String rokujukkansi = //60干支
-        "甲子乙丑丙寅丁卯戊辰己巳庚午辛未壬申癸酉"
+    //String rokujukkansi = //60干支
+    "甲子乙丑丙寅丁卯戊辰己巳庚午辛未壬申癸酉"
         "甲戌乙亥丙子丁丑戊寅己卯庚辰辛巳壬午癸未"
         "甲申乙酉丙戌丁亥戊子己丑庚寅辛卯壬辰癸巳"
         "甲午乙未丙申丁酉戊戌己亥庚子辛丑壬寅癸卯"
@@ -266,12 +239,12 @@ class _MeisikiChartPage4State extends State<MeisikiChartPage4> {
         "正財偏財正官偏官印綬倒食劫敗比肩傷官食神" //辛
         "食神傷官偏財正財偏官正官倒食印綬比肩劫敗" //壬
         "傷官食神正財偏財正官偏官印綬倒食劫敗比肩"; //癸
-    String tuuhenbosiNenKan = '比肩';
-    String tuuhenbosiNenSi = '比肩';
-    String tuuhenbosiGetuKan = '比肩';
-    String tuuhenbosiGetuSi = '比肩';
-    String tuuhenbosiNitiKan = '比肩';
-    String tuuhenbosiNitiSi = '比肩';
+    //String tuuhenbosiNenKan = '比肩';
+    //String tuuhenbosiNenSi = '比肩';
+    //String tuuhenbosiGetuKan = '比肩';
+    //String tuuhenbosiGetuSi = '比肩';
+    //String tuuhenbosiNitiKan = '比肩';
+    //String tuuhenbosiNitiSi = '比肩';
 
     //以下画像生成のための変数
     // const double w1 = 40;
@@ -282,7 +255,7 @@ class _MeisikiChartPage4State extends State<MeisikiChartPage4> {
 
     const int c1 = -200000000; //暗い緑
     const int c2 = -1; // 白
-    const int c4 = -1294214; // ピンク
+    //const int c4 = -1294214; // ピンク
     const int c3 = -1407770; // ピンク
     // 天が与える運勢
     int godU0 = 0; // 木地下１階
@@ -356,8 +329,8 @@ class _MeisikiChartPage4State extends State<MeisikiChartPage4> {
     int birthDH = seinitiIntS + counterBD;
     DateTime birthH = DateTime(birthYH, birthMH, birthDH);
 
-    DateTime datemin = DateTime(1921, 1, 1);
-    DateTime datemax = DateTime(2029, 12, 31);
+    DateTime datemin = DateTime(1901, 1, 1);
+    DateTime datemax = DateTime(2199, 12, 31);
     if (birthH.isAfter(datemax)) {
       birthH = datemax;
       counterBY--;
@@ -2221,7 +2194,7 @@ class _MeisikiChartPage4State extends State<MeisikiChartPage4> {
                                   )),
                               Text(
                                   '　上の大きな白の円において、「＜」で区切られた部'
-                                  '分は、日干を表し通変星で比肩・劫敗を表てします。ここから円の'
+                                  '分は、日干を表し通変星で比肩・劫敗を表しています。ここから円の'
                                   '中心を向いて、右斜め奥方向に「官星」、左斜め奥方向に「財星」'
                                   'が位置しています。',
                                   style: TextStyle(
