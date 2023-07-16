@@ -261,7 +261,7 @@ class _MyHomePageState extends State<MyHomePage> {
       child: Scaffold(
         backgroundColor: Colors.black,
         appBar: AppBar(
-          title: const Text('天運三柱推命 ver.4.3.2',
+          title: const Text('天運三柱推命 ver.4.3.3',
               style: TextStyle(
                 color: Colors.pinkAccent,
                 fontWeight: FontWeight.bold,
@@ -355,13 +355,13 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                         ),
                         child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             // 生年月日表示欄
                             SizedBox(
                                 height: 44,
-                                width: 174,
+                                width: 150,
                                 child: TextButton(
                                   child: Text(
                                     _birthH[index],
