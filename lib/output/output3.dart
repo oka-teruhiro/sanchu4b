@@ -12,7 +12,7 @@ import '../nikkan/nikkan_mizzunoto.dart';
 import '../nikkan/nikkan_tutinoe.dart';
 import '../nikkan/nikkan_tutinoto.dart';
 import 'kansuu.dart';
-import 'meisiki_page3.dart';
+import 'meisiki_page4.dart';
 
 class Output3 extends StatefulWidget {
   const Output3({
@@ -480,7 +480,7 @@ class _Output3State extends State<Output3> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => MeisikiPage3(
+                          builder: (context) => MeisikiPage4(
                             nenchu: nenchuS,
                             gechu: gechuS,
                             nichu: nichu,

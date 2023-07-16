@@ -125,7 +125,7 @@ List kansiHeirin(int kansiSuu, String seinengappiMojiretu) {
     --seinen;
   }
   int nen = 0;
-  for (int i = 0; i < 6; ++i) {
+  for (int i = 0; i < 8; ++i) {
     nen = 1864 + 60 * i + kansiSuu;
     if (nen <= seinen) {
       kansiHeirinList.add(0);
@@ -163,7 +163,7 @@ List tenUn(List a, List b, List c, List d, String e) {
   // 年柱
   nenList = a;
   tenunMei = 1;
-  for (int i = 0; i < 6; ++i) {
+  for (int i = 0; i < 8; ++i) {
     nen = nenList.removeAt(0);
     if (nen != 0) {
       DateTime date4 = DateTime(nen, 2, 4);
@@ -177,7 +177,7 @@ List tenUn(List a, List b, List c, List d, String e) {
   // 月柱
   nenList = b;
   tenunMei = 2;
-  for (int i = 0; i < 6; ++i) {
+  for (int i = 0; i < 8; ++i) {
     nen = nenList.removeAt(0);
     if (nen != 0) {
       DateTime date4 = DateTime(nen, 2, 4);
@@ -190,7 +190,7 @@ List tenUn(List a, List b, List c, List d, String e) {
   // 日柱
   nenList = c;
   tenunMei = 3;
-  for (int i = 0; i < 6; ++i) {
+  for (int i = 0; i < 8; ++i) {
     nen = nenList.removeAt(0);
     if (nen != 0) {
       DateTime date4 = DateTime(nen, 2, 4);
@@ -203,7 +203,7 @@ List tenUn(List a, List b, List c, List d, String e) {
   // 天地徳合
   nenList = d;
   tenunMei = 4;
-  for (int i = 0; i < 6; ++i) {
+  for (int i = 0; i < 8; ++i) {
     nen = nenList.removeAt(0);
     if (nen != 0) {
       DateTime date4 = DateTime(nen, 2, 4);

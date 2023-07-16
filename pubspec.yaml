@@ -1,10 +1,10 @@
 name: sanchu4b
-description: 天運三柱推命ver.4.3.0
+description: 天運三柱推命ver.4.3.2
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
 
-version: 4.3.0+14
+version: 4.3.2+14
 
 environment:
   sdk: ">=2.17.3 <3.0.0"
@@ -22,8 +22,8 @@ dependencies:
 
   cupertino_icons: ^1.0.5
   provider: ^6.0.5
-  shared_preferences: ^2.1.2
-  flutter_lints: ^2.0.1
+  shared_preferences: ^2.2.0
+  flutter_lints: ^2.0.2
 
 
 
@@ -144,6 +144,8 @@ flutter:
     - images/tuuhenbosi/47.jpg
     - images/tuuhenbosi/48.jpg
     - images/tuuhenbosi/49.jpg
+    - images/tuuhenbosi/偏財.png
+    - images/tuuhenbosi/偏官ピンク50.png
     - images/sigou/s00.jpg
     - images/sigou/s01.jpg
     - images/sigou/s02.jpg

@@ -9,6 +9,7 @@ import 'package:sanchu4b/osirase/update4.dart';
 import 'package:sanchu4b/osirase/update4a.dart';
 import 'package:sanchu4b/osirase/update4b.dart';
 import 'package:sanchu4b/osirase/update4c.dart';
+import 'package:sanchu4b/output/kyou_unsei_page.dart';
 
 class Update extends StatelessWidget {
   const Update({Key? key}) : super(key: key);
@@ -31,6 +32,25 @@ class Update extends StatelessWidget {
           Expanded(
             child: ListView(
               children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ListTile(
+                    title: const Text(
+                        '第4.4版　今日の運勢ページで前後7日間の運勢を確認できるようになりました。（工事中）'),
+                    trailing: const Icon(Icons.navigate_next),
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const KyouUnseiPage(
+                                seinenInt: 2023, seigatuInt: 7, seinitiInt: 8),
+                          ));
+                    },
+                  ),
+                ),
+                const Divider(
+                  color: Colors.blue,
+                ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: ListTile(
