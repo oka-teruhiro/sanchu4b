@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/intl.dart';
 import 'package:sanchu4b/output/kyou_unsei.dart';
+import 'package:sanchu4b/output/output4.dart';
 import 'package:sanchu4b/quiz/quiz_page_001.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'osirase/update.dart';
-import 'output/output3.dart';
 
 void main() {
   runApp(const MyApp());
@@ -261,7 +261,7 @@ class _MyHomePageState extends State<MyHomePage> {
       child: Scaffold(
         backgroundColor: Colors.black,
         appBar: AppBar(
-          title: const Text('天運三柱推命 ver.4.3.3',
+          title: const Text('天運三柱推命 ver.4.3.4',
               style: TextStyle(
                 color: Colors.pinkAccent,
                 fontWeight: FontWeight.bold,
@@ -468,7 +468,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                        builder: (context) => Output3(
+                                        builder: (context) => Output4(
                                           titleSeinengappi: seinengappiMojia,
                                         ),
                                       ),
