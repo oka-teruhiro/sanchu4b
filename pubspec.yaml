@@ -1,10 +1,10 @@
 name: sanchu4b
-description: 天運三柱推命ver.4.3.5
+description: 天運三柱推命ver.4.3.7
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
 
-version: 4.3.5+14
+version: 4.3.7+14
 
 environment:
   sdk: ">=2.17.3 <3.0.0"
@@ -146,6 +146,21 @@ flutter:
     - images/tuuhenbosi/49.jpg
     - images/tuuhenbosi/偏財.png
     - images/tuuhenbosi/偏官ピンク50.png
+    - images/tuuhenbosi/t0.png
+    - images/tuuhenbosi/t1.png
+    - images/tuuhenbosi/t2.png
+    - images/tuuhenbosi/t3.png
+    - images/tuuhenbosi/t4.png
+    - images/tuuhenbosi/t5.png
+    - images/tuuhenbosi/t6.png
+    - images/tuuhenbosi/t7.png
+    - images/tuuhenbosi/t8.png
+    - images/tuuhenbosi/t9.png
+    - images/tuuhenbosi/g0.png
+    - images/tuuhenbosi/g1.png
+    - images/tuuhenbosi/g2.png
+    - images/tuuhenbosi/g3.png
+    - images/tuuhenbosi/g4.png
     - images/sigou/s00.jpg
     - images/sigou/s01.jpg
     - images/sigou/s02.jpg

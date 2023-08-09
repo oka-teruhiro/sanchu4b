@@ -16,9 +16,80 @@ class KyouUnseiPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<String> tu = [
+      // 通変星の文字の画像データ
+      'images/tuuhenbosi/t0.png',
+      'images/tuuhenbosi/t1.png',
+      'images/tuuhenbosi/t2.png',
+      'images/tuuhenbosi/t3.png',
+      'images/tuuhenbosi/t4.png',
+      'images/tuuhenbosi/t5.png',
+      'images/tuuhenbosi/t6.png',
+      'images/tuuhenbosi/t7.png',
+      'images/tuuhenbosi/t8.png',
+      'images/tuuhenbosi/t9.png',
+    ];
+    List<String> go = [
+      // 五行の位置に入れる文字列
+      'images/tuuhenbosi/t0.png',
+      'images/tuuhenbosi/t1.png',
+      'images/tuuhenbosi/t2.png',
+      'images/tuuhenbosi/t3.png',
+      'images/tuuhenbosi/t4.png',
+      'images/tuuhenbosi/t5.png',
+      'images/tuuhenbosi/t6.png',
+      'images/tuuhenbosi/t7.png',
+      'images/tuuhenbosi/t8.png',
+      'images/tuuhenbosi/t9.png',
+    ];
     const double h1 = 25;
     const int c2 = -1; // 白
     const int c3 = -1407770; // ピンク
+
+    double rrr = 36; //小さい円の直系
+    double rrM = 24; //文字の大きさ
+    var center1 = Offset((150 - rrr / 2), (130 - rrr / 2)); // 表面の中心座標
+    var center2 = Offset((150 - rrM / 2), (130 - rrM / 2)); // 表面の中心座標
+    double r1 = 36;
+    double r2 = 72;
+    double r3 = 108;
+    //double rr1 = 36;
+    double radiG0 = (72 * 0 - 90) / 180 * pi;
+    double tadiG1 = (72 * 1 - 90) / 180 * pi;
+    double radiG2 = (72 * 2 - 90) / 180 * pi;
+    double radiG3 = (72 * 3 - 90) / 180 * pi;
+    double radiG4 = (72 * 4 - 90) / 180 * pi;
+    final centerG01 = center1 + Offset(r1 * cos(radiG0), r1 * sin(radiG0));
+    final centerG02 = center1 + Offset(r2 * cos(radiG0), r2 * sin(radiG0));
+    final centerG03 = center1 + Offset(r3 * cos(radiG0), r3 * sin(radiG0));
+    final centerG11 = center1 + Offset(r1 * cos(tadiG1), r1 * sin(tadiG1));
+    final centerG12 = center1 + Offset(r2 * cos(tadiG1), r2 * sin(tadiG1));
+    final centerG13 = center1 + Offset(r3 * cos(tadiG1), r3 * sin(tadiG1));
+    final centerG21 = center1 + Offset(r1 * cos(radiG2), r1 * sin(radiG2));
+    final centerG22 = center1 + Offset(r2 * cos(radiG2), r2 * sin(radiG2));
+    final centerG23 = center1 + Offset(r3 * cos(radiG2), r3 * sin(radiG2));
+    final centerG31 = center1 + Offset(r1 * cos(radiG3), r1 * sin(radiG3));
+    final centerG32 = center1 + Offset(r2 * cos(radiG3), r2 * sin(radiG3));
+    final centerG33 = center1 + Offset(r3 * cos(radiG3), r3 * sin(radiG3));
+    final centerG41 = center1 + Offset(r1 * cos(radiG4), r1 * sin(radiG4));
+    final centerG42 = center1 + Offset(r2 * cos(radiG4), r2 * sin(radiG4));
+    final centerG43 = center1 + Offset(r3 * cos(radiG4), r3 * sin(radiG4));
+
+    final centerG0M1 = center2 + Offset(r1 * cos(radiG0), r1 * sin(radiG0));
+    final centerG0M2 = center2 + Offset(r2 * cos(radiG0), r2 * sin(radiG0));
+    final centerG0M3 = center2 + Offset(r3 * cos(radiG0), r3 * sin(radiG0));
+    final centerG1M1 = center2 + Offset(r1 * cos(tadiG1), r1 * sin(tadiG1));
+    final centerG1M2 = center2 + Offset(r2 * cos(tadiG1), r2 * sin(tadiG1));
+    final centerG1M3 = center2 + Offset(r3 * cos(tadiG1), r3 * sin(tadiG1));
+    final centerG2M1 = center2 + Offset(r1 * cos(radiG2), r1 * sin(radiG2));
+    final centerG2M2 = center2 + Offset(r2 * cos(radiG2), r2 * sin(radiG2));
+    final centerG2M3 = center2 + Offset(r3 * cos(radiG2), r3 * sin(radiG2));
+    final centerG3M1 = center2 + Offset(r1 * cos(radiG3), r1 * sin(radiG3));
+    final centerG3M2 = center2 + Offset(r2 * cos(radiG3), r2 * sin(radiG3));
+    final centerG3M3 = center2 + Offset(r3 * cos(radiG3), r3 * sin(radiG3));
+    final centerG4M1 = center2 + Offset(r1 * cos(radiG4), r1 * sin(radiG4));
+    final centerG4M2 = center2 + Offset(r2 * cos(radiG4), r2 * sin(radiG4));
+    final centerG4M3 = center2 + Offset(r3 * cos(radiG4), r3 * sin(radiG4));
 
     return MediaQuery(
       data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
@@ -51,7 +122,8 @@ class KyouUnseiPage extends StatelessWidget {
                           children: [
                             Stack(
                               children: [
-                                SizedBox(
+                                const SizedBox(
+                                  // 第一階層
                                   width: 312,
                                   height: 700,
                                   child: Column(
@@ -80,18 +152,140 @@ class KyouUnseiPage extends StatelessWidget {
                                     // size: const Size(400, 400), // この行を入れると図形と文字を重ねることができない
                                   ),
                                 ),
+                                SizedBox(
+                                  width: 312,
+                                  height: 460,
+                                  child: CustomPaint(
+                                    painter: ShapePainter5(
+                                        tuhen: 9), // 渡したい変数を引数に指定する
+                                    // size: const Size(400, 400), // この行を入れると図形と文字を重ねることができない
+                                  ),
+                                ),
+                                // 外枠五行
                                 Transform.translate(
-                                  offset: Offset(184, 216),
-                                  child:
-                                      Image.asset('images/tuuhenbosi/偏財.png'),
+                                  offset: centerG0M3,
+                                  child: SizedBox(
+                                    height: rrM,
+                                    width: rrM,
+                                    child:
+                                        Image.asset('images/tuuhenbosi/g0.png'),
+                                  ),
                                 ),
                                 Transform.translate(
-                                  offset: Offset(156, 172),
+                                  offset: centerG1M3,
                                   child: SizedBox(
-                                    height: 35,
-                                    width: 35,
-                                    child: Image.asset(
-                                        'images/tuuhenbosi/偏官ピンク50.png'),
+                                    height: rrM,
+                                    width: rrM,
+                                    child:
+                                        Image.asset('images/tuuhenbosi/g1.png'),
+                                  ),
+                                ),
+                                Transform.translate(
+                                  offset: centerG2M3,
+                                  child: SizedBox(
+                                    height: rrM,
+                                    width: rrM,
+                                    child:
+                                        Image.asset('images/tuuhenbosi/g2.png'),
+                                  ),
+                                ),
+                                Transform.translate(
+                                  offset: centerG3M3,
+                                  child: SizedBox(
+                                    height: rrM,
+                                    width: rrM,
+                                    child:
+                                        Image.asset('images/tuuhenbosi/g3.png'),
+                                  ),
+                                ),
+                                Transform.translate(
+                                  offset: centerG4M3,
+                                  child: SizedBox(
+                                    height: rrM,
+                                    width: rrM,
+                                    child:
+                                        Image.asset('images/tuuhenbosi/g4.png'),
+                                  ),
+                                ),
+                                Transform.translate(
+                                  offset: centerG0M2,
+                                  child: SizedBox(
+                                    height: rrM,
+                                    width: rrM,
+                                    child: Image.asset(go[0]),
+                                  ),
+                                ),
+                                Transform.translate(
+                                  offset: centerG0M1,
+                                  child: SizedBox(
+                                    height: rrM,
+                                    width: rrM,
+                                    child: Image.asset(go[1]),
+                                  ),
+                                ),
+                                Transform.translate(
+                                  offset: centerG1M2,
+                                  child: SizedBox(
+                                    height: rrM,
+                                    width: rrM,
+                                    child: Image.asset(go[2]),
+                                  ),
+                                ),
+                                Transform.translate(
+                                  offset: centerG1M1,
+                                  child: SizedBox(
+                                    height: rrM,
+                                    width: rrM,
+                                    child: Image.asset(go[3]),
+                                  ),
+                                ),
+                                Transform.translate(
+                                  offset: centerG2M2,
+                                  child: SizedBox(
+                                    height: rrM,
+                                    width: rrM,
+                                    child: Image.asset(go[4]),
+                                  ),
+                                ),
+
+                                Transform.translate(
+                                  offset: centerG2M1,
+                                  child: SizedBox(
+                                    height: rrM,
+                                    width: rrM,
+                                    child: Image.asset(go[5]),
+                                  ),
+                                ),
+                                Transform.translate(
+                                  offset: centerG3M2,
+                                  child: SizedBox(
+                                    height: rrM,
+                                    width: rrM,
+                                    child: Image.asset(go[6]),
+                                  ),
+                                ),
+                                Transform.translate(
+                                  offset: centerG3M1,
+                                  child: SizedBox(
+                                    height: rrM,
+                                    width: rrM,
+                                    child: Image.asset(go[7]),
+                                  ),
+                                ),
+                                Transform.translate(
+                                  offset: centerG4M2,
+                                  child: SizedBox(
+                                    height: rrM,
+                                    width: rrM,
+                                    child: Image.asset(go[8]),
+                                  ),
+                                ),
+                                Transform.translate(
+                                  offset: centerG4M1,
+                                  child: SizedBox(
+                                    height: rrM,
+                                    width: rrM,
+                                    child: Image.asset(go[9]),
                                   ),
                                 ),
                               ],
@@ -99,7 +293,7 @@ class KyouUnseiPage extends StatelessWidget {
                           ],
                         ),
                       ),
-                      ListTile(
+                      const ListTile(
                         title: Text('■■■■■■■ この図の見方 ■■■■■■■',
                             style: TextStyle(
                               color: Color(c2),
@@ -229,12 +423,12 @@ class KyouUnseiPage extends StatelessWidget {
               width: double.infinity,
               height: 97,
               child: Container(
-                color: Colors.white30,
+                color: Colors.black,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
-                    SizedBox(
+                    const SizedBox(
                       width: 88,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.end,
@@ -266,8 +460,8 @@ class KyouUnseiPage extends StatelessWidget {
                             child: Text(
                               '大吉',
                               style: TextStyle(
-                                color: Colors.cyanAccent,
-                                fontWeight: FontWeight.normal,
+                                color: Colors.purpleAccent,
+                                fontWeight: FontWeight.bold,
                                 fontSize: 28,
                               ),
                             ),
@@ -505,7 +699,7 @@ class KyouUnseiPage extends StatelessWidget {
                               ),
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 12,
                           ),
                         ],
@@ -541,27 +735,76 @@ class ShapePainter3 extends CustomPainter {
       ..color = Colors.white
       ..strokeWidth = 2.0;
 
+    final penWhite1 = Paint()
+      ..color = Colors.white
+      ..strokeWidth = 0.7;
+
     final penBlue = Paint()
       ..color = Colors.blue
       ..strokeWidth = 2.0;
 
-    double angleMoku = 72 * 0 - 90;
-    double angleKa = 72 * 1 - 90;
-    double angleDo = 72 * 2 - 90;
-    double angleKin = 72 * 3 - 90;
-    double angleSui = 72 * 4 - 90;
-    double radianMoku = angleMoku / 180 * pi;
-    double radianKa = angleKa / 180 * pi;
-    double radianDo = angleDo / 180 * pi;
-    double radianKin = angleKin / 180 * pi;
-    double radianSui = angleSui / 180 * pi;
-    final centerMoku1 =
-        center1 + Offset(r1 * cos(radianMoku), r1 * sin(radianMoku));
-    final centerMoku2 =
-        center1 + Offset(r2 * cos(radianMoku), r2 * sin(radianMoku));
-    final centerMoku3 =
-        center1 + Offset(r3 * cos(radianMoku), r3 * sin(radianMoku));
-    final centerKa1 = center1 + Offset(r1 * cos(radianKa), r1 * sin(radianKa));
+    final penRed = Paint()
+      ..color = Colors.redAccent
+      ..strokeWidth = 2.0;
+
+    final penYelow = Paint()
+      ..color = Colors.yellowAccent
+      ..strokeWidth = 2.0;
+
+    final penBlack1 = Paint()
+      ..color = Colors.white24
+      ..strokeWidth = 2.0;
+
+    final penBlack2 = Paint()
+      ..color = Colors.white12
+      ..strokeWidth = 2.0;
+
+    //double angleMoku = 72 * 0 - 90;
+    //double angleKa = 72 * 1 - 90;
+    //double angleDo = 72 * 2 - 90;
+    //double angleKin = 72 * 3 - 90;
+    //double angleSui = 72 * 4 - 90;
+    double radianKa0 = (72 * 0 - 90) / 180 * pi;
+    double radianKa1 = (72 * 1 - 90) / 180 * pi;
+    double radianKa2 = (72 * 2 - 90) / 180 * pi;
+    double radianKa3 = (72 * 3 - 90) / 180 * pi;
+    double radianKa4 = (72 * 4 - 90) / 180 * pi;
+    //double radianKa = angleKa / 180 * pi;
+    //double radianDo = angleDo / 180 * pi;
+    //double radianKin = angleKin / 180 * pi;
+    //double radianSui = angleSui / 180 * pi;
+    final centerKa01 =
+        center1 + Offset(r1 * cos(radianKa0), r1 * sin(radianKa0));
+    final centerKa02 =
+        center1 + Offset(r2 * cos(radianKa0), r2 * sin(radianKa0));
+    final centerKa03 =
+        center1 + Offset(r3 * cos(radianKa0), r3 * sin(radianKa0));
+    final centerKa11 =
+        center1 + Offset(r1 * cos(radianKa1), r1 * sin(radianKa1));
+    final centerKa12 =
+        center1 + Offset(r2 * cos(radianKa1), r2 * sin(radianKa1));
+    final centerKa13 =
+        center1 + Offset(r3 * cos(radianKa1), r3 * sin(radianKa1));
+    final centerKa21 =
+        center1 + Offset(r1 * cos(radianKa2), r1 * sin(radianKa2));
+    final centerKa22 =
+        center1 + Offset(r2 * cos(radianKa2), r2 * sin(radianKa2));
+    final centerKa23 =
+        center1 + Offset(r3 * cos(radianKa2), r3 * sin(radianKa2));
+    final centerKa31 =
+        center1 + Offset(r1 * cos(radianKa3), r1 * sin(radianKa3));
+    final centerKa32 =
+        center1 + Offset(r2 * cos(radianKa3), r2 * sin(radianKa3));
+    final centerKa33 =
+        center1 + Offset(r3 * cos(radianKa3), r3 * sin(radianKa3));
+    final centerKa41 =
+        center1 + Offset(r1 * cos(radianKa4), r1 * sin(radianKa4));
+    final centerKa42 =
+        center1 + Offset(r2 * cos(radianKa4), r2 * sin(radianKa4));
+    final centerKa43 =
+        center1 + Offset(r3 * cos(radianKa4), r3 * sin(radianKa4));
+
+    /*final centerKa1 = center1 + Offset(r1 * cos(radianKa), r1 * sin(radianKa));
     final centerKa2 = center1 + Offset(r2 * cos(radianKa), r2 * sin(radianKa));
     final centerKa3 = center1 + Offset(r3 * cos(radianKa), r3 * sin(radianKa));
     final centerDo1 = center1 + Offset(r1 * cos(radianDo), r1 * sin(radianDo));
@@ -578,24 +821,25 @@ class ShapePainter3 extends CustomPainter {
     final centerSui2 =
         center1 + Offset(r2 * cos(radianSui), r2 * sin(radianSui));
     final centerSui3 =
-        center1 + Offset(r3 * cos(radianSui), r3 * sin(radianSui));
+        center1 + Offset(r3 * cos(radianSui), r3 * sin(radianSui));*/
 
     //canvas.drawCircle(center1, 20, penBlue..style = PaintingStyle.stroke);
-    canvas.drawCircle(centerMoku1, rr1, penBlue..style = PaintingStyle.stroke);
-    canvas.drawCircle(centerMoku2, rr1, penBlue..style = PaintingStyle.stroke);
-    canvas.drawCircle(centerMoku3, rr1, penBlue..style = PaintingStyle.stroke);
-    canvas.drawCircle(centerKa1, rr1, penBlue..style = PaintingStyle.stroke);
-    canvas.drawCircle(centerKa2, rr1, penBlue..style = PaintingStyle.stroke);
-    canvas.drawCircle(centerKa3, rr1, penBlue..style = PaintingStyle.stroke);
-    canvas.drawCircle(centerDo1, rr1, penBlue..style = PaintingStyle.stroke);
-    canvas.drawCircle(centerDo2, rr1, penBlue..style = PaintingStyle.stroke);
-    canvas.drawCircle(centerDo3, rr1, penBlue..style = PaintingStyle.stroke);
-    canvas.drawCircle(centerKin1, rr1, penBlue..style = PaintingStyle.stroke);
-    canvas.drawCircle(centerKin2, rr1, penBlue..style = PaintingStyle.stroke);
-    canvas.drawCircle(centerKin3, rr1, penBlue..style = PaintingStyle.stroke);
-    canvas.drawCircle(centerSui1, rr1, penBlue..style = PaintingStyle.stroke);
-    canvas.drawCircle(centerSui2, rr1, penBlue..style = PaintingStyle.stroke);
-    canvas.drawCircle(centerSui3, rr1, penBlue..style = PaintingStyle.stroke);
+    canvas.drawCircle(center1, rr2, penBlack2..style = PaintingStyle.fill);
+    canvas.drawCircle(centerKa01, rr1, penBlack1..style = PaintingStyle.fill);
+    canvas.drawCircle(centerKa02, rr1, penBlack1..style = PaintingStyle.fill);
+    canvas.drawCircle(centerKa03, rr1, penBlue..style = PaintingStyle.fill);
+    canvas.drawCircle(centerKa11, rr1, penBlack1..style = PaintingStyle.fill);
+    canvas.drawCircle(centerKa12, rr1, penBlack1..style = PaintingStyle.fill);
+    canvas.drawCircle(centerKa13, rr1, penRed..style = PaintingStyle.fill);
+    canvas.drawCircle(centerKa21, rr1, penBlack1..style = PaintingStyle.fill);
+    canvas.drawCircle(centerKa22, rr1, penBlack1..style = PaintingStyle.fill);
+    canvas.drawCircle(centerKa23, rr1, penYelow..style = PaintingStyle.fill);
+    canvas.drawCircle(centerKa31, rr1, penBlack1..style = PaintingStyle.fill);
+    canvas.drawCircle(centerKa32, rr1, penBlack1..style = PaintingStyle.fill);
+    canvas.drawCircle(centerKa33, rr1, penWhite..style = PaintingStyle.fill);
+    canvas.drawCircle(centerKa41, rr1, penBlack1..style = PaintingStyle.fill);
+    canvas.drawCircle(centerKa42, rr1, penBlack1..style = PaintingStyle.fill);
+    canvas.drawCircle(centerKa43, rr1, penWhite1..style = PaintingStyle.stroke);
     canvas.drawCircle(center1, rr2, penWhite..style = PaintingStyle.stroke);
 
     // 日子の運勢の描画
@@ -756,34 +1000,73 @@ class ShapePainter4 extends CustomPainter {
         Offset(lineLength1 * cos(radian1), lineLength1 * sin(radian1));
     final line2 = center1 +
         Offset(lineLength1 * cos(radian2), lineLength1 * sin(radian2));
-    //final line21 = center2 +
-    //   Offset(lineLength2 * cos(radian3), lineLength2 * sin(radian1));
-    //final line22 = center2 +
-    //   Offset(lineLength2 * cos(radian4), lineLength2 * sin(radian2));
 
-    // canvas.drawLine(center1, line0, penRed); // 赤い中心線
+    // 日干の1の描画
     canvas.drawLine(center1, line1, penWhite);
     canvas.drawLine(center1, line2, penWhite);
 
     double radian3 = ((30 * nitiSi) - 90 - 15) / 180 * pi;
     double radian4 = ((30 * nitiSi) - 90 + 15) / 180 * pi;
 
-    final line3 = center2 +
-        Offset(lineLength1 * cos(radian1), lineLength1 * sin(radian1));
-    final line4 = center2 +
-        Offset(lineLength1 * cos(radian2), lineLength1 * sin(radian2));
     final line31 = center2 +
         Offset(lineLength2 * cos(radian3), lineLength2 * sin(radian3));
     final line32 = center2 +
         Offset(lineLength2 * cos(radian4), lineLength2 * sin(radian4));
 
-    // canvas.drawLine(center1, line0, penRed); // 赤い中心線
-    //canvas.drawLine(center1, line1, penWhite);
-    //canvas.drawLine(center1, line2, penWhite);
-
-    // 本質チャートの描画
+    // 日支の位置の描画
     canvas.drawLine(center2, line31, penWhite);
     canvas.drawLine(center2, line32, penWhite);
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) {
+    return false;
+  }
+}
+
+class ShapePainter5 extends CustomPainter {
+  //int gogyou = 1; // 五行　0:木 1:火 2:土 3:金 4:水  // ■■■■■■受け取る値を代入する変数を定義
+  //int nitiSi = 0;
+  int tuhen; // 日し
+  ShapePainter5({required this.tuhen}); // ■■■■■■■■■受け取る値を上記変数に代入
+  @override
+  void paint(Canvas canvas, Size size) {
+    var center1 = const Offset(150, 130); // 表面の中心座標
+    var center2 = const Offset(150, 400); // 本質の中心座標
+
+    double rr1 = 18;
+    double r1 = 36;
+    double r2 = 72;
+    double rt;
+    double gogyo;
+    int gogyo1;
+
+    final penPink2 = Paint()
+      ..color = Colors.purple
+      ..strokeWidth = 2.0;
+    final penPink1 = Paint()
+      ..color = Colors.pink
+      ..strokeWidth = 2.0;
+
+    final penPink = Paint()
+      ..color = Colors.purpleAccent
+      ..strokeWidth = 2.0;
+
+    gogyo1 = tuhen % 2;
+    if (gogyo1 == 0) {
+      rt = r2;
+      gogyo = tuhen / 2;
+    } else {
+      rt = r1;
+      gogyo = (tuhen - 1) / 2;
+    }
+
+    double radianTu = (72 * gogyo - 90) / 180 * pi;
+    final centerTu = center1 + Offset(rt * cos(radianTu), rt * sin(radianTu));
+
+    canvas.drawCircle(centerTu, rr1 + 8, penPink2..style = PaintingStyle.fill);
+    canvas.drawCircle(centerTu, rr1 + 4, penPink1..style = PaintingStyle.fill);
+    canvas.drawCircle(centerTu, rr1 - 0, penPink..style = PaintingStyle.fill);
   }
 
   @override

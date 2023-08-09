@@ -72,7 +72,7 @@ class Update extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: ListTile(
-                    title: const Text('第4.2版　命式チャートページにを追加しました。（2023/6/16 更新)'),
+                    title: const Text('第4.2版　命式チャートページを追加しました。（2023/6/16 更新)'),
                     trailing: const Icon(Icons.navigate_next),
                     onTap: () {
                       Navigator.push(
