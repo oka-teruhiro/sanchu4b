@@ -229,6 +229,16 @@ class KyouUnseiPage extends StatelessWidget {
                                         // size: const Size(400, 400), // この行を入れると図形と文字を重ねることができない
                                       ),
                                     ),
+                                    SizedBox(
+                                      width: 312,
+                                      height: 460,
+                                      child: CustomPaint(
+                                        painter: ShapePainter7(
+                                          sigo: model.sigo,
+                                        ), // 渡したい変数を引数に指定する
+                                        // size: const Size(400, 400), // この行を入れると図形と文字を重ねることができない
+                                      ),
+                                    ),
                                     // 外枠五行
                                     Transform.translate(
                                       offset: Offset(0, 0),
@@ -851,7 +861,7 @@ class ShapePainter3 extends CustomPainter {
     double rr1 = 18; // 小さい円の半径
     double rr2 = 90; // 日干の大きい円の半径
     double rr3 = 93; // 日支の大きな円の半径
-    List<int> kei = [1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0];
+    //List<int> kei = [1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0];
 
     final penWhite = Paint()
       ..color = Colors.white
@@ -1063,8 +1073,6 @@ class ShapePainter4 extends CustomPainter {
 }
 
 class ShapePainter5 extends CustomPainter {
-  //int gogyou = 1; // 五行　0:木 1:火 2:土 3:金 4:水  // ■■■■■■受け取る値を代入する変数を定義
-  //int nitiSi = 0;
   int tuhen; // 日し
   ShapePainter5({required this.tuhen}); // ■■■■■■■■■受け取る値を上記変数に代入
   @override
@@ -1216,6 +1224,45 @@ class ShapePainter6 extends CustomPainter {
     } else {}
 
     //canvas.drawCircle(center2, rr3, penWhite..style = PaintingStyle.stroke);
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) {
+    return false;
+  }
+}
+
+class ShapePainter7 extends CustomPainter {
+  int sigo; // 日し
+  ShapePainter7({required this.sigo}); // ■■■■■■■■■受け取る値を上記変数に代入
+  @override
+  void paint(Canvas canvas, Size size) {
+    var center1 = const Offset(150, 130); // 表面の中心座標
+    var center2 = const Offset(150, 400); // 本質の中心座標
+
+    print(sigo);
+
+    double rr1 = 18;
+    double r5 = 74; // 日支の２階の円の中心の半径
+
+    final penPink2 = Paint()
+      ..color = Colors.purple
+      ..strokeWidth = 2.0;
+    final penPink1 = Paint()
+      ..color = Colors.pink
+      ..strokeWidth = 2.0;
+
+    final penPink = Paint()
+      ..color = Colors.purpleAccent
+      ..strokeWidth = 2.0;
+
+    double radianSi = (30 * sigo + 90) / 180 * pi;
+    final centerSi = center2 + Offset(r5 * cos(radianSi), r5 * sin(radianSi));
+
+    canvas.drawCircle(centerSi, rr1 + 8, penPink2..style = PaintingStyle.fill);
+    canvas.drawCircle(centerSi, rr1 + 4, penPink1..style = PaintingStyle.fill);
+    canvas.drawCircle(centerSi, rr1 - 0, penPink..style = PaintingStyle.fill);
+    //canvas.drawCircle(centerTu, rr1 - 4, penPink3..style = PaintingStyle.fill);
   }
 
   @override
