@@ -49,50 +49,97 @@ class KyouUnseiPage extends StatelessWidget {
     const int c2 = -1; // 白
     const int c3 = -1407770; // ピンク
 
-    double rrr = 36; //小さい円の直系
+    double r1 = 36; // 日干の１階の円の中心の半径
+    double r2 = 72; // 日干の２階の円の中心の半径
+    double r3 = 108; // 日干の３階の円の中心の半径
+    double r4 = 112; // 日支の３階の円の中心の半径
+    double r5 = 74; // 日支の２階の円の中心の半径
+    double r6 = 36; // 日支の１階の円の中心の半径
+    double rr1 = 18; // 小さい円の半径
+    double rr2 = 90; // 日干の大きい円の半径
+    double rr3 = 93; // 日支の大きな円の半径
+    double rrr = rr1 * 2; //小さい円の直系
     double rrM = 24; //文字の大きさ
-    var center1 = Offset((150 - rrr / 2), (130 - rrr / 2)); // 表面の中心座標
-    var center2 = Offset((150 - rrM / 2), (130 - rrM / 2)); // 表面の中心座標
-    double r1 = 36;
-    double r2 = 72;
-    double r3 = 108;
-    //double rr1 = 36;
-    double radiG0 = (72 * 0 - 90) / 180 * pi;
-    double tadiG1 = (72 * 1 - 90) / 180 * pi;
-    double radiG2 = (72 * 2 - 90) / 180 * pi;
-    double radiG3 = (72 * 3 - 90) / 180 * pi;
-    double radiG4 = (72 * 4 - 90) / 180 * pi;
-    final centerG01 = center1 + Offset(r1 * cos(radiG0), r1 * sin(radiG0));
-    final centerG02 = center1 + Offset(r2 * cos(radiG0), r2 * sin(radiG0));
-    final centerG03 = center1 + Offset(r3 * cos(radiG0), r3 * sin(radiG0));
-    final centerG11 = center1 + Offset(r1 * cos(tadiG1), r1 * sin(tadiG1));
-    final centerG12 = center1 + Offset(r2 * cos(tadiG1), r2 * sin(tadiG1));
-    final centerG13 = center1 + Offset(r3 * cos(tadiG1), r3 * sin(tadiG1));
-    final centerG21 = center1 + Offset(r1 * cos(radiG2), r1 * sin(radiG2));
-    final centerG22 = center1 + Offset(r2 * cos(radiG2), r2 * sin(radiG2));
-    final centerG23 = center1 + Offset(r3 * cos(radiG2), r3 * sin(radiG2));
-    final centerG31 = center1 + Offset(r1 * cos(radiG3), r1 * sin(radiG3));
-    final centerG32 = center1 + Offset(r2 * cos(radiG3), r2 * sin(radiG3));
-    final centerG33 = center1 + Offset(r3 * cos(radiG3), r3 * sin(radiG3));
-    final centerG41 = center1 + Offset(r1 * cos(radiG4), r1 * sin(radiG4));
-    final centerG42 = center1 + Offset(r2 * cos(radiG4), r2 * sin(radiG4));
-    final centerG43 = center1 + Offset(r3 * cos(radiG4), r3 * sin(radiG4));
 
-    final centerG0M1 = center2 + Offset(r1 * cos(radiG0), r1 * sin(radiG0));
-    final centerG0M2 = center2 + Offset(r2 * cos(radiG0), r2 * sin(radiG0));
-    final centerG0M3 = center2 + Offset(r3 * cos(radiG0), r3 * sin(radiG0));
-    final centerG1M1 = center2 + Offset(r1 * cos(tadiG1), r1 * sin(tadiG1));
-    final centerG1M2 = center2 + Offset(r2 * cos(tadiG1), r2 * sin(tadiG1));
-    final centerG1M3 = center2 + Offset(r3 * cos(tadiG1), r3 * sin(tadiG1));
-    final centerG2M1 = center2 + Offset(r1 * cos(radiG2), r1 * sin(radiG2));
-    final centerG2M2 = center2 + Offset(r2 * cos(radiG2), r2 * sin(radiG2));
-    final centerG2M3 = center2 + Offset(r3 * cos(radiG2), r3 * sin(radiG2));
-    final centerG3M1 = center2 + Offset(r1 * cos(radiG3), r1 * sin(radiG3));
-    final centerG3M2 = center2 + Offset(r2 * cos(radiG3), r2 * sin(radiG3));
-    final centerG3M3 = center2 + Offset(r3 * cos(radiG3), r3 * sin(radiG3));
-    final centerG4M1 = center2 + Offset(r1 * cos(radiG4), r1 * sin(radiG4));
-    final centerG4M2 = center2 + Offset(r2 * cos(radiG4), r2 * sin(radiG4));
-    final centerG4M3 = center2 + Offset(r3 * cos(radiG4), r3 * sin(radiG4));
+    // 文字のセンター位置
+    var centa1 = Offset((150 - rrr / 2), (130 - rrr / 2)); // 日干図形の中心座標
+    var centa2 = Offset((150 - rrM / 2), (130 - rrM / 2)); // 日干文字の中心座標
+    var centa3 = Offset((150 - rrr / 2), (400 - rrr / 2)); // 日支図形の中心座標
+    var centa4 = Offset((150 - rrM / 2), (400 - rrM / 2)); // 日支文字の中心座標
+
+    // 角度の定数
+    double radiG0 = (72 * 0 - 90) / 180 * pi; // 木の角度
+    double tadiG1 = (72 * 1 - 90) / 180 * pi; // 火の角度
+    double radiG2 = (72 * 2 - 90) / 180 * pi; // 土の角度
+    double radiG3 = (72 * 3 - 90) / 180 * pi; // 金の角度
+    double radiG4 = (72 * 4 - 90) / 180 * pi; // 水の角度
+    double radiS0 = (30 * 0 + 90) / 180 * pi; // 子の角度
+    double radiS1 = (30 * 1 + 90) / 180 * pi; // 丑の角度
+    double radiS2 = (30 * 2 + 90) / 180 * pi; // 寅の角度
+    double radiS3 = (30 * 3 + 90) / 180 * pi; // 卯の角度
+    double radiS4 = (30 * 4 + 90) / 180 * pi; // 辰の角度
+    double radiS5 = (30 * 5 + 90) / 180 * pi; // 巳の角度
+    double radiS6 = (30 * 6 + 90) / 180 * pi; // 午の角度
+    double radiS7 = (30 * 7 + 90) / 180 * pi; // 未の角度
+    double radiS8 = (30 * 8 + 90) / 180 * pi; // 申の角度
+    double radiS9 = (30 * 9 + 90) / 180 * pi; // 酉の角度
+    double radiS10 = (30 * 10 + 90) / 180 * pi; // 戌の角度
+    double radiS11 = (30 * 11 + 90) / 180 * pi; // 亥の角度
+    // 日干の小さい円の文字の中心座標（１階から３階まで）
+    final centaG0M1 = centa2 + Offset(r1 * cos(radiG0), r1 * sin(radiG0));
+    final centaG0M2 = centa2 + Offset(r2 * cos(radiG0), r2 * sin(radiG0));
+    final centaG0M3 = centa2 + Offset(r3 * cos(radiG0), r3 * sin(radiG0));
+    final centaG1M1 = centa2 + Offset(r1 * cos(tadiG1), r1 * sin(tadiG1));
+    final centaG1M2 = centa2 + Offset(r2 * cos(tadiG1), r2 * sin(tadiG1));
+    final centaG1M3 = centa2 + Offset(r3 * cos(tadiG1), r3 * sin(tadiG1));
+    final centaG2M1 = centa2 + Offset(r1 * cos(radiG2), r1 * sin(radiG2));
+    final centaG2M2 = centa2 + Offset(r2 * cos(radiG2), r2 * sin(radiG2));
+    final centaG2M3 = centa2 + Offset(r3 * cos(radiG2), r3 * sin(radiG2));
+    final centaG3M1 = centa2 + Offset(r1 * cos(radiG3), r1 * sin(radiG3));
+    final centaG3M2 = centa2 + Offset(r2 * cos(radiG3), r2 * sin(radiG3));
+    final centaG3M3 = centa2 + Offset(r3 * cos(radiG3), r3 * sin(radiG3));
+    final centaG4M1 = centa2 + Offset(r1 * cos(radiG4), r1 * sin(radiG4));
+    final centaG4M2 = centa2 + Offset(r2 * cos(radiG4), r2 * sin(radiG4));
+    final centaG4M3 = centa2 + Offset(r3 * cos(radiG4), r3 * sin(radiG4));
+    // 日支の３階の円の文字座標
+    final centaS0 = centa4 + Offset(r4 * cos(radiS0), r4 * sin(radiS0));
+    final centaS1 = centa4 + Offset(r4 * cos(radiS1), r4 * sin(radiS1));
+    final centaS2 = centa4 + Offset(r4 * cos(radiS2), r4 * sin(radiS2));
+    final centaS3 = centa4 + Offset(r4 * cos(radiS3), r4 * sin(radiS3));
+    final centaS4 = centa4 + Offset(r4 * cos(radiS4), r4 * sin(radiS4));
+    final centaS5 = centa4 + Offset(r4 * cos(radiS5), r4 * sin(radiS5));
+    final centaS6 = centa4 + Offset(r4 * cos(radiS6), r4 * sin(radiS6));
+    final centaS7 = centa4 + Offset(r4 * cos(radiS7), r4 * sin(radiS7));
+    final centaS8 = centa4 + Offset(r4 * cos(radiS8), r4 * sin(radiS8));
+    final centaS9 = centa4 + Offset(r4 * cos(radiS9), r4 * sin(radiS9));
+    final centaS10 = centa4 + Offset(r4 * cos(radiS10), r4 * sin(radiS10));
+    final centaS11 = centa4 + Offset(r4 * cos(radiS11), r4 * sin(radiS11));
+    // 日支の２階の円の文字座標
+    final centaS0a = centa4 + Offset(r5 * cos(radiS0), r5 * sin(radiS0));
+    final centaS1a = centa4 + Offset(r5 * cos(radiS1), r5 * sin(radiS1));
+    final centaS2a = centa4 + Offset(r5 * cos(radiS2), r5 * sin(radiS2));
+    final centaS3a = centa4 + Offset(r5 * cos(radiS3), r5 * sin(radiS3));
+    final centaS4a = centa4 + Offset(r5 * cos(radiS4), r5 * sin(radiS4));
+    final centaS5a = centa4 + Offset(r5 * cos(radiS5), r5 * sin(radiS5));
+    final centaS6a = centa4 + Offset(r5 * cos(radiS6), r5 * sin(radiS6));
+    final centaS7a = centa4 + Offset(r5 * cos(radiS7), r5 * sin(radiS7));
+    final centaS8a = centa4 + Offset(r5 * cos(radiS8), r5 * sin(radiS8));
+    final centaS9a = centa4 + Offset(r5 * cos(radiS9), r5 * sin(radiS9));
+    final centaS10a = centa4 + Offset(r5 * cos(radiS10), r5 * sin(radiS10));
+    final centaS11a = centa4 + Offset(r5 * cos(radiS11), r5 * sin(radiS11));
+    // 日支の１階の円の文字座標
+    final centaS0b = centa4 + Offset(r6 * cos(radiS0), r6 * sin(radiS0));
+    final centaS1b = centa4 + Offset(r6 * cos(radiS1), r6 * sin(radiS1));
+    final centaS2b = centa4 + Offset(r6 * cos(radiS2), r6 * sin(radiS2));
+    final centaS3b = centa4 + Offset(r6 * cos(radiS3), r6 * sin(radiS3));
+    final centaS4b = centa4 + Offset(r6 * cos(radiS4), r6 * sin(radiS4));
+    final centaS5b = centa4 + Offset(r6 * cos(radiS5), r6 * sin(radiS5));
+    final centaS6b = centa4 + Offset(r6 * cos(radiS6), r6 * sin(radiS6));
+    final centaS7b = centa4 + Offset(r6 * cos(radiS7), r6 * sin(radiS7));
+    final centaS8b = centa4 + Offset(r6 * cos(radiS8), r6 * sin(radiS8));
+    final centaS9b = centa4 + Offset(r6 * cos(radiS9), r6 * sin(radiS9));
+    final centaS10b = centa4 + Offset(r6 * cos(radiS10), r6 * sin(radiS10));
+    final centaS11b = centa4 + Offset(r6 * cos(radiS11), r6 * sin(radiS11));
 
     return MediaQuery(
       data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
@@ -189,7 +236,7 @@ class KyouUnseiPage extends StatelessWidget {
                                       ),
                                     ),
                                     Transform.translate(
-                                      offset: centerG0M3,
+                                      offset: centaG0M3,
                                       child: SizedBox(
                                         height: rrM,
                                         width: rrM,
@@ -198,7 +245,7 @@ class KyouUnseiPage extends StatelessWidget {
                                       ),
                                     ),
                                     Transform.translate(
-                                      offset: centerG1M3,
+                                      offset: centaG1M3,
                                       child: SizedBox(
                                         height: rrM,
                                         width: rrM,
@@ -207,7 +254,7 @@ class KyouUnseiPage extends StatelessWidget {
                                       ),
                                     ),
                                     Transform.translate(
-                                      offset: centerG2M3,
+                                      offset: centaG2M3,
                                       child: SizedBox(
                                         height: rrM,
                                         width: rrM,
@@ -216,7 +263,7 @@ class KyouUnseiPage extends StatelessWidget {
                                       ),
                                     ),
                                     Transform.translate(
-                                      offset: centerG3M3,
+                                      offset: centaG3M3,
                                       child: SizedBox(
                                         height: rrM,
                                         width: rrM,
@@ -225,7 +272,7 @@ class KyouUnseiPage extends StatelessWidget {
                                       ),
                                     ),
                                     Transform.translate(
-                                      offset: centerG4M3,
+                                      offset: centaG4M3,
                                       child: SizedBox(
                                         height: rrM,
                                         width: rrM,
@@ -234,7 +281,7 @@ class KyouUnseiPage extends StatelessWidget {
                                       ),
                                     ),
                                     Transform.translate(
-                                      offset: centerG0M2,
+                                      offset: centaG0M2,
                                       child: SizedBox(
                                         height: rrM,
                                         width: rrM,
@@ -242,7 +289,7 @@ class KyouUnseiPage extends StatelessWidget {
                                       ),
                                     ),
                                     Transform.translate(
-                                      offset: centerG0M1,
+                                      offset: centaG0M1,
                                       child: SizedBox(
                                         height: rrM,
                                         width: rrM,
@@ -250,7 +297,7 @@ class KyouUnseiPage extends StatelessWidget {
                                       ),
                                     ),
                                     Transform.translate(
-                                      offset: centerG1M2,
+                                      offset: centaG1M2,
                                       child: SizedBox(
                                         height: rrM,
                                         width: rrM,
@@ -258,7 +305,7 @@ class KyouUnseiPage extends StatelessWidget {
                                       ),
                                     ),
                                     Transform.translate(
-                                      offset: centerG1M1,
+                                      offset: centaG1M1,
                                       child: SizedBox(
                                         height: rrM,
                                         width: rrM,
@@ -266,7 +313,7 @@ class KyouUnseiPage extends StatelessWidget {
                                       ),
                                     ),
                                     Transform.translate(
-                                      offset: centerG2M2,
+                                      offset: centaG2M2,
                                       child: SizedBox(
                                         height: rrM,
                                         width: rrM,
@@ -275,7 +322,7 @@ class KyouUnseiPage extends StatelessWidget {
                                     ),
 
                                     Transform.translate(
-                                      offset: centerG2M1,
+                                      offset: centaG2M1,
                                       child: SizedBox(
                                         height: rrM,
                                         width: rrM,
@@ -283,7 +330,7 @@ class KyouUnseiPage extends StatelessWidget {
                                       ),
                                     ),
                                     Transform.translate(
-                                      offset: centerG3M2,
+                                      offset: centaG3M2,
                                       child: SizedBox(
                                         height: rrM,
                                         width: rrM,
@@ -291,7 +338,7 @@ class KyouUnseiPage extends StatelessWidget {
                                       ),
                                     ),
                                     Transform.translate(
-                                      offset: centerG3M1,
+                                      offset: centaG3M1,
                                       child: SizedBox(
                                         height: rrM,
                                         width: rrM,
@@ -299,7 +346,7 @@ class KyouUnseiPage extends StatelessWidget {
                                       ),
                                     ),
                                     Transform.translate(
-                                      offset: centerG4M2,
+                                      offset: centaG4M2,
                                       child: SizedBox(
                                         height: rrM,
                                         width: rrM,
@@ -307,11 +354,132 @@ class KyouUnseiPage extends StatelessWidget {
                                       ),
                                     ),
                                     Transform.translate(
-                                      offset: centerG4M1,
+                                      offset: centaG4M1,
                                       child: SizedBox(
                                         height: rrM,
                                         width: rrM,
                                         child: Image.asset(go[9]),
+                                      ),
+                                    ),
+                                    // ■■■■■■■■■ 日支の３階の文字 ■■■■■■■■■
+                                    Transform.translate(
+                                      // 子
+                                      offset: centaS0,
+                                      child: SizedBox(
+                                        height: rrM,
+                                        width: rrM,
+                                        child: Image.asset(
+                                            'images/tuuhenbosi/s0.png'),
+                                      ),
+                                    ),
+                                    Transform.translate(
+                                      // 丑
+                                      offset: centaS1,
+                                      child: SizedBox(
+                                        height: rrM,
+                                        width: rrM,
+                                        child: Image.asset(
+                                            'images/tuuhenbosi/s1.png'),
+                                      ),
+                                    ),
+                                    Transform.translate(
+                                      // 寅
+                                      offset: centaS2,
+                                      child: SizedBox(
+                                        height: rrM,
+                                        width: rrM,
+                                        child: Image.asset(
+                                            'images/tuuhenbosi/s2.png'),
+                                      ),
+                                    ),
+                                    Transform.translate(
+                                      // 卯
+                                      offset: centaS3,
+                                      child: SizedBox(
+                                        height: rrM,
+                                        width: rrM,
+                                        child: Image.asset(
+                                            'images/tuuhenbosi/s3.png'),
+                                      ),
+                                    ),
+                                    Transform.translate(
+                                      // 辰
+                                      offset: centaS4,
+                                      child: SizedBox(
+                                        height: rrM,
+                                        width: rrM,
+                                        child: Image.asset(
+                                            'images/tuuhenbosi/s4.png'),
+                                      ),
+                                    ),
+                                    Transform.translate(
+                                      // 巳
+                                      offset: centaS5,
+                                      child: SizedBox(
+                                        height: rrM,
+                                        width: rrM,
+                                        child: Image.asset(
+                                            'images/tuuhenbosi/s5.png'),
+                                      ),
+                                    ),
+                                    Transform.translate(
+                                      // 午
+                                      offset: centaS6,
+                                      child: SizedBox(
+                                        height: rrM,
+                                        width: rrM,
+                                        child: Image.asset(
+                                            'images/tuuhenbosi/s6.png'),
+                                      ),
+                                    ),
+                                    Transform.translate(
+                                      // 未
+                                      offset: centaS7,
+                                      child: SizedBox(
+                                        height: rrM,
+                                        width: rrM,
+                                        child: Image.asset(
+                                            'images/tuuhenbosi/s7.png'),
+                                      ),
+                                    ),
+                                    Transform.translate(
+                                      // 申
+                                      offset: centaS8,
+                                      child: SizedBox(
+                                        height: rrM,
+                                        width: rrM,
+                                        child: Image.asset(
+                                            'images/tuuhenbosi/s8.png'),
+                                      ),
+                                    ),
+                                    Transform.translate(
+                                      // 酉
+                                      offset: centaS9,
+                                      child: SizedBox(
+                                        height: rrM,
+                                        width: rrM,
+                                        child: Image.asset(
+                                            'images/tuuhenbosi/s9.png'),
+                                      ),
+                                    ),
+                                    Transform.translate(
+                                      // 戌
+                                      offset: centaS10,
+                                      child: SizedBox(
+                                        height: rrM,
+                                        width: rrM,
+                                        child: Image.asset(
+                                            'images/tuuhenbosi/s10.png'),
+                                      ),
+                                    ),
+                                    Transform.translate(
+                                      // 亥
+                                      offset: centaS11,
+                                      child: SizedBox(
+                                        height: rrM,
+                                        width: rrM,
+                                        child: Image.asset(
+                                            'images/tuuhenbosi/s11.png'),
                                       ),
                                     ),
                                   ],
@@ -327,110 +495,23 @@ class KyouUnseiPage extends StatelessWidget {
                                   fontSize: 14,
                                 )),
                           ),
-                          ListTile(
+                          const ListTile(
                             title: SizedBox(
                               height: 1200,
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text('■ 結婚運 ■$model.tuhen',
-                                      style: const TextStyle(
+                                  Text('■ 結婚運 ■',
+                                      style: TextStyle(
                                         color: Color(c3),
                                         fontWeight: FontWeight.normal,
                                         fontSize: 14,
                                       )),
-                                  const Text(
+                                  Text(
                                       '　上の大きな白の円において、「＜」で区切られた部'
                                       '分は、日干を表し通変星で比肩・劫敗を表しています。ここから円の'
                                       '中心を向いて、右斜め奥方向に「官星」、左斜め奥方向に「財星」'
                                       'が位置しています。',
-                                      style: TextStyle(
-                                        color: Color(c2),
-                                        fontWeight: FontWeight.normal,
-                                        fontSize: 14,
-                                      )),
-                                  const Text(
-                                      '　女性の場合は、官星方向にある白い数字を足した数が、'
-                                      '「1」あるいは「2」の時は結婚運があるとみます。'
-                                      '「0」あるいは「3以上」の時は結婚運がないとみます。',
-                                      style: TextStyle(
-                                        color: Color(c2),
-                                        fontWeight: FontWeight.normal,
-                                        fontSize: 14,
-                                      )),
-                                  const Text('　男性の場合は、財星方向にある白い数字をみます。',
-                                      style: TextStyle(
-                                        color: Color(c2),
-                                        fontWeight: FontWeight.normal,
-                                        fontSize: 14,
-                                      )),
-                                  const Text(
-                                      '　結婚運がないとなると、心配になりますが、さらに小さ'
-                                      'い白い円（本質）をみます。上の大きな円と同じ方向の白い'
-                                      '数字をみます。表面側が「0」でも本質側に数字があれば、'
-                                      '先祖が準備した運があるとみます。ぜひ先祖供養をして、先'
-                                      '祖が準備した運を取り込みましょう。',
-                                      style: TextStyle(
-                                        color: Color(c2),
-                                        fontWeight: FontWeight.normal,
-                                        fontSize: 14,
-                                      )),
-                                  const Text(
-                                      '　本質にも数字がない時は、天が与える運をみます。天は、'
-                                      '万民に平等に運勢を与えるため、昨日は癸の人、今日は甲の'
-                                      '人、明日は乙の人という具合に順番に運勢を与えていきます。'
-                                      '同様に月ごとに、また年ごとに運勢を与えていきます。その'
-                                      '様子を、一番内側の青い円の中のピンク色の数字で表てしま'
-                                      'す。',
-                                      style: TextStyle(
-                                        color: Color(c2),
-                                        fontWeight: FontWeight.normal,
-                                        fontSize: 14,
-                                      )),
-                                  const Text(
-                                      '　いつ天の運勢がめぐってくるかを調べるには、右下の6つ'
-                                      'の青いボタンをタップすると鑑定日が変化します。結婚運の'
-                                      '方向にピンク色の数字が現れる年がチャンスの時です。その'
-                                      '時に向けて準備をしましょう。',
-                                      style: TextStyle(
-                                        color: Color(c2),
-                                        fontWeight: FontWeight.normal,
-                                        fontSize: 14,
-                                      )),
-                                  const Text(
-                                      '　準備とは、結婚運は、夫婦愛の問題になりますが、夫婦'
-                                      '愛は、兄弟姉妹愛の土台の上に築くことができると言われて'
-                                      'います。兄弟姉妹の愛は、狭い意味では、家族の兄弟姉妹で'
-                                      'すが、広い意味では、地域や人類に対する愛になります。愛'
-                                      'されたら、愛するのは、当たり前の行動ですが、兄弟姉妹の'
-                                      '愛の本質は、その人から愛されたわけではないのに愛してい'
-                                      'く愛を意味します。多くの人を兄弟姉妹のように愛していく'
-                                      '努力をしましょう。',
-                                      style: TextStyle(
-                                        color: Color(c2),
-                                        fontWeight: FontWeight.normal,
-                                        fontSize: 14,
-                                      )),
-                                  const Text(
-                                      '　結婚運がない場合で、星の数が「3以上」の場合は、多く'
-                                      'の人に結婚相手として、気持ちが向いていたり、結婚してい'
-                                      'ても、配偶者意外のひとに気持ちがいったり、言い寄られたり、'
-                                      'また、逆に全く結婚する気持ちがなかったり、縁がなかった'
-                                      'りという現象として現れます。結婚運が「1」や「2」でも、'
-                                      '天の与える運によって、「3以上」になる場合は、やはりこ'
-                                      'の現象が現れやすいので、配偶者をより愛し、誘惑に心を奪'
-                                      'われないように厳しく自らを律する必要があります。',
-                                      style: TextStyle(
-                                        color: Color(c2),
-                                        fontWeight: FontWeight.normal,
-                                        fontSize: 14,
-                                      )),
-                                  const Text(
-                                      '　表面が、結婚運があっても、本質に星がない場合も、注'
-                                      '意が必要です。結婚運があるようでもはがれ落ちやすい結婚'
-                                      '運です。結婚前なら、前述したように自分の愛のレベルを高'
-                                      'める努力をし、結婚後なら配偶者に対しての愛もさらに高め'
-                                      'る努力をしましょう。',
                                       style: TextStyle(
                                         color: Color(c2),
                                         fontWeight: FontWeight.normal,
@@ -751,15 +832,15 @@ class ShapePainter3 extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     var center1 = const Offset(150, 130); // 表面の中心座標
     var center2 = const Offset(150, 400); // 本質の中心座標
-    double r1 = 36;
-    double r2 = 72;
-    double r3 = 108;
-    double r4 = 112;
-    double r5 = 74;
-    double r6 = 36;
-    double rr1 = 18;
-    double rr2 = 90;
-    double rr3 = 93;
+    double r1 = 36; // 日干の１階の円の中心の半径
+    double r2 = 72; // 日干の２階の円の中心の半径
+    double r3 = 108; // 日干の３階の円の中心の半径
+    double r4 = 112; // 日支の３階の円の中心の半径
+    double r5 = 74; // 日支の２階の円の中心の半径
+    double r6 = 36; // 日支の１階の円の中心の半径
+    double rr1 = 18; // 小さい円の半径
+    double rr2 = 90; // 日干の大きい円の半径
+    double rr3 = 93; // 日支の大きな円の半径
 
     final penWhite = Paint()
       ..color = Colors.white
@@ -789,215 +870,139 @@ class ShapePainter3 extends CustomPainter {
       ..color = Colors.white12
       ..strokeWidth = 2.0;
 
-    //double angleMoku = 72 * 0 - 90;
-    //double angleKa = 72 * 1 - 90;
-    //double angleDo = 72 * 2 - 90;
-    //double angleKin = 72 * 3 - 90;
-    //double angleSui = 72 * 4 - 90;
-    double radianKa0 = (72 * 0 - 90) / 180 * pi;
-    double radianKa1 = (72 * 1 - 90) / 180 * pi;
-    double radianKa2 = (72 * 2 - 90) / 180 * pi;
-    double radianKa3 = (72 * 3 - 90) / 180 * pi;
-    double radianKa4 = (72 * 4 - 90) / 180 * pi;
-    //double radianKa = angleKa / 180 * pi;
-    //double radianDo = angleDo / 180 * pi;
-    //double radianKin = angleKin / 180 * pi;
-    //double radianSui = angleSui / 180 * pi;
-    final centerKa01 =
-        center1 + Offset(r1 * cos(radianKa0), r1 * sin(radianKa0));
-    final centerKa02 =
-        center1 + Offset(r2 * cos(radianKa0), r2 * sin(radianKa0));
-    final centerKa03 =
-        center1 + Offset(r3 * cos(radianKa0), r3 * sin(radianKa0));
-    final centerKa11 =
-        center1 + Offset(r1 * cos(radianKa1), r1 * sin(radianKa1));
-    final centerKa12 =
-        center1 + Offset(r2 * cos(radianKa1), r2 * sin(radianKa1));
-    final centerKa13 =
-        center1 + Offset(r3 * cos(radianKa1), r3 * sin(radianKa1));
-    final centerKa21 =
-        center1 + Offset(r1 * cos(radianKa2), r1 * sin(radianKa2));
-    final centerKa22 =
-        center1 + Offset(r2 * cos(radianKa2), r2 * sin(radianKa2));
-    final centerKa23 =
-        center1 + Offset(r3 * cos(radianKa2), r3 * sin(radianKa2));
-    final centerKa31 =
-        center1 + Offset(r1 * cos(radianKa3), r1 * sin(radianKa3));
-    final centerKa32 =
-        center1 + Offset(r2 * cos(radianKa3), r2 * sin(radianKa3));
-    final centerKa33 =
-        center1 + Offset(r3 * cos(radianKa3), r3 * sin(radianKa3));
-    final centerKa41 =
-        center1 + Offset(r1 * cos(radianKa4), r1 * sin(radianKa4));
-    final centerKa42 =
-        center1 + Offset(r2 * cos(radianKa4), r2 * sin(radianKa4));
-    final centerKa43 =
-        center1 + Offset(r3 * cos(radianKa4), r3 * sin(radianKa4));
+    double radiG0 = (72 * 0 - 90) / 180 * pi;
+    double radiG1 = (72 * 1 - 90) / 180 * pi;
+    double radiG2 = (72 * 2 - 90) / 180 * pi;
+    double radiG3 = (72 * 3 - 90) / 180 * pi;
+    double radiG4 = (72 * 4 - 90) / 180 * pi;
 
-    /*final centerKa1 = center1 + Offset(r1 * cos(radianKa), r1 * sin(radianKa));
-    final centerKa2 = center1 + Offset(r2 * cos(radianKa), r2 * sin(radianKa));
-    final centerKa3 = center1 + Offset(r3 * cos(radianKa), r3 * sin(radianKa));
-    final centerDo1 = center1 + Offset(r1 * cos(radianDo), r1 * sin(radianDo));
-    final centerDo2 = center1 + Offset(r2 * cos(radianDo), r2 * sin(radianDo));
-    final centerDo3 = center1 + Offset(r3 * cos(radianDo), r3 * sin(radianDo));
-    final centerKin1 =
-        center1 + Offset(r1 * cos(radianKin), r1 * sin(radianKin));
-    final centerKin2 =
-        center1 + Offset(r2 * cos(radianKin), r2 * sin(radianKin));
-    final centerKin3 =
-        center1 + Offset(r3 * cos(radianKin), r3 * sin(radianKin));
-    final centerSui1 =
-        center1 + Offset(r1 * cos(radianSui), r1 * sin(radianSui));
-    final centerSui2 =
-        center1 + Offset(r2 * cos(radianSui), r2 * sin(radianSui));
-    final centerSui3 =
-        center1 + Offset(r3 * cos(radianSui), r3 * sin(radianSui));*/
+    final centerG01 = center1 + Offset(r1 * cos(radiG0), r1 * sin(radiG0));
+    final centerG02 = center1 + Offset(r2 * cos(radiG0), r2 * sin(radiG0));
+    final centerG03 = center1 + Offset(r3 * cos(radiG0), r3 * sin(radiG0));
+    final centerG11 = center1 + Offset(r1 * cos(radiG1), r1 * sin(radiG1));
+    final centerG12 = center1 + Offset(r2 * cos(radiG1), r2 * sin(radiG1));
+    final centerG13 = center1 + Offset(r3 * cos(radiG1), r3 * sin(radiG1));
+    final centerG21 = center1 + Offset(r1 * cos(radiG2), r1 * sin(radiG2));
+    final centerG22 = center1 + Offset(r2 * cos(radiG2), r2 * sin(radiG2));
+    final centerG23 = center1 + Offset(r3 * cos(radiG2), r3 * sin(radiG2));
+    final centerG31 = center1 + Offset(r1 * cos(radiG3), r1 * sin(radiG3));
+    final centerG32 = center1 + Offset(r2 * cos(radiG3), r2 * sin(radiG3));
+    final centerG33 = center1 + Offset(r3 * cos(radiG3), r3 * sin(radiG3));
+    final centerG41 = center1 + Offset(r1 * cos(radiG4), r1 * sin(radiG4));
+    final centerG42 = center1 + Offset(r2 * cos(radiG4), r2 * sin(radiG4));
+    final centerG43 = center1 + Offset(r3 * cos(radiG4), r3 * sin(radiG4));
 
-    //canvas.drawCircle(center1, 20, penBlue..style = PaintingStyle.stroke);
+    // 日干の運勢の描画（固定部分）
     canvas.drawCircle(center1, rr2, penBlack2..style = PaintingStyle.fill);
-    canvas.drawCircle(centerKa01, rr1, penBlack1..style = PaintingStyle.fill);
-    canvas.drawCircle(centerKa02, rr1, penBlack1..style = PaintingStyle.fill);
-    canvas.drawCircle(centerKa03, rr1, penBlue..style = PaintingStyle.fill);
-    canvas.drawCircle(centerKa11, rr1, penBlack1..style = PaintingStyle.fill);
-    canvas.drawCircle(centerKa12, rr1, penBlack1..style = PaintingStyle.fill);
-    canvas.drawCircle(centerKa13, rr1, penRed..style = PaintingStyle.fill);
-    canvas.drawCircle(centerKa21, rr1, penBlack1..style = PaintingStyle.fill);
-    canvas.drawCircle(centerKa22, rr1, penBlack1..style = PaintingStyle.fill);
-    canvas.drawCircle(centerKa23, rr1, penYelow..style = PaintingStyle.fill);
-    canvas.drawCircle(centerKa31, rr1, penBlack1..style = PaintingStyle.fill);
-    canvas.drawCircle(centerKa32, rr1, penBlack1..style = PaintingStyle.fill);
-    canvas.drawCircle(centerKa33, rr1, penWhite..style = PaintingStyle.fill);
-    canvas.drawCircle(centerKa41, rr1, penBlack1..style = PaintingStyle.fill);
-    canvas.drawCircle(centerKa42, rr1, penBlack1..style = PaintingStyle.fill);
-    canvas.drawCircle(centerKa43, rr1, penWhite1..style = PaintingStyle.stroke);
+    canvas.drawCircle(centerG01, rr1, penBlack1..style = PaintingStyle.fill);
+    canvas.drawCircle(centerG02, rr1, penBlack1..style = PaintingStyle.fill);
+    canvas.drawCircle(centerG03, rr1, penBlue..style = PaintingStyle.fill);
+    canvas.drawCircle(centerG11, rr1, penBlack1..style = PaintingStyle.fill);
+    canvas.drawCircle(centerG12, rr1, penBlack1..style = PaintingStyle.fill);
+    canvas.drawCircle(centerG13, rr1, penRed..style = PaintingStyle.fill);
+    canvas.drawCircle(centerG21, rr1, penBlack1..style = PaintingStyle.fill);
+    canvas.drawCircle(centerG22, rr1, penBlack1..style = PaintingStyle.fill);
+    canvas.drawCircle(centerG23, rr1, penYelow..style = PaintingStyle.fill);
+    canvas.drawCircle(centerG31, rr1, penBlack1..style = PaintingStyle.fill);
+    canvas.drawCircle(centerG32, rr1, penBlack1..style = PaintingStyle.fill);
+    canvas.drawCircle(centerG33, rr1, penWhite..style = PaintingStyle.fill);
+    canvas.drawCircle(centerG41, rr1, penBlack1..style = PaintingStyle.fill);
+    canvas.drawCircle(centerG42, rr1, penBlack1..style = PaintingStyle.fill);
+    canvas.drawCircle(centerG43, rr1, penWhite1..style = PaintingStyle.stroke);
     canvas.drawCircle(center1, rr2, penWhite..style = PaintingStyle.stroke);
 
     // 日子の運勢の描画
-    double radianSi0 = (0 * 30 - 270) / 180 * pi;
-    double radianSi1 = (1 * 30 - 270) / 180 * pi;
-    double radianSi2 = (2 * 30 - 270) / 180 * pi;
-    double radianSi3 = (3 * 30 - 270) / 180 * pi;
-    double radianSi4 = (4 * 30 - 270) / 180 * pi;
-    double radianSi5 = (5 * 30 - 270) / 180 * pi;
-    double radianSi6 = (6 * 30 - 270) / 180 * pi;
-    double radianSi7 = (7 * 30 - 270) / 180 * pi;
-    double radianSi8 = (8 * 30 - 270) / 180 * pi;
-    double radianSi9 = (9 * 30 - 270) / 180 * pi;
-    double radianSi10 = (10 * 30 - 270) / 180 * pi;
-    double radianSi11 = (11 * 30 - 270) / 180 * pi;
-    final centerSi0 =
-        center2 + Offset(r4 * cos(radianSi0), r4 * sin(radianSi0));
-    final centerSi1 =
-        center2 + Offset(r4 * cos(radianSi1), r4 * sin(radianSi1));
-    final centerSi2 =
-        center2 + Offset(r4 * cos(radianSi2), r4 * sin(radianSi2));
-    final centerSi3 =
-        center2 + Offset(r4 * cos(radianSi3), r4 * sin(radianSi3));
-    final centerSi4 =
-        center2 + Offset(r4 * cos(radianSi4), r4 * sin(radianSi4));
-    final centerSi5 =
-        center2 + Offset(r4 * cos(radianSi5), r4 * sin(radianSi5));
-    final centerSi6 =
-        center2 + Offset(r4 * cos(radianSi6), r4 * sin(radianSi6));
-    final centerSi7 =
-        center2 + Offset(r4 * cos(radianSi7), r4 * sin(radianSi7));
-    final centerSi8 =
-        center2 + Offset(r4 * cos(radianSi8), r4 * sin(radianSi8));
-    final centerSi9 =
-        center2 + Offset(r4 * cos(radianSi9), r4 * sin(radianSi9));
-    final centerSi10 =
-        center2 + Offset(r4 * cos(radianSi10), r4 * sin(radianSi10));
-    final centerSi11 =
-        center2 + Offset(r4 * cos(radianSi11), r4 * sin(radianSi11));
+    double radiS0 = (30 * 0 + 90) / 180 * pi; // 子の角度
+    double radiS1 = (30 * 1 + 90) / 180 * pi; // 丑の角度
+    double radiS2 = (30 * 2 + 90) / 180 * pi; // 寅の角度
+    double radiS3 = (30 * 3 + 90) / 180 * pi; // 卯の角度
+    double radiS4 = (30 * 4 + 90) / 180 * pi; // 辰の角度
+    double radiS5 = (30 * 5 + 90) / 180 * pi; // 巳の角度
+    double radiS6 = (30 * 6 + 90) / 180 * pi; // 午の角度
+    double radiS7 = (30 * 7 + 90) / 180 * pi; // 未の角度
+    double radiS8 = (30 * 8 + 90) / 180 * pi; // 申の角度
+    double radiS9 = (30 * 9 + 90) / 180 * pi; // 酉の角度
+    double radiS10 = (30 * 10 + 90) / 180 * pi; // 戌の角度
+    double radiS11 = (30 * 11 + 90) / 180 * pi; // 亥の角度
+    final centerS0 = center2 + Offset(r4 * cos(radiS0), r4 * sin(radiS0));
+    final centerS1 = center2 + Offset(r4 * cos(radiS1), r4 * sin(radiS1));
+    final centerS2 = center2 + Offset(r4 * cos(radiS2), r4 * sin(radiS2));
+    final centerS3 = center2 + Offset(r4 * cos(radiS3), r4 * sin(radiS3));
+    final centerS4 = center2 + Offset(r4 * cos(radiS4), r4 * sin(radiS4));
+    final centerS5 = center2 + Offset(r4 * cos(radiS5), r4 * sin(radiS5));
+    final centerS6 = center2 + Offset(r4 * cos(radiS6), r4 * sin(radiS6));
+    final centerS7 = center2 + Offset(r4 * cos(radiS7), r4 * sin(radiS7));
+    final centerS8 = center2 + Offset(r4 * cos(radiS8), r4 * sin(radiS8));
+    final centerS9 = center2 + Offset(r4 * cos(radiS9), r4 * sin(radiS9));
+    final centerS10 = center2 + Offset(r4 * cos(radiS10), r4 * sin(radiS10));
+    final centerS11 = center2 + Offset(r4 * cos(radiS11), r4 * sin(radiS11));
 
-    final centerSi0a =
-        center2 + Offset(r5 * cos(radianSi0), r5 * sin(radianSi0));
-    final centerSi1a =
-        center2 + Offset(r5 * cos(radianSi1), r5 * sin(radianSi1));
-    final centerSi2a =
-        center2 + Offset(r5 * cos(radianSi2), r5 * sin(radianSi2));
-    final centerSi3a =
-        center2 + Offset(r5 * cos(radianSi3), r5 * sin(radianSi3));
-    final centerSi4a =
-        center2 + Offset(r5 * cos(radianSi4), r5 * sin(radianSi4));
-    final centerSi5a =
-        center2 + Offset(r5 * cos(radianSi5), r5 * sin(radianSi5));
-    final centerSi6a =
-        center2 + Offset(r5 * cos(radianSi6), r5 * sin(radianSi6));
-    final centerSi7a =
-        center2 + Offset(r5 * cos(radianSi7), r5 * sin(radianSi7));
-    final centerSi8a =
-        center2 + Offset(r5 * cos(radianSi8), r5 * sin(radianSi8));
-    final centerSi9a =
-        center2 + Offset(r5 * cos(radianSi9), r5 * sin(radianSi9));
-    final centerSi10a =
-        center2 + Offset(r5 * cos(radianSi10), r5 * sin(radianSi10));
-    final centerSi11a =
-        center2 + Offset(r5 * cos(radianSi11), r5 * sin(radianSi11));
+    final centerS0a = center2 + Offset(r5 * cos(radiS0), r5 * sin(radiS0));
+    final centerS1a = center2 + Offset(r5 * cos(radiS1), r5 * sin(radiS1));
+    final centerS2a = center2 + Offset(r5 * cos(radiS2), r5 * sin(radiS2));
+    final centerS3a = center2 + Offset(r5 * cos(radiS3), r5 * sin(radiS3));
+    final centerS4a = center2 + Offset(r5 * cos(radiS4), r5 * sin(radiS4));
+    final centerS5a = center2 + Offset(r5 * cos(radiS5), r5 * sin(radiS5));
+    final centerS6a = center2 + Offset(r5 * cos(radiS6), r5 * sin(radiS6));
+    final centerS7a = center2 + Offset(r5 * cos(radiS7), r5 * sin(radiS7));
+    final centerS8a = center2 + Offset(r5 * cos(radiS8), r5 * sin(radiS8));
+    final centerS9a = center2 + Offset(r5 * cos(radiS9), r5 * sin(radiS9));
+    final centerS10a = center2 + Offset(r5 * cos(radiS10), r5 * sin(radiS10));
+    final centerS11a = center2 + Offset(r5 * cos(radiS11), r5 * sin(radiS11));
 
-    final centerSi0b =
-        center2 + Offset(r6 * cos(radianSi0), r6 * sin(radianSi0));
-    final centerSi1b =
-        center2 + Offset(r6 * cos(radianSi1), r6 * sin(radianSi1));
-    final centerSi2b =
-        center2 + Offset(r6 * cos(radianSi2), r6 * sin(radianSi2));
-    final centerSi3b =
-        center2 + Offset(r6 * cos(radianSi3), r6 * sin(radianSi3));
-    final centerSi4b =
-        center2 + Offset(r6 * cos(radianSi4), r6 * sin(radianSi4));
-    final centerSi5b =
-        center2 + Offset(r6 * cos(radianSi5), r6 * sin(radianSi5));
-    final centerSi6b =
-        center2 + Offset(r6 * cos(radianSi6), r6 * sin(radianSi6));
-    final centerSi7b =
-        center2 + Offset(r6 * cos(radianSi7), r6 * sin(radianSi7));
-    final centerSi8b =
-        center2 + Offset(r6 * cos(radianSi8), r6 * sin(radianSi8));
-    final centerSi9b =
-        center2 + Offset(r6 * cos(radianSi9), r6 * sin(radianSi9));
-    final centerSi10b =
-        center2 + Offset(r6 * cos(radianSi10), r6 * sin(radianSi10));
-    final centerSi11b =
-        center2 + Offset(r6 * cos(radianSi11), r6 * sin(radianSi11));
+    final centerS0b = center2 + Offset(r6 * cos(radiS0), r6 * sin(radiS0));
+    final centerS1b = center2 + Offset(r6 * cos(radiS1), r6 * sin(radiS1));
+    final centerS2b = center2 + Offset(r6 * cos(radiS2), r6 * sin(radiS2));
+    final centerS3b = center2 + Offset(r6 * cos(radiS3), r6 * sin(radiS3));
+    final centerS4b = center2 + Offset(r6 * cos(radiS4), r6 * sin(radiS4));
+    final centerS5b = center2 + Offset(r6 * cos(radiS5), r6 * sin(radiS5));
+    final centerS6b = center2 + Offset(r6 * cos(radiS6), r6 * sin(radiS6));
+    final centerS7b = center2 + Offset(r6 * cos(radiS7), r6 * sin(radiS7));
+    final centerS8b = center2 + Offset(r6 * cos(radiS8), r6 * sin(radiS8));
+    final centerS9b = center2 + Offset(r6 * cos(radiS9), r6 * sin(radiS9));
+    final centerS10b = center2 + Offset(r6 * cos(radiS10), r6 * sin(radiS10));
+    final centerS11b = center2 + Offset(r6 * cos(radiS11), r6 * sin(radiS11));
 
-    canvas.drawCircle(centerSi0, rr1, penBlue..style = PaintingStyle.stroke);
-    canvas.drawCircle(centerSi1, rr1, penBlue..style = PaintingStyle.stroke);
-    canvas.drawCircle(centerSi2, rr1, penBlue..style = PaintingStyle.stroke);
-    canvas.drawCircle(centerSi3, rr1, penBlue..style = PaintingStyle.stroke);
-    canvas.drawCircle(centerSi4, rr1, penBlue..style = PaintingStyle.stroke);
-    canvas.drawCircle(centerSi5, rr1, penBlue..style = PaintingStyle.stroke);
-    canvas.drawCircle(centerSi6, rr1, penBlue..style = PaintingStyle.stroke);
-    canvas.drawCircle(centerSi7, rr1, penBlue..style = PaintingStyle.stroke);
-    canvas.drawCircle(centerSi8, rr1, penBlue..style = PaintingStyle.stroke);
-    canvas.drawCircle(centerSi9, rr1, penBlue..style = PaintingStyle.stroke);
-    canvas.drawCircle(centerSi10, rr1, penBlue..style = PaintingStyle.stroke);
-    canvas.drawCircle(centerSi11, rr1, penBlue..style = PaintingStyle.stroke);
+    canvas.drawCircle(
+        centerS0, rr1, penWhite1..style = PaintingStyle.stroke); //子
+    canvas.drawCircle(centerS1, rr1, penYelow..style = PaintingStyle.fill); //丑
+    canvas.drawCircle(centerS2, rr1, penBlue..style = PaintingStyle.fill); //寅
+    canvas.drawCircle(centerS3, rr1, penBlue..style = PaintingStyle.fill); //卯
+    canvas.drawCircle(centerS4, rr1, penYelow..style = PaintingStyle.fill); //辰
+    canvas.drawCircle(centerS5, rr1, penRed..style = PaintingStyle.fill); //巳
+    canvas.drawCircle(centerS6, rr1, penRed..style = PaintingStyle.fill); //午
+    canvas.drawCircle(centerS7, rr1, penYelow..style = PaintingStyle.fill); //未
+    canvas.drawCircle(centerS8, rr1, penWhite..style = PaintingStyle.fill); //申
+    canvas.drawCircle(centerS9, rr1, penWhite..style = PaintingStyle.fill); //酉
+    canvas.drawCircle(centerS10, rr1, penYelow..style = PaintingStyle.fill); //戌
+    canvas.drawCircle(
+        centerS11, rr1, penWhite1..style = PaintingStyle.stroke); //亥
 
-    canvas.drawCircle(centerSi0a, rr1, penBlue..style = PaintingStyle.stroke);
-    canvas.drawCircle(centerSi1a, rr1, penBlue..style = PaintingStyle.stroke);
-    canvas.drawCircle(centerSi2a, rr1, penBlue..style = PaintingStyle.stroke);
-    canvas.drawCircle(centerSi3a, rr1, penBlue..style = PaintingStyle.stroke);
-    canvas.drawCircle(centerSi4a, rr1, penBlue..style = PaintingStyle.stroke);
-    canvas.drawCircle(centerSi5a, rr1, penBlue..style = PaintingStyle.stroke);
-    canvas.drawCircle(centerSi6a, rr1, penBlue..style = PaintingStyle.stroke);
-    canvas.drawCircle(centerSi7a, rr1, penBlue..style = PaintingStyle.stroke);
-    canvas.drawCircle(centerSi8a, rr1, penBlue..style = PaintingStyle.stroke);
-    canvas.drawCircle(centerSi9a, rr1, penBlue..style = PaintingStyle.stroke);
-    canvas.drawCircle(centerSi10a, rr1, penBlue..style = PaintingStyle.stroke);
-    canvas.drawCircle(centerSi11a, rr1, penBlue..style = PaintingStyle.stroke);
+    canvas.drawCircle(centerS0a, rr1, penBlue..style = PaintingStyle.stroke);
+    canvas.drawCircle(centerS1a, rr1, penBlue..style = PaintingStyle.stroke);
+    canvas.drawCircle(centerS2a, rr1, penBlue..style = PaintingStyle.stroke);
+    canvas.drawCircle(centerS3a, rr1, penBlue..style = PaintingStyle.stroke);
+    canvas.drawCircle(centerS4a, rr1, penBlue..style = PaintingStyle.stroke);
+    canvas.drawCircle(centerS5a, rr1, penBlue..style = PaintingStyle.stroke);
+    canvas.drawCircle(centerS6a, rr1, penBlue..style = PaintingStyle.stroke);
+    canvas.drawCircle(centerS7a, rr1, penBlue..style = PaintingStyle.stroke);
+    canvas.drawCircle(centerS8a, rr1, penBlue..style = PaintingStyle.stroke);
+    canvas.drawCircle(centerS9a, rr1, penBlue..style = PaintingStyle.stroke);
+    canvas.drawCircle(centerS10a, rr1, penBlue..style = PaintingStyle.stroke);
+    canvas.drawCircle(centerS11a, rr1, penBlue..style = PaintingStyle.stroke);
 
-    canvas.drawCircle(centerSi0b, rr1, penBlue..style = PaintingStyle.stroke);
-    canvas.drawCircle(centerSi1b, rr1, penBlue..style = PaintingStyle.stroke);
-    canvas.drawCircle(centerSi2b, rr1, penBlue..style = PaintingStyle.stroke);
-    canvas.drawCircle(centerSi3b, rr1, penBlue..style = PaintingStyle.stroke);
-    canvas.drawCircle(centerSi4b, rr1, penBlue..style = PaintingStyle.stroke);
-    canvas.drawCircle(centerSi5b, rr1, penBlue..style = PaintingStyle.stroke);
-    canvas.drawCircle(centerSi6b, rr1, penBlue..style = PaintingStyle.stroke);
-    canvas.drawCircle(centerSi7b, rr1, penBlue..style = PaintingStyle.stroke);
-    canvas.drawCircle(centerSi8b, rr1, penBlue..style = PaintingStyle.stroke);
-    canvas.drawCircle(centerSi9b, rr1, penBlue..style = PaintingStyle.stroke);
-    canvas.drawCircle(centerSi10b, rr1, penBlue..style = PaintingStyle.stroke);
-    canvas.drawCircle(centerSi11b, rr1, penBlue..style = PaintingStyle.stroke);
+    canvas.drawCircle(centerS0b, rr1, penBlue..style = PaintingStyle.stroke);
+    canvas.drawCircle(centerS1b, rr1, penBlue..style = PaintingStyle.stroke);
+    canvas.drawCircle(centerS2b, rr1, penBlue..style = PaintingStyle.stroke);
+    canvas.drawCircle(centerS3b, rr1, penBlue..style = PaintingStyle.stroke);
+    canvas.drawCircle(centerS4b, rr1, penBlue..style = PaintingStyle.stroke);
+    canvas.drawCircle(centerS5b, rr1, penBlue..style = PaintingStyle.stroke);
+    canvas.drawCircle(centerS6b, rr1, penBlue..style = PaintingStyle.stroke);
+    canvas.drawCircle(centerS7b, rr1, penBlue..style = PaintingStyle.stroke);
+    canvas.drawCircle(centerS8b, rr1, penBlue..style = PaintingStyle.stroke);
+    canvas.drawCircle(centerS9b, rr1, penBlue..style = PaintingStyle.stroke);
+    canvas.drawCircle(centerS10b, rr1, penBlue..style = PaintingStyle.stroke);
+    canvas.drawCircle(centerS11b, rr1, penBlue..style = PaintingStyle.stroke);
 
     canvas.drawCircle(center2, rr3, penWhite..style = PaintingStyle.stroke);
   }
