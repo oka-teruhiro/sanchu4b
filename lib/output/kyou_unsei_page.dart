@@ -60,6 +60,8 @@ class KyouUnseiPage extends StatelessWidget {
     double rr3 = 93; // 日支の大きな円の半径
     double rrr = rr1 * 2; //小さい円の直系
     double rrM = 24; //文字の大きさ
+    double rrM1 = 24; //日支１階２階のフォントサイズ
+    double rrM2 = 8; //日支１階２階の文字位置調整
 
     // 文字のセンター位置
     var centa1 = Offset((150 - rrr / 2), (130 - rrr / 2)); // 日干図形の中心座標
@@ -115,31 +117,37 @@ class KyouUnseiPage extends StatelessWidget {
     final centaS10 = centa4 + Offset(r4 * cos(radiS10), r4 * sin(radiS10));
     final centaS11 = centa4 + Offset(r4 * cos(radiS11), r4 * sin(radiS11));
     // 日支の２階の円の文字座標
-    final centaS0a = centa4 + Offset(r5 * cos(radiS0), r5 * sin(radiS0));
-    final centaS1a = centa4 + Offset(r5 * cos(radiS1), r5 * sin(radiS1));
-    final centaS2a = centa4 + Offset(r5 * cos(radiS2), r5 * sin(radiS2));
-    final centaS3a = centa4 + Offset(r5 * cos(radiS3), r5 * sin(radiS3));
-    final centaS4a = centa4 + Offset(r5 * cos(radiS4), r5 * sin(radiS4));
-    final centaS5a = centa4 + Offset(r5 * cos(radiS5), r5 * sin(radiS5));
-    final centaS6a = centa4 + Offset(r5 * cos(radiS6), r5 * sin(radiS6));
-    final centaS7a = centa4 + Offset(r5 * cos(radiS7), r5 * sin(radiS7));
-    final centaS8a = centa4 + Offset(r5 * cos(radiS8), r5 * sin(radiS8));
-    final centaS9a = centa4 + Offset(r5 * cos(radiS9), r5 * sin(radiS9));
-    final centaS10a = centa4 + Offset(r5 * cos(radiS10), r5 * sin(radiS10));
-    final centaS11a = centa4 + Offset(r5 * cos(radiS11), r5 * sin(radiS11));
+    final centaS0a = centa4 + Offset(r5 * cos(radiS0), r5 * sin(radiS0) - rrM2);
+    final centaS1a = centa4 + Offset(r5 * cos(radiS1), r5 * sin(radiS1) - rrM2);
+    final centaS2a = centa4 + Offset(r5 * cos(radiS2), r5 * sin(radiS2) - rrM2);
+    final centaS3a = centa4 + Offset(r5 * cos(radiS3), r5 * sin(radiS3) - rrM2);
+    final centaS4a = centa4 + Offset(r5 * cos(radiS4), r5 * sin(radiS4) - rrM2);
+    final centaS5a = centa4 + Offset(r5 * cos(radiS5), r5 * sin(radiS5) - rrM2);
+    final centaS6a = centa4 + Offset(r5 * cos(radiS6), r5 * sin(radiS6) - rrM2);
+    final centaS7a = centa4 + Offset(r5 * cos(radiS7), r5 * sin(radiS7) - rrM2);
+    final centaS8a = centa4 + Offset(r5 * cos(radiS8), r5 * sin(radiS8) - rrM2);
+    final centaS9a = centa4 + Offset(r5 * cos(radiS9), r5 * sin(radiS9) - rrM2);
+    final centaS10a =
+        centa4 + Offset(r5 * cos(radiS10), r5 * sin(radiS10) - rrM2);
+    final centaS11a =
+        centa4 + Offset(r5 * cos(radiS11), r5 * sin(radiS11) - rrM2);
     // 日支の１階の円の文字座標
-    final centaS0b = centa4 + Offset(r6 * cos(radiS0), r6 * sin(radiS0));
-    final centaS1b = centa4 + Offset(r6 * cos(radiS1), r6 * sin(radiS1));
-    final centaS2b = centa4 + Offset(r6 * cos(radiS2), r6 * sin(radiS2));
-    final centaS3b = centa4 + Offset(r6 * cos(radiS3), r6 * sin(radiS3));
-    final centaS4b = centa4 + Offset(r6 * cos(radiS4), r6 * sin(radiS4));
-    final centaS5b = centa4 + Offset(r6 * cos(radiS5), r6 * sin(radiS5));
-    final centaS6b = centa4 + Offset(r6 * cos(radiS6), r6 * sin(radiS6));
-    final centaS7b = centa4 + Offset(r6 * cos(radiS7), r6 * sin(radiS7));
-    final centaS8b = centa4 + Offset(r6 * cos(radiS8), r6 * sin(radiS8));
-    final centaS9b = centa4 + Offset(r6 * cos(radiS9), r6 * sin(radiS9));
-    final centaS10b = centa4 + Offset(r6 * cos(radiS10), r6 * sin(radiS10));
-    final centaS11b = centa4 + Offset(r6 * cos(radiS11), r6 * sin(radiS11));
+    final centaS0b = centa4 + Offset(r6 * cos(radiS0), r6 * sin(radiS0) - rrM2);
+    final centaS1b = centa4 + Offset(r6 * cos(radiS1), r6 * sin(radiS1) - rrM2);
+    final centaS2b = centa4 + Offset(r6 * cos(radiS2), r6 * sin(radiS2) - rrM2);
+    final centaS3b = centa4 + Offset(r6 * cos(radiS3), r6 * sin(radiS3) - rrM2);
+    final centaS4b = centa4 + Offset(r6 * cos(radiS4), r6 * sin(radiS4) - rrM2);
+    final centaS5b = centa4 + Offset(r6 * cos(radiS5), r6 * sin(radiS5) - rrM2);
+    final centaS6b = centa4 + Offset(r6 * cos(radiS6), r6 * sin(radiS6) - rrM2);
+    final centaS7b = centa4 + Offset(r6 * cos(radiS7), r6 * sin(radiS7) - rrM2);
+    final centaS8b = centa4 + Offset(r6 * cos(radiS8), r6 * sin(radiS8) - rrM2);
+    final centaS9b = centa4 + Offset(r6 * cos(radiS9), r6 * sin(radiS9) - rrM2);
+    final centaS10b =
+        centa4 + Offset(r6 * cos(radiS10), r6 * sin(radiS10) - rrM2);
+    final centaS11b =
+        centa4 + Offset(r6 * cos(radiS11), r6 * sin(radiS11) - rrM2);
+
+    String sigo = "　三刑　害　冲　三　　合";
 
     return MediaQuery(
       data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
@@ -502,6 +510,153 @@ class KyouUnseiPage extends StatelessWidget {
                                             'images/tuuhenbosi/s11.png'),
                                       ),
                                     ),
+
+                                    // ■■■■■■■■■ 日支２階の文字 ■■■■■■■■■
+
+                                    Transform.translate(
+                                      // 亥
+                                      offset: centaS0a,
+                                      child: Text(
+                                        sigo.substring(0, 1),
+                                        style: TextStyle(
+                                          fontSize: rrM1,
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.normal,
+                                        ),
+                                      ),
+                                    ),
+                                    Transform.translate(
+                                      // 亥
+                                      offset: centaS1a,
+                                      child: Text(
+                                        sigo.substring(1, 2),
+                                        style: TextStyle(
+                                          fontSize: rrM1,
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.normal,
+                                        ),
+                                      ),
+                                    ),
+                                    Transform.translate(
+                                      // 亥
+                                      offset: centaS2a,
+                                      child: Text(
+                                        sigo.substring(2, 3),
+                                        style: TextStyle(
+                                          fontSize: rrM1,
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.normal,
+                                        ),
+                                      ),
+                                    ),
+                                    Transform.translate(
+                                      // 亥
+                                      offset: centaS3a,
+                                      child: Text(
+                                        sigo.substring(3, 4),
+                                        style: TextStyle(
+                                          fontSize: rrM1,
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.normal,
+                                        ),
+                                      ),
+                                    ),
+                                    Transform.translate(
+                                      // 亥
+                                      offset: centaS4a,
+                                      child: Text(
+                                        sigo.substring(4, 5),
+                                        style: TextStyle(
+                                          fontSize: rrM1,
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.normal,
+                                        ),
+                                      ),
+                                    ),
+                                    Transform.translate(
+                                      // 亥
+                                      offset: centaS5a,
+                                      child: Text(
+                                        sigo.substring(5, 6),
+                                        style: TextStyle(
+                                          fontSize: rrM1,
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.normal,
+                                        ),
+                                      ),
+                                    ),
+                                    Transform.translate(
+                                      // 亥
+                                      offset: centaS6a,
+                                      child: Text(
+                                        sigo.substring(6, 7),
+                                        style: TextStyle(
+                                          fontSize: rrM1,
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.normal,
+                                        ),
+                                      ),
+                                    ),
+                                    Transform.translate(
+                                      // 亥
+                                      offset: centaS7a,
+                                      child: Text(
+                                        sigo.substring(7, 8),
+                                        style: TextStyle(
+                                          fontSize: rrM1,
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.normal,
+                                        ),
+                                      ),
+                                    ),
+                                    Transform.translate(
+                                      // 亥
+                                      offset: centaS8a,
+                                      child: Text(
+                                        sigo.substring(8, 9),
+                                        style: TextStyle(
+                                          fontSize: rrM1,
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.normal,
+                                        ),
+                                      ),
+                                    ),
+                                    Transform.translate(
+                                      // 亥
+                                      offset: centaS9a,
+                                      child: Text(
+                                        sigo.substring(9, 10),
+                                        style: TextStyle(
+                                          fontSize: rrM1,
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.normal,
+                                        ),
+                                      ),
+                                    ),
+                                    Transform.translate(
+                                      // 亥
+                                      offset: centaS10a,
+                                      child: Text(
+                                        sigo.substring(10, 11),
+                                        style: TextStyle(
+                                          fontSize: rrM1,
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.normal,
+                                        ),
+                                      ),
+                                    ),
+                                    Transform.translate(
+                                      // 亥
+                                      offset: centaS11a,
+                                      child: Text(
+                                        sigo.substring(11, 12),
+                                        style: TextStyle(
+                                          fontSize: rrM1,
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.normal,
+                                        ),
+                                      ),
+                                    ),
                                   ],
                                 ),
                               ],
@@ -760,7 +915,7 @@ class KyouUnseiPage extends StatelessWidget {
                                   ),
                                   onPressed: () {
                                     //dateDown();
-                                    model.changeAText();
+                                    model.nitiMinus();
                                   },
                                   child: const Text(
                                     'ー',
@@ -784,7 +939,7 @@ class KyouUnseiPage extends StatelessWidget {
                                   ),
                                   onPressed: () {
                                     //dateUp();
-                                    model.changeAText();
+                                    model.nitiPlus();
                                   },
                                   child: const Text(
                                     '＋',
