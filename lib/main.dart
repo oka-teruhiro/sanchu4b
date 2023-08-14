@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/intl.dart';
-import 'package:sanchu4b/output/kyou_unsei.dart';
+import 'package:sanchu4b/output/kyou_unsei_page.dart';
 import 'package:sanchu4b/output/output4.dart';
 import 'package:sanchu4b/quiz/quiz_page_001.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -106,6 +106,10 @@ class _MyHomePageState extends State<MyHomePage> {
   DateTime date9 = DateTime(DateTime.now().year - 30);
 
   int item = 0;
+
+  int seiNen = 1957;
+  int seiGatu = 3;
+  int seiNiti = 31;
 
   @override
   void initState() {
@@ -261,7 +265,7 @@ class _MyHomePageState extends State<MyHomePage> {
       child: Scaffold(
         backgroundColor: Colors.black,
         appBar: AppBar(
-          title: const Text('天運三柱推命 ver.4.3.12',
+          title: const Text('天運三柱推命 ver.4.3.13',
               style: TextStyle(
                 color: Colors.pinkAccent,
                 fontWeight: FontWeight.bold,
@@ -430,11 +434,19 @@ class _MyHomePageState extends State<MyHomePage> {
                                   seinengappiMojia = _birthD[index];
                                   if (seinengappiMojia == 'yyyy/mm/dd') {
                                   } else {
+                                    seiNen = int.parse(
+                                        seinengappiMojia.substring(0, 4));
+                                    seiGatu = int.parse(
+                                        seinengappiMojia.substring(5, 7));
+                                    seiNiti = int.parse(
+                                        seinengappiMojia.substring(8, 10));
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                        builder: (context) => KyouUnsei(
-                                          titleSeinengappi: seinengappiMojia,
+                                        builder: (context) => KyouUnseiPage(
+                                          seinenInt: seiNen,
+                                          seigatuInt: seiGatu,
+                                          seinitiInt: seiNiti,
                                         ),
                                       ),
                                     );

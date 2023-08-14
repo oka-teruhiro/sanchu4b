@@ -43,7 +43,7 @@ class Update extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                             builder: (context) => const KyouUnseiPage(
-                                seinenInt: 2023, seigatuInt: 7, seinitiInt: 8),
+                                seinenInt: 1957, seigatuInt: 4, seinitiInt: 1),
                           ));
                     },
                   ),

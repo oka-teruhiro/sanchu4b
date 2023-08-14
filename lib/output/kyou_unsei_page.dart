@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:sanchu4b/output/kansuu.dart';
 
 import 'kyou_unsei_model.dart';
 
@@ -17,34 +18,118 @@ class KyouUnseiPage extends StatelessWidget {
     required this.seinitiInt,
   }) : super(key: key);
 
+  final String go = '' //日干から通変星の位置を算出するリスト
+      '0123456789'
+      '2345678901'
+      '4567890123'
+      '6789012345'
+      '8901234567';
+  final String sigoL = // 支合リスト
+      "　合　刑三　冲害三　　　" // 子
+      "合　　　　三害冲　三刑　" // 丑
+      "　　　　　害三　冲　三合" // 寅
+      "刑　　　害　　三　冲合三" // 卯
+      "三　　害　　　　三合冲　" // 辰
+      "　三害　　　　　合三　冲" // 巳
+      "冲害三　　　　合　　三　" // 午
+      "害冲　三　　合　　　刑三" // 未
+      "三　冲　三合　　　　　害" // 申
+      "　三　冲合三　　　　害　" // 酉
+      "　刑三合冲　三刑　害　　" // 戌
+      "　　合三　冲　三害　　　"; // 亥
+  final String keiL = // 支合リスト
+      "　　　　　　　　　　　　" // 子
+      "　　　　　　　刑　　　　" // 丑
+      "　　　　　刑　　刑　　　" // 寅
+      "　　　　　　　　　　　　" // 卯
+      "　　　　　　　　　　　　" // 辰
+      "　　刑　　　　　刑　　　" // 巳
+      "　　　　　　　　　　　　" // 午
+      "　刑　　　　　　　　　　" // 未
+      "　　刑　　刑　　　　　　" // 申
+      "　　　　　　　　　　　　" // 酉
+      "　　　　　　　　　　　　" // 戌
+      "　　　　　　　　　　　　"; // 亥
+
   @override
   Widget build(BuildContext context) {
-    List<String> tu = [
-      // 通変星の文字の画像データ
-      'images/tuuhenbosi/t0.png',
-      'images/tuuhenbosi/t1.png',
-      'images/tuuhenbosi/t2.png',
-      'images/tuuhenbosi/t3.png',
-      'images/tuuhenbosi/t4.png',
-      'images/tuuhenbosi/t5.png',
-      'images/tuuhenbosi/t6.png',
-      'images/tuuhenbosi/t7.png',
-      'images/tuuhenbosi/t8.png',
-      'images/tuuhenbosi/t9.png',
-    ];
+    // 変数定義
+    int nitiKanNo = 0;
+    int gogyou = 0;
+    int nitiSi = 0;
+    int inyou = 0;
+    String go0 = '0';
+    String go1 = '1';
+    String go2 = '2';
+    String go3 = '3';
+    String go4 = '4';
+    String go5 = '5';
+    String go6 = '6';
+    String go7 = '7';
+    String go8 = '8';
+    String go9 = '9';
+    String sigo = "平三刑和害天冲宙三統家合";
+    String kei = "平三刑和害天冲宙三統家合";
+    int nowNen = 2023;
+    int nowGatu = 8;
+    int nowNiti = 15;
+    String nowMoji = '2023.8.14';
+    int nowNitiKan = 0;
+    int nowNitiSi = 0;
+    int tuhen = 0;
+    //int sigo = 0;
+    DateTime now = DateTime.now();
+    DateTime now1 = DateTime(2023, 8, 14);
+
+    // 生年月日から日干を算出
+    nitiKanNo =
+        juKanNo(meisikiA(seinenInt, seigatuInt, seinitiInt).substring(4, 5));
+    nitiSi =
+        juuniSiNo(meisikiA(seinenInt, seigatuInt, seinitiInt).substring(5, 6));
+    gogyou = nitiKanNo ~/ 2;
+    // 通変星の木２階の文字を算出
+    go0 = ((gogyou * -2 + 0) % 10).toString();
+    go1 = ((gogyou * -2 + 1) % 10).toString();
+    go2 = ((gogyou * -2 + 2) % 10).toString();
+    go3 = ((gogyou * -2 + 3) % 10).toString();
+    go4 = ((gogyou * -2 + 4) % 10).toString();
+    go5 = ((gogyou * -2 + 5) % 10).toString();
+    go6 = ((gogyou * -2 + 6) % 10).toString();
+    go7 = ((gogyou * -2 + 7) % 10).toString();
+    go8 = ((gogyou * -2 + 8) % 10).toString();
+    go9 = ((gogyou * -2 + 9) % 10).toString();
     List<String> go = [
-      // 五行の位置に入れる文字列
-      'images/tuuhenbosi/t0.png',
-      'images/tuuhenbosi/t1.png',
-      'images/tuuhenbosi/t2.png',
-      'images/tuuhenbosi/t3.png',
-      'images/tuuhenbosi/t4.png',
-      'images/tuuhenbosi/t5.png',
-      'images/tuuhenbosi/t6.png',
-      'images/tuuhenbosi/t7.png',
-      'images/tuuhenbosi/t8.png',
-      'images/tuuhenbosi/t9.png',
+      'images/tuuhenbosi/t' + go0 + '.png',
+      'images/tuuhenbosi/t' + go1 + '.png',
+      'images/tuuhenbosi/t' + go2 + '.png',
+      'images/tuuhenbosi/t' + go3 + '.png',
+      'images/tuuhenbosi/t' + go4 + '.png',
+      'images/tuuhenbosi/t' + go5 + '.png',
+      'images/tuuhenbosi/t' + go6 + '.png',
+      'images/tuuhenbosi/t' + go7 + '.png',
+      'images/tuuhenbosi/t' + go8 + '.png',
+      'images/tuuhenbosi/t' + go9 + '.png',
     ];
+    //日支の２階支合等の文字を算出
+    sigo = sigoL.substring(nitiSi * 12, (nitiSi + 1) * 12);
+    //日支の１階刑の文字を算出
+    kei = keiL.substring(nitiSi * 12, (nitiSi + 1) * 12);
+    print('日干：$nitiKanNo・五行：$gogyou・日支：$nitiSi・陰陽：$inyou');
+
+    // 今日の日付を算出
+    now1 = now;
+    nowNen = DateTime.now().year;
+    nowGatu = DateTime.now().month;
+    nowNiti = DateTime.now().day;
+    nowMoji = '$nowNen.$nowGatu.$nowNiti';
+    //今日の日干・日支を算出する
+    nowNitiKan = juKanNo(meisikiA(nowNen, nowGatu, nowNiti).substring(4, 5));
+    nowNitiSi = juuniSiNo(meisikiA(nowNen, nowGatu, nowNiti).substring(5, 6));
+    print('日支：$nowNitiSi');
+    tuhen = nowNitiKan;
+    //sigo = nowNitiSi;
+    //sigo = nowNitiSi ;
+
     const double h1 = 25;
     const int c2 = -1; // 白
     const int c3 = -1407770; // ピンク
@@ -66,8 +151,8 @@ class KyouUnseiPage extends StatelessWidget {
     // 文字のセンター位置
     var centa1 = Offset((150 - rrr / 2), (130 - rrr / 2)); // 日干図形の中心座標
     var centa2 = Offset((150 - rrM / 2), (130 - rrM / 2)); // 日干文字の中心座標
-    var centa3 = Offset((150 - rrr / 2), (400 - rrr / 2)); // 日支図形の中心座標
-    var centa4 = Offset((150 - rrM / 2), (400 - rrM / 2)); // 日支文字の中心座標
+    var centa3 = Offset((150 - rrr / 2), (384 - rrr / 2)); // 日支図形の中心座標
+    var centa4 = Offset((150 - rrM / 2), (384 - rrM / 2)); // 日支文字の中心座標
 
     // 角度の定数
     double radiG0 = (72 * 0 - 90) / 180 * pi; // 木の角度
@@ -147,8 +232,6 @@ class KyouUnseiPage extends StatelessWidget {
     final centaS11b =
         centa4 + Offset(r6 * cos(radiS11), r6 * sin(radiS11) - rrM2);
 
-    String sigo = "　三刑　害　冲　三　　合";
-
     return MediaQuery(
       data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
       child: ChangeNotifierProvider<KyouUnseiModel>(
@@ -168,6 +251,7 @@ class KyouUnseiPage extends StatelessWidget {
           body: Consumer<KyouUnseiModel>(
               // stream: null,
               builder: (context, model, child) {
+            //model.initKyou();
             return Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
@@ -213,7 +297,9 @@ class KyouUnseiPage extends StatelessWidget {
                                       height: 460,
                                       child: CustomPaint(
                                         painter: ShapePainter4(
-                                            gogyou: 4), // 渡したい変数を引数に指定する
+                                          gogyou: gogyou,
+                                          nitiSi: nitiSi,
+                                        ), // 渡したい変数を引数に指定する
                                         // size: const Size(400, 400), // この行を入れると図形と文字を重ねることができない
                                       ),
                                     ),
@@ -222,7 +308,7 @@ class KyouUnseiPage extends StatelessWidget {
                                       height: 460,
                                       child: CustomPaint(
                                         painter: ShapePainter5(
-                                          tuhen: model.tuhen,
+                                          tuhen: nowNitiKan,
                                         ), // 渡したい変数を引数に指定する
                                         // size: const Size(400, 400), // この行を入れると図形と文字を重ねることができない
                                       ),
@@ -232,7 +318,7 @@ class KyouUnseiPage extends StatelessWidget {
                                       height: 460,
                                       child: CustomPaint(
                                         painter: ShapePainter6(
-                                          kei: model.kei,
+                                          kei: kei,
                                         ), // 渡したい変数を引数に指定する
                                         // size: const Size(400, 400), // この行を入れると図形と文字を重ねることができない
                                       ),
@@ -241,28 +327,40 @@ class KyouUnseiPage extends StatelessWidget {
                                       width: 312,
                                       height: 460,
                                       child: CustomPaint(
-                                        painter: ShapePainter7(
-                                          sigo: model.sigo,
+                                        painter: ShapePainter8(
+                                          sigo: nowNitiSi,
+                                          kei: kei,
                                         ), // 渡したい変数を引数に指定する
                                         // size: const Size(400, 400), // この行を入れると図形と文字を重ねることができない
                                       ),
                                     ),
-                                    // 外枠五行
+
+                                    SizedBox(
+                                      width: 312,
+                                      height: 460,
+                                      child: CustomPaint(
+                                        painter: ShapePainter7(
+                                          sigo: nowNitiSi,
+                                        ), // 渡したい変数を引数に指定する
+                                        // size: const Size(400, 400), // この行を入れると図形と文字を重ねることができない
+                                      ),
+                                    ),
+
+                                    // ■■■■■■■■■ 左上の生年月日の表示 ■■■■■■■■■
                                     Transform.translate(
                                       offset: Offset(0, 0),
-                                      child: SizedBox(
-                                        height: 30,
-                                        width: 100,
-                                        child: Text(
-                                          model.aText,
-                                          style: const TextStyle(
-                                            fontSize: 18,
-                                            color: Colors.pink,
-                                            fontWeight: FontWeight.bold,
-                                          ),
+                                      child: Text(
+                                        '$seinenInt.$seigatuInt.$seinitiInt 生',
+                                        style: const TextStyle(
+                                          fontSize: 20,
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold,
                                         ),
                                       ),
                                     ),
+
+                                    // ■■■■■■■■■ 日干の３階五行の文字の表示 ■■■■■■■■■
+                                    // 木
                                     Transform.translate(
                                       offset: centaG0M3,
                                       child: SizedBox(
@@ -272,6 +370,7 @@ class KyouUnseiPage extends StatelessWidget {
                                             'images/tuuhenbosi/g0.png'),
                                       ),
                                     ),
+                                    // 火
                                     Transform.translate(
                                       offset: centaG1M3,
                                       child: SizedBox(
@@ -281,6 +380,7 @@ class KyouUnseiPage extends StatelessWidget {
                                             'images/tuuhenbosi/g1.png'),
                                       ),
                                     ),
+                                    // 土
                                     Transform.translate(
                                       offset: centaG2M3,
                                       child: SizedBox(
@@ -290,6 +390,7 @@ class KyouUnseiPage extends StatelessWidget {
                                             'images/tuuhenbosi/g2.png'),
                                       ),
                                     ),
+                                    // 金
                                     Transform.translate(
                                       offset: centaG3M3,
                                       child: SizedBox(
@@ -299,6 +400,7 @@ class KyouUnseiPage extends StatelessWidget {
                                             'images/tuuhenbosi/g3.png'),
                                       ),
                                     ),
+                                    // 水
                                     Transform.translate(
                                       offset: centaG4M3,
                                       child: SizedBox(
@@ -308,6 +410,8 @@ class KyouUnseiPage extends StatelessWidget {
                                             'images/tuuhenbosi/g4.png'),
                                       ),
                                     ),
+
+                                    //■■■■■■■■■ 日干の１階２階通変星の文字の表示 ■■■■■■■■■
                                     Transform.translate(
                                       offset: centaG0M2,
                                       child: SizedBox(
@@ -389,7 +493,8 @@ class KyouUnseiPage extends StatelessWidget {
                                         child: Image.asset(go[9]),
                                       ),
                                     ),
-                                    // ■■■■■■■■■ 日支の３階の文字 ■■■■■■■■■
+
+                                    // ■■■■■■■■■ 日支の３階の文字の表示 ■■■■■■■■■
                                     Transform.translate(
                                       // 子
                                       offset: centaS0,
@@ -514,7 +619,7 @@ class KyouUnseiPage extends StatelessWidget {
                                     // ■■■■■■■■■ 日支２階の文字 ■■■■■■■■■
 
                                     Transform.translate(
-                                      // 亥
+                                      // 子
                                       offset: centaS0a,
                                       child: Text(
                                         sigo.substring(0, 1),
@@ -526,7 +631,7 @@ class KyouUnseiPage extends StatelessWidget {
                                       ),
                                     ),
                                     Transform.translate(
-                                      // 亥
+                                      // 丑
                                       offset: centaS1a,
                                       child: Text(
                                         sigo.substring(1, 2),
@@ -538,7 +643,7 @@ class KyouUnseiPage extends StatelessWidget {
                                       ),
                                     ),
                                     Transform.translate(
-                                      // 亥
+                                      // 寅
                                       offset: centaS2a,
                                       child: Text(
                                         sigo.substring(2, 3),
@@ -550,7 +655,7 @@ class KyouUnseiPage extends StatelessWidget {
                                       ),
                                     ),
                                     Transform.translate(
-                                      // 亥
+                                      // 卯
                                       offset: centaS3a,
                                       child: Text(
                                         sigo.substring(3, 4),
@@ -562,7 +667,7 @@ class KyouUnseiPage extends StatelessWidget {
                                       ),
                                     ),
                                     Transform.translate(
-                                      // 亥
+                                      // 辰
                                       offset: centaS4a,
                                       child: Text(
                                         sigo.substring(4, 5),
@@ -574,7 +679,7 @@ class KyouUnseiPage extends StatelessWidget {
                                       ),
                                     ),
                                     Transform.translate(
-                                      // 亥
+                                      // 巳
                                       offset: centaS5a,
                                       child: Text(
                                         sigo.substring(5, 6),
@@ -586,7 +691,7 @@ class KyouUnseiPage extends StatelessWidget {
                                       ),
                                     ),
                                     Transform.translate(
-                                      // 亥
+                                      // 午
                                       offset: centaS6a,
                                       child: Text(
                                         sigo.substring(6, 7),
@@ -598,7 +703,7 @@ class KyouUnseiPage extends StatelessWidget {
                                       ),
                                     ),
                                     Transform.translate(
-                                      // 亥
+                                      // 未
                                       offset: centaS7a,
                                       child: Text(
                                         sigo.substring(7, 8),
@@ -610,7 +715,7 @@ class KyouUnseiPage extends StatelessWidget {
                                       ),
                                     ),
                                     Transform.translate(
-                                      // 亥
+                                      // 申
                                       offset: centaS8a,
                                       child: Text(
                                         sigo.substring(8, 9),
@@ -622,7 +727,7 @@ class KyouUnseiPage extends StatelessWidget {
                                       ),
                                     ),
                                     Transform.translate(
-                                      // 亥
+                                      // 酉
                                       offset: centaS9a,
                                       child: Text(
                                         sigo.substring(9, 10),
@@ -634,7 +739,7 @@ class KyouUnseiPage extends StatelessWidget {
                                       ),
                                     ),
                                     Transform.translate(
-                                      // 亥
+                                      // 戌
                                       offset: centaS10a,
                                       child: Text(
                                         sigo.substring(10, 11),
@@ -650,6 +755,152 @@ class KyouUnseiPage extends StatelessWidget {
                                       offset: centaS11a,
                                       child: Text(
                                         sigo.substring(11, 12),
+                                        style: TextStyle(
+                                          fontSize: rrM1,
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.normal,
+                                        ),
+                                      ),
+                                    ),
+
+                                    // ■■■■■■■■■ 日支1階の文字の表示 ■■■■■■■■■
+                                    Transform.translate(
+                                      // 子
+                                      offset: centaS0b,
+                                      child: Text(
+                                        kei.substring(0, 1),
+                                        style: TextStyle(
+                                          fontSize: rrM1,
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.normal,
+                                        ),
+                                      ),
+                                    ),
+                                    Transform.translate(
+                                      // 丑
+                                      offset: centaS1b,
+                                      child: Text(
+                                        kei.substring(1, 2),
+                                        style: TextStyle(
+                                          fontSize: rrM1,
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.normal,
+                                        ),
+                                      ),
+                                    ),
+                                    Transform.translate(
+                                      // 寅
+                                      offset: centaS2b,
+                                      child: Text(
+                                        kei.substring(2, 3),
+                                        style: TextStyle(
+                                          fontSize: rrM1,
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.normal,
+                                        ),
+                                      ),
+                                    ),
+                                    Transform.translate(
+                                      // 卯
+                                      offset: centaS3b,
+                                      child: Text(
+                                        kei.substring(3, 4),
+                                        style: TextStyle(
+                                          fontSize: rrM1,
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.normal,
+                                        ),
+                                      ),
+                                    ),
+                                    Transform.translate(
+                                      // 辰
+                                      offset: centaS4b,
+                                      child: Text(
+                                        kei.substring(4, 5),
+                                        style: TextStyle(
+                                          fontSize: rrM1,
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.normal,
+                                        ),
+                                      ),
+                                    ),
+                                    Transform.translate(
+                                      // 巳
+                                      offset: centaS5b,
+                                      child: Text(
+                                        kei.substring(5, 6),
+                                        style: TextStyle(
+                                          fontSize: rrM1,
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.normal,
+                                        ),
+                                      ),
+                                    ),
+                                    Transform.translate(
+                                      // 午
+                                      offset: centaS6b,
+                                      child: Text(
+                                        kei.substring(6, 7),
+                                        style: TextStyle(
+                                          fontSize: rrM1,
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.normal,
+                                        ),
+                                      ),
+                                    ),
+                                    Transform.translate(
+                                      // 未
+                                      offset: centaS7b,
+                                      child: Text(
+                                        kei.substring(7, 8),
+                                        style: TextStyle(
+                                          fontSize: rrM1,
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.normal,
+                                        ),
+                                      ),
+                                    ),
+                                    Transform.translate(
+                                      // 申
+                                      offset: centaS8b,
+                                      child: Text(
+                                        kei.substring(8, 9),
+                                        style: TextStyle(
+                                          fontSize: rrM1,
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.normal,
+                                        ),
+                                      ),
+                                    ),
+                                    Transform.translate(
+                                      // 酉
+                                      offset: centaS9b,
+                                      child: Text(
+                                        kei.substring(9, 10),
+                                        style: TextStyle(
+                                          fontSize: rrM1,
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.normal,
+                                        ),
+                                      ),
+                                    ),
+                                    Transform.translate(
+                                      // 戌
+                                      offset: centaS10b,
+                                      child: Text(
+                                        kei.substring(10, 11),
+                                        style: TextStyle(
+                                          fontSize: rrM1,
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.normal,
+                                        ),
+                                      ),
+                                    ),
+                                    Transform.translate(
+                                      // 亥
+                                      offset: centaS11b,
+                                      child: Text(
+                                        kei.substring(11, 12),
                                         style: TextStyle(
                                           fontSize: rrM1,
                                           color: Colors.black,
@@ -710,42 +961,33 @@ class KyouUnseiPage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
-                        const SizedBox(
+                        SizedBox(
                           width: 88,
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
-                              SizedBox(
-                                height: 24,
-                                child: Text(
-                                  '2013/7/23',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.normal,
-                                    fontSize: 18,
-                                  ),
+                              Text(
+                                model.nowMoji,
+                                style: const TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.normal,
+                                  fontSize: 18,
                                 ),
                               ),
-                              SizedBox(
-                                height: 20,
-                                child: Text(
-                                  'の運勢',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.normal,
-                                    fontSize: 14,
-                                  ),
+                              const Text(
+                                'の運勢',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.normal,
+                                  fontSize: 16,
                                 ),
                               ),
-                              SizedBox(
-                                height: 47,
-                                child: Text(
-                                  '大吉',
-                                  style: TextStyle(
-                                    color: Colors.purpleAccent,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 28,
-                                  ),
+                              const Text(
+                                '大吉',
+                                style: TextStyle(
+                                  color: Colors.purpleAccent,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 32,
                                 ),
                               ),
                             ],
@@ -1006,7 +1248,7 @@ class ShapePainter3 extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     var center1 = const Offset(150, 130); // 表面の中心座標
-    var center2 = const Offset(150, 400); // 本質の中心座標
+    var center2 = const Offset(150, 384); // 本質の中心座標
     double r1 = 36; // 日干の１階の円の中心の半径
     double r2 = 72; // 日干の２階の円の中心の半径
     double r3 = 108; // 日干の３階の円の中心の半径
@@ -1181,15 +1423,19 @@ class ShapePainter3 extends CustomPainter {
   }
 }
 
+// ■■■■■■■■■ 日干・日支の位置を表す線分を表示する■■■■■■■■■
 class ShapePainter4 extends CustomPainter {
-  int gogyou = 1; // 五行　0:木 1:火 2:土 3:金 4:水  // ■■■■■■受け取る値を代入する変数を定義
-  int nitiSi = 0; // 日し
-  ShapePainter4({required this.gogyou}); // ■■■■■■■■■受け取る値を上記変数に代入
+  int gogyou; // 五行
+  int nitiSi; // 日支
+  ShapePainter4({
+    required this.gogyou,
+    required this.nitiSi,
+  });
   @override
   void paint(Canvas canvas, Size size) {
     var center1 = const Offset(150, 130); // 表面の中心座標
-    var center2 = const Offset(150, 400); // 本質の中心座標
-    const lineLength1 = 130.0;
+    var center2 = const Offset(150, 384); // 本質の中心座標
+    const lineLength1 = 120.0;
     const lineLength2 = 130.0;
 
     final penWhite = Paint()
@@ -1208,8 +1454,8 @@ class ShapePainter4 extends CustomPainter {
     canvas.drawLine(center1, line1, penWhite);
     canvas.drawLine(center1, line2, penWhite);
 
-    double radian3 = ((30 * nitiSi) - 90 - 15) / 180 * pi;
-    double radian4 = ((30 * nitiSi) - 90 + 15) / 180 * pi;
+    double radian3 = ((30 * nitiSi) + 90 - 15) / 180 * pi;
+    double radian4 = ((30 * nitiSi) + 90 + 15) / 180 * pi;
 
     final line31 = center2 +
         Offset(lineLength2 * cos(radian3), lineLength2 * sin(radian3));
@@ -1227,13 +1473,14 @@ class ShapePainter4 extends CustomPainter {
   }
 }
 
+// 日干のピンクの丸の描画
 class ShapePainter5 extends CustomPainter {
   int tuhen; // 日し
   ShapePainter5({required this.tuhen}); // ■■■■■■■■■受け取る値を上記変数に代入
   @override
   void paint(Canvas canvas, Size size) {
     var center1 = const Offset(150, 130); // 表面の中心座標
-    var center2 = const Offset(150, 400); // 本質の中心座標
+    var center2 = const Offset(150, 370); // 本質の中心座標
 
     print(tuhen);
 
@@ -1282,12 +1529,13 @@ class ShapePainter5 extends CustomPainter {
   }
 }
 
+// 日支の１階「刑」の薄い黒丸の描画
 class ShapePainter6 extends CustomPainter {
   String kei;
   ShapePainter6({required this.kei});
   @override
   void paint(Canvas canvas, Size size) {
-    var center2 = const Offset(150, 400); // 本質の中心座標
+    var center2 = const Offset(150, 384); // 本質の中心座標
 
     double r6 = 36; // 日支の１階の円の中心の半径
 
@@ -1307,8 +1555,8 @@ class ShapePainter6 extends CustomPainter {
       kei.substring(10, 11),
       kei.substring(11, 12),
     ];
-    print(kei);
-    print(keiL);
+    //print(kei);
+    //print(keiL);
 
     final penBlack1 = Paint()
       ..color = Colors.white24
@@ -1341,40 +1589,40 @@ class ShapePainter6 extends CustomPainter {
     final centerS11b = center2 + Offset(r6 * cos(radiS11), r6 * sin(radiS11));
 
     // ３階
-    if (keiL[0] == "1") {
+    if (keiL[0] == "刑") {
       canvas.drawCircle(centerS0b, rr1, penBlack1..style = PaintingStyle.fill);
     } else {}
-    if (keiL[1] == "1") {
+    if (keiL[1] == "刑") {
       canvas.drawCircle(centerS1b, rr1, penBlack1..style = PaintingStyle.fill);
     } else {}
-    if (keiL[2] == "1") {
+    if (keiL[2] == "刑") {
       canvas.drawCircle(centerS2b, rr1, penBlack1..style = PaintingStyle.fill);
     } else {}
-    if (keiL[3] == "1") {
+    if (keiL[3] == "刑") {
       canvas.drawCircle(centerS3b, rr1, penBlack1..style = PaintingStyle.fill);
     } else {}
-    if (keiL[4] == "1") {
+    if (keiL[4] == "刑") {
       canvas.drawCircle(centerS4b, rr1, penBlack1..style = PaintingStyle.fill);
     } else {}
-    if (keiL[5] == "1") {
+    if (keiL[5] == "刑") {
       canvas.drawCircle(centerS5b, rr1, penBlack1..style = PaintingStyle.fill);
     } else {}
-    if (keiL[6] == "1") {
+    if (keiL[6] == "刑") {
       canvas.drawCircle(centerS6b, rr1, penBlack1..style = PaintingStyle.fill);
     } else {}
-    if (keiL[7] == "1") {
+    if (keiL[7] == "刑") {
       canvas.drawCircle(centerS7b, rr1, penBlack1..style = PaintingStyle.fill);
     } else {}
-    if (keiL[8] == "1") {
+    if (keiL[8] == "刑") {
       canvas.drawCircle(centerS8b, rr1, penBlack1..style = PaintingStyle.fill);
     } else {}
-    if (keiL[9] == "1") {
+    if (keiL[9] == "刑") {
       canvas.drawCircle(centerS9b, rr1, penBlack1..style = PaintingStyle.fill);
     } else {}
-    if (keiL[10] == "1") {
+    if (keiL[10] == "刑") {
       canvas.drawCircle(centerS10b, rr1, penBlack1..style = PaintingStyle.fill);
     } else {}
-    if (keiL[11] == "1") {
+    if (keiL[11] == "刑") {
       canvas.drawCircle(centerS11b, rr1, penBlack1..style = PaintingStyle.fill);
     } else {}
 
@@ -1387,13 +1635,14 @@ class ShapePainter6 extends CustomPainter {
   }
 }
 
+// 日支の２階ピンクの丸の描画
 class ShapePainter7 extends CustomPainter {
   int sigo; // 日し
   ShapePainter7({required this.sigo}); // ■■■■■■■■■受け取る値を上記変数に代入
   @override
   void paint(Canvas canvas, Size size) {
     var center1 = const Offset(150, 130); // 表面の中心座標
-    var center2 = const Offset(150, 400); // 本質の中心座標
+    var center2 = const Offset(150, 384); // 本質の中心座標
 
     print(sigo);
 
@@ -1419,6 +1668,140 @@ class ShapePainter7 extends CustomPainter {
     canvas.drawCircle(centerSi, rr1 - 0, penPink..style = PaintingStyle.fill);
     //canvas.drawCircle(centerTu, rr1 - 4, penPink3..style = PaintingStyle.fill);
   }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) {
+    return false;
+  }
+}
+
+// 日支の１階「刑」の薄い黒丸の描画
+class ShapePainter8 extends CustomPainter {
+  String kei;
+  int sigo;
+  ShapePainter8({
+    required this.kei,
+    required this.sigo,
+  });
+  @override
+  void paint(Canvas canvas, Size size) {
+    var center2 = const Offset(150, 384); // 本質の中心座標
+
+    double r6 = 36; // 日支の１階の円の中心の半径
+
+    double rr1 = 18; // 小さい円の半径
+
+    /*List<String> keiL = [
+      kei.substring(0, 1),
+      kei.substring(1, 2),
+      kei.substring(2, 3),
+      kei.substring(3, 4),
+      kei.substring(4, 5),
+      kei.substring(5, 6),
+      kei.substring(6, 7),
+      kei.substring(7, 8),
+      kei.substring(8, 9),
+      kei.substring(9, 10),
+      kei.substring(10, 11),
+      kei.substring(11, 12),
+    ];
+    print(kei);
+    print(keiL);*/
+
+    /*final penBlack1 = Paint()
+      ..color = Colors.white24
+      ..strokeWidth = 2.0;*/
+
+    final penPink2 = Paint()
+      ..color = Colors.purple
+      ..strokeWidth = 2.0;
+    final penPink1 = Paint()
+      ..color = Colors.pink
+      ..strokeWidth = 2.0;
+
+    final penPink = Paint()
+      ..color = Colors.purpleAccent
+      ..strokeWidth = 2.0;
+
+    double radianSi = (30 * sigo + 90) / 180 * pi;
+    final centerSi = center2 + Offset(r6 * cos(radianSi), r6 * sin(radianSi));
+
+    if (kei.substring(sigo, sigo + 1) == '刑') {
+      canvas.drawCircle(
+          centerSi, rr1 + 4, penPink2..style = PaintingStyle.fill);
+      canvas.drawCircle(
+          centerSi, rr1 + 0, penPink1..style = PaintingStyle.fill);
+      canvas.drawCircle(centerSi, rr1 - 4, penPink..style = PaintingStyle.fill);
+      //canvas.drawCircle(centerTu, rr1 - 4, penPink3..style = PaintingStyle.fill);
+    } else {}
+  }
+
+  /*double radiS0 = (30 * 0 + 90) / 180 * pi; // 子の角度
+    double radiS1 = (30 * 1 + 90) / 180 * pi; // 丑の角度
+    double radiS2 = (30 * 2 + 90) / 180 * pi; // 寅の角度
+    double radiS3 = (30 * 3 + 90) / 180 * pi; // 卯の角度
+    double radiS4 = (30 * 4 + 90) / 180 * pi; // 辰の角度
+    double radiS5 = (30 * 5 + 90) / 180 * pi; // 巳の角度
+    double radiS6 = (30 * 6 + 90) / 180 * pi; // 午の角度
+    double radiS7 = (30 * 7 + 90) / 180 * pi; // 未の角度
+    double radiS8 = (30 * 8 + 90) / 180 * pi; // 申の角度
+    double radiS9 = (30 * 9 + 90) / 180 * pi; // 酉の角度
+    double radiS10 = (30 * 10 + 90) / 180 * pi; // 戌の角度
+    double radiS11 = (30 * 11 + 90) / 180 * pi; // 亥の角度
+
+    final centerS0b = center2 + Offset(r6 * cos(radiS0), r6 * sin(radiS0));
+    final centerS1b = center2 + Offset(r6 * cos(radiS1), r6 * sin(radiS1));
+    final centerS2b = center2 + Offset(r6 * cos(radiS2), r6 * sin(radiS2));
+    final centerS3b = center2 + Offset(r6 * cos(radiS3), r6 * sin(radiS3));
+    final centerS4b = center2 + Offset(r6 * cos(radiS4), r6 * sin(radiS4));
+    final centerS5b = center2 + Offset(r6 * cos(radiS5), r6 * sin(radiS5));
+    final centerS6b = center2 + Offset(r6 * cos(radiS6), r6 * sin(radiS6));
+    final centerS7b = center2 + Offset(r6 * cos(radiS7), r6 * sin(radiS7));
+    final centerS8b = center2 + Offset(r6 * cos(radiS8), r6 * sin(radiS8));
+    final centerS9b = center2 + Offset(r6 * cos(radiS9), r6 * sin(radiS9));
+    final centerS10b = center2 + Offset(r6 * cos(radiS10), r6 * sin(radiS10));
+    final centerS11b = center2 + Offset(r6 * cos(radiS11), r6 * sin(radiS11));
+
+    // ３階
+    if (keiL[0] == "刑") {
+      canvas.drawCircle(centerS0b, rr1, penBlack1..style = PaintingStyle.fill);
+    } else {}
+    if (keiL[1] == "刑") {
+      canvas.drawCircle(centerS1b, rr1, penBlack1..style = PaintingStyle.fill);
+    } else {}
+    if (keiL[2] == "刑") {
+      canvas.drawCircle(centerS2b, rr1, penBlack1..style = PaintingStyle.fill);
+    } else {}
+    if (keiL[3] == "刑") {
+      canvas.drawCircle(centerS3b, rr1, penBlack1..style = PaintingStyle.fill);
+    } else {}
+    if (keiL[4] == "刑") {
+      canvas.drawCircle(centerS4b, rr1, penBlack1..style = PaintingStyle.fill);
+    } else {}
+    if (keiL[5] == "刑") {
+      canvas.drawCircle(centerS5b, rr1, penBlack1..style = PaintingStyle.fill);
+    } else {}
+    if (keiL[6] == "刑") {
+      canvas.drawCircle(centerS6b, rr1, penBlack1..style = PaintingStyle.fill);
+    } else {}
+    if (keiL[7] == "刑") {
+      canvas.drawCircle(centerS7b, rr1, penBlack1..style = PaintingStyle.fill);
+    } else {}
+    if (keiL[8] == "刑") {
+      canvas.drawCircle(centerS8b, rr1, penBlack1..style = PaintingStyle.fill);
+    } else {}
+    if (keiL[9] == "刑") {
+      canvas.drawCircle(centerS9b, rr1, penBlack1..style = PaintingStyle.fill);
+    } else {}
+    if (keiL[10] == "刑") {
+      canvas.drawCircle(centerS10b, rr1, penBlack1..style = PaintingStyle.fill);
+    } else {}
+    if (keiL[11] == "刑") {
+      canvas.drawCircle(centerS11b, rr1, penBlack1..style = PaintingStyle.fill);
+    } else {}
+
+    //canvas.drawCircle(center2, rr3, penWhite..style = PaintingStyle.stroke);
+  }*/
 
   @override
   bool shouldRepaint(covariant CustomPainter oldDelegate) {
