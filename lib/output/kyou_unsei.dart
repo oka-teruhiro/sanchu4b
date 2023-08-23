@@ -432,8 +432,8 @@ class KyouUnsei extends StatelessWidget {
 
     String nikkanInYou = '';
     String kitiKyou = '平';
-    String kitiPlus = 'プラスマイナス';
-    int kitiP = 0;
+    //String kitiPlus = 'プラスマイナス';
+    //int kitiP = 0;
     int kitiPoint = 0;
     int kitiPointNikann = 0;
     int kitiPointNissi = 0;
@@ -1040,32 +1040,32 @@ class KyouUnsei extends StatelessWidget {
     kitiPoint = kitiPointNikann + kitiPointNissi + kitiPointKangou;
     if (kitiPoint > 24) {
       kitiKyou = '大吉';
-      kitiPlus = 'プラス';
-      kitiP = kitiPoint;
+      //kitiPlus = 'プラス';
+      //kitiP = kitiPoint;
     } else if (kitiPoint > 14) {
       kitiKyou = '中吉';
-      kitiPlus = 'プラス';
-      kitiP = kitiPoint;
+      //kitiPlus = 'プラス';
+      //kitiP = kitiPoint;
     } else if (kitiPoint > 4) {
       kitiKyou = '小吉';
-      kitiPlus = 'プラス';
-      kitiP = kitiPoint;
+      //kitiPlus = 'プラス';
+      //kitiP = kitiPoint;
     } else if (kitiPoint > -5) {
       kitiKyou = '平';
-      kitiPlus = 'プラスマイナス';
-      kitiP = 0;
+      //kitiPlus = 'プラスマイナス';
+      //kitiP = 0;
     } else if (kitiPoint > -15) {
       kitiKyou = '小凶';
-      kitiPlus = 'マイナス';
-      kitiP = kitiPoint * -1;
+      //kitiPlus = 'マイナス';
+      //kitiP = kitiPoint * -1;
     } else if (kitiPoint > -25) {
       kitiKyou = '中凶';
-      kitiPlus = 'マイナス';
-      kitiP = kitiPoint * -1;
+      //kitiPlus = 'マイナス';
+      //kitiP = kitiPoint * -1;
     } else {
       kitiKyou = '大凶';
-      kitiPlus = 'マイナス';
-      kitiP = kitiPoint * -1;
+      //kitiPlus = 'マイナス';
+      //kitiP = kitiPoint * -1;
     }
 
     // 解説３

@@ -2,12 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/intl.dart';
-import 'package:sanchu4b/output/kyou_unsei.dart';
+import 'package:sanchu4b/output/kyou_unsei_page.dart';
+import 'package:sanchu4b/output/output4.dart';
 import 'package:sanchu4b/quiz/quiz_page_001.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'osirase/update.dart';
-import 'output/output.dart';
 
 void main() {
   runApp(const MyApp());
@@ -107,6 +107,17 @@ class _MyHomePageState extends State<MyHomePage> {
 
   int item = 0;
 
+  int seiNen = 1957;
+  int seiGatu = 3;
+  int seiNiti = 31;
+
+  @override
+  void initState() {
+    super.initState();
+    _getPrefItems();
+    return;
+  }
+
   // shareed Preference に保存されているデータを読み込んで、_counterにセットする
   _getPrefItems() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -190,7 +201,7 @@ class _MyHomePageState extends State<MyHomePage> {
     _birthH.removeAt(item);
     _birthH.insert(item, '$j : $_birthday 生');
     if (item == 0) {
-      _birthday0 = _birthday;
+      //_birthday0 = _birthday;
       prefs.setString('birthday0', _birthD[item]);
     } else if (item == 1) {
       prefs.setString('birthday1', _birthD[item]);
@@ -254,7 +265,7 @@ class _MyHomePageState extends State<MyHomePage> {
       child: Scaffold(
         backgroundColor: Colors.black,
         appBar: AppBar(
-          title: const Text('天運三柱推命 ver.4.1.2',
+          title: const Text('天運三柱推命 ver.4.3.14',
               style: TextStyle(
                 color: Colors.pinkAccent,
                 fontWeight: FontWeight.bold,
@@ -348,13 +359,13 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                         ),
                         child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             // 生年月日表示欄
                             SizedBox(
                                 height: 44,
-                                width: 174,
+                                width: 150,
                                 child: TextButton(
                                   child: Text(
                                     _birthH[index],
@@ -423,11 +434,19 @@ class _MyHomePageState extends State<MyHomePage> {
                                   seinengappiMojia = _birthD[index];
                                   if (seinengappiMojia == 'yyyy/mm/dd') {
                                   } else {
+                                    seiNen = int.parse(
+                                        seinengappiMojia.substring(0, 4));
+                                    seiGatu = int.parse(
+                                        seinengappiMojia.substring(5, 7));
+                                    seiNiti = int.parse(
+                                        seinengappiMojia.substring(8, 10));
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                        builder: (context) => KyouUnsei(
-                                          titleSeinengappi: seinengappiMojia,
+                                        builder: (context) => KyouUnseiPage(
+                                          seinenInt: seiNen,
+                                          seigatuInt: seiGatu,
+                                          seinitiInt: seiNiti,
                                         ),
                                       ),
                                     );
@@ -461,7 +480,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                        builder: (context) => Output(
+                                        builder: (context) => Output4(
                                           titleSeinengappi: seinengappiMojia,
                                         ),
                                       ),
@@ -507,8 +526,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: CupertinoDatePicker(
                     backgroundColor: Colors.black54,
                     initialDateTime: date9,
-                    minimumYear: 1921,
-                    maximumYear: 2029,
+                    minimumYear: 1901,
+                    maximumYear: 2199,
                     mode: CupertinoDatePickerMode.date,
                     onDateTimeChanged: (newDate) {
                       _birthday = DateFormat('yyyy/MM/dd').format(newDate);
@@ -684,18 +703,22 @@ class _MyHomePageState extends State<MyHomePage> {
 
   // 画面下からDatePickerを表示する
   void _showInputDialog(BuildContext context, int i) {
-    String _memo = _memoH[i];
+    String memo = _memoH[i];
     showDialog(
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
+          //contentPadding: const EdgeInsets.symmetric(
+          //  vertical: 10,
+          //),
           //title: Text('タイトル'),
           content: TextField(
+            maxLines: 1,
             decoration: InputDecoration(
-              hintText: _memo,
+              hintText: memo,
             ),
             onChanged: (text) {
-              _memo = text;
+              memo = text;
             },
           ),
           actions: <Widget>[
@@ -719,9 +742,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
                 onPressed: () {
-                  _memo = 'メモ';
+                  memo = 'メモ';
                   _memoH.removeAt(i);
-                  _memoH.insert(i, _memo);
+                  _memoH.insert(i, memo);
                   _setPrefMemo(i);
                   Navigator.of(context).pop();
                 }),
@@ -735,7 +758,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 onPressed: () {
                   _memoH.removeAt(i);
-                  _memoH.insert(i, _memo);
+                  _memoH.insert(i, memo);
                   _setPrefMemo(i);
                   Navigator.of(context).pop();
                 }),

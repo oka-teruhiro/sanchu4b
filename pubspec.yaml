@@ -1,10 +1,10 @@
 name: sanchu4b
-description: 天運三柱推命ver.4.1.2
+description: 天運三柱推命ver.4.3.13
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
 
-version: 4.1.2+12
+version: 4.3.13+14
 
 environment:
   sdk: ">=2.17.3 <3.0.0"
@@ -14,15 +14,16 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-    # 日本語化するために0.18.0 を　0.17.0 にする必要あり(2022.12.17)
-  intl: ^0.17.0
+
+    # 日本語化するために0.18.1 を　0.18.0 にする必要あり(2023.6.11)
+  intl: ^0.18.0
 
 
 
   cupertino_icons: ^1.0.5
   provider: ^6.0.5
-  shared_preferences: ^2.1.0
-  flutter_lints: ^2.0.1
+  shared_preferences: ^2.2.0
+  flutter_lints: ^2.0.2
 
 
 
@@ -33,7 +34,7 @@ dev_dependencies:
 
 #アプリアイコンを作成するためのコード・ここから（2022.12.25)
   #flutter_launcher_icons: ^0.11.0
-  flutter_native_splash: ^2.2.19
+  flutter_native_splash: ^2.3.1
 
 flutter_icons:
   android: "launcher_icon"
@@ -68,6 +69,8 @@ flutter:
     - images/main/taxi.png
     - images/main/取説4a.jpg
     - images/main/取説4b.jpg
+    - images/main/取説4c.jpg
+    - images/main/取説4d.jpg
     - images/nikkan/甲_大樹.jpg
     - images/nikkan/甲_木陰.jpg
     - images/nikkan/丁_キャンドル.jpg
@@ -141,6 +144,40 @@ flutter:
     - images/tuuhenbosi/47.jpg
     - images/tuuhenbosi/48.jpg
     - images/tuuhenbosi/49.jpg
+    - images/tuuhenbosi/偏財.png
+    - images/tuuhenbosi/偏官ピンク50.png
+    - images/tuuhenbosi/t0.png
+    - images/tuuhenbosi/t1.png
+    - images/tuuhenbosi/t2.png
+    - images/tuuhenbosi/t3.png
+    - images/tuuhenbosi/t4.png
+    - images/tuuhenbosi/t5.png
+    - images/tuuhenbosi/t6.png
+    - images/tuuhenbosi/t7.png
+    - images/tuuhenbosi/t8.png
+    - images/tuuhenbosi/t9.png
+    - images/tuuhenbosi/g0.png
+    - images/tuuhenbosi/g1.png
+    - images/tuuhenbosi/g2.png
+    - images/tuuhenbosi/g3.png
+    - images/tuuhenbosi/g4.png
+    - images/tuuhenbosi/s0.png
+    - images/tuuhenbosi/s1.png
+    - images/tuuhenbosi/s2.png
+    - images/tuuhenbosi/s3.png
+    - images/tuuhenbosi/s4.png
+    - images/tuuhenbosi/s5.png
+    - images/tuuhenbosi/s6.png
+    - images/tuuhenbosi/s7.png
+    - images/tuuhenbosi/s8.png
+    - images/tuuhenbosi/s9.png
+    - images/tuuhenbosi/s10.png
+    - images/tuuhenbosi/s11.png
+    - images/tuuhenbosi/c0.png
+    - images/tuuhenbosi/c1.png
+    - images/tuuhenbosi/c2.png
+    - images/tuuhenbosi/c3.png
+    - images/tuuhenbosi/c4.png
     - images/sigou/s00.jpg
     - images/sigou/s01.jpg
     - images/sigou/s02.jpg
@@ -366,5 +403,6 @@ flutter:
     - images/juuniun/12死.jpg
     - images/juuniun/12墓.jpg
     - images/juuniun/12絶.jpg
+    - images/juuniun/12運と地上生活.jpg
 
 

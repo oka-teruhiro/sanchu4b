@@ -144,7 +144,7 @@ class QuizPage005 extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => AnswerPage005(
+                                builder: (context) => const AnswerPage005(
                                     //quizNoMoji: quizNoMoji,
                                     //bestQuizNoMoji: bestQuizNoMoji,
                                     ),
@@ -168,7 +168,7 @@ class QuizPage005 extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => AnswerPage005(
+                                builder: (context) => const AnswerPage005(
                                     //quizNoMoji: quizNoMoji,
                                     //bestQuizNoMoji: bestQuizNoMoji,
                                     ),

@@ -6,6 +6,10 @@ import 'package:sanchu4b/osirase/update2a.dart';
 import 'package:sanchu4b/osirase/update3.dart';
 import 'package:sanchu4b/osirase/update3a.dart';
 import 'package:sanchu4b/osirase/update4.dart';
+import 'package:sanchu4b/osirase/update4a.dart';
+import 'package:sanchu4b/osirase/update4b.dart';
+import 'package:sanchu4b/osirase/update4c.dart';
+import 'package:sanchu4b/output/kyou_unsei_page.dart';
 
 class Update extends StatelessWidget {
   const Update({Key? key}) : super(key: key);
@@ -31,7 +35,79 @@ class Update extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: ListTile(
-                    title: const Text('第4版　命式を表示できるようになりました。（2023/5/5 更新)'),
+                    title: const Text(
+                        '第4.4版　今日の運勢ページで前後7日間の運勢を確認できるようになりました。（工事中）'),
+                    trailing: const Icon(Icons.navigate_next),
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const KyouUnseiPage(
+                                seinenInt: 1957, seigatuInt: 4, seinitiInt: 1),
+                          ));
+                    },
+                  ),
+                ),
+                const Divider(
+                  color: Colors.blue,
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ListTile(
+                    title: const Text(
+                        '第4.3版　1901.1.1〜2199.12.31に対応できるようにしました。（2023/6/22 更新)'),
+                    trailing: const Icon(Icons.navigate_next),
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const Update4c(),
+                          ));
+                    },
+                  ),
+                ),
+                const Divider(
+                  color: Colors.blue,
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ListTile(
+                    title: const Text('第4.2版　命式チャートページを追加しました。（2023/6/16 更新)'),
+                    trailing: const Icon(Icons.navigate_next),
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const Update4b(),
+                          ));
+                    },
+                  ),
+                ),
+                const Divider(
+                  color: Colors.blue,
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ListTile(
+                    title: const Text(
+                        '第4.1版　天運の年ページに節入り時刻前ボタンを追加しました。（2023/5/10 更新)'),
+                    trailing: const Icon(Icons.navigate_next),
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const Update4a(),
+                          ));
+                    },
+                  ),
+                ),
+                const Divider(
+                  color: Colors.blue,
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ListTile(
+                    title: const Text('第4版　命式を表示できるようになりました。（2023/4/26 更新)'),
                     trailing: const Icon(Icons.navigate_next),
                     onTap: () {
                       Navigator.push(

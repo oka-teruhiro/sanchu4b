@@ -3,10 +3,11 @@ import 'package:sanchu4b/main.dart';
 import 'package:sanchu4b/quiz/quiz_page_007.dart';
 
 class AnswerPage007 extends StatelessWidget {
-  AnswerPage007({Key? key}) : super(key: key);
+  const AnswerPage007({Key? key}) : super(key: key);
 
-  bool quizLast = true;
-  String kotaeMoji = '全問終了しました。次のアップデートでさらに問題を追加しますので、またチャレンジしてください。お疲れ様でした。';
+  final bool quizLast = true;
+  final String kotaeMoji =
+      '全問終了しました。次のアップデートでさらに問題を追加しますので、またチャレンジしてください。お疲れ様でした。';
 
   @override
   Widget build(BuildContext context) {
@@ -21,10 +22,10 @@ class AnswerPage007 extends StatelessWidget {
                 title: Image.asset('images/quiz/Q007/A0070.png'),
               ),
               ListTile(
-                title: Image.asset('images/quiz/Q006/A0061.png'),
+                title: Image.asset('images/quiz/Q007/A0071.png'),
               ),
               ListTile(
-                title: Image.asset('images/quiz/Q006/A0062.png'),
+                title: Image.asset('images/quiz/Q007/A0072.png'),
               ),
               SizedBox(
                   height: 60,

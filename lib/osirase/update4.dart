@@ -90,7 +90,7 @@ class Update4 extends StatelessWidget {
       backgroundColor: Colors.black,
       appBar: AppBar(
         title: const Text(
-          '第4版（2023/5/5)',
+          '第4版　(ver.4.1.0)',
           style: TextStyle(
             color: Colors.pinkAccent,
             fontWeight: FontWeight.bold,

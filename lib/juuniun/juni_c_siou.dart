@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:sanchu4b/juuniun/juni_4_kantai.dart';
 import 'package:sanchu4b/juuniun/juni_5_kenroku.dart';
 
-import 'juni_2_ tyousei.dart';
-import 'juni_6_ teiou.dart';
+import 'juni_2_tyousei.dart';
+import 'juni_6_teiou.dart';
 
 class Siou extends StatelessWidget {
   String hasira;
@@ -26,6 +26,8 @@ class Siou extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //hasira = widget.hasira;
+
     if (hasira == '日') {
       hasiraBun = '　日の柱の十二運なので、下記の特徴を持っています。';
       juuniUn = juuniUnNiti;
