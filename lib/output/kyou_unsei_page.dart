@@ -72,7 +72,7 @@ class KyouUnseiPage extends StatelessWidget {
     String kei = "平三刑和害天冲宙三統家合";
     int nowNen = 2023;
     int nowGatu = 8;
-    int nowNiti = 15;
+    int nowNiti = 13;
     String nowMoji = '2023.8.14';
     int nowNitiKan = 0;
     int nowNitiSi = 0;
@@ -80,6 +80,7 @@ class KyouUnseiPage extends StatelessWidget {
     //int sigo = 0;
     DateTime now = DateTime.now();
     DateTime now1 = DateTime(2023, 8, 14);
+    String kanteiTuuhen = '比肩';
 
     // 生年月日から日干を算出
     nitiKanNo =
@@ -117,16 +118,24 @@ class KyouUnseiPage extends StatelessWidget {
     print('日干：$nitiKanNo・五行：$gogyou・日支：$nitiSi・陰陽：$inyou');
 
     // 今日の日付を算出
-    now1 = now;
-    nowNen = DateTime.now().year;
-    nowGatu = DateTime.now().month;
-    nowNiti = DateTime.now().day;
-    nowMoji = '$nowNen.$nowGatu.$nowNiti';
+    //now1 = now;
+    //nowNen = now1.year;
+    //nowGatu = now1.month;
+    //nowNiti = now1.day;
+    //nowMoji = '$nowNen.$nowGatu.$nowNiti';
     //今日の日干・日支を算出する
-    nowNitiKan = juKanNo(meisikiA(nowNen, nowGatu, nowNiti).substring(4, 5));
-    nowNitiSi = juuniSiNo(meisikiA(nowNen, nowGatu, nowNiti).substring(5, 6));
-    print('日支：$nowNitiSi');
-    tuhen = nowNitiKan;
+    //nowNitiKan = juKanNo(meisikiA(nowNen, nowGatu, nowNiti).substring(4, 5));
+    //nowNitiSi = juuniSiNo(meisikiA(nowNen, nowGatu, nowNiti).substring(5, 6));
+    //print('日支：$nowNitiSi');
+    //tuhen = nowNitiKan;
+    //鑑定日の通変星を算出する
+    //kanteiTuuhen =
+    //  tuuhenbosi(seinenInt, seigatuInt, seinitiInt, nowNen, nowGatu, nowNiti);
+
+    //print('鑑定通変星：$kanteiTuuhen');
+    //print('生年月日：$seinenInt.$seigatuInt.$seinitiInt');
+    //print('鑑定日：$nowNen.$nowGatu.$nowNiti');
+
     //sigo = nowNitiSi;
     //sigo = nowNitiSi ;
 
@@ -235,24 +244,26 @@ class KyouUnseiPage extends StatelessWidget {
     return MediaQuery(
       data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
       child: ChangeNotifierProvider<KyouUnseiModel>(
-        create: (_) => KyouUnseiModel(),
-        child: Scaffold(
-          backgroundColor: Colors.black,
-          appBar: AppBar(
-            title: const Text(
-              '今日の運勢',
-              style: TextStyle(
-                color: Colors.pinkAccent,
-                fontWeight: FontWeight.bold,
-                fontSize: 16,
+        create: (_) => KyouUnseiModel(
+            //seinenInt, seigatuInt, seinitiInt, seinenInt: null)
+            seinenInt: seinenInt,
+            seigatuInt: seigatuInt,
+            seinitiInt: seinitiInt)
+          ..init(),
+        child: Consumer<KyouUnseiModel>(builder: (context, model, child) {
+          return Scaffold(
+            backgroundColor: Colors.black,
+            appBar: AppBar(
+              title: const Text(
+                '今日の運勢',
+                style: TextStyle(
+                  color: Colors.pinkAccent,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                ),
               ),
             ),
-          ),
-          body: Consumer<KyouUnseiModel>(
-              // stream: null,
-              builder: (context, model, child) {
-            //model.initKyou();
-            return Column(
+            body: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Expanded(
@@ -288,8 +299,7 @@ class KyouUnseiPage extends StatelessWidget {
                                       height: 460,
                                       child: CustomPaint(
                                         painter:
-                                            ShapePainter3(), // 渡したい変数を引数に指定する
-                                        // size: const Size(400, 400), // この行を入れると図形と文字を重ねることができない
+                                            ShapePainter3(), // 日干と日支の固定円の描画
                                       ),
                                     ),
                                     SizedBox(
@@ -297,10 +307,10 @@ class KyouUnseiPage extends StatelessWidget {
                                       height: 460,
                                       child: CustomPaint(
                                         painter: ShapePainter4(
+                                          // 日干と日支のV字の描画
                                           gogyou: gogyou,
                                           nitiSi: nitiSi,
-                                        ), // 渡したい変数を引数に指定する
-                                        // size: const Size(400, 400), // この行を入れると図形と文字を重ねることができない
+                                        ),
                                       ),
                                     ),
                                     SizedBox(
@@ -308,7 +318,9 @@ class KyouUnseiPage extends StatelessWidget {
                                       height: 460,
                                       child: CustomPaint(
                                         painter: ShapePainter5(
-                                          tuhen: nowNitiKan,
+                                          tuhen: model.tuhen,
+                                          //tuhen: 1,
+                                          gogyou: gogyou,
                                         ), // 渡したい変数を引数に指定する
                                         // size: const Size(400, 400), // この行を入れると図形と文字を重ねることができない
                                       ),
@@ -328,7 +340,7 @@ class KyouUnseiPage extends StatelessWidget {
                                       height: 460,
                                       child: CustomPaint(
                                         painter: ShapePainter8(
-                                          sigo: nowNitiSi,
+                                          sigo: model.nowNitiSi,
                                           kei: kei,
                                         ), // 渡したい変数を引数に指定する
                                         // size: const Size(400, 400), // この行を入れると図形と文字を重ねることができない
@@ -1236,9 +1248,9 @@ class KyouUnseiPage extends StatelessWidget {
                   ),
                 ),
               ],
-            );
-          }),
-        ),
+            ),
+          );
+        }),
       ),
     );
   }
@@ -1258,7 +1270,6 @@ class ShapePainter3 extends CustomPainter {
     double rr1 = 18; // 小さい円の半径
     double rr2 = 90; // 日干の大きい円の半径
     double rr3 = 93; // 日支の大きな円の半径
-    //List<int> kei = [1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0];
 
     final penWhite = Paint()
       ..color = Colors.white
@@ -1368,19 +1379,6 @@ class ShapePainter3 extends CustomPainter {
     final centerS10a = center2 + Offset(r5 * cos(radiS10), r5 * sin(radiS10));
     final centerS11a = center2 + Offset(r5 * cos(radiS11), r5 * sin(radiS11));
 
-    final centerS0b = center2 + Offset(r6 * cos(radiS0), r6 * sin(radiS0));
-    final centerS1b = center2 + Offset(r6 * cos(radiS1), r6 * sin(radiS1));
-    final centerS2b = center2 + Offset(r6 * cos(radiS2), r6 * sin(radiS2));
-    final centerS3b = center2 + Offset(r6 * cos(radiS3), r6 * sin(radiS3));
-    final centerS4b = center2 + Offset(r6 * cos(radiS4), r6 * sin(radiS4));
-    final centerS5b = center2 + Offset(r6 * cos(radiS5), r6 * sin(radiS5));
-    final centerS6b = center2 + Offset(r6 * cos(radiS6), r6 * sin(radiS6));
-    final centerS7b = center2 + Offset(r6 * cos(radiS7), r6 * sin(radiS7));
-    final centerS8b = center2 + Offset(r6 * cos(radiS8), r6 * sin(radiS8));
-    final centerS9b = center2 + Offset(r6 * cos(radiS9), r6 * sin(radiS9));
-    final centerS10b = center2 + Offset(r6 * cos(radiS10), r6 * sin(radiS10));
-    final centerS11b = center2 + Offset(r6 * cos(radiS11), r6 * sin(radiS11));
-
     // ■■■■■■■■■ 日支の運勢描画 ■■■■■■■■■
 
     // ３階
@@ -1475,20 +1473,24 @@ class ShapePainter4 extends CustomPainter {
 
 // 日干のピンクの丸の描画
 class ShapePainter5 extends CustomPainter {
-  int tuhen; // 日し
-  ShapePainter5({required this.tuhen}); // ■■■■■■■■■受け取る値を上記変数に代入
+  int tuhen; // 日干
+  int gogyou;
+  ShapePainter5({
+    required this.tuhen,
+    required this.gogyou,
+  }); //
   @override
   void paint(Canvas canvas, Size size) {
     var center1 = const Offset(150, 130); // 表面の中心座標
     var center2 = const Offset(150, 370); // 本質の中心座標
 
-    print(tuhen);
+    print('P5');
 
     double rr1 = 18;
     double r1 = 36;
     double r2 = 72;
     double rt;
-    double gogyo;
+    double gogyo2;
     int gogyo1;
 
     final penPink2 = Paint()
@@ -1507,20 +1509,20 @@ class ShapePainter5 extends CustomPainter {
 
     gogyo1 = tuhen % 2;
     if (gogyo1 == 0) {
+      // 通変星が比肩、食神、偏財、偏官
       rt = r2;
-      gogyo = tuhen / 2;
+      gogyo2 = tuhen / 2;
     } else {
       rt = r1;
-      gogyo = (tuhen - 1) / 2;
+      gogyo2 = (tuhen - 1) / 2;
     }
 
-    double radianTu = (72 * gogyo - 90) / 180 * pi;
+    double radianTu = (72 * (gogyo2 + gogyou) - 90) / 180 * pi;
     final centerTu = center1 + Offset(rt * cos(radianTu), rt * sin(radianTu));
 
     canvas.drawCircle(centerTu, rr1 + 8, penPink2..style = PaintingStyle.fill);
     canvas.drawCircle(centerTu, rr1 + 4, penPink1..style = PaintingStyle.fill);
     canvas.drawCircle(centerTu, rr1 - 0, penPink..style = PaintingStyle.fill);
-    //canvas.drawCircle(centerTu, rr1 - 4, penPink3..style = PaintingStyle.fill);
   }
 
   @override
@@ -1538,7 +1540,6 @@ class ShapePainter6 extends CustomPainter {
     var center2 = const Offset(150, 384); // 本質の中心座標
 
     double r6 = 36; // 日支の１階の円の中心の半径
-
     double rr1 = 18; // 小さい円の半径
 
     List<String> keiL = [
@@ -1555,9 +1556,6 @@ class ShapePainter6 extends CustomPainter {
       kei.substring(10, 11),
       kei.substring(11, 12),
     ];
-    //print(kei);
-    //print(keiL);
-
     final penBlack1 = Paint()
       ..color = Colors.white24
       ..strokeWidth = 2.0;
@@ -1625,8 +1623,6 @@ class ShapePainter6 extends CustomPainter {
     if (keiL[11] == "刑") {
       canvas.drawCircle(centerS11b, rr1, penBlack1..style = PaintingStyle.fill);
     } else {}
-
-    //canvas.drawCircle(center2, rr3, penWhite..style = PaintingStyle.stroke);
   }
 
   @override
@@ -1666,7 +1662,6 @@ class ShapePainter7 extends CustomPainter {
     canvas.drawCircle(centerSi, rr1 + 8, penPink2..style = PaintingStyle.fill);
     canvas.drawCircle(centerSi, rr1 + 4, penPink1..style = PaintingStyle.fill);
     canvas.drawCircle(centerSi, rr1 - 0, penPink..style = PaintingStyle.fill);
-    //canvas.drawCircle(centerTu, rr1 - 4, penPink3..style = PaintingStyle.fill);
   }
 
   @override
@@ -1688,29 +1683,7 @@ class ShapePainter8 extends CustomPainter {
     var center2 = const Offset(150, 384); // 本質の中心座標
 
     double r6 = 36; // 日支の１階の円の中心の半径
-
     double rr1 = 18; // 小さい円の半径
-
-    /*List<String> keiL = [
-      kei.substring(0, 1),
-      kei.substring(1, 2),
-      kei.substring(2, 3),
-      kei.substring(3, 4),
-      kei.substring(4, 5),
-      kei.substring(5, 6),
-      kei.substring(6, 7),
-      kei.substring(7, 8),
-      kei.substring(8, 9),
-      kei.substring(9, 10),
-      kei.substring(10, 11),
-      kei.substring(11, 12),
-    ];
-    print(kei);
-    print(keiL);*/
-
-    /*final penBlack1 = Paint()
-      ..color = Colors.white24
-      ..strokeWidth = 2.0;*/
 
     final penPink2 = Paint()
       ..color = Colors.purple
@@ -1732,76 +1705,8 @@ class ShapePainter8 extends CustomPainter {
       canvas.drawCircle(
           centerSi, rr1 + 0, penPink1..style = PaintingStyle.fill);
       canvas.drawCircle(centerSi, rr1 - 4, penPink..style = PaintingStyle.fill);
-      //canvas.drawCircle(centerTu, rr1 - 4, penPink3..style = PaintingStyle.fill);
     } else {}
   }
-
-  /*double radiS0 = (30 * 0 + 90) / 180 * pi; // 子の角度
-    double radiS1 = (30 * 1 + 90) / 180 * pi; // 丑の角度
-    double radiS2 = (30 * 2 + 90) / 180 * pi; // 寅の角度
-    double radiS3 = (30 * 3 + 90) / 180 * pi; // 卯の角度
-    double radiS4 = (30 * 4 + 90) / 180 * pi; // 辰の角度
-    double radiS5 = (30 * 5 + 90) / 180 * pi; // 巳の角度
-    double radiS6 = (30 * 6 + 90) / 180 * pi; // 午の角度
-    double radiS7 = (30 * 7 + 90) / 180 * pi; // 未の角度
-    double radiS8 = (30 * 8 + 90) / 180 * pi; // 申の角度
-    double radiS9 = (30 * 9 + 90) / 180 * pi; // 酉の角度
-    double radiS10 = (30 * 10 + 90) / 180 * pi; // 戌の角度
-    double radiS11 = (30 * 11 + 90) / 180 * pi; // 亥の角度
-
-    final centerS0b = center2 + Offset(r6 * cos(radiS0), r6 * sin(radiS0));
-    final centerS1b = center2 + Offset(r6 * cos(radiS1), r6 * sin(radiS1));
-    final centerS2b = center2 + Offset(r6 * cos(radiS2), r6 * sin(radiS2));
-    final centerS3b = center2 + Offset(r6 * cos(radiS3), r6 * sin(radiS3));
-    final centerS4b = center2 + Offset(r6 * cos(radiS4), r6 * sin(radiS4));
-    final centerS5b = center2 + Offset(r6 * cos(radiS5), r6 * sin(radiS5));
-    final centerS6b = center2 + Offset(r6 * cos(radiS6), r6 * sin(radiS6));
-    final centerS7b = center2 + Offset(r6 * cos(radiS7), r6 * sin(radiS7));
-    final centerS8b = center2 + Offset(r6 * cos(radiS8), r6 * sin(radiS8));
-    final centerS9b = center2 + Offset(r6 * cos(radiS9), r6 * sin(radiS9));
-    final centerS10b = center2 + Offset(r6 * cos(radiS10), r6 * sin(radiS10));
-    final centerS11b = center2 + Offset(r6 * cos(radiS11), r6 * sin(radiS11));
-
-    // ３階
-    if (keiL[0] == "刑") {
-      canvas.drawCircle(centerS0b, rr1, penBlack1..style = PaintingStyle.fill);
-    } else {}
-    if (keiL[1] == "刑") {
-      canvas.drawCircle(centerS1b, rr1, penBlack1..style = PaintingStyle.fill);
-    } else {}
-    if (keiL[2] == "刑") {
-      canvas.drawCircle(centerS2b, rr1, penBlack1..style = PaintingStyle.fill);
-    } else {}
-    if (keiL[3] == "刑") {
-      canvas.drawCircle(centerS3b, rr1, penBlack1..style = PaintingStyle.fill);
-    } else {}
-    if (keiL[4] == "刑") {
-      canvas.drawCircle(centerS4b, rr1, penBlack1..style = PaintingStyle.fill);
-    } else {}
-    if (keiL[5] == "刑") {
-      canvas.drawCircle(centerS5b, rr1, penBlack1..style = PaintingStyle.fill);
-    } else {}
-    if (keiL[6] == "刑") {
-      canvas.drawCircle(centerS6b, rr1, penBlack1..style = PaintingStyle.fill);
-    } else {}
-    if (keiL[7] == "刑") {
-      canvas.drawCircle(centerS7b, rr1, penBlack1..style = PaintingStyle.fill);
-    } else {}
-    if (keiL[8] == "刑") {
-      canvas.drawCircle(centerS8b, rr1, penBlack1..style = PaintingStyle.fill);
-    } else {}
-    if (keiL[9] == "刑") {
-      canvas.drawCircle(centerS9b, rr1, penBlack1..style = PaintingStyle.fill);
-    } else {}
-    if (keiL[10] == "刑") {
-      canvas.drawCircle(centerS10b, rr1, penBlack1..style = PaintingStyle.fill);
-    } else {}
-    if (keiL[11] == "刑") {
-      canvas.drawCircle(centerS11b, rr1, penBlack1..style = PaintingStyle.fill);
-    } else {}
-
-    //canvas.drawCircle(center2, rr3, penWhite..style = PaintingStyle.stroke);
-  }*/
 
   @override
   bool shouldRepaint(covariant CustomPainter oldDelegate) {

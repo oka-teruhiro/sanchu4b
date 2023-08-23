@@ -994,3 +994,75 @@ String meisikiA(int a, int b, int c) {
   //print(h);
   return h; //d:命式 e:節入り日 f:節入り時刻 g:節入り日からの日数
 }
+
+// 通変星を算出する
+// 関数定義
+//  g = meisiki(a,b,c,d,e,f)
+// a: 生年の数字
+// b: 生月の数字
+// c: 生日の数字
+// d: 鑑定年の数字
+// e: 鑑定月の数字
+// f: 鑑定日の数字
+// g: 通変星を表す文字（0：比肩、1：劫敗・・・、9：印綬）
+String tuuhenbosi(int a, int b, int c, int d, int e, int f) {
+  // 定数定義
+  String tuuhenbosi = "比肩劫敗食神傷官偏財正財偏官正官倒食印綬"
+      "劫敗比肩傷官食神正財偏財正官偏官印綬倒食"
+      "倒食印綬比肩劫敗食神傷官偏財正財偏官正官"
+      "印綬倒食劫敗比肩傷官食神正財偏財正官偏官"
+      "偏官正官倒食印綬比肩劫敗食神傷官偏財正財"
+      "正官偏官印綬倒食劫敗比肩傷官食神正財偏財"
+      "偏財正財偏官正官倒食印綬比肩劫敗食神傷官"
+      "正財偏財正官偏官印綬倒食劫敗比肩傷官食神"
+      "食神傷官偏財正財偏官正官倒食印綬比肩劫敗"
+      "傷官食神正財偏財正官偏官印綬倒食劫敗比肩";
+  //int a;
+  //int b;
+  //int c;
+  //int d;
+  //int e;
+  //int f;
+  int h = 0; // 生年月日の日干No.
+  int i = 0; // 鑑定日の日干No.
+  String j = '比肩';
+  //int
+  //生年月日の日干を算出する
+  h = juKanNo(meisikiA(a, b, c).substring(4, 5));
+  i = juKanNo(meisikiA(d, e, f).substring(4, 5));
+  j = tuuhenbosi.substring(h * 20 + i * 2, h * 20 + i * 2 + 2);
+  print('$h,$i,$j');
+  return j;
+}
+
+// 関数定義　通変星文字から通変星数を算出する
+//  c = zouKan(a, b)
+//  b = tuuhenbosiNo( a )
+//   a: 十干を表す文字（'甲','乙',・・・,'癸'）
+//   b: 十干を表す数字（'0','1',・・・,'9' ）
+
+int tuuhenbosiNo(String a) {
+  int b = 9;
+  if (a == '比肩') {
+    b = 0;
+  } else if (a == '劫敗') {
+    b = 1;
+  } else if (a == '食神') {
+    b = 2;
+  } else if (a == '傷官') {
+    b = 3;
+  } else if (a == '偏財') {
+    b = 4;
+  } else if (a == '正財') {
+    b = 5;
+  } else if (a == '偏官') {
+    b = 6;
+  } else if (a == '正官') {
+    b = 7;
+  } else if (a == '倒食') {
+    b = 8;
+  } else if (a == '印綬') {
+    b = 9;
+  } else {}
+  return b;
+}
