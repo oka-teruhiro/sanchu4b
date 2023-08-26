@@ -846,17 +846,13 @@ class KyouUnseiPage extends StatelessWidget {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text('■ 結婚運 ■',
+                                  Text('（工事中）',
                                       style: TextStyle(
                                         color: Color(c3),
                                         fontWeight: FontWeight.normal,
                                         fontSize: 14,
                                       )),
-                                  Text(
-                                      '　上の大きな白の円において、「＜」で区切られた部'
-                                      '分は、日干を表し通変星で比肩・劫敗を表しています。ここから円の'
-                                      '中心を向いて、右斜め奥方向に「官星」、左斜め奥方向に「財星」'
-                                      'が位置しています。',
+                                  Text('',
                                       style: TextStyle(
                                         color: Color(c2),
                                         fontWeight: FontWeight.normal,
@@ -904,9 +900,9 @@ class KyouUnseiPage extends StatelessWidget {
                                 fontSize: 16,
                               ),
                             ),
-                            const Text(
-                              '大吉',
-                              style: TextStyle(
+                            Text(
+                              model.kitiKyou,
+                              style: const TextStyle(
                                 color: Colors.purpleAccent,
                                 fontWeight: FontWeight.bold,
                                 fontSize: 32,
