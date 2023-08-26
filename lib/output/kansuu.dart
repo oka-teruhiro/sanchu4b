@@ -1031,7 +1031,7 @@ String tuuhenbosi(int a, int b, int c, int d, int e, int f) {
   h = juKanNo(meisikiA(a, b, c).substring(4, 5));
   i = juKanNo(meisikiA(d, e, f).substring(4, 5));
   j = tuuhenbosi.substring(h * 20 + i * 2, h * 20 + i * 2 + 2);
-  print('$h,$i,$j');
+  //print('$h,$i,$j');
   return j;
 }
 

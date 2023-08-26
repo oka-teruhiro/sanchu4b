@@ -57,7 +57,7 @@ class KyouUnseiPage extends StatelessWidget {
     int nitiKanNo = 0;
     int gogyou = 0;
     int nitiSi = 0;
-    int inyou = 0;
+    // int inyou = 0;
     String go0 = '0';
     String go1 = '1';
     String go2 = '2';
@@ -70,17 +70,6 @@ class KyouUnseiPage extends StatelessWidget {
     String go9 = '9';
     String sigo = "平三刑和害天冲宙三統家合";
     String kei = "平三刑和害天冲宙三統家合";
-    int nowNen = 2023;
-    int nowGatu = 8;
-    int nowNiti = 13;
-    String nowMoji = '2023.8.14';
-    int nowNitiKan = 0;
-    int nowNitiSi = 0;
-    int tuhen = 0;
-    //int sigo = 0;
-    DateTime now = DateTime.now();
-    DateTime now1 = DateTime(2023, 8, 14);
-    String kanteiTuuhen = '比肩';
 
     // 生年月日から日干を算出
     nitiKanNo =
@@ -100,44 +89,21 @@ class KyouUnseiPage extends StatelessWidget {
     go8 = ((gogyou * -2 + 8) % 10).toString();
     go9 = ((gogyou * -2 + 9) % 10).toString();
     List<String> go = [
-      'images/tuuhenbosi/t' + go0 + '.png',
-      'images/tuuhenbosi/t' + go1 + '.png',
-      'images/tuuhenbosi/t' + go2 + '.png',
-      'images/tuuhenbosi/t' + go3 + '.png',
-      'images/tuuhenbosi/t' + go4 + '.png',
-      'images/tuuhenbosi/t' + go5 + '.png',
-      'images/tuuhenbosi/t' + go6 + '.png',
-      'images/tuuhenbosi/t' + go7 + '.png',
-      'images/tuuhenbosi/t' + go8 + '.png',
-      'images/tuuhenbosi/t' + go9 + '.png',
+      'images/tuuhenbosi/t$go0.png',
+      'images/tuuhenbosi/t$go1.png',
+      'images/tuuhenbosi/t$go2.png',
+      'images/tuuhenbosi/t$go3.png',
+      'images/tuuhenbosi/t$go4.png',
+      'images/tuuhenbosi/t$go5.png',
+      'images/tuuhenbosi/t$go6.png',
+      'images/tuuhenbosi/t$go7.png',
+      'images/tuuhenbosi/t$go8.png',
+      'images/tuuhenbosi/t$go9.png',
     ];
     //日支の２階支合等の文字を算出
     sigo = sigoL.substring(nitiSi * 12, (nitiSi + 1) * 12);
     //日支の１階刑の文字を算出
     kei = keiL.substring(nitiSi * 12, (nitiSi + 1) * 12);
-    print('日干：$nitiKanNo・五行：$gogyou・日支：$nitiSi・陰陽：$inyou');
-
-    // 今日の日付を算出
-    //now1 = now;
-    //nowNen = now1.year;
-    //nowGatu = now1.month;
-    //nowNiti = now1.day;
-    //nowMoji = '$nowNen.$nowGatu.$nowNiti';
-    //今日の日干・日支を算出する
-    //nowNitiKan = juKanNo(meisikiA(nowNen, nowGatu, nowNiti).substring(4, 5));
-    //nowNitiSi = juuniSiNo(meisikiA(nowNen, nowGatu, nowNiti).substring(5, 6));
-    //print('日支：$nowNitiSi');
-    //tuhen = nowNitiKan;
-    //鑑定日の通変星を算出する
-    //kanteiTuuhen =
-    //  tuuhenbosi(seinenInt, seigatuInt, seinitiInt, nowNen, nowGatu, nowNiti);
-
-    //print('鑑定通変星：$kanteiTuuhen');
-    //print('生年月日：$seinenInt.$seigatuInt.$seinitiInt');
-    //print('鑑定日：$nowNen.$nowGatu.$nowNiti');
-
-    //sigo = nowNitiSi;
-    //sigo = nowNitiSi ;
 
     const double h1 = 25;
     const int c2 = -1; // 白
@@ -149,18 +115,18 @@ class KyouUnseiPage extends StatelessWidget {
     double r4 = 112; // 日支の３階の円の中心の半径
     double r5 = 74; // 日支の２階の円の中心の半径
     double r6 = 36; // 日支の１階の円の中心の半径
-    double rr1 = 18; // 小さい円の半径
-    double rr2 = 90; // 日干の大きい円の半径
-    double rr3 = 93; // 日支の大きな円の半径
-    double rrr = rr1 * 2; //小さい円の直系
+    // double rr1 = 18; // 小さい円の半径
+    // double rr2 = 90; // 日干の大きい円の半径
+    // double rr3 = 93; // 日支の大きな円の半径
+    // double rrr = rr1 * 2; //小さい円の直系
     double rrM = 24; //文字の大きさ
     double rrM1 = 24; //日支１階２階のフォントサイズ
     double rrM2 = 8; //日支１階２階の文字位置調整
 
     // 文字のセンター位置
-    var centa1 = Offset((150 - rrr / 2), (130 - rrr / 2)); // 日干図形の中心座標
+    // var centa1 = Offset((150 - rrr / 2), (130 - rrr / 2)); // 日干図形の中心座標
     var centa2 = Offset((150 - rrM / 2), (130 - rrM / 2)); // 日干文字の中心座標
-    var centa3 = Offset((150 - rrr / 2), (384 - rrr / 2)); // 日支図形の中心座標
+    // var centa3 = Offset((150 - rrr / 2), (384 - rrr / 2)); // 日支図形の中心座標
     var centa4 = Offset((150 - rrM / 2), (384 - rrM / 2)); // 日支文字の中心座標
 
     // 角度の定数
@@ -319,10 +285,8 @@ class KyouUnseiPage extends StatelessWidget {
                                       child: CustomPaint(
                                         painter: ShapePainter5(
                                           tuhen: model.tuhen,
-                                          //tuhen: 1,
                                           gogyou: gogyou,
                                         ), // 渡したい変数を引数に指定する
-                                        // size: const Size(400, 400), // この行を入れると図形と文字を重ねることができない
                                       ),
                                     ),
                                     SizedBox(
@@ -332,7 +296,6 @@ class KyouUnseiPage extends StatelessWidget {
                                         painter: ShapePainter6(
                                           kei: kei,
                                         ), // 渡したい変数を引数に指定する
-                                        // size: const Size(400, 400), // この行を入れると図形と文字を重ねることができない
                                       ),
                                     ),
                                     SizedBox(
@@ -343,7 +306,6 @@ class KyouUnseiPage extends StatelessWidget {
                                           sigo: model.nowNitiSi,
                                           kei: kei,
                                         ), // 渡したい変数を引数に指定する
-                                        // size: const Size(400, 400), // この行を入れると図形と文字を重ねることができない
                                       ),
                                     ),
 
@@ -352,15 +314,14 @@ class KyouUnseiPage extends StatelessWidget {
                                       height: 460,
                                       child: CustomPaint(
                                         painter: ShapePainter7(
-                                          sigo: nowNitiSi,
+                                          sigo: model.nowNitiSi,
                                         ), // 渡したい変数を引数に指定する
-                                        // size: const Size(400, 400), // この行を入れると図形と文字を重ねることができない
                                       ),
                                     ),
 
                                     // ■■■■■■■■■ 左上の生年月日の表示 ■■■■■■■■■
                                     Transform.translate(
-                                      offset: Offset(0, 0),
+                                      offset: const Offset(0, 0),
                                       child: Text(
                                         '$seinenInt.$seigatuInt.$seinitiInt 生',
                                         style: const TextStyle(
@@ -371,7 +332,7 @@ class KyouUnseiPage extends StatelessWidget {
                                       ),
                                     ),
                                     Transform.translate(
-                                      offset: Offset(180, 0),
+                                      offset: const Offset(180, 0),
                                       child: Text(
                                         model.nowMoji,
                                         style: const TextStyle(
@@ -986,291 +947,297 @@ class KyouUnseiPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(
-                  width: double.infinity,
-                  height: 97,
-                  child: Container(
-                    color: Colors.black,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        SizedBox(
-                          width: 88,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              Text(
-                                model.nowMoji,
-                                style: const TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.normal,
-                                  fontSize: 18,
-                                ),
-                              ),
-                              const Text(
-                                'の運勢',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.normal,
-                                  fontSize: 16,
-                                ),
-                              ),
-                              const Text(
-                                '大吉',
-                                style: TextStyle(
-                                  color: Colors.purpleAccent,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 32,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        SizedBox(
-                          width: 44,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              const SizedBox(
-                                height: 15,
-                                child: Text(
-                                  '年',
-                                  style: TextStyle(
-                                    color: Color(c3),
-                                    fontWeight: FontWeight.normal,
-                                    fontSize: 12,
-                                  ),
-                                ),
-                              ),
-                              const SizedBox(
-                                height: 8,
-                              ),
-                              SizedBox(
-                                height: h1,
-                                child: ElevatedButton(
-                                  style: ElevatedButton.styleFrom(
-                                    backgroundColor: Colors.blue,
-                                    elevation: 0,
-                                  ),
-                                  onPressed: () {
-                                    //yearDown();
-                                  },
-                                  child: const Text(
-                                    'ー',
-                                    style: TextStyle(
-                                      color: Color(c2),
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 14,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              const SizedBox(
-                                height: 8,
-                              ),
-                              SizedBox(
-                                height: h1,
-                                child: ElevatedButton(
-                                  style: ElevatedButton.styleFrom(
-                                    backgroundColor: Colors.blue,
-                                    elevation: 16,
-                                  ),
-                                  onPressed: () {
-                                    //yearUp();
-                                  },
-                                  child: const Text(
-                                    '＋',
-                                    style: TextStyle(
-                                      color: Color(c2),
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 14,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              const SizedBox(
-                                height: 16,
-                              ),
-                            ],
-                          ),
-                        ),
-                        SizedBox(
-                          width: 44,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              const SizedBox(
-                                height: 15,
-                                child: Text(
-                                  '月',
-                                  style: TextStyle(
-                                    color: Color(c3),
-                                    fontWeight: FontWeight.normal,
-                                    fontSize: 12,
-                                  ),
-                                ),
-                              ),
-                              const SizedBox(
-                                height: 8,
-                              ),
-                              SizedBox(
-                                height: h1,
-                                child: ElevatedButton(
-                                  style: ElevatedButton.styleFrom(
-                                    backgroundColor: Colors.blue,
-                                    elevation: 0,
-                                  ),
-                                  onPressed: () {
-                                    //monthDown();
-                                  },
-                                  child: const Text(
-                                    'ー',
-                                    style: TextStyle(
-                                      color: Color(c2),
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 14,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              const SizedBox(
-                                height: 8,
-                              ),
-                              SizedBox(
-                                height: h1,
-                                child: ElevatedButton(
-                                  style: ElevatedButton.styleFrom(
-                                    backgroundColor: Colors.blue,
-                                    elevation: 16,
-                                  ),
-                                  onPressed: () {
-                                    //monthUp();
-                                  },
-                                  child: const Text(
-                                    '＋',
-                                    style: TextStyle(
-                                      color: Color(c2),
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 14,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              const SizedBox(
-                                height: 16,
-                              ),
-                            ],
-                          ),
-                        ),
-                        SizedBox(
-                          width: 44,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              const SizedBox(
-                                height: 15,
-                                child: Text(
-                                  '日',
-                                  style: TextStyle(
-                                    color: Color(c3),
-                                    fontWeight: FontWeight.normal,
-                                    fontSize: 12,
-                                  ),
-                                ),
-                              ),
-                              const SizedBox(
-                                height: 8,
-                              ),
-                              SizedBox(
-                                height: h1,
-                                child: ElevatedButton(
-                                  style: ElevatedButton.styleFrom(
-                                    backgroundColor: Colors.blue,
-                                    elevation: 0,
-                                  ),
-                                  onPressed: () {
-                                    //dateDown();
-                                    model.nitiMinus();
-                                  },
-                                  child: const Text(
-                                    'ー',
-                                    style: TextStyle(
-                                      color: Color(c2),
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 14,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              const SizedBox(
-                                height: 8,
-                              ),
-                              SizedBox(
-                                height: h1,
-                                child: ElevatedButton(
-                                  style: ElevatedButton.styleFrom(
-                                    backgroundColor: Colors.blue,
-                                    elevation: 0,
-                                  ),
-                                  onPressed: () {
-                                    //dateUp();
-                                    model.nitiPlus();
-                                  },
-                                  child: const Text(
-                                    '＋',
-                                    style: TextStyle(
-                                      color: Color(c2),
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 14,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              const SizedBox(
-                                height: 16,
-                              ),
-                            ],
-                          ),
-                        ),
-                        SizedBox(
-                          width: 44,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              SizedBox(
-                                height: h1 * 3,
-                                child: ElevatedButton(
-                                  style: ElevatedButton.styleFrom(
-                                    backgroundColor: Colors.blue,
-                                    elevation: 0,
-                                  ),
-                                  onPressed: () {
-                                    //dateUp();
-                                  },
-                                  child: const Text(
-                                    '戻る',
-                                    style: TextStyle(
-                                      color: Color(c2),
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 14,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              const SizedBox(
-                                height: 12,
-                              ),
-                            ],
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                ),
               ],
             ),
+            persistentFooterButtons: <Widget>[
+              SizedBox(
+                width: double.infinity,
+                height: 100,
+                child: Container(
+                  color: Colors.black,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      SizedBox(
+                        width: 104,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            Text(
+                              model.nowMoji,
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.normal,
+                                fontSize: 18,
+                              ),
+                            ),
+                            const Text(
+                              'の運勢',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.normal,
+                                fontSize: 16,
+                              ),
+                            ),
+                            const Text(
+                              '大吉',
+                              style: TextStyle(
+                                color: Colors.purpleAccent,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 32,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        width: 40,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            const SizedBox(
+                              height: 15,
+                              child: Text(
+                                '年',
+                                style: TextStyle(
+                                  color: Color(c3),
+                                  fontWeight: FontWeight.normal,
+                                  fontSize: 12,
+                                ),
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 8,
+                            ),
+                            SizedBox(
+                              height: h1,
+                              child: ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.blue,
+                                  elevation: 0,
+                                ),
+                                onPressed: () {
+                                  //yearDown();
+                                  model.dec365();
+                                },
+                                child: const Text(
+                                  'ー',
+                                  style: TextStyle(
+                                    color: Color(c2),
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 14,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 8,
+                            ),
+                            SizedBox(
+                              height: h1,
+                              child: ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.blue,
+                                  elevation: 16,
+                                ),
+                                onPressed: () {
+                                  //yearUp();
+                                  model.inc365();
+                                },
+                                child: const Text(
+                                  '＋',
+                                  style: TextStyle(
+                                    color: Color(c2),
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 14,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 16,
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        width: 40,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            const SizedBox(
+                              height: 15,
+                              child: Text(
+                                '月',
+                                style: TextStyle(
+                                  color: Color(c3),
+                                  fontWeight: FontWeight.normal,
+                                  fontSize: 12,
+                                ),
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 8,
+                            ),
+                            SizedBox(
+                              height: h1,
+                              child: ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.blue,
+                                  elevation: 0,
+                                ),
+                                onPressed: () {
+                                  //monthDown();
+                                  model.dec30();
+                                },
+                                child: const Text(
+                                  'ー',
+                                  style: TextStyle(
+                                    color: Color(c2),
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 14,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 8,
+                            ),
+                            SizedBox(
+                              height: h1,
+                              child: ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.blue,
+                                  elevation: 16,
+                                ),
+                                onPressed: () {
+                                  //monthUp();
+                                  model.inc30();
+                                },
+                                child: const Text(
+                                  '＋',
+                                  style: TextStyle(
+                                    color: Color(c2),
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 14,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 16,
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        width: 40,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            const SizedBox(
+                              height: 15,
+                              child: Text(
+                                '日',
+                                style: TextStyle(
+                                  color: Color(c3),
+                                  fontWeight: FontWeight.normal,
+                                  fontSize: 12,
+                                ),
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 8,
+                            ),
+                            SizedBox(
+                              height: h1,
+                              child: ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.blue,
+                                  elevation: 0,
+                                ),
+                                onPressed: () {
+                                  //dateDown();
+                                  model.dec();
+                                },
+                                child: const Text(
+                                  'ー',
+                                  style: TextStyle(
+                                    color: Color(c2),
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 14,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 8,
+                            ),
+                            SizedBox(
+                              height: h1,
+                              child: ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.blue,
+                                  elevation: 0,
+                                ),
+                                onPressed: () {
+                                  //dateUp();
+                                  model.inc();
+                                },
+                                child: const Text(
+                                  '＋',
+                                  style: TextStyle(
+                                    color: Color(c2),
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 14,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 16,
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        width: 40,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            SizedBox(
+                              height: h1 * 3,
+                              child: ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.blue,
+                                  elevation: 0,
+                                ),
+                                onPressed: () {
+                                  //dateUp();
+                                },
+                                child: const Text(
+                                  '戻る',
+                                  style: TextStyle(
+                                    color: Color(c2),
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 14,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 12,
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            ],
           );
         }),
       ),
@@ -1288,7 +1255,7 @@ class ShapePainter3 extends CustomPainter {
     double r3 = 108; // 日干の３階の円の中心の半径
     double r4 = 112; // 日支の３階の円の中心の半径
     double r5 = 74; // 日支の２階の円の中心の半径
-    double r6 = 36; // 日支の１階の円の中心の半径
+    // double r6 = 36; // 日支の１階の円の中心の半径
     double rr1 = 18; // 小さい円の半径
     double rr2 = 90; // 日干の大きい円の半径
     double rr3 = 93; // 日支の大きな円の半径
@@ -1504,9 +1471,7 @@ class ShapePainter5 extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     var center1 = const Offset(150, 130); // 表面の中心座標
-    var center2 = const Offset(150, 370); // 本質の中心座標
-
-    print('P5');
+    // var center2 = const Offset(150, 370); // 本質の中心座標
 
     double rr1 = 18;
     double r1 = 36;
@@ -1525,9 +1490,9 @@ class ShapePainter5 extends CustomPainter {
     final penPink = Paint()
       ..color = Colors.purpleAccent
       ..strokeWidth = 2.0;
-    final penPink3 = Paint()
-      ..color = Colors.purple[300]!
-      ..strokeWidth = 2.0;
+    // final penPink3 = Paint()
+    //   ..color = Colors.purple[300]!
+    //   ..strokeWidth = 2.0;
 
     gogyo1 = tuhen % 2;
     if (gogyo1 == 0) {
@@ -1659,10 +1624,8 @@ class ShapePainter7 extends CustomPainter {
   ShapePainter7({required this.sigo}); // ■■■■■■■■■受け取る値を上記変数に代入
   @override
   void paint(Canvas canvas, Size size) {
-    var center1 = const Offset(150, 130); // 表面の中心座標
+    // var center1 = const Offset(150, 130); // 表面の中心座標
     var center2 = const Offset(150, 384); // 本質の中心座標
-
-    print(sigo);
 
     double rr1 = 18;
     double r5 = 74; // 日支の２階の円の中心の半径
