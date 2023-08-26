@@ -2,7 +2,6 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sanchu4b/output/kansuu.dart';
 
 import 'kyou_unsei_model.dart';
 
@@ -18,93 +17,8 @@ class KyouUnseiPage extends StatelessWidget {
     required this.seinitiInt,
   }) : super(key: key);
 
-  final String go = '' //日干から通変星の位置を算出するリスト
-      '0123456789'
-      '2345678901'
-      '4567890123'
-      '6789012345'
-      '8901234567';
-  final String sigoL = // 支合リスト
-      "　合　刑三　冲害三　　　" // 子
-      "合　　　　三害冲　三刑　" // 丑
-      "　　　　　害三　冲　三合" // 寅
-      "刑　　　害　　三　冲合三" // 卯
-      "三　　害　　　　三合冲　" // 辰
-      "　三害　　　　　合三　冲" // 巳
-      "冲害三　　　　合　　三　" // 午
-      "害冲　三　　合　　　刑三" // 未
-      "三　冲　三合　　　　　害" // 申
-      "　三　冲合三　　　　害　" // 酉
-      "　刑三合冲　三刑　害　　" // 戌
-      "　　合三　冲　三害　　　"; // 亥
-  final String keiL = // 支合リスト
-      "　　　　　　　　　　　　" // 子
-      "　　　　　　　刑　　　　" // 丑
-      "　　　　　刑　　刑　　　" // 寅
-      "　　　　　　　　　　　　" // 卯
-      "　　　　　　　　　　　　" // 辰
-      "　　刑　　　　　刑　　　" // 巳
-      "　　　　　　　　　　　　" // 午
-      "　刑　　　　　　　　　　" // 未
-      "　　刑　　刑　　　　　　" // 申
-      "　　　　　　　　　　　　" // 酉
-      "　　　　　　　　　　　　" // 戌
-      "　　　　　　　　　　　　"; // 亥
-
   @override
   Widget build(BuildContext context) {
-    // 変数定義
-    int nitiKanNo = 0;
-    int gogyou = 0;
-    int nitiSi = 0;
-    // int inyou = 0;
-    String go0 = '0';
-    String go1 = '1';
-    String go2 = '2';
-    String go3 = '3';
-    String go4 = '4';
-    String go5 = '5';
-    String go6 = '6';
-    String go7 = '7';
-    String go8 = '8';
-    String go9 = '9';
-    String sigo = "平三刑和害天冲宙三統家合";
-    String kei = "平三刑和害天冲宙三統家合";
-
-    // 生年月日から日干を算出
-    nitiKanNo =
-        juKanNo(meisikiA(seinenInt, seigatuInt, seinitiInt).substring(4, 5));
-    nitiSi =
-        juuniSiNo(meisikiA(seinenInt, seigatuInt, seinitiInt).substring(5, 6));
-    gogyou = nitiKanNo ~/ 2;
-    // 通変星の木２階の文字を算出
-    go0 = ((gogyou * -2 + 0) % 10).toString();
-    go1 = ((gogyou * -2 + 1) % 10).toString();
-    go2 = ((gogyou * -2 + 2) % 10).toString();
-    go3 = ((gogyou * -2 + 3) % 10).toString();
-    go4 = ((gogyou * -2 + 4) % 10).toString();
-    go5 = ((gogyou * -2 + 5) % 10).toString();
-    go6 = ((gogyou * -2 + 6) % 10).toString();
-    go7 = ((gogyou * -2 + 7) % 10).toString();
-    go8 = ((gogyou * -2 + 8) % 10).toString();
-    go9 = ((gogyou * -2 + 9) % 10).toString();
-    List<String> go = [
-      'images/tuuhenbosi/t$go0.png',
-      'images/tuuhenbosi/t$go1.png',
-      'images/tuuhenbosi/t$go2.png',
-      'images/tuuhenbosi/t$go3.png',
-      'images/tuuhenbosi/t$go4.png',
-      'images/tuuhenbosi/t$go5.png',
-      'images/tuuhenbosi/t$go6.png',
-      'images/tuuhenbosi/t$go7.png',
-      'images/tuuhenbosi/t$go8.png',
-      'images/tuuhenbosi/t$go9.png',
-    ];
-    //日支の２階支合等の文字を算出
-    sigo = sigoL.substring(nitiSi * 12, (nitiSi + 1) * 12);
-    //日支の１階刑の文字を算出
-    kei = keiL.substring(nitiSi * 12, (nitiSi + 1) * 12);
-
     const double h1 = 25;
     const int c2 = -1; // 白
     const int c3 = -1407770; // ピンク
@@ -211,7 +125,6 @@ class KyouUnseiPage extends StatelessWidget {
       data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
       child: ChangeNotifierProvider<KyouUnseiModel>(
         create: (_) => KyouUnseiModel(
-            //seinenInt, seigatuInt, seinitiInt, seinenInt: null)
             seinenInt: seinenInt,
             seigatuInt: seigatuInt,
             seinitiInt: seinitiInt)
@@ -274,8 +187,8 @@ class KyouUnseiPage extends StatelessWidget {
                                       child: CustomPaint(
                                         painter: ShapePainter4(
                                           // 日干と日支のV字の描画
-                                          gogyou: gogyou,
-                                          nitiSi: nitiSi,
+                                          gogyou: model.gogyou,
+                                          nitiSi: model.nitiSi,
                                         ),
                                       ),
                                     ),
@@ -285,7 +198,7 @@ class KyouUnseiPage extends StatelessWidget {
                                       child: CustomPaint(
                                         painter: ShapePainter5(
                                           tuhen: model.tuhen,
-                                          gogyou: gogyou,
+                                          gogyou: model.gogyou,
                                         ), // 渡したい変数を引数に指定する
                                       ),
                                     ),
@@ -294,7 +207,7 @@ class KyouUnseiPage extends StatelessWidget {
                                       height: 460,
                                       child: CustomPaint(
                                         painter: ShapePainter6(
-                                          kei: kei,
+                                          kei: model.kei,
                                         ), // 渡したい変数を引数に指定する
                                       ),
                                     ),
@@ -304,7 +217,7 @@ class KyouUnseiPage extends StatelessWidget {
                                       child: CustomPaint(
                                         painter: ShapePainter8(
                                           sigo: model.nowNitiSi,
-                                          kei: kei,
+                                          kei: model.kei,
                                         ), // 渡したい変数を引数に指定する
                                       ),
                                     ),
@@ -412,7 +325,7 @@ class KyouUnseiPage extends StatelessWidget {
                                       child: SizedBox(
                                         height: rrM,
                                         width: rrM,
-                                        child: Image.asset(go[0]),
+                                        child: Image.asset(model.go[0]),
                                       ),
                                     ),
                                     Transform.translate(
@@ -420,7 +333,7 @@ class KyouUnseiPage extends StatelessWidget {
                                       child: SizedBox(
                                         height: rrM,
                                         width: rrM,
-                                        child: Image.asset(go[1]),
+                                        child: Image.asset(model.go[1]),
                                       ),
                                     ),
                                     Transform.translate(
@@ -428,7 +341,7 @@ class KyouUnseiPage extends StatelessWidget {
                                       child: SizedBox(
                                         height: rrM,
                                         width: rrM,
-                                        child: Image.asset(go[2]),
+                                        child: Image.asset(model.go[2]),
                                       ),
                                     ),
                                     Transform.translate(
@@ -436,7 +349,7 @@ class KyouUnseiPage extends StatelessWidget {
                                       child: SizedBox(
                                         height: rrM,
                                         width: rrM,
-                                        child: Image.asset(go[3]),
+                                        child: Image.asset(model.go[3]),
                                       ),
                                     ),
                                     Transform.translate(
@@ -444,7 +357,7 @@ class KyouUnseiPage extends StatelessWidget {
                                       child: SizedBox(
                                         height: rrM,
                                         width: rrM,
-                                        child: Image.asset(go[4]),
+                                        child: Image.asset(model.go[4]),
                                       ),
                                     ),
 
@@ -453,7 +366,7 @@ class KyouUnseiPage extends StatelessWidget {
                                       child: SizedBox(
                                         height: rrM,
                                         width: rrM,
-                                        child: Image.asset(go[5]),
+                                        child: Image.asset(model.go[5]),
                                       ),
                                     ),
                                     Transform.translate(
@@ -461,7 +374,7 @@ class KyouUnseiPage extends StatelessWidget {
                                       child: SizedBox(
                                         height: rrM,
                                         width: rrM,
-                                        child: Image.asset(go[6]),
+                                        child: Image.asset(model.go[6]),
                                       ),
                                     ),
                                     Transform.translate(
@@ -469,7 +382,7 @@ class KyouUnseiPage extends StatelessWidget {
                                       child: SizedBox(
                                         height: rrM,
                                         width: rrM,
-                                        child: Image.asset(go[7]),
+                                        child: Image.asset(model.go[7]),
                                       ),
                                     ),
                                     Transform.translate(
@@ -477,7 +390,7 @@ class KyouUnseiPage extends StatelessWidget {
                                       child: SizedBox(
                                         height: rrM,
                                         width: rrM,
-                                        child: Image.asset(go[8]),
+                                        child: Image.asset(model.go[8]),
                                       ),
                                     ),
                                     Transform.translate(
@@ -485,7 +398,7 @@ class KyouUnseiPage extends StatelessWidget {
                                       child: SizedBox(
                                         height: rrM,
                                         width: rrM,
-                                        child: Image.asset(go[9]),
+                                        child: Image.asset(model.go[9]),
                                       ),
                                     ),
 
@@ -617,7 +530,7 @@ class KyouUnseiPage extends StatelessWidget {
                                       // 子
                                       offset: centaS0a,
                                       child: Text(
-                                        sigo.substring(0, 1),
+                                        model.sigo.substring(0, 1),
                                         style: TextStyle(
                                           fontSize: rrM1,
                                           color: Colors.black,
@@ -629,7 +542,7 @@ class KyouUnseiPage extends StatelessWidget {
                                       // 丑
                                       offset: centaS1a,
                                       child: Text(
-                                        sigo.substring(1, 2),
+                                        model.sigo.substring(1, 2),
                                         style: TextStyle(
                                           fontSize: rrM1,
                                           color: Colors.black,
@@ -641,7 +554,7 @@ class KyouUnseiPage extends StatelessWidget {
                                       // 寅
                                       offset: centaS2a,
                                       child: Text(
-                                        sigo.substring(2, 3),
+                                        model.sigo.substring(2, 3),
                                         style: TextStyle(
                                           fontSize: rrM1,
                                           color: Colors.black,
@@ -653,7 +566,7 @@ class KyouUnseiPage extends StatelessWidget {
                                       // 卯
                                       offset: centaS3a,
                                       child: Text(
-                                        sigo.substring(3, 4),
+                                        model.sigo.substring(3, 4),
                                         style: TextStyle(
                                           fontSize: rrM1,
                                           color: Colors.black,
@@ -665,7 +578,7 @@ class KyouUnseiPage extends StatelessWidget {
                                       // 辰
                                       offset: centaS4a,
                                       child: Text(
-                                        sigo.substring(4, 5),
+                                        model.sigo.substring(4, 5),
                                         style: TextStyle(
                                           fontSize: rrM1,
                                           color: Colors.black,
@@ -677,7 +590,7 @@ class KyouUnseiPage extends StatelessWidget {
                                       // 巳
                                       offset: centaS5a,
                                       child: Text(
-                                        sigo.substring(5, 6),
+                                        model.sigo.substring(5, 6),
                                         style: TextStyle(
                                           fontSize: rrM1,
                                           color: Colors.black,
@@ -689,7 +602,7 @@ class KyouUnseiPage extends StatelessWidget {
                                       // 午
                                       offset: centaS6a,
                                       child: Text(
-                                        sigo.substring(6, 7),
+                                        model.sigo.substring(6, 7),
                                         style: TextStyle(
                                           fontSize: rrM1,
                                           color: Colors.black,
@@ -701,7 +614,7 @@ class KyouUnseiPage extends StatelessWidget {
                                       // 未
                                       offset: centaS7a,
                                       child: Text(
-                                        sigo.substring(7, 8),
+                                        model.sigo.substring(7, 8),
                                         style: TextStyle(
                                           fontSize: rrM1,
                                           color: Colors.black,
@@ -713,7 +626,7 @@ class KyouUnseiPage extends StatelessWidget {
                                       // 申
                                       offset: centaS8a,
                                       child: Text(
-                                        sigo.substring(8, 9),
+                                        model.sigo.substring(8, 9),
                                         style: TextStyle(
                                           fontSize: rrM1,
                                           color: Colors.black,
@@ -725,7 +638,7 @@ class KyouUnseiPage extends StatelessWidget {
                                       // 酉
                                       offset: centaS9a,
                                       child: Text(
-                                        sigo.substring(9, 10),
+                                        model.sigo.substring(9, 10),
                                         style: TextStyle(
                                           fontSize: rrM1,
                                           color: Colors.black,
@@ -737,7 +650,7 @@ class KyouUnseiPage extends StatelessWidget {
                                       // 戌
                                       offset: centaS10a,
                                       child: Text(
-                                        sigo.substring(10, 11),
+                                        model.sigo.substring(10, 11),
                                         style: TextStyle(
                                           fontSize: rrM1,
                                           color: Colors.black,
@@ -749,7 +662,7 @@ class KyouUnseiPage extends StatelessWidget {
                                       // 亥
                                       offset: centaS11a,
                                       child: Text(
-                                        sigo.substring(11, 12),
+                                        model.sigo.substring(11, 12),
                                         style: TextStyle(
                                           fontSize: rrM1,
                                           color: Colors.black,
@@ -763,7 +676,7 @@ class KyouUnseiPage extends StatelessWidget {
                                       // 子
                                       offset: centaS0b,
                                       child: Text(
-                                        kei.substring(0, 1),
+                                        model.kei.substring(0, 1),
                                         style: TextStyle(
                                           fontSize: rrM1,
                                           color: Colors.black,
@@ -775,7 +688,7 @@ class KyouUnseiPage extends StatelessWidget {
                                       // 丑
                                       offset: centaS1b,
                                       child: Text(
-                                        kei.substring(1, 2),
+                                        model.kei.substring(1, 2),
                                         style: TextStyle(
                                           fontSize: rrM1,
                                           color: Colors.black,
@@ -787,7 +700,7 @@ class KyouUnseiPage extends StatelessWidget {
                                       // 寅
                                       offset: centaS2b,
                                       child: Text(
-                                        kei.substring(2, 3),
+                                        model.kei.substring(2, 3),
                                         style: TextStyle(
                                           fontSize: rrM1,
                                           color: Colors.black,
@@ -799,7 +712,7 @@ class KyouUnseiPage extends StatelessWidget {
                                       // 卯
                                       offset: centaS3b,
                                       child: Text(
-                                        kei.substring(3, 4),
+                                        model.kei.substring(3, 4),
                                         style: TextStyle(
                                           fontSize: rrM1,
                                           color: Colors.black,
@@ -811,7 +724,7 @@ class KyouUnseiPage extends StatelessWidget {
                                       // 辰
                                       offset: centaS4b,
                                       child: Text(
-                                        kei.substring(4, 5),
+                                        model.kei.substring(4, 5),
                                         style: TextStyle(
                                           fontSize: rrM1,
                                           color: Colors.black,
@@ -823,7 +736,7 @@ class KyouUnseiPage extends StatelessWidget {
                                       // 巳
                                       offset: centaS5b,
                                       child: Text(
-                                        kei.substring(5, 6),
+                                        model.kei.substring(5, 6),
                                         style: TextStyle(
                                           fontSize: rrM1,
                                           color: Colors.black,
@@ -835,7 +748,7 @@ class KyouUnseiPage extends StatelessWidget {
                                       // 午
                                       offset: centaS6b,
                                       child: Text(
-                                        kei.substring(6, 7),
+                                        model.kei.substring(6, 7),
                                         style: TextStyle(
                                           fontSize: rrM1,
                                           color: Colors.black,
@@ -847,7 +760,7 @@ class KyouUnseiPage extends StatelessWidget {
                                       // 未
                                       offset: centaS7b,
                                       child: Text(
-                                        kei.substring(7, 8),
+                                        model.kei.substring(7, 8),
                                         style: TextStyle(
                                           fontSize: rrM1,
                                           color: Colors.black,
@@ -859,7 +772,7 @@ class KyouUnseiPage extends StatelessWidget {
                                       // 申
                                       offset: centaS8b,
                                       child: Text(
-                                        kei.substring(8, 9),
+                                        model.kei.substring(8, 9),
                                         style: TextStyle(
                                           fontSize: rrM1,
                                           color: Colors.black,
@@ -871,7 +784,7 @@ class KyouUnseiPage extends StatelessWidget {
                                       // 酉
                                       offset: centaS9b,
                                       child: Text(
-                                        kei.substring(9, 10),
+                                        model.kei.substring(9, 10),
                                         style: TextStyle(
                                           fontSize: rrM1,
                                           color: Colors.black,
@@ -883,7 +796,7 @@ class KyouUnseiPage extends StatelessWidget {
                                       // 戌
                                       offset: centaS10b,
                                       child: Text(
-                                        kei.substring(10, 11),
+                                        model.kei.substring(10, 11),
                                         style: TextStyle(
                                           fontSize: rrM1,
                                           color: Colors.black,
@@ -895,7 +808,7 @@ class KyouUnseiPage extends StatelessWidget {
                                       // 亥
                                       offset: centaS11b,
                                       child: Text(
-                                        kei.substring(11, 12),
+                                        model.kei.substring(11, 12),
                                         style: TextStyle(
                                           fontSize: rrM1,
                                           color: Colors.black,
