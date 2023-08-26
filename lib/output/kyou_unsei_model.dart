@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'kansuu.dart';
 
 class KyouUnseiModel extends ChangeNotifier {
-  final int seinenInt;
-  final int seigatuInt;
-  final int seinitiInt;
+  int seinenInt;
+  int seigatuInt;
+  int seinitiInt;
 
   KyouUnseiModel({
     Key? key,

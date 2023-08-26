@@ -370,6 +370,28 @@ class KyouUnseiPage extends StatelessWidget {
                                         ),
                                       ),
                                     ),
+                                    Transform.translate(
+                                      offset: Offset(180, 0),
+                                      child: Text(
+                                        model.nowMoji,
+                                        style: const TextStyle(
+                                          fontSize: 20,
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ),
+                                    Transform.translate(
+                                      offset: const Offset(290, 4),
+                                      child: const Text(
+                                        'の運勢',
+                                        style: TextStyle(
+                                          fontSize: 14,
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ),
 
                                     // ■■■■■■■■■ 日干の３階五行の文字の表示 ■■■■■■■■■
                                     // 木
