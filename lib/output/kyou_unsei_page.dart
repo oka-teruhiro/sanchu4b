@@ -266,6 +266,17 @@ class KyouUnseiPage extends StatelessWidget {
                                         ),
                                       ),
                                     ),
+                                    Transform.translate(
+                                      offset: const Offset(238, 30),
+                                      child: Text(
+                                        model.kangouMoji,
+                                        style: const TextStyle(
+                                          fontSize: 24,
+                                          color: Colors.purpleAccent,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ),
 
                                     // ■■■■■■■■■ 日干の３階五行の文字の表示 ■■■■■■■■■
                                     // 木

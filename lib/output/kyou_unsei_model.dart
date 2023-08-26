@@ -90,6 +90,9 @@ class KyouUnseiModel extends ChangeNotifier {
     'images/tuuhenbosi/t8.png',
     'images/tuuhenbosi/t9.png',
   ];
+  String kangouNow = '';
+  String kangouMoji = '';
+  int kitiPointKangou = 0;
 
   void init() {
     now1 = now; // 鑑定日として今日の日付を設定する
@@ -127,7 +130,7 @@ class KyouUnseiModel extends ChangeNotifier {
     sigo = sigoL.substring(nitiSi * 12, (nitiSi + 1) * 12);
     //日支の１階刑の文字を算出
     kei = keiL.substring(nitiSi * 12, (nitiSi + 1) * 12);
-
+    //■■■■■■■■■ここからは鑑定日が変わるたびに計算する必要がある■■■■■■■■■
     nowNen = now1.year; // 鑑定年
     nowGatu = now1.month; // 鑑定月
     nowNiti = now1.day; // 鑑定日
@@ -139,6 +142,24 @@ class KyouUnseiModel extends ChangeNotifier {
     nowTuhen =
         tuuhenbosi(seinenInt, seigatuInt, seinitiInt, nowNen, nowGatu, nowNiti);
     tuhen = tuuhenbosiNo(nowTuhen);
+    // 干合を算出する
+    kangouNow = kangou.substring(
+        nitiKanNo * 10 + nowNitiKan * 1, nitiKanNo * 10 + nowNitiKan * 1 + 1);
+    if (kangouNow == '合') {
+      // moji[41] = '干合(かんごう）があります。';
+      // moji[42] = '　干合は、男（＋）と女（ー）の発想の違うカップルが'
+      //     '一緒になると新しいエネルギーが生じ、さらに変化したエネルギーも生じるという意味があります。';
+      // moji[43] = '　■吉ポイントは、プラス20です。';
+      // takasaMoji[41] = 40;
+      // takasaMoji[42] = 80;
+      // takasaMoji[43] = 80;
+      // iroMoji[41] = iroPink1;
+      kitiPointKangou = 20;
+      kangouMoji = '干合あり';
+    } else {
+      kitiPointKangou = 0;
+      kangouMoji = '';
+    }
 
     notifyListeners();
   }
@@ -156,6 +177,24 @@ class KyouUnseiModel extends ChangeNotifier {
     nowTuhen =
         tuuhenbosi(seinenInt, seigatuInt, seinitiInt, nowNen, nowGatu, nowNiti);
     tuhen = tuuhenbosiNo(nowTuhen);
+    // 干合を算出する
+    kangouNow = kangou.substring(
+        nitiKanNo * 10 + nowNitiKan * 1, nitiKanNo * 10 + nowNitiKan * 1 + 1);
+    if (kangouNow == '合') {
+      // moji[41] = '干合(かんごう）があります。';
+      // moji[42] = '　干合は、男（＋）と女（ー）の発想の違うカップルが'
+      //     '一緒になると新しいエネルギーが生じ、さらに変化したエネルギーも生じるという意味があります。';
+      // moji[43] = '　■吉ポイントは、プラス20です。';
+      // takasaMoji[41] = 40;
+      // takasaMoji[42] = 80;
+      // takasaMoji[43] = 80;
+      // iroMoji[41] = iroPink1;
+      kitiPointKangou = 20;
+      kangouMoji = '干合あり';
+    } else {
+      kitiPointKangou = 0;
+      kangouMoji = '';
+    }
 
     notifyListeners();
   }
@@ -173,6 +212,24 @@ class KyouUnseiModel extends ChangeNotifier {
     nowTuhen =
         tuuhenbosi(seinenInt, seigatuInt, seinitiInt, nowNen, nowGatu, nowNiti);
     tuhen = tuuhenbosiNo(nowTuhen);
+    // 干合を算出する
+    kangouNow = kangou.substring(
+        nitiKanNo * 10 + nowNitiKan * 1, nitiKanNo * 10 + nowNitiKan * 1 + 1);
+    if (kangouNow == '合') {
+      // moji[41] = '干合(かんごう）があります。';
+      // moji[42] = '　干合は、男（＋）と女（ー）の発想の違うカップルが'
+      //     '一緒になると新しいエネルギーが生じ、さらに変化したエネルギーも生じるという意味があります。';
+      // moji[43] = '　■吉ポイントは、プラス20です。';
+      // takasaMoji[41] = 40;
+      // takasaMoji[42] = 80;
+      // takasaMoji[43] = 80;
+      // iroMoji[41] = iroPink1;
+      kitiPointKangou = 20;
+      kangouMoji = '干合あり';
+    } else {
+      kitiPointKangou = 0;
+      kangouMoji = '';
+    }
 
     notifyListeners();
   }
@@ -190,6 +247,24 @@ class KyouUnseiModel extends ChangeNotifier {
     nowTuhen =
         tuuhenbosi(seinenInt, seigatuInt, seinitiInt, nowNen, nowGatu, nowNiti);
     tuhen = tuuhenbosiNo(nowTuhen);
+    // 干合を算出する
+    kangouNow = kangou.substring(
+        nitiKanNo * 10 + nowNitiKan * 1, nitiKanNo * 10 + nowNitiKan * 1 + 1);
+    if (kangouNow == '合') {
+      // moji[41] = '干合(かんごう）があります。';
+      // moji[42] = '　干合は、男（＋）と女（ー）の発想の違うカップルが'
+      //     '一緒になると新しいエネルギーが生じ、さらに変化したエネルギーも生じるという意味があります。';
+      // moji[43] = '　■吉ポイントは、プラス20です。';
+      // takasaMoji[41] = 40;
+      // takasaMoji[42] = 80;
+      // takasaMoji[43] = 80;
+      // iroMoji[41] = iroPink1;
+      kitiPointKangou = 20;
+      kangouMoji = '干合あり';
+    } else {
+      kitiPointKangou = 0;
+      kangouMoji = '';
+    }
 
     notifyListeners();
   }
@@ -207,6 +282,24 @@ class KyouUnseiModel extends ChangeNotifier {
     nowTuhen =
         tuuhenbosi(seinenInt, seigatuInt, seinitiInt, nowNen, nowGatu, nowNiti);
     tuhen = tuuhenbosiNo(nowTuhen);
+    // 干合を算出する
+    kangouNow = kangou.substring(
+        nitiKanNo * 10 + nowNitiKan * 1, nitiKanNo * 10 + nowNitiKan * 1 + 1);
+    if (kangouNow == '合') {
+      // moji[41] = '干合(かんごう）があります。';
+      // moji[42] = '　干合は、男（＋）と女（ー）の発想の違うカップルが'
+      //     '一緒になると新しいエネルギーが生じ、さらに変化したエネルギーも生じるという意味があります。';
+      // moji[43] = '　■吉ポイントは、プラス20です。';
+      // takasaMoji[41] = 40;
+      // takasaMoji[42] = 80;
+      // takasaMoji[43] = 80;
+      // iroMoji[41] = iroPink1;
+      kitiPointKangou = 20;
+      kangouMoji = '干合あり';
+    } else {
+      kitiPointKangou = 0;
+      kangouMoji = '';
+    }
 
     notifyListeners();
   }
@@ -224,6 +317,24 @@ class KyouUnseiModel extends ChangeNotifier {
     nowTuhen =
         tuuhenbosi(seinenInt, seigatuInt, seinitiInt, nowNen, nowGatu, nowNiti);
     tuhen = tuuhenbosiNo(nowTuhen);
+    // 干合を算出する
+    kangouNow = kangou.substring(
+        nitiKanNo * 10 + nowNitiKan * 1, nitiKanNo * 10 + nowNitiKan * 1 + 1);
+    if (kangouNow == '合') {
+      // moji[41] = '干合(かんごう）があります。';
+      // moji[42] = '　干合は、男（＋）と女（ー）の発想の違うカップルが'
+      //     '一緒になると新しいエネルギーが生じ、さらに変化したエネルギーも生じるという意味があります。';
+      // moji[43] = '　■吉ポイントは、プラス20です。';
+      // takasaMoji[41] = 40;
+      // takasaMoji[42] = 80;
+      // takasaMoji[43] = 80;
+      // iroMoji[41] = iroPink1;
+      kitiPointKangou = 20;
+      kangouMoji = '干合あり';
+    } else {
+      kitiPointKangou = 0;
+      kangouMoji = '';
+    }
 
     notifyListeners();
   }
@@ -241,6 +352,24 @@ class KyouUnseiModel extends ChangeNotifier {
     nowTuhen =
         tuuhenbosi(seinenInt, seigatuInt, seinitiInt, nowNen, nowGatu, nowNiti);
     tuhen = tuuhenbosiNo(nowTuhen);
+    // 干合を算出する
+    kangouNow = kangou.substring(
+        nitiKanNo * 10 + nowNitiKan * 1, nitiKanNo * 10 + nowNitiKan * 1 + 1);
+    if (kangouNow == '合') {
+      // moji[41] = '干合(かんごう）があります。';
+      // moji[42] = '　干合は、男（＋）と女（ー）の発想の違うカップルが'
+      //     '一緒になると新しいエネルギーが生じ、さらに変化したエネルギーも生じるという意味があります。';
+      // moji[43] = '　■吉ポイントは、プラス20です。';
+      // takasaMoji[41] = 40;
+      // takasaMoji[42] = 80;
+      // takasaMoji[43] = 80;
+      // iroMoji[41] = iroPink1;
+      kitiPointKangou = 20;
+      kangouMoji = '干合あり';
+    } else {
+      kitiPointKangou = 0;
+      kangouMoji = '';
+    }
 
     notifyListeners();
   }
