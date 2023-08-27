@@ -20,6 +20,8 @@ class KyouUnseiPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const double h1 = 25;
+    const double h2 = 500; // 図の部分の高さ
+    const double h3 = 500; // 図の部分の高さ
     const int c2 = -1; // 白
     const int c3 = -1407770; // ピンク
 
@@ -162,7 +164,7 @@ class KyouUnseiPage extends StatelessWidget {
                                     const SizedBox(
                                       // 第一階層
                                       width: 312,
-                                      height: 700,
+                                      height: h2,
                                       child: Column(
                                         mainAxisAlignment:
                                             MainAxisAlignment.start,
@@ -175,7 +177,7 @@ class KyouUnseiPage extends StatelessWidget {
                                     // ここから第二階層
                                     SizedBox(
                                       width: 312,
-                                      height: 460,
+                                      height: h2,
                                       child: CustomPaint(
                                         painter:
                                             ShapePainter3(), // 日干と日支の固定円の描画
@@ -183,7 +185,7 @@ class KyouUnseiPage extends StatelessWidget {
                                     ),
                                     SizedBox(
                                       width: 312,
-                                      height: 460,
+                                      height: h2,
                                       child: CustomPaint(
                                         painter: ShapePainter4(
                                           // 日干と日支のV字の描画
@@ -194,7 +196,7 @@ class KyouUnseiPage extends StatelessWidget {
                                     ),
                                     SizedBox(
                                       width: 312,
-                                      height: 460,
+                                      height: h2,
                                       child: CustomPaint(
                                         painter: ShapePainter5(
                                           tuhen: model.tuhen,
@@ -204,7 +206,7 @@ class KyouUnseiPage extends StatelessWidget {
                                     ),
                                     SizedBox(
                                       width: 312,
-                                      height: 460,
+                                      height: h2,
                                       child: CustomPaint(
                                         painter: ShapePainter6(
                                           kei: model.kei,
@@ -213,7 +215,7 @@ class KyouUnseiPage extends StatelessWidget {
                                     ),
                                     SizedBox(
                                       width: 312,
-                                      height: 460,
+                                      height: h2,
                                       child: CustomPaint(
                                         painter: ShapePainter8(
                                           sigo: model.nowNitiSi,
@@ -224,7 +226,7 @@ class KyouUnseiPage extends StatelessWidget {
 
                                     SizedBox(
                                       width: 312,
-                                      height: 460,
+                                      height: h2,
                                       child: CustomPaint(
                                         painter: ShapePainter7(
                                           sigo: model.nowNitiSi,
@@ -833,31 +835,76 @@ class KyouUnseiPage extends StatelessWidget {
                             ),
                           ),
                           const ListTile(
-                            title: Text('■■■■■■■ この図の見方 ■■■■■■■',
-                                style: TextStyle(
-                                  color: Color(c2),
-                                  fontWeight: FontWeight.normal,
-                                  fontSize: 14,
-                                )),
+                            title: Center(
+                              child: Text('■■■■■■■ この図の見方（工事中） ■■■■■■■',
+                                  style: TextStyle(
+                                    color: Color(c2),
+                                    fontWeight: FontWeight.normal,
+                                    fontSize: 14,
+                                  )),
+                            ),
                           ),
-                          const ListTile(
+                          ListTile(
                             title: SizedBox(
-                              height: 1200,
+                              height: h3,
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text('（工事中）',
-                                      style: TextStyle(
-                                        color: Color(c3),
-                                        fontWeight: FontWeight.normal,
-                                        fontSize: 14,
-                                      )),
-                                  Text('',
-                                      style: TextStyle(
-                                        color: Color(c2),
-                                        fontWeight: FontWeight.normal,
-                                        fontSize: 14,
-                                      )),
+                                  Expanded(
+                                    //height: 400,
+                                    child: ListView.builder(
+                                      itemCount: 60,
+                                      itemBuilder:
+                                          (BuildContext context, int index) {
+                                        return Column(
+                                          children: [
+                                            SizedBox(
+                                              //width: 500.0,
+                                              height: model.takasaMoji[index],
+                                              child: ListTile(
+                                                //shape: const RoundedRectangleBorder(
+                                                // side: BorderSide(
+                                                //   color: Colors,
+                                                //  ),
+                                                //  ),
+                                                tileColor: Colors.black,
+                                                title: Padding(
+                                                  padding:
+                                                      const EdgeInsets.fromLTRB(
+                                                          8.0, 4.0, 4.0, 4.0),
+                                                  child: Text(
+                                                    model.moji[index],
+                                                    style: TextStyle(
+                                                      height: 1.1,
+                                                      fontSize: 16,
+                                                      color: Color(
+                                                          model.iroMoji[index]),
+                                                      fontWeight:
+                                                          FontWeight.normal,
+                                                    ),
+                                                    textScaleFactor: 1.0,
+                                                  ),
+                                                ),
+                                              ),
+                                              //color: Colors.black,
+                                            ),
+                                          ],
+                                        );
+                                      },
+                                    ),
+                                  ),
+                                  // Text('（工事中）',
+                                  //     style: TextStyle(
+                                  //       color: Color(c3),
+                                  //       fontWeight: FontWeight.normal,
+                                  //       fontSize: 14,
+                                  //     )),
+                                  // Text('',
+                                  //     style: TextStyle(
+                                  //       color: Color(c2),
+                                  //       fontWeight: FontWeight.normal,
+                                  //       fontSize: 14,
+                                  //     )),
                                 ],
                               ),
                             ),

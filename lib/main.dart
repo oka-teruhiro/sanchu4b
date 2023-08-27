@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
       locale: const Locale('ja', 'JP'),
       //　日本語化ここまで
 
-      title: 'Flutter Demo',
+      title: '天運三柱推命 ver.4',
       theme: ThemeData.dark(),
       home: const MyHomePage(title: '天運三柱推命 ver.4'),
     );
@@ -265,7 +265,7 @@ class _MyHomePageState extends State<MyHomePage> {
       child: Scaffold(
         backgroundColor: Colors.black,
         appBar: AppBar(
-          title: const Text('天運三柱推命 ver.4.3.19',
+          title: const Text('天運三柱推命 ver.4.3.20',
               style: TextStyle(
                 color: Colors.pinkAccent,
                 fontWeight: FontWeight.bold,
