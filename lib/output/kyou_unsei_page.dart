@@ -132,1079 +132,1082 @@ class KyouUnseiPage extends StatelessWidget {
             seinitiInt: seinitiInt)
           ..init(),
         child: Consumer<KyouUnseiModel>(builder: (context, model, child) {
-          return Scaffold(
-            backgroundColor: Colors.black,
-            appBar: AppBar(
-              title: const Text(
-                '今日の運勢',
-                style: TextStyle(
-                  color: Colors.pinkAccent,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 16,
+          return MediaQuery(
+            data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
+            child: Scaffold(
+              backgroundColor: Colors.black,
+              appBar: AppBar(
+                title: Text(
+                  model.nowMojiApp,
+                  style: const TextStyle(
+                    color: Colors.redAccent,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
                 ),
               ),
-            ),
-            body: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Expanded(
-                  child: Container(
-                    color: Colors.black,
-                    child: SizedBox(
-                      height: double.infinity,
-                      width: double.infinity,
-                      child: ListView(
-                        children: [
-                          ListTile(
-                            title: Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Stack(
-                                  children: [
-                                    const SizedBox(
-                                      // 第一階層
-                                      width: 312,
-                                      height: h2,
-                                      child: Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.start,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        //ToDo: ここは文字を入れる（第一階層）
-                                        children: [],
-                                      ),
-                                    ),
-                                    // ここから第二階層
-                                    SizedBox(
-                                      width: 312,
-                                      height: h2,
-                                      child: CustomPaint(
-                                        painter:
-                                            ShapePainter3(), // 日干と日支の固定円の描画
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      width: 312,
-                                      height: h2,
-                                      child: CustomPaint(
-                                        painter: ShapePainter4(
-                                          // 日干と日支のV字の描画
-                                          gogyou: model.gogyou,
-                                          nitiSi: model.nitiSi,
-                                        ),
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      width: 312,
-                                      height: h2,
-                                      child: CustomPaint(
-                                        painter: ShapePainter5(
-                                          tuhen: model.tuhen,
-                                          gogyou: model.gogyou,
-                                        ), // 渡したい変数を引数に指定する
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      width: 312,
-                                      height: h2,
-                                      child: CustomPaint(
-                                        painter: ShapePainter6(
-                                          kei: model.kei,
-                                        ), // 渡したい変数を引数に指定する
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      width: 312,
-                                      height: h2,
-                                      child: CustomPaint(
-                                        painter: ShapePainter8(
-                                          sigo: model.nowNitiSi,
-                                          kei: model.kei,
-                                        ), // 渡したい変数を引数に指定する
-                                      ),
-                                    ),
-
-                                    SizedBox(
-                                      width: 312,
-                                      height: h2,
-                                      child: CustomPaint(
-                                        painter: ShapePainter7(
-                                          sigo: model.nowNitiSi,
-                                        ), // 渡したい変数を引数に指定する
-                                      ),
-                                    ),
-
-                                    // ■■■■■■■■■ 左上の生年月日の表示 ■■■■■■■■■
-                                    Transform.translate(
-                                      offset: const Offset(0, 0),
-                                      child: Text(
-                                        '$seinenInt.$seigatuInt.$seinitiInt 生',
-                                        style: const TextStyle(
-                                          fontSize: 20,
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                      ),
-                                    ),
-                                    Transform.translate(
-                                      offset: const Offset(180, 0),
-                                      child: Text(
-                                        model.nowMoji,
-                                        style: const TextStyle(
-                                          fontSize: 20,
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                      ),
-                                    ),
-                                    Transform.translate(
-                                      offset: const Offset(290, 4),
-                                      child: const Text(
-                                        'の運勢',
-                                        style: TextStyle(
-                                          fontSize: 14,
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                      ),
-                                    ),
-                                    Transform.translate(
-                                      offset: const Offset(238, 30),
-                                      child: Text(
-                                        model.kangouMoji,
-                                        style: const TextStyle(
-                                          fontSize: 24,
-                                          color: Colors.purpleAccent,
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                      ),
-                                    ),
-
-                                    // ■■■■■■■■■ 日干の３階五行の文字の表示 ■■■■■■■■■
-                                    // 木
-                                    Transform.translate(
-                                      offset: centaG0M3,
-                                      child: SizedBox(
-                                        height: rrM,
-                                        width: rrM,
-                                        child: Image.asset(
-                                            'images/tuuhenbosi/g0.png'),
-                                      ),
-                                    ),
-                                    // 火
-                                    Transform.translate(
-                                      offset: centaG1M3,
-                                      child: SizedBox(
-                                        height: rrM,
-                                        width: rrM,
-                                        child: Image.asset(
-                                            'images/tuuhenbosi/g1.png'),
-                                      ),
-                                    ),
-                                    // 土
-                                    Transform.translate(
-                                      offset: centaG2M3,
-                                      child: SizedBox(
-                                        height: rrM,
-                                        width: rrM,
-                                        child: Image.asset(
-                                            'images/tuuhenbosi/g2.png'),
-                                      ),
-                                    ),
-                                    // 金
-                                    Transform.translate(
-                                      offset: centaG3M3,
-                                      child: SizedBox(
-                                        height: rrM,
-                                        width: rrM,
-                                        child: Image.asset(
-                                            'images/tuuhenbosi/g3.png'),
-                                      ),
-                                    ),
-                                    // 水
-                                    Transform.translate(
-                                      offset: centaG4M3,
-                                      child: SizedBox(
-                                        height: rrM,
-                                        width: rrM,
-                                        child: Image.asset(
-                                            'images/tuuhenbosi/g4.png'),
-                                      ),
-                                    ),
-
-                                    //■■■■■■■■■ 日干の１階２階通変星の文字の表示 ■■■■■■■■■
-                                    Transform.translate(
-                                      offset: centaG0M2,
-                                      child: SizedBox(
-                                        height: rrM,
-                                        width: rrM,
-                                        child: Image.asset(model.go[0]),
-                                      ),
-                                    ),
-                                    Transform.translate(
-                                      offset: centaG0M1,
-                                      child: SizedBox(
-                                        height: rrM,
-                                        width: rrM,
-                                        child: Image.asset(model.go[1]),
-                                      ),
-                                    ),
-                                    Transform.translate(
-                                      offset: centaG1M2,
-                                      child: SizedBox(
-                                        height: rrM,
-                                        width: rrM,
-                                        child: Image.asset(model.go[2]),
-                                      ),
-                                    ),
-                                    Transform.translate(
-                                      offset: centaG1M1,
-                                      child: SizedBox(
-                                        height: rrM,
-                                        width: rrM,
-                                        child: Image.asset(model.go[3]),
-                                      ),
-                                    ),
-                                    Transform.translate(
-                                      offset: centaG2M2,
-                                      child: SizedBox(
-                                        height: rrM,
-                                        width: rrM,
-                                        child: Image.asset(model.go[4]),
-                                      ),
-                                    ),
-
-                                    Transform.translate(
-                                      offset: centaG2M1,
-                                      child: SizedBox(
-                                        height: rrM,
-                                        width: rrM,
-                                        child: Image.asset(model.go[5]),
-                                      ),
-                                    ),
-                                    Transform.translate(
-                                      offset: centaG3M2,
-                                      child: SizedBox(
-                                        height: rrM,
-                                        width: rrM,
-                                        child: Image.asset(model.go[6]),
-                                      ),
-                                    ),
-                                    Transform.translate(
-                                      offset: centaG3M1,
-                                      child: SizedBox(
-                                        height: rrM,
-                                        width: rrM,
-                                        child: Image.asset(model.go[7]),
-                                      ),
-                                    ),
-                                    Transform.translate(
-                                      offset: centaG4M2,
-                                      child: SizedBox(
-                                        height: rrM,
-                                        width: rrM,
-                                        child: Image.asset(model.go[8]),
-                                      ),
-                                    ),
-                                    Transform.translate(
-                                      offset: centaG4M1,
-                                      child: SizedBox(
-                                        height: rrM,
-                                        width: rrM,
-                                        child: Image.asset(model.go[9]),
-                                      ),
-                                    ),
-
-                                    // ■■■■■■■■■ 日支の３階の文字の表示 ■■■■■■■■■
-                                    Transform.translate(
-                                      // 子
-                                      offset: centaS0,
-                                      child: SizedBox(
-                                        height: rrM,
-                                        width: rrM,
-                                        child: Image.asset(
-                                            'images/tuuhenbosi/s0.png'),
-                                      ),
-                                    ),
-                                    Transform.translate(
-                                      // 丑
-                                      offset: centaS1,
-                                      child: SizedBox(
-                                        height: rrM,
-                                        width: rrM,
-                                        child: Image.asset(
-                                            'images/tuuhenbosi/s1.png'),
-                                      ),
-                                    ),
-                                    Transform.translate(
-                                      // 寅
-                                      offset: centaS2,
-                                      child: SizedBox(
-                                        height: rrM,
-                                        width: rrM,
-                                        child: Image.asset(
-                                            'images/tuuhenbosi/s2.png'),
-                                      ),
-                                    ),
-                                    Transform.translate(
-                                      // 卯
-                                      offset: centaS3,
-                                      child: SizedBox(
-                                        height: rrM,
-                                        width: rrM,
-                                        child: Image.asset(
-                                            'images/tuuhenbosi/s3.png'),
-                                      ),
-                                    ),
-                                    Transform.translate(
-                                      // 辰
-                                      offset: centaS4,
-                                      child: SizedBox(
-                                        height: rrM,
-                                        width: rrM,
-                                        child: Image.asset(
-                                            'images/tuuhenbosi/s4.png'),
-                                      ),
-                                    ),
-                                    Transform.translate(
-                                      // 巳
-                                      offset: centaS5,
-                                      child: SizedBox(
-                                        height: rrM,
-                                        width: rrM,
-                                        child: Image.asset(
-                                            'images/tuuhenbosi/s5.png'),
-                                      ),
-                                    ),
-                                    Transform.translate(
-                                      // 午
-                                      offset: centaS6,
-                                      child: SizedBox(
-                                        height: rrM,
-                                        width: rrM,
-                                        child: Image.asset(
-                                            'images/tuuhenbosi/s6.png'),
-                                      ),
-                                    ),
-                                    Transform.translate(
-                                      // 未
-                                      offset: centaS7,
-                                      child: SizedBox(
-                                        height: rrM,
-                                        width: rrM,
-                                        child: Image.asset(
-                                            'images/tuuhenbosi/s7.png'),
-                                      ),
-                                    ),
-                                    Transform.translate(
-                                      // 申
-                                      offset: centaS8,
-                                      child: SizedBox(
-                                        height: rrM,
-                                        width: rrM,
-                                        child: Image.asset(
-                                            'images/tuuhenbosi/s8.png'),
-                                      ),
-                                    ),
-                                    Transform.translate(
-                                      // 酉
-                                      offset: centaS9,
-                                      child: SizedBox(
-                                        height: rrM,
-                                        width: rrM,
-                                        child: Image.asset(
-                                            'images/tuuhenbosi/s9.png'),
-                                      ),
-                                    ),
-                                    Transform.translate(
-                                      // 戌
-                                      offset: centaS10,
-                                      child: SizedBox(
-                                        height: rrM,
-                                        width: rrM,
-                                        child: Image.asset(
-                                            'images/tuuhenbosi/s10.png'),
-                                      ),
-                                    ),
-                                    Transform.translate(
-                                      // 亥
-                                      offset: centaS11,
-                                      child: SizedBox(
-                                        height: rrM,
-                                        width: rrM,
-                                        child: Image.asset(
-                                            'images/tuuhenbosi/s11.png'),
-                                      ),
-                                    ),
-
-                                    // ■■■■■■■■■ 日支２階の文字 ■■■■■■■■■
-
-                                    Transform.translate(
-                                      // 子
-                                      offset: centaS0a,
-                                      child: Text(
-                                        model.sigo.substring(0, 1),
-                                        style: TextStyle(
-                                          fontSize: rrM1,
-                                          color: Colors.black,
-                                          fontWeight: FontWeight.normal,
-                                        ),
-                                      ),
-                                    ),
-                                    Transform.translate(
-                                      // 丑
-                                      offset: centaS1a,
-                                      child: Text(
-                                        model.sigo.substring(1, 2),
-                                        style: TextStyle(
-                                          fontSize: rrM1,
-                                          color: Colors.black,
-                                          fontWeight: FontWeight.normal,
-                                        ),
-                                      ),
-                                    ),
-                                    Transform.translate(
-                                      // 寅
-                                      offset: centaS2a,
-                                      child: Text(
-                                        model.sigo.substring(2, 3),
-                                        style: TextStyle(
-                                          fontSize: rrM1,
-                                          color: Colors.black,
-                                          fontWeight: FontWeight.normal,
-                                        ),
-                                      ),
-                                    ),
-                                    Transform.translate(
-                                      // 卯
-                                      offset: centaS3a,
-                                      child: Text(
-                                        model.sigo.substring(3, 4),
-                                        style: TextStyle(
-                                          fontSize: rrM1,
-                                          color: Colors.black,
-                                          fontWeight: FontWeight.normal,
-                                        ),
-                                      ),
-                                    ),
-                                    Transform.translate(
-                                      // 辰
-                                      offset: centaS4a,
-                                      child: Text(
-                                        model.sigo.substring(4, 5),
-                                        style: TextStyle(
-                                          fontSize: rrM1,
-                                          color: Colors.black,
-                                          fontWeight: FontWeight.normal,
-                                        ),
-                                      ),
-                                    ),
-                                    Transform.translate(
-                                      // 巳
-                                      offset: centaS5a,
-                                      child: Text(
-                                        model.sigo.substring(5, 6),
-                                        style: TextStyle(
-                                          fontSize: rrM1,
-                                          color: Colors.black,
-                                          fontWeight: FontWeight.normal,
-                                        ),
-                                      ),
-                                    ),
-                                    Transform.translate(
-                                      // 午
-                                      offset: centaS6a,
-                                      child: Text(
-                                        model.sigo.substring(6, 7),
-                                        style: TextStyle(
-                                          fontSize: rrM1,
-                                          color: Colors.black,
-                                          fontWeight: FontWeight.normal,
-                                        ),
-                                      ),
-                                    ),
-                                    Transform.translate(
-                                      // 未
-                                      offset: centaS7a,
-                                      child: Text(
-                                        model.sigo.substring(7, 8),
-                                        style: TextStyle(
-                                          fontSize: rrM1,
-                                          color: Colors.black,
-                                          fontWeight: FontWeight.normal,
-                                        ),
-                                      ),
-                                    ),
-                                    Transform.translate(
-                                      // 申
-                                      offset: centaS8a,
-                                      child: Text(
-                                        model.sigo.substring(8, 9),
-                                        style: TextStyle(
-                                          fontSize: rrM1,
-                                          color: Colors.black,
-                                          fontWeight: FontWeight.normal,
-                                        ),
-                                      ),
-                                    ),
-                                    Transform.translate(
-                                      // 酉
-                                      offset: centaS9a,
-                                      child: Text(
-                                        model.sigo.substring(9, 10),
-                                        style: TextStyle(
-                                          fontSize: rrM1,
-                                          color: Colors.black,
-                                          fontWeight: FontWeight.normal,
-                                        ),
-                                      ),
-                                    ),
-                                    Transform.translate(
-                                      // 戌
-                                      offset: centaS10a,
-                                      child: Text(
-                                        model.sigo.substring(10, 11),
-                                        style: TextStyle(
-                                          fontSize: rrM1,
-                                          color: Colors.black,
-                                          fontWeight: FontWeight.normal,
-                                        ),
-                                      ),
-                                    ),
-                                    Transform.translate(
-                                      // 亥
-                                      offset: centaS11a,
-                                      child: Text(
-                                        model.sigo.substring(11, 12),
-                                        style: TextStyle(
-                                          fontSize: rrM1,
-                                          color: Colors.black,
-                                          fontWeight: FontWeight.normal,
-                                        ),
-                                      ),
-                                    ),
-
-                                    // ■■■■■■■■■ 日支1階の文字の表示 ■■■■■■■■■
-                                    Transform.translate(
-                                      // 子
-                                      offset: centaS0b,
-                                      child: Text(
-                                        model.kei.substring(0, 1),
-                                        style: TextStyle(
-                                          fontSize: rrM1,
-                                          color: Colors.black,
-                                          fontWeight: FontWeight.normal,
-                                        ),
-                                      ),
-                                    ),
-                                    Transform.translate(
-                                      // 丑
-                                      offset: centaS1b,
-                                      child: Text(
-                                        model.kei.substring(1, 2),
-                                        style: TextStyle(
-                                          fontSize: rrM1,
-                                          color: Colors.black,
-                                          fontWeight: FontWeight.normal,
-                                        ),
-                                      ),
-                                    ),
-                                    Transform.translate(
-                                      // 寅
-                                      offset: centaS2b,
-                                      child: Text(
-                                        model.kei.substring(2, 3),
-                                        style: TextStyle(
-                                          fontSize: rrM1,
-                                          color: Colors.black,
-                                          fontWeight: FontWeight.normal,
-                                        ),
-                                      ),
-                                    ),
-                                    Transform.translate(
-                                      // 卯
-                                      offset: centaS3b,
-                                      child: Text(
-                                        model.kei.substring(3, 4),
-                                        style: TextStyle(
-                                          fontSize: rrM1,
-                                          color: Colors.black,
-                                          fontWeight: FontWeight.normal,
-                                        ),
-                                      ),
-                                    ),
-                                    Transform.translate(
-                                      // 辰
-                                      offset: centaS4b,
-                                      child: Text(
-                                        model.kei.substring(4, 5),
-                                        style: TextStyle(
-                                          fontSize: rrM1,
-                                          color: Colors.black,
-                                          fontWeight: FontWeight.normal,
-                                        ),
-                                      ),
-                                    ),
-                                    Transform.translate(
-                                      // 巳
-                                      offset: centaS5b,
-                                      child: Text(
-                                        model.kei.substring(5, 6),
-                                        style: TextStyle(
-                                          fontSize: rrM1,
-                                          color: Colors.black,
-                                          fontWeight: FontWeight.normal,
-                                        ),
-                                      ),
-                                    ),
-                                    Transform.translate(
-                                      // 午
-                                      offset: centaS6b,
-                                      child: Text(
-                                        model.kei.substring(6, 7),
-                                        style: TextStyle(
-                                          fontSize: rrM1,
-                                          color: Colors.black,
-                                          fontWeight: FontWeight.normal,
-                                        ),
-                                      ),
-                                    ),
-                                    Transform.translate(
-                                      // 未
-                                      offset: centaS7b,
-                                      child: Text(
-                                        model.kei.substring(7, 8),
-                                        style: TextStyle(
-                                          fontSize: rrM1,
-                                          color: Colors.black,
-                                          fontWeight: FontWeight.normal,
-                                        ),
-                                      ),
-                                    ),
-                                    Transform.translate(
-                                      // 申
-                                      offset: centaS8b,
-                                      child: Text(
-                                        model.kei.substring(8, 9),
-                                        style: TextStyle(
-                                          fontSize: rrM1,
-                                          color: Colors.black,
-                                          fontWeight: FontWeight.normal,
-                                        ),
-                                      ),
-                                    ),
-                                    Transform.translate(
-                                      // 酉
-                                      offset: centaS9b,
-                                      child: Text(
-                                        model.kei.substring(9, 10),
-                                        style: TextStyle(
-                                          fontSize: rrM1,
-                                          color: Colors.black,
-                                          fontWeight: FontWeight.normal,
-                                        ),
-                                      ),
-                                    ),
-                                    Transform.translate(
-                                      // 戌
-                                      offset: centaS10b,
-                                      child: Text(
-                                        model.kei.substring(10, 11),
-                                        style: TextStyle(
-                                          fontSize: rrM1,
-                                          color: Colors.black,
-                                          fontWeight: FontWeight.normal,
-                                        ),
-                                      ),
-                                    ),
-                                    Transform.translate(
-                                      // 亥
-                                      offset: centaS11b,
-                                      child: Text(
-                                        model.kei.substring(11, 12),
-                                        style: TextStyle(
-                                          fontSize: rrM1,
-                                          color: Colors.black,
-                                          fontWeight: FontWeight.normal,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
-                          const ListTile(
-                            title: Center(
-                              child: Text('■■■■■■■ この図の見方（工事中） ■■■■■■■',
-                                  style: TextStyle(
-                                    color: Color(c2),
-                                    fontWeight: FontWeight.normal,
-                                    fontSize: 14,
-                                  )),
-                            ),
-                          ),
-                          ListTile(
-                            title: SizedBox(
-                              height: h3,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
+              body: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Expanded(
+                    child: Container(
+                      color: Colors.black,
+                      child: SizedBox(
+                        height: double.infinity,
+                        width: double.infinity,
+                        child: ListView(
+                          children: [
+                            ListTile(
+                              title: Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
-                                  Expanded(
-                                    //height: 400,
-                                    child: ListView.builder(
-                                      itemCount: 60,
-                                      itemBuilder:
-                                          (BuildContext context, int index) {
-                                        return Column(
-                                          children: [
-                                            SizedBox(
-                                              //width: 500.0,
-                                              height: model.takasaMoji[index],
-                                              child: ListTile(
-                                                //shape: const RoundedRectangleBorder(
-                                                // side: BorderSide(
-                                                //   color: Colors,
-                                                //  ),
-                                                //  ),
-                                                tileColor: Colors.black,
-                                                title: Padding(
-                                                  padding:
-                                                      const EdgeInsets.fromLTRB(
-                                                          8.0, 4.0, 4.0, 4.0),
-                                                  child: Text(
-                                                    model.moji[index],
-                                                    style: TextStyle(
-                                                      height: 1.1,
-                                                      fontSize: 16,
-                                                      color: Color(
-                                                          model.iroMoji[index]),
-                                                      fontWeight:
-                                                          FontWeight.normal,
-                                                    ),
-                                                    textScaleFactor: 1.0,
-                                                  ),
-                                                ),
-                                              ),
-                                              //color: Colors.black,
-                                            ),
-                                          ],
-                                        );
-                                      },
-                                    ),
+                                  Stack(
+                                    children: [
+                                      const SizedBox(
+                                        // 第一階層
+                                        width: 312,
+                                        height: h2,
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          //ToDo: ここは文字を入れる（第一階層）
+                                          children: [],
+                                        ),
+                                      ),
+                                      // ここから第二階層
+                                      SizedBox(
+                                        width: 312,
+                                        height: h2,
+                                        child: CustomPaint(
+                                          painter:
+                                              ShapePainter3(), // 日干と日支の固定円の描画
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 312,
+                                        height: h2,
+                                        child: CustomPaint(
+                                          painter: ShapePainter4(
+                                            // 日干と日支のV字の描画
+                                            gogyou: model.gogyou,
+                                            nitiSi: model.nitiSi,
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 312,
+                                        height: h2,
+                                        child: CustomPaint(
+                                          painter: ShapePainter5(
+                                            tuhen: model.tuhen,
+                                            gogyou: model.gogyou,
+                                          ), // 渡したい変数を引数に指定する
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 312,
+                                        height: h2,
+                                        child: CustomPaint(
+                                          painter: ShapePainter6(
+                                            kei: model.kei,
+                                          ), // 渡したい変数を引数に指定する
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 312,
+                                        height: h2,
+                                        child: CustomPaint(
+                                          painter: ShapePainter8(
+                                            sigo: model.nowNitiSi,
+                                            kei: model.kei,
+                                          ), // 渡したい変数を引数に指定する
+                                        ),
+                                      ),
+
+                                      SizedBox(
+                                        width: 312,
+                                        height: h2,
+                                        child: CustomPaint(
+                                          painter: ShapePainter7(
+                                            sigo: model.nowNitiSi,
+                                          ), // 渡したい変数を引数に指定する
+                                        ),
+                                      ),
+
+                                      // ■■■■■■■■■ 左上の生年月日の表示 ■■■■■■■■■
+                                      Transform.translate(
+                                        offset: const Offset(0, 0),
+                                        child: Text(
+                                          '$seinenInt.$seigatuInt.$seinitiInt 生',
+                                          style: const TextStyle(
+                                            fontSize: 20,
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                      ),
+                                      Transform.translate(
+                                        offset: const Offset(180, 0),
+                                        child: Text(
+                                          model.nowMoji,
+                                          style: const TextStyle(
+                                            fontSize: 20,
+                                            color: Colors.black12,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                      ),
+                                      // Transform.translate(
+                                      //   offset: const Offset(290, 4),
+                                      //   child: const Text(
+                                      //     'の運勢',
+                                      //     style: TextStyle(
+                                      //       fontSize: 14,
+                                      //       color: Colors.white,
+                                      //       fontWeight: FontWeight.bold,
+                                      //     ),
+                                      //   ),
+                                      // ),
+                                      Transform.translate(
+                                        offset: const Offset(238, 30),
+                                        child: Text(
+                                          model.kangouMoji,
+                                          style: const TextStyle(
+                                            fontSize: 24,
+                                            color: Colors.purpleAccent,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                      ),
+
+                                      // ■■■■■■■■■ 日干の３階五行の文字の表示 ■■■■■■■■■
+                                      // 木
+                                      Transform.translate(
+                                        offset: centaG0M3,
+                                        child: SizedBox(
+                                          height: rrM,
+                                          width: rrM,
+                                          child: Image.asset(
+                                              'images/tuuhenbosi/g0.png'),
+                                        ),
+                                      ),
+                                      // 火
+                                      Transform.translate(
+                                        offset: centaG1M3,
+                                        child: SizedBox(
+                                          height: rrM,
+                                          width: rrM,
+                                          child: Image.asset(
+                                              'images/tuuhenbosi/g1.png'),
+                                        ),
+                                      ),
+                                      // 土
+                                      Transform.translate(
+                                        offset: centaG2M3,
+                                        child: SizedBox(
+                                          height: rrM,
+                                          width: rrM,
+                                          child: Image.asset(
+                                              'images/tuuhenbosi/g2.png'),
+                                        ),
+                                      ),
+                                      // 金
+                                      Transform.translate(
+                                        offset: centaG3M3,
+                                        child: SizedBox(
+                                          height: rrM,
+                                          width: rrM,
+                                          child: Image.asset(
+                                              'images/tuuhenbosi/g3.png'),
+                                        ),
+                                      ),
+                                      // 水
+                                      Transform.translate(
+                                        offset: centaG4M3,
+                                        child: SizedBox(
+                                          height: rrM,
+                                          width: rrM,
+                                          child: Image.asset(
+                                              'images/tuuhenbosi/g4.png'),
+                                        ),
+                                      ),
+
+                                      //■■■■■■■■■ 日干の１階２階通変星の文字の表示 ■■■■■■■■■
+                                      Transform.translate(
+                                        offset: centaG0M2,
+                                        child: SizedBox(
+                                          height: rrM,
+                                          width: rrM,
+                                          child: Image.asset(model.go[0]),
+                                        ),
+                                      ),
+                                      Transform.translate(
+                                        offset: centaG0M1,
+                                        child: SizedBox(
+                                          height: rrM,
+                                          width: rrM,
+                                          child: Image.asset(model.go[1]),
+                                        ),
+                                      ),
+                                      Transform.translate(
+                                        offset: centaG1M2,
+                                        child: SizedBox(
+                                          height: rrM,
+                                          width: rrM,
+                                          child: Image.asset(model.go[2]),
+                                        ),
+                                      ),
+                                      Transform.translate(
+                                        offset: centaG1M1,
+                                        child: SizedBox(
+                                          height: rrM,
+                                          width: rrM,
+                                          child: Image.asset(model.go[3]),
+                                        ),
+                                      ),
+                                      Transform.translate(
+                                        offset: centaG2M2,
+                                        child: SizedBox(
+                                          height: rrM,
+                                          width: rrM,
+                                          child: Image.asset(model.go[4]),
+                                        ),
+                                      ),
+
+                                      Transform.translate(
+                                        offset: centaG2M1,
+                                        child: SizedBox(
+                                          height: rrM,
+                                          width: rrM,
+                                          child: Image.asset(model.go[5]),
+                                        ),
+                                      ),
+                                      Transform.translate(
+                                        offset: centaG3M2,
+                                        child: SizedBox(
+                                          height: rrM,
+                                          width: rrM,
+                                          child: Image.asset(model.go[6]),
+                                        ),
+                                      ),
+                                      Transform.translate(
+                                        offset: centaG3M1,
+                                        child: SizedBox(
+                                          height: rrM,
+                                          width: rrM,
+                                          child: Image.asset(model.go[7]),
+                                        ),
+                                      ),
+                                      Transform.translate(
+                                        offset: centaG4M2,
+                                        child: SizedBox(
+                                          height: rrM,
+                                          width: rrM,
+                                          child: Image.asset(model.go[8]),
+                                        ),
+                                      ),
+                                      Transform.translate(
+                                        offset: centaG4M1,
+                                        child: SizedBox(
+                                          height: rrM,
+                                          width: rrM,
+                                          child: Image.asset(model.go[9]),
+                                        ),
+                                      ),
+
+                                      // ■■■■■■■■■ 日支の３階の文字の表示 ■■■■■■■■■
+                                      Transform.translate(
+                                        // 子
+                                        offset: centaS0,
+                                        child: SizedBox(
+                                          height: rrM,
+                                          width: rrM,
+                                          child: Image.asset(
+                                              'images/tuuhenbosi/s0.png'),
+                                        ),
+                                      ),
+                                      Transform.translate(
+                                        // 丑
+                                        offset: centaS1,
+                                        child: SizedBox(
+                                          height: rrM,
+                                          width: rrM,
+                                          child: Image.asset(
+                                              'images/tuuhenbosi/s1.png'),
+                                        ),
+                                      ),
+                                      Transform.translate(
+                                        // 寅
+                                        offset: centaS2,
+                                        child: SizedBox(
+                                          height: rrM,
+                                          width: rrM,
+                                          child: Image.asset(
+                                              'images/tuuhenbosi/s2.png'),
+                                        ),
+                                      ),
+                                      Transform.translate(
+                                        // 卯
+                                        offset: centaS3,
+                                        child: SizedBox(
+                                          height: rrM,
+                                          width: rrM,
+                                          child: Image.asset(
+                                              'images/tuuhenbosi/s3.png'),
+                                        ),
+                                      ),
+                                      Transform.translate(
+                                        // 辰
+                                        offset: centaS4,
+                                        child: SizedBox(
+                                          height: rrM,
+                                          width: rrM,
+                                          child: Image.asset(
+                                              'images/tuuhenbosi/s4.png'),
+                                        ),
+                                      ),
+                                      Transform.translate(
+                                        // 巳
+                                        offset: centaS5,
+                                        child: SizedBox(
+                                          height: rrM,
+                                          width: rrM,
+                                          child: Image.asset(
+                                              'images/tuuhenbosi/s5.png'),
+                                        ),
+                                      ),
+                                      Transform.translate(
+                                        // 午
+                                        offset: centaS6,
+                                        child: SizedBox(
+                                          height: rrM,
+                                          width: rrM,
+                                          child: Image.asset(
+                                              'images/tuuhenbosi/s6.png'),
+                                        ),
+                                      ),
+                                      Transform.translate(
+                                        // 未
+                                        offset: centaS7,
+                                        child: SizedBox(
+                                          height: rrM,
+                                          width: rrM,
+                                          child: Image.asset(
+                                              'images/tuuhenbosi/s7.png'),
+                                        ),
+                                      ),
+                                      Transform.translate(
+                                        // 申
+                                        offset: centaS8,
+                                        child: SizedBox(
+                                          height: rrM,
+                                          width: rrM,
+                                          child: Image.asset(
+                                              'images/tuuhenbosi/s8.png'),
+                                        ),
+                                      ),
+                                      Transform.translate(
+                                        // 酉
+                                        offset: centaS9,
+                                        child: SizedBox(
+                                          height: rrM,
+                                          width: rrM,
+                                          child: Image.asset(
+                                              'images/tuuhenbosi/s9.png'),
+                                        ),
+                                      ),
+                                      Transform.translate(
+                                        // 戌
+                                        offset: centaS10,
+                                        child: SizedBox(
+                                          height: rrM,
+                                          width: rrM,
+                                          child: Image.asset(
+                                              'images/tuuhenbosi/s10.png'),
+                                        ),
+                                      ),
+                                      Transform.translate(
+                                        // 亥
+                                        offset: centaS11,
+                                        child: SizedBox(
+                                          height: rrM,
+                                          width: rrM,
+                                          child: Image.asset(
+                                              'images/tuuhenbosi/s11.png'),
+                                        ),
+                                      ),
+
+                                      // ■■■■■■■■■ 日支２階の文字 ■■■■■■■■■
+
+                                      Transform.translate(
+                                        // 子
+                                        offset: centaS0a,
+                                        child: Text(
+                                          model.sigo.substring(0, 1),
+                                          style: TextStyle(
+                                            fontSize: rrM1,
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.normal,
+                                          ),
+                                        ),
+                                      ),
+                                      Transform.translate(
+                                        // 丑
+                                        offset: centaS1a,
+                                        child: Text(
+                                          model.sigo.substring(1, 2),
+                                          style: TextStyle(
+                                            fontSize: rrM1,
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.normal,
+                                          ),
+                                        ),
+                                      ),
+                                      Transform.translate(
+                                        // 寅
+                                        offset: centaS2a,
+                                        child: Text(
+                                          model.sigo.substring(2, 3),
+                                          style: TextStyle(
+                                            fontSize: rrM1,
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.normal,
+                                          ),
+                                        ),
+                                      ),
+                                      Transform.translate(
+                                        // 卯
+                                        offset: centaS3a,
+                                        child: Text(
+                                          model.sigo.substring(3, 4),
+                                          style: TextStyle(
+                                            fontSize: rrM1,
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.normal,
+                                          ),
+                                        ),
+                                      ),
+                                      Transform.translate(
+                                        // 辰
+                                        offset: centaS4a,
+                                        child: Text(
+                                          model.sigo.substring(4, 5),
+                                          style: TextStyle(
+                                            fontSize: rrM1,
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.normal,
+                                          ),
+                                        ),
+                                      ),
+                                      Transform.translate(
+                                        // 巳
+                                        offset: centaS5a,
+                                        child: Text(
+                                          model.sigo.substring(5, 6),
+                                          style: TextStyle(
+                                            fontSize: rrM1,
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.normal,
+                                          ),
+                                        ),
+                                      ),
+                                      Transform.translate(
+                                        // 午
+                                        offset: centaS6a,
+                                        child: Text(
+                                          model.sigo.substring(6, 7),
+                                          style: TextStyle(
+                                            fontSize: rrM1,
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.normal,
+                                          ),
+                                        ),
+                                      ),
+                                      Transform.translate(
+                                        // 未
+                                        offset: centaS7a,
+                                        child: Text(
+                                          model.sigo.substring(7, 8),
+                                          style: TextStyle(
+                                            fontSize: rrM1,
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.normal,
+                                          ),
+                                        ),
+                                      ),
+                                      Transform.translate(
+                                        // 申
+                                        offset: centaS8a,
+                                        child: Text(
+                                          model.sigo.substring(8, 9),
+                                          style: TextStyle(
+                                            fontSize: rrM1,
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.normal,
+                                          ),
+                                        ),
+                                      ),
+                                      Transform.translate(
+                                        // 酉
+                                        offset: centaS9a,
+                                        child: Text(
+                                          model.sigo.substring(9, 10),
+                                          style: TextStyle(
+                                            fontSize: rrM1,
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.normal,
+                                          ),
+                                        ),
+                                      ),
+                                      Transform.translate(
+                                        // 戌
+                                        offset: centaS10a,
+                                        child: Text(
+                                          model.sigo.substring(10, 11),
+                                          style: TextStyle(
+                                            fontSize: rrM1,
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.normal,
+                                          ),
+                                        ),
+                                      ),
+                                      Transform.translate(
+                                        // 亥
+                                        offset: centaS11a,
+                                        child: Text(
+                                          model.sigo.substring(11, 12),
+                                          style: TextStyle(
+                                            fontSize: rrM1,
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.normal,
+                                          ),
+                                        ),
+                                      ),
+
+                                      // ■■■■■■■■■ 日支1階の文字の表示 ■■■■■■■■■
+                                      Transform.translate(
+                                        // 子
+                                        offset: centaS0b,
+                                        child: Text(
+                                          model.kei.substring(0, 1),
+                                          style: TextStyle(
+                                            fontSize: rrM1,
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.normal,
+                                          ),
+                                        ),
+                                      ),
+                                      Transform.translate(
+                                        // 丑
+                                        offset: centaS1b,
+                                        child: Text(
+                                          model.kei.substring(1, 2),
+                                          style: TextStyle(
+                                            fontSize: rrM1,
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.normal,
+                                          ),
+                                        ),
+                                      ),
+                                      Transform.translate(
+                                        // 寅
+                                        offset: centaS2b,
+                                        child: Text(
+                                          model.kei.substring(2, 3),
+                                          style: TextStyle(
+                                            fontSize: rrM1,
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.normal,
+                                          ),
+                                        ),
+                                      ),
+                                      Transform.translate(
+                                        // 卯
+                                        offset: centaS3b,
+                                        child: Text(
+                                          model.kei.substring(3, 4),
+                                          style: TextStyle(
+                                            fontSize: rrM1,
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.normal,
+                                          ),
+                                        ),
+                                      ),
+                                      Transform.translate(
+                                        // 辰
+                                        offset: centaS4b,
+                                        child: Text(
+                                          model.kei.substring(4, 5),
+                                          style: TextStyle(
+                                            fontSize: rrM1,
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.normal,
+                                          ),
+                                        ),
+                                      ),
+                                      Transform.translate(
+                                        // 巳
+                                        offset: centaS5b,
+                                        child: Text(
+                                          model.kei.substring(5, 6),
+                                          style: TextStyle(
+                                            fontSize: rrM1,
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.normal,
+                                          ),
+                                        ),
+                                      ),
+                                      Transform.translate(
+                                        // 午
+                                        offset: centaS6b,
+                                        child: Text(
+                                          model.kei.substring(6, 7),
+                                          style: TextStyle(
+                                            fontSize: rrM1,
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.normal,
+                                          ),
+                                        ),
+                                      ),
+                                      Transform.translate(
+                                        // 未
+                                        offset: centaS7b,
+                                        child: Text(
+                                          model.kei.substring(7, 8),
+                                          style: TextStyle(
+                                            fontSize: rrM1,
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.normal,
+                                          ),
+                                        ),
+                                      ),
+                                      Transform.translate(
+                                        // 申
+                                        offset: centaS8b,
+                                        child: Text(
+                                          model.kei.substring(8, 9),
+                                          style: TextStyle(
+                                            fontSize: rrM1,
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.normal,
+                                          ),
+                                        ),
+                                      ),
+                                      Transform.translate(
+                                        // 酉
+                                        offset: centaS9b,
+                                        child: Text(
+                                          model.kei.substring(9, 10),
+                                          style: TextStyle(
+                                            fontSize: rrM1,
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.normal,
+                                          ),
+                                        ),
+                                      ),
+                                      Transform.translate(
+                                        // 戌
+                                        offset: centaS10b,
+                                        child: Text(
+                                          model.kei.substring(10, 11),
+                                          style: TextStyle(
+                                            fontSize: rrM1,
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.normal,
+                                          ),
+                                        ),
+                                      ),
+                                      Transform.translate(
+                                        // 亥
+                                        offset: centaS11b,
+                                        child: Text(
+                                          model.kei.substring(11, 12),
+                                          style: TextStyle(
+                                            fontSize: rrM1,
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.normal,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
                                   ),
-                                  // Text('（工事中）',
-                                  //     style: TextStyle(
-                                  //       color: Color(c3),
-                                  //       fontWeight: FontWeight.normal,
-                                  //       fontSize: 14,
-                                  //     )),
-                                  // Text('',
-                                  //     style: TextStyle(
-                                  //       color: Color(c2),
-                                  //       fontWeight: FontWeight.normal,
-                                  //       fontSize: 14,
-                                  //     )),
                                 ],
                               ),
                             ),
-                          ),
-                        ],
+                            const ListTile(
+                              title: Center(
+                                child: Text('■■■■■■■ この図の見方（工事中） ■■■■■■■',
+                                    style: TextStyle(
+                                      color: Color(c2),
+                                      fontWeight: FontWeight.normal,
+                                      fontSize: 14,
+                                    )),
+                              ),
+                            ),
+                            ListTile(
+                              title: SizedBox(
+                                height: h3,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Expanded(
+                                      //height: 400,
+                                      child: ListView.builder(
+                                        itemCount: 60,
+                                        itemBuilder:
+                                            (BuildContext context, int index) {
+                                          return Column(
+                                            children: [
+                                              SizedBox(
+                                                //width: 500.0,
+                                                height: model.takasaMoji[index],
+                                                child: ListTile(
+                                                  //shape: const RoundedRectangleBorder(
+                                                  // side: BorderSide(
+                                                  //   color: Colors,
+                                                  //  ),
+                                                  //  ),
+                                                  tileColor: Colors.black,
+                                                  title: Padding(
+                                                    padding: const EdgeInsets
+                                                            .fromLTRB(
+                                                        8.0, 4.0, 4.0, 4.0),
+                                                    child: Text(
+                                                      model.moji[index],
+                                                      style: TextStyle(
+                                                        height: 1.1,
+                                                        fontSize: 16,
+                                                        color: Color(model
+                                                            .iroMoji[index]),
+                                                        fontWeight:
+                                                            FontWeight.normal,
+                                                      ),
+                                                      textScaleFactor: 1.0,
+                                                    ),
+                                                  ),
+                                                ),
+                                                //color: Colors.black,
+                                              ),
+                                            ],
+                                          );
+                                        },
+                                      ),
+                                    ),
+                                    // Text('（工事中）',
+                                    //     style: TextStyle(
+                                    //       color: Color(c3),
+                                    //       fontWeight: FontWeight.normal,
+                                    //       fontSize: 14,
+                                    //     )),
+                                    // Text('',
+                                    //     style: TextStyle(
+                                    //       color: Color(c2),
+                                    //       fontWeight: FontWeight.normal,
+                                    //       fontSize: 14,
+                                    //     )),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
+                    ),
+                  ),
+                ],
+              ),
+              persistentFooterButtons: <Widget>[
+                SizedBox(
+                  width: double.infinity,
+                  height: 100,
+                  child: Container(
+                    color: Colors.black,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        SizedBox(
+                          width: 144,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              // Text(
+                              //   model.nowMoji,
+                              //   style: const TextStyle(
+                              //     color: Colors.white,
+                              //     fontWeight: FontWeight.normal,
+                              //     fontSize: 18,
+                              //   ),
+                              // ),
+                              // const Text(
+                              //   'の運勢',
+                              //   style: TextStyle(
+                              //     color: Colors.white,
+                              //     fontWeight: FontWeight.normal,
+                              //     fontSize: 16,
+                              //   ),
+                              // ),
+                              Text(
+                                model.kitiKyou,
+                                style: const TextStyle(
+                                  color: Colors.purpleAccent,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 40,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        /*SizedBox(
+                          width: 40,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              const SizedBox(
+                                height: 15,
+                                child: Text(
+                                  '年',
+                                  style: TextStyle(
+                                    color: Color(c3),
+                                    fontWeight: FontWeight.normal,
+                                    fontSize: 12,
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 8,
+                              ),
+                              SizedBox(
+                                height: h1,
+                                child: ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Colors.blue,
+                                    elevation: 0,
+                                  ),
+                                  onPressed: () {
+                                    //yearDown();
+                                    //model.dec365();
+                                  },
+                                  child: const Text(
+                                    'ー',
+                                    style: TextStyle(
+                                      color: Color(c2),
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 14,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 8,
+                              ),
+                              SizedBox(
+                                height: h1,
+                                child: ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Colors.blue,
+                                    elevation: 16,
+                                  ),
+                                  onPressed: () {
+                                    //yearUp();
+                                    //model.inc365();
+                                  },
+                                  child: const Text(
+                                    '＋',
+                                    style: TextStyle(
+                                      color: Color(c2),
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 14,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 16,
+                              ),
+                            ],
+                          ),
+                        ),*/
+                        SizedBox(
+                          width: 40,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              const SizedBox(
+                                height: 15,
+                                child: Text(
+                                  '月',
+                                  style: TextStyle(
+                                    color: Color(c3),
+                                    fontWeight: FontWeight.normal,
+                                    fontSize: 12,
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 8,
+                              ),
+                              SizedBox(
+                                height: h1,
+                                child: ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Colors.blue,
+                                    elevation: 0,
+                                  ),
+                                  onPressed: () {
+                                    //monthDown();
+                                    model.dec30();
+                                  },
+                                  child: const Text(
+                                    'ー',
+                                    style: TextStyle(
+                                      color: Color(c2),
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 14,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 8,
+                              ),
+                              SizedBox(
+                                height: h1,
+                                child: ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Colors.blue,
+                                    elevation: 16,
+                                  ),
+                                  onPressed: () {
+                                    //monthUp();
+                                    model.inc30();
+                                  },
+                                  child: const Text(
+                                    '＋',
+                                    style: TextStyle(
+                                      color: Color(c2),
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 14,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 16,
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(
+                          width: 40,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              const SizedBox(
+                                height: 15,
+                                child: Text(
+                                  '日',
+                                  style: TextStyle(
+                                    color: Color(c3),
+                                    fontWeight: FontWeight.normal,
+                                    fontSize: 12,
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 8,
+                              ),
+                              SizedBox(
+                                height: h1,
+                                child: ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Colors.blue,
+                                    elevation: 0,
+                                  ),
+                                  onPressed: () {
+                                    //dateDown();
+                                    model.dec();
+                                  },
+                                  child: const Text(
+                                    'ー',
+                                    style: TextStyle(
+                                      color: Color(c2),
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 14,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 8,
+                              ),
+                              SizedBox(
+                                height: h1,
+                                child: ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Colors.blue,
+                                    elevation: 0,
+                                  ),
+                                  onPressed: () {
+                                    //dateUp();
+                                    model.inc();
+                                  },
+                                  child: const Text(
+                                    '＋',
+                                    style: TextStyle(
+                                      color: Color(c2),
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 14,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 16,
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(
+                          width: 40,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              SizedBox(
+                                height: h1 * 3,
+                                child: ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Colors.blue,
+                                    elevation: 0,
+                                  ),
+                                  onPressed: () {
+                                    Navigator.pop(context);
+                                  },
+                                  child: const Text(
+                                    '戻る',
+                                    style: TextStyle(
+                                      color: Color(c2),
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 14,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 12,
+                              ),
+                            ],
+                          ),
+                        )
+                      ],
                     ),
                   ),
                 ),
               ],
             ),
-            persistentFooterButtons: <Widget>[
-              SizedBox(
-                width: double.infinity,
-                height: 100,
-                child: Container(
-                  color: Colors.black,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      SizedBox(
-                        width: 104,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            Text(
-                              model.nowMoji,
-                              style: const TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.normal,
-                                fontSize: 18,
-                              ),
-                            ),
-                            const Text(
-                              'の運勢',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.normal,
-                                fontSize: 16,
-                              ),
-                            ),
-                            Text(
-                              model.kitiKyou,
-                              style: const TextStyle(
-                                color: Colors.purpleAccent,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 32,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      SizedBox(
-                        width: 40,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            const SizedBox(
-                              height: 15,
-                              child: Text(
-                                '年',
-                                style: TextStyle(
-                                  color: Color(c3),
-                                  fontWeight: FontWeight.normal,
-                                  fontSize: 12,
-                                ),
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 8,
-                            ),
-                            SizedBox(
-                              height: h1,
-                              child: ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.blue,
-                                  elevation: 0,
-                                ),
-                                onPressed: () {
-                                  //yearDown();
-                                  model.dec365();
-                                },
-                                child: const Text(
-                                  'ー',
-                                  style: TextStyle(
-                                    color: Color(c2),
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 14,
-                                  ),
-                                ),
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 8,
-                            ),
-                            SizedBox(
-                              height: h1,
-                              child: ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.blue,
-                                  elevation: 16,
-                                ),
-                                onPressed: () {
-                                  //yearUp();
-                                  model.inc365();
-                                },
-                                child: const Text(
-                                  '＋',
-                                  style: TextStyle(
-                                    color: Color(c2),
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 14,
-                                  ),
-                                ),
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 16,
-                            ),
-                          ],
-                        ),
-                      ),
-                      SizedBox(
-                        width: 40,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            const SizedBox(
-                              height: 15,
-                              child: Text(
-                                '月',
-                                style: TextStyle(
-                                  color: Color(c3),
-                                  fontWeight: FontWeight.normal,
-                                  fontSize: 12,
-                                ),
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 8,
-                            ),
-                            SizedBox(
-                              height: h1,
-                              child: ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.blue,
-                                  elevation: 0,
-                                ),
-                                onPressed: () {
-                                  //monthDown();
-                                  model.dec30();
-                                },
-                                child: const Text(
-                                  'ー',
-                                  style: TextStyle(
-                                    color: Color(c2),
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 14,
-                                  ),
-                                ),
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 8,
-                            ),
-                            SizedBox(
-                              height: h1,
-                              child: ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.blue,
-                                  elevation: 16,
-                                ),
-                                onPressed: () {
-                                  //monthUp();
-                                  model.inc30();
-                                },
-                                child: const Text(
-                                  '＋',
-                                  style: TextStyle(
-                                    color: Color(c2),
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 14,
-                                  ),
-                                ),
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 16,
-                            ),
-                          ],
-                        ),
-                      ),
-                      SizedBox(
-                        width: 40,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            const SizedBox(
-                              height: 15,
-                              child: Text(
-                                '日',
-                                style: TextStyle(
-                                  color: Color(c3),
-                                  fontWeight: FontWeight.normal,
-                                  fontSize: 12,
-                                ),
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 8,
-                            ),
-                            SizedBox(
-                              height: h1,
-                              child: ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.blue,
-                                  elevation: 0,
-                                ),
-                                onPressed: () {
-                                  //dateDown();
-                                  model.dec();
-                                },
-                                child: const Text(
-                                  'ー',
-                                  style: TextStyle(
-                                    color: Color(c2),
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 14,
-                                  ),
-                                ),
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 8,
-                            ),
-                            SizedBox(
-                              height: h1,
-                              child: ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.blue,
-                                  elevation: 0,
-                                ),
-                                onPressed: () {
-                                  //dateUp();
-                                  model.inc();
-                                },
-                                child: const Text(
-                                  '＋',
-                                  style: TextStyle(
-                                    color: Color(c2),
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 14,
-                                  ),
-                                ),
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 16,
-                            ),
-                          ],
-                        ),
-                      ),
-                      SizedBox(
-                        width: 40,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            SizedBox(
-                              height: h1 * 3,
-                              child: ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.blue,
-                                  elevation: 0,
-                                ),
-                                onPressed: () {
-                                  //dateUp();
-                                },
-                                child: const Text(
-                                  '戻る',
-                                  style: TextStyle(
-                                    color: Color(c2),
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 14,
-                                  ),
-                                ),
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 12,
-                            ),
-                          ],
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-              ),
-            ],
           );
         }),
       ),
