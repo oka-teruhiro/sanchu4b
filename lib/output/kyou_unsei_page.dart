@@ -838,7 +838,7 @@ class KyouUnseiPage extends StatelessWidget {
                             ),
                             const ListTile(
                               title: Center(
-                                child: Text('■■■■■■■ この図の見方（工事中） ■■■■■■■',
+                                child: Text('■■■■■■■ この図の見方 ■■■■■■■',
                                     style: TextStyle(
                                       color: Color(c2),
                                       fontWeight: FontWeight.normal,
@@ -870,23 +870,23 @@ class KyouUnseiPage extends StatelessWidget {
                                                   //  ),
                                                   //  ),
                                                   tileColor: Colors.black,
-                                                  title: Padding(
-                                                    padding: const EdgeInsets
-                                                            .fromLTRB(
-                                                        8.0, 4.0, 4.0, 4.0),
-                                                    child: Text(
-                                                      model.moji[index],
-                                                      style: TextStyle(
-                                                        height: 1.1,
-                                                        fontSize: 16,
-                                                        color: Color(model
-                                                            .iroMoji[index]),
-                                                        fontWeight:
-                                                            FontWeight.normal,
-                                                      ),
-                                                      textScaleFactor: 1.0,
+                                                  // title: Padding(
+                                                  //   padding: const EdgeInsets
+                                                  //           .fromLTRB(
+                                                  //       8.0, 4.0, 4.0, 4.0),
+                                                  title: Text(
+                                                    model.moji[index],
+                                                    style: TextStyle(
+                                                      height: 1.1,
+                                                      fontSize: 16,
+                                                      color: Color(
+                                                          model.iroMoji[index]),
+                                                      fontWeight:
+                                                          FontWeight.normal,
                                                     ),
+                                                    textScaleFactor: 1.0,
                                                   ),
+                                                  //),
                                                 ),
                                                 //color: Colors.black,
                                               ),
