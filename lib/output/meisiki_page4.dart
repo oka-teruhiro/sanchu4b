@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:sanchu4b/output/meisiki_chart_page4.dart';
 
-import '../juuniun/juni_c_siou.dart';
-import '../juuniun/juni_d_sihei.dart';
-import '../juuniun/juni_e_sisui.dart';
-import '../juuniun/juni_g_juuniun.dart';
+import '../juuniun/juni_juuniun.dart';
+import '../juuniun/juni_sihei.dart';
+import '../juuniun/juni_siou.dart';
+import '../juuniun/juni_sisui.dart';
 import '../nikkan/nikkan_hinoe.dart';
 import '../nikkan/nikkan_hinoto.dart';
 import '../nikkan/nikkan_kanoe.dart';

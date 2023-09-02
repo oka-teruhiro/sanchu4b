@@ -266,17 +266,6 @@ class KyouUnseiPage extends StatelessWidget {
                                           ),
                                         ),
                                       ),
-                                      // Transform.translate(
-                                      //   offset: const Offset(290, 4),
-                                      //   child: const Text(
-                                      //     'の運勢',
-                                      //     style: TextStyle(
-                                      //       fontSize: 14,
-                                      //       color: Colors.white,
-                                      //       fontWeight: FontWeight.bold,
-                                      //     ),
-                                      //   ),
-                                      // ),
                                       Transform.translate(
                                         offset: const Offset(238, 30),
                                         child: Text(
@@ -906,16 +895,7 @@ class KyouUnseiPage extends StatelessWidget {
                                                 //width: 500.0,
                                                 height: model.takasaMoji[index],
                                                 child: ListTile(
-                                                  //shape: const RoundedRectangleBorder(
-                                                  // side: BorderSide(
-                                                  //   color: Colors,
-                                                  //  ),
-                                                  //  ),
                                                   tileColor: Colors.black,
-                                                  // title: Padding(
-                                                  //   padding: const EdgeInsets
-                                                  //           .fromLTRB(
-                                                  //       8.0, 4.0, 4.0, 4.0),
                                                   title: Text(
                                                     model.moji[index],
                                                     style: TextStyle(
@@ -928,27 +908,13 @@ class KyouUnseiPage extends StatelessWidget {
                                                     ),
                                                     textScaleFactor: 1.0,
                                                   ),
-                                                  //),
                                                 ),
-                                                //color: Colors.black,
                                               ),
                                             ],
                                           );
                                         },
                                       ),
                                     ),
-                                    // Text('（工事中）',
-                                    //     style: TextStyle(
-                                    //       color: Color(c3),
-                                    //       fontWeight: FontWeight.normal,
-                                    //       fontSize: 14,
-                                    //     )),
-                                    // Text('',
-                                    //     style: TextStyle(
-                                    //       color: Color(c2),
-                                    //       fontWeight: FontWeight.normal,
-                                    //       fontSize: 14,
-                                    //     )),
                                   ],
                                 ),
                               ),
@@ -975,22 +941,6 @@ class KyouUnseiPage extends StatelessWidget {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              // Text(
-                              //   model.nowMoji,
-                              //   style: const TextStyle(
-                              //     color: Colors.white,
-                              //     fontWeight: FontWeight.normal,
-                              //     fontSize: 18,
-                              //   ),
-                              // ),
-                              // const Text(
-                              //   'の運勢',
-                              //   style: TextStyle(
-                              //     color: Colors.white,
-                              //     fontWeight: FontWeight.normal,
-                              //     fontSize: 16,
-                              //   ),
-                              // ),
                               Text(
                                 model.kitiKyou,
                                 style: const TextStyle(
@@ -1002,76 +952,6 @@ class KyouUnseiPage extends StatelessWidget {
                             ],
                           ),
                         ),
-                        /*SizedBox(
-                          width: 40,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              const SizedBox(
-                                height: 15,
-                                child: Text(
-                                  '年',
-                                  style: TextStyle(
-                                    color: Color(c3),
-                                    fontWeight: FontWeight.normal,
-                                    fontSize: 12,
-                                  ),
-                                ),
-                              ),
-                              const SizedBox(
-                                height: 8,
-                              ),
-                              SizedBox(
-                                height: h1,
-                                child: ElevatedButton(
-                                  style: ElevatedButton.styleFrom(
-                                    backgroundColor: Colors.blue,
-                                    elevation: 0,
-                                  ),
-                                  onPressed: () {
-                                    //yearDown();
-                                    //model.dec365();
-                                  },
-                                  child: const Text(
-                                    'ー',
-                                    style: TextStyle(
-                                      color: Color(c2),
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 14,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              const SizedBox(
-                                height: 8,
-                              ),
-                              SizedBox(
-                                height: h1,
-                                child: ElevatedButton(
-                                  style: ElevatedButton.styleFrom(
-                                    backgroundColor: Colors.blue,
-                                    elevation: 16,
-                                  ),
-                                  onPressed: () {
-                                    //yearUp();
-                                    //model.inc365();
-                                  },
-                                  child: const Text(
-                                    '＋',
-                                    style: TextStyle(
-                                      color: Color(c2),
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 14,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              const SizedBox(
-                                height: 16,
-                              ),
-                            ],
-                          ),
-                        ),*/
                         SizedBox(
                           width: 40,
                           child: Column(
@@ -1169,7 +1049,6 @@ class KyouUnseiPage extends StatelessWidget {
                                     elevation: 0,
                                   ),
                                   onPressed: () {
-                                    //dateDown();
                                     model.dec();
                                   },
                                   child: const Text(
@@ -1193,7 +1072,6 @@ class KyouUnseiPage extends StatelessWidget {
                                     elevation: 0,
                                   ),
                                   onPressed: () {
-                                    //dateUp();
                                     model.inc();
                                   },
                                   child: const Text(
@@ -1502,9 +1380,6 @@ class ShapePainter5 extends CustomPainter {
     final penPink = Paint()
       ..color = Colors.purpleAccent
       ..strokeWidth = 2.0;
-    // final penPink3 = Paint()
-    //   ..color = Colors.purple[300]!
-    //   ..strokeWidth = 2.0;
 
     gogyo1 = tuhen % 2;
     if (gogyo1 == 0) {
@@ -1636,7 +1511,6 @@ class ShapePainter7 extends CustomPainter {
   ShapePainter7({required this.sigo}); // ■■■■■■■■■受け取る値を上記変数に代入
   @override
   void paint(Canvas canvas, Size size) {
-    // var center1 = const Offset(150, 130); // 表面の中心座標
     var center2 = const Offset(150, 384); // 本質の中心座標
 
     double rr1 = 18;

@@ -6,6 +6,7 @@ import 'package:sanchu4b/juuniun/juni_5_kenroku.dart';
 import 'juni_2_tyousei.dart';
 import 'juni_6_teiou.dart';
 
+// ignore: must_be_immutable
 class Siou extends StatelessWidget {
   String hasira;
   String juuniUnNiti;

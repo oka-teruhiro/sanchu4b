@@ -3,6 +3,7 @@ import 'package:sanchu4b/main.dart';
 import 'package:sanchu4b/quiz/answer_page_004.dart';
 import 'package:sanchu4b/quiz/quiz_page_005.dart';
 
+// ignore: must_be_immutable
 class QuizPage004 extends StatelessWidget {
   QuizPage004({Key? key}) : super(key: key);
 

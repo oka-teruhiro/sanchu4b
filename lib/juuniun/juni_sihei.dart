@@ -4,11 +4,12 @@ import 'package:sanchu4b/juuniun/juni_1_yuu.dart';
 import 'package:sanchu4b/juuniun/juni_3_mokuyoku.dart';
 import 'package:sanchu4b/juuniun/juni_a_bo.dart';
 
+// ignore: must_be_immutable
 class Sihei extends StatelessWidget {
-  String hasira;
-  String juuniUnNiti;
-  String juuniUnGatu;
-  String juuniUnNen;
+  final String hasira;
+  final String juuniUnNiti;
+  final String juuniUnGatu;
+  final String juuniUnNen;
 
   Sihei(
       {Key? key,

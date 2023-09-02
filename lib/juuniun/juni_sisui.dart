@@ -4,6 +4,7 @@ import 'package:sanchu4b/juuniun/juni_8_byou.dart';
 import 'package:sanchu4b/juuniun/juni_9_si.dart';
 import 'package:sanchu4b/juuniun/juni_b_zetu.dart';
 
+// ignore: must_be_immutable
 class Sisui extends StatelessWidget {
   String hasira;
   String juuniUnNiti;
