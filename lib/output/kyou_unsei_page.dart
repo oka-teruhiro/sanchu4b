@@ -20,8 +20,8 @@ class KyouUnseiPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const double h1 = 25;
-    const double h2 = 500; // 図の部分の高さ
-    const double h3 = 500; // 図の部分の高さ
+    const double h2 = 530; // 図の部分の高さ
+    const double h3 = h2 - 150; // 説明の部分の高さ
     const int c2 = -1; // 白
     const int c3 = -1407770; // ピンク
 
@@ -831,19 +831,20 @@ class KyouUnseiPage extends StatelessWidget {
                                           ),
                                         ),
                                       ),
+                                      Transform.translate(
+                                        offset: const Offset(0, h2 - 14),
+                                        child: const Text(
+                                          '■■■■■■■ この図の見方 ■■■■■■■',
+                                          style: TextStyle(
+                                            fontSize: 14,
+                                            color: Colors.greenAccent,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                      ),
                                     ],
                                   ),
                                 ],
-                              ),
-                            ),
-                            const ListTile(
-                              title: Center(
-                                child: Text('■■■■■■■ この図の見方 ■■■■■■■',
-                                    style: TextStyle(
-                                      color: Color(c2),
-                                      fontWeight: FontWeight.normal,
-                                      fontSize: 14,
-                                    )),
                               ),
                             ),
                             ListTile(
