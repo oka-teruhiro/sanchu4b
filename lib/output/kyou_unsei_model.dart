@@ -1301,7 +1301,7 @@ class KyouUnseiModel extends ChangeNotifier {
     takasaMoji[55] = 25;
     takasaMoji[56] = 25;
     takasaMoji[57] = 25;
-    takasaMoji[59] = 80;
+    takasaMoji[59] = 400;
     iroMoji[59] = iroPink1;
   }
 }

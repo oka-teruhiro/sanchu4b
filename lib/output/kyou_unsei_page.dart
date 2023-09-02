@@ -37,7 +37,7 @@ class KyouUnseiPage extends StatelessWidget {
     // double rrr = rr1 * 2; //小さい円の直系
     double rrM = 24; //文字の大きさ
     double rrM1 = 24; //日支１階２階のフォントサイズ
-    double rrM2 = 8; //日支１階２階の文字位置調整
+    double rrM2 = 6; //日支１階２階の文字位置調整
 
     // 文字のセンター位置
     // var centa1 = Offset((150 - rrr / 2), (130 - rrr / 2)); // 日干図形の中心座標
@@ -66,32 +66,39 @@ class KyouUnseiPage extends StatelessWidget {
     // 日干の小さい円の文字の中心座標（１階から３階まで）
     final centaG0M1 = centa2 + Offset(r1 * cos(radiG0), r1 * sin(radiG0));
     final centaG0M2 = centa2 + Offset(r2 * cos(radiG0), r2 * sin(radiG0));
-    final centaG0M3 = centa2 + Offset(r3 * cos(radiG0), r3 * sin(radiG0));
+    final centaG0M3 =
+        centa2 + Offset(r3 * cos(radiG0), r3 * sin(radiG0) - rrM2);
     final centaG1M1 = centa2 + Offset(r1 * cos(tadiG1), r1 * sin(tadiG1));
     final centaG1M2 = centa2 + Offset(r2 * cos(tadiG1), r2 * sin(tadiG1));
-    final centaG1M3 = centa2 + Offset(r3 * cos(tadiG1), r3 * sin(tadiG1));
+    final centaG1M3 =
+        centa2 + Offset(r3 * cos(tadiG1), r3 * sin(tadiG1) - rrM2);
     final centaG2M1 = centa2 + Offset(r1 * cos(radiG2), r1 * sin(radiG2));
     final centaG2M2 = centa2 + Offset(r2 * cos(radiG2), r2 * sin(radiG2));
-    final centaG2M3 = centa2 + Offset(r3 * cos(radiG2), r3 * sin(radiG2));
+    final centaG2M3 =
+        centa2 + Offset(r3 * cos(radiG2), r3 * sin(radiG2) - rrM2);
     final centaG3M1 = centa2 + Offset(r1 * cos(radiG3), r1 * sin(radiG3));
     final centaG3M2 = centa2 + Offset(r2 * cos(radiG3), r2 * sin(radiG3));
-    final centaG3M3 = centa2 + Offset(r3 * cos(radiG3), r3 * sin(radiG3));
+    final centaG3M3 =
+        centa2 + Offset(r3 * cos(radiG3), r3 * sin(radiG3) - rrM2);
     final centaG4M1 = centa2 + Offset(r1 * cos(radiG4), r1 * sin(radiG4));
     final centaG4M2 = centa2 + Offset(r2 * cos(radiG4), r2 * sin(radiG4));
-    final centaG4M3 = centa2 + Offset(r3 * cos(radiG4), r3 * sin(radiG4));
+    final centaG4M3 =
+        centa2 + Offset(r3 * cos(radiG4), r3 * sin(radiG4) - rrM2);
     // 日支の３階の円の文字座標
-    final centaS0 = centa4 + Offset(r4 * cos(radiS0), r4 * sin(radiS0));
-    final centaS1 = centa4 + Offset(r4 * cos(radiS1), r4 * sin(radiS1));
-    final centaS2 = centa4 + Offset(r4 * cos(radiS2), r4 * sin(radiS2));
-    final centaS3 = centa4 + Offset(r4 * cos(radiS3), r4 * sin(radiS3));
-    final centaS4 = centa4 + Offset(r4 * cos(radiS4), r4 * sin(radiS4));
-    final centaS5 = centa4 + Offset(r4 * cos(radiS5), r4 * sin(radiS5));
-    final centaS6 = centa4 + Offset(r4 * cos(radiS6), r4 * sin(radiS6));
-    final centaS7 = centa4 + Offset(r4 * cos(radiS7), r4 * sin(radiS7));
-    final centaS8 = centa4 + Offset(r4 * cos(radiS8), r4 * sin(radiS8));
-    final centaS9 = centa4 + Offset(r4 * cos(radiS9), r4 * sin(radiS9));
-    final centaS10 = centa4 + Offset(r4 * cos(radiS10), r4 * sin(radiS10));
-    final centaS11 = centa4 + Offset(r4 * cos(radiS11), r4 * sin(radiS11));
+    final centaS0 = centa4 + Offset(r4 * cos(radiS0), r4 * sin(radiS0) - rrM2);
+    final centaS1 = centa4 + Offset(r4 * cos(radiS1), r4 * sin(radiS1) - rrM2);
+    final centaS2 = centa4 + Offset(r4 * cos(radiS2), r4 * sin(radiS2) - rrM2);
+    final centaS3 = centa4 + Offset(r4 * cos(radiS3), r4 * sin(radiS3) - rrM2);
+    final centaS4 = centa4 + Offset(r4 * cos(radiS4), r4 * sin(radiS4) - rrM2);
+    final centaS5 = centa4 + Offset(r4 * cos(radiS5), r4 * sin(radiS5) - rrM2);
+    final centaS6 = centa4 + Offset(r4 * cos(radiS6), r4 * sin(radiS6) - rrM2);
+    final centaS7 = centa4 + Offset(r4 * cos(radiS7), r4 * sin(radiS7) - rrM2);
+    final centaS8 = centa4 + Offset(r4 * cos(radiS8), r4 * sin(radiS8) - rrM2);
+    final centaS9 = centa4 + Offset(r4 * cos(radiS9), r4 * sin(radiS9) - rrM2);
+    final centaS10 =
+        centa4 + Offset(r4 * cos(radiS10), r4 * sin(radiS10) - rrM2);
+    final centaS11 =
+        centa4 + Offset(r4 * cos(radiS11), r4 * sin(radiS11) - rrM2);
     // 日支の２階の円の文字座標
     final centaS0a = centa4 + Offset(r5 * cos(radiS0), r5 * sin(radiS0) - rrM2);
     final centaS1a = centa4 + Offset(r5 * cos(radiS1), r5 * sin(radiS1) - rrM2);
@@ -286,51 +293,61 @@ class KyouUnseiPage extends StatelessWidget {
                                       // 木
                                       Transform.translate(
                                         offset: centaG0M3,
-                                        child: SizedBox(
-                                          height: rrM,
-                                          width: rrM,
-                                          child: Image.asset(
-                                              'images/tuuhenbosi/g0.png'),
+                                        child: Text(
+                                          '木',
+                                          style: TextStyle(
+                                            fontSize: rrM1,
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.normal,
+                                          ),
                                         ),
                                       ),
                                       // 火
                                       Transform.translate(
                                         offset: centaG1M3,
-                                        child: SizedBox(
-                                          height: rrM,
-                                          width: rrM,
-                                          child: Image.asset(
-                                              'images/tuuhenbosi/g1.png'),
+                                        child: Text(
+                                          '火',
+                                          style: TextStyle(
+                                            fontSize: rrM1,
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.normal,
+                                          ),
                                         ),
                                       ),
                                       // 土
                                       Transform.translate(
                                         offset: centaG2M3,
-                                        child: SizedBox(
-                                          height: rrM,
-                                          width: rrM,
-                                          child: Image.asset(
-                                              'images/tuuhenbosi/g2.png'),
+                                        child: Text(
+                                          '土',
+                                          style: TextStyle(
+                                            fontSize: rrM1,
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.normal,
+                                          ),
                                         ),
                                       ),
                                       // 金
                                       Transform.translate(
                                         offset: centaG3M3,
-                                        child: SizedBox(
-                                          height: rrM,
-                                          width: rrM,
-                                          child: Image.asset(
-                                              'images/tuuhenbosi/g3.png'),
+                                        child: Text(
+                                          '金',
+                                          style: TextStyle(
+                                            fontSize: rrM1,
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.normal,
+                                          ),
                                         ),
                                       ),
                                       // 水
                                       Transform.translate(
                                         offset: centaG4M3,
-                                        child: SizedBox(
-                                          height: rrM,
-                                          width: rrM,
-                                          child: Image.asset(
-                                              'images/tuuhenbosi/g4.png'),
+                                        child: Text(
+                                          '水',
+                                          style: TextStyle(
+                                            fontSize: rrM1,
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.normal,
+                                          ),
                                         ),
                                       ),
 
@@ -421,121 +438,145 @@ class KyouUnseiPage extends StatelessWidget {
                                       Transform.translate(
                                         // 子
                                         offset: centaS0,
-                                        child: SizedBox(
-                                          height: rrM,
-                                          width: rrM,
-                                          child: Image.asset(
-                                              'images/tuuhenbosi/s0.png'),
+                                        child: Text(
+                                          '子',
+                                          style: TextStyle(
+                                            fontSize: rrM1,
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.normal,
+                                          ),
                                         ),
                                       ),
                                       Transform.translate(
                                         // 丑
                                         offset: centaS1,
-                                        child: SizedBox(
-                                          height: rrM,
-                                          width: rrM,
-                                          child: Image.asset(
-                                              'images/tuuhenbosi/s1.png'),
+                                        child: Text(
+                                          '丑',
+                                          style: TextStyle(
+                                            fontSize: rrM1,
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.normal,
+                                          ),
                                         ),
                                       ),
                                       Transform.translate(
                                         // 寅
                                         offset: centaS2,
-                                        child: SizedBox(
-                                          height: rrM,
-                                          width: rrM,
-                                          child: Image.asset(
-                                              'images/tuuhenbosi/s2.png'),
+                                        child: Text(
+                                          '寅',
+                                          style: TextStyle(
+                                            fontSize: rrM1,
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.normal,
+                                          ),
                                         ),
                                       ),
                                       Transform.translate(
                                         // 卯
                                         offset: centaS3,
-                                        child: SizedBox(
-                                          height: rrM,
-                                          width: rrM,
-                                          child: Image.asset(
-                                              'images/tuuhenbosi/s3.png'),
+                                        child: Text(
+                                          '卯',
+                                          style: TextStyle(
+                                            fontSize: rrM1,
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.normal,
+                                          ),
                                         ),
                                       ),
                                       Transform.translate(
                                         // 辰
                                         offset: centaS4,
-                                        child: SizedBox(
-                                          height: rrM,
-                                          width: rrM,
-                                          child: Image.asset(
-                                              'images/tuuhenbosi/s4.png'),
+                                        child: Text(
+                                          '辰',
+                                          style: TextStyle(
+                                            fontSize: rrM1,
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.normal,
+                                          ),
                                         ),
                                       ),
                                       Transform.translate(
                                         // 巳
                                         offset: centaS5,
-                                        child: SizedBox(
-                                          height: rrM,
-                                          width: rrM,
-                                          child: Image.asset(
-                                              'images/tuuhenbosi/s5.png'),
+                                        child: Text(
+                                          '巳',
+                                          style: TextStyle(
+                                            fontSize: rrM1,
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.normal,
+                                          ),
                                         ),
                                       ),
                                       Transform.translate(
                                         // 午
                                         offset: centaS6,
-                                        child: SizedBox(
-                                          height: rrM,
-                                          width: rrM,
-                                          child: Image.asset(
-                                              'images/tuuhenbosi/s6.png'),
+                                        child: Text(
+                                          '午',
+                                          style: TextStyle(
+                                            fontSize: rrM1,
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.normal,
+                                          ),
                                         ),
                                       ),
                                       Transform.translate(
                                         // 未
                                         offset: centaS7,
-                                        child: SizedBox(
-                                          height: rrM,
-                                          width: rrM,
-                                          child: Image.asset(
-                                              'images/tuuhenbosi/s7.png'),
+                                        child: Text(
+                                          '未',
+                                          style: TextStyle(
+                                            fontSize: rrM1,
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.normal,
+                                          ),
                                         ),
                                       ),
                                       Transform.translate(
                                         // 申
                                         offset: centaS8,
-                                        child: SizedBox(
-                                          height: rrM,
-                                          width: rrM,
-                                          child: Image.asset(
-                                              'images/tuuhenbosi/s8.png'),
+                                        child: Text(
+                                          '申',
+                                          style: TextStyle(
+                                            fontSize: rrM1,
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.normal,
+                                          ),
                                         ),
                                       ),
                                       Transform.translate(
                                         // 酉
                                         offset: centaS9,
-                                        child: SizedBox(
-                                          height: rrM,
-                                          width: rrM,
-                                          child: Image.asset(
-                                              'images/tuuhenbosi/s9.png'),
+                                        child: Text(
+                                          '酉',
+                                          style: TextStyle(
+                                            fontSize: rrM1,
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.normal,
+                                          ),
                                         ),
                                       ),
                                       Transform.translate(
                                         // 戌
                                         offset: centaS10,
-                                        child: SizedBox(
-                                          height: rrM,
-                                          width: rrM,
-                                          child: Image.asset(
-                                              'images/tuuhenbosi/s10.png'),
+                                        child: Text(
+                                          '戌',
+                                          style: TextStyle(
+                                            fontSize: rrM1,
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.normal,
+                                          ),
                                         ),
                                       ),
                                       Transform.translate(
                                         // 亥
                                         offset: centaS11,
-                                        child: SizedBox(
-                                          height: rrM,
-                                          width: rrM,
-                                          child: Image.asset(
-                                              'images/tuuhenbosi/s11.png'),
+                                        child: Text(
+                                          '亥',
+                                          style: TextStyle(
+                                            fontSize: rrM1,
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.normal,
+                                          ),
                                         ),
                                       ),
 
