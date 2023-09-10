@@ -47,7 +47,7 @@ class Update4d extends StatelessWidget {
       backgroundColor: Colors.black,
       appBar: AppBar(
         title: const Text(
-          '第4.4版（ver.4.4.0)',
+          '第4.4版（ver.4.4.2)',
           style: TextStyle(
             color: Colors.pinkAccent,
             fontWeight: FontWeight.bold,
