@@ -4,7 +4,7 @@ description: 天運三柱推命
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
 
-version: 4.4.2+16
+version: 4.4.4+17
 
 environment:
   sdk: ">=2.17.3 <3.0.0"
@@ -106,6 +106,13 @@ flutter:
     - images/tuuhenbosi/t7.png
     - images/tuuhenbosi/t8.png
     - images/tuuhenbosi/t9.png
+    - images/tuuhenbosi/通変星概要1.jpg
+    - images/tuuhenbosi/通変星概要2.jpg
+    - images/tuuhenbosi/通変星概要3.jpg
+    - images/tuuhenbosi/通変星概要4.jpg
+    - images/tuuhenbosi/通変星概要5.jpg
+    - images/tuuhenbosi/通変星概要6.jpg
+    - images/tuuhenbosi/通変星概要7.jpg
     - images/quiz/Q001/A0010.png
     - images/quiz/Q001/A0011.png
     - images/quiz/Q001/A0012.png

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sanchu4b/output/meisiki_chart_page4.dart';
+import 'package:sanchu4b/tuuhenbosi/tuhen_kaisetu.dart';
 
 import '../juuniun/juni_juuniun.dart';
 import '../juuniun/juni_sihei.dart';
@@ -1072,26 +1073,42 @@ class _MeisikiPage4State extends State<MeisikiPage4> {
                                               borderRadius:
                                                   BorderRadius.circular(12),
                                               border: Border.all(
-                                                color: Colors.tealAccent,
-                                                width: 1,
+                                                color: Colors.pinkAccent,
+                                                width: 2,
                                               )),
                                           child: Center(
                                             child: Column(
                                               mainAxisAlignment:
                                                   MainAxisAlignment.center,
                                               children: [
+                                                const SizedBox(
+                                                  height: 10,
+                                                ),
                                                 Text(
                                                   '通',
                                                   style: TextStyle(
                                                     fontSize: fs - 2,
                                                     color: Colors.cyanAccent,
+                                                    height: 0.1,
                                                   ),
                                                 ),
-                                                Text(
-                                                  '変',
-                                                  style: TextStyle(
-                                                    fontSize: fs - 2,
-                                                    color: Colors.cyanAccent,
+                                                TextButton(
+                                                  onPressed: () {
+                                                    Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            const TuhenKaisetu(),
+                                                      ),
+                                                    );
+                                                  },
+                                                  child: Text(
+                                                    '変',
+                                                    style: TextStyle(
+                                                      fontSize: fs - 2,
+                                                      color: Colors.cyanAccent,
+                                                      height: 0.1,
+                                                    ),
                                                   ),
                                                 ),
                                                 Text(
@@ -1099,6 +1116,7 @@ class _MeisikiPage4State extends State<MeisikiPage4> {
                                                   style: TextStyle(
                                                     fontSize: fs - 2,
                                                     color: Colors.cyanAccent,
+                                                    height: 0.1,
                                                   ),
                                                 ),
                                               ],
@@ -1820,20 +1838,21 @@ class _MeisikiPage4State extends State<MeisikiPage4> {
                                       width: w2,
                                       child: Container(
                                         decoration: BoxDecoration(
-                                            color: Colors.white24,
+                                            color: Colors.blue,
                                             borderRadius:
                                                 BorderRadius.circular(12),
                                             border: Border.all(
-                                              color: Colors.pinkAccent,
-                                              width: 2,
+                                              color: Colors.black,
+                                              width: 1,
                                             )),
                                         child: Center(
                                           child: TextButton(
                                             child: Text(
                                               'チャート', //チャート
                                               style: TextStyle(
-                                                color: Colors.cyanAccent,
+                                                color: Colors.white,
                                                 fontSize: fs - 10,
+                                                fontWeight: FontWeight.bold,
                                               ),
                                             ),
                                             onPressed: () {
