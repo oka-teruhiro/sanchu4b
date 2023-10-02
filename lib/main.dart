@@ -265,7 +265,7 @@ class _MyHomePageState extends State<MyHomePage> {
       child: Scaffold(
         backgroundColor: Colors.black,
         appBar: AppBar(
-          title: const Text('天運三柱推命 ver.4.4.4',
+          title: const Text('天運三柱推命 ver.4.4.5',
               style: TextStyle(
                 color: Colors.pinkAccent,
                 fontWeight: FontWeight.bold,
@@ -499,7 +499,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   },
                 ),
               ),
-              Expanded(flex: 2, child: Image.asset('images/main/gogyou1.png')),
+              Expanded(flex: 2, child: Image.asset('images/main/gogyou3.jpg')),
             ],
           ),
         ),
