@@ -4,7 +4,7 @@ description: 天運三柱推命
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
 
-version: 4.4.7+17
+version: 4.4.8+17
 
 environment:
   sdk: ">=2.17.3 <3.0.0"
@@ -22,7 +22,7 @@ dependencies:
 
   cupertino_icons: ^1.0.6
   provider: ^6.0.5
-  shared_preferences: ^2.2.1
+  shared_preferences: ^2.2.2
   flutter_lints: ^2.0.3
 
 
@@ -34,7 +34,7 @@ dev_dependencies:
 
 #アプリアイコンを作成するためのコード・ここから（2022.12.25)
   #flutter_launcher_icons: ^0.11.0
-  flutter_native_splash: ^2.3.2
+  flutter_native_splash: ^2.3.3
 
 flutter_icons:
   android: "launcher_icon"
@@ -127,6 +127,27 @@ flutter:
     - images/tuuhenbosi/通変星算出3.jpg
     - images/tuuhenbosi/通変星算出4.jpg
     - images/tuuhenbosi/通変星算出5.jpg
+    - images/tuuhenbosi/通変星1.jpg
+    - images/tuuhenbosi/通変星2.jpg
+    - images/tuuhenbosi/通変星3a.jpg
+    - images/tuuhenbosi/通変星3b.jpg
+    - images/tuuhenbosi/通変星4.jpg
+    - images/tuuhenbosi/通変星5.jpg
+    - images/tuuhenbosi/通変星6.jpg
+    - images/tuuhenbosi/通変星7.jpg
+    - images/tuuhenbosi/通変星8.jpg
+    - images/tuuhenbosi/通変星9.jpg
+    - images/tuuhenbosi/通変星10.jpg
+    - images/tuuhenbosi/通変星11.jpg
+    - images/tuuhenbosi/通変星12.jpg
+    - images/tuuhenbosi/通変星13.jpg
+    - images/tuuhenbosi/通変星14.jpg
+    - images/tuuhenbosi/通変星15.jpg
+    - images/tuuhenbosi/通変星16.jpg
+    - images/tuuhenbosi/通変星17.jpg
+    - images/tuuhenbosi/通変星18.jpg
+    - images/tuuhenbosi/通変星19.jpg
+    - images/tuuhenbosi/通変星20.jpg
     - images/quiz/Q001/A0010.png
     - images/quiz/Q001/A0011.png
     - images/quiz/Q001/A0012.png
