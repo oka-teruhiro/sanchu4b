@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:sanchu4b/tuuhenbosi/tuhen_kaisetu1.dart';
 
-class TuhenKaisetu extends StatelessWidget {
-  const TuhenKaisetu({Key? key}) : super(key: key);
+class TuhenKaisetu1 extends StatelessWidget {
+  const TuhenKaisetu1({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -311,9 +310,7 @@ class TuhenKaisetu extends StatelessWidget {
       0, //150
     ];
     List<String> moji = [
-      '　本内容は、自分でも鑑定してみたいという人向けの内容です。理解を深めてい'
-          'ただくために、表現が、少し上から目線なところがあります。また、今の時'
-          '代に合っていないところがあります。ご了承ください。', //1
+      '　次のアップデートまでお待ちください', //1
       '　通変星（つうへんぼし）は、まず五つのグループに分類することができます。', //2
       '　そしてそれぞれのグループを家に例えると、１階と２階で構成されています。', //3
       '　まず第１のグループは、比劫（ひごう）グループです。２階は、比肩（ひけん）、'
@@ -839,7 +836,7 @@ class TuhenKaisetu extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.white12,
           title: const Text(
-            '「通変星」の詳しい解説(総論)',
+            '「通変星」の詳しい解説(各論)',
             style: TextStyle(
               color: Colors.pinkAccent,
               fontWeight: FontWeight.bold,
@@ -851,7 +848,7 @@ class TuhenKaisetu extends StatelessWidget {
             Expanded(
               //height: 400,
               child: ListView.builder(
-                itemCount: 144,
+                itemCount: 1,
                 itemBuilder: (BuildContext context, int index) {
                   return Column(
                     children: [
@@ -888,23 +885,19 @@ class TuhenKaisetu extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Padding(
+                /*Padding(
                   padding: const EdgeInsets.all(16.0),
                   child: SizedBox(
                     width: 90,
                     height: 36,
                     child: ElevatedButton(
-                      child: const Text('各論へ'),
+                      child: const Text('続く'),
                       onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const TuhenKaisetu1(),
-                            ));
+                        Navigator.pop(context);
                       },
                     ),
                   ),
-                ),
+                ),*/
                 Padding(
                   padding: const EdgeInsets.all(16.0),
                   child: SizedBox(

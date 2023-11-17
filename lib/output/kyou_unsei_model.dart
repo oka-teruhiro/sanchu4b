@@ -1043,7 +1043,7 @@ class KyouUnseiModel extends ChangeNotifier {
       moji[38] = '';
       moji[39] = '';
 
-      moji[40] = '■吉ポイントは、プラス10です。';
+      moji[40] = '■吉ポイントは、マイナス10です。';
       takasaMoji[9] = 40;
       takasaMoji[10] = 25;
       takasaMoji[11] = 25;
@@ -1078,7 +1078,7 @@ class KyouUnseiModel extends ChangeNotifier {
 
       takasaMoji[40] = 80;
 
-      kitiPointNikann = 10;
+      kitiPointNikann = -10;
     } else if (nowTuhen == '印綬') {
       moji[9] = '印綬　の日は、次の星が巡ってきます。';
       moji[10] = '・名誉の星';

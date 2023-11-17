@@ -10,7 +10,7 @@ import 'package:sanchu4b/osirase/update4a.dart';
 import 'package:sanchu4b/osirase/update4b.dart';
 import 'package:sanchu4b/osirase/update4c.dart';
 import 'package:sanchu4b/osirase/update4d.dart';
-import 'package:sanchu4b/tuuhenbosi/tuhen_kaisetu.dart';
+import 'package:sanchu4b/osirase/update4e.dart';
 
 class Update extends StatelessWidget {
   const Update({Key? key}) : super(key: key);
@@ -36,14 +36,14 @@ class Update extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: ListTile(
-                    title: const Text('第4.5版　通変星の解説を追加しました。'
-                        '（工事中）'),
+                    title: const Text('第4.5版　通変星の解説(総論)を追加しました。'
+                        '（2023.11.30更新）'),
                     trailing: const Icon(Icons.navigate_next),
                     onTap: () {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const TuhenKaisetu(),
+                            builder: (context) => const Update4e(),
                           ));
                     },
                   ),

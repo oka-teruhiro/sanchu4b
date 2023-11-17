@@ -4,7 +4,7 @@ description: 天運三柱推命
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
 
-version: 4.4.8+17
+version: 4.5.0+17
 
 environment:
   sdk: ">=2.17.3 <3.0.0"
@@ -75,6 +75,7 @@ flutter:
     - images/main/取説4d.jpg
     - images/main/取説4e.jpg
     - images/main/取説4f.jpg
+    - images/main/取説4g.jpg
     - images/nikkan/甲_大樹.jpg
     - images/nikkan/甲_木陰.jpg
     - images/nikkan/丁_キャンドル.jpg
