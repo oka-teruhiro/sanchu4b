@@ -156,7 +156,7 @@ class TuhenKaisetu extends StatelessWidget {
       'images/0.jpg', //147
       'images/0.jpg', //148
       'images/0.jpg', //149
-      'images/0.jpg', //150
+      'images/0.jpg', //150 0
     ];
     List<double> takasaZu = [
       0, //1
