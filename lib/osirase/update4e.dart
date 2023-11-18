@@ -38,7 +38,7 @@ class Update4e extends StatelessWidget {
       backgroundColor: Colors.black,
       appBar: AppBar(
         title: const Text(
-          '第4.5版（ver.4.5.0)',
+          '第4.5版（ver.4.5.1)',
           style: TextStyle(
             color: Colors.pinkAccent,
             fontWeight: FontWeight.bold,
