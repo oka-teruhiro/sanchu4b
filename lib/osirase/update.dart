@@ -13,7 +13,7 @@ import 'package:sanchu4b/osirase/update4d.dart';
 import 'package:sanchu4b/osirase/update4e.dart';
 
 class Update extends StatelessWidget {
-  const Update({Key? key}) : super(key: key);
+  const Update({super.key});
 
   @override
   Widget build(BuildContext context) {

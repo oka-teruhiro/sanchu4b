@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class TuhenKaisetu1 extends StatelessWidget {
-  const TuhenKaisetu1({Key? key}) : super(key: key);
+  const TuhenKaisetu1({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -830,7 +830,8 @@ class TuhenKaisetu1 extends StatelessWidget {
     ];
 
     return MediaQuery(
-      data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
+      data: MediaQuery.of(context)
+          .copyWith(textScaler: const TextScaler.linear(1.0)),
       child: Scaffold(
         backgroundColor: Colors.black,
         appBar: AppBar(

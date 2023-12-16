@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class TentiTokugou extends StatelessWidget {
-  const TentiTokugou({Key? key}) : super(key: key);
+  const TentiTokugou({super.key});
 
   @override
   Widget build(BuildContext context) {

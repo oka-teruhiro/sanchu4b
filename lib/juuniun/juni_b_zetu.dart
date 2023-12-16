@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Zetu extends StatelessWidget {
-  const Zetu({Key? key}) : super(key: key);
+  const Zetu({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +10,7 @@ class Zetu extends StatelessWidget {
       appBar: AppBar(
         title: const Text(
           '十二運：絶（ぜつ）',
-          textScaleFactor: 1.0,
+          //textScaleFactor: 1.0,
           style: TextStyle(
             color: Colors.pinkAccent,
             fontWeight: FontWeight.bold,

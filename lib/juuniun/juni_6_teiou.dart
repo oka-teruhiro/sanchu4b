@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Teiou extends StatelessWidget {
-  const Teiou({Key? key}) : super(key: key);
+  const Teiou({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +10,7 @@ class Teiou extends StatelessWidget {
       appBar: AppBar(
         title: const Text(
           '十二運：帝旺（ていおう）',
-          textScaleFactor: 1.0,
+          //textScaleFactor: 1.0,
           style: TextStyle(
             color: Colors.pinkAccent,
             fontWeight: FontWeight.bold,

@@ -16,9 +16,9 @@ import 'meisiki_page4.dart';
 
 class Output4 extends StatefulWidget {
   const Output4({
-    Key? key,
+    super.key,
     required this.titleSeinengappi,
-  }) : super(key: key);
+  });
 
   final String titleSeinengappi;
 
@@ -245,7 +245,8 @@ class _Output4State extends State<Output4> {
     //■■　画面を生成する　■■
 
     return MediaQuery(
-      data: MediaQuery.of(context).copyWith(textScaleFactor: 1.1),
+      data: MediaQuery.of(context)
+          .copyWith(textScaler: const TextScaler.linear(1.1)),
       child: Scaffold(
         backgroundColor: Colors.black,
         appBar: AppBar(

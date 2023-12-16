@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'consept.dart';
 
 class Update3a extends StatelessWidget {
-  const Update3a({Key? key}) : super(key: key);
+  const Update3a({super.key});
 
   @override
   Widget build(BuildContext context) {

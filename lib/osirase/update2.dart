@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Update2 extends StatefulWidget {
-  const Update2({Key? key}) : super(key: key);
+  const Update2({super.key});
 
   @override
   State<Update2> createState() => _Update2State();

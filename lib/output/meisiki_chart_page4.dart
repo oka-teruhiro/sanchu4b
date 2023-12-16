@@ -9,11 +9,11 @@ class MeisikiChartPage4 extends StatefulWidget {
   final int seigatuInt;
   final int seinitiInt;
   const MeisikiChartPage4({
-    Key? key,
+    super.key,
     required this.seinenInt,
     required this.seigatuInt,
     required this.seinitiInt,
-  }) : super(key: key);
+  });
 
   @override
   State<MeisikiChartPage4> createState() => _MeisikiChartPage4State();
@@ -822,7 +822,8 @@ class _MeisikiChartPage4State extends State<MeisikiChartPage4> {
     // 本質の計算
 
     return MediaQuery(
-      data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
+      data: MediaQuery.of(context)
+          .copyWith(textScaler: const TextScaler.linear(1.0)),
       child: Scaffold(
         backgroundColor: Colors.black,
         appBar: AppBar(

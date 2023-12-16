@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Byou extends StatelessWidget {
-  const Byou({Key? key}) : super(key: key);
+  const Byou({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +10,7 @@ class Byou extends StatelessWidget {
       appBar: AppBar(
         title: const Text(
           '十二運：病（びょう）',
-          textScaleFactor: 1.0,
+          //textScaleFactor: 1.0,
           style: TextStyle(
             color: Colors.pinkAccent,
             fontWeight: FontWeight.bold,

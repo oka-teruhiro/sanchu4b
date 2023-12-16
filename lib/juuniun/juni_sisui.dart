@@ -12,12 +12,11 @@ class Sisui extends StatelessWidget {
   String juuniUnNen;
 
   Sisui(
-      {Key? key,
+      {super.key,
       required this.hasira,
       required this.juuniUnNiti,
       required this.juuniUnGatu,
-      required this.juuniUnNen})
-      : super(key: key);
+      required this.juuniUnNen});
 
   String hasiraBun = '';
   String juuniUn = '';
@@ -42,7 +41,7 @@ class Sisui extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           '十二運：$juuniUn・四衰（しすい）',
-          textScaleFactor: 1.0,
+          //textScaleFactor: 1.0,
           style: const TextStyle(
             color: Colors.pinkAccent,
             fontWeight: FontWeight.bold,

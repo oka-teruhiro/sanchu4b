@@ -5,7 +5,7 @@ import 'package:sanchu4b/quiz/quiz_page_007.dart';
 
 // ignore: must_be_immutable
 class QuizPage006 extends StatelessWidget {
-  QuizPage006({Key? key}) : super(key: key);
+  QuizPage006({super.key});
 
   bool quizLast = false;
   int seikai = 1;

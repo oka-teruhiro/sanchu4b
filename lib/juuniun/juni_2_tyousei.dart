@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Tyousei extends StatelessWidget {
-  const Tyousei({Key? key}) : super(key: key);
+  const Tyousei({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +10,7 @@ class Tyousei extends StatelessWidget {
       appBar: AppBar(
         title: const Text(
           '十二運：長生（ちょうせい）',
-          textScaleFactor: 1.0,
+          //textScaleFactor: 1.0,
           style: TextStyle(
             color: Colors.pinkAccent,
             fontWeight: FontWeight.bold,

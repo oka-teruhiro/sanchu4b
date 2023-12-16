@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Update4a extends StatelessWidget {
-  const Update4a({Key? key}) : super(key: key);
+  const Update4a({super.key});
 
   @override
   Widget build(BuildContext context) {

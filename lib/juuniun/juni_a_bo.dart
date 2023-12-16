@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Bo extends StatelessWidget {
-  const Bo({Key? key}) : super(key: key);
+  const Bo({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +10,7 @@ class Bo extends StatelessWidget {
       appBar: AppBar(
         title: const Text(
           '十二運：墓（ぼ）',
-          textScaleFactor: 1.0,
+          //textScaleFactor: 1.0,
           style: TextStyle(
             color: Colors.pinkAccent,
             fontWeight: FontWeight.bold,

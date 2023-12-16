@@ -3,7 +3,7 @@ import 'package:sanchu4b/main.dart';
 import 'package:sanchu4b/quiz/quiz_page_006.dart';
 
 class AnswerPage005 extends StatelessWidget {
-  const AnswerPage005({Key? key}) : super(key: key);
+  const AnswerPage005({super.key});
 
   final bool quizLast = false;
 

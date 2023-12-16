@@ -32,7 +32,7 @@ class MeisikiPage4 extends StatefulWidget {
   final int setuirihun; //節入り分
   final int setuirinitisuu; //節入り日からの日数（節入り日は第1日目）
   const MeisikiPage4({
-    Key? key,
+    super.key,
     required this.nenchu,
     required this.gechu,
     required this.nichu,
@@ -45,7 +45,7 @@ class MeisikiPage4 extends StatefulWidget {
     required this.setuiriji,
     required this.setuirihun,
     required this.setuirinitisuu,
-  }) : super(key: key);
+  });
 
   @override
   State<MeisikiPage4> createState() => _MeisikiPage4State();
@@ -240,7 +240,8 @@ class _MeisikiPage4State extends State<MeisikiPage4> {
         nitiKanNo * 12 + nenSiNo, nitiKanNo * 12 + nenSiNo + 1);
 
     return MediaQuery(
-      data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
+      data: MediaQuery.of(context)
+          .copyWith(textScaler: const TextScaler.linear(1.0)),
       child: Scaffold(
         appBar: AppBar(
           title: Text(
@@ -1948,7 +1949,8 @@ class _MeisikiPage4State extends State<MeisikiPage4> {
         context: context,
         builder: (BuildContext context) {
           return MediaQuery(
-            data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
+            data: MediaQuery.of(context)
+                .copyWith(textScaler: const TextScaler.linear(1.0)),
             child: Container(
               color: Colors.blue,
               height: 200,

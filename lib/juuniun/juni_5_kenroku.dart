@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Kenroku extends StatelessWidget {
-  const Kenroku({Key? key}) : super(key: key);
+  const Kenroku({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +10,7 @@ class Kenroku extends StatelessWidget {
       appBar: AppBar(
         title: const Text(
           '十二運：建禄（けんろく）',
-          textScaleFactor: 1.0,
+          //textScaleFactor: 1.0,
           style: TextStyle(
             color: Colors.pinkAccent,
             fontWeight: FontWeight.bold,

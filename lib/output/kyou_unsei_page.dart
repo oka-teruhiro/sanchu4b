@@ -11,11 +11,11 @@ class KyouUnseiPage extends StatelessWidget {
   final int seinitiInt;
 
   const KyouUnseiPage({
-    Key? key,
+    super.key,
     required this.seinenInt,
     required this.seigatuInt,
     required this.seinitiInt,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -131,7 +131,8 @@ class KyouUnseiPage extends StatelessWidget {
         centa4 + Offset(r6 * cos(radiS11), r6 * sin(radiS11) - rrM2);
 
     return MediaQuery(
-      data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
+      data: MediaQuery.of(context)
+          .copyWith(textScaler: const TextScaler.linear(1.0)),
       child: ChangeNotifierProvider<KyouUnseiModel>(
         create: (_) => KyouUnseiModel(
             seinenInt: seinenInt,
@@ -140,7 +141,8 @@ class KyouUnseiPage extends StatelessWidget {
           ..init(),
         child: Consumer<KyouUnseiModel>(builder: (context, model, child) {
           return MediaQuery(
-            data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
+            data: MediaQuery.of(context)
+                .copyWith(textScaler: const TextScaler.linear(1.0)),
             child: Scaffold(
               backgroundColor: Colors.black,
               appBar: AppBar(
@@ -906,7 +908,7 @@ class KyouUnseiPage extends StatelessWidget {
                                                       fontWeight:
                                                           FontWeight.normal,
                                                     ),
-                                                    textScaleFactor: 1.0,
+                                                    //textScaleFactor: 1.0,
                                                   ),
                                                 ),
                                               ),

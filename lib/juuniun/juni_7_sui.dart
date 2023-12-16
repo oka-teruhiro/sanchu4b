@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Sui extends StatelessWidget {
-  const Sui({Key? key}) : super(key: key);
+  const Sui({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +10,7 @@ class Sui extends StatelessWidget {
       appBar: AppBar(
         title: const Text(
           '十二運：衰（すい）',
-          textScaleFactor: 1.0,
+          //textScaleFactor: 1.0,
           style: TextStyle(
             color: Colors.pinkAccent,
             fontWeight: FontWeight.bold,

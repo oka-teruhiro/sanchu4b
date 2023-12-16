@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sanchu4b/tuuhenbosi/tuhen_kaisetu1.dart';
 
 class TuhenKaisetu extends StatelessWidget {
-  const TuhenKaisetu({Key? key}) : super(key: key);
+  const TuhenKaisetu({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -840,7 +840,8 @@ class TuhenKaisetu extends StatelessWidget {
     ];
 
     return MediaQuery(
-      data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
+      data: MediaQuery.of(context)
+          .copyWith(textScaler: const TextScaler.linear(1.0)),
       child: Scaffold(
         backgroundColor: Colors.black,
         appBar: AppBar(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class NikkanKanoto extends StatelessWidget {
-  const NikkanKanoto({Key? key}) : super(key: key);
+  const NikkanKanoto({super.key});
 
   @override
   Widget build(BuildContext context) {
