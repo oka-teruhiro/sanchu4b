@@ -76,6 +76,16 @@ class _DougaKaisetu1State extends State<DougaKaisetu1> {
                   },
                   icon: const Icon(Icons.refresh),
                 ),
+                IconButton(
+                  onPressed: () {
+                    // 動画を最初から再生
+                    _controller.seekTo(Duration(
+                        seconds: _controller.value.position.inSeconds - 10));
+                    playSwitch = true;
+                    setState(() {});
+                  },
+                  icon: const Icon(Icons.replay_10),
+                ),
                 playSwitch
                     ? IconButton(
                         onPressed: () {
@@ -95,6 +105,16 @@ class _DougaKaisetu1State extends State<DougaKaisetu1> {
                         },
                         icon: const Icon(Icons.play_arrow),
                       ),
+                IconButton(
+                  onPressed: () {
+                    // 動画を最初から再生
+                    _controller.seekTo(Duration(
+                        seconds: _controller.value.position.inSeconds + 10));
+                    playSwitch = true;
+                    setState(() {});
+                  },
+                  icon: const Icon(Icons.forward_10),
+                ),
                 IconButton(
                   onPressed: () {
                     // 動画を最初から再生
