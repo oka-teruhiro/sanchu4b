@@ -266,7 +266,7 @@ class _MyHomePageState extends State<MyHomePage> {
       child: Scaffold(
         backgroundColor: Colors.black,
         appBar: AppBar(
-          title: const Text('天運三柱推命 ver.4.5.3',
+          title: const Text('天運三柱推命 ver.4.5.4',
               style: TextStyle(
                 color: Colors.pinkAccent,
                 fontWeight: FontWeight.bold,
@@ -309,7 +309,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         MaterialStateProperty.all<Color>(Colors.black),
                   ),
                   child: const Text(
-                    '易占クイズに挑戦する',
+                    'このアプリの使い方を見る',
                     style: TextStyle(
                       fontSize: 18,
                       color: Colors.black,
@@ -317,7 +317,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ),
                   onPressed: () {
-                    //TODO: 易占検定画面へ飛ぶ
+                    //TODO: 解説動画再生ページへ飛ぶ
                     Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -327,7 +327,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   },
                 ),
               ),
-              const SizedBox(
+              /*const SizedBox(
                 height: 90,
                 width: 440,
                 child: Padding(
@@ -341,7 +341,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ),
                 ),
-              ),
+              ),*/
               SizedBox(
                 height: 260,
                 width: 440,
@@ -495,6 +495,41 @@ class _MyHomePageState extends State<MyHomePage> {
                             ),
                           ],
                         ),
+                      ),
+                    );
+                  },
+                ),
+              ),
+              Container(
+                height: 44,
+                width: 440,
+                decoration: BoxDecoration(
+                  color: Colors.tealAccent,
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(
+                    color: Colors.blue,
+                    width: 1.0,
+                  ),
+                ),
+                child: TextButton(
+                  style: ButtonStyle(
+                    foregroundColor:
+                        MaterialStateProperty.all<Color>(Colors.black),
+                  ),
+                  child: const Text(
+                    '易占クイズに挑戦する',
+                    style: TextStyle(
+                      fontSize: 18,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  onPressed: () {
+                    //TODO: 易占検定画面へ飛ぶ
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => QuizPage001(),
                       ),
                     );
                   },
