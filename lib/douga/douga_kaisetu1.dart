@@ -10,6 +10,9 @@ class DougaKaisetu1 extends StatefulWidget {
 
 class _DougaKaisetu1State extends State<DougaKaisetu1> {
   late VideoPlayerController _controller;
+  bool initSwitch = false;
+  bool complate = false;
+  bool playSwitch = false;
 
   @override
   void initState() {
@@ -27,29 +30,95 @@ class _DougaKaisetu1State extends State<DougaKaisetu1> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.black,
-      appBar: AppBar(
-        title: const Text(
-          'アプリの使い方',
-          style: TextStyle(
-            color: Colors.pinkAccent,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-      ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Center(
-            child: SizedBox(
-              width: 344,
-              height: 640,
-              child: VideoPlayer(_controller),
+    return WillPopScope(
+      onWillPop: () async {
+        if (_controller.value.isPlaying) {
+          _controller.pause();
+        }
+        return true;
+      },
+      child: Scaffold(
+        backgroundColor: Colors.black,
+        appBar: AppBar(
+          title: const Text(
+            'アプリの使い方',
+            style: TextStyle(
+              color: Colors.pinkAccent,
+              fontWeight: FontWeight.bold,
             ),
           ),
-        ],
+        ),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Center(
+              child: SizedBox(
+                width: 344,
+                height: 640,
+                child: VideoPlayer(_controller),
+              ),
+            ),
+            VideoProgressIndicator(
+              _controller,
+              allowScrubbing: true,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                IconButton(
+                  onPressed: () {
+                    // 動画を最初から再生
+                    _controller
+                        .seekTo(Duration.zero)
+                        .then((_) => _controller.play());
+                    playSwitch = true;
+                    setState(() {});
+                  },
+                  icon: const Icon(Icons.refresh),
+                ),
+                playSwitch
+                    ? IconButton(
+                        onPressed: () {
+                          // 動画を一時停止
+                          _controller.pause();
+                          playSwitch = !playSwitch;
+                          setState(() {});
+                        },
+                        icon: const Icon(Icons.pause),
+                      )
+                    : IconButton(
+                        onPressed: () {
+                          // 動画を再生
+                          _controller.play();
+                          playSwitch = !playSwitch;
+                          setState(() {});
+                        },
+                        icon: const Icon(Icons.play_arrow),
+                      ),
+                IconButton(
+                  onPressed: () {
+                    // 動画を最初から再生
+                    _controller
+                        .seekTo(Duration.zero)
+                        .then((_) => _controller.pause());
+                    playSwitch = false;
+                    setState(() {});
+                    despose();
+                    Navigator.pop(context);
+                  },
+                  icon: const Icon(Icons.stop),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
+
+  /*@override
+  void despose() {
+    _controller.dispose();
+    super.dispose();
+  }*/
 }
