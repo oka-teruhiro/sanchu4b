@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/intl.dart';
+import 'package:sanchu4b/douga/douga_kaisetu1.dart';
 import 'package:sanchu4b/output/kyou_unsei_page.dart';
 import 'package:sanchu4b/output/output4.dart';
 import 'package:sanchu4b/quiz/quiz_page_001.dart';
@@ -266,7 +267,7 @@ class _MyHomePageState extends State<MyHomePage> {
       child: Scaffold(
         backgroundColor: Colors.black,
         appBar: AppBar(
-          title: const Text('天運三柱推命 ver.4.5.4',
+          title: const Text('天運三柱推命 ver.4.5.5',
               style: TextStyle(
                 color: Colors.pinkAccent,
                 fontWeight: FontWeight.bold,
@@ -321,7 +322,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => QuizPage001(),
+                        builder: (context) => const DougaKaisetu1(),
                       ),
                     );
                   },
