@@ -48,90 +48,111 @@ class _DougaKaisetu1State extends State<DougaKaisetu1> {
             ),
           ),
         ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Center(
-              child: SizedBox(
-                width: 344,
-                height: 640,
-                child: VideoPlayer(_controller),
-              ),
-            ),
-            VideoProgressIndicator(
-              _controller,
-              allowScrubbing: true,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        body: Container(
+          color: Colors.black,
+          child: SizedBox(
+            height: double.infinity,
+            width: double.infinity,
+            child: ListView(
               children: [
-                IconButton(
-                  onPressed: () {
-                    // 動画を最初から再生
-                    _controller
-                        .seekTo(Duration.zero)
-                        .then((_) => _controller.play());
-                    playSwitch = true;
-                    setState(() {});
-                  },
-                  icon: const Icon(Icons.refresh),
-                ),
-                IconButton(
-                  onPressed: () {
-                    // 動画を最初から再生
-                    _controller.seekTo(Duration(
-                        seconds: _controller.value.position.inSeconds - 10));
-                    playSwitch = true;
-                    setState(() {});
-                  },
-                  icon: const Icon(Icons.replay_10),
-                ),
-                playSwitch
-                    ? IconButton(
-                        onPressed: () {
-                          // 動画を一時停止
-                          _controller.pause();
-                          playSwitch = !playSwitch;
-                          setState(() {});
-                        },
-                        icon: const Icon(Icons.pause),
-                      )
-                    : IconButton(
-                        onPressed: () {
-                          // 動画を再生
-                          _controller.play();
-                          playSwitch = !playSwitch;
-                          setState(() {});
-                        },
-                        icon: const Icon(Icons.play_arrow),
+                ListTile(
+                  title: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Center(
+                        child: SizedBox(
+                          //width: 500,
+                          height: 600,
+                          child: AspectRatio(
+                            aspectRatio: 3 / 5,
+                            child: VideoPlayer(_controller),
+                          ),
+                        ),
                       ),
-                IconButton(
-                  onPressed: () {
-                    // 動画を最初から再生
-                    _controller.seekTo(Duration(
-                        seconds: _controller.value.position.inSeconds + 10));
-                    playSwitch = true;
-                    setState(() {});
-                  },
-                  icon: const Icon(Icons.forward_10),
-                ),
-                IconButton(
-                  onPressed: () {
-                    // 動画を最初から再生
-                    _controller
-                        .seekTo(Duration.zero)
-                        .then((_) => _controller.pause());
-                    playSwitch = false;
-                    setState(() {});
-                    despose();
-                    Navigator.pop(context);
-                  },
-                  icon: const Icon(Icons.stop),
+                    ],
+                  ),
                 ),
               ],
             ),
-          ],
+          ),
         ),
+        persistentFooterButtons: <Widget>[
+          VideoProgressIndicator(
+            _controller,
+            allowScrubbing: true,
+          ),
+          Container(
+            height: 10,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              IconButton(
+                onPressed: () {
+                  // 動画を最初から再生
+                  _controller
+                      .seekTo(Duration.zero)
+                      .then((_) => _controller.play());
+                  playSwitch = true;
+                  setState(() {});
+                },
+                icon: const Icon(Icons.refresh),
+              ),
+              IconButton(
+                onPressed: () {
+                  // 動画を最初から再生
+                  _controller.seekTo(Duration(
+                      seconds: _controller.value.position.inSeconds - 10));
+                  playSwitch = true;
+                  setState(() {});
+                },
+                icon: const Icon(Icons.replay_10),
+              ),
+              playSwitch
+                  ? IconButton(
+                      onPressed: () {
+                        // 動画を一時停止
+                        _controller.pause();
+                        playSwitch = !playSwitch;
+                        setState(() {});
+                      },
+                      icon: const Icon(Icons.pause),
+                    )
+                  : IconButton(
+                      onPressed: () {
+                        // 動画を再生
+                        _controller.play();
+                        playSwitch = !playSwitch;
+                        setState(() {});
+                      },
+                      icon: const Icon(Icons.play_arrow),
+                    ),
+              IconButton(
+                onPressed: () {
+                  // 動画を最初から再生
+                  _controller.seekTo(Duration(
+                      seconds: _controller.value.position.inSeconds + 10));
+                  playSwitch = true;
+                  setState(() {});
+                },
+                icon: const Icon(Icons.forward_10),
+              ),
+              IconButton(
+                onPressed: () {
+                  // 動画を最初から再生
+                  _controller
+                      .seekTo(Duration.zero)
+                      .then((_) => _controller.pause());
+                  playSwitch = false;
+                  setState(() {});
+                  despose();
+                  Navigator.pop(context);
+                },
+                icon: const Icon(Icons.stop),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }
