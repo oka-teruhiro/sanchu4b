@@ -64,28 +64,16 @@ class _MyHomePageState extends State<MyHomePage> {
   String _birthdaya = '2000-01-01';
   String birthdayHyouji = '';
   String birthdayOld = '';
-  final List<String> _birthD = [
-    'yyyy/mm/dd',
-    'yyyy/mm/dd',
-    'yyyy/mm/dd',
-    'yyyy/mm/dd',
-    'yyyy/mm/dd'
-  ];
+  final List<String> _birthD = ['生年月日', '生年月日', '生年月日', '生年月日', '生年月日'];
   final List<String> _birthH = [
-    '1 : yyyy/mm/dd ?',
-    '2 : yyyy/mm/dd ?',
-    '3 : yyyy/mm/dd ?',
-    '4 : yyyy/mm/dd ?',
-    '5 : yyyy/mm/dd ?'
+    '1 : 生年月日 ?　 ',
+    '2 : 生年月日 ?　 ',
+    '3 : 生年月日 ?　 ',
+    '4 : 生年月日 ?　 ',
+    '5 : 生年月日 ?　 '
   ];
-  final List<String> _birthO = [
-    'yyyy/mm/dd',
-    'yyyy/mm/dd',
-    'yyyy/mm/dd',
-    'yyyy/mm/dd',
-    'yyyy/mm/dd'
-  ];
-  final List<String> _memoH = ['メモ', 'メモ', 'メモ', 'メモ', 'メモ'];
+  final List<String> _birthO = ['生年月日', '生年月日', '生年月日', '生年月日', '生年月日'];
+  final List<String> _memoH = ['私', '相手1', '相手2', '相手3', '相手4'];
 
   String _birthday0 = '';
   String _birthday1 = '';
@@ -93,11 +81,11 @@ class _MyHomePageState extends State<MyHomePage> {
   String _birthday3 = '';
   String _birthday4 = '';
 
-  String _memo0 = 'メモ';
-  String _memo1 = 'メモ';
-  String _memo2 = 'メモ';
-  String _memo3 = 'メモ';
-  String _memo4 = 'メモ';
+  String _memo0 = '私';
+  String _memo1 = '相手1';
+  String _memo2 = '相手2';
+  String _memo3 = '相手3';
+  String _memo4 = '相手4';
   String seinengappiMojia = '';
 
   //var bestQuizNoMoji;
@@ -108,9 +96,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
   int item = 0;
 
-  int seiNen = 1957;
-  int seiGatu = 3;
-  int seiNiti = 31;
+  int seiNen = 2000;
+  int seiGatu = 1;
+  int seiNiti = 1;
 
   @override
   void initState() {
@@ -123,16 +111,16 @@ class _MyHomePageState extends State<MyHomePage> {
   _getPrefItems() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     setState(() {
-      _birthday0 = prefs.getString('birthday0') ?? 'yyyy/mm/dd';
-      _birthday1 = prefs.getString('birthday1') ?? 'yyyy/mm/dd';
-      _birthday2 = prefs.getString('birthday2') ?? 'yyyy/mm/dd';
-      _birthday3 = prefs.getString('birthday3') ?? 'yyyy/mm/dd';
-      _birthday4 = prefs.getString('birthday4') ?? 'yyyy/mm/dd';
-      _memo0 = prefs.getString('memo0') ?? 'メモ';
-      _memo1 = prefs.getString('memo1') ?? 'メモ';
-      _memo2 = prefs.getString('memo2') ?? 'メモ';
-      _memo3 = prefs.getString('memo3') ?? 'メモ';
-      _memo4 = prefs.getString('memo4') ?? 'メモ';
+      _birthday0 = prefs.getString('birthday0') ?? '生年月日';
+      _birthday1 = prefs.getString('birthday1') ?? '生年月日';
+      _birthday2 = prefs.getString('birthday2') ?? '生年月日';
+      _birthday3 = prefs.getString('birthday3') ?? '生年月日';
+      _birthday4 = prefs.getString('birthday4') ?? '生年月日';
+      _memo0 = prefs.getString('memo0') ?? '私';
+      _memo1 = prefs.getString('memo1') ?? '相手1';
+      _memo2 = prefs.getString('memo2') ?? '相手2';
+      _memo3 = prefs.getString('memo3') ?? '相手3';
+      _memo4 = prefs.getString('memo4') ?? '相手4';
       //bestQuizNoMoji = prefs.getString('bestQuizNoMojiP') ?? '0';
     });
     _birthD.removeAt(0);
@@ -160,8 +148,8 @@ class _MyHomePageState extends State<MyHomePage> {
     for (int i = 0; i < 5; i++) {
       int j = i + 1;
       _birthday = _birthD[i];
-      if (_birthday == 'yyyy/mm/dd') {
-        birthdayHyouji = '$j : yyyy/mm/dd ?';
+      if (_birthday == '生年月日') {
+        birthdayHyouji = '$j : 生年月日 ?　 ';
       } else {
         birthdayHyouji = '$j : $_birthday 生';
       }
@@ -224,37 +212,37 @@ class _MyHomePageState extends State<MyHomePage> {
     seinengappiMojia = '';
     int j = item + 1;
     _birthD.removeAt(item);
-    _birthD.insert(item, 'yyyy/mm/dd');
+    _birthD.insert(item, '生年月日');
     _birthO.removeAt(item);
-    _birthO.insert(item, 'yyyy/mm/dd');
+    _birthO.insert(item, '生年月日');
     _birthH.removeAt(item);
-    _birthH.insert(item, '$j : yyyy/mm/dd 生');
-    _memoH.removeAt(item);
-    _memoH.insert(item, 'メモ');
+    _birthH.insert(item, '$j : 生年月日 ?　 ');
+    //_memoH.removeAt(item);
+    //_memoH.insert(item, 'メモ');
     if (item == 0) {
       setState(() {
         prefs.remove('birthday0');
-        prefs.remove('memo0');
+        //prefs.remove('memo0');
       });
     } else if (item == 1) {
       setState(() {
         prefs.remove('birthday1');
-        prefs.remove('memo1');
+        //prefs.remove('memo1');
       });
     } else if (item == 2) {
       setState(() {
         prefs.remove('birthday2');
-        prefs.remove('memo2');
+        //prefs.remove('memo2');
       });
     } else if (item == 3) {
       setState(() {
         prefs.remove('birthday3');
-        prefs.remove('memo3');
+        //prefs.remove('memo3');
       });
     } else if (item == 4) {
       setState(() {
         prefs.remove('birthday4');
-        prefs.remove('memo4');
+        //prefs.remove('memo4');
       });
     } else {}
   }
@@ -267,7 +255,7 @@ class _MyHomePageState extends State<MyHomePage> {
       child: Scaffold(
         backgroundColor: Colors.black,
         appBar: AppBar(
-          title: const Text('天運三柱推命 ver.4.5.8',
+          title: const Text('天運三柱推命 ver.4.5.9',
               style: TextStyle(
                 color: Colors.pinkAccent,
                 fontWeight: FontWeight.bold,
@@ -361,7 +349,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                         ),
                         child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             // 生年月日表示欄
@@ -379,7 +367,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                   onPressed: () {
                                     //ToDo　生年月日入力画面に飛ぶ
                                     _birthday = _birthD[index];
-                                    if (_birthday == 'yyyy/mm/dd') {
+                                    if (_birthday == '生年月日') {
                                       date9 = DateTime(
                                           DateTime.now().year - 30,
                                           DateTime.now().month,
@@ -415,26 +403,37 @@ class _MyHomePageState extends State<MyHomePage> {
                                 ),
                                 onPressed: () {
                                   //ToDo　メモ入力画面に飛ぶ
-                                  _showInputDialog(context, index);
+                                  //_showInputDialog(context, index);
                                 },
                               ),
                             ),
 
                             // 今日の運勢　ボタン
                             SizedBox(
-                              height: 24,
+                              height: 30,
                               width: 40,
                               child: ElevatedButton(
                                 style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.blue,
-                                  elevation: 0,
-                                  shadowColor: Colors.red,
+                                  backgroundColor: Colors.blue, //背景色
+                                  padding: EdgeInsets.all(4), //パディング
+                                  alignment: Alignment.center,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(4.0),
+                                  ),
                                 ),
-                                child: const Icon(Icons.bar_chart, size: 16),
+                                child: const Text(
+                                  style: TextStyle(
+                                    height: -0.2,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white,
+                                    fontSize: 12,
+                                  ),
+                                  '運勢',
+                                ),
                                 onPressed: () {
                                   //ToDo　今日の運勢画面に飛ぶ
                                   seinengappiMojia = _birthD[index];
-                                  if (seinengappiMojia == 'yyyy/mm/dd') {
+                                  if (seinengappiMojia == '生年月日') {
                                   } else {
                                     seiNen = int.parse(
                                         seinengappiMojia.substring(0, 4));
@@ -456,28 +455,18 @@ class _MyHomePageState extends State<MyHomePage> {
                                 },
                               ),
                             ),
-                            const SizedBox(
-                              width: 8,
-                            ),
+                            //const SizedBox(
+                            //  width: 8,
+                            //),
 
                             // 性格・天地徳合　ボタン
                             SizedBox(
-                              height: 24,
+                              height: 30,
                               width: 40,
                               child: ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.blue,
-                                  elevation: 8,
-                                  shadowColor: Colors.red,
-                                ),
-                                child: const Icon(
-                                  Icons.arrow_forward_ios,
-                                  size: 16,
-                                ),
                                 onPressed: () {
-                                  //ToDo　出力画面に飛ぶ
                                   seinengappiMojia = _birthD[index];
-                                  if (seinengappiMojia == 'yyyy/mm/dd') {
+                                  if (seinengappiMojia == '生年月日') {
                                   } else {
                                     Navigator.push(
                                       context,
@@ -489,6 +478,23 @@ class _MyHomePageState extends State<MyHomePage> {
                                     );
                                   }
                                 },
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.blue, //背景色
+                                  padding: EdgeInsets.all(4), //パディング
+                                  alignment: Alignment.center,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(4.0),
+                                  ),
+                                ),
+                                child: const Text(
+                                  style: TextStyle(
+                                    height: -0.2,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white,
+                                    fontSize: 12,
+                                  ),
+                                  '性格',
+                                ),
                               ),
                             ),
                             const SizedBox(
@@ -593,8 +599,8 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                         onPressed: () {
                           _birthday = birthdayOld;
-                          if (_birthday == 'yyyy/mm/dd') {
-                            birthdayHyouji = '$j : yyyy/mm/dd ?';
+                          if (_birthday == '生年月日') {
+                            birthdayHyouji = '$j : 生年月日 ?';
                           } else {
                             birthdayHyouji = '$j : $_birthday 生';
                           }
@@ -614,7 +620,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                           onPressed: () async {
                             _birthday = _birthO[i];
-                            if (_birthday == 'yyyy/mm/dd') {
+                            if (_birthday == '生年月日') {
                             } else {
                               //var result =
                               await showDialog<int>(
@@ -675,7 +681,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                           onPressed: () async {
                             //TODO;
-                            if (_birthday == 'yyyy/mm/dd') {
+                            if (_birthday == '生年月日') {
                               _birthday = DateFormat('yyyy/MM/dd')
                                   .format(DateTime.now());
                             } else {}

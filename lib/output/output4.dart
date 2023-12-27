@@ -322,7 +322,7 @@ class _Output4State extends State<Output4> {
                                   child: ElevatedButton(
                                     style: ElevatedButton.styleFrom(
                                       backgroundColor: Colors.blue,
-                                      elevation: 4,
+                                      //elevation: 4,
                                       shadowColor: Colors.yellow,
                                     ),
                                     onPressed: () {
@@ -398,7 +398,13 @@ class _Output4State extends State<Output4> {
                                             ));
                                       }
                                     },
-                                    child: const Text('日干からみた性格は'),
+                                    child: const Text(
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.white,
+                                      ),
+                                      '日干からみた性格は',
+                                    ),
                                   ),
                                 ),
                               ),
